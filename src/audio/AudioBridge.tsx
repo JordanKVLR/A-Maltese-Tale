@@ -11,7 +11,7 @@ import { battle, ui, world } from "./sfx";
  */
 
 /** Controls that make their own sound, or none — walking would be a wall of clicks. */
-const QUIET_IDS = /^(move-(up|down|left|right)|joystick|map-viewport|battle-message|drag-handle-\d+)$/;
+const QUIET_IDS = /^(move-(up|down|left|right)|map-viewport|battle-message|drag-handle-\d+)$/;
 const BACK_IDS = /(back-button|-close|close-|backdrop)/;
 
 function soundFor(target: EventTarget | null): (() => void) | null {

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Animated, Platform, Pressable, StyleSheet, Text, View } from "react-native";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { useIsFocused } from "@react-navigation/native";
 import type { RootStackParamList } from "../navigation/types";
 import { useGameStore } from "../state/gameStore";
 import {
@@ -25,7 +26,6 @@ import { trainerAt, trainersForZone } from "../game/trainers";
 import { medalRequiredToEnter, getStage, STAGES } from "../game/zoneProgression";
 import { briefingsOnEntry, type BriefingPage } from "../game/briefings";
 import { CreatureAvatar } from "./components/CreatureAvatar";
-import { Joystick } from "./components/Joystick";
 import { BriefingModal } from "./components/BriefingModal";
 import { ScreenBackground } from "./components/ScreenBackground";
 import { useKeyboardShortcuts } from "./components/useKeyboardShortcuts";
@@ -105,12 +105,9 @@ export function MapScreen({ navigation, route }: Props) {
   const party = useGameStore((s) => s.party);
   const medals = useGameStore((s) => s.medals);
   const defeatedTrainerIds = useGameStore((s) => s.defeatedTrainerIds);
-  const controlMode = useSettings((s) => s.controlMode);
   const controlSide = useSettings((s) => s.controlSide);
   const showFollower = useSettings((s) => s.showFollower);
   const reducedMotion = useSettings((s) => s.reducedMotion);
-  const setSetting = useSettings((s) => s.set);
-  const setControlMode = (mode: "joystick" | "dpad") => setSetting("controlMode", mode);
   const i18n = useI18n();
   const { t, c } = i18n;
   const markStageVisited = useGameStore((s) => s.markStageVisited);
@@ -163,6 +160,7 @@ export function MapScreen({ navigation, route }: Props) {
     setNoticePages(null);
     then?.();
   };
+  const isFocused = useIsFocused();
   const modalOpen = briefing.length > 0 || notice !== null || learnPrompt !== null;
 
   // Positions in tile units; multiplied out by the current tile size at render.
@@ -528,6 +526,7 @@ export function MapScreen({ navigation, route }: Props) {
   });
 
   const entitySize = { width: tile, height: tile };
+  const dpadActive = isFocused && !modalOpen && !drawerOpen;
 
   const world_ = (
     <View
@@ -754,34 +753,17 @@ export function MapScreen({ navigation, route }: Props) {
         pointerEvents="box-none"
         style={[styles.controls, compact ? styles.controlsCompact : styles.controlsWide, SIDE_STYLE[controlSide]]}
       >
-        {controlMode === "joystick" ? (
-          <Joystick onStep={move} disabled={busy || modalOpen} overlay />
-        ) : (
-          <View style={styles.dpad}>
-            <DpadButton testID="move-up" glyph="▲" onPress={() => move("up")} />
-            <View style={styles.dpadMiddleRow}>
-              <DpadButton testID="move-left" glyph="◀" onPress={() => move("left")} />
-              <View style={styles.dpadSpacer} />
-              <DpadButton testID="move-right" glyph="▶" onPress={() => move("right")} />
-            </View>
-            <DpadButton testID="move-down" glyph="▼" onPress={() => move("down")} />
+        <View style={styles.dpad}>
+          <DpadButton active={dpadActive} testID="move-up" glyph="▲" onPress={() => move("up")} />
+          <View style={styles.dpadMiddleRow}>
+            <DpadButton active={dpadActive} testID="move-left" glyph="◀" onPress={() => move("left")} />
+            <View style={styles.dpadSpacer} />
+            <DpadButton active={dpadActive} testID="move-right" glyph="▶" onPress={() => move("right")} />
           </View>
-        )}
+          <DpadButton active={dpadActive} testID="move-down" glyph="▼" onPress={() => move("down")} />
+        </View>
       </View>
 
-      <Pressable
-        testID="toggle-control-mode"
-        onPress={() => setControlMode(controlMode === "joystick" ? "dpad" : "joystick")}
-        style={({ pressed }) => [
-          styles.controlToggle,
-          compact && styles.controlToggleCompact,
-          // Kept in the corner the controls are not in, so the two never overlap.
-          controlSide === "right" && styles.controlToggleLeft,
-          pressed && styles.controlTogglePressed,
-        ]}
-      >
-        <Text style={styles.controlToggleText}>{controlMode === "joystick" ? t("map.dpad") : t("map.joystick")}</Text>
-      </Pressable>
     </View>
   );
 
@@ -812,11 +794,58 @@ export function MapScreen({ navigation, route }: Props) {
   );
 }
 
-function DpadButton({ testID, glyph, onPress }: { testID: string; glyph: string; onPress: () => void }) {
+/** Before a held button starts repeating, and how often it repeats — just over one step's
+ * walk animation, so holding a direction walks smoothly. */
+const HOLD_DELAY_MS = 260;
+const HOLD_REPEAT_MS = 170;
+
+/**
+ * One arrow of the D-pad. A tap takes one step; holding it keeps walking until you let go.
+ * The step fires on press-in, not release, so movement answers the thumb immediately.
+ */
+function DpadButton({
+  testID,
+  glyph,
+  onPress,
+  active,
+}: {
+  testID: string;
+  glyph: string;
+  onPress: () => void;
+  /** False while a battle, menu or popup has the screen — a held button lets go then. */
+  active: boolean;
+}) {
+  // The map re-renders every step with a fresh move function; a held button must call the latest.
+  const latest = useRef(onPress);
+  latest.current = onPress;
+  const stepped = useRef(false);
+  const timers = useRef<{ delay?: ReturnType<typeof setTimeout>; repeat?: ReturnType<typeof setInterval> }>({});
+  const stop = () => {
+    clearTimeout(timers.current.delay);
+    clearInterval(timers.current.repeat);
+    timers.current = {};
+  };
+  useEffect(() => stop, []);
+  useEffect(() => {
+    if (!active) stop();
+  }, [active]);
   return (
     <Pressable
       testID={testID}
-      onPress={onPress}
+      onPressIn={() => {
+        stop();
+        stepped.current = true;
+        latest.current();
+        timers.current.delay = setTimeout(() => {
+          timers.current.repeat = setInterval(() => latest.current(), HOLD_REPEAT_MS);
+        }, HOLD_DELAY_MS);
+      }}
+      onPressOut={stop}
+      // A very quick tap on the web can arrive as a press without a press-in; still take the step.
+      onPress={() => {
+        if (!stepped.current) latest.current();
+        stepped.current = false;
+      }}
       style={({ pressed }) => [styles.dpadButton, pressed && styles.dpadButtonPressed]}
     >
       <Text style={styles.dpadGlyph}>{glyph}</Text>
@@ -968,35 +997,6 @@ const styles = StyleSheet.create({
     fontSize: 22,
     color: "#000000",
     // A thin light halo so a black arrow still reads over a dark tree or deep water.
-    textShadowColor: "rgba(255,255,255,0.75)",
-    textShadowRadius: 3,
-    textShadowOffset: { width: 0, height: 0 },
-  },
-  controlToggle: {
-    position: "absolute",
-    right: 14,
-    bottom: 18,
-    paddingVertical: 6,
-    paddingHorizontal: 12,
-    borderRadius: 999,
-    borderWidth: 2,
-    borderColor: "#000000",
-    backgroundColor: "transparent",
-  },
-  controlToggleLeft: {
-    right: undefined,
-    left: 14,
-  },
-  controlToggleCompact: {
-    bottom: 36,
-  },
-  controlTogglePressed: {
-    backgroundColor: "rgba(0,0,0,0.18)",
-  },
-  controlToggleText: {
-    color: "#000000",
-    fontSize: 12,
-    fontWeight: "800",
     textShadowColor: "rgba(255,255,255,0.75)",
     textShadowRadius: 3,
     textShadowOffset: { width: 0, height: 0 },

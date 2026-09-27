@@ -44,7 +44,6 @@ export const SETTINGS_SECTIONS: { title: StringKey; rows: Row[] }[] = [
   {
     title: "settings.section.controls",
     rows: [
-      { kind: "choice", key: "controlMode", options: ["joystick", "dpad"] },
       { kind: "choice", key: "controlSide", options: ["left", "center", "right"] },
     ],
   },

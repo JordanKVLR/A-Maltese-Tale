@@ -89,8 +89,6 @@ export const en = {
   "map.stageBadge": "Stage {stage} of {total}",
   "map.stageBadgeGym": "Stage {stage} of {total} · Gym",
   "map.treesBlock": "Can't walk that way — trees block the path.",
-  "map.dpad": "D-pad",
-  "map.joystick": "Joystick",
   "map.menu": "Menu",
   "map.gate.kicker": "The way is barred",
   "map.gate.title": "The {medal} is needed",
@@ -403,7 +401,7 @@ export const en = {
     "Your Bag holds traps, medicine and key items. Medicine heals a set amount of HP; a Kinnie instantly grants a level. Use them from the Bag, the Party screen or a creature's page. Buy traps and medicine at the Shop with gold earned from catching creatures and winning battles.",
   "help.controls.title": "Controls",
   "help.controls.body":
-    "On a keyboard, the arrow keys move; B opens the Bag, P your Party, M the menu, and R runs from a wild battle. On a touch screen, use the joystick or D-pad over the map — choose which in Settings.",
+    "On a keyboard, the arrow keys move; B opens the Bag, P your Party, M the menu, and R runs from a wild battle. On a touch screen, use the D-pad over the map.",
   "help.settings.title": "Settings",
   "help.settings.body":
     "Settings lets you change the language, the controls, how fast battles play, how often wild creatures appear, the music and sound volume, and more. The music room there plays any piece of the soundtrack.",
@@ -485,10 +483,6 @@ export const en = {
   "settings.language.help": "All menus, battles and creature lore.",
   "settings.language.en": "English",
   "settings.language.mt": "Malti",
-  "settings.controlMode": "Movement control",
-  "settings.controlMode.help": "What appears over the map on a touch screen. Arrow keys always work.",
-  "settings.controlMode.joystick": "Joystick",
-  "settings.controlMode.dpad": "D-pad",
   "settings.controlSide": "Control position",
   "settings.controlSide.help": "Which side of the screen the movement control sits on.",
   "settings.controlSide.left": "Left",

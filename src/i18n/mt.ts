@@ -90,8 +90,6 @@ export const mt: Record<StringKey, string> = {
   "map.stageBadge": "Stadju {stage} minn {total}",
   "map.stageBadgeGym": "Stadju {stage} minn {total} · Gym",
   "map.treesBlock": "Ma tistax tgħaddi minn hemm — is-siġar jagħlqu t-triq.",
-  "map.dpad": "D-pad",
-  "map.joystick": "Joystick",
   "map.menu": "Menu",
   "map.gate.kicker": "It-triq hija magħluqa",
   "map.gate.title": "Għandek bżonn il-{medal}",
@@ -404,7 +402,7 @@ export const mt: Record<StringKey, string> = {
     "Il-Borża fiha n-nases, il-mediċini u l-oġġetti importanti. Il-mediċina tfejjaq ammont stabbilit ta' HP; Kinnie jagħti livell minnufih. Tista' tużahom mill-Borża, mill-iskrin tal-Grupp jew mill-paġna tal-kreatura. Ixtri n-nases u l-mediċini fil-Ħanut bid-deheb li tikseb meta taqbad kreaturi u tirbaħ ġlidiet.",
   "help.controls.title": "Kontrolli",
   "help.controls.body":
-    "Fuq tastiera, il-vleġeġ jimxu; B jiftaħ il-Borża, P il-Grupp, M il-menu, u R taħrab minn ġlieda selvaġġa. Fuq skrin tattili, uża l-joystick jew id-D-pad fuq il-mappa — agħżel liema fis-Settings.",
+    "Fuq tastiera, il-vleġeġ jimxu; B jiftaħ il-Borża, P il-Grupp, M il-menu, u R taħrab minn ġlieda selvaġġa. Fuq skrin tattili, uża d-D-pad fuq il-mappa.",
   "help.settings.title": "Issettjar",
   "help.settings.body":
     "L-Issettjar iħallik tbiddel il-lingwa, il-kontrolli, kemm jimxu malajr il-ġlidiet, kemm-il darba jidhru l-kreaturi selvaġġi, il-volum tal-mużika u tal-ħoss, u aktar. Il-kamra tal-mużika hemmhekk iddoqq kull biċċa mill-mużika tal-logħba.",
@@ -486,10 +484,6 @@ export const mt: Record<StringKey, string> = {
   "settings.language.help": "Il-menus, il-ġlidiet u l-istorja tal-kreaturi kollha.",
   "settings.language.en": "English",
   "settings.language.mt": "Malti",
-  "settings.controlMode": "Kontroll tal-moviment",
-  "settings.controlMode.help": "X'jidher fuq il-mappa fuq skrin tattili. Il-vleġeġ tat-tastiera dejjem jaħdmu.",
-  "settings.controlMode.joystick": "Joystick",
-  "settings.controlMode.dpad": "D-pad",
   "settings.controlSide": "Pożizzjoni tal-kontroll",
   "settings.controlSide.help": "F'liema naħa tal-iskrin jinsab il-kontroll tal-moviment.",
   "settings.controlSide.left": "Xellug",

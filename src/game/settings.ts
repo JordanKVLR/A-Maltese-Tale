@@ -2,13 +2,12 @@
  * Player preferences, and the pure rules that turn them into behaviour.
  *
  * Settings belong to the device, not the save file: starting a New Game should not switch the
- * language back to English or the controls back to the joystick. The store that persists them
+ * language back to English. The store that persists them
  * lives in src/state/settingsStore.ts; everything here is plain data and functions, so the
  * rules can be tested without React.
  */
 
 export type Language = "en" | "mt";
-export type ControlMode = "joystick" | "dpad";
 /** Where the on-screen controls sit over the map — thumb preference. */
 export type ControlSide = "left" | "center" | "right";
 /**
@@ -32,7 +31,6 @@ export type Graphics = "3d" | "2d";
 
 export interface Settings {
   language: Language;
-  controlMode: ControlMode;
   controlSide: ControlSide;
   battlePace: BattlePace;
   textSpeed: TextSpeed;
@@ -49,7 +47,6 @@ export interface Settings {
 
 export const DEFAULT_SETTINGS: Settings = {
   language: "en",
-  controlMode: "joystick",
   controlSide: "center",
   battlePace: "standard",
   textSpeed: "normal",
