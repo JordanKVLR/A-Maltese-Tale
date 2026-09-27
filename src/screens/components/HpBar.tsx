@@ -2,7 +2,8 @@ import { useEffect, useRef } from "react";
 import { Animated, StyleSheet, Text, View } from "react-native";
 import { colors } from "../theme";
 
-export function HpBar({ currentHp, maxHp }: { currentHp: number; maxHp: number }) {
+/** `onDark` is for bars sitting on a coloured card, where the usual muted label would vanish. */
+export function HpBar({ currentHp, maxHp, onDark }: { currentHp: number; maxHp: number; onDark?: boolean }) {
   const ratio = Math.max(0, Math.min(1, currentHp / maxHp));
   const fillColor = ratio > 0.5 ? colors.success : ratio > 0.2 ? "#e0c458" : colors.danger;
 
@@ -26,7 +27,7 @@ export function HpBar({ currentHp, maxHp }: { currentHp: number; maxHp: number }
       <View style={styles.track}>
         <Animated.View style={[styles.fill, { width, backgroundColor: fillColor }]} />
       </View>
-      <Text style={styles.label}>
+      <Text style={[styles.label, onDark && styles.labelOnDark]}>
         {Math.max(0, currentHp)} / {maxHp}
       </Text>
     </View>
@@ -49,5 +50,9 @@ const styles = StyleSheet.create({
     color: colors.textMuted,
     fontSize: 12,
     marginTop: 4,
+  },
+  labelOnDark: {
+    color: "#e4eef9",
+    fontWeight: "700",
   },
 });

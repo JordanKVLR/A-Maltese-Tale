@@ -5,22 +5,34 @@
  * UI surfaces are light with dark text; only scrims and shadows stay dark.
  */
 export const colors = {
-  /** Page background — a pale sky wash rather than flat white, so panels read as raised. */
-  background: "#e8f4fb",
-  surface: "#ffffff",
-  surfaceAlt: "#f1f7ec",
-  border: "#c8dccf",
+  /** Page background — warm limestone, like the walls of an old town house. */
+  background: "#f4ecdc",
+  surface: "#fffdf8",
+  surfaceAlt: "#f8f1e3",
+  border: "#e2d4b8",
   /** Deep slate rather than pure black: softer against bright panels. */
   text: "#22333f",
-  textMuted: "#6d8797",
+  textMuted: "#72808a",
   /** Maltese limestone honey — the game's signature highlight. */
   accent: "#ef9f2e",
   accentDeep: "#c97a12",
-  danger: "#e05252",
-  success: "#43ad68",
+  danger: "#d14b3c",
+  success: "#2e8a5e",
   /** Scrim behind full-screen reveals (level-up, evolution). Stays dark for contrast. */
   scrim: "rgba(18,32,42,0.86)",
-  shadow: "rgba(25,45,60,0.22)",
+  shadow: "rgba(60,45,25,0.22)",
+};
+
+/** The colours of the islands, for the menus: balcony blue, terracotta, luzzu green, ink. */
+export const malta = {
+  blue: "#1f4e8c",
+  blueDeep: "#163a6a",
+  terracotta: "#b9472f",
+  green: "#2e7d5b",
+  ochre: "#c98a1f",
+  red: "#c8102e",
+  ink: "#1d2a36",
+  cream: "#fbf5e8",
 };
 
 /**

@@ -720,6 +720,7 @@ export function MapScreen({ navigation, route }: Props) {
           { label: t("home.quests"), testID: "drawer-quests", go: () => navigation.navigate("Quests") },
           { label: t("home.codex"), testID: "drawer-codex", go: () => navigation.navigate("Codex") },
           { label: t("home.shop"), testID: "drawer-shop", go: () => navigation.navigate("Shop") },
+          { label: t("home.help"), testID: "drawer-help", go: () => navigation.navigate("Help") },
           { label: t("home.settings"), testID: "drawer-settings", go: () => navigation.navigate("Settings") },
           { label: t("map.menu"), testID: "menu-button", go: () => navigation.navigate("Home") },
         ].map((entry) => (
@@ -727,6 +728,7 @@ export function MapScreen({ navigation, route }: Props) {
             key={entry.label}
             testID={entry.testID}
             onPress={() => {
+              ui.tap();
               toggleDrawer(false);
               entry.go();
             }}
@@ -1005,9 +1007,9 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
     width: DRAWER_WIDTH,
-    backgroundColor: "rgba(255,255,255,0.94)",
-    borderLeftWidth: 2,
-    borderLeftColor: colors.border,
+    backgroundColor: "rgba(251,245,232,0.97)",
+    borderLeftWidth: 3,
+    borderLeftColor: "#1f4e8c",
     paddingVertical: 8,
     paddingHorizontal: 8,
     gap: 6,
@@ -1016,17 +1018,19 @@ const styles = StyleSheet.create({
   drawerItem: {
     paddingVertical: 9,
     paddingHorizontal: 10,
-    borderRadius: 10,
-    backgroundColor: colors.surfaceAlt,
-    borderWidth: 1,
-    borderColor: colors.border,
+    borderRadius: 12,
+    backgroundColor: "#fffdf8",
+    borderWidth: 1.5,
+    borderBottomWidth: 3,
+    borderColor: "#d6c6a6",
   },
   drawerItemPressed: {
     backgroundColor: colors.accent,
-    transform: [{ scale: 0.97 }],
+    borderBottomWidth: 1.5,
+    transform: [{ scale: 0.95 }],
   },
   drawerItemText: {
-    color: colors.text,
+    color: "#1f4e8c",
     fontSize: 13,
     fontWeight: "700",
     textAlign: "center",
