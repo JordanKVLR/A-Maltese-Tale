@@ -1,3 +1,4 @@
+import { xpRewardForLevel, xpToNextLevel } from "../progression";
 import startersData from "../../data/starters.json";
 import { buildParticipant, checkEvolution, defaultDisplayNameForSpecies } from "../creatureFactory";
 import { addExperience, applyLevelUp, partyMemberFromParticipant, type PartyMember } from "../party";
@@ -115,7 +116,7 @@ describe("creature data integrity", () => {
 describe("addExperience evolution handling", () => {
   it("evolves a single stage when the XP grant crosses exactly one threshold", () => {
     const member = makeMember({ level: 15, xp: 0 });
-    const result = addExperience(member, 200); // exactly xpToNextLevel(15)
+    const result = addExperience(member, xpToNextLevel(15)); // exactly one level
     expect(result.newLevel).toBe(16);
     expect(result.member.speciesId).toBe("vinehorn");
     expect(result.member.types).toEqual(["Grass"]);
@@ -142,7 +143,7 @@ describe("addExperience evolution handling", () => {
 
   it("preserves a custom nickname through evolution", () => {
     const member = makeMember({ level: 15, xp: 0, displayName: "Buddy" });
-    const result = addExperience(member, 200);
+    const result = addExperience(member, xpToNextLevel(15));
     expect(result.member.speciesId).toBe("vinehorn");
     expect(result.member.displayName).toBe("Buddy");
     expect(result.evolution?.newDisplayName).toBe("Buddy");
@@ -150,7 +151,7 @@ describe("addExperience evolution handling", () => {
 
   it("updates the displayName to the new stage's default when no custom nickname was set", () => {
     const member = makeMember({ level: 15, xp: 0, displayName: "Calfleaf" });
-    const result = addExperience(member, 200);
+    const result = addExperience(member, xpToNextLevel(15));
     expect(result.member.displayName).toBe("Vinehorn");
   });
 
@@ -164,7 +165,7 @@ describe("addExperience evolution handling", () => {
   it("grows max HP (and partially tops up current HP) using the evolved form's stats", () => {
     const member = makeMember({ level: 15, xp: 0, currentHp: 1 });
     const prevMaxHp = effectiveStats(CALFLEAF_STATS, 15).hp;
-    const result = addExperience(member, 200);
+    const result = addExperience(member, xpToNextLevel(15));
     const newMaxHp = effectiveStats(VINEHORN_STATS, 16).hp;
     expect(result.member.currentHp).toBe(Math.min(newMaxHp, 1 + (newMaxHp - prevMaxHp)));
   });
@@ -210,5 +211,26 @@ describe("partyMemberFromParticipant keeps the form you caught", () => {
     const { member, evolution } = applyLevelUp(partyMemberFromParticipant(participant, "wild"));
     expect(member.speciesId).toBe("mosstaur");
     expect(evolution).not.toBeNull();
+  });
+});
+
+describe("the XP curve", () => {
+  it("takes more fights per level as you climb", () => {
+    const fightsPerLevel = (level: number) => xpToNextLevel(level) / xpRewardForLevel(level, level);
+    expect(fightsPerLevel(5)).toBeLessThan(fightsPerLevel(30));
+    expect(fightsPerLevel(30)).toBeLessThan(fightsPerLevel(50));
+    expect(fightsPerLevel(30)).toBeGreaterThan(3);
+  });
+
+  it("pays little for beating something far weaker, more for something stronger", () => {
+    expect(xpRewardForLevel(10, 30)).toBeLessThan(xpRewardForLevel(10, 10) / 3);
+    expect(xpRewardForLevel(35, 30)).toBeGreaterThan(xpRewardForLevel(35));
+  });
+
+  it("never gives a whole level for one trainer's creature a level above you", () => {
+    for (const level of [10, 20, 30, 40, 50]) {
+      const trainerXp = xpRewardForLevel(level + 1, level) * 1.5 * 1.2; // trainer multiplier, best friendship
+      expect(trainerXp).toBeLessThan(xpToNextLevel(level));
+    }
   });
 });

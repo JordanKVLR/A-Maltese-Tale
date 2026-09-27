@@ -19,9 +19,13 @@ import type { I18n } from "../i18n/core";
 
 const wildCreatures = WildCreaturesFileSchema.parse(wildCreaturesData).wildCreatures;
 
-/** A trainer's reward multiplier against a wild creature of the same level. */
+/** A trainer's gold multiplier against a wild creature of the same level. */
 export const TRAINER_REWARD_MULTIPLIER = 2.5;
 export const GYM_REWARD_MULTIPLIER = 4;
+/** XP is multiplied far less than gold: a trainer's creatures are already a level or more
+ * above the road, and the level-gap scaling rewards that on its own. */
+export const TRAINER_XP_MULTIPLIER = 1.5;
+export const GYM_XP_MULTIPLIER = 2;
 
 export interface TrainerCreature {
   speciesId: string;

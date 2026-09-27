@@ -5,7 +5,7 @@ import type { RootStackParamList } from "../navigation/types";
 import { useGameStore } from "../state/gameStore";
 import type { BattleParticipant } from "../game/creatureFactory";
 import { buildBiomeEncounterTable, rollEncounter } from "../game/encounterTable";
-import { getTrainer, trainerCreatureMoves, completionProgress, type CompletionProgress } from "../game/trainers";
+import { getTrainer, trainerCreatureMoves, completionProgress, GYM_XP_MULTIPLIER, TRAINER_XP_MULTIPLIER, type CompletionProgress } from "../game/trainers";
 import { buildParticipant } from "../game/creatureFactory";
 import { getDexEntry } from "../game/speciesCatalog";
 import { getZoneEncounterSettings } from "../game/zones";
@@ -405,7 +405,10 @@ export function BattleScreen({ navigation, route }: Props) {
     const memberBefore = useGameStore.getState().party.find((m) => m.uid === uid);
     if (!memberBefore) return false;
     // A creature close to you learns faster.
-    const xp = Math.round(xpRewardForLevel(foeLevel) * multiplier * (1 + friendshipXpBonus(friendshipOf(memberBefore))));
+    const xpMultiplier = !trainer ? 1 : trainer.isGymLeader ? GYM_XP_MULTIPLIER : TRAINER_XP_MULTIPLIER;
+    const xp = Math.round(
+      xpRewardForLevel(foeLevel, memberBefore.level) * xpMultiplier * (1 + friendshipXpBonus(friendshipOf(memberBefore)))
+    );
     bankedRef.current.xp += xp;
     const oldStats = partyMemberStats(memberBefore);
     const xpResult = grantExperience(uid, xp);

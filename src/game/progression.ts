@@ -19,15 +19,29 @@ export function effectiveStats(base: StatBlock, level: number): StatBlock {
   };
 }
 
-/** XP required to advance from `level` to `level + 1`. A modest linear curve —
- * no cubic from-level-1 curve, since starters begin at level 5, not 1. */
+/**
+ * XP required to advance from `level` to `level + 1`. It grows with the square of the level,
+ * while what a foe is worth grows only in a straight line — so each level takes more fights
+ * than the last: about three wild fights a level at the start, five around level 30, seven by 50.
+ * (It used to be linear on both sides, which made every fight worth the same share of a level
+ * forever, and a trainer's creature worth one or two whole levels late in the game.)
+ */
 export function xpToNextLevel(level: number): number {
-  return 20 + level * 12;
+  return Math.round(60 + 10 * level + 0.9 * level * level);
 }
 
-/** XP awarded for defeating (or catching) a creature at the given level. */
-export function xpRewardForLevel(level: number): number {
-  return Math.max(5, level * 8);
+/**
+ * XP for defeating a creature at `foeLevel`. When the winner's level is given, the reward is
+ * scaled by how the two compare: beating something far below you is worth little, beating
+ * something above you is worth more — so grinding weak creatures stops paying, and you can't
+ * outpace the road.
+ */
+export function xpRewardForLevel(foeLevel: number, winnerLevel?: number): number {
+  const base = Math.max(5, foeLevel * 8);
+  if (winnerLevel === undefined) return base;
+  // Capped, so a much stronger foe is worth more but never a windfall.
+  const scale = Math.min(1.4, Math.pow((2 * foeLevel + 10) / (foeLevel + winnerLevel + 10), 2.5));
+  return Math.max(1, Math.round(base * scale));
 }
 
 /** Currency awarded for defeating or catching a creature at the given level. */
