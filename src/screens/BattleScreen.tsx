@@ -20,6 +20,8 @@ import {
 } from "../game/party";
 import { xpRewardForLevel, currencyRewardForLevel } from "../game/progression";
 import { getMove, LAST_RESORT_MOVE_ID } from "../game/movesRepo";
+import { FESTA_GOLD_MULTIPLIER, isFestaZone } from "../game/festa";
+import { FRIENDSHIP_GAIN, friendshipOf, friendshipXpBonus } from "../game/friendship";
 import { ballItems, catchRateWithCharms, getItem, usableItems } from "../game/itemsRepo";
 import type { ItemData } from "../data/schemas";
 import { BattleStateMachine, type Winner, type ActionOutcome } from "../engine/battleManager";
@@ -150,6 +152,9 @@ export function BattleScreen({ navigation, route }: Props) {
   const currentZoneId = useGameStore((s) => s.currentZoneId);
   const inventory = useGameStore((s) => s.inventory);
   const recordBattleResult = useGameStore((s) => s.recordBattleResult);
+  const adjustFriendship = useGameStore((s) => s.adjustFriendship);
+  /** Party members who knocked out at least one foe this fight — they share the win. */
+  const fightersRef = useRef(new Set<string>());
   const updatePartyMemberHp = useGameStore((s) => s.updatePartyMemberHp);
   const consumeItem = useGameStore((s) => s.consumeItem);
   const catchCreature = useGameStore((s) => s.catchCreature);
@@ -188,7 +193,7 @@ export function BattleScreen({ navigation, route }: Props) {
   const activeMember = party.find((m) => m.uid === activeUidRef.current);
 
   const encounterTable = useMemo(
-    () => buildBiomeEncounterTable(biome, selectedLine, getZoneEncounterSettings(currentZoneId)),
+    () => buildBiomeEncounterTable(biome, selectedLine, { ...getZoneEncounterSettings(currentZoneId), festa: isFestaZone(currentZoneId) }),
     [biome, selectedLine, currentZoneId]
   );
   const trainer = route.params.trainerId ? getTrainer(route.params.trainerId) : undefined;
@@ -380,16 +385,19 @@ export function BattleScreen({ navigation, route }: Props) {
    */
   function awardDefeatedFoe(ctx: BattleContext, foeLevel: number): boolean {
     const multiplier = trainer?.rewardMultiplier ?? 1;
-    const xp = Math.round(xpRewardForLevel(foeLevel) * multiplier);
-    const money = Math.round(currencyRewardForLevel(foeLevel) * multiplier);
+    const festaBonus = trainer && isFestaZone(trainer.zoneId) ? FESTA_GOLD_MULTIPLIER : 1;
+    const money = Math.round(currencyRewardForLevel(foeLevel) * multiplier * festaBonus);
     earnCurrency(money);
-    bankedRef.current.xp += xp;
     bankedRef.current.money += money;
 
     const uid = ctx.playerActive.id;
+    fightersRef.current.add(uid);
     // Read the store directly: an earlier foe in this same fight may already have changed it.
     const memberBefore = useGameStore.getState().party.find((m) => m.uid === uid);
     if (!memberBefore) return false;
+    // A creature close to you learns faster.
+    const xp = Math.round(xpRewardForLevel(foeLevel) * multiplier * (1 + friendshipXpBonus(friendshipOf(memberBefore))));
+    bankedRef.current.xp += xp;
     const oldStats = partyMemberStats(memberBefore);
     const xpResult = grantExperience(uid, xp);
     say([t("battle.gainedXp", { name: memberBefore.displayName, xp })], "result");
@@ -437,6 +445,7 @@ export function BattleScreen({ navigation, route }: Props) {
     else playJingle(trainer?.medalId ? "medal" : "victory", { then: "stop" });
     recordBattleResult(result === "player");
     if (result !== "player") return;
+    adjustFriendship([...fightersRef.current], FRIENDSHIP_GAIN.battleWon);
 
     // Every foe was paid for as it fell (awardDefeatedFoe); the card just sums it up.
     const { money, xp, leveledTo } = bankedRef.current;
@@ -527,6 +536,7 @@ export function BattleScreen({ navigation, route }: Props) {
 
     lines.push(...statChangeLines(outcome, playerActiveId));
 
+    if (outcome.endured) lines.push(t("battle.endured", { name: labelForCreature(outcome.target, playerActiveId) }));
     if (outcome.target.currentHp <= 0) lines.push(t("battle.fainted", { name: labelForCreature(outcome.target, playerActiveId) }));
     return lines;
   }
@@ -705,6 +715,7 @@ export function BattleScreen({ navigation, route }: Props) {
         return;
       }
 
+      if (finalSnapshot.playerHp <= 0) adjustFriendship([playerActiveId], FRIENDSHIP_GAIN.fainted);
       const reserves = party.filter((m) => m.uid !== playerActiveId && m.currentHp > 0);
       if (reserves.length > 0) {
         setForcedSwitchPending(true);

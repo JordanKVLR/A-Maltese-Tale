@@ -1,3 +1,4 @@
+import { endureChance, friendshipOf } from "./friendship";
 import type { Creature } from "../engine/types";
 import { NEUTRAL_STAT_STAGES } from "../engine/types";
 import type { StatBlock, TypeName } from "../data/schemas";
@@ -24,6 +25,8 @@ export interface PartyMember {
    * before PP existed, and any move added to a creature after it was caught). */
   movePp?: Record<string, number>;
   sourceCategory: PartySourceCategory;
+  /** 0–255; see friendship.ts. Missing on older saves and fresh catches, which use a default. */
+  friendship?: number;
 }
 
 /** Describes an evolution that just happened, for the UI to play a reveal animation. */
@@ -168,6 +171,7 @@ export function creatureFromPartyMember(member: PartyMember): Creature {
     status: "none",
     flinched: false,
     activeEffects: [],
+    endureChance: endureChance(friendshipOf(member)),
   };
 }
 

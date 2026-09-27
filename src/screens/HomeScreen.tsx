@@ -12,6 +12,7 @@ import { HoverTip } from "./components/HoverTip";
 import { useKeyboardShortcuts } from "./components/useKeyboardShortcuts";
 import { colors } from "./theme";
 import { completionProgress } from "../game/trainers";
+import { festaOn } from "../game/festa";
 import { useI18n } from "../i18n";
 
 type Props = NativeStackScreenProps<RootStackParamList, "Home">;
@@ -25,6 +26,7 @@ export function HomeScreen({ navigation }: Props) {
   // Beating every trainer and every gym leader is the win condition, so the count belongs
   // where the player checks their progress rather than only appearing once it is finished.
   const progress = completionProgress(defeatedTrainerIds);
+  const festa = festaOn();
   const currency = useGameStore((s) => s.currency);
 
   const leadMember = party[0];
@@ -62,6 +64,10 @@ export function HomeScreen({ navigation }: Props) {
           {progress.complete
             ? t("home.complete")
             : t("home.trainersBeaten", { done: progress.trainersDefeated, total: progress.trainersTotal })}
+        </Text>
+
+        <Text style={styles.festa} testID="festa-today">
+          {t("festa.today", { feast: t(`festa.name.${festa.feastId}`), zone: c.stage(festa.zoneId) })}
         </Text>
 
         {/* Medal track: four gyms across the run, shown filled as they are won. */}
@@ -195,6 +201,11 @@ const styles = StyleSheet.create({
   },
   badgeRow: {
     flexDirection: "row",
+  },
+  festa: {
+    color: "#b0356a",
+    fontSize: 13,
+    fontWeight: "700",
   },
   medalRow: {
     flexDirection: "row",

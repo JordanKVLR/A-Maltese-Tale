@@ -13,6 +13,7 @@ import {
 } from "./creatureFactory";
 import type { BiomeType } from "./mapData";
 import { spawnsIn } from "./spawning";
+import { FESTA_RARE_MULTIPLIER } from "./festa";
 
 const regionalVariants = RegionalVariantsFileSchema.parse(regionalVariantsData).regionalVariants;
 const wildCreatures = WildCreaturesFileSchema.parse(wildCreaturesData).wildCreatures;
@@ -100,6 +101,8 @@ export interface ZoneEncounterConfig {
   levelSpread?: number;
   /** Hard floor for the ultra-rare legendary encounter — see zones.ts. */
   legendaryMinLevel: number;
+  /** A festa is on here today: rare creatures come out more (see festa.ts). */
+  festa?: boolean;
 }
 
 /**
@@ -117,6 +120,7 @@ export function buildBiomeEncounterTable(
   config: ZoneEncounterConfig
 ): EncounterOption[] {
   const { baseLevel, levelSpread = 3 } = config;
+  const rare = config.festa ? FESTA_RARE_MULTIPLIER : 1;
   const table: EncounterOption[] = [];
 
   for (const wc of wildCreatures) {
@@ -139,7 +143,7 @@ export function buildBiomeEncounterTable(
   for (const rv of regionalVariants) {
     if (!spawnsIn(rv.biome, biome) || !availableAtLevel(rv, baseLevel)) continue;
     table.push({
-      weight: 1,
+      weight: 1 * rare,
       build: (id) =>
         buildParticipant(id, rv.id, rv.name, rv.types, rv.baseStats, randomWildLevel(baseLevel, levelSpread), rv.moveIds),
     });
@@ -149,7 +153,7 @@ export function buildBiomeEncounterTable(
     // Awakened legendaries are reached by evolving the one you caught, never found loose.
     if (EVOLVES_AT.has(legend.id)) continue;
     table.push({
-      weight: LEGENDARY_ENCOUNTER_WEIGHT,
+      weight: LEGENDARY_ENCOUNTER_WEIGHT * rare,
       build: (id) =>
         buildParticipant(
           id,

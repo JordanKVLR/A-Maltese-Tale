@@ -98,6 +98,9 @@ export interface Creature {
   cruxCharge?: number;
   /** The move a Crux Aura unleashes — its signature, or its strongest attack. */
   cruxMoveId?: string;
+  /** 0–1: the chance a blow that would knock it out leaves it on 1 HP instead. Comes from
+   * friendship — a creature that trusts you hangs on for you. */
+  endureChance?: number;
 }
 
 export type BattleAction =

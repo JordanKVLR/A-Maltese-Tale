@@ -21,6 +21,7 @@ import { STAGES, getStage } from "../game/zoneProgression";
 import { getQuest, questState, type QuestRecord, type QuestWorld } from "../game/quests";
 import { starterSignatureFor } from "../game/creatureFactory";
 import type { Treasure } from "../game/mapFeatures";
+import { FRIENDSHIP_GAIN, withFriendship } from "../game/friendship";
 
 
 const SAVE_KEY = "melita-save";
@@ -150,7 +151,13 @@ interface GameState {
   catchesByType: Record<string, number>;
   /** Glints already picked up: quest objects and treasure. */
   foundIds: string[];
+  /** The last day ("YYYY-MM-DD") the festa gift was collected. */
+  festaGiftDay: string | null;
+  /** Collects today's festa gift; false if it was already collected today. */
+  claimFestaGift: (day: string, itemId: string, quantity: number) => boolean;
   acceptQuest: (questId: string) => void;
+  /** Nudges friendship up or down for the given party members. */
+  adjustFriendship: (uids: readonly string[], delta: number) => void;
   /** Picks up a glint. Treasure goes straight into the bag or purse. */
   collectFind: (findId: string, treasure?: Treasure) => void;
   /** Hands a finished quest in: marks it done and pays out. Returns false if it isn't ready. */
@@ -201,6 +208,15 @@ export const useGameStore = create<GameState>()(
     quests: {},
     catchesByType: {},
     foundIds: [],
+    festaGiftDay: null,
+    claimFestaGift: (day, itemId, quantity) => {
+      const state = get();
+      if (state.festaGiftDay === day) return false;
+      set({ festaGiftDay: day, inventory: { ...state.inventory, [itemId]: (state.inventory[itemId] ?? 0) + quantity } });
+      return true;
+    },
+    adjustFriendship: (uids, delta) =>
+      set((state) => ({ party: state.party.map((m) => (uids.includes(m.uid) ? withFriendship(m, delta) : m)) })),
     acceptQuest: (questId) =>
       set((state) =>
         state.quests[questId]
@@ -325,9 +341,11 @@ export const useGameStore = create<GameState>()(
       const member = get().party.find((m) => m.uid === uid);
       if (!member) return null;
       const result = addExperience(member, xp);
+      const grown = result.leveledUp ? withFriendship(result.member, FRIENDSHIP_GAIN.levelUp * result.levelsGained) : result.member;
       set((state) => ({
-        party: state.party.map((m) => (m.uid === uid ? result.member : m)),
+        party: state.party.map((m) => (m.uid === uid ? grown : m)),
       }));
+      result.member = grown;
       return result;
     },
 
@@ -357,7 +375,7 @@ export const useGameStore = create<GameState>()(
         const newHp = Math.min(maxHp, member.currentHp + item.healAmount);
         const healedAmount = newHp - member.currentHp;
         set({
-          party: party.map((m) => (m.uid === uid ? { ...m, currentHp: newHp } : m)),
+          party: party.map((m) => (m.uid === uid ? withFriendship({ ...m, currentHp: newHp }, FRIENDSHIP_GAIN.cared) : m)),
           inventory: { ...inventory, [itemId]: qty - 1 },
         });
         return { applied: true, effect: "heal", healedAmount };
@@ -366,7 +384,7 @@ export const useGameStore = create<GameState>()(
       if (item.effect === "level_up") {
         const { member: leveled, evolution, moveLearning } = applyLevelUp(member);
         set({
-          party: party.map((m) => (m.uid === uid ? leveled : m)),
+          party: party.map((m) => (m.uid === uid ? withFriendship(leveled, FRIENDSHIP_GAIN.cared) : m)),
           inventory: { ...inventory, [itemId]: qty - 1 },
         });
         return { applied: true, effect: "level_up", member: leveled, evolution, moveLearning };
@@ -412,7 +430,7 @@ export const useGameStore = create<GameState>()(
         const needsPp = m.moveIds.some((id) => remainingPp(m, id) < getMove(id).pp);
         if (!needsHp && !needsPp) return m;
         restoredCount += 1;
-        return { ...m, currentHp: maxHp, movePp: fullPpFor(m.moveIds) };
+        return withFriendship({ ...m, currentHp: maxHp, movePp: fullPpFor(m.moveIds) }, FRIENDSHIP_GAIN.rested);
       });
       if (restoredCount > 0) set({ party: healed });
       return restoredCount;
@@ -446,6 +464,7 @@ export const useGameStore = create<GameState>()(
         quests: {},
         catchesByType: {},
         foundIds: [],
+        festaGiftDay: null,
         tutorialsSeen: [],
         visitedStageIds: [],
         playerName: DEFAULT_PLAYER_NAME,
@@ -473,6 +492,7 @@ export const useGameStore = create<GameState>()(
         quests: state.quests,
         catchesByType: state.catchesByType,
         foundIds: state.foundIds,
+        festaGiftDay: state.festaGiftDay,
         visitedStageIds: state.visitedStageIds,
         playerName: state.playerName,
         selectedLine: state.selectedLine,

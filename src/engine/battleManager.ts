@@ -102,6 +102,8 @@ export interface ActionOutcome {
   signature?: SignatureEffect;
   /** Set when an active Crux Aura unleashed this move. */
   unleashed?: boolean;
+  /** The target should have gone down, but hung on at 1 HP out of friendship. */
+  endured?: boolean;
 }
 
 const STAT_DISPLAY_NAMES: Record<keyof StatStages, string> = {
@@ -196,7 +198,10 @@ export function resolveAction(
       randomFactor: 0.85 + randomSource() * 0.15,
       ...signatureDamageOptions(actor, move),
     });
-    target.currentHp = Math.max(0, target.currentHp - dmg);
+    // Friendship: a creature on more than 1 HP may refuse to go down.
+    const endured =
+      dmg >= target.currentHp && target.currentHp > 1 && (target.endureChance ?? 0) > 0 && randomSource() < target.endureChance!;
+    target.currentHp = endured ? 1 : Math.max(0, target.currentHp - dmg);
     chargeFromHit(actor, target, dmg, getTypeMultiplier(move.type, target.types));
     if (move.statusEffect && move.statusEffect !== "none" && target.status === "none") {
       target.status = move.statusEffect;
@@ -204,7 +209,7 @@ export function resolveAction(
     // Secondary effects (a heavy hitter's self-debuff, a chance to drop the target's guard)
     // resolve after damage, and only if the target is still standing for target-side ones.
     const statChanges = applyStatChanges(move, actor, target, randomSource);
-    return { action, actor, target, hit: true, damage: dmg, crit: isCrit, statChanges, signature: move.signature, unleashed };
+    return { action, actor, target, hit: true, damage: dmg, crit: isCrit, statChanges, signature: move.signature, unleashed, endured: endured || undefined };
   }
 
   // switch / item / flee: same pattern (mutate ctx accordingly) — omitted, no battle-engine

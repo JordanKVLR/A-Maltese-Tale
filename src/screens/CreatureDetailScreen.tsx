@@ -19,6 +19,7 @@ import { useItemFlow } from "./components/useItemFlow";
 import { Creature3D } from "./components/Creature3D";
 import { useSettings } from "../state/settingsStore";
 import { supports3D } from "../three/support";
+import { friendshipHearts, friendshipOf, friendshipTier } from "../game/friendship";
 import { useI18n } from "../i18n";
 import { colors } from "./theme";
 
@@ -204,6 +205,20 @@ export function CreatureDetailScreen({ route, navigation }: Props) {
           </View>
         )}
 
+        {partyMember && (() => {
+          const friendship = friendshipOf(partyMember);
+          const tier = friendshipTier(friendship);
+          const hearts = friendshipHearts(friendship);
+          return (
+            <View style={styles.section} testID="friendship-section">
+              <Text style={styles.sectionTitle}>{t("detail.friendship")}</Text>
+              <Text style={styles.hearts}>{"♥".repeat(hearts)}<Text style={styles.heartsEmpty}>{"♥".repeat(5 - hearts)}</Text></Text>
+              <Text style={styles.flavorText}>{t(`friendship.${tier}`, { name: partyMember.displayName })}</Text>
+              <Text style={styles.xpText}>{t(tier === "close" || tier === "devoted" ? `friendship.perk.${tier}` : "friendship.perk.none")}</Text>
+            </View>
+          );
+        })()}
+
         {flavor && (
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>{dexEntry?.category === "legendary" ? t("detail.aesthetic") : t("detail.flavor")}</Text>
@@ -313,6 +328,14 @@ export function CreatureDetailScreen({ route, navigation }: Props) {
 }
 
 const styles = StyleSheet.create({
+  hearts: {
+    color: "#e0527a",
+    fontSize: 22,
+    letterSpacing: 3,
+  },
+  heartsEmpty: {
+    color: "#e5d3da",
+  },
   container: {
     paddingHorizontal: 20,
     paddingTop: 56,

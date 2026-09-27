@@ -26,14 +26,16 @@ export function Map3D({
   lead,
   trainers,
   features,
+  festa,
 }: {
   map: TileMap;
   player: Animated.ValueXY;
   follower: Animated.ValueXY;
   facing: Facing;
-  lead: { speciesId: string; types: TypeName[] } | null;
+  lead: { speciesId: string; types: TypeName[]; happy?: boolean } | null;
   trainers: MapTrainer[];
   features: MapFeatureView;
+  festa?: boolean;
 }) {
   const reducedMotion = useSettings((s) => s.reducedMotion);
   const api = useRef<MapSceneApi | null>(null);
@@ -44,6 +46,7 @@ export function Map3D({
   useEffect(() => {
     api.current?.setFollower(lead ? designFor(lead.speciesId, lead.types, typeColor) : null);
   }, [lead?.speciesId]);
+  useEffect(() => api.current?.setFollowerHappy(!!lead?.happy), [lead?.happy]);
   const trainerKey = trainers.map((t) => `${t.id}:${t.defeated}`).join(",");
   useEffect(() => api.current?.setTrainers(trainers), [trainerKey]);
   const featureKey = JSON.stringify(features);
@@ -58,8 +61,10 @@ export function Map3D({
         const { facing: f, lead: l, trainers: t } = latest.current;
         scene.setFacing(f);
         scene.setFollower(l ? designFor(l.speciesId, l.types, typeColor) : null);
+        scene.setFollowerHappy(!!l?.happy);
         scene.setTrainers(t);
         scene.setFeatures(latest.current.features);
+        scene.setFesta(!!festa);
         api.current = scene;
         return scene;
       }}

@@ -44,6 +44,10 @@ export interface MapSceneApi {
   setFollower: (design: CreatureDesign | null) => void;
   setTrainers: (trainers: MapTrainer[]) => void;
   setFeatures: (features: MapFeatureView) => void;
+  /** Fireworks over the map on a festa day. */
+  setFesta: (on: boolean) => void;
+  /** A creature close to you shows a heart now and then as it follows. */
+  setFollowerHappy: (happy: boolean) => void;
 }
 
 // ─── Palette ─────────────────────────────────────────────────────────────────────────────────
@@ -630,6 +634,74 @@ export function createMapScene(map: TileMap, player: MapActor, follower: MapActo
     }
   }
 
+  // A heart that pops over a happy follower every few seconds.
+  const heartShape = new THREE.Shape();
+  heartShape.moveTo(0, -0.08);
+  heartShape.bezierCurveTo(-0.02, -0.05, -0.1, -0.01, -0.1, 0.04);
+  heartShape.bezierCurveTo(-0.1, 0.09, -0.04, 0.11, 0, 0.06);
+  heartShape.bezierCurveTo(0.04, 0.11, 0.1, 0.09, 0.1, 0.04);
+  heartShape.bezierCurveTo(0.1, -0.01, 0.02, -0.05, 0, -0.08);
+  const heart = new THREE.Mesh(
+    new THREE.ShapeGeometry(heartShape),
+    new THREE.MeshBasicMaterial({ color: "#ff5a8a", transparent: true, opacity: 0, side: THREE.DoubleSide, depthWrite: false })
+  );
+  heart.visible = false;
+  scene.add(heart);
+  let followerHappy = false;
+
+  // Festa fireworks: bursts of glowing sparks high over the map, each fading as it falls.
+  const FIREWORK_COLOURS = ["#ff2d4a", "#ffb000", "#1f8fff", "#22c55e", "#e11dff", "#ff6a00"];
+  const SPARKS = 48;
+  const bursts: { points: THREE.Points; velocities: Float32Array; age: number; life: number }[] = [];
+  let festaOn = false;
+  let nextBurst = 0;
+  // A soft round spark, so points read as embers rather than squares.
+  let sparkTexture: THREE.Texture | null = null;
+  if (typeof document !== "undefined") {
+    const canvas = document.createElement("canvas");
+    canvas.width = canvas.height = 32;
+    const g = canvas.getContext("2d");
+    if (g) {
+      const gradient = g.createRadialGradient(16, 16, 0, 16, 16, 16);
+      gradient.addColorStop(0, "rgba(255,255,255,1)");
+      gradient.addColorStop(0.35, "rgba(255,255,255,0.9)");
+      gradient.addColorStop(1, "rgba(255,255,255,0)");
+      g.fillStyle = gradient;
+      g.fillRect(0, 0, 32, 32);
+      sparkTexture = new THREE.CanvasTexture(canvas);
+    }
+  }
+  function launchBurst(around: { x: number; y: number }) {
+    const geometry = new THREE.BufferGeometry();
+    const positions = new Float32Array(SPARKS * 3);
+    const velocities = new Float32Array(SPARKS * 3);
+    const cx = around.x + (Math.random() - 0.5) * 8;
+    // Low and far enough ahead to burst inside the camera's view, above the tree line.
+    const cz = around.y - 5 - Math.random() * 4;
+    const cy = 1.3 + Math.random() * 0.6;
+    for (let i = 0; i < SPARKS; i++) {
+      positions.set([cx, cy, cz], i * 3);
+      const theta = Math.random() * Math.PI * 2;
+      const phi = Math.acos(2 * Math.random() - 1);
+      const speed = 1.1 + Math.random() * 0.4;
+      velocities.set([Math.sin(phi) * Math.cos(theta) * speed, Math.cos(phi) * speed, Math.sin(phi) * Math.sin(theta) * speed], i * 3);
+    }
+    geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+    const material = new THREE.PointsMaterial({
+      color: FIREWORK_COLOURS[Math.floor(Math.random() * FIREWORK_COLOURS.length)],
+      size: 0.34,
+      map: sparkTexture ?? undefined,
+      alphaTest: 0.02,
+      transparent: true,
+      opacity: 1,
+      depthWrite: false,
+      fog: false,
+    });
+    const points = new THREE.Points(geometry, material);
+    scene.add(points);
+    bursts.push({ points, velocities, age: 0, life: 1.6 });
+  }
+
   function setFollower(design: CreatureDesign | null) {
     if (followerModel) {
       followerHolder.remove(followerModel.group);
@@ -675,6 +747,47 @@ export function createMapScene(map: TileMap, player: MapActor, follower: MapActo
         if (part.userData.spin) part.rotation.y += dt * 6;
         else if (part.userData.flap) part.rotation.z = Math.sin(time * 9) * 0.35 * part.userData.flap;
         else part.rotation.z = Math.sin(time * 1.8 + part.id) * 0.12;
+      }
+    }
+
+    if (followerModel && followerHappy) {
+      const cycle = (time % 6) / 6; // a beat of every six seconds
+      const pop = cycle < 0.22 ? cycle / 0.22 : 0;
+      heart.visible = pop > 0;
+      if (heart.visible) {
+        heart.position.set(followerHolder.position.x, followerHolder.position.y + 0.75 + pop * 0.25, followerHolder.position.z);
+        heart.scale.setScalar(0.8 + Math.sin(pop * Math.PI) * 0.6);
+        (heart.material as THREE.MeshBasicMaterial).opacity = Math.sin(pop * Math.PI);
+        heart.lookAt(camera.position);
+      }
+    } else heart.visible = false;
+
+    if (festaOn && !options.reducedMotion && time > nextBurst) {
+      launchBurst(p);
+      nextBurst = time + 0.7 + Math.random() * 1.1;
+    }
+    for (let i = bursts.length - 1; i >= 0; i--) {
+      const b = bursts[i];
+      b.age += dt;
+      const position = b.points.geometry.attributes.position as THREE.BufferAttribute;
+      for (let s = 0; s < SPARKS; s++) {
+        b.velocities[s * 3 + 1] -= dt * 1.2; // they fall as they fade
+        position.setXYZ(
+          s,
+          position.getX(s) + b.velocities[s * 3] * dt,
+          position.getY(s) + b.velocities[s * 3 + 1] * dt,
+          position.getZ(s) + b.velocities[s * 3 + 2] * dt
+        );
+        b.velocities[s * 3] *= 0.97;
+        b.velocities[s * 3 + 2] *= 0.97;
+      }
+      position.needsUpdate = true;
+      (b.points.material as THREE.PointsMaterial).opacity = Math.max(0, 1 - b.age / b.life);
+      if (b.age >= b.life) {
+        scene.remove(b.points);
+        b.points.geometry.dispose();
+        (b.points.material as THREE.Material).dispose();
+        bursts.splice(i, 1);
       }
     }
 
@@ -776,5 +889,11 @@ export function createMapScene(map: TileMap, player: MapActor, follower: MapActo
     setFollower,
     setTrainers,
     setFeatures,
+    setFesta: (on) => {
+      festaOn = on;
+    },
+    setFollowerHappy: (happy) => {
+      followerHappy = happy;
+    },
   };
 }

@@ -17,6 +17,9 @@ import { featuresForZone, npcAt, glintAt, portalInto, type MapGlint, type MapNpc
 import { findIsVisible, getQuest, questForFind, questProgress, questState } from "../game/quests";
 import { findName, questGiver, questLine, questTitle, stepLabel } from "../game/questText";
 import { questWorldOf } from "../state/gameStore";
+import { friendshipOf, friendshipTier } from "../game/friendship";
+import { FESTA_GIFT, festaOn } from "../game/festa";
+import { Fireworks2D } from "./components/Fireworks2D";
 import { MoveLearnModal, type MoveLearnPrompt } from "./components/MoveLearnModal";
 import { trainerAt, trainersForZone } from "../game/trainers";
 import { medalRequiredToEnter, getStage, STAGES } from "../game/zoneProgression";
@@ -125,6 +128,10 @@ export function MapScreen({ navigation, route }: Props) {
   const features = featuresForZone(map.zoneId);
   const hasCharm = (inventory.il_ghajn_charm ?? 0) > 0;
   const [learnPrompt, setLearnPrompt] = useState<MoveLearnPrompt | null>(null);
+  const [festa] = useState(() => festaOn());
+  const festaHere = festa.zoneId === map.zoneId && !getStage(map.zoneId)?.bonus;
+  /** The festa greeting waits for any stage briefing to be read first. */
+  const festaPending = useRef<BriefingPage | null>(null);
 
   const mapCols = map.rows[0].length;
   const mapRows = map.rows.length;
@@ -167,6 +174,20 @@ export function MapScreen({ navigation, route }: Props) {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const drawerAnim = useRef(new Animated.Value(0)).current;
   const leadCreature = party.find((m) => m.currentHp > 0) ?? party[0];
+  const leadHappy = !!leadCreature && ["close", "devoted"].includes(friendshipTier(friendshipOf(leadCreature)));
+  const heartPop = useRef(new Animated.Value(0)).current;
+  useEffect(() => {
+    if (!leadHappy || reducedMotion) return;
+    const loop = Animated.loop(
+      Animated.sequence([
+        Animated.timing(heartPop, { toValue: 1, duration: 700, useNativeDriver: false }),
+        Animated.timing(heartPop, { toValue: 0, duration: 500, useNativeDriver: false }),
+        Animated.delay(4800),
+      ])
+    );
+    loop.start();
+    return () => loop.stop();
+  }, [leadHappy, reducedMotion, heartPop]);
   const trainers = trainersForZone(map.zoneId);
   const graphics = useSettings((s) => s.graphics);
   const use3D = Platform.OS === "web" && graphics === "3d" && supports3D();
@@ -202,7 +223,28 @@ export function MapScreen({ navigation, route }: Props) {
   function finishBriefing() {
     markStageVisited(map.zoneId);
     setBriefing([]);
+    if (festaPending.current) {
+      setNotice(festaPending.current);
+      festaPending.current = null;
+    }
   }
+
+  // The first visit of the day to the festa: a greeting and a gift.
+  useEffect(() => {
+    if (!festaHere) return;
+    if (!useGameStore.getState().claimFestaGift(festa.day, FESTA_GIFT.itemId, FESTA_GIFT.quantity)) return;
+    const feast = t(`festa.name.${festa.feastId}`);
+    const page: BriefingPage = {
+      id: "festa",
+      kicker: t("festa.kicker"),
+      title: feast,
+      lines: [t("festa.line1", { feast }), t("festa.line2"), t("festa.gift", { quantity: FESTA_GIFT.quantity, item: c.item(FESTA_GIFT.itemId) })],
+    };
+    if (briefing.length > 0) festaPending.current = page;
+    else setNotice(page);
+    // Only on arrival.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   function toggleDrawer(open: boolean) {
     setDrawerOpen(open);
@@ -495,7 +537,7 @@ export function MapScreen({ navigation, route }: Props) {
           player={anim}
           follower={followerAnim}
           facing={facing}
-          lead={leadCreature && showFollower ? { speciesId: leadCreature.speciesId, types: leadCreature.types } : null}
+          lead={leadCreature && showFollower ? { speciesId: leadCreature.speciesId, types: leadCreature.types, happy: leadHappy } : null}
           trainers={trainers.map((trainer) => ({
             id: trainer.id,
             row: trainer.position.row,
@@ -503,6 +545,7 @@ export function MapScreen({ navigation, route }: Props) {
             isGymLeader: !!trainer.isGymLeader,
             defeated: defeatedTrainerIds.includes(trainer.id),
           }))}
+          festa={festaHere}
           features={{
             npcs: features.npcs.map((npc) => ({
               id: npc.questId,
@@ -591,6 +634,17 @@ export function MapScreen({ navigation, route }: Props) {
             ]}
           >
             <CreatureAvatar speciesId={leadCreature.speciesId} types={leadCreature.types} size={tile * 0.72} />
+            {leadHappy && (
+              <Animated.Text
+                testID="follower-heart"
+                style={[
+                  styles.heart,
+                  { opacity: heartPop, transform: [{ translateY: heartPop.interpolate({ inputRange: [0, 1], outputRange: [0, -tile * 0.35] }) }] },
+                ]}
+              >
+                ♥
+              </Animated.Text>
+            )}
           </Animated.View>
         )}
 
@@ -607,6 +661,7 @@ export function MapScreen({ navigation, route }: Props) {
       </Animated.View>
       )}
 
+      {festaHere && !use3D && !reducedMotion && <Fireworks2D />}
       <Animated.View testID="encounter-flash" pointerEvents="none" style={[styles.wash, { opacity: encounterFlash }]} />
       <Animated.View
         testID="heal-glow"
@@ -622,6 +677,7 @@ export function MapScreen({ navigation, route }: Props) {
             : t(stage?.gym ? "map.stageBadgeGym" : "map.stageBadge", { stage: stage?.stage ?? 1, total: TOTAL_STAGES })}
         </Text>
         <Text style={styles.badgeTitle}>{c.stage(map.zoneId)}</Text>
+        {festaHere && <Text style={styles.badgeFesta}>{t("festa.badge")}</Text>}
       </View>
 
       {toast && (
@@ -782,6 +838,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  heart: {
+    position: "absolute",
+    top: -6,
+    color: "#ff5a8a",
+    fontSize: 16,
+    fontWeight: "900",
+  },
   wash: {
     ...StyleSheet.absoluteFillObject,
     backgroundColor: "#ffffff",
@@ -808,6 +871,11 @@ const styles = StyleSheet.create({
     color: colors.textMuted,
     fontSize: 11,
     fontWeight: "700",
+  },
+  badgeFesta: {
+    color: "#b0356a",
+    fontSize: 12,
+    fontWeight: "800",
   },
   badgeTitle: {
     color: colors.text,
