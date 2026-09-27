@@ -102,35 +102,18 @@ export function partyMemberFromParticipant(
   participant: BattleParticipant,
   sourceCategory: PartySourceCategory
 ): PartyMember {
-  const level = participant.creature.level;
-  // Silently pre-evolve on creation — relevant for a caught wild "other starter line" encounter
-  // already above its evolution threshold; a starter itself always begins well below every
-  // line's first threshold, so this is a no-op there. No reveal animation plays here: the
-  // creature already *is* whatever stage its level warrants, there's nothing to "transform" from.
-  const resolved = resolveEvolutionChain(
-    participant.creature.speciesId,
-    participant.displayName,
-    participant.creature.types,
-    participant.baseStats,
-    level
-  );
-  // currentHp on the incoming participant may already be partial (a wild creature caught
-  // mid-battle, HP down from the fight) — a pre-evolution here must carry that damage forward
-  // proportionally (same partial-top-up rule as a normal level-up), not silently top it back up.
-  const oldMaxHp = effectiveStats(participant.baseStats, level).hp;
-  const newMaxHp = effectiveStats(resolved.baseStats, level).hp;
-  const currentHp = resolved.evolution
-    ? Math.min(newMaxHp, participant.creature.currentHp + (newMaxHp - oldMaxHp))
-    : participant.creature.currentHp;
+  // What you catch is what you keep. A creature caught above the level its line evolves at
+  // used to be evolved silently on the spot — you'd catch a Hilalux and find a Hilaluna in the
+  // Gaġġa. Now it stays as caught and evolves, with its reveal, at its next level-up.
   return {
     uid: participant.creature.id,
-    speciesId: resolved.speciesId,
-    displayName: resolved.displayName,
-    types: resolved.types,
-    level,
+    speciesId: participant.creature.speciesId,
+    displayName: participant.displayName,
+    types: participant.creature.types,
+    level: participant.creature.level,
     xp: 0,
-    baseStats: { ...resolved.baseStats },
-    currentHp,
+    baseStats: { ...participant.baseStats },
+    currentHp: participant.creature.currentHp,
     moveIds: participant.moveIds,
     movePp: fullPpFor(participant.moveIds),
     sourceCategory,

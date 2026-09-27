@@ -87,11 +87,8 @@ function getStarterLine(line: StarterLineName): StarterLine {
   return found;
 }
 
-/** Builds a battle-ready stage-1 starter at the given level. Levels above the stage's own
- * evolvesAtLevel are handled separately by party.ts, which silently pre-evolves a freshly-built
- * PartyMember to whatever stage its level actually warrants (relevant for a caught wild "other
- * starter line" encounter above the evolution threshold — a starter always begins at
- * STARTER_STARTING_LEVEL, well below every line's first threshold, so this never applies there). */
+/** Builds a battle-ready stage-1 starter at the given level. One met in the wild above its
+ * evolution threshold stays stage one when caught, and evolves at its next level-up (party.ts). */
 export function buildStarterParticipant(
   line: StarterLineName,
   level: number,

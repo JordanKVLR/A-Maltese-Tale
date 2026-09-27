@@ -1,3 +1,4 @@
+import { OwnedMark } from "./components/OwnedMark";
 import type { StringKey } from "../i18n/core";
 import { nextCollectorMedal, ownedCount } from "../game/collection";
 import { useMemo, useState } from "react";
@@ -125,7 +126,10 @@ export function CodexScreen({ navigation }: Props) {
                   <CreatureAvatar speciesId={entry.speciesId} types={entry.types} size={40} />
                 </View>
               )}
-              <Text style={styles.cellName}>{revealed ? entry.name : "???"}</Text>
+              <View style={styles.nameRow}>
+                {revealed && <OwnedMark owned={caught} testID={`dex-mark-${entry.speciesId}-${caught ? "owned" : "seen"}`} />}
+                <Text style={styles.cellName}>{revealed ? entry.name : "???"}</Text>
+              </View>
               {revealed ? (
                 <View style={styles.badgeRow}>
                   {entry.types.map((type) => (
@@ -151,6 +155,11 @@ export function CodexScreen({ navigation }: Props) {
 }
 
 const styles = StyleSheet.create({
+  nameRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 5,
+  },
   container: {
     paddingHorizontal: 20,
     paddingTop: 56,

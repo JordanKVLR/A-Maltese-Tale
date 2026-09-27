@@ -1,3 +1,4 @@
+import { OwnedMark } from "./OwnedMark";
 import { forwardRef, useImperativeHandle, useRef, useState } from "react";
 import { Animated, Platform, StyleSheet, Text, View } from "react-native";
 import type { TypeName } from "../../data/schemas";
@@ -56,6 +57,8 @@ interface CombatantProps {
   highlightCrux?: boolean;
   /** 0–100, drawn as a thin gold bar under the HP. */
   cruxCharge?: number;
+  /** Wild foes only: whether you already own this species (shown as a small trap mark). */
+  owned?: boolean;
   anim: ReturnType<typeof useCombatantAnimation>;
 }
 
@@ -223,7 +226,10 @@ export const BattleStage = forwardRef<BattleStageHandle, Props>(function BattleS
 
       <View style={[styles.infoBox, styles.enemyInfoBox, use3D && styles.infoBox3D]}>
         <View style={styles.infoHeader}>
-          <Text style={styles.infoName}>{enemy.name}</Text>
+          <View style={styles.nameWithMark}>
+            {enemy.owned !== undefined && <OwnedMark owned={enemy.owned} testID={enemy.owned ? "foe-owned" : "foe-new"} />}
+            <Text style={styles.infoName}>{enemy.name}</Text>
+          </View>
           <Text style={styles.infoLevel}>{t("common.level", { level: enemy.level })}</Text>
         </View>
         <View style={styles.badgeRow}>
@@ -362,6 +368,12 @@ export const BattleStage = forwardRef<BattleStageHandle, Props>(function BattleS
 });
 
 const styles = StyleSheet.create({
+  nameWithMark: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 5,
+    flexShrink: 1,
+  },
   // Over a 3D scene the plates slim down and let the world show through a little.
   infoBox3D: {
     width: "46%",

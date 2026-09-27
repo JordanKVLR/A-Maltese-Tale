@@ -190,29 +190,25 @@ describe("applyLevelUp evolution handling (Kinnie item, direct +1 level)", () =>
   });
 });
 
-describe("partyMemberFromParticipant silent pre-evolution", () => {
-  it("silently pre-evolves a stage-1 participant already above every threshold, with no visible transition data", () => {
+describe("partyMemberFromParticipant keeps the form you caught", () => {
+  it("does not evolve a creature caught above its evolution level", () => {
     const participant = buildParticipant("wild-1", "calfleaf", "Calfleaf", ["Grass"], CALFLEAF_STATS, 40, ["tackle"]);
     const member = partyMemberFromParticipant(participant, "wild");
-    expect(member.speciesId).toBe("mosstaur");
-    expect(member.types).toEqual(["Grass", "Ground"]);
-    expect(member.baseStats).toEqual(MOSSTAUR_STATS);
-  });
-
-  it("carries partial HP forward proportionally through a silent pre-evolution", () => {
-    const level = 40;
-    const oldMaxHp = effectiveStats(CALFLEAF_STATS, level).hp;
-    const newMaxHp = effectiveStats(MOSSTAUR_STATS, level).hp;
-    const participant = buildParticipant("wild-2", "calfleaf", "Calfleaf", ["Grass"], CALFLEAF_STATS, level, ["tackle"]);
-    participant.creature.currentHp = Math.floor(oldMaxHp / 2);
-    const damagedHp = participant.creature.currentHp;
-    const member = partyMemberFromParticipant(participant, "wild");
-    expect(member.currentHp).toBe(Math.min(newMaxHp, damagedHp + (newMaxHp - oldMaxHp)));
-  });
-
-  it("does not pre-evolve a stage-1 participant below every threshold", () => {
-    const participant = buildParticipant("starter-1", "calfleaf", "Calfleaf", ["Grass"], CALFLEAF_STATS, 5, ["tackle"]);
-    const member = partyMemberFromParticipant(participant, "starter");
     expect(member.speciesId).toBe("calfleaf");
+    expect(member.types).toEqual(["Grass"]);
+    expect(member.baseStats).toEqual(CALFLEAF_STATS);
+  });
+
+  it("keeps the HP it was caught with", () => {
+    const participant = buildParticipant("wild-2", "calfleaf", "Calfleaf", ["Grass"], CALFLEAF_STATS, 40, ["tackle"]);
+    participant.creature.currentHp = 7;
+    expect(partyMemberFromParticipant(participant, "wild").currentHp).toBe(7);
+  });
+
+  it("evolves, with a reveal, at its next level-up instead", () => {
+    const participant = buildParticipant("wild-3", "calfleaf", "Calfleaf", ["Grass"], CALFLEAF_STATS, 40, ["tackle"]);
+    const { member, evolution } = applyLevelUp(partyMemberFromParticipant(participant, "wild"));
+    expect(member.speciesId).toBe("mosstaur");
+    expect(evolution).not.toBeNull();
   });
 });

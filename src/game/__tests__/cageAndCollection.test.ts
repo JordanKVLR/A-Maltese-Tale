@@ -43,6 +43,16 @@ describe("the Gaġġa", () => {
   });
 });
 
+describe("releasing from the Gaġġa", () => {
+  it("lets the creature go but keeps its species owned", () => {
+    useGameStore.setState({ party: [creature("a")], cage: [creature("x")], caughtSpeciesIds: ["calfleaf"] });
+    expect(useGameStore.getState().releaseFromCage("x")).toBe(true);
+    expect(useGameStore.getState().cage).toEqual([]);
+    expect(useGameStore.getState().caughtSpeciesIds).toContain("calfleaf");
+    expect(useGameStore.getState().releaseFromCage("x")).toBe(false);
+  });
+});
+
 describe("collector medals", () => {
   it("run 25, 50, 75, 100, then every creature", () => {
     expect(COLLECTOR_MEDALS.map((m) => m.count)).toEqual([25, 50, 75, 100, TOTAL_SPECIES]);

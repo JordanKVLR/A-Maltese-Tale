@@ -155,6 +155,8 @@ export function BattleScreen({ navigation, route }: Props) {
   const inventory = useGameStore((s) => s.inventory);
   const recordBattleResult = useGameStore((s) => s.recordBattleResult);
   const adjustFriendship = useGameStore((s) => s.adjustFriendship);
+  /** Read once, as the fight opens: the mark says whether this would be a new catch. */
+  const [ownedSpecies] = useState(() => useGameStore.getState().caughtSpeciesIds);
   /** Party members who knocked out at least one foe this fight — they share the win. */
   const fightersRef = useRef(new Set<string>());
   const updatePartyMemberHp = useGameStore((s) => s.updatePartyMemberHp);
@@ -1002,6 +1004,7 @@ export function BattleScreen({ navigation, route }: Props) {
           maxHp: snapshot.enemyMaxHp,
           // Only a trainer's creature will use its meter, so only theirs is worth watching.
           cruxCharge: isTrainerBattle ? snapshot.enemyCruxCharge : undefined,
+          owned: isTrainerBattle ? undefined : ownedSpecies.includes(enemy.creature.speciesId),
           highlightCrux: snapshot.enemyCruxActive,
           anim: enemyAnim,
         }}

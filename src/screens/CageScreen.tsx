@@ -30,6 +30,9 @@ export function CageScreen({ navigation }: Props) {
   const depositCreature = useGameStore((s) => s.depositCreature);
   const withdrawCreature = useGameStore((s) => s.withdrawCreature);
   const swapWithCage = useGameStore((s) => s.swapWithCage);
+  const releaseFromCage = useGameStore((s) => s.releaseFromCage);
+  /** A Gaġġa creature the player has asked to release, waiting for the second tap. */
+  const [releasing, setReleasing] = useState<string | null>(null);
   /** A Gaġġa creature waiting for the party member it will replace. */
   const [swapping, setSwapping] = useState<PartyMember | null>(null);
   const [feedback, setFeedback] = useState<string | null>(null);
@@ -67,8 +70,20 @@ export function CageScreen({ navigation }: Props) {
     setSwapping(null);
   }
 
-  const row = (member: PartyMember, action: { label: string; testID: string; onPress: () => void; highlight?: boolean }) => (
-    <View key={member.uid} testID={`cage-row-${member.uid}`} style={[styles.card, action.highlight && styles.cardHighlight]}>
+  function release(member: PartyMember) {
+    releaseFromCage(member.uid);
+    ui.close();
+    setReleasing(null);
+    setFeedback(t("cage.released", { name: member.displayName }));
+  }
+
+  const row = (
+    member: PartyMember,
+    action: { label: string; testID: string; onPress: () => void; highlight?: boolean },
+    canRelease = false
+  ) => (
+    <View key={member.uid} testID={`cage-row-${member.uid}`} style={[styles.cardWrap, action.highlight && styles.cardHighlight]}>
+    <View style={styles.card}>
       <CreatureAvatar speciesId={member.speciesId} types={member.types} size={48} faded={member.currentHp <= 0} />
       <View style={styles.info}>
         <Text style={styles.name}>
@@ -88,6 +103,30 @@ export function CageScreen({ navigation }: Props) {
       >
         <Text style={styles.actionText}>{action.label}</Text>
       </Pressable>
+    </View>
+    {canRelease &&
+      (releasing === member.uid ? (
+        <View style={styles.releaseRow}>
+          <Text style={styles.releaseQuestion}>{t("cage.releaseConfirm", { name: member.displayName })}</Text>
+          <Pressable testID={`cage-release-yes-${member.uid}`} onPress={() => release(member)} style={[styles.releaseButton, styles.releaseYes]}>
+            <Text style={styles.releaseYesText}>{t("cage.releaseYes")}</Text>
+          </Pressable>
+          <Pressable testID={`cage-release-no-${member.uid}`} onPress={() => setReleasing(null)} style={styles.releaseButton}>
+            <Text style={styles.releaseNoText}>{t("cage.cancel")}</Text>
+          </Pressable>
+        </View>
+      ) : (
+        <Pressable
+          testID={`cage-release-${member.uid}`}
+          onPress={() => {
+            ui.tap();
+            setReleasing(member.uid);
+          }}
+          style={styles.releaseLink}
+        >
+          <Text style={styles.releaseLinkText}>{t("cage.release")}</Text>
+        </Pressable>
+      ))}
     </View>
   );
 
@@ -112,7 +151,7 @@ export function CageScreen({ navigation }: Props) {
             testID: `cage-take-${member.uid}`,
             onPress: () => take(member),
             highlight: swapping?.uid === member.uid,
-          })
+          }, !swapping)
         )}
       </ScrollView>
 
@@ -164,15 +203,61 @@ const styles = StyleSheet.create({
     fontWeight: "800",
     marginTop: 6,
   },
-  card: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 12,
+  cardWrap: {
     backgroundColor: colors.surface,
     borderRadius: 14,
     borderWidth: 1,
     borderColor: colors.border,
     padding: 10,
+    gap: 6,
+  },
+  card: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 12,
+  },
+  releaseLink: {
+    alignSelf: "flex-end",
+    paddingHorizontal: 8,
+    paddingVertical: 2,
+  },
+  releaseLinkText: {
+    color: colors.danger,
+    fontSize: 12,
+    fontWeight: "700",
+  },
+  releaseRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+    flexWrap: "wrap",
+  },
+  releaseQuestion: {
+    flex: 1,
+    color: colors.text,
+    fontSize: 12,
+    fontWeight: "600",
+  },
+  releaseButton: {
+    paddingHorizontal: 12,
+    paddingVertical: 7,
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: colors.border,
+  },
+  releaseYes: {
+    backgroundColor: colors.danger,
+    borderColor: colors.danger,
+  },
+  releaseYesText: {
+    color: "#ffffff",
+    fontSize: 12,
+    fontWeight: "800",
+  },
+  releaseNoText: {
+    color: colors.text,
+    fontSize: 12,
+    fontWeight: "700",
   },
   cardHighlight: {
     borderColor: colors.accent,

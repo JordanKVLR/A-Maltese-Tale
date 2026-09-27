@@ -123,6 +123,8 @@ interface GameState {
   depositCreature: (uid: string) => boolean;
   /** Gaġġa → party, if there is room. */
   withdrawCreature: (uid: string) => boolean;
+  /** Lets a Gaġġa creature go for good. The Codex still remembers owning its species. */
+  releaseFromCage: (uid: string) => boolean;
   /** Trades a party member for a Gaġġa creature, the new one taking the same slot. */
   swapWithCage: (partyUid: string, cageUid: string) => boolean;
   consumeItem: (itemId: string) => boolean;
@@ -351,6 +353,12 @@ export const useGameStore = create<GameState>()(
       const member = cage.find((m) => m.uid === uid);
       if (!member || party.length >= MAX_PARTY_SIZE) return false;
       set({ party: [...party, member], cage: cage.filter((m) => m.uid !== uid) });
+      return true;
+    },
+    releaseFromCage: (uid) => {
+      const { cage } = get();
+      if (!cage.some((m) => m.uid === uid)) return false;
+      set({ cage: cage.filter((m) => m.uid !== uid) });
       return true;
     },
     swapWithCage: (partyUid, cageUid) => {
