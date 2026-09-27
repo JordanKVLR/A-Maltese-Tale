@@ -809,7 +809,10 @@ export function BattleScreen({ navigation, route }: Props) {
     say([t("battle.ran")], "info", { after: () => setOutcome("fled") });
   }
 
-  const applicableItems = usableItems().filter((item) => (inventory[item.id] ?? 0) > 0);
+  // Revives and treats are for between fights; in battle it's medicine and Kinnie.
+  const applicableItems = usableItems().filter(
+    (item) => (inventory[item.id] ?? 0) > 0 && (item.effect === "heal" || item.effect === "level_up")
+  );
 
   function handleUseItem(itemId: string) {
     if (awaitingAcknowledgement()) return;

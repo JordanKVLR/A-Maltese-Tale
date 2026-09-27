@@ -66,6 +66,25 @@
       "startingQuantity": 0
     },
     {
+      "id": "helwa_tat_tork",
+      "name": "Ħelwa tat-Tork",
+      "category": "medicine",
+      "description": "A dense slab of sesame halva. Brings a knocked-out creature back on its feet with half its HP, without a trip to the chapel.",
+      "effect": "revive",
+      "startingQuantity": 0,
+      "price": 600
+    },
+    {
+      "id": "imqaret",
+      "name": "Imqaret",
+      "category": "medicine",
+      "description": "Warm date-filled pastries from a festa stall. Sharing a few brings a creature much closer to you (+25 friendship).",
+      "effect": "treat",
+      "friendshipAmount": 25,
+      "startingQuantity": 0,
+      "price": 450
+    },
+    {
       "id": "silent_bell",
       "name": "Silent Bell",
       "category": "key_items",

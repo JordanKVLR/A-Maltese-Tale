@@ -75,6 +75,8 @@ export interface ExperienceGainResult {
 export type UseItemResult =
   | { applied: false }
   | { applied: true; effect: "heal"; healedAmount: number }
+  | { applied: true; effect: "revive"; healedAmount: number }
+  | { applied: true; effect: "treat"; friendship: number }
   | {
       applied: true;
       effect: "level_up";
@@ -174,6 +176,8 @@ interface GameState {
   /** Teaches a starter-line creature its signature move if it has a free slot. Returns the
    * member when a move has to be forgotten first, "learned" when it went in, or null. */
   teachSignature: () => { status: "learned"; uid: string } | { status: "full"; member: PartyMember; moveId: string } | null;
+  /** Adds a move into a free slot (the Move Tutor). False if all four slots are taken. */
+  learnMove: (uid: string, moveId: string) => boolean;
   /** One-time explanations the player has already been shown (e.g. "crux"). */
   tutorialsSeen: string[];
   markTutorial: (id: string) => void;
@@ -278,6 +282,18 @@ export const useGameStore = create<GameState>()(
         ),
       });
       return { status: "learned", uid: member.uid };
+    },
+    learnMove: (uid, moveId) => {
+      const member = get().party.find((m) => m.uid === uid);
+      if (!member || member.moveIds.length >= 4 || member.moveIds.includes(moveId)) return false;
+      set((state) => ({
+        party: state.party.map((m) =>
+          m.uid === uid
+            ? { ...m, moveIds: [...m.moveIds, moveId], movePp: { ...(m.movePp ?? fullPpFor(m.moveIds)), [moveId]: getMove(moveId).pp } }
+            : m
+        ),
+      }));
+      return true;
     },
     tutorialsSeen: [],
     markTutorial: (id) =>
@@ -427,6 +443,25 @@ export const useGameStore = create<GameState>()(
           inventory: { ...inventory, [itemId]: qty - 1 },
         });
         return { applied: true, effect: "heal", healedAmount };
+      }
+
+      if (item.effect === "revive") {
+        if (member.currentHp > 0) return { applied: false };
+        const newHp = Math.max(1, Math.floor(partyMemberStats(member).hp / 2));
+        set({
+          party: party.map((m) => (m.uid === uid ? withFriendship({ ...m, currentHp: newHp }, FRIENDSHIP_GAIN.cared) : m)),
+          inventory: { ...inventory, [itemId]: qty - 1 },
+        });
+        return { applied: true, effect: "revive", healedAmount: newHp };
+      }
+
+      if (item.effect === "treat") {
+        const fed = withFriendship(member, item.friendshipAmount ?? 20);
+        set({
+          party: party.map((m) => (m.uid === uid ? fed : m)),
+          inventory: { ...inventory, [itemId]: qty - 1 },
+        });
+        return { applied: true, effect: "treat", friendship: fed.friendship ?? 0 };
       }
 
       if (item.effect === "level_up") {

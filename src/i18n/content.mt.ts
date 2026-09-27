@@ -240,6 +240,14 @@ export const MT_ITEMS: Record<string, { name: string; description: string }> = {
     description:
       "Xarba lokali morra u ħelwa, jgħidu li tkabbar kreatura livell sħiħ f'ġarra waħda. Rari — qatt ma tinbiegħ, tinstab biss wara ġlieda fis-selvaġġ.",
   },
+  helwa_tat_tork: {
+    name: "Ħelwa tat-Tork",
+    description: "Biċċa ħelwa tat-Tork magħmula mill-ġulġlien. Tqajjem kreatura li waqgħet b'nofs l-HP tagħha, mingħajr ma jkollok tmur sal-kappella.",
+  },
+  imqaret: {
+    name: "Imqaret",
+    description: "Imqaret sħan mimlija bit-tamal minn stand tal-festa. Meta taqsamhom, il-kreatura tersaq ħafna eqreb lejk (+25 ħbiberija).",
+  },
   silent_bell: {
     name: "Qanpiena Siekta",
     description:

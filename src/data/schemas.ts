@@ -175,7 +175,9 @@ export const ItemDataSchema = z.object({
   description: z.string(),
   catchMultiplier: z.number().positive().optional(),
   /** What "Use Item" does with this item, in and out of battle. Absent = not directly usable. */
-  effect: z.enum(["heal", "level_up"]).optional(),
+  effect: z.enum(["heal", "level_up", "revive", "treat"]).optional(),
+  /** Friendship a "treat" item adds. */
+  friendshipAmount: z.number().int().positive().optional(),
   /** Flat HP restored by a "heal" item (medicine). */
   healAmount: z.number().int().positive().optional(),
   startingQuantity: z.number().int().nonnegative().default(0),

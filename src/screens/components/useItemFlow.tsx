@@ -1,3 +1,4 @@
+import { FRIENDSHIP_MAX, friendshipOf } from "../../game/friendship";
 import { useState, type ReactNode } from "react";
 import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { useGameStore } from "../../state/gameStore";
@@ -13,7 +14,7 @@ import { EvolutionModal, type EvolutionRevealData } from "./EvolutionModal";
 import { MoveLearnModal, type MoveLearnPrompt } from "./MoveLearnModal";
 import { MoveLearnedModal, type MoveLearnedNotice } from "./MoveLearnedModal";
 import { colors } from "../theme";
-import { battle as battleSfx } from "../../audio/sfx";
+import { battle as battleSfx, ui } from "../../audio/sfx";
 
 /**
  * Using a Bag item on a party member, from wherever the player happens to be: the Bag, the
@@ -46,7 +47,17 @@ export function useItemFlow() {
     const member = party.find((m) => m.uid === uid);
     if (!member) return null;
     if (item.effect === "heal" && member.currentHp >= partyMemberStats(member).hp) return t("items.fullHp");
+    if (item.effect === "heal" && member.currentHp <= 0) return t("items.needsRevive");
+    if (item.effect === "revive" && member.currentHp > 0) return t("items.notFainted");
+    if (item.effect === "treat" && friendshipOf(member) >= FRIENDSHIP_MAX) return t("items.fullFriendship");
     return null;
+  }
+
+  function itemEffectLabel(item: ItemData): string {
+    if (item.effect === "heal") return t("common.healPlus", { amount: item.healAmount ?? 0 });
+    if (item.effect === "revive") return t("items.reviveLabel");
+    if (item.effect === "treat") return t("items.treatLabel", { amount: item.friendshipAmount ?? 0 });
+    return t("common.levelPlus");
   }
 
   function apply(uid: string, itemId: string) {
@@ -60,6 +71,16 @@ export function useItemFlow() {
     setPickItemFor(null);
     if (!result.applied) return;
 
+    if (result.effect === "revive") {
+      battleSfx.heal();
+      setFeedback(t("items.revived", { name: member.displayName, amount: result.healedAmount }));
+      return;
+    }
+    if (result.effect === "treat") {
+      ui.coin();
+      setFeedback(t("items.treated", { name: member.displayName }));
+      return;
+    }
     if (result.effect === "heal") {
       battleSfx.heal();
       setFeedback(t("detail.healed", { name: member.displayName, item: itemName, amount: result.healedAmount }));
@@ -167,7 +188,7 @@ export function useItemFlow() {
                         </View>
                         <Text style={styles.rowMeta}>
                           {blocked ??
-                            (item.effect === "heal" ? t("common.healPlus", { amount: item.healAmount ?? 0 }) : t("common.levelPlus"))}
+                            itemEffectLabel(item)}
                         </Text>
                       </Pressable>
                     );
