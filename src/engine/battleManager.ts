@@ -1,5 +1,8 @@
-import type { BattleAction, BattleContext, Creature, Move, StatStages } from "./types";
+import type { BattleAction, BattleContext, Creature, Move, SignatureEffect, StatStages } from "./types";
 import { calculateDamage, BASE_CRIT_CHANCE } from "./damage";
+import { chargeFromHit, cruxReady, spendCrux } from "./cruxMeter";
+import { alwaysHits, isUnleashed, signatureDamageOptions } from "./signature";
+import { getTypeMultiplier } from "./typeChart";
 import { sortByPriority, effectivePriority, type OrderedAction } from "./priority";
 import { activateCruxAura, getCruxStatMultiplier, isImmuneToFlinchViaCrux } from "./cruxAura";
 import { tickStatusEffects } from "./statusEffects";
@@ -66,7 +69,7 @@ export function applyFlinch(target: Creature): void {
  * move on an unlucky boundary roll.
  */
 export function rollHit(actor: Creature, target: Creature, move: Move, randomSource: () => number): boolean {
-  if (move.accuracy >= 100) return true;
+  if (move.accuracy >= 100 || alwaysHits(actor, move)) return true;
   const accuracyMultiplier = stageMultiplier(actor.statStages.accuracy) / stageMultiplier(target.statStages.evasion);
   const hitChance = Math.min(1, Math.max(0, (move.accuracy / 100) * accuracyMultiplier));
   return randomSource() < hitChance;
@@ -95,6 +98,10 @@ export interface ActionOutcome {
   crit: boolean;
   /** Stat shifts this action caused, in the order they applied. */
   statChanges?: AppliedStatChange[];
+  /** Set when a signature move was used, so the scene can make it an occasion. */
+  signature?: SignatureEffect;
+  /** Set when an active Crux Aura unleashed this move. */
+  unleashed?: boolean;
 }
 
 const STAT_DISPLAY_NAMES: Record<keyof StatStages, string> = {
@@ -155,6 +162,9 @@ export function resolveAction(
   const actor = actorFor(ctx, action.actorId);
 
   if (action.kind === "invoke_crux") {
+    // Only a full meter can be released.
+    if (!cruxReady(actor)) return nonMoveOutcome(action, actor, false);
+    spendCrux(actor);
     activateCruxAura(actor);
     return nonMoveOutcome(action, actor, true);
   }
@@ -179,19 +189,22 @@ export function resolveAction(
 
     const cruxAuraMultiplier = getCruxStatMultiplier(actor, move.category === "special" ? "spatk" : "atk");
     const isCrit = randomSource() < BASE_CRIT_CHANCE;
+    const unleashed = isUnleashed(actor, move);
     const dmg = calculateDamage(actor, target, move, {
       cruxAuraMultiplier,
       isCrit,
       randomFactor: 0.85 + randomSource() * 0.15,
+      ...signatureDamageOptions(actor, move),
     });
     target.currentHp = Math.max(0, target.currentHp - dmg);
+    chargeFromHit(actor, target, dmg, getTypeMultiplier(move.type, target.types));
     if (move.statusEffect && move.statusEffect !== "none" && target.status === "none") {
       target.status = move.statusEffect;
     }
     // Secondary effects (a heavy hitter's self-debuff, a chance to drop the target's guard)
     // resolve after damage, and only if the target is still standing for target-side ones.
     const statChanges = applyStatChanges(move, actor, target, randomSource);
-    return { action, actor, target, hit: true, damage: dmg, crit: isCrit, statChanges };
+    return { action, actor, target, hit: true, damage: dmg, crit: isCrit, statChanges, signature: move.signature, unleashed };
   }
 
   // switch / item / flee: same pattern (mutate ctx accordingly) — omitted, no battle-engine

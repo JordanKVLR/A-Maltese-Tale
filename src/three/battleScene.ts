@@ -28,9 +28,9 @@ export interface BattleSceneApi {
   dispose: () => void;
   setCreature: (side: "player" | "enemy", design: CreatureDesign) => void;
   setAnimSource: (side: "player" | "enemy", sample: () => AnimSample) => void;
-  fireProjectile: (type: TypeName, direction: "toEnemy" | "toPlayer", durationMs: number) => void;
+  fireProjectile: (type: TypeName, direction: "toEnemy" | "toPlayer", durationMs: number, emphasis?: "signature" | "unleashed") => void;
   throwBall: (durationMs: number) => void;
-  cruxBurst: () => void;
+  cruxBurst: (side?: "player" | "enemy") => void;
   itemFlash: (tint: string) => void;
 }
 
@@ -429,17 +429,24 @@ export function createBattleScene(biome: Biome, options: { reducedMotion?: boole
     return slot.home.clone().add(new THREE.Vector3(0, height, 0));
   };
 
-  function fireProjectile(type: TypeName, direction: "toEnemy" | "toPlayer", durationMs: number) {
+  function fireProjectile(type: TypeName, direction: "toEnemy" | "toPlayer", durationMs: number, emphasis?: "signature" | "unleashed") {
     const color = TYPE_GLOW[type] ?? "#ffffff";
+    // A signature move is bigger and brighter; an unleashed one also rings gold and shakes the camera.
+    const size = emphasis === "unleashed" ? 1.1 : emphasis === "signature" ? 0.85 : 0.55;
+    if (emphasis) shake = emphasis === "unleashed" ? 1 : 0.5;
+    if (emphasis === "unleashed") {
+      const from = aimPoint(direction === "toEnemy" ? "player" : "enemy");
+      for (let i = 0; i < 24; i++) spark(from, "#ffd24a", { speed: 2, up: 0.6, life: 0.6, size: 0.22 });
+    }
     const from = aimPoint(direction === "toEnemy" ? "player" : "enemy");
     const to = aimPoint(direction === "toEnemy" ? "enemy" : "player");
     const core = new THREE.Sprite(new THREE.SpriteMaterial({ map: glow, color, blending: THREE.AdditiveBlending, depthWrite: false, transparent: true }));
-    core.scale.setScalar(0.55);
+    core.scale.setScalar(size);
     const inner = new THREE.Sprite(new THREE.SpriteMaterial({ map: glow, color: "#ffffff", blending: THREE.AdditiveBlending, depthWrite: false, transparent: true }));
     inner.scale.setScalar(0.5);
     core.add(inner);
     core.position.copy(from);
-    const light = new THREE.PointLight(color, 3, 4, 2);
+    const light = new THREE.PointLight(emphasis === "unleashed" ? "#ffd24a" : color, emphasis ? 6 : 3, emphasis ? 7 : 4, 2);
     core.add(light);
     scene.add(core);
     flights.push({
@@ -454,7 +461,13 @@ export function createBattleScene(biome: Biome, options: { reducedMotion?: boole
       trail: true,
       spin: false,
       onLand: () => {
-        for (let i = 0; i < 18; i++) spark(to, color, { speed: 2.2, life: 0.5, size: 0.2 });
+        const count = emphasis === "unleashed" ? 46 : emphasis ? 32 : 18;
+        for (let i = 0; i < count; i++) spark(to, i % 3 === 0 && emphasis === "unleashed" ? "#ffd24a" : color, { speed: emphasis ? 3.2 : 2.2, life: 0.6, size: emphasis ? 0.28 : 0.2 });
+        if (emphasis) {
+          flashLight.position.copy(to);
+          flashLight.color.set(emphasis === "unleashed" ? "#ffd66a" : color);
+          flash = emphasis === "unleashed" ? 1 : 0.6;
+        }
       },
     });
   }
@@ -495,22 +508,25 @@ export function createBattleScene(biome: Biome, options: { reducedMotion?: boole
 
   const rings: { mesh: THREE.Mesh; t: number }[] = [];
   let flash = 0;
+  /** Camera shake for the big moments — a signature landing, a Crux Aura igniting. */
+  let shake = 0;
   const flashLight = new THREE.PointLight("#ffd66a", 0, 6, 2);
   scene.add(flashLight);
 
-  function cruxBurst() {
+  function cruxBurst(side: "player" | "enemy" = "player") {
     const ring = new THREE.Mesh(
       new THREE.TorusGeometry(0.6, 0.05, 8, 48),
       new THREE.MeshBasicMaterial({ color: "#ffd24a", transparent: true, opacity: 0.9, blending: THREE.AdditiveBlending, depthWrite: false })
     );
     ring.rotation.x = Math.PI / 2;
-    ring.position.copy(slots.player.home).add(new THREE.Vector3(0, 0.1, 0));
+    ring.position.copy(slots[side].home).add(new THREE.Vector3(0, 0.1, 0));
     scene.add(ring);
     rings.push({ mesh: ring, t: 0 });
-    flashLight.position.copy(aimPoint("player"));
+    flashLight.position.copy(aimPoint(side));
     flashLight.color.set("#ffd66a");
     flash = 1;
-    for (let i = 0; i < 26; i++) spark(slots.player.home.clone().add(new THREE.Vector3(0, 0.2, 0)), "#ffd24a", { speed: 1.8, up: 0.8, life: 0.9, gravity: -0.4 });
+    shake = 0.6;
+    for (let i = 0; i < 26; i++) spark(slots[side].home.clone().add(new THREE.Vector3(0, 0.2, 0)), "#ffd24a", { speed: 1.8, up: 0.8, life: 0.9, gravity: -0.4 });
   }
 
   function itemFlash(tint: string) {
@@ -642,9 +658,15 @@ export function createBattleScene(biome: Biome, options: { reducedMotion?: boole
       position.needsUpdate = true;
     }
 
+    shake = Math.max(0, shake - dt * 2.2);
     if (!options.reducedMotion) {
-      // The camera breathes very slightly, like a hand-held shot.
-      camera.position.set(cameraHome.x + Math.sin(time * 0.35) * 0.08, cameraHome.y + Math.sin(time * 0.5) * 0.04, cameraHome.z);
+      // The camera breathes very slightly, like a hand-held shot — and jolts for the big moments.
+      const jolt = shake * 0.12;
+      camera.position.set(
+        cameraHome.x + Math.sin(time * 0.35) * 0.08 + (Math.random() - 0.5) * jolt,
+        cameraHome.y + Math.sin(time * 0.5) * 0.04 + (Math.random() - 0.5) * jolt,
+        cameraHome.z
+      );
       camera.lookAt(lookAt);
     }
   }

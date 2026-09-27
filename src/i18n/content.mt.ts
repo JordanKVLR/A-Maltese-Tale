@@ -31,6 +31,14 @@ export const MT_TYPES: Record<string, string> = {
 };
 
 export const MT_MOVES: Record<string, string> = {
+  megalith_charge: "Attakk tal-Megalitu",
+  oracle_flame: "Fjamma tal-Orakli",
+  hull_ram: "Daqqa tal-Buq",
+  cross_of_valour: "Salib tal-Qlubija",
+  solstice_beam: "Raġġ tas-Solstizju",
+  solstice_alignment: "Allinjament tas-Solstizju",
+  gregale_howl: "Għajta tal-Grigal",
+  sirocco_judgement: "Ġudizzju tax-Xlokk",
   tackle: "Daqqa",
   vine_lash: "Frosta tad-Dielja",
   ember: "Ġamra",

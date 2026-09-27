@@ -70,7 +70,18 @@ export interface Move {
   basePriority: number;
   statusEffect?: StatusCondition;
   statChanges?: StatChange[];
+  /** A signature move's one-of-a-kind rule. */
+  signature?: SignatureEffect;
 }
+
+/**
+ * What makes a signature move unlike any other:
+ * - `pierce`: smashes through the target's raised defences and evasion.
+ * - `foresight`: always connects (and signature moves with it strike first).
+ * - `valour`: hits harder the more hurt the user is — up to double at the brink.
+ * - `solstice`: can never be resisted; it lands at least neutral on anything it can touch.
+ */
+export type SignatureEffect = "pierce" | "foresight" | "valour" | "solstice";
 
 export interface Creature {
   id: string;
@@ -83,6 +94,10 @@ export interface Creature {
   status: StatusCondition;
   flinched: boolean;
   activeEffects: StatusEffect[];
+  /** 0–100. Fills as the creature trades blows; at 100 its Crux Aura can be invoked. */
+  cruxCharge?: number;
+  /** The move a Crux Aura unleashes — its signature, or its strongest attack. */
+  cruxMoveId?: string;
 }
 
 export type BattleAction =

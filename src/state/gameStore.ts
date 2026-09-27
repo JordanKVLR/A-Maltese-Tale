@@ -141,6 +141,9 @@ interface GameState {
   /** Swaps a known move for a newly learned one, giving the new move full PP. Passing a
    * forgotten move the member doesn't know is a no-op. */
   replacePartyMemberMove: (uid: string, forgetMoveId: string, learnMoveId: string) => void;
+  /** One-time explanations the player has already been shown (e.g. "crux"). */
+  tutorialsSeen: string[];
+  markTutorial: (id: string) => void;
   resetGame: () => void;
 }
 
@@ -165,6 +168,9 @@ export const useGameStore = create<GameState>()(
       ),
     hasMedal: (medalId) => get().medals.includes(medalId),
     defeatedTrainerIds: [],
+    tutorialsSeen: [],
+    markTutorial: (id) =>
+      set((state) => (state.tutorialsSeen.includes(id) ? state : { tutorialsSeen: [...state.tutorialsSeen, id] })),
     markTrainerDefeated: (trainerId) =>
       set((state) =>
         state.defeatedTrainerIds.includes(trainerId)
@@ -380,6 +386,7 @@ export const useGameStore = create<GameState>()(
       partialize: (state) => ({
         medals: state.medals,
         defeatedTrainerIds: state.defeatedTrainerIds,
+        tutorialsSeen: state.tutorialsSeen,
         visitedStageIds: state.visitedStageIds,
         playerName: state.playerName,
         selectedLine: state.selectedLine,

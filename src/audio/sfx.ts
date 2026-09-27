@@ -301,6 +301,13 @@ export const battle = guardAll({
     }
     trimmed(ATTACK_TRIM[type] ?? 1, () => ATTACKS[type](pan));
   },
+  /** A signature move: a brass chord under the attack; an unleashed one rings out with a gong. */
+  signature: (unleashed: boolean) => {
+    notes("brass", unleashed ? ["D4+A4+D5+F#5"] : ["E4+B4+E5"], 0, 0.6, unleashed ? 0.32 : 0.22, 0.5);
+    if (unleashed) {
+      [1, 2.4, 3.9].forEach((ratio, i) => tone({ freq: 110 * ratio, dur: 1.4 - i * 0.3, gain: 0.18 / (i + 1) }, 0.6));
+    }
+  },
   /** A move landing. Super effective cracks bright; resisted thuds dull; immune barely taps. */
   hit: (effect: "normal" | "super" | "weak" | "none", crit: boolean, onPlayer: boolean) => {
     const pan = onPlayer ? -0.35 : 0.35;

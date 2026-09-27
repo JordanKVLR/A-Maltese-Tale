@@ -37,11 +37,11 @@ export type ProjectileDirection = "toEnemy" | "toPlayer";
 
 export interface BattleStageHandle {
   /** Animates a type-colored projectile from attacker to defender. */
-  fireProjectile: (moveType: TypeName, direction: ProjectileDirection) => void;
+  fireProjectile: (moveType: TypeName, direction: ProjectileDirection, emphasis?: "signature" | "unleashed") => void;
   /** Animates a ball arcing from the player's position to the wild creature. */
   throwBall: () => void;
   /** Expanding rings and a gold wash for invoking the Crux Aura. */
-  cruxBurst: () => void;
+  cruxBurst: (side?: "player" | "enemy") => void;
   /** A soft sparkle wash when an item is used, so it reads as more than a log line. */
   itemFlash: (tint?: string) => void;
 }
@@ -54,6 +54,8 @@ interface CombatantProps {
   hp: number;
   maxHp: number;
   highlightCrux?: boolean;
+  /** 0–100, drawn as a thin gold bar under the HP. */
+  cruxCharge?: number;
   anim: ReturnType<typeof useCombatantAnimation>;
 }
 
@@ -71,6 +73,22 @@ interface Props {
  * arcs the same path. There's still no illustrated sprite art (see CreatureAvatar) — this is about
  * layout and motion reading like a real battle, not a sprite upgrade.
  */
+/** The Crux meter on a name plate: a thin gold bar that glows when full or burning. */
+function CruxMeter({ charge, active }: { charge: number; active: boolean }) {
+  const full = charge >= 100;
+  return (
+    <View testID="crux-meter" style={meterStyles.track}>
+      <View style={[meterStyles.fill, { width: `${active ? 100 : Math.round(charge)}%` }, (full || active) && meterStyles.full]} />
+    </View>
+  );
+}
+
+const meterStyles = StyleSheet.create({
+  track: { height: 4, borderRadius: 2, backgroundColor: "rgba(0,0,0,0.1)", overflow: "hidden" },
+  fill: { height: "100%", borderRadius: 2, backgroundColor: "#e8b93c" },
+  full: { backgroundColor: "#f39c12" },
+});
+
 export const BattleStage = forwardRef<BattleStageHandle, Props>(function BattleStage({ enemy, player, biome = "grass" }, ref) {
   const { t } = useI18n();
   const [stageWidth, setStageWidth] = useState(FALLBACK_STAGE_WIDTH);
@@ -88,9 +106,9 @@ export const BattleStage = forwardRef<BattleStageHandle, Props>(function BattleS
   const ballOpacity = useRef(new Animated.Value(0)).current;
 
   useImperativeHandle(ref, () => ({
-    fireProjectile(moveType, direction) {
+    fireProjectile(moveType, direction, emphasis) {
       if (use3D) {
-        battle3d.current?.fireProjectile(moveType, direction, PROJECTILE_TRAVEL_MS);
+        battle3d.current?.fireProjectile(moveType, direction, PROJECTILE_TRAVEL_MS, emphasis);
         return;
       }
       setProjectileType(moveType);
@@ -114,9 +132,9 @@ export const BattleStage = forwardRef<BattleStageHandle, Props>(function BattleS
         ballOpacity.setValue(0)
       );
     },
-    cruxBurst() {
+    cruxBurst(side = "player") {
       if (use3D) {
-        battle3d.current?.cruxBurst();
+        battle3d.current?.cruxBurst(side);
         return;
       }
       cruxRing.setValue(0);
@@ -214,6 +232,7 @@ export const BattleStage = forwardRef<BattleStageHandle, Props>(function BattleS
           ))}
         </View>
         <HpBar currentHp={enemy.hp} maxHp={enemy.maxHp} />
+        {enemy.cruxCharge !== undefined && <CruxMeter charge={enemy.cruxCharge} active={!!enemy.highlightCrux} />}
       </View>
 
       <View style={[styles.infoBox, styles.playerInfoBox, use3D && styles.infoBox3D, player.highlightCrux && styles.playerInfoBoxCrux]}>
@@ -227,6 +246,7 @@ export const BattleStage = forwardRef<BattleStageHandle, Props>(function BattleS
           ))}
         </View>
         <HpBar currentHp={player.hp} maxHp={player.maxHp} />
+        {player.cruxCharge !== undefined && <CruxMeter charge={player.cruxCharge} active={!!player.highlightCrux} />}
         {player.highlightCrux && <Text style={styles.cruxActiveLabel}>{t("battle.cruxActive")}</Text>}
       </View>
 

@@ -25,6 +25,8 @@ import type { ItemData } from "../data/schemas";
 import { BattleStateMachine, type Winner, type ActionOutcome } from "../engine/battleManager";
 import { attemptCatch, type ContainerType } from "../engine/catching";
 import { isCruxOnCooldown, CRUX_AURA_STATUS_ID } from "../engine/cruxAura";
+import { cruxCharge, cruxReady } from "../engine/cruxMeter";
+import { chooseCruxMove } from "../engine/signature";
 import { getActiveEffect } from "../engine/statusEffects";
 import { getTypeMultiplier } from "../engine/typeChart";
 import type { BattleAction, BattleContext, Creature } from "../engine/types";
@@ -49,7 +51,7 @@ import { BattleMessage } from "./components/BattleMessage";
 import { getMap, findTilePosition } from "../game/mapData";
 import { colors } from "./theme";
 import { MoveDetailCard } from "./components/MoveDetailCard";
-import { useI18n } from "../i18n";
+import { useI18n, type StringKey } from "../i18n";
 import { useSettings } from "../state/settingsStore";
 import { autoAdvanceMs, FASTEST_BEAT_MS, showsPopups, type MessageKind } from "../game/settings";
 import { trainerLines } from "../game/trainers";
@@ -105,6 +107,10 @@ interface BattleSnapshot {
   enemyMaxHp: number;
   playerCruxActive: boolean;
   playerCruxOnCooldown: boolean;
+  playerCruxCharge: number;
+  playerCruxReady: boolean;
+  enemyCruxCharge: number;
+  enemyCruxActive: boolean;
 }
 
 function snapshotFrom(ctx: BattleContext): BattleSnapshot {
@@ -115,7 +121,17 @@ function snapshotFrom(ctx: BattleContext): BattleSnapshot {
     enemyMaxHp: ctx.enemyActive.stats.hp,
     playerCruxActive: getActiveEffect(ctx.playerActive, CRUX_AURA_STATUS_ID) !== undefined,
     playerCruxOnCooldown: isCruxOnCooldown(ctx.playerActive),
+    playerCruxCharge: cruxCharge(ctx.playerActive),
+    playerCruxReady: cruxReady(ctx.playerActive),
+    enemyCruxCharge: cruxCharge(ctx.enemyActive),
+    enemyCruxActive: getActiveEffect(ctx.enemyActive, CRUX_AURA_STATUS_ID) !== undefined,
   };
+}
+
+/** A fresh meter, and the move a Crux Aura would unleash, for a creature entering the field. */
+function armCrux(creature: BattleContext["playerActive"], moveIds: string[]) {
+  creature.cruxCharge = 0;
+  creature.cruxMoveId = chooseCruxMove(moveIds.map(getMove));
 }
 
 /** The end-of-battle card: a tap anywhere on it goes home, not just on the button. */
@@ -212,12 +228,17 @@ export function BattleScreen({ navigation, route }: Props) {
       turnCount: 0,
       fieldEffects: {},
     };
+    armCrux(ctx.playerActive, activeMember.moveIds);
+    armCrux(ctx.enemyActive, enemy.moveIds);
     fsmRef.current = new BattleStateMachine(ctx, getMove);
     fsmRef.current.start();
   }
   const fsm = fsmRef.current;
 
   const [snapshot, setSnapshot] = useState<BattleSnapshot | null>(() => (fsm ? snapshotFrom(fsm.getContext()) : null));
+  const cruxMoveId = fsm?.getContext().playerActive.cruxMoveId;
+  const cruxMoveName = cruxMoveId ? c.move(cruxMoveId) : "";
+  const markTutorial = useGameStore((s) => s.markTutorial);
   // One of the trainer's lines, chosen as the battle opens so a rematch does not replay it.
   const [boast] = useState<BoastRef | null>(() => {
     if (!trainer?.boasts?.length) return null;
@@ -491,6 +512,8 @@ export function BattleScreen({ navigation, route }: Props) {
 
     const move = getMove(outcome.action.moveId);
     const lines: string[] = [];
+    if (outcome.unleashed) lines.push(t("battle.unleashed", { move: c.move(move.id) }));
+    else if (outcome.signature) lines.push(t(`battle.signature.${outcome.signature}` as StringKey));
 
     if (move.category !== "status") {
       lines.push(t("battle.damage", { amount: outcome.damage }));
@@ -537,8 +560,12 @@ export function BattleScreen({ navigation, route }: Props) {
     const activeFsm = fsm; // re-bind so TS keeps the non-null narrowing inside the nested closures below
     const ctx = activeFsm.getContext();
     const playerActiveId = ctx.playerActive.id;
-    const enemyMoveId = pickEnemyMoveId();
-    const enemyAction: BattleAction = { kind: "move", actorId: ctx.enemyActive.id, moveId: enemyMoveId };
+    // Gym leaders know the old stones too: a full meter is released, not wasted.
+    const enemyInvokes = !!trainer?.isGymLeader && cruxReady(ctx.enemyActive);
+    const enemyMoveId = enemyInvokes ? "" : pickEnemyMoveId();
+    const enemyAction: BattleAction = enemyInvokes
+      ? { kind: "invoke_crux", actorId: ctx.enemyActive.id }
+      : { kind: "move", actorId: ctx.enemyActive.id, moveId: enemyMoveId };
 
     const beats: RevealBeat[] = [];
     activeFsm.submitActions(playerAction, enemyAction, (outcome) => {
@@ -559,7 +586,14 @@ export function BattleScreen({ navigation, route }: Props) {
 
       const announceLines = isPlayer
         ? playerLines
-        : [t("battle.foeUsed", { name: foeLabel(enemy.displayName), move: c.move(enemyMoveId) })];
+        : outcome.action.kind === "invoke_crux"
+          ? [t("battle.foeCrux", { name: foeLabel(enemy.displayName) })]
+          : [t("battle.foeUsed", { name: foeLabel(enemy.displayName), move: c.move(enemyMoveId) })];
+      if (!isPlayer && outcome.action.kind === "invoke_crux" && outcome.hit) {
+        enemyAnim.cruxGlow();
+        stageRef.current?.cruxBurst("enemy");
+        battleSfx.crux();
+      }
 
       function applyReaction() {
         playImpact();
@@ -615,7 +649,8 @@ export function BattleScreen({ navigation, route }: Props) {
             actingAnim.lunge();
             const move = getMove(outcome.action.moveId);
             battleSfx.attack(move.type, move.category, isPlayer);
-            stageRef.current?.fireProjectile(move.type, isPlayer ? "toEnemy" : "toPlayer");
+            if (outcome.unleashed || outcome.signature) battleSfx.signature(!!outcome.unleashed);
+            stageRef.current?.fireProjectile(move.type, isPlayer ? "toEnemy" : "toPlayer", outcome.unleashed ? "unleashed" : outcome.signature ? "signature" : undefined);
             setTimeout(() => {
               applyReaction();
               reportResult();
@@ -632,6 +667,14 @@ export function BattleScreen({ navigation, route }: Props) {
       const finalSnapshot = snapshotFrom(ctx);
       updatePartyMemberHp(playerActiveId, finalSnapshot.playerHp);
       setResolving(false);
+      setSnapshot(finalSnapshot);
+
+      // The first full meter a player ever sees comes with an explanation.
+      if (finalSnapshot.playerCruxReady && !useGameStore.getState().tutorialsSeen.includes("crux") && ctx.playerActive.currentHp > 0) {
+        markTutorial("crux");
+        say([t("battle.cruxTutorial1"), t("battle.cruxTutorial2", { move: c.move(ctx.playerActive.cruxMoveId ?? "tackle") })], "key", { emphasis: "good" });
+        battleSfx.statUp();
+      }
 
       if (activeFsm.getState() !== "BATTLE_END") return;
 
@@ -648,6 +691,7 @@ export function BattleScreen({ navigation, route }: Props) {
             enemyPpRef.current = {};
             // Swap the new foe into the live context and restart the machine around it.
             ctx.enemyActive = nextFoe.creature;
+            armCrux(ctx.enemyActive, nextFoe.moveIds);
             setSnapshot(snapshotFrom(ctx));
             enemyAnim.appear();
             activeFsm.restartAfterEnemySwap();
@@ -678,6 +722,7 @@ export function BattleScreen({ navigation, route }: Props) {
     if (!member || member.currentHp <= 0 || uid === activeUidRef.current) return;
 
     const newCreature = creatureFromPartyMember(member);
+    armCrux(newCreature, member.moveIds);
     fsm.replacePlayerActive(newCreature);
     setActiveUid(uid);
     setSnapshot(snapshotFrom(fsm.getContext()));
@@ -718,7 +763,7 @@ export function BattleScreen({ navigation, route }: Props) {
   function handleInvokeCrux() {
     if (awaitingAcknowledgement()) return;
     if (!fsm || !snapshot || outcome || forcedSwitchPending || resolving) return;
-    if (fsm.getState() !== "ACTION_SELECT" || snapshot.playerCruxOnCooldown) return;
+    if (fsm.getState() !== "ACTION_SELECT" || !snapshot.playerCruxReady) return;
     const ctx = fsm.getContext();
     const name = activeMember?.displayName ?? t("battle.yourCreature");
     playerAnim.cruxGlow();
@@ -920,6 +965,9 @@ export function BattleScreen({ navigation, route }: Props) {
           level: enemy.creature.level,
           hp: snapshot.enemyHp,
           maxHp: snapshot.enemyMaxHp,
+          // Only a trainer's creature will use its meter, so only theirs is worth watching.
+          cruxCharge: isTrainerBattle ? snapshot.enemyCruxCharge : undefined,
+          highlightCrux: snapshot.enemyCruxActive,
           anim: enemyAnim,
         }}
         player={{
@@ -930,6 +978,7 @@ export function BattleScreen({ navigation, route }: Props) {
           hp: snapshot.playerHp,
           maxHp: snapshot.playerMaxHp,
           highlightCrux: snapshot.playerCruxActive,
+          cruxCharge: snapshot.playerCruxCharge,
           anim: playerAnim,
         }}
       />
@@ -965,12 +1014,17 @@ export function BattleScreen({ navigation, route }: Props) {
                 disabled={actionsDisabled || spent}
                 style={({ pressed }) => [
                   styles.moveButton,
+                  move.signature && styles.moveButtonSignature,
+                  snapshot.playerCruxActive && move.id === cruxMoveId && styles.moveButtonUnleashed,
                   spent && styles.moveButtonSpent,
                   pressed && !spent && styles.moveButtonPressed,
                 ]}
               >
                 <View style={styles.moveHeaderRow}>
-                  <Text style={[styles.moveName, spent && styles.moveNameSpent]}>{c.move(move.id)}</Text>
+                  <Text style={[styles.moveName, spent && styles.moveNameSpent]}>
+                    {move.signature ? "★ " : ""}
+                    {c.move(move.id)}
+                  </Text>
                   <Text style={[styles.movePp, spent && styles.movePpSpent]}>
                     {pp}/{move.pp}
                   </Text>
@@ -1026,16 +1080,28 @@ export function BattleScreen({ navigation, route }: Props) {
           <Pressable
             testID="invoke-crux"
             onPress={handleInvokeCrux}
-            disabled={actionsDisabled || snapshot.playerCruxOnCooldown}
+            disabled={actionsDisabled || !snapshot.playerCruxReady}
             style={({ pressed }) => [
               styles.moveButton,
               styles.cruxButton,
-              (snapshot.playerCruxOnCooldown || actionsDisabled) && styles.moveButtonDisabled,
+              snapshot.playerCruxReady && !actionsDisabled && styles.cruxButtonReady,
+              (!snapshot.playerCruxReady || actionsDisabled) && styles.moveButtonDisabled,
               pressed && styles.moveButtonPressed,
             ]}
           >
             <Text style={styles.moveName}>{t("battle.invokeCrux")}</Text>
-            <Text style={styles.cruxHint}>{snapshot.playerCruxOnCooldown ? t("battle.cruxCooldown") : t("battle.cruxCost")}</Text>
+            <Text style={styles.cruxHint}>
+              {snapshot.playerCruxActive
+                ? t("battle.cruxActiveHint", { move: cruxMoveName })
+                : snapshot.playerCruxOnCooldown
+                  ? t("battle.cruxCooldown")
+                  : snapshot.playerCruxReady
+                    ? t("battle.cruxReadyHint", { move: cruxMoveName })
+                    : t("battle.cruxCharging", { percent: Math.round(snapshot.playerCruxCharge) })}
+            </Text>
+            <View style={styles.cruxMeterTrack}>
+              <View style={[styles.cruxMeterFill, { width: `${Math.round(snapshot.playerCruxCharge)}%` }, snapshot.playerCruxReady && styles.cruxMeterFull]} />
+            </View>
           </Pressable>
         </HoverTip>
         <HoverTip
@@ -1475,6 +1541,36 @@ const styles = StyleSheet.create({
   },
   cruxButton: {
     borderColor: colors.accent,
+  },
+  // A signature move wears gold; the move an active Crux Aura unleashes burns brighter still.
+  moveButtonSignature: {
+    borderColor: "#d9a520",
+    borderWidth: 2,
+  },
+  moveButtonUnleashed: {
+    backgroundColor: "#fff1c4",
+    borderColor: "#f39c12",
+    borderWidth: 3,
+  },
+  cruxButtonReady: {
+    backgroundColor: "#fff4d6",
+    borderColor: "#e0a516",
+    borderWidth: 2,
+  },
+  cruxMeterTrack: {
+    height: 5,
+    borderRadius: 3,
+    backgroundColor: "rgba(0,0,0,0.08)",
+    overflow: "hidden",
+    marginTop: 4,
+  },
+  cruxMeterFill: {
+    height: "100%",
+    borderRadius: 3,
+    backgroundColor: "#e8b93c",
+  },
+  cruxMeterFull: {
+    backgroundColor: "#f39c12",
   },
   catchButton: {
     borderColor: colors.success,

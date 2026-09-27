@@ -15,6 +15,12 @@ export interface DamageOptions {
   weatherMultiplier?: number;
   /** uniform(0.85, 1.00) per spec 1.3; injectable for deterministic tests. */
   randomFactor?: number;
+  /** A signature's or an unleashed Crux move's extra force. */
+  powerMultiplier?: number;
+  /** Pierce: the target's raised defences count for nothing. */
+  ignoreDefenseBoosts?: boolean;
+  /** Solstice: type effectiveness never drops below this (immunities still hold). */
+  minEffectiveness?: number;
 }
 
 function floorMul(value: number, multiplier: number): number {
@@ -31,9 +37,10 @@ function attackStat(attacker: Creature, category: "physical" | "special"): numbe
   return base * stageMultiplier(stage);
 }
 
-function defenseStat(defender: Creature, category: "physical" | "special"): number {
+function defenseStat(defender: Creature, category: "physical" | "special", ignoreBoosts = false): number {
   const base = category === "special" ? defender.stats.spdef : defender.stats.def;
-  const stage = category === "special" ? defender.statStages.spdef : defender.statStages.def;
+  const raw = category === "special" ? defender.statStages.spdef : defender.statStages.def;
+  const stage = ignoreBoosts ? Math.min(0, raw) : raw;
   return base * stageMultiplier(stage);
 }
 
@@ -43,17 +50,18 @@ export function calculateDamage(
   move: Move,
   options: DamageOptions = {}
 ): number {
-  const typeEffectiveness = getTypeMultiplier(move.type, defender.types);
-  if (typeEffectiveness === 0) return 0;
+  const rawEffectiveness = getTypeMultiplier(move.type, defender.types);
+  if (rawEffectiveness === 0) return 0;
+  const typeEffectiveness = Math.max(rawEffectiveness, options.minEffectiveness ?? 0);
 
   // A status move has no damage path at all; callers short-circuit before here, but guard
   // anyway so a mis-routed status move scores 0 rather than a physical hit off power 0.
   if (move.category === "status") return 0;
   const atkStat = attackStat(attacker, move.category);
-  const defStat = defenseStat(defender, move.category);
+  const defStat = defenseStat(defender, move.category, options.ignoreDefenseBoosts);
 
   const base =
-    (((2 * attacker.level) / 5 + 2) * move.power * (atkStat / defStat)) / 50 + 2;
+    (((2 * attacker.level) / 5 + 2) * move.power * (options.powerMultiplier ?? 1) * (atkStat / defStat)) / 50 + 2;
 
   const stab = attacker.types.includes(move.type) ? STAB_MULTIPLIER : 1;
   const isCrit = options.isCrit ?? Math.random() < BASE_CRIT_CHANCE;

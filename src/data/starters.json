@@ -34,7 +34,8 @@
           "baseStats": { "hp": 108, "atk": 135, "def": 117, "spatk": 80, "spdef": 111, "speed": 74 }
         }
       ],
-      "signatureMove": "Megalith Charge"
+      "signatureMove": "Megalith Charge",
+      "signatureMoveId": "megalith_charge"
     },
     {
       "line": "Fire",
@@ -70,7 +71,8 @@
           "baseStats": { "hp": 89, "atk": 91, "def": 80, "spatk": 143, "spdef": 108, "speed": 114 }
         }
       ],
-      "signatureMove": "Oracle Flame"
+      "signatureMove": "Oracle Flame",
+      "signatureMoveId": "oracle_flame"
     },
     {
       "line": "Water",
@@ -107,6 +109,7 @@
         }
       ],
       "signatureMove": "Hull Ram",
+      "signatureMoveId": "hull_ram",
       "rideAbility": "surf_and_submerge"
     }
   ]

@@ -16,6 +16,7 @@
         "speed": 90
       },
       "signatureMove": "Cross of Valour",
+      "signatureMoveId": "cross_of_valour",
       "storyFlagRequired": "chivalry_trial_complete",
       "evolvesAtLevel": 55,
       "evolvesInto": "aegilordan"
@@ -37,6 +38,7 @@
         "speed": 115
       },
       "signatureMove": "Cross of Valour",
+      "signatureMoveId": "cross_of_valour",
       "storyFlagRequired": "chivalry_trial_complete"
     },
     {
@@ -55,6 +57,7 @@
         "speed": 40
       },
       "signatureMove": "Solstice Beam",
+      "signatureMoveId": "solstice_beam",
       "storyFlagRequired": "antiquity_trial_complete",
       "evolvesAtLevel": 55,
       "evolvesInto": "megalithron"
@@ -76,6 +79,7 @@
         "speed": 51
       },
       "signatureMove": "Solstice Alignment",
+      "signatureMoveId": "solstice_alignment",
       "storyFlagRequired": "temple_trial_complete"
     },
     {
@@ -94,6 +98,7 @@
         "speed": 120
       },
       "signatureMove": "Gregale Howl",
+      "signatureMoveId": "gregale_howl",
       "storyFlagRequired": "both_trials_complete",
       "evolvesAtLevel": 55,
       "evolvesInto": "siroccalis"
@@ -115,6 +120,7 @@
         "speed": 154
       },
       "signatureMove": "Sirocco Judgement",
+      "signatureMoveId": "sirocco_judgement",
       "storyFlagRequired": "storm_trial_complete"
     }
   ]

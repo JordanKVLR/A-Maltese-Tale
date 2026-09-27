@@ -807,6 +807,110 @@
           "chance": 100
         }
       ]
+    },
+    {
+      "id": "megalith_charge",
+      "name": "Megalith Charge",
+      "type": "Grass",
+      "category": "physical",
+      "power": 95,
+      "accuracy": 100,
+      "pp": 8,
+      "basePriority": 0,
+      "signature": "pierce"
+    },
+    {
+      "id": "oracle_flame",
+      "name": "Oracle Flame",
+      "type": "Fire",
+      "category": "special",
+      "power": 85,
+      "accuracy": 100,
+      "pp": 10,
+      "basePriority": 1,
+      "signature": "foresight"
+    },
+    {
+      "id": "hull_ram",
+      "name": "Hull Ram",
+      "type": "Water",
+      "category": "physical",
+      "power": 100,
+      "accuracy": 95,
+      "pp": 8,
+      "basePriority": 0,
+      "signature": "pierce",
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "def",
+          "stages": 1,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "cross_of_valour",
+      "name": "Cross of Valour",
+      "type": "Steel",
+      "category": "physical",
+      "power": 70,
+      "accuracy": 100,
+      "pp": 10,
+      "basePriority": 0,
+      "signature": "valour"
+    },
+    {
+      "id": "solstice_beam",
+      "name": "Solstice Beam",
+      "type": "Rock",
+      "category": "special",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 8,
+      "basePriority": 0,
+      "signature": "solstice"
+    },
+    {
+      "id": "solstice_alignment",
+      "name": "Solstice Alignment",
+      "type": "Psychic",
+      "category": "special",
+      "power": 110,
+      "accuracy": 100,
+      "pp": 5,
+      "basePriority": 0,
+      "signature": "solstice"
+    },
+    {
+      "id": "gregale_howl",
+      "name": "Gregale Howl",
+      "type": "Flying",
+      "category": "special",
+      "power": 85,
+      "accuracy": 100,
+      "pp": 8,
+      "basePriority": 1,
+      "signature": "foresight",
+      "statChanges": [
+        {
+          "target": "opponent",
+          "stat": "speed",
+          "stages": -1,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "sirocco_judgement",
+      "name": "Sirocco Judgement",
+      "type": "Dragon",
+      "category": "special",
+      "power": 110,
+      "accuracy": 100,
+      "pp": 5,
+      "basePriority": 0,
+      "signature": "pierce"
     }
   ]
 }

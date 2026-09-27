@@ -1,6 +1,6 @@
 import type { MoveData, TypeName } from "../data/schemas";
 import { typeMatchups } from "../engine/typeChart";
-import type { I18n } from "../i18n/core";
+import type { I18n, StringKey } from "../i18n/core";
 import { LAST_RESORT_MOVE_ID } from "./movesRepo";
 
 /**
@@ -62,10 +62,15 @@ export function describeMove(move: MoveData, i18n: I18n): MoveSummary {
     effects.push(change.chance < 100 ? t("move.chance", { chance: change.chance, effect: sentence }) : sentence);
   }
 
-  if (damaging && !(move.statChanges ?? []).length && move.id !== LAST_RESORT_MOVE_ID) {
+  if (damaging && !(move.statChanges ?? []).length && move.id !== LAST_RESORT_MOVE_ID && !move.signature) {
     effects.push(t("move.noSideEffects"));
   }
 
+  if (move.signature) {
+    effects.unshift(t("move.signatureLabel"));
+    effects.push(t(`move.signature.${move.signature}` as StringKey));
+    effects.push(t("move.cruxNote"));
+  }
   if (move.accuracy < LOW_ACCURACY) effects.push(t("move.missRisk", { accuracy: move.accuracy }));
   else if (move.accuracy >= SURE_HIT && damaging) effects.push(t("move.sureHit"));
 

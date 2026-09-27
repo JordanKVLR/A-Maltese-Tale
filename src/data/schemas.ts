@@ -87,6 +87,8 @@ export const StarterLineSchema = z.object({
   line: z.enum(["Grass", "Fire", "Water"]),
   stages: z.array(StarterStageSchema).length(3),
   signatureMove: z.string(),
+  /** The move the signature name refers to, in moves.json. */
+  signatureMoveId: z.string().optional(),
   rideAbility: z.string().optional(),
 });
 
@@ -101,6 +103,7 @@ export const LegendarySchema = z.object({
   aesthetic: z.string(),
   baseStats: StatBlockSchema,
   signatureMove: z.string(),
+  signatureMoveId: z.string().optional(),
   storyFlagRequired: z.string(),
   ...EvolutionFields,
 });
@@ -155,6 +158,8 @@ export const MoveDataSchema = z.object({
   pp: z.number().int().positive(),
   basePriority: z.number().int(),
   statChanges: z.array(StatChangeSchema).optional(),
+  /** A signature move's one-of-a-kind rule — see engine/signature.ts. */
+  signature: z.enum(["pierce", "foresight", "valour", "solstice"]).optional(),
 });
 
 export const MovesFileSchema = z.object({

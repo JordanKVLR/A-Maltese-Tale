@@ -22,12 +22,12 @@ const legendaries = LegendariesFileSchema.parse(legendariesData).legendaries;
  * the closest-fit moves from the actual move pool (src/data/moves.json), same placeholder
  * approach as the regional variants' movesets. */
 const LEGENDARY_MOVE_IDS: Record<string, string[]> = {
-  aegilord: ["metal_claw", "tackle"],
-  megalithos: ["rock_throw", "tackle"],
-  siroccus: ["sand_blast", "tackle"],
-  aegilordan: ["cross_guard", "legion_charge", "metal_claw", "tackle"],
-  megalithron: ["trilithon_slam", "hypogeum_echo", "rock_throw", "tackle"],
-  siroccalis: ["signal_flare", "leviathan_coil", "gale_dive", "tackle"],
+  aegilord: ["cross_of_valour", "metal_claw", "tackle"],
+  megalithos: ["solstice_beam", "rock_throw", "tackle"],
+  siroccus: ["gregale_howl", "sand_blast", "tackle"],
+  aegilordan: ["cross_of_valour", "cross_guard", "legion_charge", "metal_claw"],
+  megalithron: ["solstice_alignment", "trilithon_slam", "hypogeum_echo", "rock_throw"],
+  siroccalis: ["sirocco_judgement", "signal_flare", "leviathan_coil", "gale_dive"],
 };
 
 /**

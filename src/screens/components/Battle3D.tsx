@@ -11,9 +11,9 @@ import type { useCombatantAnimation } from "./useCombatantAnimation";
 type Anim = ReturnType<typeof useCombatantAnimation>;
 
 export interface Battle3DHandle {
-  fireProjectile: (type: TypeName, direction: "toEnemy" | "toPlayer", durationMs: number) => void;
+  fireProjectile: (type: TypeName, direction: "toEnemy" | "toPlayer", durationMs: number, emphasis?: "signature" | "unleashed") => void;
   throwBall: (durationMs: number) => void;
-  cruxBurst: () => void;
+  cruxBurst: (side?: "player" | "enemy") => void;
   itemFlash: (tint: string) => void;
 }
 
@@ -52,9 +52,9 @@ export const Battle3D = forwardRef<Battle3DHandle, { biome: Biome; enemy: Side; 
   latest.current = { enemy, player };
 
   useImperativeHandle(ref, () => ({
-    fireProjectile: (type, direction, durationMs) => api.current?.fireProjectile(type, direction, durationMs),
+    fireProjectile: (type, direction, durationMs, emphasis) => api.current?.fireProjectile(type, direction, durationMs, emphasis),
     throwBall: (durationMs) => api.current?.throwBall(durationMs),
-    cruxBurst: () => api.current?.cruxBurst(),
+    cruxBurst: (side) => api.current?.cruxBurst(side),
     itemFlash: (tint) => api.current?.itemFlash(tint),
   }));
 
