@@ -18,6 +18,9 @@ import {
 import { defaultStartingInventory, getItem } from "../game/itemsRepo";
 import { getMove } from "../game/movesRepo";
 import { STAGES, getStage } from "../game/zoneProgression";
+import { getQuest, questState, type QuestRecord, type QuestWorld } from "../game/quests";
+import { starterSignatureFor } from "../game/creatureFactory";
+import type { Treasure } from "../game/mapFeatures";
 
 
 const SAVE_KEY = "melita-save";
@@ -141,10 +144,37 @@ interface GameState {
   /** Swaps a known move for a newly learned one, giving the new move full PP. Passing a
    * forgotten move the member doesn't know is a no-op. */
   replacePartyMemberMove: (uid: string, forgetMoveId: string, learnMoveId: string) => void;
+  /** Side quests taken, and whether they are finished. */
+  quests: Record<string, QuestRecord>;
+  /** Every creature ever caught, counted per type — what "catch two Rock types" checks. */
+  catchesByType: Record<string, number>;
+  /** Glints already picked up: quest objects and treasure. */
+  foundIds: string[];
+  acceptQuest: (questId: string) => void;
+  /** Picks up a glint. Treasure goes straight into the bag or purse. */
+  collectFind: (findId: string, treasure?: Treasure) => void;
+  /** Hands a finished quest in: marks it done and pays out. Returns false if it isn't ready. */
+  completeQuest: (questId: string) => boolean;
+  /** Teaches a starter-line creature its signature move if it has a free slot. Returns the
+   * member when a move has to be forgotten first, "learned" when it went in, or null. */
+  teachSignature: () => { status: "learned"; uid: string } | { status: "full"; member: PartyMember; moveId: string } | null;
   /** One-time explanations the player has already been shown (e.g. "crux"). */
   tutorialsSeen: string[];
   markTutorial: (id: string) => void;
   resetGame: () => void;
+}
+
+/** The slice of the save the quest rules read. */
+export function questWorldOf(state: Pick<GameState, keyof QuestWorld>): QuestWorld {
+  return {
+    quests: state.quests,
+    catchesByType: state.catchesByType,
+    defeatedTrainerIds: state.defeatedTrainerIds,
+    foundIds: state.foundIds,
+    party: state.party,
+    medals: state.medals,
+    visitedStageIds: state.visitedStageIds,
+  };
 }
 
 export const useGameStore = create<GameState>()(
@@ -168,6 +198,52 @@ export const useGameStore = create<GameState>()(
       ),
     hasMedal: (medalId) => get().medals.includes(medalId),
     defeatedTrainerIds: [],
+    quests: {},
+    catchesByType: {},
+    foundIds: [],
+    acceptQuest: (questId) =>
+      set((state) =>
+        state.quests[questId]
+          ? state
+          : { quests: { ...state.quests, [questId]: { status: "active", catchBaseline: { ...state.catchesByType } } } }
+      ),
+    collectFind: (findId, treasure) =>
+      set((state) => {
+        if (state.foundIds.includes(findId)) return state;
+        const next: Partial<GameState> = { foundIds: [...state.foundIds, findId] };
+        if (treasure?.itemId) {
+          next.inventory = { ...state.inventory, [treasure.itemId]: (state.inventory[treasure.itemId] ?? 0) + (treasure.quantity ?? 1) };
+        }
+        if (treasure?.gold) next.currency = state.currency + treasure.gold;
+        return next;
+      }),
+    completeQuest: (questId) => {
+      const quest = getQuest(questId);
+      const state = get();
+      if (!quest || questState(quest, questWorldOf(state)) !== "ready") return false;
+      set({
+        quests: { ...state.quests, [questId]: { ...state.quests[questId], status: "done" } },
+        inventory: { ...state.inventory, [quest.reward.keyItemId]: 1 },
+        currency: state.currency + quest.reward.gold,
+      });
+      return true;
+    },
+    teachSignature: () => {
+      const { party } = get();
+      const member = party.find((m) => m.sourceCategory === "starter" && starterSignatureFor(m.speciesId));
+      if (!member) return null;
+      const moveId = starterSignatureFor(member.speciesId)!;
+      if (member.moveIds.includes(moveId)) return null;
+      if (member.moveIds.length >= 4) return { status: "full", member, moveId };
+      set({
+        party: party.map((m) =>
+          m.uid === member.uid
+            ? { ...m, moveIds: [...m.moveIds, moveId], movePp: { ...(m.movePp ?? fullPpFor(m.moveIds)), [moveId]: getMove(moveId).pp } }
+            : m
+        ),
+      });
+      return { status: "learned", uid: member.uid };
+    },
     tutorialsSeen: [],
     markTutorial: (id) =>
       set((state) => (state.tutorialsSeen.includes(id) ? state : { tutorialsSeen: [...state.tutorialsSeen, id] })),
@@ -212,7 +288,10 @@ export const useGameStore = create<GameState>()(
     catchCreature: (member) => {
       const { party, caughtSpeciesIds } = get();
       if (party.length >= MAX_PARTY_SIZE) return false;
+      const catchesByType = { ...get().catchesByType };
+      for (const type of member.types) catchesByType[type] = (catchesByType[type] ?? 0) + 1;
       set({
+        catchesByType,
         party: [...party, member],
         caughtSpeciesIds: caughtSpeciesIds.includes(member.speciesId)
           ? caughtSpeciesIds
@@ -364,6 +443,10 @@ export const useGameStore = create<GameState>()(
       set({
         medals: [],
         defeatedTrainerIds: [],
+        quests: {},
+        catchesByType: {},
+        foundIds: [],
+        tutorialsSeen: [],
         visitedStageIds: [],
         playerName: DEFAULT_PLAYER_NAME,
         selectedLine: null,
@@ -387,6 +470,9 @@ export const useGameStore = create<GameState>()(
         medals: state.medals,
         defeatedTrainerIds: state.defeatedTrainerIds,
         tutorialsSeen: state.tutorialsSeen,
+        quests: state.quests,
+        catchesByType: state.catchesByType,
+        foundIds: state.foundIds,
         visitedStageIds: state.visitedStageIds,
         playerName: state.playerName,
         selectedLine: state.selectedLine,

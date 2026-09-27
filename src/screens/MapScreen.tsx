@@ -12,7 +12,12 @@ import {
   isHealTile,
   findTilePosition,
 } from "../game/mapData";
-import { TileArt, PlayerSprite, TrainerSprite } from "../art/tileArt";
+import { TileArt, PlayerSprite, TrainerSprite, NpcSprite, GlintSprite, PortalSprite } from "../art/tileArt";
+import { featuresForZone, npcAt, glintAt, portalInto, type MapGlint, type MapNpc } from "../game/mapFeatures";
+import { findIsVisible, getQuest, questForFind, questProgress, questState } from "../game/quests";
+import { findName, questGiver, questLine, questTitle, stepLabel } from "../game/questText";
+import { questWorldOf } from "../state/gameStore";
+import { MoveLearnModal, type MoveLearnPrompt } from "./components/MoveLearnModal";
 import { trainerAt, trainersForZone } from "../game/trainers";
 import { medalRequiredToEnter, getStage, STAGES } from "../game/zoneProgression";
 import { briefingsOnEntry, type BriefingPage } from "../game/briefings";
@@ -49,6 +54,8 @@ const TOTAL_STAGES = STAGES.length;
 /** Walking feedback ("trees block the path") is a passing note, not something to dismiss. */
 const TOAST_MS = 1800;
 const DPAD_BUTTON = 52;
+/** How close you have to be to see a glint — unless you carry the Għajn Charm. */
+const GLINT_SIGHT = 3;
 
 /** Where the movement control sits, per the player's thumb preference in Settings. */
 const SIDE_STYLE: Record<ControlSide, { alignItems: "flex-start" | "center" | "flex-end" }> = {
@@ -104,6 +111,20 @@ export function MapScreen({ navigation, route }: Props) {
   const i18n = useI18n();
   const { t, c } = i18n;
   const markStageVisited = useGameStore((s) => s.markStageVisited);
+  const quests = useGameStore((s) => s.quests);
+  const catchesByType = useGameStore((s) => s.catchesByType);
+  const foundIds = useGameStore((s) => s.foundIds);
+  const inventory = useGameStore((s) => s.inventory);
+  const visitedStageIds = useGameStore((s) => s.visitedStageIds);
+  const acceptQuest = useGameStore((s) => s.acceptQuest);
+  const completeQuest = useGameStore((s) => s.completeQuest);
+  const collectFind = useGameStore((s) => s.collectFind);
+  const teachSignature = useGameStore((s) => s.teachSignature);
+  const replacePartyMemberMove = useGameStore((s) => s.replacePartyMemberMove);
+  const questWorld = questWorldOf({ quests, catchesByType, defeatedTrainerIds, foundIds, party, medals, visitedStageIds });
+  const features = featuresForZone(map.zoneId);
+  const hasCharm = (inventory.il_ghajn_charm ?? 0) > 0;
+  const [learnPrompt, setLearnPrompt] = useState<MoveLearnPrompt | null>(null);
 
   const mapCols = map.rows[0].length;
   const mapRows = map.rows.length;
@@ -122,9 +143,20 @@ export function MapScreen({ navigation, route }: Props) {
       stageBriefings: useSettings.getState().stageBriefings,
     })
   );
-  /** A one-off notice that has to be acknowledged — the chapel, a barred gate. */
-  const [notice, setNotice] = useState<BriefingPage | null>(null);
-  const modalOpen = briefing.length > 0 || notice !== null;
+  /** A one-off notice that has to be acknowledged — the chapel, a barred gate, a quest-giver. */
+  const [notice, setNoticePages] = useState<BriefingPage[] | null>(null);
+  const afterNotice = useRef<(() => void) | null>(null);
+  const setNotice = (page: BriefingPage | BriefingPage[] | null, then?: () => void) => {
+    afterNotice.current = then ?? null;
+    setNoticePages(page === null ? null : Array.isArray(page) ? page : [page]);
+  };
+  const closeNotice = () => {
+    const then = afterNotice.current;
+    afterNotice.current = null;
+    setNoticePages(null);
+    then?.();
+  };
+  const modalOpen = briefing.length > 0 || notice !== null || learnPrompt !== null;
 
   // Positions in tile units; multiplied out by the current tile size at render.
   const anim = useRef(new Animated.ValueXY({ x: startPosition.col, y: startPosition.row })).current;
@@ -188,6 +220,89 @@ export function MapScreen({ navigation, route }: Props) {
     return steps.map((toValue) => Animated.timing(encounterFlash, { toValue, duration: ms, useNativeDriver: false }));
   }
 
+  const markerFor = (npc: MapNpc): "!" | "?" | null => {
+    const quest = getQuest(npc.questId);
+    if (!quest) return null;
+    const state = questState(quest, questWorld);
+    return state === "available" || state === "unknown" ? "!" : state === "ready" ? "?" : null;
+  };
+  const glintShown = (glint: MapGlint) =>
+    findIsVisible(glint.findId, questWorld) &&
+    (hasCharm || Math.max(Math.abs(glint.row - position.row), Math.abs(glint.col - position.col)) <= GLINT_SIGHT);
+
+  /** Walking into a quest-giver: what they say depends on where their quest stands. */
+  function talk(npc: MapNpc) {
+    const quest = getQuest(npc.questId);
+    if (!quest) return;
+    const title = questTitle(quest, i18n);
+    const giver = questGiver(quest, i18n);
+    const state = questState(quest, questWorld);
+    const page = (id: string, kicker: string, lines: string[]): BriefingPage => ({ id, kicker, title, lines });
+    ui.message();
+    if (state === "available" || state === "unknown") {
+      setNotice(page("quest-offer", giver, [questLine(quest, "offer1", i18n), questLine(quest, "offer2", i18n)]), () => {
+        acceptQuest(quest.id);
+        worldSfx.newStage();
+        setToast(t("map.npc.newQuest", { quest: title }));
+      });
+    } else if (state === "locked") {
+      setNotice(page("quest-locked", giver, [questLine(quest, "offer1", i18n), t("map.npc.locked", { medal: c.medal(quest.requiresMedal!) })]));
+    } else if (state === "active") {
+      const todo = questProgress(quest, questWorld).filter((p) => !p.done).map((p) => `• ${stepLabel(p, i18n)}`);
+      setNotice(page("quest-remind", giver, [t("map.npc.remind"), ...todo]));
+    } else if (state === "ready") {
+      if (!completeQuest(quest.id)) return;
+      playJingle("medal");
+      const lines = [
+        questLine(quest, "thanks", i18n),
+        t("quest.received", { item: c.item(quest.reward.keyItemId), gold: quest.reward.gold }),
+      ];
+      let then: (() => void) | undefined;
+      if (quest.reward.keyItemId === "signature_scroll") {
+        const taught = teachSignature();
+        if (taught?.status === "learned") {
+          const member = useGameStore.getState().party.find((m) => m.uid === taught.uid);
+          const moveId = member?.moveIds[member.moveIds.length - 1];
+          if (member && moveId) lines.push(t("quest.signatureLearned", { name: member.displayName, move: c.move(moveId) }));
+        } else if (taught?.status === "full") {
+          then = () =>
+            setLearnPrompt({
+              uid: taught.member.uid,
+              displayName: taught.member.displayName,
+              newMoveId: taught.moveId,
+              currentMoveIds: taught.member.moveIds,
+            });
+        }
+      }
+      setNotice({ id: "quest-complete", kicker: t("quest.completeKicker"), title, lines }, then);
+    } else {
+      setNotice(page("quest-after", giver, [t("map.npc.after")]));
+    }
+  }
+
+  /** Stepping onto a glint picks it up. */
+  function pickUp(glint: MapGlint) {
+    collectFind(glint.findId, glint.treasure);
+    const quest = questForFind(glint.findId);
+    let line: string;
+    if (quest) {
+      playJingle("caught");
+      line = t("map.find.quest", { thing: findName(glint.findId, i18n), giver: questGiver(quest, i18n) });
+    } else if (glint.treasure?.gold) {
+      ui.coin();
+      line = t("map.find.gold", { gold: glint.treasure.gold });
+    } else {
+      ui.coin();
+      line = t("map.find.item", { quantity: glint.treasure?.quantity ?? 1, item: c.item(glint.treasure?.itemId ?? "") });
+    }
+    setNotice({ id: "find", kicker: t("map.find.kicker"), title: quest ? questTitle(quest, i18n) : c.stage(map.zoneId), lines: [line] });
+  }
+
+  function travel(zoneId: string, startAt?: { row: number; col: number }) {
+    setCurrentZone(zoneId);
+    navigation.reset({ index: 0, routes: [{ name: "Map", params: startAt ? { zoneId, startAt } : { zoneId } }] });
+  }
+
   function move(direction: Direction) {
     if (busy || modalOpen) return;
     setFacing(direction);
@@ -202,6 +317,12 @@ export function MapScreen({ navigation, route }: Props) {
 
     // A trainer you walk into stops you where you are and challenges, rather than letting you
     // walk through them.
+    const npc = npcAt(map.zoneId, next.row, next.col);
+    if (npc) {
+      talk(npc);
+      return;
+    }
+
     const blocker = trainerAt(map.zoneId, next.row, next.col);
     if (blocker && !defeatedTrainerIds.includes(blocker.id)) {
       worldSfx.spotted();
@@ -232,6 +353,39 @@ export function MapScreen({ navigation, route }: Props) {
       duration: 150,
       useNativeDriver: false, // animating a plain View position, not a native-driver-eligible property
     }).start(() => {
+      // A hidden area has no road onward: either gate leads back to where you came in.
+      if (stage?.bonus && (isExitTile(map, next.row, next.col) || isEntranceTile(map, next.row, next.col))) {
+        const back = portalInto(map.zoneId);
+        travel(stage.bonus.fromZoneId, back ? { row: back.row, col: back.col } : undefined);
+        return;
+      }
+
+      const glint = glintAt(map.zoneId, next.row, next.col);
+      if (glint && findIsVisible(glint.findId, questWorld)) {
+        pickUp(glint);
+        setBusy(false);
+        return;
+      }
+
+      const portal = features.portal;
+      if (portal && portal.row === next.row && portal.col === next.col) {
+        const open = (inventory[portal.keyItemId] ?? 0) > 0;
+        const kind = portal.kind;
+        if (open) ui.confirm();
+        else ui.blocked();
+        setNotice(
+          {
+            id: "portal",
+            kicker: t(`map.portal.${kind}.kicker`),
+            title: open ? c.stage(portal.toZoneId) : t(`map.portal.${kind}.title`),
+            lines: [open ? t(`map.portal.${kind}.go`) : t(`map.portal.${kind}.locked`)],
+          },
+          open ? () => travel(portal.toZoneId) : undefined
+        );
+        setBusy(false);
+        return;
+      }
+
       if (isExitTile(map, next.row, next.col) && map.exitTo) {
         const gate = medalRequiredToEnter(map.exitTo);
         if (gate && !medals.includes(gate.medalId)) {
@@ -349,6 +503,19 @@ export function MapScreen({ navigation, route }: Props) {
             isGymLeader: !!trainer.isGymLeader,
             defeated: defeatedTrainerIds.includes(trainer.id),
           }))}
+          features={{
+            npcs: features.npcs.map((npc) => ({
+              id: npc.questId,
+              row: npc.row,
+              col: npc.col,
+              look: getQuest(npc.questId)!.giver.look,
+              marker: markerFor(npc),
+            })),
+            glints: features.glints.map((g) => ({ id: g.findId, row: g.row, col: g.col, quest: !g.treasure, visible: glintShown(g) })),
+            portal: features.portal
+              ? { row: features.portal.row, col: features.portal.col, kind: features.portal.kind, open: (inventory[features.portal.keyItemId] ?? 0) > 0 }
+              : null,
+          }}
         />
       )}
       {!use3D && (
@@ -382,6 +549,34 @@ export function MapScreen({ navigation, route }: Props) {
               isGymLeader={trainer.isGymLeader}
               defeated={defeatedTrainerIds.includes(trainer.id)}
             />
+          </View>
+        ))}
+
+        {features.portal && (
+          <View
+            testID="map-portal"
+            style={[styles.entity, entitySize, { left: features.portal.col * tile, top: features.portal.row * tile }]}
+          >
+            <PortalSprite size={tile} kind={features.portal.kind} open={(inventory[features.portal.keyItemId] ?? 0) > 0} />
+          </View>
+        )}
+        {features.glints.filter(glintShown).map((glint) => (
+          <View
+            key={glint.findId}
+            testID={`glint-${glint.findId}`}
+            pointerEvents="none"
+            style={[styles.entity, entitySize, { left: glint.col * tile, top: glint.row * tile }]}
+          >
+            <GlintSprite size={tile * 0.8} quest={!glint.treasure} />
+          </View>
+        ))}
+        {features.npcs.map((npc) => (
+          <View
+            key={npc.questId}
+            testID={`npc-${npc.questId}`}
+            style={[styles.entity, entitySize, { left: npc.col * tile, top: npc.row * tile }]}
+          >
+            <NpcSprite size={tile} look={getQuest(npc.questId)!.giver.look} marker={markerFor(npc)} />
           </View>
         ))}
 
@@ -422,7 +617,9 @@ export function MapScreen({ navigation, route }: Props) {
       {/* Where you are, laid over the corner of the map rather than taking a band of screen. */}
       <View testID="zone-badge" pointerEvents="none" style={[styles.badge, compact && styles.badgeCompact]}>
         <Text style={styles.badgeKicker}>
-          {t(stage?.gym ? "map.stageBadgeGym" : "map.stageBadge", { stage: stage?.stage ?? 1, total: TOTAL_STAGES })}
+          {stage?.bonus
+            ? t("map.stageBadgeBonus")
+            : t(stage?.gym ? "map.stageBadgeGym" : "map.stageBadge", { stage: stage?.stage ?? 1, total: TOTAL_STAGES })}
         </Text>
         <Text style={styles.badgeTitle}>{c.stage(map.zoneId)}</Text>
       </View>
@@ -448,6 +645,7 @@ export function MapScreen({ navigation, route }: Props) {
         {[
           { label: t("home.party"), testID: "drawer-party", go: () => navigation.navigate("Party") },
           { label: t("home.bag"), testID: "drawer-bag", go: () => navigation.navigate("Bag") },
+          { label: t("home.quests"), testID: "drawer-quests", go: () => navigation.navigate("Quests") },
           { label: t("home.codex"), testID: "drawer-codex", go: () => navigation.navigate("Codex") },
           { label: t("home.shop"), testID: "drawer-shop", go: () => navigation.navigate("Shop") },
           { label: t("home.settings"), testID: "drawer-settings", go: () => navigation.navigate("Settings") },
@@ -521,7 +719,21 @@ export function MapScreen({ navigation, route }: Props) {
         <ScreenBackground style={styles.wideRoot}>{world_}</ScreenBackground>
       )}
       {briefing.length > 0 && <BriefingModal pages={briefing} onDone={finishBriefing} />}
-      {notice && <BriefingModal pages={[notice]} onDone={() => setNotice(null)} />}
+      {notice && <BriefingModal pages={notice} onDone={closeNotice} />}
+      {learnPrompt && (
+        <MoveLearnModal
+          prompt={learnPrompt}
+          onReplace={(forgetMoveId) => {
+            replacePartyMemberMove(learnPrompt.uid, forgetMoveId, learnPrompt.newMoveId);
+            setToast(t("quest.signatureLearned", { name: learnPrompt.displayName, move: c.move(learnPrompt.newMoveId) }));
+            setLearnPrompt(null);
+          }}
+          onSkip={() => {
+            setToast(t("quest.signatureHint", { move: c.move(learnPrompt.newMoveId) }));
+            setLearnPrompt(null);
+          }}
+        />
+      )}
     </>
   );
 }

@@ -69,14 +69,28 @@
       "id": "silent_bell",
       "name": "Silent Bell",
       "category": "key_items",
-      "description": "Said to quiet the fog around the Antiquity Citadel. Not yet usable — the Citadel isn't built.",
+      "description": "A bronze bell with no clapper-sound at all. Rung before the stone gate at Ġgantija Terrace, it parts the fog over the Ċittadella Ruins.",
       "startingQuantity": 0
     },
     {
       "id": "il_ghajn_charm",
       "name": "Il-Għajn Charm",
       "category": "key_items",
-      "description": "A ward against misfortune, drawn from real Maltese folk-belief. Purely cosmetic for now.",
+      "description": "The painted eye from the prow of a luzzu, on a cord. It keeps misfortune off: every trap you throw holds 25% better, and hidden glints show on the map from anywhere.",
+      "startingQuantity": 0
+    },
+    {
+      "id": "luzzu_oar",
+      "name": "Luzzu Oar",
+      "category": "key_items",
+      "description": "A long oar painted blue, yellow and red. With it, the little boat at the jetty in Marsaxlokk Bay can row you out to Filfla Islet.",
+      "startingQuantity": 0
+    },
+    {
+      "id": "signature_scroll",
+      "name": "Signature Scroll",
+      "category": "key_items",
+      "description": "An old page of the temple builders' lore, naming the one move your starter's line was born for. Reading it taught them that move — keep it to remember.",
       "startingQuantity": 0
     }
   ]

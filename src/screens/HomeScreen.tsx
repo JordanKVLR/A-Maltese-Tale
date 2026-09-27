@@ -112,6 +112,14 @@ export function HomeScreen({ navigation }: Props) {
             onPress={() => navigation.navigate("Bag")}
           />
         </HoverTip>
+        <HoverTip text={t("home.tip.quests")}>
+          <PrimaryButton
+            testID="nav-quests"
+            label={t("home.quests")}
+            variant="secondary"
+            onPress={() => navigation.navigate("Quests")}
+          />
+        </HoverTip>
         <HoverTip text={t("home.tip.shop")}>
           <PrimaryButton
             testID="nav-shop"

@@ -22,5 +22,6 @@ export type RootStackParamList = {
   Help: undefined;
   Settings: undefined;
   MusicRoom: undefined;
+  Quests: undefined;
   CreatureDetail: CreatureDetailParams;
 };

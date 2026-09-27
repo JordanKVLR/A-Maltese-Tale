@@ -4,7 +4,7 @@ import type { TileMap } from "../../game/mapData";
 import type { TypeName } from "../../data/schemas";
 import { designFor } from "../../art/creatureDesigns";
 import { ThreeView } from "../../three/ThreeView";
-import { createMapScene, type Facing, type MapSceneApi, type MapTrainer } from "../../three/mapScene";
+import { createMapScene, type Facing, type MapFeatureView, type MapSceneApi, type MapTrainer } from "../../three/mapScene";
 import { useSettings } from "../../state/settingsStore";
 import { typeColor } from "../theme";
 
@@ -25,6 +25,7 @@ export function Map3D({
   facing,
   lead,
   trainers,
+  features,
 }: {
   map: TileMap;
   player: Animated.ValueXY;
@@ -32,11 +33,12 @@ export function Map3D({
   facing: Facing;
   lead: { speciesId: string; types: TypeName[] } | null;
   trainers: MapTrainer[];
+  features: MapFeatureView;
 }) {
   const reducedMotion = useSettings((s) => s.reducedMotion);
   const api = useRef<MapSceneApi | null>(null);
-  const latest = useRef({ facing, lead, trainers });
-  latest.current = { facing, lead, trainers };
+  const latest = useRef({ facing, lead, trainers, features });
+  latest.current = { facing, lead, trainers, features };
 
   useEffect(() => api.current?.setFacing(facing), [facing]);
   useEffect(() => {
@@ -44,6 +46,8 @@ export function Map3D({
   }, [lead?.speciesId]);
   const trainerKey = trainers.map((t) => `${t.id}:${t.defeated}`).join(",");
   useEffect(() => api.current?.setTrainers(trainers), [trainerKey]);
+  const featureKey = JSON.stringify(features);
+  useEffect(() => api.current?.setFeatures(features), [featureKey]);
 
   return (
     <ThreeView
@@ -55,6 +59,7 @@ export function Map3D({
         scene.setFacing(f);
         scene.setFollower(l ? designFor(l.speciesId, l.types, typeColor) : null);
         scene.setTrainers(t);
+        scene.setFeatures(latest.current.features);
         api.current = scene;
         return scene;
       }}

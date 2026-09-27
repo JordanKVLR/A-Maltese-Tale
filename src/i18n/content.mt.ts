@@ -131,11 +131,22 @@ export const MT_ITEMS: Record<string, { name: string; description: string }> = {
   silent_bell: {
     name: "Qanpiena Siekta",
     description:
-      "Jgħidu li ssikket iċ-ċpar madwar iċ-Ċittadella tal-Antikità. Għadha ma tistax tintuża — iċ-Ċittadella għadha ma nbnietx.",
+      "Qanpiena tal-bronż li ma tagħmel l-ebda ħoss. Iddoqqha quddiem il-bieb tal-ġebel fit-Terrazzin tal-Ġgantija, u ċ-ċpar fuq il-Fdalijiet taċ-Ċittadella jinfetaħ.",
   },
   il_ghajn_charm: {
     name: "Talisman tal-Għajn",
-    description: "Protezzjoni kontra s-sfortuna, meħuda mit-twemmin popolari Malti. Għalissa hija biss għad-dehra.",
+    description:
+      "L-għajn miżbugħa minn fuq il-pruwa ta' luzzu, fuq spaga. Iżżomm is-sfortuna 'l bogħod: kull nassa li tarmi żżomm 25% aħjar, u l-affarijiet moħbija jleqqu fuq il-mappa minn kullimkien.",
+  },
+  luzzu_oar: {
+    name: "Moqdief tal-Luzzu",
+    description:
+      "Moqdief twil miżbugħ ikħal, isfar u aħmar. Bih, id-dgħajsa ż-żgħira fil-moll ta' Marsaxlokk tista' taqdfek sa Filfla.",
+  },
+  signature_scroll: {
+    name: "Romblu tal-Mossa Unika",
+    description:
+      "Paġna qadima mit-tagħlim tal-bennejja tat-tempji, li ssemmi l-mossa li għaliha twieldet il-familja tal-ewwel kreatura tiegħek. Meta qrajtha, tgħallmuha — żommha biex tiftakar.",
   },
 };
 
@@ -160,6 +171,8 @@ export const MT_STAGES: Record<string, string> = {
   ghar_dalam: "Il-Fond ta' Għar Dalam",
   wied_babu: "Il-Kanjon ta' Wied Babu",
   grand_harbour: "Il-Port il-Kbir tal-Belt",
+  filfla_islet: "Il-Gżira ta' Filfla",
+  cittadella_ruins: "Il-Fdalijiet taċ-Ċittadella",
 };
 
 /** Keyed by medal id. */

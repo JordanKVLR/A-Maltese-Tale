@@ -20,7 +20,7 @@ import {
 } from "../game/party";
 import { xpRewardForLevel, currencyRewardForLevel } from "../game/progression";
 import { getMove, LAST_RESORT_MOVE_ID } from "../game/movesRepo";
-import { ballItems, getItem, usableItems } from "../game/itemsRepo";
+import { ballItems, catchRateWithCharms, getItem, usableItems } from "../game/itemsRepo";
 import type { ItemData } from "../data/schemas";
 import { BattleStateMachine, type Winner, type ActionOutcome } from "../engine/battleManager";
 import { attemptCatch, type ContainerType } from "../engine/catching";
@@ -876,7 +876,7 @@ export function BattleScreen({ navigation, route }: Props) {
     const result = attemptCatch({
       maxHp: enemyCreature.stats.hp,
       currentHp: enemyCreature.currentHp,
-      baseCatchRate: WILD_BASE_CATCH_RATE,
+      baseCatchRate: catchRateWithCharms(WILD_BASE_CATCH_RATE, useGameStore.getState().inventory),
       container: trap.id as ContainerType,
       status: enemyCreature.status,
     });

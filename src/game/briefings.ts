@@ -45,6 +45,14 @@ export function stageBriefing(zoneId: string, i18n: I18n): BriefingPage | null {
   const { t, c } = i18n;
   const stage = getStage(zoneId);
   if (!stage) return null;
+  if (stage.bonus) {
+    return {
+      id: `stage:${zoneId}`,
+      kicker: t("brief.stage.kickerBonus"),
+      title: c.stage(zoneId),
+      lines: [t("brief.bonus.line1"), t("brief.bonus.line2", { from: c.stage(stage.bonus.fromZoneId) })],
+    };
+  }
 
   const trainers = trainersForZone(zoneId);
   const regulars = trainers.filter((trainer) => !trainer.isGymLeader);

@@ -5,7 +5,7 @@ import wildCreaturesData from "../data/wildCreatures.json";
 import regionalVariantsData from "../data/regionalVariants.json";
 import legendariesData from "../data/legendaries.json";
 import type { Language } from "../game/settings";
-import { STAGES, ALL_MEDALS } from "../game/zoneProgression";
+import { STAGES, BONUS_STAGES, ALL_MEDALS } from "../game/zoneProgression";
 import { STARTER_QUIZ_QUESTIONS } from "../game/starterQuiz";
 import { boastText, type BoastRef } from "./boasts";
 import {
@@ -50,7 +50,7 @@ export interface Content {
 
 const EN_MOVES = new Map(movesData.moves.map((m) => [m.id, m.name]));
 const EN_ITEMS = new Map(itemsData.items.map((i) => [i.id, i]));
-const EN_STAGES = new Map(STAGES.map((s) => [s.id, s.name]));
+const EN_STAGES = new Map([...STAGES, ...BONUS_STAGES].map((s) => [s.id, s.name]));
 const EN_GYMS = new Map(ALL_MEDALS.map((g) => [g.medalId, g]));
 const EN_FLAVOR = new Map<string, string>([
   ...startersData.starters.flatMap((line) =>

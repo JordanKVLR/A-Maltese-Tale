@@ -28,6 +28,12 @@ export interface MapTrainer {
   defeated: boolean;
 }
 
+export interface MapFeatureView {
+  npcs: { id: string; row: number; col: number; look: "herbalist" | "archivist" | "fisher" | "sacristan"; marker: "!" | "?" | null }[];
+  glints: { id: string; row: number; col: number; quest: boolean; visible: boolean }[];
+  portal: { row: number; col: number; kind: "dock" | "gate"; open: boolean } | null;
+}
+
 export interface MapSceneApi {
   scene: THREE.Scene;
   camera: THREE.PerspectiveCamera;
@@ -37,6 +43,7 @@ export interface MapSceneApi {
   setFacing: (facing: Facing) => void;
   setFollower: (design: CreatureDesign | null) => void;
   setTrainers: (trainers: MapTrainer[]) => void;
+  setFeatures: (features: MapFeatureView) => void;
 }
 
 // ─── Palette ─────────────────────────────────────────────────────────────────────────────────
@@ -369,6 +376,121 @@ function person(look: PersonLook): { group: THREE.Group; legs: THREE.Object3D[];
   return { group, legs, arms, materials };
 }
 
+const NPC_LOOKS: Record<MapFeatureView["npcs"][number]["look"], PersonLook> = {
+  herbalist: { shirt: "#6f8f3a", trousers: "#4f6a24", skin: "#e8b98f", hair: "#e8e2d6" },
+  archivist: { shirt: "#9a4a3a", trousers: "#3a2a20", skin: "#f0c8a0", hair: "#3a2a1a", cape: "#6e3022" },
+  fisher: { shirt: "#2f6fb5", trousers: "#3a3a4a", skin: "#d9a67a", hair: "#2a1a10", hat: "#f2d04a" },
+  sacristan: { shirt: "#2b2b36", trousers: "#16161e", skin: "#f0c8a0", hair: "#1d1d1d", cape: "#2b2b36" },
+};
+
+/** A floating "!" or "?" over a quest-giver's head. */
+function questMarker(marker: "!" | "?"): THREE.Group {
+  const group = new THREE.Group();
+  const material = new THREE.MeshStandardMaterial({
+    color: marker === "!" ? "#f3c14a" : "#7ddba0",
+    emissive: marker === "!" ? "#a07810" : "#2f8f5a",
+    emissiveIntensity: 0.7,
+    roughness: 0.4,
+  });
+  if (marker === "!") {
+    const bar = new THREE.Mesh(new THREE.CapsuleGeometry(0.035, 0.12, 4, 8), material);
+    bar.position.y = 0.1;
+    group.add(bar);
+  } else {
+    const hook = new THREE.Mesh(new THREE.TorusGeometry(0.06, 0.028, 8, 16, Math.PI * 1.4), material);
+    hook.position.y = 0.14;
+    hook.rotation.z = -0.9;
+    group.add(hook);
+  }
+  const dot = new THREE.Mesh(new THREE.SphereGeometry(0.035, 10, 8), material);
+  dot.position.y = -0.03;
+  group.add(dot);
+  return group;
+}
+
+/** A glinting star on the ground: gold for treasure, sea-blue for a quest object. */
+function glintMesh(quest: boolean): THREE.Mesh {
+  const mesh = new THREE.Mesh(
+    new THREE.OctahedronGeometry(0.1, 0),
+    new THREE.MeshStandardMaterial({
+      color: quest ? "#7fe0ff" : "#ffe27a",
+      emissive: quest ? "#2a9fd0" : "#d0a020",
+      emissiveIntensity: 0.9,
+      roughness: 0.2,
+      metalness: 0.3,
+    })
+  );
+  mesh.scale.y = 1.5;
+  return mesh;
+}
+
+/** A timber jetty with a little painted luzzu tied to it. */
+function jetty(open: boolean): THREE.Group {
+  const group = new THREE.Group();
+  const wood = std("#9b7447");
+  const deck = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.05, 0.36), wood);
+  deck.position.y = 0.06;
+  deck.castShadow = true;
+  group.add(deck);
+  for (const x of [-0.4, 0, 0.4]) {
+    for (const z of [-0.15, 0.15]) {
+      const post = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, 0.3, 6), std("#6b4f2c"));
+      post.position.set(x, -0.05, z);
+      group.add(post);
+    }
+  }
+  const boat = new THREE.Group();
+  const hull = new THREE.Mesh(new THREE.SphereGeometry(0.2, 16, 8, 0, Math.PI * 2, Math.PI / 2, Math.PI / 2), std("#2f6fb5", { roughness: 0.5 }));
+  hull.scale.set(1, 0.7, 2);
+  boat.add(hull);
+  const rim = new THREE.Mesh(new THREE.TorusGeometry(0.2, 0.015, 6, 20), std("#f0c94a"));
+  rim.rotation.x = Math.PI / 2;
+  rim.scale.set(1, 2, 1);
+  boat.add(rim);
+  const floor = new THREE.Mesh(new THREE.CircleGeometry(0.19, 20), std("#6b4f35"));
+  floor.rotation.x = -Math.PI / 2;
+  floor.scale.set(1, 2, 1);
+  floor.position.y = -0.01;
+  boat.add(floor);
+  if (open) {
+    const oar = new THREE.Mesh(new THREE.BoxGeometry(0.03, 0.03, 0.7), std("#c9423a"));
+    oar.position.set(0.12, 0.06, 0);
+    oar.rotation.y = 0.3;
+    boat.add(oar);
+  }
+  boat.position.set(0, 0.05, 0.42);
+  boat.userData.bob = true;
+  group.add(boat);
+  return group;
+}
+
+/** A trilithon doorway in the temple style, choked with fog until the bell is rung. */
+function fogGate(open: boolean): THREE.Group {
+  const group = new THREE.Group();
+  const stone = std("#cdb995", { flatShading: true });
+  for (const x of [-0.3, 0.3]) {
+    const upright = new THREE.Mesh(new THREE.BoxGeometry(0.16, 0.8, 0.2), stone);
+    upright.position.set(x, 0.4, 0);
+    upright.castShadow = true;
+    group.add(upright);
+  }
+  const lintel = new THREE.Mesh(new THREE.BoxGeometry(0.86, 0.14, 0.24), stone);
+  lintel.position.y = 0.86;
+  lintel.castShadow = true;
+  group.add(lintel);
+  if (!open) {
+    const fog = new THREE.Mesh(
+      new THREE.SphereGeometry(0.34, 16, 12),
+      new THREE.MeshStandardMaterial({ color: "#eef3f6", transparent: true, opacity: 0.85, roughness: 1, depthWrite: false })
+    );
+    fog.scale.set(1, 1.3, 0.5);
+    fog.position.y = 0.42;
+    fog.userData.fog = true;
+    group.add(fog);
+  }
+  return group;
+}
+
 // ─── Scene ───────────────────────────────────────────────────────────────────────────────────
 
 export function createMapScene(map: TileMap, player: MapActor, follower: MapActor, options: { reducedMotion?: boolean } = {}): MapSceneApi {
@@ -457,6 +579,57 @@ export function createMapScene(map: TileMap, player: MapActor, follower: MapActo
     }
   }
 
+  // Quest-givers, glints and the way into a hidden area.
+  const featureGroup = new THREE.Group();
+  scene.add(featureGroup);
+  const npcFigures: { group: THREE.Group; marker: THREE.Group | null; phase: number }[] = [];
+  const glintMeshes: { mesh: THREE.Mesh; phase: number }[] = [];
+  const bobbing: THREE.Object3D[] = [];
+  const fogs: THREE.Mesh[] = [];
+  function setFeatures(features: MapFeatureView) {
+    featureGroup.traverse((o) => {
+      const mesh = o as THREE.Mesh;
+      if (mesh.isMesh) {
+        mesh.geometry.dispose();
+        (mesh.material as THREE.Material).dispose();
+      }
+    });
+    featureGroup.clear();
+    npcFigures.length = 0;
+    glintMeshes.length = 0;
+    bobbing.length = 0;
+    fogs.length = 0;
+    for (const npc of features.npcs) {
+      const figure = person(NPC_LOOKS[npc.look]);
+      figure.group.position.set(npc.col, 0, npc.row);
+      let marker: THREE.Group | null = null;
+      if (npc.marker) {
+        marker = questMarker(npc.marker);
+        marker.position.y = 1;
+        figure.group.add(marker);
+      }
+      featureGroup.add(figure.group);
+      npcFigures.push({ group: figure.group, marker, phase: npc.row + npc.col });
+    }
+    for (const glint of features.glints) {
+      if (!glint.visible) continue;
+      const mesh = glintMesh(glint.quest);
+      mesh.position.set(glint.col, 0.25, glint.row);
+      featureGroup.add(mesh);
+      glintMeshes.push({ mesh, phase: glint.row * 0.7 + glint.col });
+    }
+    if (features.portal) {
+      const { row, col, kind, open } = features.portal;
+      const building = kind === "dock" ? jetty(open) : fogGate(open);
+      building.position.set(col, 0, row);
+      building.traverse((o) => {
+        if (o.userData.bob) bobbing.push(o);
+        if (o.userData.fog) fogs.push(o as THREE.Mesh);
+      });
+      featureGroup.add(building);
+    }
+  }
+
   function setFollower(design: CreatureDesign | null) {
     if (followerModel) {
       followerHolder.remove(followerModel.group);
@@ -513,6 +686,33 @@ export function createMapScene(map: TileMap, player: MapActor, follower: MapActo
       let d = want - figure.group.rotation.y;
       d = Math.atan2(Math.sin(d), Math.cos(d));
       figure.group.rotation.y += d * Math.min(1, dt * 4);
+    }
+
+    for (const npc of npcFigures) {
+      const dx = p.x - npc.group.position.x;
+      const dz = p.y - npc.group.position.z;
+      const want = Math.hypot(dx, dz) < 4 ? Math.atan2(dx, dz) : Math.sin(time * 0.25 + npc.phase) * 0.4;
+      let d = want - npc.group.rotation.y;
+      d = Math.atan2(Math.sin(d), Math.cos(d));
+      npc.group.rotation.y += d * Math.min(1, dt * 3);
+      if (npc.marker) {
+        npc.marker.position.y = 1 + Math.sin(time * 3 + npc.phase) * 0.05;
+        npc.marker.rotation.y = time * 1.5 - npc.group.rotation.y;
+      }
+    }
+    for (const g of glintMeshes) {
+      g.mesh.rotation.y = time * 2.2 + g.phase;
+      g.mesh.position.y = 0.25 + Math.sin(time * 3 + g.phase) * 0.05;
+      const twinkle = 0.6 + Math.max(0, Math.sin(time * 4 + g.phase)) * 1.4;
+      (g.mesh.material as THREE.MeshStandardMaterial).emissiveIntensity = twinkle;
+    }
+    for (const b of bobbing) {
+      b.position.y = 0.05 + Math.sin(time * 1.6) * 0.02;
+      b.rotation.z = Math.sin(time * 1.2) * 0.05;
+    }
+    for (const f of fogs) {
+      (f.material as THREE.MeshStandardMaterial).opacity = 0.75 + Math.sin(time * 1.3) * 0.1;
+      f.scale.x = 1 + Math.sin(time * 0.9) * 0.05;
     }
 
     for (const mesh of pulsing) {
@@ -575,5 +775,6 @@ export function createMapScene(map: TileMap, player: MapActor, follower: MapActo
     },
     setFollower,
     setTrainers,
+    setFeatures,
   };
 }

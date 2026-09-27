@@ -308,3 +308,84 @@ export function PlayerSprite({ facing, size }: { facing: "up" | "down" | "left" 
     </Svg>
   );
 }
+
+export type NpcLook = "herbalist" | "archivist" | "fisher" | "sacristan";
+
+const NPC_COLOURS: Record<NpcLook, { coat: string; dark: string; head: string }> = {
+  herbalist: { coat: "#6f8f3a", dark: "#4f6a24", head: "#e8e2d6" },
+  archivist: { coat: "#9a4a3a", dark: "#6e3022", head: "#3a2a1a" },
+  fisher: { coat: "#2f6fb5", dark: "#1f4f86", head: "#f2d04a" },
+  sacristan: { coat: "#2b2b36", dark: "#16161e", head: "#1d1d1d" },
+};
+
+/**
+ * A quest-giver: rounder and softer than a trainer, each dressed for their trade. The mark over
+ * their head says whether they have something for you: "!" for a new quest, "?" when you are
+ * ready to hand one in, and nothing once you are done.
+ */
+export function NpcSprite({ size, look, marker }: { size: number; look: NpcLook; marker: "!" | "?" | null }) {
+  const { coat, dark, head } = NPC_COLOURS[look];
+  return (
+    <Svg width={size} height={size} viewBox="0 0 100 100">
+      <Ellipse cx={50} cy={90} rx={20} ry={5} fill="rgba(35,60,45,0.28)" />
+      <Path d="M32 52 q18 -8 36 0 l6 34 q-24 6 -48 0 z" fill={coat} stroke={dark} strokeWidth={2.2} />
+      <Circle cx={50} cy={40} r={15} fill="#f0c9a0" stroke="#c99a70" strokeWidth={2} />
+      <Circle cx={44} cy={41} r={2.6} fill="#2b3a44" />
+      <Circle cx={56} cy={41} r={2.6} fill="#2b3a44" />
+      <Path d="M44 47 q6 4 12 0" stroke="#a8724c" strokeWidth={2} fill="none" strokeLinecap="round" />
+      {look === "herbalist" && <Path d="M33 40 q17 -24 34 0 q-2 -6 -17 -7 q-15 1 -17 7 z" fill={head} />}
+      {look === "fisher" && <Path d="M32 32 h36 l-4 -8 h-28 z" fill={head} stroke="#b89a2a" strokeWidth={1.5} />}
+      {look === "archivist" && <Path d="M35 36 q15 -18 30 0 q-6 -10 -15 -10 q-9 0 -15 10 z" fill={head} />}
+      {look === "sacristan" && <Rect x={36} y={22} width={28} height={9} rx={4} fill={head} />}
+      {marker && (
+        <G>
+          <Circle cx={50} cy={10} r={9} fill={marker === "!" ? "#f3c14a" : "#7ddba0"} stroke="#6b5a1a" strokeWidth={1.8} />
+          <Path
+            d={marker === "!" ? "M50 4.5 v7" : "M46.8 7.2 q3.2 -4 6.4 0 q0 2.6 -3.2 3.6 v1.4"}
+            stroke="#3a2a0a"
+            strokeWidth={2.6}
+            fill="none"
+            strokeLinecap="round"
+          />
+          <Circle cx={50} cy={15} r={1.6} fill="#3a2a0a" />
+        </G>
+      )}
+    </Svg>
+  );
+}
+
+/** Something glinting on the ground — a quest object or a bit of treasure. */
+export function GlintSprite({ size, quest }: { size: number; quest?: boolean }) {
+  const fill = quest ? "#7fe0ff" : "#ffe27a";
+  return (
+    <Svg width={size} height={size} viewBox="0 0 100 100">
+      <Ellipse cx={50} cy={66} rx={12} ry={4} fill="rgba(35,60,45,0.25)" />
+      <Path d="M50 30 l6 18 l18 6 l-18 6 l-6 18 l-6 -18 l-18 -6 l18 -6 z" fill={fill} stroke="#ffffff" strokeWidth={2} />
+      <Circle cx={68} cy={34} r={3} fill="#ffffff" />
+    </Svg>
+  );
+}
+
+/** The way into a hidden area: a jetty with a boat, or a stone doorway full of fog. */
+export function PortalSprite({ size, kind, open }: { size: number; kind: "dock" | "gate"; open: boolean }) {
+  if (kind === "dock") {
+    return (
+      <Svg width={size} height={size} viewBox="0 0 100 100">
+        <Rect x={16} y={40} width={68} height={16} rx={2} fill="#9b7447" stroke="#6b4f2c" strokeWidth={2} />
+        {[26, 42, 58, 74].map((x) => (
+          <Rect key={x} x={x - 1} y={40} width={2} height={16} fill="#6b4f2c" />
+        ))}
+        <Path d="M24 70 q26 12 52 0 l-6 -8 h-40 z" fill="#2f6fb5" stroke="#f0c94a" strokeWidth={3} />
+        {open && <Rect x={48} y={52} width={3} height={22} fill="#c9423a" transform="rotate(35 50 62)" />}
+      </Svg>
+    );
+  }
+  return (
+    <Svg width={size} height={size} viewBox="0 0 100 100">
+      <Rect x={20} y={24} width={14} height={62} fill="#c9b48a" stroke="#8f7a52" strokeWidth={2} />
+      <Rect x={66} y={24} width={14} height={62} fill="#c9b48a" stroke="#8f7a52" strokeWidth={2} />
+      <Rect x={16} y={16} width={68} height={12} fill="#d6c4a0" stroke="#8f7a52" strokeWidth={2} />
+      <Rect x={34} y={28} width={32} height={58} fill={open ? "rgba(255,255,255,0.12)" : "rgba(235,240,245,0.92)"} />
+    </Svg>
+  );
+}

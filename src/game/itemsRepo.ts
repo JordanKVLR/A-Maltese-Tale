@@ -53,3 +53,10 @@ export function pickBestAvailableBall(inventory: Record<string, number>): ItemDa
   }
   return undefined;
 }
+
+/** Carrying the Għajn Charm makes every trap hold this much better. */
+export const GHAJN_CHARM_CATCH_BONUS = 1.25;
+
+export function catchRateWithCharms(baseRate: number, inventory: Record<string, number>): number {
+  return (inventory.il_ghajn_charm ?? 0) > 0 ? baseRate * GHAJN_CHARM_CATCH_BONUS : baseRate;
+}

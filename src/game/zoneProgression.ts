@@ -27,6 +27,16 @@ export interface StageDef {
   gym?: GymDef;
   /** Medal required to walk in here at all. Set on the stage right after each gym. */
   requiresMedal?: string;
+  /** Set on hidden areas, which sit off the main road: where they are reached from, and the
+   * key item that opens the way. */
+  bonus?: BonusDef;
+}
+
+export interface BonusDef {
+  fromZoneId: string;
+  keyItemId: string;
+  /** How the way in looks on the map: a boat at a jetty, or a stone gate in fog. */
+  portal: "dock" | "gate";
 }
 
 const RAW: Array<{
@@ -129,7 +139,41 @@ export const STAGES: StageDef[] = RAW.map((raw, i) => {
 
 export const FIRST_STAGE_ID = STAGES[0].id;
 
-const BY_ID = new Map(STAGES.map((s) => [s.id, s]));
+/**
+ * Hidden areas off the main road, each opened by a quest's key item. They are not part of the
+ * twenty-stage run — no medal, no count towards beating everyone — but they are tougher than
+ * where they are reached from, and hold things found nowhere else.
+ */
+export const BONUS_STAGES: StageDef[] = [
+  {
+    id: "filfla_islet",
+    name: "Filfla Islet",
+    biomes: ["rock", "water"],
+    bonus: { fromZoneId: "marsaxlokk_bay", keyItemId: "luzzu_oar", portal: "dock" as const },
+    referenceStage: 10,
+  },
+  {
+    id: "cittadella_ruins",
+    name: "Ċittadella Ruins",
+    biomes: ["grass", "rock"],
+    bonus: { fromZoneId: "ggantija_terrace", keyItemId: "silent_bell", portal: "gate" as const },
+    referenceStage: 20,
+  },
+].map(({ referenceStage, ...raw }) => ({
+  ...raw,
+  biomes: raw.biomes as [BiomeType, BiomeType],
+  stage: referenceStage,
+  baseLevel: levelForStage(referenceStage) + 2,
+  levelSpread: 3,
+  legendaryMinLevel: levelForStage(referenceStage) + 14,
+}));
+
+const BY_ID = new Map([...STAGES, ...BONUS_STAGES].map((s) => [s.id, s]));
+
+/** The hidden area reached from this zone, if there is one. */
+export function bonusStageFrom(zoneId: string): StageDef | undefined {
+  return BONUS_STAGES.find((s) => s.bonus!.fromZoneId === zoneId);
+}
 
 export function getStage(zoneId: string): StageDef | undefined {
   return BY_ID.get(zoneId);
@@ -150,12 +194,15 @@ export function stageIndexOf(zoneId: string): number {
 
 /** The zone this one's exit leads to, or null at the end of the run. */
 export function nextStageId(zoneId: string): string | null {
+  if (getStage(zoneId)?.bonus) return null;
   const i = stageIndexOf(zoneId);
   return i >= 0 && i < STAGES.length - 1 ? STAGES[i + 1].id : null;
 }
 
 /** The zone this one's entrance leads back to, or null at the very start. */
 export function previousStageId(zoneId: string): string | null {
+  const bonus = getStage(zoneId)?.bonus;
+  if (bonus) return bonus.fromZoneId;
   const i = stageIndexOf(zoneId);
   return i > 0 ? STAGES[i - 1].id : null;
 }

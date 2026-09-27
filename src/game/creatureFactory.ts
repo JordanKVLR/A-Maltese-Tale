@@ -101,6 +101,11 @@ export function buildStarterParticipant(
   return buildParticipant(instanceId, stageOne.id, stageOne.name, stageOne.types, stageOne.baseStats, level, STARTER_MOVESETS[line]);
 }
 
+/** The signature move of the starter line a species belongs to, if it is a starter at all. */
+export function starterSignatureFor(speciesId: string): string | undefined {
+  return starters.find((line) => line.stages.some((stage) => stage.id === speciesId))?.signatureMoveId;
+}
+
 export function getStarterStageOne(line: StarterLineName) {
   return getStarterLine(line).stages[0];
 }
