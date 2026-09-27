@@ -11,6 +11,7 @@ import { PrimaryButton } from "./PrimaryButton";
 import { LevelUpModal, type LevelUpRevealData } from "./LevelUpModal";
 import { EvolutionModal, type EvolutionRevealData } from "./EvolutionModal";
 import { MoveLearnModal, type MoveLearnPrompt } from "./MoveLearnModal";
+import { MoveLearnedModal, type MoveLearnedNotice } from "./MoveLearnedModal";
 import { colors } from "../theme";
 import { battle as battleSfx } from "../../audio/sfx";
 
@@ -35,6 +36,7 @@ export function useItemFlow() {
   const [feedback, setFeedback] = useState<string | null>(null);
   const [levelUpReveal, setLevelUpReveal] = useState<LevelUpRevealData | null>(null);
   const [evolutionReveal, setEvolutionReveal] = useState<EvolutionRevealData | null>(null);
+  const [learnedNotices, setLearnedNotices] = useState<MoveLearnedNotice[]>([]);
   const [movePrompts, setMovePrompts] = useState<MoveLearnPrompt[]>([]);
 
   const ownedUsable = usableItems().filter((item) => (inventory[item.id] ?? 0) > 0);
@@ -65,8 +67,8 @@ export function useItemFlow() {
     }
 
     const leveled = result.member;
-    for (const moveId of result.moveLearning.learned) {
-      setFeedback(t("battle.learned", { name: leveled.displayName, move: c.move(moveId) }));
+    if (result.moveLearning.learned.length > 0) {
+      setLearnedNotices(result.moveLearning.learned.map((moveId) => ({ displayName: leveled.displayName, moveId })));
     }
     if (result.moveLearning.pending.length > 0) {
       setMovePrompts(
@@ -183,6 +185,8 @@ export function useItemFlow() {
         <EvolutionModal data={evolutionReveal} onDismiss={() => setEvolutionReveal(null)} />
       ) : levelUpReveal ? (
         <LevelUpModal data={levelUpReveal} onDismiss={() => setLevelUpReveal(null)} />
+      ) : learnedNotices.length > 0 ? (
+        <MoveLearnedModal notice={learnedNotices[0]} onDismiss={() => setLearnedNotices((prev) => prev.slice(1))} />
       ) : (
         movePrompts.length > 0 && (
           <MoveLearnModal

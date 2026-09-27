@@ -389,3 +389,19 @@ export function PortalSprite({ size, kind, open }: { size: number; kind: "dock" 
     </Svg>
   );
 }
+
+/** The Gaġġa: a wooden coop with an iron-barred front, the kind kept in a Maltese farmyard. */
+export function CageSprite({ size }: { size: number }) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 100 100">
+      <Ellipse cx={50} cy={88} rx={34} ry={6} fill="rgba(35,60,45,0.28)" />
+      <Path d="M14 40 L50 16 L86 40 Z" fill="#b5553a" stroke="#7d3524" strokeWidth={2.5} />
+      <Rect x={20} y={40} width={60} height={46} rx={3} fill="#9b7447" stroke="#6b4f2c" strokeWidth={2.5} />
+      <Rect x={28} y={48} width={44} height={32} rx={2} fill="#3a2e22" />
+      {[34, 42, 50, 58, 66].map((x) => (
+        <Rect key={x} x={x - 1.2} y={48} width={2.4} height={32} fill="#c9c2b4" />
+      ))}
+      <Circle cx={50} cy={30} r={5} fill="#f3c14a" stroke="#b98a16" strokeWidth={1.5} />
+    </Svg>
+  );
+}

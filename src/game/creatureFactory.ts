@@ -1,3 +1,4 @@
+import { movesKnownAtLevel } from "./learnsetsRepo";
 import startersData from "../data/starters.json";
 import wildCreaturesData from "../data/wildCreatures.json";
 import regionalVariantsData from "../data/regionalVariants.json";
@@ -98,7 +99,15 @@ export function buildStarterParticipant(
 ): BattleParticipant {
   const starterLine = getStarterLine(line);
   const stageOne = starterLine.stages[0];
-  return buildParticipant(instanceId, stageOne.id, stageOne.name, stageOne.types, stageOne.baseStats, level, STARTER_MOVESETS[line]);
+  return buildParticipant(
+    instanceId,
+    stageOne.id,
+    stageOne.name,
+    stageOne.types,
+    stageOne.baseStats,
+    level,
+    movesKnownAtLevel(stageOne.id, level, STARTER_MOVESETS[line])
+  );
 }
 
 /** The signature move of the starter line a species belongs to, if it is a starter at all. */

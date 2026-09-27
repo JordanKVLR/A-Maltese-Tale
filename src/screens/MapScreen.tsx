@@ -12,8 +12,8 @@ import {
   isHealTile,
   findTilePosition,
 } from "../game/mapData";
-import { TileArt, PlayerSprite, TrainerSprite, NpcSprite, GlintSprite, PortalSprite } from "../art/tileArt";
-import { featuresForZone, npcAt, glintAt, portalInto, type MapGlint, type MapNpc } from "../game/mapFeatures";
+import { TileArt, PlayerSprite, TrainerSprite, NpcSprite, GlintSprite, PortalSprite, CageSprite } from "../art/tileArt";
+import { featuresForZone, npcAt, glintAt, portalInto, cageAt, type MapGlint, type MapNpc } from "../game/mapFeatures";
 import { findIsVisible, getQuest, questForFind, questProgress, questState } from "../game/quests";
 import { findName, questGiver, questLine, questTitle, stepLabel } from "../game/questText";
 import { questWorldOf } from "../state/gameStore";
@@ -409,6 +409,13 @@ export function MapScreen({ navigation, route }: Props) {
         return;
       }
 
+      if (cageAt(map.zoneId, next.row, next.col)) {
+        ui.open();
+        setBusy(false);
+        navigation.navigate("Cage");
+        return;
+      }
+
       const portal = features.portal;
       if (portal && portal.row === next.row && portal.col === next.col) {
         const open = (inventory[portal.keyItemId] ?? 0) > 0;
@@ -555,6 +562,7 @@ export function MapScreen({ navigation, route }: Props) {
               marker: markerFor(npc),
             })),
             glints: features.glints.map((g) => ({ id: g.findId, row: g.row, col: g.col, quest: !g.treasure, visible: glintShown(g) })),
+            cage: features.cage,
             portal: features.portal
               ? { row: features.portal.row, col: features.portal.col, kind: features.portal.kind, open: (inventory[features.portal.keyItemId] ?? 0) > 0 }
               : null,
@@ -595,6 +603,14 @@ export function MapScreen({ navigation, route }: Props) {
           </View>
         ))}
 
+        {features.cage && (
+          <View
+            testID="map-cage"
+            style={[styles.entity, entitySize, { left: features.cage.col * tile, top: features.cage.row * tile }]}
+          >
+            <CageSprite size={tile} />
+          </View>
+        )}
         {features.portal && (
           <View
             testID="map-portal"

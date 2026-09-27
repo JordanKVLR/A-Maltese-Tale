@@ -911,6 +911,1708 @@
       "pp": 5,
       "basePriority": 0,
       "signature": "pierce"
+    },
+    {
+      "id": "dart_strike",
+      "name": "Dart Strike",
+      "type": "Normal",
+      "category": "physical",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 30,
+      "basePriority": 1
+    },
+    {
+      "id": "scatter_shot",
+      "name": "Scatter Shot",
+      "type": "Normal",
+      "category": "special",
+      "power": 60,
+      "accuracy": 100,
+      "pp": 20,
+      "basePriority": 0
+    },
+    {
+      "id": "dust_kick",
+      "name": "Dust Kick",
+      "type": "Normal",
+      "category": "physical",
+      "power": 50,
+      "accuracy": 100,
+      "pp": 25,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "opponent",
+          "stat": "accuracy",
+          "stages": -1,
+          "chance": 50
+        }
+      ]
+    },
+    {
+      "id": "festa_drum",
+      "name": "Festa Drum",
+      "type": "Normal",
+      "category": "status",
+      "power": 0,
+      "accuracy": 100,
+      "pp": 15,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "atk",
+          "stages": 1,
+          "chance": 100
+        },
+        {
+          "target": "self",
+          "stat": "speed",
+          "stages": 1,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "taunting_jeer",
+      "name": "Taunting Jeer",
+      "type": "Normal",
+      "category": "status",
+      "power": 0,
+      "accuracy": 100,
+      "pp": 20,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "opponent",
+          "stat": "def",
+          "stages": -1,
+          "chance": 100
+        },
+        {
+          "target": "opponent",
+          "stat": "spdef",
+          "stages": -1,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "nimble_feint",
+      "name": "Nimble Feint",
+      "type": "Normal",
+      "category": "status",
+      "power": 0,
+      "accuracy": 100,
+      "pp": 15,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "evasion",
+          "stages": 1,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "rallying_shout",
+      "name": "Rallying Shout",
+      "type": "Normal",
+      "category": "status",
+      "power": 0,
+      "accuracy": 100,
+      "pp": 15,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "atk",
+          "stages": 1,
+          "chance": 100
+        },
+        {
+          "target": "self",
+          "stat": "spatk",
+          "stages": 1,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "market_brawl",
+      "name": "Market Brawl",
+      "type": "Normal",
+      "category": "physical",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 15,
+      "basePriority": 0
+    },
+    {
+      "id": "crushing_weight",
+      "name": "Crushing Weight",
+      "type": "Normal",
+      "category": "physical",
+      "power": 100,
+      "accuracy": 85,
+      "pp": 10,
+      "basePriority": 0
+    },
+    {
+      "id": "all_out_rush",
+      "name": "All-Out Rush",
+      "type": "Normal",
+      "category": "physical",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 5,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "def",
+          "stages": -1,
+          "chance": 100
+        },
+        {
+          "target": "self",
+          "stat": "spdef",
+          "stages": -1,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "carob_pod",
+      "name": "Carob Pod Flick",
+      "type": "Grass",
+      "category": "physical",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 30,
+      "basePriority": 1
+    },
+    {
+      "id": "prickly_pear",
+      "name": "Prickly Pear Spines",
+      "type": "Grass",
+      "category": "physical",
+      "power": 65,
+      "accuracy": 100,
+      "pp": 20,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "opponent",
+          "stat": "def",
+          "stages": -1,
+          "chance": 30
+        }
+      ]
+    },
+    {
+      "id": "caper_spores",
+      "name": "Caper Spores",
+      "type": "Grass",
+      "category": "status",
+      "power": 0,
+      "accuracy": 85,
+      "pp": 15,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "opponent",
+          "stat": "speed",
+          "stages": -1,
+          "chance": 100
+        },
+        {
+          "target": "opponent",
+          "stat": "accuracy",
+          "stages": -1,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "olive_grove",
+      "name": "Olive Grove Storm",
+      "type": "Grass",
+      "category": "special",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 12,
+      "basePriority": 0
+    },
+    {
+      "id": "terrace_crush",
+      "name": "Terrace Crush",
+      "type": "Grass",
+      "category": "physical",
+      "power": 120,
+      "accuracy": 80,
+      "pp": 5,
+      "basePriority": 0
+    },
+    {
+      "id": "fig_bloom",
+      "name": "Fig Tree Bloom",
+      "type": "Grass",
+      "category": "special",
+      "power": 130,
+      "accuracy": 90,
+      "pp": 5,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "spatk",
+          "stages": -2,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "flint_spark",
+      "name": "Flint Spark",
+      "type": "Fire",
+      "category": "physical",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 30,
+      "basePriority": 1
+    },
+    {
+      "id": "kiln_breath",
+      "name": "Kiln Breath",
+      "type": "Fire",
+      "category": "special",
+      "power": 65,
+      "accuracy": 100,
+      "pp": 20,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "opponent",
+          "stat": "spdef",
+          "stages": -1,
+          "chance": 30
+        }
+      ]
+    },
+    {
+      "id": "bonfire_dance",
+      "name": "Bonfire Dance",
+      "type": "Fire",
+      "category": "status",
+      "power": 0,
+      "accuracy": 100,
+      "pp": 15,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "spatk",
+          "stages": 1,
+          "chance": 100
+        },
+        {
+          "target": "self",
+          "stat": "speed",
+          "stages": 1,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "festa_fireworks",
+      "name": "Festa Fireworks",
+      "type": "Fire",
+      "category": "special",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 12,
+      "basePriority": 0
+    },
+    {
+      "id": "furnace_rush",
+      "name": "Furnace Rush",
+      "type": "Fire",
+      "category": "physical",
+      "power": 120,
+      "accuracy": 80,
+      "pp": 5,
+      "basePriority": 0
+    },
+    {
+      "id": "sirocco_blaze",
+      "name": "Sirocco Blaze",
+      "type": "Fire",
+      "category": "special",
+      "power": 130,
+      "accuracy": 90,
+      "pp": 5,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "spatk",
+          "stages": -2,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "sea_spray",
+      "name": "Sea Spray",
+      "type": "Water",
+      "category": "special",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 30,
+      "basePriority": 1
+    },
+    {
+      "id": "undertow",
+      "name": "Undertow",
+      "type": "Water",
+      "category": "physical",
+      "power": 65,
+      "accuracy": 100,
+      "pp": 20,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "opponent",
+          "stat": "speed",
+          "stages": -1,
+          "chance": 50
+        }
+      ]
+    },
+    {
+      "id": "still_harbour",
+      "name": "Still Harbour",
+      "type": "Water",
+      "category": "status",
+      "power": 0,
+      "accuracy": 100,
+      "pp": 15,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "spdef",
+          "stages": 2,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "grotto_torrent",
+      "name": "Grotto Torrent",
+      "type": "Water",
+      "category": "special",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 12,
+      "basePriority": 0
+    },
+    {
+      "id": "storm_breaker",
+      "name": "Storm Breaker",
+      "type": "Water",
+      "category": "physical",
+      "power": 120,
+      "accuracy": 80,
+      "pp": 5,
+      "basePriority": 0
+    },
+    {
+      "id": "deep_trench",
+      "name": "Deep Trench Surge",
+      "type": "Water",
+      "category": "physical",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 5,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "speed",
+          "stages": -1,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "quick_jolt",
+      "name": "Quick Jolt",
+      "type": "Electric",
+      "category": "special",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 30,
+      "basePriority": 1
+    },
+    {
+      "id": "static_web",
+      "name": "Static Web",
+      "type": "Electric",
+      "category": "special",
+      "power": 55,
+      "accuracy": 95,
+      "pp": 20,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "opponent",
+          "stat": "speed",
+          "stages": -1,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "storm_charge",
+      "name": "Storm Charge",
+      "type": "Electric",
+      "category": "status",
+      "power": 0,
+      "accuracy": 100,
+      "pp": 15,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "spatk",
+          "stages": 1,
+          "chance": 100
+        },
+        {
+          "target": "self",
+          "stat": "spdef",
+          "stages": 1,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "lightning_lance",
+      "name": "Lightning Lance",
+      "type": "Electric",
+      "category": "physical",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 12,
+      "basePriority": 0
+    },
+    {
+      "id": "thunder_crack",
+      "name": "Thunder Crack",
+      "type": "Electric",
+      "category": "special",
+      "power": 110,
+      "accuracy": 70,
+      "pp": 5,
+      "basePriority": 0
+    },
+    {
+      "id": "overload",
+      "name": "Overload",
+      "type": "Electric",
+      "category": "special",
+      "power": 130,
+      "accuracy": 90,
+      "pp": 5,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "spatk",
+          "stages": -2,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "hail_pellet",
+      "name": "Hail Pellet",
+      "type": "Ice",
+      "category": "physical",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 30,
+      "basePriority": 1
+    },
+    {
+      "id": "frost_bite",
+      "name": "Frost Bite",
+      "type": "Ice",
+      "category": "physical",
+      "power": 65,
+      "accuracy": 95,
+      "pp": 20,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "opponent",
+          "stat": "atk",
+          "stages": -1,
+          "chance": 30
+        }
+      ]
+    },
+    {
+      "id": "ice_mirror",
+      "name": "Ice Mirror",
+      "type": "Ice",
+      "category": "status",
+      "power": 0,
+      "accuracy": 100,
+      "pp": 15,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "evasion",
+          "stages": 1,
+          "chance": 100
+        },
+        {
+          "target": "self",
+          "stat": "spdef",
+          "stages": 1,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "glacier_beam",
+      "name": "Glacier Beam",
+      "type": "Ice",
+      "category": "special",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 12,
+      "basePriority": 0
+    },
+    {
+      "id": "blizzard_squall",
+      "name": "Blizzard Squall",
+      "type": "Ice",
+      "category": "special",
+      "power": 110,
+      "accuracy": 70,
+      "pp": 5,
+      "basePriority": 0
+    },
+    {
+      "id": "avalanche_drop",
+      "name": "Avalanche Drop",
+      "type": "Ice",
+      "category": "physical",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 5,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "speed",
+          "stages": -1,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "snap_jab",
+      "name": "Snap Jab",
+      "type": "Fighting",
+      "category": "physical",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 30,
+      "basePriority": 1
+    },
+    {
+      "id": "knee_breaker",
+      "name": "Knee Breaker",
+      "type": "Fighting",
+      "category": "physical",
+      "power": 65,
+      "accuracy": 100,
+      "pp": 20,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "opponent",
+          "stat": "speed",
+          "stages": -1,
+          "chance": 50
+        }
+      ]
+    },
+    {
+      "id": "quarrymans_grit",
+      "name": "Quarryman's Grit",
+      "type": "Fighting",
+      "category": "status",
+      "power": 0,
+      "accuracy": 100,
+      "pp": 15,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "atk",
+          "stages": 1,
+          "chance": 100
+        },
+        {
+          "target": "self",
+          "stat": "def",
+          "stages": 1,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "harbour_throw",
+      "name": "Harbour Throw",
+      "type": "Fighting",
+      "category": "physical",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 12,
+      "basePriority": 0
+    },
+    {
+      "id": "knights_haymaker",
+      "name": "Knight's Haymaker",
+      "type": "Fighting",
+      "category": "physical",
+      "power": 120,
+      "accuracy": 80,
+      "pp": 5,
+      "basePriority": 0
+    },
+    {
+      "id": "last_stand",
+      "name": "Last Stand",
+      "type": "Fighting",
+      "category": "physical",
+      "power": 130,
+      "accuracy": 100,
+      "pp": 5,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "def",
+          "stages": -1,
+          "chance": 100
+        },
+        {
+          "target": "self",
+          "stat": "spdef",
+          "stages": -1,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "needle_sting",
+      "name": "Needle Sting",
+      "type": "Poison",
+      "category": "physical",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 30,
+      "basePriority": 1
+    },
+    {
+      "id": "toxic_splash",
+      "name": "Toxic Splash",
+      "type": "Poison",
+      "category": "special",
+      "power": 65,
+      "accuracy": 100,
+      "pp": 20,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "opponent",
+          "stat": "spatk",
+          "stages": -1,
+          "chance": 30
+        }
+      ]
+    },
+    {
+      "id": "marsh_miasma",
+      "name": "Marsh Miasma",
+      "type": "Poison",
+      "category": "status",
+      "power": 0,
+      "accuracy": 90,
+      "pp": 15,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "opponent",
+          "stat": "spdef",
+          "stages": -2,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "acid_torrent",
+      "name": "Acid Torrent",
+      "type": "Poison",
+      "category": "special",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 12,
+      "basePriority": 0
+    },
+    {
+      "id": "nightshade_lash",
+      "name": "Nightshade Lash",
+      "type": "Poison",
+      "category": "physical",
+      "power": 120,
+      "accuracy": 80,
+      "pp": 5,
+      "basePriority": 0
+    },
+    {
+      "id": "plague_cloud",
+      "name": "Plague Cloud",
+      "type": "Poison",
+      "category": "special",
+      "power": 130,
+      "accuracy": 90,
+      "pp": 5,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "spatk",
+          "stages": -2,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "pebble_toss",
+      "name": "Pebble Toss",
+      "type": "Ground",
+      "category": "physical",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 30,
+      "basePriority": 1
+    },
+    {
+      "id": "mud_splash",
+      "name": "Mud Splash",
+      "type": "Ground",
+      "category": "special",
+      "power": 55,
+      "accuracy": 100,
+      "pp": 20,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "opponent",
+          "stat": "accuracy",
+          "stages": -1,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "sand_veil",
+      "name": "Sandstorm Veil",
+      "type": "Ground",
+      "category": "status",
+      "power": 0,
+      "accuracy": 100,
+      "pp": 15,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "evasion",
+          "stages": 2,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "rubble_quake",
+      "name": "Rubble Quake",
+      "type": "Ground",
+      "category": "physical",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 12,
+      "basePriority": 0
+    },
+    {
+      "id": "fissure_split",
+      "name": "Fissure Split",
+      "type": "Ground",
+      "category": "physical",
+      "power": 120,
+      "accuracy": 80,
+      "pp": 5,
+      "basePriority": 0
+    },
+    {
+      "id": "earth_breaker",
+      "name": "Earth Breaker",
+      "type": "Ground",
+      "category": "physical",
+      "power": 130,
+      "accuracy": 100,
+      "pp": 5,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "atk",
+          "stages": -1,
+          "chance": 100
+        },
+        {
+          "target": "self",
+          "stat": "speed",
+          "stages": -1,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "swift_wing",
+      "name": "Swift Wing",
+      "type": "Flying",
+      "category": "physical",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 30,
+      "basePriority": 1
+    },
+    {
+      "id": "gull_swoop",
+      "name": "Gull Swoop",
+      "type": "Flying",
+      "category": "physical",
+      "power": 65,
+      "accuracy": 100,
+      "pp": 20,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "opponent",
+          "stat": "def",
+          "stages": -1,
+          "chance": 30
+        }
+      ]
+    },
+    {
+      "id": "gregale_tailwind",
+      "name": "Gregale Tailwind",
+      "type": "Flying",
+      "category": "status",
+      "power": 0,
+      "accuracy": 100,
+      "pp": 15,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "speed",
+          "stages": 1,
+          "chance": 100
+        },
+        {
+          "target": "self",
+          "stat": "accuracy",
+          "stages": 1,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "cliff_updraft",
+      "name": "Cliff Updraft",
+      "type": "Flying",
+      "category": "special",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 12,
+      "basePriority": 0
+    },
+    {
+      "id": "hurricane",
+      "name": "Hurricane",
+      "type": "Flying",
+      "category": "special",
+      "power": 110,
+      "accuracy": 70,
+      "pp": 5,
+      "basePriority": 0
+    },
+    {
+      "id": "sky_crash",
+      "name": "Sky Crash",
+      "type": "Flying",
+      "category": "physical",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 5,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "def",
+          "stages": -1,
+          "chance": 100
+        },
+        {
+          "target": "self",
+          "stat": "spdef",
+          "stages": -1,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "mind_flick",
+      "name": "Mind Flick",
+      "type": "Psychic",
+      "category": "special",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 30,
+      "basePriority": 1
+    },
+    {
+      "id": "dream_pulse",
+      "name": "Dream Pulse",
+      "type": "Psychic",
+      "category": "special",
+      "power": 65,
+      "accuracy": 100,
+      "pp": 20,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "opponent",
+          "stat": "accuracy",
+          "stages": -1,
+          "chance": 30
+        }
+      ]
+    },
+    {
+      "id": "temple_meditation",
+      "name": "Temple Meditation",
+      "type": "Psychic",
+      "category": "status",
+      "power": 0,
+      "accuracy": 100,
+      "pp": 15,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "spatk",
+          "stages": 1,
+          "chance": 100
+        },
+        {
+          "target": "self",
+          "stat": "spdef",
+          "stages": 1,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "oracle_vision",
+      "name": "Oracle Vision",
+      "type": "Psychic",
+      "category": "special",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 12,
+      "basePriority": 0
+    },
+    {
+      "id": "mind_crush",
+      "name": "Mind Crush",
+      "type": "Psychic",
+      "category": "physical",
+      "power": 120,
+      "accuracy": 80,
+      "pp": 5,
+      "basePriority": 0
+    },
+    {
+      "id": "prophecy",
+      "name": "Prophecy",
+      "type": "Psychic",
+      "category": "special",
+      "power": 130,
+      "accuracy": 90,
+      "pp": 5,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "spatk",
+          "stages": -2,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "flit_strike",
+      "name": "Flit Strike",
+      "type": "Bug",
+      "category": "physical",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 30,
+      "basePriority": 1
+    },
+    {
+      "id": "silk_bind",
+      "name": "Silk Bind",
+      "type": "Bug",
+      "category": "special",
+      "power": 55,
+      "accuracy": 95,
+      "pp": 20,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "opponent",
+          "stat": "speed",
+          "stages": -1,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "swarm_call",
+      "name": "Swarm Call",
+      "type": "Bug",
+      "category": "status",
+      "power": 0,
+      "accuracy": 100,
+      "pp": 15,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "atk",
+          "stages": 1,
+          "chance": 100
+        },
+        {
+          "target": "self",
+          "stat": "evasion",
+          "stages": 1,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "beetle_horn",
+      "name": "Beetle Horn",
+      "type": "Bug",
+      "category": "physical",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 12,
+      "basePriority": 0
+    },
+    {
+      "id": "locust_storm",
+      "name": "Locust Storm",
+      "type": "Bug",
+      "category": "physical",
+      "power": 120,
+      "accuracy": 80,
+      "pp": 5,
+      "basePriority": 0
+    },
+    {
+      "id": "hive_fury",
+      "name": "Hive Fury",
+      "type": "Bug",
+      "category": "special",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 5,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "spatk",
+          "stages": -1,
+          "chance": 100
+        },
+        {
+          "target": "self",
+          "stat": "speed",
+          "stages": -1,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "chipped_stone",
+      "name": "Chipped Stone",
+      "type": "Rock",
+      "category": "physical",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 30,
+      "basePriority": 1
+    },
+    {
+      "id": "limestone_dust",
+      "name": "Limestone Dust",
+      "type": "Rock",
+      "category": "special",
+      "power": 60,
+      "accuracy": 100,
+      "pp": 20,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "opponent",
+          "stat": "accuracy",
+          "stages": -1,
+          "chance": 50
+        }
+      ]
+    },
+    {
+      "id": "rampart",
+      "name": "Rampart",
+      "type": "Rock",
+      "category": "status",
+      "power": 0,
+      "accuracy": 100,
+      "pp": 15,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "def",
+          "stages": 1,
+          "chance": 100
+        },
+        {
+          "target": "opponent",
+          "stat": "atk",
+          "stages": -1,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "boulder_crash",
+      "name": "Boulder Crash",
+      "type": "Rock",
+      "category": "physical",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 12,
+      "basePriority": 0
+    },
+    {
+      "id": "cliff_fall",
+      "name": "Cliff Fall",
+      "type": "Rock",
+      "category": "physical",
+      "power": 120,
+      "accuracy": 80,
+      "pp": 5,
+      "basePriority": 0
+    },
+    {
+      "id": "megalith_drop",
+      "name": "Megalith Drop",
+      "type": "Rock",
+      "category": "physical",
+      "power": 130,
+      "accuracy": 100,
+      "pp": 5,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "speed",
+          "stages": -2,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "cold_touch",
+      "name": "Cold Touch",
+      "type": "Ghost",
+      "category": "physical",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 30,
+      "basePriority": 1
+    },
+    {
+      "id": "lament",
+      "name": "Lament",
+      "type": "Ghost",
+      "category": "special",
+      "power": 65,
+      "accuracy": 100,
+      "pp": 20,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "opponent",
+          "stat": "spatk",
+          "stages": -1,
+          "chance": 30
+        }
+      ]
+    },
+    {
+      "id": "grave_mist",
+      "name": "Grave Mist",
+      "type": "Ghost",
+      "category": "status",
+      "power": 0,
+      "accuracy": 100,
+      "pp": 15,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "evasion",
+          "stages": 1,
+          "chance": 100
+        },
+        {
+          "target": "opponent",
+          "stat": "accuracy",
+          "stages": -1,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "catacomb_howl",
+      "name": "Catacomb Howl",
+      "type": "Ghost",
+      "category": "special",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 12,
+      "basePriority": 0
+    },
+    {
+      "id": "phantom_rush",
+      "name": "Phantom Rush",
+      "type": "Ghost",
+      "category": "physical",
+      "power": 120,
+      "accuracy": 80,
+      "pp": 5,
+      "basePriority": 0
+    },
+    {
+      "id": "soul_rend",
+      "name": "Soul Rend",
+      "type": "Ghost",
+      "category": "special",
+      "power": 130,
+      "accuracy": 90,
+      "pp": 5,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "spatk",
+          "stages": -2,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "wyrm_snap",
+      "name": "Wyrm Snap",
+      "type": "Dragon",
+      "category": "physical",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 30,
+      "basePriority": 1
+    },
+    {
+      "id": "dragon_breath",
+      "name": "Dragon Breath",
+      "type": "Dragon",
+      "category": "special",
+      "power": 60,
+      "accuracy": 100,
+      "pp": 20,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "opponent",
+          "stat": "speed",
+          "stages": -1,
+          "chance": 30
+        }
+      ]
+    },
+    {
+      "id": "wyrm_dance",
+      "name": "Wyrm Dance",
+      "type": "Dragon",
+      "category": "status",
+      "power": 0,
+      "accuracy": 100,
+      "pp": 15,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "atk",
+          "stages": 1,
+          "chance": 100
+        },
+        {
+          "target": "self",
+          "stat": "speed",
+          "stages": 1,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "scale_crash",
+      "name": "Scale Crash",
+      "type": "Dragon",
+      "category": "physical",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 12,
+      "basePriority": 0
+    },
+    {
+      "id": "dragon_storm",
+      "name": "Dragon Storm",
+      "type": "Dragon",
+      "category": "special",
+      "power": 110,
+      "accuracy": 75,
+      "pp": 5,
+      "basePriority": 0
+    },
+    {
+      "id": "wyrm_rage",
+      "name": "Wyrm Rage",
+      "type": "Dragon",
+      "category": "physical",
+      "power": 130,
+      "accuracy": 100,
+      "pp": 5,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "def",
+          "stages": -1,
+          "chance": 100
+        },
+        {
+          "target": "self",
+          "stat": "spdef",
+          "stages": -1,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "sly_strike",
+      "name": "Sly Strike",
+      "type": "Dark",
+      "category": "physical",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 30,
+      "basePriority": 1
+    },
+    {
+      "id": "snarl",
+      "name": "Snarl",
+      "type": "Dark",
+      "category": "special",
+      "power": 55,
+      "accuracy": 95,
+      "pp": 20,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "opponent",
+          "stat": "spatk",
+          "stages": -1,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "corsair_scheme",
+      "name": "Corsair Scheme",
+      "type": "Dark",
+      "category": "status",
+      "power": 0,
+      "accuracy": 100,
+      "pp": 15,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "spatk",
+          "stages": 2,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "night_raid",
+      "name": "Night Raid",
+      "type": "Dark",
+      "category": "physical",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 12,
+      "basePriority": 0
+    },
+    {
+      "id": "shadow_ambush",
+      "name": "Shadow Ambush",
+      "type": "Dark",
+      "category": "physical",
+      "power": 120,
+      "accuracy": 80,
+      "pp": 5,
+      "basePriority": 0
+    },
+    {
+      "id": "moonless_night",
+      "name": "Moonless Night",
+      "type": "Dark",
+      "category": "special",
+      "power": 130,
+      "accuracy": 90,
+      "pp": 5,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "spatk",
+          "stages": -2,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "rivet_shot",
+      "name": "Rivet Shot",
+      "type": "Steel",
+      "category": "physical",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 30,
+      "basePriority": 1
+    },
+    {
+      "id": "iron_brow",
+      "name": "Iron Brow",
+      "type": "Steel",
+      "category": "physical",
+      "power": 65,
+      "accuracy": 100,
+      "pp": 20,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "opponent",
+          "stat": "def",
+          "stages": -1,
+          "chance": 30
+        }
+      ]
+    },
+    {
+      "id": "armour_polish",
+      "name": "Armour Polish",
+      "type": "Steel",
+      "category": "status",
+      "power": 0,
+      "accuracy": 100,
+      "pp": 15,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "speed",
+          "stages": 2,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "cannon_flash",
+      "name": "Cannon Flash",
+      "type": "Steel",
+      "category": "special",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 12,
+      "basePriority": 0
+    },
+    {
+      "id": "siege_anvil",
+      "name": "Siege Anvil",
+      "type": "Steel",
+      "category": "physical",
+      "power": 120,
+      "accuracy": 80,
+      "pp": 5,
+      "basePriority": 0
+    },
+    {
+      "id": "dreadnought_salvo",
+      "name": "Dreadnought Salvo",
+      "type": "Steel",
+      "category": "special",
+      "power": 130,
+      "accuracy": 90,
+      "pp": 5,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "spatk",
+          "stages": -2,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "twinkle",
+      "name": "Twinkle",
+      "type": "Fairy",
+      "category": "special",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 30,
+      "basePriority": 1
+    },
+    {
+      "id": "charming_song",
+      "name": "Charming Song",
+      "type": "Fairy",
+      "category": "special",
+      "power": 60,
+      "accuracy": 100,
+      "pp": 20,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "opponent",
+          "stat": "atk",
+          "stages": -1,
+          "chance": 50
+        }
+      ]
+    },
+    {
+      "id": "moonlight_veil",
+      "name": "Moonlight Veil",
+      "type": "Fairy",
+      "category": "status",
+      "power": 0,
+      "accuracy": 100,
+      "pp": 15,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "spdef",
+          "stages": 1,
+          "chance": 100
+        },
+        {
+          "target": "self",
+          "stat": "evasion",
+          "stages": 1,
+          "chance": 100
+        }
+      ]
+    },
+    {
+      "id": "moon_blessing",
+      "name": "Moon Blessing",
+      "type": "Fairy",
+      "category": "special",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 12,
+      "basePriority": 0
+    },
+    {
+      "id": "petal_tempest",
+      "name": "Petal Tempest",
+      "type": "Fairy",
+      "category": "special",
+      "power": 110,
+      "accuracy": 75,
+      "pp": 5,
+      "basePriority": 0
+    },
+    {
+      "id": "starfall",
+      "name": "Starfall",
+      "type": "Fairy",
+      "category": "special",
+      "power": 130,
+      "accuracy": 90,
+      "pp": 5,
+      "basePriority": 0,
+      "statChanges": [
+        {
+          "target": "self",
+          "stat": "spatk",
+          "stages": -2,
+          "chance": 100
+        }
+      ]
     }
   ]
 }

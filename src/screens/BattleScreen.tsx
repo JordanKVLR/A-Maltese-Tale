@@ -21,6 +21,7 @@ import {
 import { xpRewardForLevel, currencyRewardForLevel } from "../game/progression";
 import { getMove, LAST_RESORT_MOVE_ID } from "../game/movesRepo";
 import { FESTA_GOLD_MULTIPLIER, isFestaZone } from "../game/festa";
+import { collectorMedalsCrossed, ownedCount } from "../game/collection";
 import { FRIENDSHIP_GAIN, friendshipOf, friendshipXpBonus } from "../game/friendship";
 import { ballItems, catchRateWithCharms, getItem, usableItems } from "../game/itemsRepo";
 import type { ItemData } from "../data/schemas";
@@ -41,6 +42,7 @@ import { useKeyboardShortcuts } from "./components/useKeyboardShortcuts";
 import { LevelUpModal, type LevelUpRevealData } from "./components/LevelUpModal";
 import { EvolutionModal, type EvolutionRevealData } from "./components/EvolutionModal";
 import { MoveLearnModal, type MoveLearnPrompt } from "./components/MoveLearnModal";
+import { MoveLearnedModal, type MoveLearnedNotice } from "./components/MoveLearnedModal";
 import { BlackoutOverlay } from "./components/BlackoutOverlay";
 import { useTapAnywhere } from "./components/useTapAnywhere";
 import { useMusic } from "../audio/useMusic";
@@ -284,6 +286,8 @@ export function BattleScreen({ navigation, route }: Props) {
   const enemyAnim = useCombatantAnimation();
   const stageRef = useRef<BattleStageHandle>(null);
   const [movePrompts, setMovePrompts] = useState<MoveLearnPrompt[]>([]);
+  /** Moves learned into a free slot, each announced with its own card before play goes on. */
+  const [learnedNotices, setLearnedNotices] = useState<MoveLearnedNotice[]>([]);
   /** The enemy's remaining PP for this battle only — wild creatures aren't persisted. */
   const enemyPpRef = useRef<Record<string, number>>({});
 
@@ -298,6 +302,9 @@ export function BattleScreen({ navigation, route }: Props) {
   function queueMoveLearning(member: PartyMember, learning: MoveLearnResult) {
     for (const moveId of learning.learned) {
       pushLog([t("battle.learned", { name: member.displayName, move: c.move(moveId) })]);
+    }
+    if (learning.learned.length > 0) {
+      setLearnedNotices((prev) => [...prev, ...learning.learned.map((moveId) => ({ displayName: member.displayName, moveId }))]);
     }
     if (learning.pending.length > 0) {
       setMovePrompts((prev) => [
@@ -473,10 +480,17 @@ export function BattleScreen({ navigation, route }: Props) {
 
   function handleDismissLevelUp() {
     setLevelUpReveal(null);
-    const pending = afterLevelUpDismissRef.current;
-    afterLevelUpDismissRef.current = null;
-    pending?.();
   }
+
+  // Whatever waits on a level-up (a trainer's next creature) goes once every screen it brought
+  // — the level-up, an evolution, new moves — has been seen.
+  useEffect(() => {
+    if (levelUpReveal || evolutionReveal || learnedNotices.length > 0 || movePrompts.length > 0) return;
+    const pending = afterLevelUpDismissRef.current;
+    if (!pending) return;
+    afterLevelUpDismissRef.current = null;
+    pending();
+  }, [levelUpReveal, evolutionReveal, learnedNotices.length, movePrompts.length]);
 
   // The battle opens with its own messages rather than a pre-filled log. For a trainer the
   // elemental wipe plays first and queues these as it closes, so the order is: wipe, their
@@ -910,17 +924,24 @@ export function BattleScreen({ navigation, route }: Props) {
           playJingle("caught", { then: "stop" });
         }, 250 + Math.max(1, result.shakesPassed) * 300);
         const member = partyMemberFromParticipant(enemy, "wild");
-        const added = catchCreature(member);
+        const ownedBefore = ownedCount(useGameStore.getState().caughtSpeciesIds);
+        const destination = catchCreature(member);
+        const ownedAfter = ownedCount(useGameStore.getState().caughtSpeciesIds);
         const money = currencyRewardForLevel(enemy.creature.level);
         earnCurrency(money);
         say(
           [
             t("battle.threw", { item: c.item(availableBall.id) }),
-            added ? t("battle.caught", { name: enemy.displayName }) : t("battle.caughtFull"),
+            t("battle.caught", { name: enemy.displayName }),
+            ...(destination === "cage" ? [t("battle.caughtToCage", { name: enemy.displayName })] : []),
           ],
           "key",
-          { emphasis: added ? "good" : "bad" }
+          { emphasis: "good" }
         );
+        // Filling the Codex earns collector medals along the way.
+        for (const medal of collectorMedalsCrossed(ownedBefore, ownedAfter)) {
+          say([t("collector.earned", { medal: t(`collector.${medal.id}` as StringKey), count: medal.count })], "key", { emphasis: "good" });
+        }
         const kinnieDropped = rollKinnieDrop();
         updatePartyMemberHp(ctx.playerActive.id, ctx.playerActive.currentHp);
         setRewards({ money, xp: 0, leveledUp: false, kinnieDropped });
@@ -1002,7 +1023,9 @@ export function BattleScreen({ navigation, route }: Props) {
         ))}
       </ScrollView>
 
-      <View style={styles.actionGrid}>
+      {/* Scrolls rather than clips: on a short phone, a long log or two-line move names
+          used to push the last row — Run Away — off the bottom of the screen. */}
+      <ScrollView style={styles.actionScroll} contentContainerStyle={styles.actionGrid}>
         {playerMoves.map((move) => {
           const pp = activeMember ? remainingPp(activeMember, move.id) : move.pp;
           const spent = pp <= 0;
@@ -1138,7 +1161,7 @@ export function BattleScreen({ navigation, route }: Props) {
             </Text>
           </Pressable>
         </HoverTip>
-        <HoverTip style={styles.moveButtonHoverWrap} text={t("battle.tip.party")}>
+        <HoverTip style={styles.thirdWrap} text={t("battle.tip.party")}>
           <Pressable
             testID="open-party-sheet"
             onPress={() => setShowParty(true)}
@@ -1153,7 +1176,7 @@ export function BattleScreen({ navigation, route }: Props) {
             <Text style={styles.moveName}>{t("battle.party")}</Text>
           </Pressable>
         </HoverTip>
-        <HoverTip style={styles.moveButtonHoverWrap} text={t("battle.tip.item")}>
+        <HoverTip style={styles.thirdWrap} text={t("battle.tip.item")}>
           <Pressable
             testID="open-item-sheet"
             onPress={() => setShowItems(true)}
@@ -1170,7 +1193,7 @@ export function BattleScreen({ navigation, route }: Props) {
           </Pressable>
         </HoverTip>
         <HoverTip
-          style={styles.fleeButtonHoverWrap}
+          style={styles.thirdWrap}
           text={
             isTrainerBattle ? t("battle.tip.cantRun") : t("battle.tip.run")
           }
@@ -1190,7 +1213,7 @@ export function BattleScreen({ navigation, route }: Props) {
             <Text style={styles.cruxHint}>{isTrainerBattle ? t("battle.cantRunSub") : t("battle.runSub")}</Text>
           </Pressable>
         </HoverTip>
-      </View>
+      </ScrollView>
 
       <Modal visible={showTraps} transparent animationType="none" onRequestClose={() => setShowTraps(false)}>
         <View style={styles.sheetBackdrop}>
@@ -1335,7 +1358,10 @@ export function BattleScreen({ navigation, route }: Props) {
           levelUpReveal && <LevelUpModal data={levelUpReveal} onDismiss={handleDismissLevelUp} />
         ))}
 
-      {!messageWaiting && !evolutionReveal && !levelUpReveal && movePrompts.length > 0 && (
+      {!messageWaiting && !evolutionReveal && !levelUpReveal && learnedNotices.length > 0 && (
+        <MoveLearnedModal notice={learnedNotices[0]} onDismiss={() => setLearnedNotices((prev) => prev.slice(1))} />
+      )}
+      {!messageWaiting && !evolutionReveal && !levelUpReveal && learnedNotices.length === 0 && movePrompts.length > 0 && (
         <MoveLearnModal
           prompt={movePrompts[0]}
           onReplace={(forgetMoveId) => {
@@ -1393,7 +1419,7 @@ export function BattleScreen({ navigation, route }: Props) {
         />
       )}
 
-      <Modal visible={!!outcome && outcome !== "enemy" && !messageWaiting && !levelUpReveal && !evolutionReveal && movePrompts.length === 0} transparent animationType="fade" onRequestClose={() => {}}>
+      <Modal visible={!!outcome && outcome !== "enemy" && !messageWaiting && !levelUpReveal && !evolutionReveal && movePrompts.length === 0 && learnedNotices.length === 0} transparent animationType="fade" onRequestClose={() => {}}>
         <ResultTapCatcher onTap={() => navigation.popToTop()}>
           <Text style={styles.resultTitle}>
             {outcome === "player"
@@ -1590,21 +1616,28 @@ const styles = StyleSheet.create({
     color: colors.textMuted,
     fontSize: 11,
   },
+  /** Party, Use Item and Run share the last row, so Run is always in reach. */
   partyButtonHalf: {
-    flexBasis: "45%",
+    flexBasis: "28%",
     alignItems: "center",
+    paddingHorizontal: 8,
+  },
+  thirdWrap: {
+    flexGrow: 1,
+    flexBasis: "28%",
+  },
+  actionScroll: {
+    flex: 1,
   },
   fleeButton: {
-    flexBasis: "100%",
+    flexBasis: "28%",
     alignItems: "center",
+    paddingHorizontal: 8,
     borderColor: colors.danger,
   },
   moveButtonHoverWrap: {
     flexGrow: 1,
     flexBasis: "45%",
-  },
-  fleeButtonHoverWrap: {
-    flexBasis: "100%",
   },
   sheetBackdrop: {
     flex: 1,

@@ -105,7 +105,8 @@ describe("map features", () => {
         ...f.npcs.map((n) => `${n.row},${n.col}`),
       ]);
       const reach = reachableFrom(map, map.playerStart, blocked);
-      const spots = [...f.glints, ...(f.portal ? [f.portal] : [])];
+      const spots = [...f.glints, ...(f.portal ? [f.portal] : []), ...(f.cage ? [f.cage] : [])];
+      expect(f.cage).not.toBeNull();
       for (const s of spots) expect(reach.has(`${s.row},${s.col}`)).toBe(true);
       for (const t of trainersForZone(zoneId)) {
         // Every trainer still has a free tile beside them to be challenged from.

@@ -13,6 +13,7 @@ import { useKeyboardShortcuts } from "./components/useKeyboardShortcuts";
 import { colors } from "./theme";
 import { completionProgress } from "../game/trainers";
 import { festaOn } from "../game/festa";
+import { COLLECTOR_MEDALS, TOTAL_SPECIES, ownedCount } from "../game/collection";
 import { useI18n } from "../i18n";
 
 type Props = NativeStackScreenProps<RootStackParamList, "Home">;
@@ -27,6 +28,7 @@ export function HomeScreen({ navigation }: Props) {
   // where the player checks their progress rather than only appearing once it is finished.
   const progress = completionProgress(defeatedTrainerIds);
   const festa = festaOn();
+  const owned = ownedCount(useGameStore((s) => s.caughtSpeciesIds));
   const currency = useGameStore((s) => s.currency);
 
   const leadMember = party[0];
@@ -83,6 +85,28 @@ export function HomeScreen({ navigation }: Props) {
                 <Text style={[styles.medalGlyph, earned && styles.medalGlyphEarned]}>{earned ? "★" : "☆"}</Text>
                 <Text style={[styles.medalLabel, earned && styles.medalLabelEarned]} numberOfLines={1}>
                   {c.medal(medal.medalId).replace(" Medal", "").replace("Midalja ", "")}
+                </Text>
+              </View>
+            );
+          })}
+        </View>
+
+        {/* Collector medals: for filling the Codex. */}
+        <Text style={styles.stat} testID="collector-progress">
+          {t("collector.progress", { owned, total: TOTAL_SPECIES })}
+        </Text>
+        <View style={styles.medalRow}>
+          {COLLECTOR_MEDALS.map((medal) => {
+            const earned = owned >= medal.count;
+            return (
+              <View
+                key={medal.id}
+                testID={`medal-${medal.id}${earned ? "-earned" : ""}`}
+                style={[styles.medal, earned && styles.medalEarned]}
+              >
+                <Text style={[styles.medalGlyph, earned && styles.medalGlyphEarned]}>{earned ? "◆" : "◇"}</Text>
+                <Text style={[styles.medalLabel, earned && styles.medalLabelEarned]} numberOfLines={1}>
+                  {medal.count === TOTAL_SPECIES ? t("collector.shortAll") : String(medal.count)}
                 </Text>
               </View>
             );

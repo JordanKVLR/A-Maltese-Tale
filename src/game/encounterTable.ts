@@ -13,6 +13,7 @@ import {
 } from "./creatureFactory";
 import type { BiomeType } from "./mapData";
 import { spawnsIn } from "./spawning";
+import { movesKnownAtLevel } from "./learnsetsRepo";
 import { FESTA_RARE_MULTIPLIER } from "./festa";
 
 const regionalVariants = RegionalVariantsFileSchema.parse(regionalVariantsData).regionalVariants;
@@ -127,8 +128,10 @@ export function buildBiomeEncounterTable(
     if (!spawnsIn(wc.biome, biome) || !availableAtLevel(wc, baseLevel)) continue;
     table.push({
       weight: 5,
-      build: (id) =>
-        buildParticipant(id, wc.id, wc.name, wc.types, wc.baseStats, randomWildLevel(baseLevel, levelSpread), wc.moveIds),
+      build: (id) => {
+        const level = randomWildLevel(baseLevel, levelSpread);
+        return buildParticipant(id, wc.id, wc.name, wc.types, wc.baseStats, level, movesKnownAtLevel(wc.id, level, wc.moveIds));
+      },
     });
   }
 
@@ -144,8 +147,10 @@ export function buildBiomeEncounterTable(
     if (!spawnsIn(rv.biome, biome) || !availableAtLevel(rv, baseLevel)) continue;
     table.push({
       weight: 1 * rare,
-      build: (id) =>
-        buildParticipant(id, rv.id, rv.name, rv.types, rv.baseStats, randomWildLevel(baseLevel, levelSpread), rv.moveIds),
+      build: (id) => {
+        const level = randomWildLevel(baseLevel, levelSpread);
+        return buildParticipant(id, rv.id, rv.name, rv.types, rv.baseStats, level, movesKnownAtLevel(rv.id, level, rv.moveIds));
+      },
     });
   }
 
@@ -154,16 +159,13 @@ export function buildBiomeEncounterTable(
     if (EVOLVES_AT.has(legend.id)) continue;
     table.push({
       weight: LEGENDARY_ENCOUNTER_WEIGHT * rare,
-      build: (id) =>
-        buildParticipant(
-          id,
-          legend.id,
-          legend.name,
-          legend.types,
-          legend.baseStats,
-          randomLevelAtLeast(config.legendaryMinLevel),
-          LEGENDARY_MOVE_IDS[legend.id]
-        ),
+      build: (id) => {
+        const level = randomLevelAtLeast(config.legendaryMinLevel);
+        // Its signature always comes along; the rest is what it has learned by now.
+        const signature = LEGENDARY_MOVE_IDS[legend.id][0];
+        const rest = movesKnownAtLevel(legend.id, level, LEGENDARY_MOVE_IDS[legend.id].slice(1)).filter((m) => m !== signature);
+        return buildParticipant(id, legend.id, legend.name, legend.types, legend.baseStats, level, [signature, ...rest.slice(-3)]);
+      },
     });
   }
 

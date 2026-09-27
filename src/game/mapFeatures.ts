@@ -46,6 +46,8 @@ export interface MapFeatures {
   npcs: MapNpc[];
   portal: MapPortal | null;
   glints: MapGlint[];
+  /** The Gaġġa: where creatures not in your party are kept. One on every map. */
+  cage: { row: number; col: number } | null;
 }
 
 type Spot = { row: number; col: number };
@@ -118,7 +120,7 @@ export function featuresForZone(zoneId: string): MapFeatures {
 function buildFeatures(zoneId: string): MapFeatures {
   const stage = getStage(zoneId);
   const map = getMap(zoneId);
-  if (!stage) return { npcs: [], portal: null, glints: [] };
+  if (!stage) return { npcs: [], portal: null, glints: [], cage: null };
   const rng = makeRng(seedFrom(`${zoneId}:features`));
 
   // Tiles already spoken for: gates, the chapel, trainers, and the tiles right beside the
@@ -195,7 +197,16 @@ function buildFeatures(zoneId: string): MapFeatures {
     if (spot) glints.push({ findId: `${zoneId}:treasure:${i}`, ...spot, treasure: treasureFor(stage.stage, rng) });
   }
 
-  return { npcs, portal, glints };
+  // The Gaġġa goes by the road near the chapel, so it is on the way in. Placed last, so adding
+  // it did not move anything placed before it.
+  const cage = pick(offRoad.filter((s) => s.col <= 6), false) ?? pick(offRoad, false);
+
+  return { npcs, portal, glints, cage };
+}
+
+export function cageAt(zoneId: string, row: number, col: number): boolean {
+  const cage = featuresForZone(zoneId).cage;
+  return !!cage && cage.row === row && cage.col === col;
 }
 
 export function npcAt(zoneId: string, row: number, col: number): MapNpc | undefined {

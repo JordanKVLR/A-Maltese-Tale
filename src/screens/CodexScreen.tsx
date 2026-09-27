@@ -1,3 +1,5 @@
+import type { StringKey } from "../i18n/core";
+import { nextCollectorMedal, ownedCount } from "../game/collection";
 import { useMemo, useState } from "react";
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
@@ -43,7 +45,13 @@ export function CodexScreen({ navigation }: Props) {
     <ScreenBackground style={styles.container}>
       <Text style={styles.title}>{t("codex.title")}</Text>
       <Text style={styles.subtitle}>
-        {t("codex.progress", { seen: seenCount, caught: caughtSpeciesIds.length, total: DEX_ENTRIES.length })}
+        {t("codex.progress", { seen: seenCount, caught: ownedCount(caughtSpeciesIds), total: DEX_ENTRIES.length })}
+      </Text>
+      <Text style={styles.subtitle} testID="codex-next-medal">
+        {(() => {
+          const next = nextCollectorMedal(ownedCount(caughtSpeciesIds));
+          return next ? t("collector.next", { medal: t(`collector.${next.id}` as StringKey), count: next.count }) : t("collector.done");
+        })()}
       </Text>
 
       <ScrollView

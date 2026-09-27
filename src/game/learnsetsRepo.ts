@@ -1,5 +1,6 @@
 import learnsetsData from "../data/learnsets.json";
 import { LearnsetsFileSchema } from "../data/schemas";
+import { getMove } from "./movesRepo";
 
 const learnsets = LearnsetsFileSchema.parse(learnsetsData).learnsets;
 
@@ -28,17 +29,35 @@ export function movesLearnedBetween(speciesId: string, fromLevel: number, toLeve
     .map((entry) => entry.moveId);
 }
 
-/** Moves a species would already know at this level — used when building a creature that
- * starts partway up its curve (a trainer's party, a high-level wild encounter). */
+/** How much a move is worth to a creature choosing what to carry: damage it can expect to do. */
+function expectedDamage(moveId: string): number {
+  const move = getMove(moveId);
+  return move.category === "status" ? 0 : move.power * (move.accuracy / 100);
+}
+
+/**
+ * Moves a species would already know at this level — used when building a creature that
+ * starts partway up its curve (a trainer's party, a high-level wild encounter).
+ *
+ * With a new move every few levels there is far more to choose from than four slots, so this
+ * picks a sensible set rather than simply the latest four: its three hardest-hitting moves plus
+ * its most recent setup move, or a fourth attack if it has no setup move.
+ */
 export function movesKnownAtLevel(speciesId: string, level: number, baseMoves: string[]): string[] {
   const learned = learnsetFor(speciesId)
     .filter((entry) => entry.level <= level)
     .map((entry) => entry.moveId);
-  const combined: string[] = [];
-  // Later unlocks win the slot fight: keep the most recent four, but never drop every base
-  // move, so a creature always has something to open with.
+  const pool: string[] = [];
   for (const id of [...baseMoves, ...learned]) {
-    if (!combined.includes(id)) combined.push(id);
+    if (!pool.includes(id)) pool.push(id);
   }
-  return combined.slice(-4);
+  if (pool.length <= 4) return pool;
+  const attacks = pool.filter((id) => expectedDamage(id) > 0).sort((a, b) => expectedDamage(b) - expectedDamage(a));
+  const setup = pool.filter((id) => expectedDamage(id) === 0);
+  const chosen = attacks.slice(0, 3);
+  const latestSetup = setup[setup.length - 1];
+  if (latestSetup) chosen.push(latestSetup);
+  for (const id of attacks.slice(3)) if (chosen.length < 4) chosen.push(id);
+  // Keep the order they were learned in, so the move list reads naturally.
+  return pool.filter((id) => chosen.includes(id));
 }

@@ -2,7 +2,7 @@
   "name": "melita",
   "version": "0.1.0",
   "private": true,
-  "description": "A Maltese Tale — turn-based creature-collector, mobile-first (Expo + TypeScript)",
+  "description": "A Maltese Tale \u2014 turn-based creature-collector, mobile-first (Expo + TypeScript)",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
@@ -12,7 +12,8 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "typecheck": "tsc --noEmit",
-    "build:web": "bash scripts/build-web.sh"
+    "build:web": "bash scripts/build-web.sh",
+    "build:learnsets": "node scripts/build-learnsets.mjs"
   },
   "dependencies": {
     "@expo/metro-runtime": "~4.0.0",

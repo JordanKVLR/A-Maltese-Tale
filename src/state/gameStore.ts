@@ -113,7 +113,16 @@ interface GameState {
   recordBattleResult: (won: boolean) => void;
   updatePartyMemberHp: (uid: string, currentHp: number) => void;
   markSeen: (speciesId: string) => void;
-  catchCreature: (member: PartyMember) => boolean;
+  /** Adds a caught creature to the party, or to the Gaġġa if the party is full. */
+  catchCreature: (member: PartyMember) => "party" | "cage";
+  /** The Gaġġa: every creature not travelling with you. Unlimited. */
+  cage: PartyMember[];
+  /** Party → Gaġġa. Refuses to leave you without a creature that can fight. */
+  depositCreature: (uid: string) => boolean;
+  /** Gaġġa → party, if there is room. */
+  withdrawCreature: (uid: string) => boolean;
+  /** Trades a party member for a Gaġġa creature, the new one taking the same slot. */
+  swapWithCage: (partyUid: string, cageUid: string) => boolean;
   consumeItem: (itemId: string) => boolean;
   earnCurrency: (amount: number) => void;
   spendCurrency: (amount: number) => boolean;
@@ -169,6 +178,16 @@ interface GameState {
   tutorialsSeen: string[];
   markTutorial: (id: string) => void;
   resetGame: () => void;
+}
+
+/** A creature put in the Gaġġa rests there: full HP, every move recharged. */
+function restored(member: PartyMember): PartyMember {
+  return { ...member, currentHp: partyMemberStats(member).hp, movePp: fullPpFor(member.moveIds) };
+}
+
+/** Evolving into a species counts as owning it, for the Codex and collector medals. */
+function withOwned(ids: string[], speciesId: string): string[] {
+  return ids.includes(speciesId) ? ids : [...ids, speciesId];
 }
 
 /** The slice of the save the quest rules read. */
@@ -301,19 +320,47 @@ export const useGameStore = create<GameState>()(
           : { seenSpeciesIds: [...state.seenSpeciesIds, speciesId] }
       ),
 
+    cage: [],
+    depositCreature: (uid) => {
+      const { party, cage } = get();
+      const member = party.find((m) => m.uid === uid);
+      if (!member) return false;
+      const rest = party.filter((m) => m.uid !== uid);
+      if (!rest.some((m) => m.currentHp > 0)) return false;
+      set({ party: rest, cage: [...cage, restored(member)] });
+      return true;
+    },
+    withdrawCreature: (uid) => {
+      const { party, cage } = get();
+      const member = cage.find((m) => m.uid === uid);
+      if (!member || party.length >= MAX_PARTY_SIZE) return false;
+      set({ party: [...party, member], cage: cage.filter((m) => m.uid !== uid) });
+      return true;
+    },
+    swapWithCage: (partyUid, cageUid) => {
+      const { party, cage } = get();
+      const leaving = party.find((m) => m.uid === partyUid);
+      const joining = cage.find((m) => m.uid === cageUid);
+      if (!leaving || !joining) return false;
+      set({
+        party: party.map((m) => (m.uid === partyUid ? joining : m)),
+        cage: [...cage.filter((m) => m.uid !== cageUid), restored(leaving)],
+      });
+      return true;
+    },
     catchCreature: (member) => {
       const { party, caughtSpeciesIds } = get();
-      if (party.length >= MAX_PARTY_SIZE) return false;
       const catchesByType = { ...get().catchesByType };
       for (const type of member.types) catchesByType[type] = (catchesByType[type] ?? 0) + 1;
+      const full = party.length >= MAX_PARTY_SIZE;
       set({
         catchesByType,
-        party: [...party, member],
+        ...(full ? { cage: [...get().cage, restored(member)] } : { party: [...party, member] }),
         caughtSpeciesIds: caughtSpeciesIds.includes(member.speciesId)
           ? caughtSpeciesIds
           : [...caughtSpeciesIds, member.speciesId],
       });
-      return true;
+      return full ? "cage" : "party";
     },
 
     consumeItem: (itemId) => {
@@ -344,6 +391,7 @@ export const useGameStore = create<GameState>()(
       const grown = result.leveledUp ? withFriendship(result.member, FRIENDSHIP_GAIN.levelUp * result.levelsGained) : result.member;
       set((state) => ({
         party: state.party.map((m) => (m.uid === uid ? grown : m)),
+        caughtSpeciesIds: withOwned(state.caughtSpeciesIds, grown.speciesId),
       }));
       result.member = grown;
       return result;
@@ -385,6 +433,7 @@ export const useGameStore = create<GameState>()(
         const { member: leveled, evolution, moveLearning } = applyLevelUp(member);
         set({
           party: party.map((m) => (m.uid === uid ? withFriendship(leveled, FRIENDSHIP_GAIN.cared) : m)),
+          caughtSpeciesIds: withOwned(get().caughtSpeciesIds, leveled.speciesId),
           inventory: { ...inventory, [itemId]: qty - 1 },
         });
         return { applied: true, effect: "level_up", member: leveled, evolution, moveLearning };
@@ -397,7 +446,10 @@ export const useGameStore = create<GameState>()(
       const member = get().party.find((m) => m.uid === uid);
       if (!member) return;
       const { member: leveled } = applyLevelUp(member);
-      set((state) => ({ party: state.party.map((m) => (m.uid === uid ? leveled : m)) }));
+      set((state) => ({
+        party: state.party.map((m) => (m.uid === uid ? leveled : m)),
+        caughtSpeciesIds: withOwned(state.caughtSpeciesIds, leveled.speciesId),
+      }));
     },
 
     setMainPartyMember: (uid) => {
@@ -462,6 +514,7 @@ export const useGameStore = create<GameState>()(
         medals: [],
         defeatedTrainerIds: [],
         quests: {},
+        cage: [],
         catchesByType: {},
         foundIds: [],
         festaGiftDay: null,
@@ -490,6 +543,7 @@ export const useGameStore = create<GameState>()(
         defeatedTrainerIds: state.defeatedTrainerIds,
         tutorialsSeen: state.tutorialsSeen,
         quests: state.quests,
+        cage: state.cage,
         catchesByType: state.catchesByType,
         foundIds: state.foundIds,
         festaGiftDay: state.festaGiftDay,

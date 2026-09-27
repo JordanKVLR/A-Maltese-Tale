@@ -32,6 +32,7 @@ export interface MapFeatureView {
   npcs: { id: string; row: number; col: number; look: "herbalist" | "archivist" | "fisher" | "sacristan"; marker: "!" | "?" | null }[];
   glints: { id: string; row: number; col: number; quest: boolean; visible: boolean }[];
   portal: { row: number; col: number; kind: "dock" | "gate"; open: boolean } | null;
+  cage?: { row: number; col: number } | null;
 }
 
 export interface MapSceneApi {
@@ -468,6 +469,37 @@ function jetty(open: boolean): THREE.Group {
   return group;
 }
 
+/** The Gaġġa: a timber coop with a tiled roof and an iron-barred front. */
+function cageHut(): THREE.Group {
+  const group = new THREE.Group();
+  const wood = std("#9b7447");
+  const body = new THREE.Mesh(new THREE.BoxGeometry(0.66, 0.46, 0.5), wood);
+  body.position.y = 0.23;
+  body.castShadow = true;
+  group.add(body);
+  const roof = new THREE.Mesh(new THREE.ConeGeometry(0.52, 0.3, 4), std("#b5553a", { flatShading: true }));
+  roof.position.y = 0.61;
+  roof.rotation.y = Math.PI / 4;
+  roof.castShadow = true;
+  group.add(roof);
+  const inside = new THREE.Mesh(new THREE.PlaneGeometry(0.5, 0.32), std("#2a2118"));
+  inside.position.set(0, 0.23, 0.252);
+  group.add(inside);
+  const iron = std("#c9c2b4", { metalness: 0.6, roughness: 0.4 });
+  for (let i = -2; i <= 2; i++) {
+    const bar = new THREE.Mesh(new THREE.CylinderGeometry(0.012, 0.012, 0.32, 6), iron);
+    bar.position.set(i * 0.1, 0.23, 0.262);
+    group.add(bar);
+  }
+  const lamp = new THREE.Mesh(
+    new THREE.SphereGeometry(0.05, 10, 8),
+    new THREE.MeshStandardMaterial({ color: "#f3c14a", emissive: "#c08a10", emissiveIntensity: 0.8 })
+  );
+  lamp.position.set(0, 0.5, 0.26);
+  group.add(lamp);
+  return group;
+}
+
 /** A trilithon doorway in the temple style, choked with fog until the bell is rung. */
 function fogGate(open: boolean): THREE.Group {
   const group = new THREE.Group();
@@ -621,6 +653,11 @@ export function createMapScene(map: TileMap, player: MapActor, follower: MapActo
       mesh.position.set(glint.col, 0.25, glint.row);
       featureGroup.add(mesh);
       glintMeshes.push({ mesh, phase: glint.row * 0.7 + glint.col });
+    }
+    if (features.cage) {
+      const hut = cageHut();
+      hut.position.set(features.cage.col, 0, features.cage.row);
+      featureGroup.add(hut);
     }
     if (features.portal) {
       const { row, col, kind, open } = features.portal;
