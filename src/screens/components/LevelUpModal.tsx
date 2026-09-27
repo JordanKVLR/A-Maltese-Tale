@@ -6,6 +6,7 @@ import { colors } from "../theme";
 import { useI18n } from "../../i18n";
 import { useEffect } from "react";
 import { playJingle } from "../../audio/engine";
+import { useTapAnywhere } from "./useTapAnywhere";
 
 export interface LevelUpRevealData {
   speciesId: string;
@@ -26,11 +27,13 @@ const STAT_KEYS: (keyof StatBlock)[] = ["hp", "atk", "def", "spatk", "spdef", "s
  */
 export function LevelUpModal({ data, onDismiss }: { data: LevelUpRevealData; onDismiss: () => void }) {
   useEffect(() => playJingle("levelUp"), []);
+  // Anywhere on the screen continues — once it has been up long enough to be seen.
+  const dismiss = useTapAnywhere(onDismiss);
   const { t, c } = useI18n();
   return (
     <Modal visible transparent animationType="fade" onRequestClose={onDismiss}>
-      <Pressable testID="level-up-modal" style={styles.backdrop} onPress={onDismiss}>
-        <Pressable style={styles.card} onPress={(e) => e.stopPropagation()}>
+      <Pressable testID="level-up-modal" style={styles.backdrop} onPress={dismiss}>
+        <Pressable style={styles.card} onPress={dismiss}>
           <CreatureAvatar speciesId={data.speciesId} types={data.types} size={72} />
           <Text style={styles.title}>{t("levelUp.title", { name: data.displayName, level: data.newLevel })}</Text>
           <View style={styles.badgeRow}>

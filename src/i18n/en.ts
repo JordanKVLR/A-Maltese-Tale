@@ -135,6 +135,7 @@ export const en = {
   "battle.usedItem": "You used the {item}!",
   "battle.recovered": "{name} recovered {amount} HP!",
   "battle.evolved": "{old} evolved into {new}!",
+  "battle.gainedXp": "{name} gained {xp} XP!",
   "battle.grewTo": "{name} grew to level {level}!",
   "battle.threw": "You threw a {item}!",
   "battle.caught": "Gotcha! Wild {name} was caught!",

@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import type { RootStackParamList } from "../navigation/types";
-import { useGameStore, type ExperienceGainResult } from "../state/gameStore";
+import { useGameStore } from "../state/gameStore";
 import type { BattleParticipant } from "../game/creatureFactory";
 import { buildBiomeEncounterTable, rollEncounter } from "../game/encounterTable";
 import { getTrainer, trainerCreatureMoves, completionProgress, type CompletionProgress } from "../game/trainers";
@@ -202,7 +202,7 @@ export function BattleScreen({ navigation, route }: Props) {
   const [enemyIndex, setEnemyIndex] = useState(0);
   const enemy = enemyTeam[Math.min(enemyIndex, enemyTeam.length - 1)];
   /** XP/gold from foes already beaten this battle, banked as each one goes down. */
-  const bankedRef = useRef({ xp: 0, money: 0 });
+  const bankedRef = useRef<{ xp: number; money: number; leveledTo?: number }>({ xp: 0, money: 0 });
 
   const fsmRef = useRef<BattleStateMachine | null>(null);
   if (!fsmRef.current && activeMember) {
@@ -350,6 +350,65 @@ export function BattleScreen({ navigation, route }: Props) {
     return dropped;
   }
 
+  /**
+   * The rewards for one fallen foe, paid the moment it falls rather than saved for the end of
+   * the fight: gold, XP, and any level-up it brings — applied to the creature still fighting, so
+   * a level gained against a trainer's first creature counts against their second. Returns
+   * whether the active creature levelled up (the level-up screens then play before the fight
+   * goes on).
+   */
+  function awardDefeatedFoe(ctx: BattleContext, foeLevel: number): boolean {
+    const multiplier = trainer?.rewardMultiplier ?? 1;
+    const xp = Math.round(xpRewardForLevel(foeLevel) * multiplier);
+    const money = Math.round(currencyRewardForLevel(foeLevel) * multiplier);
+    earnCurrency(money);
+    bankedRef.current.xp += xp;
+    bankedRef.current.money += money;
+
+    const uid = ctx.playerActive.id;
+    // Read the store directly: an earlier foe in this same fight may already have changed it.
+    const memberBefore = useGameStore.getState().party.find((m) => m.uid === uid);
+    if (!memberBefore) return false;
+    const oldStats = partyMemberStats(memberBefore);
+    const xpResult = grantExperience(uid, xp);
+    say([t("battle.gainedXp", { name: memberBefore.displayName, xp })], "result");
+    if (!xpResult?.leveledUp) return false;
+
+    bankedRef.current.leveledTo = xpResult.newLevel;
+    const leveled = xpResult.member;
+    const newStats = partyMemberStats(leveled);
+    // The creature in the fight is a copy; bring it up to date so the new level counts now.
+    const hpGain = newStats.hp - ctx.playerActive.stats.hp;
+    ctx.playerActive.speciesId = leveled.speciesId;
+    ctx.playerActive.types = leveled.types;
+    ctx.playerActive.level = leveled.level;
+    ctx.playerActive.stats = newStats;
+    ctx.playerActive.currentHp = Math.max(1, Math.min(newStats.hp, ctx.playerActive.currentHp + Math.max(0, hpGain)));
+    updatePartyMemberHp(uid, ctx.playerActive.currentHp);
+    setSnapshot(snapshotFrom(ctx));
+    say(
+      [
+        xpResult.evolution
+          ? t("battle.evolved", { old: xpResult.evolution.oldDisplayName, new: xpResult.evolution.newDisplayName })
+          : t("battle.grewTo", { name: leveled.displayName, level: leveled.level }),
+      ],
+      "key",
+      { emphasis: "good" }
+    );
+    if (xpResult.evolution) setEvolutionReveal(xpResult.evolution);
+    queueMoveLearning(leveled, xpResult.moveLearning);
+    setLevelUpReveal({
+      speciesId: leveled.speciesId,
+      types: leveled.types,
+      displayName: leveled.displayName,
+      oldLevel: memberBefore.level,
+      newLevel: xpResult.newLevel,
+      oldStats,
+      newStats,
+    });
+    return true;
+  }
+
   function finishBattle(result: "player" | "enemy", finalCtx: BattleContext) {
     setOutcome(result);
     // The fight's music stops for its ending; the map picks its own tune back up on return.
@@ -358,11 +417,8 @@ export function BattleScreen({ navigation, route }: Props) {
     recordBattleResult(result === "player");
     if (result !== "player") return;
 
-    // Trainers pay considerably better than the grass, and gym leaders better again.
-    const multiplier = trainer?.rewardMultiplier ?? 1;
-    const money = Math.round((bankedRef.current.money || currencyRewardForLevel(enemy.creature.level)) * multiplier);
-    const xp = Math.round((bankedRef.current.xp || xpRewardForLevel(enemy.creature.level)) * multiplier);
-    earnCurrency(money);
+    // Every foe was paid for as it fell (awardDefeatedFoe); the card just sums it up.
+    const { money, xp, leveledTo } = bankedRef.current;
 
     if (trainer) {
       markTrainerDefeated(trainer.id);
@@ -380,35 +436,9 @@ export function BattleScreen({ navigation, route }: Props) {
       }
     }
 
-    // Snapshot "before" stats off the current store state, ahead of grantExperience applying the level-up.
-    const memberBefore = party.find((m) => m.uid === finalCtx.playerActive.id);
-    const oldStats = memberBefore ? partyMemberStats(memberBefore) : null;
-
-    const xpResult: ExperienceGainResult | null = grantExperience(finalCtx.playerActive.id, xp);
     const kinnieDropped = rollKinnieDrop();
-    setRewards({
-      money,
-      xp,
-      leveledUp: xpResult?.leveledUp ?? false,
-      newLevel: xpResult?.newLevel,
-      kinnieDropped,
-    });
-
-    if (xpResult?.leveledUp && memberBefore && oldStats) {
-      if (xpResult.evolution) setEvolutionReveal(xpResult.evolution);
-      queueMoveLearning(xpResult.member, xpResult.moveLearning);
-      setLevelUpReveal({
-        // Post-evolution species/types/name (xpResult.member), not memberBefore's — a level-up
-        // that evolves the creature should show the comparison for what it now actually is.
-        speciesId: xpResult.member.speciesId,
-        types: xpResult.member.types,
-        displayName: xpResult.member.displayName,
-        oldLevel: memberBefore.level,
-        newLevel: xpResult.newLevel,
-        oldStats,
-        newStats: partyMemberStats(xpResult.member),
-      });
-    }
+    setRewards({ money, xp, leveledUp: leveledTo !== undefined, newLevel: leveledTo, kinnieDropped });
+    void finalCtx;
   }
 
   function handleDismissLevelUp() {
@@ -606,21 +636,25 @@ export function BattleScreen({ navigation, route }: Props) {
       if (activeFsm.getState() !== "BATTLE_END") return;
 
       if (finalSnapshot.enemyHp <= 0) {
-        // Bank this foe's reward, then send out the trainer's next creature if they have one.
-        bankedRef.current.xp += xpRewardForLevel(enemy.creature.level);
-        bankedRef.current.money += currencyRewardForLevel(enemy.creature.level);
+        // Pay for this foe now — XP, gold, and any level-up it brings.
+        const leveledUp = awardDefeatedFoe(ctx, enemy.creature.level);
 
         const nextIndex = enemyIndex + 1;
         if (isTrainerBattle && nextIndex < enemyTeam.length) {
           const nextFoe = enemyTeam[nextIndex];
-          say([t("battle.sendsOut", { trainer: trainer!.name, name: nextFoe.displayName })], "info");
-          setEnemyIndex(nextIndex);
-          enemyPpRef.current = {};
-          // Swap the new foe into the live context and restart the machine around it.
-          ctx.enemyActive = nextFoe.creature;
-          setSnapshot(snapshotFrom(ctx));
-          enemyAnim.appear();
-          activeFsm.restartAfterEnemySwap();
+          const sendNext = () => {
+            say([t("battle.sendsOut", { trainer: trainer!.name, name: nextFoe.displayName })], "info");
+            setEnemyIndex(nextIndex);
+            enemyPpRef.current = {};
+            // Swap the new foe into the live context and restart the machine around it.
+            ctx.enemyActive = nextFoe.creature;
+            setSnapshot(snapshotFrom(ctx));
+            enemyAnim.appear();
+            activeFsm.restartAfterEnemySwap();
+          };
+          // A level-up gets its screens before the trainer's next creature comes out.
+          if (leveledUp) afterLevelUpDismissRef.current = sendNext;
+          else sendNext();
           return;
         }
         finishBattle("player", ctx);

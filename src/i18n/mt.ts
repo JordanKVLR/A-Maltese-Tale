@@ -136,6 +136,7 @@ export const mt: Record<StringKey, string> = {
   "battle.usedItem": "Użajt il-{item}!",
   "battle.recovered": "{name} irkupra {amount} HP!",
   "battle.evolved": "{old} evolva f'{new}!",
+  "battle.gainedXp": "{name} kiseb {xp} XP!",
   "battle.grewTo": "{name} kiber għal-livell {level}!",
   "battle.threw": "Tfajt {item}!",
   "battle.caught": "Qbadtu! {name} selvaġġ inqabad!",
