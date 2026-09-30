@@ -71,7 +71,7 @@ function EvolutionSection({
   };
   return (
     <View style={styles.section} testID="evolution-section">
-      <Text style={styles.sectionTitle}>{t("detail.evolution")}</Text>
+      <Text accessibilityRole="header" style={styles.sectionTitle}>{t("detail.evolution")}</Text>
       {from && link(from, "detail.evolvesFrom")}
       {into ? link(into, "detail.evolvesInto") : <Text style={styles.flavorText}>{t("detail.finalForm")}</Text>}
     </View>
@@ -186,7 +186,7 @@ export function CreatureDetailScreen({ route, navigation }: Props) {
 
         {partyMember && (
           <View style={styles.section}>
-            <Text style={styles.sectionTitle}>{t("detail.condition")}</Text>
+            <Text accessibilityRole="header" style={styles.sectionTitle}>{t("detail.condition")}</Text>
             <HpBar currentHp={partyMember.currentHp} maxHp={partyMemberStats(partyMember).hp} />
             <Text style={styles.xpText}>
               {t("detail.xp", { xp: partyMember.xp, next: xpToNextLevel(partyMember.level), level: partyMember.level + 1 })}
@@ -211,7 +211,7 @@ export function CreatureDetailScreen({ route, navigation }: Props) {
           const hearts = friendshipHearts(friendship);
           return (
             <View style={styles.section} testID="friendship-section">
-              <Text style={styles.sectionTitle}>{t("detail.friendship")}</Text>
+              <Text accessibilityRole="header" style={styles.sectionTitle}>{t("detail.friendship")}</Text>
               <Text style={styles.hearts}>{"♥".repeat(hearts)}<Text style={styles.heartsEmpty}>{"♥".repeat(5 - hearts)}</Text></Text>
               <Text style={styles.flavorText}>{t(`friendship.${tier}`, { name: partyMember.displayName })}</Text>
               <Text style={styles.xpText}>{t(tier === "close" || tier === "devoted" ? `friendship.perk.${tier}` : "friendship.perk.none")}</Text>
@@ -221,13 +221,13 @@ export function CreatureDetailScreen({ route, navigation }: Props) {
 
         {flavor && (
           <View style={styles.section}>
-            <Text style={styles.sectionTitle}>{dexEntry?.category === "legendary" ? t("detail.aesthetic") : t("detail.flavor")}</Text>
+            <Text accessibilityRole="header" style={styles.sectionTitle}>{dexEntry?.category === "legendary" ? t("detail.aesthetic") : t("detail.flavor")}</Text>
             <Text style={styles.flavorText}>{flavor}</Text>
           </View>
         )}
 
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>{t("detail.baseStats")}</Text>
+          <Text accessibilityRole="header" style={styles.sectionTitle}>{t("detail.baseStats")}</Text>
           {stats ? (
             STAT_KEYS.map((key) => <StatBar key={key} label={c.stat(key)} value={stats[key]} />)
           ) : (
@@ -243,21 +243,21 @@ export function CreatureDetailScreen({ route, navigation }: Props) {
 
         {dexEntry?.era && dexEntry.era !== "wild" && (
           <View style={styles.section}>
-            <Text style={styles.sectionTitle}>{t("detail.era")}</Text>
+            <Text accessibilityRole="header" style={styles.sectionTitle}>{t("detail.era")}</Text>
             <Text style={styles.flavorText}>{c.era(dexEntry.era)}</Text>
           </View>
         )}
 
         {signatureMove && (
           <View style={styles.section}>
-            <Text style={styles.sectionTitle}>{t("detail.signature")}</Text>
+            <Text accessibilityRole="header" style={styles.sectionTitle}>{t("detail.signature")}</Text>
             <Text style={styles.flavorText}>{signatureMove}</Text>
           </View>
         )}
 
         {partyMember && (
           <View style={styles.section}>
-            <Text style={styles.sectionTitle}>{t("detail.moves")}</Text>
+            <Text accessibilityRole="header" style={styles.sectionTitle}>{t("detail.moves")}</Text>
             <Text style={styles.xpText}>{t("detail.movesHint")}</Text>
             {partyMember.moveIds.map((moveId) => {
               const move = getMove(moveId);
@@ -291,7 +291,7 @@ export function CreatureDetailScreen({ route, navigation }: Props) {
 
         {partyMember && party.length > 1 && (
           <View style={styles.section}>
-            <Text style={styles.sectionTitle}>{t("detail.release")}</Text>
+            <Text accessibilityRole="header" style={styles.sectionTitle}>{t("detail.release")}</Text>
             {confirmingRelease ? (
               <View style={styles.releaseConfirmRow}>
                 <Text style={styles.flavorText}>{t("detail.releaseConfirm", { name: partyMember.displayName })}</Text>

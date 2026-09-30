@@ -981,7 +981,7 @@ export function BattleScreen({ navigation, route }: Props) {
   if (!activeMember || !fsm || !snapshot) {
     return (
       <View style={styles.container}>
-        <Text style={styles.resultTitle}>{t("battle.noCreature")}</Text>
+        <Text accessibilityRole="header" style={styles.resultTitle}>{t("battle.noCreature")}</Text>
         <Text style={styles.resultSubtitle}>{t("battle.noCreatureBody")}</Text>
         <PrimaryButton label={t("battle.returnHome")} onPress={() => navigation.popToTop()} />
       </View>
@@ -1310,7 +1310,7 @@ export function BattleScreen({ navigation, route }: Props) {
 
       {forcedSwitchPending && (
         <View style={styles.resultOverlay}>
-          <Text style={styles.resultTitle}>{t("battle.fainted", { name: activeMember.displayName })}</Text>
+          <Text accessibilityRole="header" style={styles.resultTitle}>{t("battle.fainted", { name: activeMember.displayName })}</Text>
           <Text style={styles.resultSubtitle}>{t("battle.forcedSwitch")}</Text>
           <View style={styles.forcedSwitchList}>
             {reserves.map((member) => (
@@ -1430,7 +1430,7 @@ export function BattleScreen({ navigation, route }: Props) {
 
       <Modal visible={!!outcome && outcome !== "enemy" && !messageWaiting && !levelUpReveal && !evolutionReveal && movePrompts.length === 0 && learnedNotices.length === 0} transparent animationType="fade" onRequestClose={() => {}}>
         <ResultTapCatcher onTap={() => navigation.popToTop()}>
-          <Text style={styles.resultTitle}>
+          <Text accessibilityRole="header" style={styles.resultTitle}>
             {outcome === "player"
               ? t("result.victory")
               : outcome === "caught"

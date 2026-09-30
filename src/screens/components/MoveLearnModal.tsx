@@ -52,7 +52,7 @@ export function MoveLearnModal({
     <Modal visible transparent animationType="fade" onRequestClose={onSkip}>
       <View style={styles.backdrop}>
         <View style={styles.card}>
-          <Text style={styles.title}>{t("learn.wants", { name: prompt.displayName })}</Text>
+          <Text accessibilityRole="header" style={styles.title}>{t("learn.wants", { name: prompt.displayName })}</Text>
 
           <Animated.View style={[styles.newMoveCard, { borderColor: glow }]}>
             <View style={styles.moveRow}>

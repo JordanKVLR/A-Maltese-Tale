@@ -57,7 +57,7 @@ export function MusicRoomScreen({ navigation }: Props) {
 
   return (
     <ScreenBackground style={styles.container}>
-      <Text style={styles.title}>{t("musicRoom.title")}</Text>
+      <Text accessibilityRole="header" style={styles.title}>{t("musicRoom.title")}</Text>
       <Text style={styles.subtitle}>{t("musicRoom.subtitle")}</Text>
       {musicVolume === "off" && <Text style={styles.warning}>{t("musicRoom.musicOff")}</Text>}
 

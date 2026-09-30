@@ -23,13 +23,13 @@ export function SettingsScreen({ navigation }: Props) {
 
   return (
     <ScreenBackground style={styles.container}>
-      <Text style={styles.title}>{t("settings.title")}</Text>
+      <Text accessibilityRole="header" style={styles.title}>{t("settings.title")}</Text>
       <Text style={styles.subtitle}>{t("settings.subtitle")}</Text>
 
       <ScrollView contentContainerStyle={styles.list}>
         {SECTIONS.map((section) => (
           <View key={section.title} style={styles.section}>
-            <Text style={styles.sectionTitle}>{t(section.title)}</Text>
+            <Text accessibilityRole="header" style={styles.sectionTitle}>{t(section.title)}</Text>
             {section.rows.map((row) => (
               <View key={row.key} style={styles.row} testID={`setting-${row.key}`}>
                 <View style={styles.rowText}>

@@ -35,7 +35,7 @@ export function LevelUpModal({ data, onDismiss }: { data: LevelUpRevealData; onD
       <Pressable testID="level-up-modal" style={styles.backdrop} onPress={dismiss}>
         <Pressable style={styles.card} onPress={dismiss}>
           <CreatureAvatar speciesId={data.speciesId} types={data.types} size={72} />
-          <Text style={styles.title}>{t("levelUp.title", { name: data.displayName, level: data.newLevel })}</Text>
+          <Text accessibilityRole="header" style={styles.title}>{t("levelUp.title", { name: data.displayName, level: data.newLevel })}</Text>
           <View style={styles.badgeRow}>
             {data.types.map((type) => (
               <TypeBadge key={type} type={type} />

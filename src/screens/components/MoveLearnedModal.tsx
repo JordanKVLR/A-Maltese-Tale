@@ -26,7 +26,7 @@ export function MoveLearnedModal({ notice, onDismiss }: { notice: MoveLearnedNot
       <Pressable testID="move-learned-modal" style={styles.backdrop} onPress={dismiss}>
         <Pressable style={styles.card} onPress={dismiss}>
           <Text style={styles.kicker}>{t("learn.newMove")}</Text>
-          <Text style={styles.title}>{t("battle.learned", { name: notice.displayName, move: c.move(notice.moveId) })}</Text>
+          <Text accessibilityRole="header" style={styles.title}>{t("battle.learned", { name: notice.displayName, move: c.move(notice.moveId) })}</Text>
           <ScrollView style={styles.detail}>
             <MoveDetailCard move={getMove(notice.moveId)} />
           </ScrollView>

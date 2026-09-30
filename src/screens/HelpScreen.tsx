@@ -18,19 +18,19 @@ export function HelpScreen({ navigation }: Props) {
 
   return (
     <ScreenBackground style={styles.container}>
-      <Text style={styles.title}>{t("help.title")}</Text>
+      <Text accessibilityRole="header" style={styles.title}>{t("help.title")}</Text>
       <Text style={styles.subtitle}>{t("help.subtitle")}</Text>
 
       <ScrollView contentContainerStyle={styles.list}>
         {SECTIONS.map((section) => (
           <View key={section} style={styles.card}>
-            <Text style={styles.sectionTitle}>{t(`help.${section}.title`)}</Text>
+            <Text accessibilityRole="header" style={styles.sectionTitle}>{t(`help.${section}.title`)}</Text>
             <Text style={styles.sectionBody}>{t(`help.${section}.body`)}</Text>
           </View>
         ))}
 
         <View style={styles.card}>
-          <Text style={styles.sectionTitle}>{t("help.typeChart.title")}</Text>
+          <Text accessibilityRole="header" style={styles.sectionTitle}>{t("help.typeChart.title")}</Text>
           <Text style={styles.sectionBody}>{t("help.typeChart.body")}</Text>
         </View>
         <TypeChartTable />

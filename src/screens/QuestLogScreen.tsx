@@ -58,7 +58,7 @@ export function QuestLogScreen({ navigation }: Props) {
 
   return (
     <ScreenBackground style={styles.container}>
-      <Text style={styles.title}>{t("quests.title")}</Text>
+      <Text accessibilityRole="header" style={styles.title}>{t("quests.title")}</Text>
       <Text style={styles.subtitle}>{t("quests.subtitle")}</Text>
 
       <ScrollView contentContainerStyle={styles.list}>

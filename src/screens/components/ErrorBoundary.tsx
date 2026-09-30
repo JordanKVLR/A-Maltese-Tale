@@ -31,7 +31,7 @@ export class ErrorBoundary extends Component<{ children: ReactNode }, { error: E
     if (!error) return this.props.children;
     return (
       <View style={styles.page}>
-        <Text style={styles.title}>Something went wrong</Text>
+        <Text accessibilityRole="header" style={styles.title}>Something went wrong</Text>
         <Text style={styles.body}>Xi ħaġa marret ħażin. Your save is safe — try again.</Text>
         <Pressable testID="crash-reload" onPress={this.reload} style={styles.button}>
           <Text style={styles.buttonText}>Reload / Erġa' ipprova</Text>

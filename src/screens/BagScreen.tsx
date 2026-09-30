@@ -33,7 +33,7 @@ export function BagScreen({ navigation }: Props) {
 
   return (
     <ScreenBackground style={styles.container}>
-      <Text style={styles.title}>{t("bag.title")}</Text>
+      <Text accessibilityRole="header" style={styles.title}>{t("bag.title")}</Text>
 
       <View style={styles.tabRow}>
         {ITEM_CATEGORIES.map((cat) => (

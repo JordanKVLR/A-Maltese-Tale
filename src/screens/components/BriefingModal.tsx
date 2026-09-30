@@ -40,7 +40,7 @@ export function BriefingModal({ pages, onDone }: { pages: BriefingPage[]; onDone
           ]}
         >
           <Text style={styles.kicker}>{page.kicker}</Text>
-          <Text style={styles.title}>{page.title}</Text>
+          <Text accessibilityRole="header" style={styles.title}>{page.title}</Text>
           <View style={styles.body}>
             {page.lines.map((line) => (
               <Text key={line} style={[styles.line, large && styles.lineLarge]}>

@@ -26,7 +26,7 @@ export function NameEntryScreen({ navigation }: Props) {
     <ScreenBackground style={styles.container}>
       <View style={styles.body}>
         <Text style={styles.eyebrow}>{t("name.eyebrow")}</Text>
-        <Text style={styles.title}>{t("name.prompt")}</Text>
+        <Text accessibilityRole="header" style={styles.title}>{t("name.prompt")}</Text>
         <TextInput
           testID="name-input"
           value={name}

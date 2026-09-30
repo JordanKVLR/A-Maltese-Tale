@@ -78,7 +78,7 @@ export function HomeScreen({ navigation }: Props) {
           <View style={styles.topRow}>
             <View>
               <Text style={styles.kicker}>{t("home.youAreIn")}</Text>
-              <Text style={styles.zone} numberOfLines={1}>
+              <Text accessibilityRole="header" style={styles.zone} numberOfLines={1}>
                 {zoneName}
               </Text>
             </View>
@@ -107,7 +107,7 @@ export function HomeScreen({ navigation }: Props) {
                 </View>
                 <View style={styles.heroInfo}>
                   <Text style={styles.heroKicker}>{t("home.lead")}</Text>
-                  <Text style={styles.heroName} numberOfLines={1}>
+                  <Text accessibilityRole="header" style={styles.heroName} numberOfLines={1}>
                     {leadMember.displayName} <Text style={styles.heroLevel}>{t("common.level", { level: leadMember.level })}</Text>
                   </Text>
                   <View style={styles.badgeRow}>
@@ -162,7 +162,7 @@ export function HomeScreen({ navigation }: Props) {
 
           {/* Medals: the four gyms, then the collector's set. */}
           <View style={styles.medalCard}>
-            <Text style={styles.sectionTitle}>{t("home.medals")}</Text>
+            <Text accessibilityRole="header" style={styles.sectionTitle}>{t("home.medals")}</Text>
             <View style={styles.medalRow}>
               {ALL_MEDALS.map((medal) => {
                 const earned = medals.includes(medal.medalId);
@@ -271,7 +271,7 @@ function ExploreDoor({ label, sub, onPress }: { label: string; sub: string; onPr
           <MenuIcon name="explore" size={34} color={malta.blueDeep} />
         </View>
         <View style={styles.doorText}>
-          <Text style={styles.doorLabel} numberOfLines={1}>
+          <Text accessibilityRole="header" style={styles.doorLabel} numberOfLines={1}>
             {label}
           </Text>
           <Text style={styles.doorSub} numberOfLines={1}>

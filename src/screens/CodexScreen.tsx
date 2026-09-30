@@ -44,7 +44,7 @@ export function CodexScreen({ navigation }: Props) {
 
   return (
     <ScreenBackground style={styles.container}>
-      <Text style={styles.title}>{t("codex.title")}</Text>
+      <Text accessibilityRole="header" style={styles.title}>{t("codex.title")}</Text>
       <Text style={styles.subtitle}>
         {t("codex.progress", { seen: seenCount, caught: ownedCount(caughtSpeciesIds), total: DEX_ENTRIES.length })}
       </Text>

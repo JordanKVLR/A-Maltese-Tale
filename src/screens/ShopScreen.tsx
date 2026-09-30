@@ -67,7 +67,7 @@ export function ShopScreen({ navigation }: Props) {
   return (
     <ScreenBackground style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.title}>{t("shop.title")}</Text>
+        <Text accessibilityRole="header" style={styles.title}>{t("shop.title")}</Text>
         <Text style={styles.currency}>{t("common.gold", { amount: currency })}</Text>
       </View>
       <Text style={styles.subtitle}>{t("shop.subtitle")}</Text>

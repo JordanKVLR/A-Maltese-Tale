@@ -37,7 +37,7 @@ export function StarterSelectScreen({ navigation }: Props) {
   if (!starterLine || !stageOne) {
     return (
       <ScreenBackground style={styles.container}>
-        <Text style={styles.title}>{t("starter.none")}</Text>
+        <Text accessibilityRole="header" style={styles.title}>{t("starter.none")}</Text>
         <PrimaryButton label={t("starter.takeQuiz")} onPress={() => navigation.navigate("StarterQuiz")} />
       </ScreenBackground>
     );
@@ -46,7 +46,7 @@ export function StarterSelectScreen({ navigation }: Props) {
   return (
     <ScreenBackground style={styles.container}>
       <Text style={styles.eyebrow}>{t("starter.eyebrow")}</Text>
-      <Text style={styles.title}>{t("starter.partner", { player: playerName, creature: stageOne.name })}</Text>
+      <Text accessibilityRole="header" style={styles.title}>{t("starter.partner", { player: playerName, creature: stageOne.name })}</Text>
 
       <View style={styles.card}>
         <Text style={styles.name}>{stageOne.name}</Text>

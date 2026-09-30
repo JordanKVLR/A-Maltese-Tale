@@ -43,7 +43,7 @@ export function VictoryOverlay({
         <Pressable testID="victory-backdrop" accessibilityRole="button" onPress={tapAnywhere} style={StyleSheet.absoluteFill} />
         <Animated.Text style={[styles.star, { transform: [{ scale: starScale }] }]}>★</Animated.Text>
         <Animated.View pointerEvents="box-none" style={{ opacity: textFade, alignItems: "center" }}>
-          <Text style={styles.title}>{t("victory.title")}</Text>
+          <Text accessibilityRole="header" style={styles.title}>{t("victory.title")}</Text>
           <Text style={styles.body}>{t("victory.body", { trainers: trainersBeaten, medals: medalsWon })}</Text>
           <Pressable
             testID="victory-continue"

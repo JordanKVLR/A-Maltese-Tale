@@ -83,7 +83,7 @@ export function EvolutionModal({ data, onDismiss }: { data: EvolutionRevealData;
             <Animated.View pointerEvents="none" style={[styles.flashOverlay, { opacity: flashOpacity }]} />
           </View>
 
-          <Text style={styles.title}>
+          <Text accessibilityRole="header" style={styles.title}>
             {revealed
               ? t("evolve.done", { old: data.oldDisplayName, new: data.newDisplayName })
               : t("evolve.evolving", { name: data.oldDisplayName })}

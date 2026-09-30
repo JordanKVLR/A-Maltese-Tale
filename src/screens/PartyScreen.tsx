@@ -79,7 +79,7 @@ export function PartyScreen({ navigation }: Props) {
 
   return (
     <ScreenBackground style={styles.container}>
-      <Text style={styles.title}>{t("party.title")}</Text>
+      <Text accessibilityRole="header" style={styles.title}>{t("party.title")}</Text>
       <Text style={styles.subtitle}>{t("party.subtitle", { count: party.length })}</Text>
 
       <ScrollView scrollEnabled={!drag} contentContainerStyle={styles.list}>

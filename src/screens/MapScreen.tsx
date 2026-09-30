@@ -691,7 +691,7 @@ export function MapScreen({ navigation, route }: Props) {
             ? t("map.stageBadgeBonus")
             : t(stage?.gym ? "map.stageBadgeGym" : "map.stageBadge", { stage: stage?.stage ?? 1, total: TOTAL_STAGES })}
         </Text>
-        <Text style={styles.badgeTitle}>{c.stage(map.zoneId)}</Text>
+        <Text accessibilityRole="header" style={styles.badgeTitle}>{c.stage(map.zoneId)}</Text>
         {festaHere && <Text style={styles.badgeFesta}>{t("festa.badge")}</Text>}
       </View>
 

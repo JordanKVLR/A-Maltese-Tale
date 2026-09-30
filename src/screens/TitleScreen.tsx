@@ -42,7 +42,7 @@ export function TitleScreen({ navigation }: Props) {
         <Text style={styles.crestGlyph}>✛</Text>
       </View>
       <View style={styles.titleBlock}>
-        <Text style={styles.title}>{t("title.name")}</Text>
+        <Text accessibilityRole="header" style={styles.title}>{t("title.name")}</Text>
         <Text style={styles.subtitle}>{t("title.tagline")}</Text>
       </View>
 

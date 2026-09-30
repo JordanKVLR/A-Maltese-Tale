@@ -128,7 +128,7 @@ export function useItemFlow() {
           <Pressable style={styles.sheet} onPress={() => {}}>
             {itemForCreature && (
               <>
-                <Text style={styles.title}>{t("items.useOn", { item: c.item(itemForCreature.id) })}</Text>
+                <Text accessibilityRole="header" style={styles.title}>{t("items.useOn", { item: c.item(itemForCreature.id) })}</Text>
                 <Text style={styles.note}>
                   {c.itemDescription(itemForCreature.id)} · {t("items.left", { count: inventory[itemForCreature.id] ?? 0 })}
                 </Text>
@@ -167,7 +167,7 @@ export function useItemFlow() {
           <Pressable style={styles.sheet} onPress={() => {}}>
             {creatureForItem && (
               <>
-                <Text style={styles.title}>{t("items.useItemOn", { name: creatureForItem.displayName })}</Text>
+                <Text accessibilityRole="header" style={styles.title}>{t("items.useItemOn", { name: creatureForItem.displayName })}</Text>
                 <HpBar currentHp={creatureForItem.currentHp} maxHp={partyMemberStats(creatureForItem).hp} />
                 <ScrollView style={styles.list} contentContainerStyle={styles.listContent}>
                   {ownedUsable.map((item) => {

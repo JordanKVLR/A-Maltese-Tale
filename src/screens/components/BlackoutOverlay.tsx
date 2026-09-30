@@ -33,7 +33,7 @@ export function BlackoutOverlay({
       <Animated.View testID="blackout-overlay" style={[styles.backdrop, { opacity: fade }]}>
         <Pressable testID="blackout-backdrop" accessibilityRole="button" onPress={tapAnywhere} style={StyleSheet.absoluteFill} />
         <Animated.View pointerEvents="box-none" style={{ opacity: textFade, alignItems: "center" }}>
-          <Text style={styles.title}>{t("blackout.title")}</Text>
+          <Text accessibilityRole="header" style={styles.title}>{t("blackout.title")}</Text>
           <Text style={styles.body}>{t("blackout.body", { zone: zoneName })}</Text>
           <Pressable
             testID="blackout-continue"

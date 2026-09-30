@@ -132,7 +132,7 @@ export function CageScreen({ navigation }: Props) {
 
   return (
     <ScreenBackground style={styles.container}>
-      <Text style={styles.title}>{t("cage.title")}</Text>
+      <Text accessibilityRole="header" style={styles.title}>{t("cage.title")}</Text>
       <Text style={styles.subtitle}>{t("cage.subtitle")}</Text>
 
       <ScrollView contentContainerStyle={styles.list}>
