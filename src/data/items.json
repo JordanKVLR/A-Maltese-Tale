@@ -61,7 +61,7 @@
       "id": "kinnie",
       "name": "Kinnie",
       "category": "medicine",
-      "description": "A bittersweet local soft drink, said to make a creature grow a whole level in one gulp. Rare — never sold, only found as a wild-encounter drop.",
+      "description": "A bittersweet local soft drink, said to make a Ħarsi grow a whole level in one gulp. Rare — never sold, only found as a wild-encounter drop.",
       "effect": "level_up",
       "startingQuantity": 0
     },
@@ -69,7 +69,7 @@
       "id": "helwa_tat_tork",
       "name": "Ħelwa tat-Tork",
       "category": "medicine",
-      "description": "A dense slab of sesame halva. Brings a knocked-out creature back on its feet with half its HP, without a trip to the chapel.",
+      "description": "A dense slab of sesame halva. Brings a knocked-out Ħarsi back on its feet with half its HP, without a trip to the chapel.",
       "effect": "revive",
       "startingQuantity": 0,
       "price": 600
@@ -78,7 +78,7 @@
       "id": "imqaret",
       "name": "Imqaret",
       "category": "medicine",
-      "description": "Warm date-filled pastries from a festa stall. Sharing a few brings a creature much closer to you (+25 friendship).",
+      "description": "Warm date-filled pastries from a festa stall. Sharing a few brings a Ħarsi much closer to you (+25 friendship).",
       "effect": "treat",
       "friendshipAmount": 25,
       "startingQuantity": 0,

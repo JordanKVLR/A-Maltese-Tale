@@ -238,15 +238,15 @@ export const MT_ITEMS: Record<string, { name: string; description: string }> = {
   kinnie: {
     name: "Kinnie",
     description:
-      "Xarba lokali morra u ħelwa, jgħidu li tkabbar kreatura livell sħiħ f'ġarra waħda. Rari — qatt ma tinbiegħ, tinstab biss wara ġlieda fis-selvaġġ.",
+      "Xarba lokali morra u ħelwa, jgħidu li tkabbar Ħarsi livell sħiħ f'ġarra waħda. Rari — qatt ma tinbiegħ, tinstab biss wara ġlieda fis-selvaġġ.",
   },
   helwa_tat_tork: {
     name: "Ħelwa tat-Tork",
-    description: "Biċċa ħelwa tat-Tork magħmula mill-ġulġlien. Tqajjem kreatura li waqgħet b'nofs l-HP tagħha, mingħajr ma jkollok tmur sal-kappella.",
+    description: "Biċċa ħelwa tat-Tork magħmula mill-ġulġlien. Tqajjem Ħarsi li waqa' b'nofs l-HP tiegħu, mingħajr ma jkollok tmur sal-kappella.",
   },
   imqaret: {
     name: "Imqaret",
-    description: "Imqaret sħan mimlija bit-tamal minn stand tal-festa. Meta taqsamhom, il-kreatura tersaq ħafna eqreb lejk (+25 ħbiberija).",
+    description: "Imqaret sħan mimlija bit-tamal minn stand tal-festa. Meta taqsamhom, il-Ħarsi jersaq ħafna eqreb lejk (+25 ħbiberija).",
   },
   crux_lens: {
     name: "Lenti tal-Crux",
@@ -270,7 +270,7 @@ export const MT_ITEMS: Record<string, { name: string; description: string }> = {
   signature_scroll: {
     name: "Romblu tal-Mossa Unika",
     description:
-      "Paġna qadima mit-tagħlim tal-bennejja tat-tempji, li ssemmi l-mossa li għaliha twieldet il-familja tal-ewwel kreatura tiegħek. Meta qrajtha, tgħallmuha — żommha biex tiftakar.",
+      "Paġna qadima mit-tagħlim tal-bennejja tat-tempji, li ssemmi l-mossa li għaliha twieldet il-familja tal-ewwel Ħarsi tiegħek. Meta qrajtha, tgħallmuha — żommha biex tiftakar.",
   },
 };
 
@@ -416,14 +416,14 @@ export const MT_FLAVOR: Record<string, string> = {
     "Tirkeb il-mewġa tal-pruwa tad-dgħajjes tas-sajd lura lejn il-port u terfa' ruħha 'l fuq mill-ilma b'ġwienaħ miftuħa daqs qlugħ lateen.",
   marsupp: "Jeħel mal-ktajjen tal-ankri u l-ħbula l-qodma; is-sajjieda jridu jaqilgħuh qabel ma jiekol il-ħabel.",
   marsuppjun:
-    "It-tajn tal-port jinġabar fil-ġlata tiegħu matul is-snin sakemm joħroġ saff żejtni li jżomm kull kreatura oħra 'l bogħod mid-daħla tiegħu.",
+    "It-tajn tal-port jinġabar fil-ġlata tiegħu matul is-snin sakemm joħroġ saff żejtni li jżomm kull Ħarsi ieħor 'l bogħod mid-daħla tiegħu.",
   kalanka: "Tgħix fuq l-ixtfa tas-sikka koperti bil-qroll 'il barra mill-kosta; il-qoxra tagħha ma tingħarafx mill-blat sakemm tiċċaqlaq.",
   kalankros:
     "Tidħol f'għar tal-baħar u tħalli l-franka tikber fuq daharha, sakemm biex toħroġha tieħu l-irdum magħha.",
   vurjenn: "Jgħodos mill-irdumijiet fl-ilma miftuħ wara l-ħut, u joħroġ kważi mitt metru 'l bogħod minn fejn daħal.",
   vurjenzu: "Jgħodos mill-irdumijiet tad-Dingli mingħajr ma jnaqqas il-veloċità u joħroġ b'ħuta li ma kellux għalfejn jiġri warajha.",
   ondallus:
-    "Is-sajjieda x-xjuħ iwaħħlu l-kurrenti qawwija 'l barra mill-blat f'din il-kreatura meta tinqaleb f'irqadha 'l isfel ħafna.",
+    "Is-sajjieda x-xjuħ iwaħħlu l-kurrenti qawwija 'l barra mill-blat f'dan il-Ħarsi meta jinqaleb f'irqadu 'l isfel ħafna.",
   ondraguna:
     "Il-mewġa li s-sajjieda jagħtuha isem minflok jiddeskrivuha. Il-baħħara li rawha tidwar taħt buq ma joħorġux iżjed dak l-istaġun.",
   ramliet: "Iħaffer lejn il-ġenb fir-ramel aħmar u fin tad-duni, u jħalli traċċi li jisparixxu mal-buffura li jmiss.",
@@ -435,7 +435,7 @@ export const MT_FLAVOR: Record<string, string> = {
   dunkorrax: "Jgħarbel il-ħadid mill-ħamrija ħamra u jkabbru f'qoxra. Il-boxxli jduru lejh ferm qabel ma joħroġ fil-wiċċ.",
   sirokk: "Maltempata tar-ramel żgħira b'għajnejn, li tqum kull meta x-xlokk veru jonfoħ mill-baħar.",
   sirokkjun:
-    "Itir ġewwa t-trab li jġorr ir-riħ tan-nofsinhar, hekk dak li tara qatt mhu l-kreatura — biss il-forma li jħalli r-ramel madwarha.",
+    "Itir ġewwa t-trab li jġorr ir-riħ tan-nofsinhar, hekk dak li tara qatt mhu l-Ħarsi — biss il-forma li jħalli r-ramel madwaru.",
   ossijan: "Jiġbor għadam ibbajjad mix-xemx fil-ħofra tiegħu fid-duni; in-nies jgħidu li l-akbar ħażniet huma tal-eqdem.",
   ossijark:
     "Magħmul mis-saff tal-għadam ta' Għar Dalam, fejn l-ippopotamu u ċ-ċriev jinsabu flimkien. Mhux annimal wieħed u qatt ma kien.",
@@ -541,7 +541,7 @@ export const MT_FLAVOR: Record<string, string> = {
   ferrocane: "Kelb tal-għassa tal-fortizza, maħdum mis-sajjetta.",
   ferrocanun: "Kelb tal-għassa tal-fortizza, maħdum mis-sajjetta — li kiber u sar il-forġa nfisha.",
   katakomba: "Għassies tal-katakombi, magħmul ġebel.",
-  katakombrun: "Ħa l-forma tal-gallerija li jinfesta, tant li l-kuritur u l-kreatura ma jistgħux jibqgħu jingħarfu minn xulxin.",
+  katakombrun: "Ħa l-forma tal-gallerija li jinfesta, tant li l-kuritur u l-Ħarsi ma jistgħux jibqgħu jingħarfu minn xulxin.",
   zavorra: "Sikka taż-żavorra, adattata għan-nawfraġju.",
   zavorrun: "Żavorra li ntremiet fil-Port il-Kbir għal erba' sekli u fl-aħħar qamet bilwieqfa.",
   // Legendaries carry an aesthetic line rather than lore.

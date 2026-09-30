@@ -276,7 +276,7 @@
         "Water",
         "Poison"
       ],
-      "flavor": "Harbour silt collects in its gills over the years until it exhales a slick that keeps every other creature out of its inlet.",
+      "flavor": "Harbour silt collects in its gills over the years until it exhales a slick that keeps every other Ħarsi out of its inlet.",
       "baseStats": {
         "hp": 101,
         "atk": 82,
@@ -398,7 +398,7 @@
       "types": [
         "Water"
       ],
-      "flavor": "Old fishermen blame the strong currents off the outer rock on this creature turning over in its sleep far below.",
+      "flavor": "Old fishermen blame the strong currents off the outer rock on this Ħarsi turning over in its sleep far below.",
       "baseStats": {
         "hp": 95,
         "atk": 90,
@@ -619,7 +619,7 @@
         "Flying",
         "Dark"
       ],
-      "flavor": "Flies inside the dust the south wind carries, so what you see is never the creature — only the shape the sand leaves around it.",
+      "flavor": "Flies inside the dust the south wind carries, so what you see is never the Ħarsi — only the shape the sand leaves around it.",
       "baseStats": {
         "hp": 94,
         "atk": 109,

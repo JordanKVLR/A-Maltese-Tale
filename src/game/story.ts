@@ -165,7 +165,8 @@ export const PROLOGUE: StoryScene = {
   chapter: 1,
   lines: [
     L("narrator", "Ħal Saflieni Hypogeum, Paola. Five thousand years ago the temple builders carved these halls out of the living rock, and laid their dead to rest in them.", "L-Ipoġew ta' Ħal Saflieni, Raħal Ġdid. Ħamest elef sena ilu l-bennejja tat-tempji qatgħu dawn is-swali mill-blat ħaj, u fihom difnu l-mejtin tagħhom."),
-    L("abela", "Good, you came. And you brought your partner — it chose you well. Listen: last night someone got into the Oracle Room.", "Tajjeb, ġejt. U ġibt lil sieħbek — għażlek tajjeb. Isma': ilbieraħ filgħaxija xi ħadd daħal fil-Kamra tal-Oraklu."),
+    L("abela", "Good, you came, and you brought your partner. You know the old stories of the Ħares — the spirit that watches over a house? The little ones that live wild across these islands are its kin. We call them Ħarsi. Yours chose you well.", "Tajjeb, ġejt, u ġibt lil sieħbek. Taf l-istejjer qodma tal-Ħares — l-ispirtu li jħares id-dar? Iż-żgħar li jgħixu selvaġġi madwar dawn il-gżejjer huma qrabatu. Insejħulhom il-Ħarsi. Tiegħek għażlek tajjeb."),
+    L("abela", "Listen: last night someone got into the Oracle Room.", "Isma': ilbieraħ filgħaxija xi ħadd daħal fil-Kamra tal-Oraklu."),
     L("abela", "They took the Crux Lens: a disc of polished stone the temple builders left here. It focuses the Crux — the old power that sleeps in every megalith on these islands.", "Ħadu l-Lenti tal-Crux: diska ta' ġebla illustrata li ħallew hawn il-bennejja. Tiffoka l-Crux — il-qawwa l-qadima li torqod f'kull megalitu ta' dawn il-gżejjer."),
     L("abela", "Since it vanished, the stones have been going dim. And at the door, this was left behind — a lantern, painted black.", "Minn meta sparixxiet, il-ġebel qed jiċċajpar. U fil-bieb, ħallew dan warajhom — fanal, miżbugħ iswed."),
     L("abela", "The four Keepers of the islands each guard one of the Crux's seals. Earn their medals, and they'll trust you with what they know. Find who took the Lens.", "L-erba' Għassiesa tal-gżejjer kull wieħed jgħasses siġill tal-Crux. Irbaħ il-midalji tagħhom, u jafdawk b'dak li jafu. Sib min ħa l-Lenti."),
@@ -182,7 +183,7 @@ export const ENTRY_SCENES: Record<string, StoryScene> = {
     lines: [
       L("ganni", "Ah, a young one with a partner. These are old woods — the Knights planted them for their hunting, by Verdala Palace. Buskett, we call them.", "Ah, żagħżugħ b'sieħbu. Dawn imsaġar qodma — il-Kavallieri ħawluhom għall-kaċċa, ħdejn il-Palazz Verdala. Il-Buskett, insejħulhom."),
       L("ganni", "But the stones are older than any Knight. The temple builders were farming these fields before anyone had heard of Rome.", "Imma l-ġebel eqdem minn kull kavallier. Il-bennejja tat-tempji kienu jaħdmu dawn l-għelieqi qabel ma xi ħadd kien sema' b'Ruma."),
-      L("ganni", "Keep to the road if you want to make time. The long grass is where the creatures sleep.", "Żomm mat-triq jekk trid tgħaġġel. Il-ħaxix twil huwa fejn jorqdu l-kreaturi."),
+      L("ganni", "Keep to the road if you want to make time. The long grass is where the Ħarsi sleep.", "Żomm mat-triq jekk trid tgħaġġel. Il-ħaxix twil huwa fejn jorqdu l-Ħarsi."),
     ],
   },
   dingli_cliffs: {
@@ -534,7 +535,7 @@ export const ENDING: StoryScene = {
     L("narrator", "Across the harbour, the lights of Valletta, Birgu, Senglea and Kalkara come back on one by one. On a hill in Gozo, the stones of Ġgantija glow warm again in the dark.", "Madwar il-port, id-dwal tal-Belt, il-Birgu, l-Isla u Kalkara jerġgħu jinxtegħlu wieħed wieħed. Fuq għolja f'Għawdex, il-ġebel tal-Ġgantija jerġa' jiddi sħun fid-dlam."),
     L("abela", "You did it. The Crux is back where it belongs — in every stone, not in one man's hand. Keep the Lens. The Hypogeum has kept enough secrets.", "Għamiltha. Il-Crux reġa' lura fejn hu postu — f'kull ġebla, mhux f'id raġel wieħed. Żomm il-Lenti. L-Ipoġew żamm biżżejjed sigrieti."),
     L("carmela", "The Baron's boats are tied up in the harbour, and he's talking to the police. I'll be taking tourists round Comino from now on. Honest work. Mostly.", "Id-dgħajjes tal-Barun marbuta fil-port, u hu qed ikellem il-pulizija. Minn issa se nieħu t-turisti madwar Kemmuna. Xogħol onest. L-iktar."),
-    L("luca", "So. Every stage, every Keeper. What now? ...There are creatures on this island neither of us has even seen yet. Race you?", "Mela. Kull stadju, kull Għassies. Issa x'se nagħmlu? ...Hemm kreaturi f'din il-gżira li l-ebda wieħed minna għadu lanqas biss rahom. Nisfidak?"),
+    L("luca", "So. Every stage, every Keeper. What now? ...There are Ħarsi on this island neither of us has even seen yet. Race you?", "Mela. Kull stadju, kull Għassies. Issa x'se nagħmlu? ...Hemm Ħarsi f'din il-gżira li l-ebda wieħed minna għadu lanqas biss rahom. Nisfidak?"),
     L("narrator", "The islands are yours to explore. Beat every trainer, fill the Codex, and find what still hides at Filfla and in the Ċittadella Ruins.", "Il-gżejjer huma tiegħek biex tesplorahom. Irbaħ kull trainer, imla l-Codex, u sib x'għad hemm moħbi f'Filfla u fil-Fdalijiet taċ-Ċittadella."),
   ],
 };

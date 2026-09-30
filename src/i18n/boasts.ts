@@ -28,7 +28,7 @@ export const TYPE_BOASTS: Record<Language, Record<TypeName, string[]>> = {
     ],
     Water: [
       "Forty years off Marsaxlokk. The sea decides, and I've learned to agree with it early.",
-      "My father fished this stretch and his before him. The creatures know the family.",
+      "My father fished this stretch and his before him. The Ħarsi know the family.",
       "You can't out-wait water. People try.",
     ],
     Grass: [
@@ -120,7 +120,7 @@ export const TYPE_BOASTS: Record<Language, Record<TypeName, string[]>> = {
     ],
     Water: [
       "Erbgħin sena barra Marsaxlokk. Il-baħar jiddeċiedi, u tgħallimt naqbel miegħu kmieni.",
-      "Missieri sajjad din il-medda, u missieru qablu. Il-kreaturi jafu l-familja.",
+      "Missieri sajjad din il-medda, u missieru qablu. Il-Ħarsi jafu l-familja.",
       "Ma tistax tistenna aktar mill-ilma. In-nies jippruvaw.",
     ],
     Grass: [
