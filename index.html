@@ -10,6 +10,20 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
     <title>A Maltese Tale</title>
+    <style id="malta-fonts">
+      /* The game's lettering: Cinzel for headings, cut after the Roman inscriptions carved into
+         Maltese limestone; Alegreya Sans for everything you read, a warm humanist face. Both
+         cover Maltese in full (ċ ġ ħ ż). Bundled here, so they work offline. */
+      @font-face { font-family: "Cinzel"; font-weight: 700; font-display: swap; src: url("fonts/cinzel-700.woff2") format("woff2"); }
+      @font-face { font-family: "Cinzel"; font-weight: 800 900; font-display: swap; src: url("fonts/cinzel-800.woff2") format("woff2"); }
+      @font-face { font-family: "Alegreya Sans"; font-weight: 100 400; font-display: swap; src: url("fonts/alegreya-sans-400.woff2") format("woff2"); }
+      @font-face { font-family: "Alegreya Sans"; font-weight: 500 600; font-display: swap; src: url("fonts/alegreya-sans-500.woff2") format("woff2"); }
+      @font-face { font-family: "Alegreya Sans"; font-weight: 700; font-display: swap; src: url("fonts/alegreya-sans-700.woff2") format("woff2"); }
+      @font-face { font-family: "Alegreya Sans"; font-weight: 800 900; font-display: swap; src: url("fonts/alegreya-sans-800.woff2") format("woff2"); }
+      /* The html prefix out-ranks react-native-web's own text class, so every Text picks this up. */
+      html [dir="auto"], html input, html textarea { font-family: "Alegreya Sans", system-ui, -apple-system, "Segoe UI", sans-serif; }
+      html [role="heading"] { font-family: "Cinzel", Georgia, serif; letter-spacing: 0.02em; }
+    </style>
     <style id="expo-reset">
       html,
       body {
@@ -115,6 +129,6 @@
         <pre id="boot-detail"></pre>
       </div>
     </div>
-  <script src="./_expo/static/js/web/AppEntry-d2b689176d38589b6ea856eff666048c.js" defer></script>
+  <script src="./_expo/static/js/web/AppEntry-0d937943a20542a9e0dc8a0ae66271ec.js" defer></script>
 </body>
 </html>
