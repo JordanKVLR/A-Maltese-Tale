@@ -24,5 +24,6 @@ export type RootStackParamList = {
   MusicRoom: undefined;
   Quests: undefined;
   Cage: undefined;
+  Credits: undefined;
   CreatureDetail: CreatureDetailParams;
 };

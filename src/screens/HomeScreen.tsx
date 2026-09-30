@@ -3,7 +3,8 @@ import { Animated, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimen
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import type { RootStackParamList } from "../navigation/types";
 import { questWorldOf, useGameStore } from "../state/gameStore";
-import { ALL_MEDALS } from "../game/zoneProgression";
+import { ALL_MEDALS, STAGES } from "../game/zoneProgression";
+import { CHAPTERS, CHARACTERS, currentChapter, nextObjective } from "../game/story";
 import { partyMemberStats } from "../game/party";
 import { HpBar } from "./components/HpBar";
 import { TypeBadge } from "./components/TypeBadge";
@@ -41,7 +42,14 @@ export function HomeScreen({ navigation }: Props) {
   const [bannerWidth, setBannerWidth] = useState(Math.min(width, 640) - 40);
 
   const leadMember = party[0];
-  const { t, c } = useI18n();
+  const i18n = useI18n();
+  const { t, c } = i18n;
+  const storyWorld = { storyFlags: state.storyFlags, medals, defeatedTrainerIds };
+  const chapter = CHAPTERS.find((ch) => ch.number === currentChapter(storyWorld));
+  const objective = nextObjective(
+    storyWorld,
+    STAGES.filter((s) => s.gym).map((s) => ({ zoneId: s.id, medalId: s.gym!.medalId }))
+  );
   const zoneName = c.stage(currentZoneId);
 
   useKeyboardShortcuts({
@@ -132,6 +140,27 @@ export function HomeScreen({ navigation }: Props) {
             </Pressable>
           )}
           {progress.complete && <Text style={styles.complete}>{t("home.complete")}</Text>}
+
+          {/* Where the story stands: the chapter, and what it wants next. */}
+          <View style={styles.storyCard} testID="home-story">
+            <View style={styles.storyBand}>
+              <MadumFloor pattern="lozenge" palette={MADUM.terracotta} tile={16} />
+            </View>
+            <Text style={styles.storyKicker}>{t("story.card")}</Text>
+            <Text accessibilityRole="header" style={styles.storyChapter}>
+              {chapter ? (i18n.lang === "mt" ? chapter.title.mt : chapter.title.en) : ""}
+            </Text>
+            <Text style={styles.storyNext}>
+              {objective.kind === "battle"
+                ? t("story.nextBattle", {
+                    name: i18n.lang === "mt" ? CHARACTERS[objective.battle.who].name.mt : CHARACTERS[objective.battle.who].name.en,
+                    zone: c.stage(objective.battle.zoneId),
+                  })
+                : objective.kind === "gym"
+                  ? t("story.nextGym", { medal: c.medal(objective.medalId), zone: c.stage(objective.zoneId) })
+                  : t("story.done")}
+            </Text>
+          </View>
 
           {/* Today's festa, under a string of bunting. */}
           <View style={styles.festa} onLayout={(e) => setBannerWidth(e.nativeEvent.layout.width)}>
@@ -423,6 +452,40 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "800",
     textAlign: "center",
+  },
+  storyCard: {
+    backgroundColor: "#fdf6ea",
+    borderRadius: 16,
+    padding: 14,
+    paddingTop: 20,
+    gap: 4,
+    borderWidth: 1.5,
+    borderColor: "#e8c9a8",
+    overflow: "hidden",
+  },
+  storyBand: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    top: 0,
+    height: 8,
+    overflow: "hidden",
+  },
+  storyKicker: {
+    color: "#b9472f",
+    fontSize: 11,
+    fontWeight: "800",
+    letterSpacing: 1.4,
+    textTransform: "uppercase",
+  },
+  storyChapter: {
+    color: malta.ink,
+    fontSize: 18,
+    fontWeight: "800",
+  },
+  storyNext: {
+    color: colors.textMuted,
+    fontSize: 13,
   },
   festa: {
     backgroundColor: "#fff1f3",

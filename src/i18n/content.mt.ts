@@ -248,6 +248,10 @@ export const MT_ITEMS: Record<string, { name: string; description: string }> = {
     name: "Imqaret",
     description: "Imqaret sħan mimlija bit-tamal minn stand tal-festa. Meta taqsamhom, il-kreatura tersaq ħafna eqreb lejk (+25 ħbiberija).",
   },
+  crux_lens: {
+    name: "Lenti tal-Crux",
+    description: "Diska ta' ġebla tal-franka illustrata mill-Kamra tal-Oraklu tal-Ipoġew. Tiffoka l-Crux tal-gżejjer. Dr Abela ħallietek iżżommha: prova ta' dak li għamilt fil-Port il-Kbir.",
+  },
   silent_bell: {
     name: "Qanpiena Siekta",
     description:
@@ -317,6 +321,10 @@ export const MT_TRAINER_TITLES: Record<string, string> = {
   "Lamp Lighter": "Xegħħel tal-Fanali",
   "Cart Driver": "Karettier",
   "Wall Builder": "Bennej tal-Ħitan tas-Sejjieħ",
+  Rival: "Rivali",
+  Captain: "Kaptana",
+  "Black Lantern": "Fanal Iswed",
+  Baron: "Barun",
 };
 
 export const MT_ERAS: Record<string, string> = {

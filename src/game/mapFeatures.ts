@@ -2,6 +2,7 @@ import { getMap, type TileMap } from "./mapData";
 import { trainersForZone } from "./trainers";
 import { bonusStageFrom, getStage, BONUS_STAGES } from "./zoneProgression";
 import { QUESTS, questGivenIn, type QuestDef } from "./quests";
+import { storyBattlesIn } from "./story";
 
 /**
  * The things on a map besides trainers: quest-givers, the jetty or gate into a hidden area,
@@ -48,6 +49,8 @@ export interface MapFeatures {
   glints: MapGlint[];
   /** The Gaġġa: where creatures not in your party are kept. One on every map. */
   cage: { row: number; col: number } | null;
+  /** Where each of this zone's story characters stands while they wait for you. */
+  story: { battleId: string; row: number; col: number }[];
 }
 
 type Spot = { row: number; col: number };
@@ -120,7 +123,7 @@ export function featuresForZone(zoneId: string): MapFeatures {
 function buildFeatures(zoneId: string): MapFeatures {
   const stage = getStage(zoneId);
   const map = getMap(zoneId);
-  if (!stage) return { npcs: [], portal: null, glints: [], cage: null };
+  if (!stage) return { npcs: [], portal: null, glints: [], cage: null, story: [] };
   const rng = makeRng(seedFrom(`${zoneId}:features`));
 
   // Tiles already spoken for: gates, the chapel, trainers, and the tiles right beside the
@@ -201,7 +204,19 @@ function buildFeatures(zoneId: string): MapFeatures {
   // it did not move anything placed before it.
   const cage = pick(offRoad.filter((s) => s.col <= 6), false) ?? pick(offRoad, false);
 
-  return { npcs, portal, glints, cage };
+  // Story characters stand by the road in the second half of the zone, so you meet them on the
+  // way through. Placed after everything else, so they never move what was already there.
+  const story: MapFeatures["story"] = [];
+  for (const battle of storyBattlesIn(zoneId)) {
+    const spot = pick(offRoad.filter((s) => s.col >= Math.floor(cols / 2) - 1 && s.col <= cols - 4), true) ?? pick(offRoad, true);
+    if (spot) story.push({ battleId: battle.id, ...spot });
+  }
+
+  return { npcs, portal, glints, cage, story };
+}
+
+export function storyAt(zoneId: string, row: number, col: number): string | undefined {
+  return featuresForZone(zoneId).story.find((s) => s.row === row && s.col === col)?.battleId;
 }
 
 export function cageAt(zoneId: string, row: number, col: number): boolean {

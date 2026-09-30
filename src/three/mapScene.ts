@@ -29,7 +29,15 @@ export interface MapTrainer {
 }
 
 export interface MapFeatureView {
-  npcs: { id: string; row: number; col: number; look: "herbalist" | "archivist" | "fisher" | "sacristan"; marker: "!" | "?" | null }[];
+  npcs: {
+    id: string;
+    row: number;
+    col: number;
+    look: "herbalist" | "archivist" | "fisher" | "sacristan" | "story";
+    marker: "!" | "?" | null;
+    /** Story characters bring their own colours. */
+    colors?: { shirt: string; trousers: string; skin: string; hair: string; hat?: string; cape?: string };
+  }[];
   glints: { id: string; row: number; col: number; quest: boolean; visible: boolean }[];
   portal: { row: number; col: number; kind: "dock" | "gate"; open: boolean } | null;
   cage?: { row: number; col: number } | null;
@@ -381,7 +389,7 @@ function person(look: PersonLook): { group: THREE.Group; legs: THREE.Object3D[];
   return { group, legs, arms, materials };
 }
 
-const NPC_LOOKS: Record<MapFeatureView["npcs"][number]["look"], PersonLook> = {
+const NPC_LOOKS: Record<Exclude<MapFeatureView["npcs"][number]["look"], "story">, PersonLook> = {
   herbalist: { shirt: "#6f8f3a", trousers: "#4f6a24", skin: "#e8b98f", hair: "#e8e2d6" },
   archivist: { shirt: "#9a4a3a", trousers: "#3a2a20", skin: "#f0c8a0", hair: "#3a2a1a", cape: "#6e3022" },
   fisher: { shirt: "#2f6fb5", trousers: "#3a3a4a", skin: "#d9a67a", hair: "#2a1a10", hat: "#f2d04a" },
@@ -636,7 +644,7 @@ export function createMapScene(map: TileMap, player: MapActor, follower: MapActo
     bobbing.length = 0;
     fogs.length = 0;
     for (const npc of features.npcs) {
-      const figure = person(NPC_LOOKS[npc.look]);
+      const figure = person(npc.colors ?? NPC_LOOKS[npc.look as keyof typeof NPC_LOOKS]);
       figure.group.position.set(npc.col, 0, npc.row);
       let marker: THREE.Group | null = null;
       if (npc.marker) {

@@ -111,6 +111,13 @@
       "category": "key_items",
       "description": "An old page of the temple builders' lore, naming the one move your starter's line was born for. Reading it taught them that move — keep it to remember.",
       "startingQuantity": 0
+    },
+    {
+      "id": "crux_lens",
+      "name": "Crux Lens",
+      "category": "key_items",
+      "description": "A disc of polished limestone from the Hypogeum's Oracle Room. It focuses the Crux of the islands. Dr Abela let you keep it: proof of what you did at the Grand Harbour.",
+      "startingQuantity": 0
     }
   ]
 }

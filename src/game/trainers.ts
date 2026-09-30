@@ -51,6 +51,10 @@ export interface Trainer {
   /** The type this trainer fights under — their ace's primary type, or a gym's declared
    * specialty. Drives the elemental transition that plays into the battle. */
   signatureType: TypeName;
+  /** A character from the story (see story.ts), not one of the road's generated trainers. */
+  story?: boolean;
+  /** Invokes Crux like a gym leader does. */
+  usesCrux?: boolean;
 }
 
 
@@ -274,6 +278,8 @@ export function trainerLines(trainer: Trainer, i18n: I18n, boast?: BoastRef) {
     boast: boast ? c.boast(boast) : null,
     defeat: trainer.isGymLeader
       ? t("battle.gymDefeat", { name: trainer.name, medal })
-      : t("battle.defeat", { name: trainer.name }),
+      : trainer.story
+        ? t("battle.storyDefeat", { name: trainer.name })
+        : t("battle.defeat", { name: trainer.name }),
   };
 }

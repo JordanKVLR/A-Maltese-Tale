@@ -164,6 +164,9 @@ interface GameState {
   catchesByType: Record<string, number>;
   /** Glints already picked up: quest objects and treasure. */
   foundIds: string[];
+  /** Story scenes already seen (see story.ts). */
+  storyFlags: string[];
+  markStory: (ids: readonly string[]) => void;
   /** The last day ("YYYY-MM-DD") the festa gift was collected. */
   festaGiftDay: string | null;
   /** Collects today's festa gift; false if it was already collected today. */
@@ -234,6 +237,12 @@ export const useGameStore = create<GameState>()(
     catchesByType: {},
     foundIds: [],
     festaGiftDay: null,
+    storyFlags: [],
+    markStory: (ids) =>
+      set((state) => {
+        const fresh = ids.filter((id) => !state.storyFlags.includes(id));
+        return fresh.length ? { storyFlags: [...state.storyFlags, ...fresh] } : state;
+      }),
     claimFestaGift: (day, itemId, quantity) => {
       const state = get();
       if (state.festaGiftDay === day) return false;
@@ -561,6 +570,7 @@ export const useGameStore = create<GameState>()(
         catchesByType: {},
         foundIds: [],
         festaGiftDay: null,
+        storyFlags: [],
         tutorialsSeen: [],
         visitedStageIds: [],
         playerName: DEFAULT_PLAYER_NAME,
@@ -590,6 +600,7 @@ export const useGameStore = create<GameState>()(
         catchesByType: state.catchesByType,
         foundIds: state.foundIds,
         festaGiftDay: state.festaGiftDay,
+        storyFlags: state.storyFlags,
         visitedStageIds: state.visitedStageIds,
         playerName: state.playerName,
         selectedLine: state.selectedLine,

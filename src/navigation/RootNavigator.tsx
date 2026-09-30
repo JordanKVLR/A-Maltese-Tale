@@ -18,6 +18,7 @@ import { SettingsScreen } from "../screens/SettingsScreen";
 import { MusicRoomScreen } from "../screens/MusicRoomScreen";
 import { QuestLogScreen } from "../screens/QuestLogScreen";
 import { CageScreen } from "../screens/CageScreen";
+import { CreditsScreen } from "../screens/CreditsScreen";
 import { CreatureDetailScreen } from "../screens/CreatureDetailScreen";
 import { colors } from "../screens/theme";
 
@@ -44,6 +45,7 @@ export function RootNavigator() {
         <Stack.Screen name="MusicRoom" component={MusicRoomScreen} />
         <Stack.Screen name="Quests" component={QuestLogScreen} />
         <Stack.Screen name="Cage" component={CageScreen} />
+        <Stack.Screen name="Credits" component={CreditsScreen} />
         <Stack.Screen name="CreatureDetail" component={CreatureDetailScreen} />
       </Stack.Navigator>
     </NavigationContainer>

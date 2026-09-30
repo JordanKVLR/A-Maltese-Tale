@@ -60,6 +60,7 @@ import { useI18n, type StringKey } from "../i18n";
 import { useSettings } from "../state/settingsStore";
 import { autoAdvanceMs, FASTEST_BEAT_MS, showsPopups, type MessageKind } from "../game/settings";
 import { trainerLines } from "../game/trainers";
+import { storyTrainer } from "../game/storyTrainers";
 import type { BoastRef } from "../i18n/boasts";
 
 /** Chance a defeated or caught wild creature drops a Kinnie — rare, never sold. */
@@ -201,8 +202,10 @@ export function BattleScreen({ navigation, route }: Props) {
     () => buildBiomeEncounterTable(biome, selectedLine, { ...getZoneEncounterSettings(currentZoneId), festa: isFestaZone(currentZoneId) }),
     [biome, selectedLine, currentZoneId]
   );
-  const trainer = route.params.trainerId ? getTrainer(route.params.trainerId) : undefined;
-  useMusic(battleTrack(trainer));
+  const trainer = route.params.trainerId
+    ? getTrainer(route.params.trainerId) ?? storyTrainer(route.params.trainerId, selectedLine)
+    : undefined;
+  useMusic(battleTrack(trainer ? { isGymLeader: trainer.isGymLeader || !!trainer.usesCrux } : undefined));
   const isTrainerBattle = trainer !== undefined;
 
   /** A trainer sends out their whole party in order; the wild path is a single creature. */
@@ -405,7 +408,7 @@ export function BattleScreen({ navigation, route }: Props) {
     const memberBefore = useGameStore.getState().party.find((m) => m.uid === uid);
     if (!memberBefore) return false;
     // A creature close to you learns faster.
-    const xpMultiplier = !trainer ? 1 : trainer.isGymLeader ? GYM_XP_MULTIPLIER : TRAINER_XP_MULTIPLIER;
+    const xpMultiplier = !trainer ? 1 : trainer.isGymLeader || trainer.usesCrux ? GYM_XP_MULTIPLIER : TRAINER_XP_MULTIPLIER;
     const xp = Math.round(
       xpRewardForLevel(foeLevel, memberBefore.level) * xpMultiplier * (1 + friendshipXpBonus(friendshipOf(memberBefore)))
     );
@@ -590,7 +593,7 @@ export function BattleScreen({ navigation, route }: Props) {
     const ctx = activeFsm.getContext();
     const playerActiveId = ctx.playerActive.id;
     // Gym leaders know the old stones too: a full meter is released, not wasted.
-    const enemyInvokes = !!trainer?.isGymLeader && cruxReady(ctx.enemyActive);
+    const enemyInvokes = !!(trainer?.isGymLeader || trainer?.usesCrux) && cruxReady(ctx.enemyActive);
     const enemyMoveId = enemyInvokes ? "" : pickEnemyMoveId();
     const enemyAction: BattleAction = enemyInvokes
       ? { kind: "invoke_crux", actorId: ctx.enemyActive.id }

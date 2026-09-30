@@ -15,13 +15,25 @@ import {
   findTilePosition,
 } from "../game/mapData";
 import { TileArt, PlayerSprite, TrainerSprite, NpcSprite, GlintSprite, PortalSprite, CageSprite } from "../art/tileArt";
-import { featuresForZone, npcAt, glintAt, portalInto, cageAt, type MapGlint, type MapNpc } from "../game/mapFeatures";
+import { featuresForZone, npcAt, glintAt, portalInto, cageAt, storyAt, type MapGlint, type MapNpc } from "../game/mapFeatures";
 import { findIsVisible, getQuest, questForFind, questProgress, questState } from "../game/quests";
 import { findName, questGiver, questLine, questTitle, stepLabel } from "../game/questText";
 import { questWorldOf } from "../state/gameStore";
 import { friendshipOf, friendshipTier } from "../game/friendship";
 import { FESTA_GIFT, festaOn } from "../game/festa";
 import { Fireworks2D } from "./components/Fireworks2D";
+import { DialogueModal, Portrait } from "./components/DialogueModal";
+import {
+  CHAPTERS,
+  CHARACTERS,
+  ENDING,
+  STORY_BATTLES,
+  getStoryBattle,
+  scenesOnArrival,
+  storyBattleActive,
+  type StoryBattle,
+  type StoryScene,
+} from "../game/story";
 import { MoveLearnModal, type MoveLearnPrompt } from "./components/MoveLearnModal";
 import { trainerAt, trainersForZone } from "../game/trainers";
 import { medalRequiredToEnter, getStage, STAGES } from "../game/zoneProgression";
@@ -162,7 +174,71 @@ export function MapScreen({ navigation, route }: Props) {
     then?.();
   };
   const isFocused = useIsFocused();
-  const modalOpen = briefing.length > 0 || notice !== null || learnPrompt !== null;
+  const storyFlags = useGameStore((s) => s.storyFlags);
+  const markStory = useGameStore((s) => s.markStory);
+  const addItem = useGameStore((s) => s.addItem);
+  const storyWorld = { storyFlags, medals, defeatedTrainerIds };
+  const chapterTitle = (chapter: number) => {
+    const found = CHAPTERS.find((ch) => ch.number === chapter);
+    return found ? (i18n.lang === "mt" ? found.title.mt : found.title.en) : undefined;
+  };
+  const activeStory = features.story.filter((spot) => {
+    const battle = getStoryBattle(spot.battleId);
+    return battle && storyBattleActive(battle, storyWorld);
+  });
+  /** Story scenes waiting to be told here, oldest first — shown before any stage briefing. */
+  const [storyQueue, setStoryQueue] = useState<StoryScene[]>(() =>
+    scenesOnArrival(map.zoneId, {
+      storyFlags: useGameStore.getState().storyFlags,
+      medals: useGameStore.getState().medals,
+      defeatedTrainerIds: useGameStore.getState().defeatedTrainerIds,
+    })
+  );
+  /** A story character you've walked up to: their lines play, then the fight. */
+  const [storyTalk, setStoryTalk] = useState<StoryBattle | null>(null);
+  // Coming back from a battle (or a menu), there may be new story to tell: a beaten rival's
+  // words, a Keeper's news after a medal, the ending.
+  useEffect(() => {
+    if (!isFocused) return;
+    const s = useGameStore.getState();
+    const fresh = scenesOnArrival(map.zoneId, { storyFlags: s.storyFlags, medals: s.medals, defeatedTrainerIds: s.defeatedTrainerIds });
+    setStoryQueue((queue) => [...queue, ...fresh.filter((scene) => !queue.some((q) => q.id === scene.id))]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isFocused]);
+
+  function finishScene() {
+    const scene = storyQueue[0];
+    if (!scene) return;
+    markStory([scene.id]);
+    // A beaten story character's parting gift.
+    const battle = STORY_BATTLES.find((b) => `${b.id}:win` === scene.id);
+    if (battle?.reward?.itemId) {
+      addItem(battle.reward.itemId, battle.reward.quantity ?? 1);
+      ui.coin();
+      setToast(t("story.received", { quantity: battle.reward.quantity ?? 1, item: c.item(battle.reward.itemId) }));
+    }
+    let rest = storyQueue.slice(1);
+    // A save that already had medals when the story arrived: the Keepers' after-medal news would
+    // all play at once and out of order, so it is skipped — the rest of the story still plays.
+    if (scene.id === "prologue") {
+      const skipped = rest.filter((s) => s.id.startsWith("medal:")).map((s) => s.id);
+      if (skipped.length) {
+        markStory(skipped);
+        rest = rest.filter((s) => !skipped.includes(s.id));
+      }
+    }
+    setStoryQueue(rest);
+    if (scene.id === ENDING.id) {
+      navigation.navigate("Credits");
+      return;
+    }
+    if (rest.length === 0 && briefing.length === 0 && festaPending.current) {
+      setNotice(festaPending.current);
+      festaPending.current = null;
+    }
+  }
+
+  const modalOpen = briefing.length > 0 || notice !== null || learnPrompt !== null || storyQueue.length > 0 || storyTalk !== null;
 
   // Positions in tile units; multiplied out by the current tile size at render.
   const anim = useRef(new Animated.ValueXY({ x: startPosition.col, y: startPosition.row })).current;
@@ -239,7 +315,7 @@ export function MapScreen({ navigation, route }: Props) {
       title: feast,
       lines: [t("festa.line1", { feast }), t("festa.line2"), t("festa.gift", { quantity: FESTA_GIFT.quantity, item: c.item(FESTA_GIFT.itemId) })],
     };
-    if (briefing.length > 0) festaPending.current = page;
+    if (briefing.length > 0 || storyQueue.length > 0) festaPending.current = page;
     else setNotice(page);
     // Only on arrival.
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -358,6 +434,14 @@ export function MapScreen({ navigation, route }: Props) {
 
     // A trainer you walk into stops you where you are and challenges, rather than letting you
     // walk through them.
+    const storyId = storyAt(map.zoneId, next.row, next.col);
+    const storyBattle = storyId ? getStoryBattle(storyId) : undefined;
+    if (storyBattle && storyBattleActive(storyBattle, storyWorld)) {
+      ui.message();
+      setStoryTalk(storyBattle);
+      return;
+    }
+
     const npc = npcAt(map.zoneId, next.row, next.col);
     if (npc) {
       talk(npc);
@@ -554,13 +638,33 @@ export function MapScreen({ navigation, route }: Props) {
           }))}
           festa={festaHere}
           features={{
-            npcs: features.npcs.map((npc) => ({
-              id: npc.questId,
-              row: npc.row,
-              col: npc.col,
-              look: getQuest(npc.questId)!.giver.look,
-              marker: markerFor(npc),
-            })),
+            npcs: [
+              ...features.npcs.map((npc) => ({
+                id: npc.questId,
+                row: npc.row,
+                col: npc.col,
+                look: getQuest(npc.questId)!.giver.look,
+                marker: markerFor(npc),
+              })),
+              ...activeStory.map((spot) => {
+                const look = CHARACTERS[getStoryBattle(spot.battleId)!.who].look;
+                return {
+                  id: spot.battleId,
+                  row: spot.row,
+                  col: spot.col,
+                  look: "story" as const,
+                  marker: "!" as const,
+                  colors: {
+                    shirt: look.top,
+                    trousers: "#2a2a32",
+                    skin: look.skin,
+                    hair: look.hair,
+                    hat: look.hat === "cap" || look.hat === "tricorn" || look.hat === "beret" ? look.accent : undefined,
+                    cape: look.hat === "hood" || look.hat === "veil" ? look.top : undefined,
+                  },
+                };
+              }),
+            ],
             glints: features.glints.map((g) => ({ id: g.findId, row: g.row, col: g.col, quest: !g.treasure, visible: glintShown(g) })),
             cage: features.cage,
             portal: features.portal
@@ -627,6 +731,18 @@ export function MapScreen({ navigation, route }: Props) {
             style={[styles.entity, entitySize, { left: glint.col * tile, top: glint.row * tile }]}
           >
             <GlintSprite size={tile * 0.8} quest={!glint.treasure} />
+          </View>
+        ))}
+        {activeStory.map((spot) => (
+          <View
+            key={spot.battleId}
+            testID={`story-${spot.battleId}`}
+            style={[styles.entity, entitySize, { left: spot.col * tile, top: spot.row * tile }]}
+          >
+            <Portrait look={CHARACTERS[getStoryBattle(spot.battleId)!.who].look} size={tile * 0.86} />
+            <View style={styles.storyMark}>
+              <Text style={styles.storyMarkText}>!</Text>
+            </View>
           </View>
         ))}
         {features.npcs.map((npc) => (
@@ -775,7 +891,27 @@ export function MapScreen({ navigation, route }: Props) {
       ) : (
         <ScreenBackground style={styles.wideRoot}>{world_}</ScreenBackground>
       )}
-      {briefing.length > 0 && <BriefingModal pages={briefing} onDone={finishBriefing} />}
+      {storyQueue.length > 0 && (
+        <DialogueModal key={storyQueue[0].id} lines={storyQueue[0].lines} kicker={chapterTitle(storyQueue[0].chapter)} onDone={finishScene} />
+      )}
+      {storyTalk && (
+        <DialogueModal
+          key={storyTalk.id}
+          lines={storyTalk.before}
+          onDone={() => {
+            const battle = storyTalk;
+            setStoryTalk(null);
+            worldSfx.spotted();
+            setBusy(true);
+            Animated.sequence(flashSequence()).start(() => {
+              encounterFlash.setValue(0);
+              setBusy(false);
+              navigation.navigate("Battle", { biome: zoneBiome, trainerId: battle.id });
+            });
+          }}
+        />
+      )}
+      {briefing.length > 0 && storyQueue.length === 0 && <BriefingModal pages={briefing} onDone={finishBriefing} />}
       {notice && <BriefingModal pages={notice} onDone={closeNotice} />}
       {learnPrompt && (
         <MoveLearnModal
@@ -890,6 +1026,24 @@ const styles = StyleSheet.create({
     top: 0,
     alignItems: "center",
     justifyContent: "center",
+  },
+  storyMark: {
+    position: "absolute",
+    top: -4,
+    right: 2,
+    width: 16,
+    height: 16,
+    borderRadius: 8,
+    backgroundColor: "#c8102e",
+    alignItems: "center",
+    justifyContent: "center",
+    borderWidth: 1.5,
+    borderColor: "#ffffff",
+  },
+  storyMarkText: {
+    color: "#ffffff",
+    fontSize: 10,
+    fontWeight: "900",
   },
   heart: {
     position: "absolute",

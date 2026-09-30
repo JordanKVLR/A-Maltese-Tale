@@ -103,6 +103,7 @@ describe("map features", () => {
       const blocked = new Set([
         ...trainersForZone(zoneId).map((t) => `${t.position.row},${t.position.col}`),
         ...f.npcs.map((n) => `${n.row},${n.col}`),
+        ...f.story.map((n) => `${n.row},${n.col}`),
       ]);
       const reach = reachableFrom(map, map.playerStart, blocked);
       const spots = [...f.glints, ...(f.portal ? [f.portal] : []), ...(f.cage ? [f.cage] : [])];
@@ -115,7 +116,7 @@ describe("map features", () => {
       }
       const exit = map.rows.flatMap((row, r) => row.map((tile, c) => (tile === "exit" ? `${r},${c}` : null))).find(Boolean)!;
       expect(reach.has(exit)).toBe(true);
-      const all = [...spots, ...f.npcs].map((s) => `${s.row},${s.col}`);
+      const all = [...spots, ...f.npcs, ...f.story].map((s) => `${s.row},${s.col}`);
       expect(new Set([...all, ...blocked]).size).toBe(new Set(blocked).size + spots.length);
     }
   });
