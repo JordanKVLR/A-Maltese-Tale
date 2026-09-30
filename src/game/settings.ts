@@ -58,7 +58,7 @@ export const DEFAULT_SETTINGS: Settings = {
   textSize: "normal",
   musicVolume: "medium",
   sfxVolume: "medium",
-  graphics: "3d",
+  graphics: "2d",
 };
 
 const VOLUME_LEVEL: Record<Volume, number> = { off: 0, low: 0.4, medium: 0.7, high: 1 };

@@ -9,7 +9,8 @@ import { DEFAULT_SETTINGS, detectLanguage, withDefaults, type Settings } from ".
  */
 
 const SETTINGS_KEY = "melita-settings";
-const SETTINGS_VERSION = 1;
+/** 2 made the classic 2D look the default for everyone, including players who had 3D on. */
+const SETTINGS_VERSION = 2;
 
 interface SettingsState extends Settings {
   set: <K extends keyof Settings>(key: K, value: Settings[K]) => void;
@@ -32,6 +33,11 @@ export const useSettings = create<SettingsState>()(
       name: SETTINGS_KEY,
       version: SETTINGS_VERSION,
       storage: createJSONStorage(() => AsyncStorage),
+      migrate: (persisted, fromVersion) => {
+        const settings = (persisted ?? {}) as Partial<Settings>;
+        if (fromVersion < 2) settings.graphics = "2d";
+        return settings as SettingsState;
+      },
       partialize: (state) => {
         const { set: _set, resetSettings: _reset, ...settings } = state;
         return settings;

@@ -589,18 +589,25 @@ export function createBattleScene(biome: Biome, options: { reducedMotion?: boole
   }
 
   function throwBall(durationMs: number) {
+    // A nassa — the Maltese woven cane fish trap — not a ball.
     const ball = new THREE.Group();
-    const top = new THREE.Mesh(
-      new THREE.SphereGeometry(0.11, 16, 8, 0, Math.PI * 2, 0, Math.PI / 2),
-      new THREE.MeshStandardMaterial({ color: "#c0392b", roughness: 0.35 })
+    const profile = [
+      [0.13, 0], [0.14, 0.04], [0.13, 0.1], [0.1, 0.16], [0.06, 0.2], [0.045, 0.24], [0.05, 0.25],
+    ].map(([r, y]) => new THREE.Vector2(r, y - 0.12));
+    const body = new THREE.Mesh(
+      new THREE.LatheGeometry(profile, 16),
+      new THREE.MeshStandardMaterial({ color: "#c9a15a", roughness: 0.9, side: THREE.DoubleSide })
     );
-    const bottom = new THREE.Mesh(
-      new THREE.SphereGeometry(0.11, 16, 8, 0, Math.PI * 2, Math.PI / 2, Math.PI / 2),
-      new THREE.MeshStandardMaterial({ color: "#f4efe4", roughness: 0.35 })
+    // The weave: a darker lattice laid just over the cane.
+    const weave = new THREE.Mesh(
+      new THREE.LatheGeometry(profile.map((p) => new THREE.Vector2(p.x * 1.03, p.y)), 12, 0, Math.PI * 2),
+      new THREE.MeshBasicMaterial({ color: "#6b4a1a", wireframe: true })
     );
-    const band = new THREE.Mesh(new THREE.TorusGeometry(0.11, 0.015, 6, 20), new THREE.MeshStandardMaterial({ color: "#2b2b2b" }));
-    band.rotation.x = Math.PI / 2;
-    ball.add(top, bottom, band);
+    const mouth = new THREE.Mesh(new THREE.TorusGeometry(0.13, 0.015, 6, 20), new THREE.MeshStandardMaterial({ color: "#8a5f22", roughness: 0.9 }));
+    mouth.rotation.x = Math.PI / 2;
+    mouth.position.y = -0.12;
+    ball.add(body, weave, mouth);
+    ball.scale.setScalar(1.2);
     ball.traverse((o) => ((o as THREE.Mesh).castShadow = true));
     const from = slots.player.home.clone().add(new THREE.Vector3(0.3, 0.9, 0.2));
     const to = aimPoint("enemy");

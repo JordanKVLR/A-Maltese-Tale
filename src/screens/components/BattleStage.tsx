@@ -1,6 +1,7 @@
+import { NassaIcon } from "../../art/nassa";
 import { ELEMENT_FX, pathOffset } from "../../three/elementFx";
 import { OwnedMark } from "./OwnedMark";
-import { forwardRef, useImperativeHandle, useRef, useState } from "react";
+import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from "react";
 import { Animated, Platform, StyleSheet, Text, View } from "react-native";
 import type { TypeName } from "../../data/schemas";
 import { HpBar } from "./HpBar";
@@ -33,7 +34,7 @@ export const PROJECTILE_TRAVEL_MS = 360;
 /** Same idea for the ball-throw wobble reaction. */
 export const BALL_TRAVEL_MS = 480;
 const PROJECTILE_SIZE = 30;
-const BALL_SIZE = 22;
+const BALL_SIZE = 30;
 
 export type ProjectileDirection = "toEnemy" | "toPlayer";
 
@@ -58,6 +59,9 @@ interface CombatantProps {
   highlightCrux?: boolean;
   /** 0–100, drawn as a thin gold bar under the HP. */
   cruxCharge?: number;
+  /** Your creature only: XP into this level, and what the next level needs. */
+  xp?: number;
+  xpNext?: number;
   /** Wild foes only: whether you already own this species (shown as a small trap mark). */
   owned?: boolean;
   anim: ReturnType<typeof useCombatantAnimation>;
@@ -87,7 +91,33 @@ function CruxMeter({ charge, active }: { charge: number; active: boolean }) {
   );
 }
 
+/**
+ * How close the creature is to its next level: a thin blue bar under the Crux meter, with a
+ * small "EXP" tag so it can't be mistaken for it. It fills smoothly as XP comes in.
+ */
+function ExpBar({ xp, next }: { xp: number; next: number }) {
+  const ratio = Math.max(0, Math.min(1, xp / Math.max(1, next)));
+  const fill = useRef(new Animated.Value(ratio)).current;
+  useEffect(() => {
+    Animated.timing(fill, { toValue: ratio, duration: 500, useNativeDriver: false }).start();
+  }, [ratio, fill]);
+  return (
+    <View testID="exp-bar" style={meterStyles.expRow} accessibilityLabel={`EXP ${xp} / ${next}`}>
+      <Text style={meterStyles.expTag}>EXP</Text>
+      <View style={[meterStyles.track, meterStyles.expTrack]}>
+        <Animated.View
+          style={[meterStyles.fill, meterStyles.expFill, { width: fill.interpolate({ inputRange: [0, 1], outputRange: ["0%", "100%"] }) }]}
+        />
+      </View>
+    </View>
+  );
+}
+
 const meterStyles = StyleSheet.create({
+  expRow: { flexDirection: "row", alignItems: "center", gap: 5, marginTop: 3 },
+  expTag: { fontSize: 8, fontWeight: "900", color: "#2f6fb5", letterSpacing: 0.5 },
+  expTrack: { flex: 1 },
+  expFill: { backgroundColor: "#3f8fe0" },
   track: { height: 4, borderRadius: 2, backgroundColor: "rgba(0,0,0,0.1)", overflow: "hidden" },
   fill: { height: "100%", borderRadius: 2, backgroundColor: "#e8b93c" },
   full: { backgroundColor: "#f39c12" },
@@ -278,6 +308,7 @@ export const BattleStage = forwardRef<BattleStageHandle, Props>(function BattleS
         </View>
         <HpBar currentHp={player.hp} maxHp={player.maxHp} />
         {player.cruxCharge !== undefined && <CruxMeter charge={player.cruxCharge} active={!!player.highlightCrux} />}
+        {player.xp !== undefined && player.xpNext !== undefined && <ExpBar xp={player.xp} next={player.xpNext} />}
         {player.highlightCrux && <Text style={styles.cruxActiveLabel}>{t("battle.cruxActive")}</Text>}
       </View>
 
@@ -414,7 +445,7 @@ export const BattleStage = forwardRef<BattleStageHandle, Props>(function BattleS
           },
         ]}
       >
-        <Text style={styles.ballGlyph}>⚪</Text>
+        <NassaIcon size={BALL_SIZE} />
       </Animated.View>
         </>
       )}
@@ -574,10 +605,6 @@ const styles = StyleSheet.create({
     position: "absolute",
     width: BALL_SIZE,
     height: BALL_SIZE,
-    borderRadius: BALL_SIZE / 2,
-    backgroundColor: "#e0e1dd",
-    borderWidth: 2,
-    borderColor: "#0d1b2a",
     alignItems: "center",
     justifyContent: "center",
   },

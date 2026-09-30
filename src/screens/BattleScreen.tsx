@@ -18,7 +18,7 @@ import {
   remainingPp,
   isOutOfPp,
 } from "../game/party";
-import { xpRewardForLevel, currencyRewardForLevel } from "../game/progression";
+import { xpRewardForLevel, xpToNextLevel, currencyRewardForLevel } from "../game/progression";
 import { getMove, LAST_RESORT_MOVE_ID } from "../game/movesRepo";
 import { FESTA_GOLD_MULTIPLIER, isFestaZone } from "../game/festa";
 import { collectorMedalsCrossed, ownedCount } from "../game/collection";
@@ -1023,6 +1023,8 @@ export function BattleScreen({ navigation, route }: Props) {
           maxHp: snapshot.playerMaxHp,
           highlightCrux: snapshot.playerCruxActive,
           cruxCharge: snapshot.playerCruxCharge,
+          xp: activeMember.xp,
+          xpNext: xpToNextLevel(activeMember.level),
           anim: playerAnim,
         }}
       />

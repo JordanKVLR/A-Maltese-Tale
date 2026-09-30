@@ -30,10 +30,11 @@ export function UiIcon({ name, size = 16, color = "#1d2a36" }: { name: UiIconNam
         <Path d="M12 12 L6 3 L12 6 L18 3 Z M12 12 L21 6 L18 12 L21 18 Z M12 12 L18 21 L12 18 L6 21 Z M12 12 L3 18 L6 12 L3 6 Z" fill={color} />
       )}
       {name === "trap" && (
+        // A nassa — the woven Maltese fish trap — in outline.
         <G>
-          <Circle cx={12} cy={12} r={9} {...line} />
-          <Path d="M3 12 H21" {...line} />
-          <Circle cx={12} cy={12} r={3} {...line} fill="#ffffff" />
+          <Path d="M4 19 Q3 11 8 7 Q10 5.5 10.5 3 H13.5 Q14 5.5 16 7 Q21 11 20 19 Z" {...line} strokeWidth={2} />
+          <Path d="M12 4 V18 M6 11 Q12 12.5 18 11 M4.8 15 Q12 16.6 19.2 15" {...line} strokeWidth={1.4} />
+          <Path d="M4 19 Q12 22 20 19" {...line} strokeWidth={2} />
         </G>
       )}
       {name === "party" && (
