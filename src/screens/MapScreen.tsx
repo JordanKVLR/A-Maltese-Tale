@@ -1,3 +1,4 @@
+import Svg, { Path } from "react-native-svg";
 import { useEffect, useRef, useState } from "react";
 import { Animated, Platform, Pressable, StyleSheet, Text, View } from "react-native";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
@@ -797,6 +798,8 @@ export function MapScreen({ navigation, route }: Props) {
 /** Before a held button starts repeating, and how often it repeats — just over one step's
  * walk animation, so holding a direction walks smoothly. */
 const HOLD_DELAY_MS = 260;
+/** One chevron drawn pointing up, turned for each direction. */
+const DPAD_ROTATION: Record<string, string> = { "▲": "0deg", "▶": "90deg", "▼": "180deg", "◀": "270deg" };
 const HOLD_REPEAT_MS = 170;
 
 /**
@@ -848,7 +851,10 @@ function DpadButton({
       }}
       style={({ pressed }) => [styles.dpadButton, pressed && styles.dpadButtonPressed]}
     >
-      <Text style={styles.dpadGlyph}>{glyph}</Text>
+      <Svg width={26} height={26} viewBox="0 0 24 24" style={{ transform: [{ rotate: DPAD_ROTATION[glyph] ?? "0deg" }] }}>
+        <Path d="M5 15 L12 8 L19 15" stroke="#ffffff" strokeWidth={6} strokeLinecap="round" strokeLinejoin="round" fill="none" />
+        <Path d="M5 15 L12 8 L19 15" stroke="#000000" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" fill="none" />
+      </Svg>
     </Pressable>
   );
 }

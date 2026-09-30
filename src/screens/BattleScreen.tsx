@@ -34,6 +34,7 @@ import { getActiveEffect } from "../engine/statusEffects";
 import { getTypeMultiplier } from "../engine/typeChart";
 import type { BattleAction, BattleContext, Creature } from "../engine/types";
 import { TypeBadge } from "./components/TypeBadge";
+import { UiIcon, type UiIconName } from "../art/uiIcons";
 import { PrimaryButton } from "./components/PrimaryButton";
 import { useCombatantAnimation } from "./components/useCombatantAnimation";
 import { BattleStage, PROJECTILE_TRAVEL_MS, BALL_TRAVEL_MS, type BattleStageHandle } from "./components/BattleStage";
@@ -53,7 +54,7 @@ import { VictoryOverlay } from "./components/VictoryOverlay";
 import { ElementalTransition } from "./components/ElementalTransition";
 import { BattleMessage } from "./components/BattleMessage";
 import { getMap, findTilePosition } from "../game/mapData";
-import { colors } from "./theme";
+import { colors, malta } from "./theme";
 import { MoveDetailCard } from "./components/MoveDetailCard";
 import { useI18n, type StringKey } from "../i18n";
 import { useSettings } from "../state/settingsStore";
@@ -246,7 +247,6 @@ export function BattleScreen({ navigation, route }: Props) {
 
   const [snapshot, setSnapshot] = useState<BattleSnapshot | null>(() => (fsm ? snapshotFrom(fsm.getContext()) : null));
   const cruxMoveId = fsm?.getContext().playerActive.cruxMoveId;
-  const cruxMoveName = cruxMoveId ? c.move(cruxMoveId) : "";
   const markTutorial = useGameStore((s) => s.markTutorial);
   // One of the trainer's lines, chosen as the battle opens so a rematch does not replay it.
   const [boast] = useState<BoastRef | null>(() => {
@@ -1063,21 +1063,26 @@ export function BattleScreen({ navigation, route }: Props) {
                   pressed && !spent && styles.moveButtonPressed,
                 ]}
               >
-                <View style={styles.moveHeaderRow}>
-                  <Text style={[styles.moveName, spent && styles.moveNameSpent]}>
-                    {move.signature ? "★ " : ""}
-                    {c.move(move.id)}
-                  </Text>
+                <Text style={[styles.moveName, spent && styles.moveNameSpent]} numberOfLines={1}>
+                  {move.signature ? "★ " : ""}
+                  {c.move(move.id)}
+                </Text>
+                <View style={styles.moveMetaRow}>
+                  <TypeBadge type={move.type} compact />
+                  {move.category === "status" ? (
+                    <Text style={styles.moveMeta}>{t("move.statusShort")}</Text>
+                  ) : (
+                    <View style={styles.metaPair}>
+                      <UiIcon name="power" size={11} color={colors.textMuted} />
+                      <Text style={styles.moveMeta}>{move.power}</Text>
+                    </View>
+                  )}
+                  <View style={styles.metaPair}>
+                    <UiIcon name="accuracy" size={11} color={colors.textMuted} />
+                    <Text style={styles.moveMeta}>{move.accuracy}</Text>
+                  </View>
                   <Text style={[styles.movePp, spent && styles.movePpSpent]}>
                     {pp}/{move.pp}
-                  </Text>
-                </View>
-                <View style={styles.moveMetaRow}>
-                  <TypeBadge type={move.type} />
-                  <Text style={styles.moveMeta}>
-                    {move.category === "status"
-                      ? t("battle.moveStatus", { accuracy: move.accuracy })
-                      : t("battle.movePower", { power: move.power, accuracy: move.accuracy })}
                   </Text>
                 </View>
                 {/* Opens the full description without spending the turn — the one thing on
@@ -1091,7 +1096,7 @@ export function BattleScreen({ navigation, route }: Props) {
                   disabled={!!outcome}
                   style={({ pressed }) => [styles.moveInfoButton, pressed && styles.moveInfoButtonPressed]}
                 >
-                  <Text style={styles.moveInfoGlyph}>i</Text>
+                  <UiIcon name="info" size={14} color={colors.textMuted} />
                 </Pressable>
               </Pressable>
             </HoverTip>
@@ -1116,113 +1121,55 @@ export function BattleScreen({ navigation, route }: Props) {
             </Pressable>
           </HoverTip>
         )}
-        <HoverTip
-          style={styles.moveButtonHoverWrap}
-          text={t("battle.tip.crux")}
-        >
-          <Pressable
-            testID="invoke-crux"
-            onPress={handleInvokeCrux}
-            disabled={actionsDisabled || !snapshot.playerCruxReady}
-            style={({ pressed }) => [
-              styles.moveButton,
-              styles.cruxButton,
-              snapshot.playerCruxReady && !actionsDisabled && styles.cruxButtonReady,
-              (!snapshot.playerCruxReady || actionsDisabled) && styles.moveButtonDisabled,
-              pressed && styles.moveButtonPressed,
-            ]}
-          >
-            <Text style={styles.moveName}>{t("battle.invokeCrux")}</Text>
-            <Text style={styles.cruxHint}>
-              {snapshot.playerCruxActive
-                ? t("battle.cruxActiveHint", { move: cruxMoveName })
-                : snapshot.playerCruxOnCooldown
-                  ? t("battle.cruxCooldown")
-                  : snapshot.playerCruxReady
-                    ? t("battle.cruxReadyHint", { move: cruxMoveName })
-                    : t("battle.cruxCharging", { percent: Math.round(snapshot.playerCruxCharge) })}
-            </Text>
-            <View style={styles.cruxMeterTrack}>
-              <View style={[styles.cruxMeterFill, { width: `${Math.round(snapshot.playerCruxCharge)}%` }, snapshot.playerCruxReady && styles.cruxMeterFull]} />
-            </View>
-          </Pressable>
-        </HoverTip>
-        <HoverTip
-          style={styles.moveButtonHoverWrap}
-          text={t("battle.tip.trap")}
-        >
-          <Pressable
-            testID="catch-ball"
-            onPress={() => setShowTraps(true)}
-            disabled={actionsDisabled || !hasTraps || isTrainerBattle}
-            style={({ pressed }) => [
-              styles.moveButton,
-              styles.catchButton,
-              (actionsDisabled || !hasTraps || isTrainerBattle) && styles.moveButtonDisabled,
-              pressed && styles.moveButtonPressed,
-            ]}
-          >
-            <Text style={styles.moveName}>
-              {isTrainerBattle ? t("battle.cantTrap") : hasTraps ? t("battle.throwTrap") : t("battle.noTraps")}
-            </Text>
-            <Text style={styles.cruxHint}>
-              {isTrainerBattle ? t("battle.cantTrapSub") : hasTraps ? t("battle.trapChoose") : t("battle.noTrapsSub")}
-            </Text>
-          </Pressable>
-        </HoverTip>
-        <HoverTip style={styles.thirdWrap} text={t("battle.tip.party")}>
-          <Pressable
-            testID="open-party-sheet"
-            onPress={() => setShowParty(true)}
-            disabled={actionsDisabled}
-            style={({ pressed }) => [
-              styles.moveButton,
-              styles.partyButtonHalf,
-              actionsDisabled && styles.moveButtonDisabled,
-              pressed && styles.moveButtonPressed,
-            ]}
-          >
-            <Text style={styles.moveName}>{t("battle.party")}</Text>
-          </Pressable>
-        </HoverTip>
-        <HoverTip style={styles.thirdWrap} text={t("battle.tip.item")}>
-          <Pressable
-            testID="open-item-sheet"
-            onPress={() => setShowItems(true)}
-            disabled={actionsDisabled || applicableItems.length === 0}
-            style={({ pressed }) => [
-              styles.moveButton,
-              styles.partyButtonHalf,
-              (actionsDisabled || applicableItems.length === 0) && styles.moveButtonDisabled,
-              pressed && styles.moveButtonPressed,
-            ]}
-          >
-            <Text style={styles.moveName}>{t("battle.useItem")}</Text>
-            <Text style={styles.cruxHint}>{applicableItems.length > 0 ? t("battle.itemSub") : t("battle.noItemsSub")}</Text>
-          </Pressable>
-        </HoverTip>
-        <HoverTip
-          style={styles.thirdWrap}
-          text={
-            isTrainerBattle ? t("battle.tip.cantRun") : t("battle.tip.run")
-          }
-        >
-          <Pressable
-            testID="flee-button"
-            onPress={handleFlee}
-            disabled={actionsDisabled || isTrainerBattle}
-            style={({ pressed }) => [
-              styles.moveButton,
-              styles.fleeButton,
-              (actionsDisabled || isTrainerBattle) && styles.moveButtonDisabled,
-              pressed && styles.moveButtonPressed,
-            ]}
-          >
-            <Text style={styles.moveName}>{isTrainerBattle ? t("battle.cantRun") : t("battle.runAway")}</Text>
-            <Text style={styles.cruxHint}>{isTrainerBattle ? t("battle.cantRunSub") : t("battle.runSub")}</Text>
-          </Pressable>
-        </HoverTip>
       </ScrollView>
+
+      {/* Everything that isn't a move, as one row of icons that never scrolls away. */}
+      <View style={styles.actionBar}>
+        <ActionChip
+          testID="invoke-crux"
+          tip={t("battle.tip.crux")}
+          icon="crux"
+          label={snapshot.playerCruxActive ? t("battle.chip.cruxActive") : snapshot.playerCruxReady ? t("battle.chip.cruxReady") : t("battle.chip.crux")}
+          onPress={handleInvokeCrux}
+          disabled={actionsDisabled || !snapshot.playerCruxReady}
+          highlight={snapshot.playerCruxReady && !actionsDisabled}
+          meter={snapshot.playerCruxCharge}
+          meterFull={snapshot.playerCruxReady}
+        />
+        <ActionChip
+          testID="catch-ball"
+          tip={t("battle.tip.trap")}
+          icon={isTrainerBattle ? "lock" : "trap"}
+          label={t("battle.chip.trap")}
+          onPress={() => setShowTraps(true)}
+          disabled={actionsDisabled || !hasTraps || isTrainerBattle}
+        />
+        <ActionChip
+          testID="open-party-sheet"
+          tip={t("battle.tip.party")}
+          icon="party"
+          label={t("battle.chip.party")}
+          onPress={() => setShowParty(true)}
+          disabled={actionsDisabled}
+        />
+        <ActionChip
+          testID="open-item-sheet"
+          tip={t("battle.tip.item")}
+          icon="item"
+          label={t("battle.chip.item")}
+          onPress={() => setShowItems(true)}
+          disabled={actionsDisabled || applicableItems.length === 0}
+        />
+        <ActionChip
+          testID="flee-button"
+          tip={isTrainerBattle ? t("battle.tip.cantRun") : t("battle.tip.run")}
+          icon={isTrainerBattle ? "lock" : "run"}
+          label={t("battle.chip.run")}
+          onPress={handleFlee}
+          disabled={actionsDisabled || isTrainerBattle}
+          danger
+        />
+      </View>
 
       <Modal visible={showTraps} transparent animationType="none" onRequestClose={() => setShowTraps(false)}>
         <View style={styles.sheetBackdrop}>
@@ -1464,16 +1411,121 @@ export function BattleScreen({ navigation, route }: Props) {
   );
 }
 
+/** One of the battle's non-move actions: an icon and a one-word label. The full explanation
+ * is in the hover tip, so the button itself stays small. */
+function ActionChip({
+  testID,
+  tip,
+  icon,
+  label,
+  onPress,
+  disabled,
+  highlight,
+  danger,
+  meter,
+  meterFull,
+}: {
+  testID: string;
+  tip: string;
+  icon: UiIconName;
+  label: string;
+  onPress: () => void;
+  disabled?: boolean;
+  highlight?: boolean;
+  danger?: boolean;
+  /** 0–100: a thin bar under the label (the Crux meter). */
+  meter?: number;
+  meterFull?: boolean;
+}) {
+  const tint = danger ? colors.danger : highlight ? "#b36b00" : malta.blue;
+  return (
+    <HoverTip style={styles.chipWrap} text={tip}>
+      <Pressable
+        testID={testID}
+        accessibilityLabel={label}
+        onPress={onPress}
+        disabled={disabled}
+        style={({ pressed }) => [
+          styles.chip,
+          highlight && styles.chipHighlight,
+          danger && styles.chipDanger,
+          disabled && styles.chipDisabled,
+          pressed && !disabled && styles.chipPressed,
+        ]}
+      >
+        <UiIcon name={icon} size={20} color={disabled ? colors.textMuted : tint} />
+        <Text style={[styles.chipLabel, { color: disabled ? colors.textMuted : tint }]} numberOfLines={1}>
+          {label}
+        </Text>
+        {meter !== undefined && (
+          <View style={styles.chipMeter}>
+            <View style={[styles.cruxMeterFill, { width: `${Math.round(meter)}%` }, meterFull && styles.cruxMeterFull]} />
+          </View>
+        )}
+      </Pressable>
+    </HoverTip>
+  );
+}
+
 const styles = StyleSheet.create({
+  actionBar: {
+    flexDirection: "row",
+    gap: 6,
+  },
+  chipWrap: {
+    flex: 1,
+  },
+  chip: {
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 3,
+    paddingTop: 8,
+    paddingBottom: 7,
+    borderRadius: 12,
+    backgroundColor: colors.surface,
+    borderWidth: 1.5,
+    borderBottomWidth: 3,
+    borderColor: "#d9c9a8",
+    minHeight: 58,
+  },
+  chipHighlight: {
+    backgroundColor: "#fff1c4",
+    borderColor: "#e0a516",
+  },
+  chipDanger: {
+    borderColor: "#e8b4ab",
+  },
+  chipDisabled: {
+    opacity: 0.55,
+  },
+  chipPressed: {
+    borderBottomWidth: 1.5,
+    transform: [{ scale: 0.95 }],
+  },
+  chipLabel: {
+    fontSize: 11,
+    fontWeight: "800",
+  },
+  chipMeter: {
+    alignSelf: "stretch",
+    marginHorizontal: 8,
+    height: 4,
+    borderRadius: 2,
+    backgroundColor: "rgba(0,0,0,0.08)",
+    overflow: "hidden",
+  },
+  metaPair: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 2,
+  },
   moveInfoButton: {
     position: "absolute",
     right: 6,
-    bottom: 6,
+    top: 6,
     width: 22,
     height: 22,
     borderRadius: 11,
-    borderWidth: 1.5,
-    borderColor: colors.textMuted,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: colors.surface,
@@ -1533,10 +1585,12 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     flexBasis: "45%",
     backgroundColor: colors.surface,
-    borderWidth: 1,
-    borderColor: colors.border,
+    borderWidth: 1.5,
+    borderBottomWidth: 3,
+    borderColor: "#d9c9a8",
     borderRadius: 12,
-    padding: 14,
+    paddingVertical: 10,
+    paddingHorizontal: 12,
   },
   moveButtonPressed: {
     opacity: 0.7,
@@ -1549,6 +1603,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: "700",
     marginBottom: 6,
+    marginRight: 20,
   },
   moveHeaderRow: {
     flexDirection: "row",
@@ -1559,7 +1614,8 @@ const styles = StyleSheet.create({
   moveMetaRow: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 8,
+    gap: 7,
+    flexWrap: "wrap",
   },
   moveMeta: {
     color: colors.textMuted,
@@ -1567,9 +1623,9 @@ const styles = StyleSheet.create({
   },
   movePp: {
     color: colors.textMuted,
-    fontSize: 12,
-    fontWeight: "700",
-    marginBottom: 6,
+    fontSize: 11,
+    fontWeight: "800",
+    marginLeft: "auto",
   },
   movePpSpent: {
     color: colors.danger,

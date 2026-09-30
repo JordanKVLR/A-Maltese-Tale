@@ -1,3 +1,4 @@
+import { UiIcon } from "../art/uiIcons";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import {
   Animated,
@@ -129,6 +130,31 @@ export function PartyScreen({ navigation }: Props) {
                     <HpBar currentHp={member.currentHp} maxHp={partyMemberStats(member).hp} />
                   </View>
                 </Pressable>
+                {/* Small round actions down the right edge, instead of a row of text buttons. */}
+                {!confirming && (
+                  <View style={styles.iconColumn}>
+                    {itemFlow.hasUsableItems && (
+                      <Pressable
+                        testID={`party-use-item-${member.uid}`}
+                        accessibilityLabel={t("party.useItem")}
+                        onPress={() => itemFlow.chooseItemFor(member.uid)}
+                        style={({ pressed }) => [styles.iconButton, pressed && styles.iconButtonPressed]}
+                      >
+                        <UiIcon name="item" size={16} color={colors.accentDeep} />
+                      </Pressable>
+                    )}
+                    {party.length > 1 && (
+                      <Pressable
+                        testID={`release-${member.uid}`}
+                        accessibilityLabel={t("party.release")}
+                        onPress={() => setConfirmUid(member.uid)}
+                        style={({ pressed }) => [styles.iconButton, styles.iconButtonDanger, pressed && styles.iconButtonPressed]}
+                      >
+                        <UiIcon name="release" size={16} color={colors.danger} />
+                      </Pressable>
+                    )}
+                  </View>
+                )}
               </View>
 
               {confirming ? (
@@ -154,28 +180,7 @@ export function PartyScreen({ navigation }: Props) {
                     </Pressable>
                   </View>
                 </View>
-              ) : (
-                <View style={styles.actionRow}>
-                  {itemFlow.hasUsableItems && (
-                    <Pressable
-                      testID={`party-use-item-${member.uid}`}
-                      onPress={() => itemFlow.chooseItemFor(member.uid)}
-                      style={styles.useItemButton}
-                    >
-                      <Text style={styles.useItemButtonText}>{t("party.useItem")}</Text>
-                    </Pressable>
-                  )}
-                  {party.length > 1 && (
-                    <Pressable
-                      testID={`release-${member.uid}`}
-                      onPress={() => setConfirmUid(member.uid)}
-                      style={styles.releaseButton}
-                    >
-                      <Text style={styles.releaseButtonText}>{t("party.release")}</Text>
-                    </Pressable>
-                  )}
-                </View>
-              )}
+              ) : null}
             </SlidingCard>
           );
         })}
@@ -294,6 +299,27 @@ function DragHandle({
 }
 
 const styles = StyleSheet.create({
+  iconColumn: {
+    gap: 8,
+    justifyContent: "center",
+  },
+  iconButton: {
+    width: 34,
+    height: 34,
+    borderRadius: 17,
+    alignItems: "center",
+    justifyContent: "center",
+    borderWidth: 1.5,
+    borderColor: "#e7c77a",
+    backgroundColor: "#fffaf0",
+  },
+  iconButtonDanger: {
+    borderColor: "#eab4ab",
+  },
+  iconButtonPressed: {
+    transform: [{ scale: 0.9 }],
+    opacity: 0.8,
+  },
   container: {
     paddingHorizontal: 20,
     paddingTop: 56,
