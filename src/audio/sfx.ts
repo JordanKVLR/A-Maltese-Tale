@@ -275,6 +275,85 @@ const ATTACKS: Record<TypeName, AttackRecipe> = {
   },
 };
 
+/**
+ * How each element sounds when it lands — the moment a player actually notices. Fire whooshes
+ * and crackles, water splashes, ice shatters, steel clangs, rock crunches, electricity snaps.
+ */
+const IMPACTS: Record<TypeName, AttackRecipe> = {
+  Normal: (pan) => tone({ freq: 180, to: 70, dur: 0.12, gain: 0.25, pan }, 0.05),
+  Fire: (pan) => {
+    noise({ filter: "bandpass", freq: 900, to: 300, q: 0.7, dur: 0.45, gain: 0.3, attack: 0.01, pan }, 0.3);
+    for (let i = 0; i < 8; i++) noise({ filter: "highpass", freq: 2500, at: 0.04 + i * 0.05 + Math.random() * 0.03, dur: 0.015, gain: 0.12, pan });
+  },
+  Water: (pan) => {
+    noise({ filter: "lowpass", freq: 3000, to: 500, dur: 0.35, gain: 0.3, attack: 0.005, pan }, 0.25);
+    for (let i = 0; i < 6; i++) {
+      const f = 500 + Math.random() * 900;
+      tone({ freq: f, to: f * 2.2, at: 0.05 + i * 0.045, dur: 0.05, gain: 0.08, pan });
+    }
+  },
+  Grass: (pan) => {
+    for (let i = 0; i < 5; i++) noise({ filter: "bandpass", freq: 2500 + i * 400, q: 3, at: i * 0.04, dur: 0.07, gain: 0.12, pan });
+    tone({ freq: 300, to: 180, dur: 0.1, gain: 0.12, pan }, 0);
+  },
+  Electric: (pan) => {
+    noise({ filter: "highpass", freq: 3000, dur: 0.06, gain: 0.35, pan }, 0);
+    for (let i = 0; i < 6; i++) tone({ type: "square", freq: 80 + Math.random() * 60, at: 0.03 + i * 0.03, dur: 0.03, gain: 0.12, pan }, 0);
+  },
+  Ice: (pan) => {
+    noise({ filter: "highpass", freq: 5000, dur: 0.08, gain: 0.3, pan }, 0.05);
+    [3520, 4186, 4699, 5274, 3951].forEach((f, i) => tone({ type: "triangle", freq: f, at: 0.02 + i * 0.03, dur: 0.25, gain: 0.06, pan }, 0.3));
+  },
+  Fighting: (pan) => {
+    tone({ freq: 110, to: 40, dur: 0.2, gain: 0.5, pan }, 0.05);
+    noise({ filter: "lowpass", freq: 1800, dur: 0.07, gain: 0.35, pan }, 0);
+  },
+  Poison: (pan) => {
+    for (let i = 0; i < 6; i++) {
+      const f = 250 + Math.random() * 300;
+      tone({ freq: f, to: f * 2.5, at: i * 0.06, dur: 0.06, gain: 0.1, pan });
+    }
+    noise({ filter: "highpass", freq: 6000, dur: 0.4, gain: 0.06, attack: 0.05, pan }, 0.2);
+  },
+  Ground: (pan) => {
+    noise({ filter: "lowpass", freq: 400, to: 80, dur: 0.6, gain: 0.5, attack: 0.01, pan }, 0.3);
+    tone({ freq: 45, to: 30, dur: 0.5, gain: 0.35 }, 0.1);
+  },
+  Flying: (pan) => noise({ filter: "bandpass", freq: 2000, to: 500, q: 1.5, dur: 0.3, gain: 0.25, attack: 0.02, pan }, 0.25),
+  Psychic: (pan) => {
+    tone({ freq: 1320, to: 660, dur: 0.4, gain: 0.12, wobble: [14, 80], pan }, 0.4);
+    tone({ freq: 990, to: 495, at: 0.05, dur: 0.4, gain: 0.08, wobble: [11, 60], pan }, 0.4);
+  },
+  Bug: (pan) => {
+    for (let i = 0; i < 7; i++) noise({ filter: "bandpass", freq: 4000, q: 6, at: i * 0.035, dur: 0.02, gain: 0.14, pan });
+  },
+  Rock: (pan) => {
+    for (let i = 0; i < 3; i++) noise({ filter: "lowpass", freq: 700 - i * 150, at: i * 0.07, dur: 0.12, gain: 0.4, pan }, 0.1);
+    tone({ freq: 90, to: 40, dur: 0.25, gain: 0.3, pan }, 0.05);
+  },
+  Ghost: (pan) => {
+    tone({ freq: 300, to: 180, dur: 0.6, gain: 0.12, attack: 0.05, wobble: [4, 30], pan }, 0.5);
+    noise({ filter: "bandpass", freq: 800, q: 4, dur: 0.5, gain: 0.08, attack: 0.1, pan }, 0.4);
+  },
+  Dragon: (pan) => {
+    tone({ type: "sawtooth", freq: 90, to: 50, dur: 0.5, gain: 0.2, wobble: [18, 10], pan }, 0.3);
+    noise({ filter: "lowpass", freq: 1200, to: 300, dur: 0.4, gain: 0.3, pan }, 0.2);
+  },
+  Dark: (pan) => {
+    noise({ filter: "bandpass", freq: 3000, to: 800, q: 2, dur: 0.12, gain: 0.3, pan }, 0.05);
+    tone({ freq: 140, to: 50, at: 0.05, dur: 0.25, gain: 0.3, pan }, 0.1);
+  },
+  Steel: (pan) => {
+    [1, 2.76, 5.4].forEach((ratio, i) => tone({ freq: 880 * ratio, dur: 0.5 - i * 0.12, gain: 0.14 / (i + 1), pan }, 0.3));
+    noise({ filter: "highpass", freq: 6000, dur: 0.04, gain: 0.25, pan }, 0);
+  },
+  Fairy: (pan) => {
+    ["E7", "B6", "G#6", "E6"].forEach((name, i) =>
+      tone({ freq: 440 * Math.pow(2, (noteToMidi(name) - 69) / 12), at: i * 0.05, dur: 0.3, gain: 0.07, pan }, 0.4)
+    );
+  },
+};
+
 /** Measured in the browser: brings every type's attack to roughly the same peak. */
 const ATTACK_TRIM: Partial<Record<TypeName, number>> = {
   Normal: 3,
@@ -309,8 +388,10 @@ export const battle = guardAll({
     }
   },
   /** A move landing. Super effective cracks bright; resisted thuds dull; immune barely taps. */
-  hit: (effect: "normal" | "super" | "weak" | "none", crit: boolean, onPlayer: boolean) => {
+  hit: (effect: "normal" | "super" | "weak" | "none", crit: boolean, onPlayer: boolean, type?: TypeName) => {
     const pan = onPlayer ? -0.35 : 0.35;
+    // The element's own landing, under the weight of the blow.
+    if (type && effect !== "none") trimmed(ATTACK_TRIM[type] ?? 1, () => IMPACTS[type](pan));
     if (effect === "none") {
       tone({ type: "triangle", freq: 300, to: 250, dur: 0.12, gain: 0.08, pan }, 0);
       return;

@@ -1,3 +1,4 @@
+import { ELEMENT_FX, pathOffset } from "../../three/elementFx";
 import { OwnedMark } from "./OwnedMark";
 import { forwardRef, useImperativeHandle, useRef, useState } from "react";
 import { Animated, Platform, StyleSheet, Text, View } from "react-native";
@@ -104,6 +105,8 @@ export const BattleStage = forwardRef<BattleStageHandle, Props>(function BattleS
   const [projectileDirection, setProjectileDirection] = useState<ProjectileDirection>("toEnemy");
   const projectileProgress = useRef(new Animated.Value(0)).current;
   const projectileOpacity = useRef(new Animated.Value(0)).current;
+  /** The landing burst, played as the projectile arrives. */
+  const impact = useRef(new Animated.Value(0)).current;
 
   const ballProgress = useRef(new Animated.Value(0)).current;
   const ballOpacity = useRef(new Animated.Value(0)).current;
@@ -122,7 +125,11 @@ export const BattleStage = forwardRef<BattleStageHandle, Props>(function BattleS
         toValue: 1,
         duration: PROJECTILE_TRAVEL_MS,
         useNativeDriver: false,
-      }).start(() => projectileOpacity.setValue(0));
+      }).start(() => {
+        projectileOpacity.setValue(0);
+        impact.setValue(0);
+        Animated.timing(impact, { toValue: 1, duration: 520, useNativeDriver: false }).start();
+      });
     },
     throwBall() {
       if (use3D) {
@@ -169,8 +176,26 @@ export const BattleStage = forwardRef<BattleStageHandle, Props>(function BattleS
   };
   const [fromPos, toPos] = projectileDirection === "toEnemy" ? [playerCenter, enemyCenter] : [enemyCenter, playerCenter];
 
-  const projectileX = projectileProgress.interpolate({ inputRange: [0, 1], outputRange: [fromPos.x, toPos.x] });
-  const projectileY = projectileProgress.interpolate({ inputRange: [0, 1], outputRange: [fromPos.y, toPos.y] });
+  // The element decides the path: a lob, a zigzag, a corkscrew, a stone dropping from above...
+  const fx = ELEMENT_FX[projectileType] ?? ELEMENT_FX.Normal;
+  const PATH_SAMPLES = 16;
+  const ts = Array.from({ length: PATH_SAMPLES + 1 }, (_, i) => i / PATH_SAMPLES);
+  const dx = toPos.x - fromPos.x;
+  const dy = toPos.y - fromPos.y;
+  const length = Math.max(1, Math.hypot(dx, dy));
+  const perp = { x: -dy / length, y: dx / length };
+  const points = ts.map((t) => {
+    const o = pathOffset(fx.path, t, 0);
+    if (fx.path === "fromAbove") return { x: toPos.x + o.side * 40, y: toPos.y - (1 - t * t) * 180 };
+    return {
+      x: fromPos.x + dx * t + perp.x * o.side * 50,
+      y: fromPos.y + dy * t - o.up * 60 + perp.y * o.side * 50,
+    };
+  });
+  const projectileX = projectileProgress.interpolate({ inputRange: ts, outputRange: points.map((p) => p.x) });
+  const projectileY = projectileProgress.interpolate({ inputRange: ts, outputRange: points.map((p) => p.y) });
+  const IMPACT_DOTS = 12;
+  const impactOpacity = impact.interpolate({ inputRange: [0, 0.1, 1], outputRange: [0, 1, 0] });
 
   const ballStraightY = ballProgress.interpolate({ inputRange: [0, 1], outputRange: [playerCenter.y, enemyCenter.y] });
   const ballArc = ballProgress.interpolate({ inputRange: [0, 0.5, 1], outputRange: [0, -70, 0] });
@@ -345,6 +370,36 @@ export const BattleStage = forwardRef<BattleStageHandle, Props>(function BattleS
         <Text style={styles.projectileGlyph}>{typeIcon(projectileType)}</Text>
       </Animated.View>
 
+      {/* The landing: a burst in the element's colours — embers rise, water and stone fall. */}
+      {Array.from({ length: IMPACT_DOTS }, (_, i) => {
+        const angle = (i / IMPACT_DOTS) * Math.PI * 2;
+        const reach = 14 + fx.impact.speed * 14;
+        const drift = fx.impact.gravity > 0.5 ? 26 : fx.impact.gravity < -0.5 ? -30 : 0;
+        return (
+          <Animated.View
+            key={i}
+            pointerEvents="none"
+            style={[
+              styles.impactDot,
+              {
+                backgroundColor: fx.colors[i % fx.colors.length],
+                opacity: impactOpacity,
+                transform: [
+                  { translateX: Animated.add(toPos.x - 5, impact.interpolate({ inputRange: [0, 1], outputRange: [0, Math.cos(angle) * reach] })) },
+                  {
+                    translateY: Animated.add(
+                      toPos.y - 5,
+                      impact.interpolate({ inputRange: [0, 1], outputRange: [0, Math.sin(angle) * reach * 0.7 + drift] })
+                    ),
+                  },
+                  { scale: impact.interpolate({ inputRange: [0, 1], outputRange: [1.2, 0.4] }) },
+                ],
+              },
+            ]}
+          />
+        );
+      })}
+
       <Animated.View
         pointerEvents="none"
         style={[
@@ -495,6 +550,14 @@ const styles = StyleSheet.create({
   },
   healFlashOverlay: {
     backgroundColor: colors.success,
+  },
+  impactDot: {
+    position: "absolute",
+    left: 0,
+    top: 0,
+    width: 10,
+    height: 10,
+    borderRadius: 5,
   },
   projectile: {
     position: "absolute",

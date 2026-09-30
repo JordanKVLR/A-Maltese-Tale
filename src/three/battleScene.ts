@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import { ELEMENT_FX, pathOffset, type ElementFx } from "./elementFx";
 import type { CreatureDesign } from "../art/creatureArt";
 import type { Biome, TypeName } from "../data/schemas";
 import { buildCreatureModel, disposeModel, type CreatureModel } from "./creatureModel";
@@ -38,6 +39,9 @@ const PLAYER_POS = new THREE.Vector3(-1.5, 0, 1.6);
 const ENEMY_POS = new THREE.Vector3(2.4, 0, -3.4);
 const PLAYER_SCALE = 1.3;
 const ENEMY_SCALE = 1.25;
+
+/** Element effects are drawn this much larger than the old glow, so they read on a phone. */
+const FX_SCALE = 1.5;
 
 const TYPE_GLOW: Record<TypeName, string> = {
   Normal: "#e8e2d0", Fire: "#ff7a2a", Water: "#3fa0ff", Grass: "#5fd05a", Electric: "#ffe03a", Ice: "#9fe8ff",
@@ -395,8 +399,20 @@ export function createBattleScene(biome: Biome, options: { reducedMotion?: boole
     gravity: number;
   }
   const particles: Particle[] = [];
-  function spark(at: THREE.Vector3, color: string, options: { speed?: number; life?: number; size?: number; gravity?: number; up?: number } = {}) {
-    const material = new THREE.SpriteMaterial({ map: glow, color, blending: THREE.AdditiveBlending, depthWrite: false, transparent: true });
+  function spark(
+    at: THREE.Vector3,
+    color: string,
+    options: { speed?: number; life?: number; size?: number; gravity?: number; up?: number; solid?: boolean } = {}
+  ) {
+    // Glowing sparks add light; element particles are drawn in their own colour, which would
+    // otherwise wash out to white against a bright sky.
+    const material = new THREE.SpriteMaterial({
+      map: glow,
+      color,
+      blending: options.solid ? THREE.NormalBlending : THREE.AdditiveBlending,
+      depthWrite: false,
+      transparent: true,
+    });
     const sprite = new THREE.Sprite(material);
     sprite.position.copy(at);
     const size = options.size ?? 0.18;
@@ -420,6 +436,11 @@ export function createBattleScene(biome: Biome, options: { reducedMotion?: boole
     trail: boolean;
     spin: boolean;
     onLand?: () => void;
+    /** Set for an element's projectile: how it travels and what it trails. */
+    fx?: ElementFx;
+    seed?: number;
+    /** Horizontal unit vector to the right of the line of flight. */
+    side?: THREE.Vector3;
   }
   const flights: Flight[] = [];
 
@@ -429,47 +450,142 @@ export function createBattleScene(biome: Biome, options: { reducedMotion?: boole
     return slot.home.clone().add(new THREE.Vector3(0, height, 0));
   };
 
+  /** The thing that flies: a glow, or a solid shard, rock, leaf, blade or bubble. */
+  function fxBody(fx: ElementFx, color: string, size: number): THREE.Object3D {
+    const glowSprite = (tint: string, scale: number, additive = false) => {
+      const sprite = new THREE.Sprite(
+        new THREE.SpriteMaterial({
+          map: glow,
+          color: tint,
+          blending: additive ? THREE.AdditiveBlending : THREE.NormalBlending,
+          depthWrite: false,
+          transparent: true,
+        })
+      );
+      sprite.scale.setScalar(scale);
+      return sprite;
+    };
+    const solid = (geometry: THREE.BufferGeometry, options: THREE.MeshStandardMaterialParameters) => {
+      const mesh = new THREE.Mesh(geometry, new THREE.MeshStandardMaterial(options));
+      mesh.castShadow = true;
+      const group = new THREE.Group();
+      group.add(mesh);
+      // A soft halo keeps a solid body readable against any backdrop.
+      if (!fx.dark) group.add(glowSprite(color, size * 0.9));
+      return group;
+    };
+    const scale = (size / 0.55) * FX_SCALE;
+    switch (fx.body) {
+      case "shard":
+        return solid(new THREE.ConeGeometry(0.07 * scale, 0.42 * scale, 5), {
+          color: "#dff8ff", emissive: "#7fd8ff", emissiveIntensity: 0.8, roughness: 0.1, metalness: 0.2, transparent: true, opacity: 0.9,
+        });
+      case "rock":
+        return solid(new THREE.DodecahedronGeometry(0.17 * scale, 0), { color: fx.colors[1], roughness: 0.95, flatShading: true });
+      case "leaf": {
+        const leaf = new THREE.SphereGeometry(0.12 * scale, 8, 6);
+        leaf.scale(1, 0.25, 1.8);
+        return solid(leaf, { color: fx.colors[0], emissive: fx.colors[0], emissiveIntensity: 0.3, roughness: 0.6, side: THREE.DoubleSide });
+      }
+      case "blade":
+        return solid(new THREE.BoxGeometry(0.5 * scale, 0.04 * scale, 0.12 * scale), fx.dark
+          ? { color: "#2a1a3a", emissive: "#5a1a4a", emissiveIntensity: 0.6, roughness: 0.4 }
+          : { color: "#e8eef4", metalness: 0.9, roughness: 0.2, emissive: "#8898a8", emissiveIntensity: 0.3 });
+      case "bubble":
+        return solid(new THREE.SphereGeometry(0.15 * scale, 14, 10), {
+          color: fx.colors[1], emissive: fx.colors[0], emissiveIntensity: 0.5, transparent: true, opacity: 0.6, roughness: 0.05,
+        });
+      case "glow": {
+        const core = glowSprite(color, size);
+        const inner = glowSprite("#ffffff", 0.45, true);
+        core.add(inner);
+        return core;
+      }
+    }
+  }
+
+  /** Where an element's projectile lands, spread a little so a volley doesn't pile up. */
+  function impactAt(to: THREE.Vector3, fx: ElementFx, share: number, first: boolean, emphasis?: "signature" | "unleashed") {
+    const { impact } = fx;
+    const scale = emphasis === "unleashed" ? 1.6 : emphasis ? 1.3 : 1;
+    const count = Math.round((impact.count * scale) / share);
+    for (let i = 0; i < count; i++) {
+      const color = i % 3 === 0 && emphasis === "unleashed" ? "#ffd24a" : fx.colors[i % fx.colors.length];
+      spark(to, color, { speed: impact.speed * scale, up: impact.up, gravity: impact.gravity, size: impact.size * scale * FX_SCALE, life: impact.life, solid: true });
+    }
+    if (!first) return;
+    if (impact.ring) {
+      const ring = new THREE.Mesh(
+        new THREE.TorusGeometry(0.5, 0.04, 8, 48),
+        new THREE.MeshBasicMaterial({
+          color: fx.colors[0],
+          transparent: true,
+          opacity: 0.9,
+          blending: THREE.NormalBlending,
+          depthWrite: false,
+        })
+      );
+      ring.rotation.x = Math.PI / 2;
+      ring.position.set(to.x, 0.08, to.z);
+      scene.add(ring);
+      rings.push({ mesh: ring, t: 0 });
+    }
+    if (impact.flash || emphasis) {
+      flashLight.position.copy(to);
+      flashLight.color.set(emphasis === "unleashed" ? "#ffd66a" : fx.colors[0]);
+      flash = Math.max(flash, emphasis === "unleashed" ? 1 : 0.6);
+    }
+    shake = Math.max(shake, (impact.shake ?? 0) + (emphasis === "unleashed" ? 0.6 : emphasis ? 0.3 : 0));
+  }
+
   function fireProjectile(type: TypeName, direction: "toEnemy" | "toPlayer", durationMs: number, emphasis?: "signature" | "unleashed") {
+    const fx = ELEMENT_FX[type] ?? ELEMENT_FX.Normal;
     const color = TYPE_GLOW[type] ?? "#ffffff";
     // A signature move is bigger and brighter; an unleashed one also rings gold and shakes the camera.
     const size = emphasis === "unleashed" ? 1.1 : emphasis === "signature" ? 0.85 : 0.55;
-    if (emphasis) shake = emphasis === "unleashed" ? 1 : 0.5;
-    if (emphasis === "unleashed") {
-      const from = aimPoint(direction === "toEnemy" ? "player" : "enemy");
-      for (let i = 0; i < 24; i++) spark(from, "#ffd24a", { speed: 2, up: 0.6, life: 0.6, size: 0.22 });
-    }
     const from = aimPoint(direction === "toEnemy" ? "player" : "enemy");
     const to = aimPoint(direction === "toEnemy" ? "enemy" : "player");
-    const core = new THREE.Sprite(new THREE.SpriteMaterial({ map: glow, color, blending: THREE.AdditiveBlending, depthWrite: false, transparent: true }));
-    core.scale.setScalar(size);
-    const inner = new THREE.Sprite(new THREE.SpriteMaterial({ map: glow, color: "#ffffff", blending: THREE.AdditiveBlending, depthWrite: false, transparent: true }));
-    inner.scale.setScalar(0.5);
-    core.add(inner);
-    core.position.copy(from);
-    const light = new THREE.PointLight(emphasis === "unleashed" ? "#ffd24a" : color, emphasis ? 6 : 3, emphasis ? 7 : 4, 2);
-    core.add(light);
-    scene.add(core);
-    flights.push({
-      object: core,
-      light,
-      from,
-      to,
-      arc: 0.7,
-      duration: durationMs / 1000,
-      elapsed: 0,
-      color,
-      trail: true,
-      spin: false,
-      onLand: () => {
-        const count = emphasis === "unleashed" ? 46 : emphasis ? 32 : 18;
-        for (let i = 0; i < count; i++) spark(to, i % 3 === 0 && emphasis === "unleashed" ? "#ffd24a" : color, { speed: emphasis ? 3.2 : 2.2, life: 0.6, size: emphasis ? 0.28 : 0.2 });
-        if (emphasis) {
-          flashLight.position.copy(to);
-          flashLight.color.set(emphasis === "unleashed" ? "#ffd66a" : color);
-          flash = emphasis === "unleashed" ? 1 : 0.6;
-        }
-      },
-    });
+    if (emphasis === "unleashed") {
+      for (let i = 0; i < 24; i++) spark(from, "#ffd24a", { speed: 2, up: 0.6, life: 0.6, size: 0.22 });
+    }
+    const flightDir = to.clone().sub(from).setY(0).normalize();
+    const side = new THREE.Vector3(-flightDir.z, 0, flightDir.x);
+    // A volley staggers out over the first third of the flight; the last one still lands on time.
+    const volley = fx.count;
+    const travel = durationMs / 1000;
+    const stagger = volley > 1 ? (travel * 0.35) / (volley - 1) : 0;
+    let landed = 0;
+    for (let n = 0; n < volley; n++) {
+      const body = fxBody(fx, color, volley > 1 ? size * 0.75 : size);
+      const start = fx.path === "fromAbove" ? to.clone().add(new THREE.Vector3(0, 3.5, 0)) : from.clone();
+      body.position.copy(start);
+      body.visible = n === 0;
+      let light: THREE.PointLight | undefined;
+      if (n === 0 && !fx.dark) {
+        light = new THREE.PointLight(emphasis === "unleashed" ? "#ffd24a" : color, emphasis ? 6 : 3, emphasis ? 7 : 4, 2);
+        body.add(light);
+      }
+      scene.add(body);
+      flights.push({
+        object: body,
+        light,
+        from: from.clone(),
+        to: to.clone(),
+        arc: 0,
+        duration: travel - stagger * (volley - 1),
+        elapsed: -stagger * n,
+        color,
+        trail: true,
+        spin: fx.body !== "glow" && fx.body !== "bubble",
+        fx,
+        seed: n,
+        side,
+        onLand: () => {
+          impactAt(to, fx, volley, landed === 0, emphasis);
+          landed++;
+        },
+      });
+    }
   }
 
   function throwBall(durationMs: number) {
@@ -597,12 +713,41 @@ export function createBattleScene(biome: Biome, options: { reducedMotion?: boole
     for (let i = flights.length - 1; i >= 0; i--) {
       const f = flights[i];
       f.elapsed += dt;
+      if (f.elapsed < 0) continue; // a volley member still waiting its turn
+      f.object.visible = !(f.fx?.path === "ground");
       const t = Math.min(1, f.elapsed / f.duration);
-      const eased = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
-      f.object.position.lerpVectors(f.from, f.to, eased);
-      f.object.position.y += Math.sin(t * Math.PI) * f.arc;
-      if (f.spin) f.object.rotation.x += dt * 18;
-      if (f.trail && Math.random() < 0.9) spark(f.object.position, f.color, { speed: 0.3, life: 0.35, size: 0.22, gravity: 0 });
+      if (f.fx) {
+        const { up, side } = pathOffset(f.fx.path, t, f.seed);
+        if (f.fx.path === "fromAbove") {
+          // Falling: slow at first, then fast, like a dropped stone.
+          const fall = t * t;
+          f.object.position.set(f.to.x, f.to.y + (1 - fall) * 3.5, f.to.z).addScaledVector(f.side!, side);
+        } else {
+          const eased = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+          f.object.position.lerpVectors(f.from, f.to, f.fx.path === "straight" || f.fx.path === "zigzag" ? t : eased);
+          f.object.position.y += up;
+          f.object.position.addScaledVector(f.side!, side);
+        }
+        if (f.spin) {
+          f.object.rotation.x += dt * 14;
+          f.object.rotation.y += dt * 9;
+        }
+        const trail = f.fx.trail;
+        if (f.fx.path === "ground") {
+          // A travelling quake: dust and pebbles thrown up along the ground.
+          const at = f.object.position.clone().setY(0.05);
+          for (let k = 0; k < 2; k++) spark(at, f.fx.colors[k % f.fx.colors.length], { speed: 0.9, up: 1.6, gravity: trail.gravity, size: trail.size, life: trail.life, solid: true });
+        } else if (Math.random() < trail.rate) {
+          const color = f.fx.colors[Math.floor(Math.random() * f.fx.colors.length)];
+          spark(f.object.position, color, { speed: 0.35, up: 0.1, life: trail.life, size: trail.size * FX_SCALE, gravity: trail.gravity, solid: true });
+        }
+      } else {
+        const eased = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+        f.object.position.lerpVectors(f.from, f.to, eased);
+        f.object.position.y += Math.sin(t * Math.PI) * f.arc;
+        if (f.spin) f.object.rotation.x += dt * 18;
+        if (f.trail && Math.random() < 0.9) spark(f.object.position, f.color, { speed: 0.3, life: 0.35, size: 0.22, gravity: 0 });
+      }
       if (t >= 1) {
         f.onLand?.();
         scene.remove(f.object);

@@ -646,7 +646,7 @@ export function BattleScreen({ navigation, route }: Props) {
         if (move.category !== "status") {
           const multiplier = getTypeMultiplier(move.type, outcome.target.types);
           const effect = multiplier === 0 ? "none" : multiplier > 1 ? "super" : multiplier < 1 ? "weak" : "normal";
-          battleSfx.hit(effect, outcome.crit, !isPlayer);
+          battleSfx.hit(effect, outcome.crit, !isPlayer, move.type);
         }
         const change = outcome.statChanges?.find((c) => c.stages !== 0);
         if (change) setTimeout(() => (change.stages > 0 ? battleSfx.statUp() : battleSfx.statDown()), 180);
