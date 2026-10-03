@@ -1,6 +1,7 @@
 import { arpeggiate, bassLine, chordNotes, midiToFrequency, noteToMidi, parsePart, sustain } from "../notes";
 import { TRACKS, trackLength } from "../tracks";
 import { battleTrack, mapTrack } from "../choose";
+import { RECORDINGS } from "../engine";
 import { STAGES } from "../../game/zoneProgression";
 
 describe("notation", () => {
@@ -88,21 +89,27 @@ describe("the score", () => {
 });
 
 describe("which music plays where", () => {
-  it("marches in gym stages, rocks on the water, walks everywhere else", () => {
-    expect(mapTrack({ gym: { medalId: "x" }, biomes: ["water", "rock"] })).toBe("bastions");
-    expect(mapTrack({ biomes: ["water", "sand"] })).toBe("harbour");
+  it("plays the world song on every map", () => {
+    expect(mapTrack({ gym: { medalId: "x" }, biomes: ["water", "rock"] })).toBe("overworld");
+    expect(mapTrack({ biomes: ["water", "sand"] })).toBe("overworld");
     expect(mapTrack({ biomes: ["grass", "rock"] })).toBe("overworld");
     expect(mapTrack(undefined)).toBe("overworld");
   });
 
   it("matches the battle to who you are fighting", () => {
     expect(battleTrack(null)).toBe("battleWild");
-    expect(battleTrack({ isGymLeader: false })).toBe("battleTrainer");
-    expect(battleTrack({ isGymLeader: true })).toBe("battleGym");
+    expect(battleTrack({ isGymLeader: false })).toBe("battleWild");
+    expect(battleTrack({ isGymLeader: true })).toBe("battleWild");
+  });
+
+  it("plays the recorded songs on every map and in every battle", () => {
+    expect(RECORDINGS[mapTrack(undefined)]?.src).toBe("music/world.mp3");
+    expect(RECORDINGS[battleTrack(null)]?.src).toBe("music/battle.mp3");
+    for (const recording of Object.values(RECORDINGS)) expect(recording!.loopEnd - recording!.loopStart).toBeGreaterThan(30);
   });
 
   it("gives every real stage a piece that exists", () => {
     for (const stage of STAGES) expect(TRACKS[mapTrack(stage)]).toBeDefined();
-    expect(new Set(STAGES.map((stage) => mapTrack(stage)))).toEqual(new Set(["overworld", "harbour", "bastions"]));
+    expect(new Set(STAGES.map((stage) => mapTrack(stage)))).toEqual(new Set(["overworld"]));
   });
 });

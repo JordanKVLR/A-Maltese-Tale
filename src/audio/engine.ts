@@ -116,6 +116,8 @@ function unlockAudioUnsafe(): void {
     applyVolumes();
     prepareDrumSamples();
     prewarmPlucks(ctx);
+    // Fetch the recorded songs now, so the first battle doesn't wait for its music.
+    for (const recording of Object.values(RECORDINGS)) if (recording) loadRecording(ctx, recording.src).catch(() => undefined);
   }
   if (ctx.state === "suspended") void ctx.resume();
   if (wantedTrack && !current) startTrack(wantedTrack);
@@ -753,7 +755,207 @@ class TrackPlayer {
   }
 }
 
-let current: TrackPlayer | null = null;
+// ─── Recorded songs ──────────────────────────────────────────────────────────────────────────
+
+/**
+ * Pieces played from a recording instead of the score. Times are seconds into the file: the
+ * opening plays once, then `loopStart`–`loopEnd` repeats. The two points sit on the same beat of
+ * the same phrase, so the seam is a short crossfade from one into the other.
+ */
+interface Recording {
+  src: string;
+  loopStart: number;
+  loopEnd: number;
+}
+
+export const RECORDINGS: Partial<Record<TrackId, Recording>> = {
+  overworld: { src: "music/world.mp3", loopStart: 21.5, loopEnd: 160.389 },
+  battleWild: { src: "music/battle.mp3", loopStart: 7.5, loopEnd: 55.564 },
+};
+
+const CROSSFADE_S = 0.3;
+
+const recordingCache = new Map<string, Promise<AudioBuffer>>();
+
+/** Fetches and decodes a recording once; later requests share the same buffer. */
+function loadRecording(context: Ctx, src: string): Promise<AudioBuffer> {
+  let pending = recordingCache.get(src);
+  if (!pending) {
+    pending = fetch(src)
+      .then((response) => {
+        if (!response.ok) throw new Error(`${src}: ${response.status}`);
+        return response.arrayBuffer();
+      })
+      // The callback form, for Safari versions where decodeAudioData doesn't return a promise.
+      .then((data) => new Promise<AudioBuffer>((resolve, reject) => context.decodeAudioData(data, resolve, reject)));
+    // A failed load is forgotten, so the next request tries again.
+    pending.catch(() => recordingCache.delete(src));
+    recordingCache.set(src, pending);
+  }
+  return pending;
+}
+
+/**
+ * Plays a recording on a loop. Each pass is its own buffer source; the next one is scheduled a
+ * few seconds before the seam, so a busy page never makes the music miss it. A jingle pauses the
+ * song and it carries on from the same spot afterwards. If the file can't be loaded, the score of
+ * the same piece plays instead.
+ */
+class RecordingPlayer {
+  readonly id: TrackId;
+  readonly output: GainNode;
+  private buffer: AudioBuffer | null = null;
+  private fallback: TrackPlayer | null = null;
+  private voices: { source: AudioBufferSourceNode; gain: GainNode }[] = [];
+  /** The song position (seconds into the file) of the pass now playing, and when it began. */
+  private passOffset = 0;
+  private passStart = 0;
+  /** The pass before, still playing until the next one (scheduled ahead) takes over. */
+  private previous = { offset: 0, start: 0 };
+  /** When the next pass begins; it is scheduled once that is near. */
+  private nextSeam = Infinity;
+  private seamScheduled = false;
+  private timer: ReturnType<typeof setInterval> | null = null;
+  private paused = false;
+  private pausedAt = 0;
+  private stopped = false;
+
+  constructor(
+    private readonly context: Ctx,
+    id: TrackId,
+    destination: AudioNode,
+    private readonly recording: Recording
+  ) {
+    this.id = id;
+    this.output = context.createGain();
+    this.output.connect(destination);
+  }
+
+  start(fadeIn: number) {
+    const now = this.context.currentTime;
+    this.output.gain.setValueAtTime(fadeIn > 0 ? 0.0001 : 1, now);
+    if (fadeIn > 0) this.output.gain.exponentialRampToValueAtTime(1, now + fadeIn);
+    loadRecording(this.context, this.recording.src).then(
+      (buffer) => {
+        if (this.stopped) return;
+        this.buffer = buffer;
+        if (!this.paused) this.playFrom(0, this.context.currentTime + 0.05, false);
+        this.timer = setInterval(() => this.tick(), 500);
+      },
+      () => {
+        if (this.stopped) return;
+        this.fallback = new TrackPlayer(this.context, this.id, this.output);
+        this.fallback.start(0);
+      }
+    );
+  }
+
+  stop(fadeOut: number) {
+    this.stopped = true;
+    const now = this.context.currentTime;
+    this.output.gain.cancelScheduledValues(now);
+    this.output.gain.setValueAtTime(Math.max(0.0001, this.output.gain.value), now);
+    this.output.gain.exponentialRampToValueAtTime(0.0001, now + Math.max(0.02, fadeOut));
+    if (this.timer) clearInterval(this.timer);
+    this.timer = null;
+    this.fallback?.stop(fadeOut);
+    this.silence(now + Math.max(0.02, fadeOut) + 0.05);
+    setTimeout(() => this.output.disconnect(), (fadeOut + 1.5) * 1000);
+  }
+
+  /** Under a jingle the song pauses rather than playing on quietly; back up, it carries on. */
+  duck(level: number, seconds: number) {
+    if (this.fallback) {
+      this.fallback.duck(level, seconds);
+      return;
+    }
+    const now = this.context.currentTime;
+    if (level < 0.5) {
+      if (this.paused) return;
+      this.paused = true;
+      this.pausedAt = this.buffer ? this.position(now + seconds) : 0;
+      this.output.gain.cancelScheduledValues(now);
+      this.output.gain.setValueAtTime(Math.max(0.0001, this.output.gain.value), now);
+      this.output.gain.exponentialRampToValueAtTime(0.0001, now + Math.max(0.02, seconds));
+      this.silence(now + seconds + 0.05);
+      return;
+    }
+    this.output.gain.cancelScheduledValues(now);
+    if (this.paused) {
+      this.paused = false;
+      this.output.gain.setValueAtTime(0.0001, now);
+      this.output.gain.exponentialRampToValueAtTime(1, now + Math.max(0.02, seconds));
+      if (this.buffer) this.playFrom(this.pausedAt, now + 0.02, false);
+    } else {
+      this.output.gain.setTargetAtTime(1, now, seconds / 3);
+    }
+  }
+
+  /** Where in the file the song is (or will be) at `time`, folded back into the loop. */
+  private position(time: number): number {
+    const { loopStart, loopEnd } = this.recording;
+    const pass = time < this.passStart ? this.previous : { offset: this.passOffset, start: this.passStart };
+    let pos = pass.offset + (time - pass.start);
+    if (pos >= loopEnd) pos = loopStart + ((pos - loopEnd) % (loopEnd - loopStart));
+    return pos;
+  }
+
+  /** Starts a pass from `offset` at `when`, fading in over the crossfade if it begins a seam. */
+  private playFrom(offset: number, when: number, crossfadeIn: boolean) {
+    const buffer = this.buffer;
+    if (!buffer) return;
+    const { loopEnd } = this.recording;
+    const source = this.context.createBufferSource();
+    source.buffer = buffer;
+    const gain = this.context.createGain();
+    source.connect(gain).connect(this.output);
+    if (crossfadeIn) {
+      gain.gain.setValueAtTime(0, when);
+      gain.gain.linearRampToValueAtTime(1, when + CROSSFADE_S);
+    }
+    const seam = when + (loopEnd - offset);
+    // Fade out over the crossfade, while the next pass fades in from the loop start.
+    gain.gain.setValueAtTime(1, seam);
+    gain.gain.linearRampToValueAtTime(0, seam + CROSSFADE_S);
+    source.start(when, offset);
+    source.stop(Math.min(seam + CROSSFADE_S + 0.05, when + (buffer.duration - offset)));
+    const voice = { source, gain };
+    this.voices.push(voice);
+    source.onended = () => {
+      this.voices = this.voices.filter((v) => v !== voice);
+      gain.disconnect();
+    };
+    this.previous = { offset: this.passOffset, start: this.passStart };
+    this.passOffset = offset;
+    this.passStart = when;
+    this.nextSeam = seam;
+    this.seamScheduled = false;
+    this.tick();
+  }
+
+  private tick() {
+    if (this.stopped || this.paused || this.seamScheduled || !this.buffer) return;
+    if (this.nextSeam - this.context.currentTime > 4) return;
+    this.seamScheduled = true;
+    const seam = this.nextSeam;
+    this.playFrom(this.recording.loopStart, seam, true);
+  }
+
+  private silence(at: number) {
+    for (const { source } of this.voices) {
+      try {
+        source.stop(at);
+      } catch {
+        // Already stopped.
+      }
+    }
+    this.nextSeam = Infinity;
+  }
+}
+
+type MusicPlayer = TrackPlayer | RecordingPlayer;
+
+let current: MusicPlayer | null = null;
 let wantedTrack: TrackId | null = null;
 let jingle: TrackPlayer | null = null;
 const jingleQueue: { id: TrackId; options: { then?: "resume" | "stop" } }[] = [];
@@ -762,7 +964,8 @@ function startTrack(id: TrackId, fade = 0.8) {
   const live = audio();
   if (!live || musicVolume === 0) return;
   current?.stop(fade);
-  current = new TrackPlayer(live.ctx, id, live.buses.music);
+  const recording = RECORDINGS[id];
+  current = recording ? new RecordingPlayer(live.ctx, id, live.buses.music, recording) : new TrackPlayer(live.ctx, id, live.buses.music);
   current.start(fade);
 }
 
@@ -857,7 +1060,7 @@ export function nowPlaying(): { music: TrackId | null; wanted: TrackId | null } 
 // A window into the engine for automated checks and for anyone curious in the console:
 // `__maltaAudio.nowPlaying()` says what's on; `__maltaAudio.audio()` gives the live graph.
 if (typeof globalThis !== "undefined") {
-  (globalThis as unknown as { __maltaAudio?: unknown }).__maltaAudio = { nowPlaying, audio, playNote, playDrum, renderOffline };
+  (globalThis as unknown as { __maltaAudio?: unknown }).__maltaAudio = { nowPlaying, audio, playNote, playDrum, renderOffline, requestMusic: (id: TrackId | null) => requestMusic(id), playJingle: (id: TrackId) => playJingle(id) };
 }
 
 export const unlockAudio = quietly(unlockAudioUnsafe);
