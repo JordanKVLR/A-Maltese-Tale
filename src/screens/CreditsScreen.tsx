@@ -38,8 +38,9 @@ export function CreditsScreen({ navigation }: Props) {
             <MadumFloor pattern="rosette" palette={MADUM.blue} tile={28} />
           </View>
           <Text accessibilityRole="header" style={styles.title}>
-            A Maltese Tale
+            {t("title.name")}
           </Text>
+          <Text style={styles.subname}>{t("title.subname")}</Text>
           <Text style={styles.theEnd}>{t("credits.theEnd")}</Text>
           <Text style={styles.lede}>{t("credits.lede")}</Text>
 
@@ -102,6 +103,15 @@ const styles = StyleSheet.create({
     fontWeight: "800",
     textAlign: "center",
     marginTop: 8,
+  },
+  subname: {
+    color: colors.accentDeep,
+    fontSize: 14,
+    fontWeight: "800",
+    letterSpacing: 3,
+    textTransform: "uppercase",
+    textAlign: "center",
+    marginTop: -10,
   },
   theEnd: {
     color: colors.accentDeep,

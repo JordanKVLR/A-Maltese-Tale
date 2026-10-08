@@ -1,5 +1,5 @@
 /*
- * "It All Started With a Ħarsi": the opening of A Maltese Tale, drawn live to the theme song.
+ * "It All Started With a Ħarsi": the opening of Ħarsi: Spirits of Malta, drawn live to the theme song.
  *
  * Everything here is drawn on one canvas, every frame, from the song's own clock: the audio
  * element is the conductor and each scene is a function of time. The lyric timings come from the
@@ -1404,7 +1404,7 @@
     eyes(W * 0.22, H * 0.7, S * 0.012, t + 0.3, 1.7);
     eyes(W * 0.8, H * 0.3, S * 0.01, t, 2.1);
     if (t > 2.6) eyes(W * 0.65, H * 0.78, S * 0.014, t + 0.9, 1.3);
-    txt("A Maltese Tale", W / 2, H * 0.82, S * 0.045, { f: FT, w: 700, c: "rgba(255,246,227,0.85)", alpha: prog(t, 1.2, 2.6) * (1 - prog(t, 3.8, 4.5)), shadow: false, track: S * 0.01 });
+    txt("Ħarsi · Spirits of Malta", W / 2, H * 0.82, S * 0.045, { f: FT, w: 700, c: "rgba(255,246,227,0.85)", alpha: prog(t, 1.2, 2.6) * (1 - prog(t, 3.8, 4.5)), shadow: false, track: S * 0.01 });
   });
 
   // 4.6 — Sunrise over the islands. The band kicks in.
@@ -1424,16 +1424,25 @@
       X.quadraticCurveTo(gx + 5, gy - 6 - Math.sin(t * 10 + i) * 4, gx + 10, gy);
       stroke("rgba(30,30,40,0.7)", 2);
     }
-    // The title, one word per beat.
-    const words = ["A", "MALTESE", "TALE"];
-    const size = fitSize("MALTESE", W * 0.84, S * 0.17, { f: FT });
-    words.forEach((w, i) => {
-      const at = BEAT0 + BEAT * (6 + i * 2);
-      if (t < at) return;
-      const p = pop(t, at, 0.3);
-      txt(w, W / 2, H * (0.2 + i * 0.13), size * (i === 1 ? 1 : 0.62), { f: FT, c: C.cream, stroke: C.red, sw: size * 0.06, sc: p, shadow: "rgba(0,0,0,0.35)" });
-    });
+    // The title: the name on one beat, what they are on the next ones.
+    titleCard(t, BEAT0 + BEAT * 6, 0);
   });
+
+  /** ĦARSI over SPIRITS OF MALTA; `from` is when the words start landing. */
+  function titleCard(t, from, beat) {
+    const big = fitSize("ĦARSI", W * 0.8, S * 0.26, { f: FT });
+    if (t >= from) txt("ĦARSI", W / 2, H * 0.27, big, { f: FT, c: C.cream, stroke: C.red, sw: big * 0.06, sc: pop(t, from, 0.3) * (1 + beat * 0.05), shadow: "rgba(0,0,0,0.35)" });
+    const sub = ["SPIRITS", "OF", "MALTA"];
+    const subSize = fitSize("SPIRITS OF MALTA", W * 0.8, S * 0.075, { f: FT });
+    X.font = `900 ${subSize}px ${FT}`;
+    const widths = sub.map((w) => X.measureText(w + " ").width);
+    let x = W / 2 - widths.reduce((a, b) => a + b, 0) / 2;
+    sub.forEach((w, i) => {
+      const at = from + BEAT * (2 + i);
+      if (t >= at) txt(w, x + widths[i] / 2, H * 0.27 + big * 0.62, subSize, { f: FT, c: C.gold, stroke: C.ink, sw: subSize * 0.12, sc: pop(t, at, 0.25) });
+      x += widths[i];
+    });
+  }
 
   // 11 — The title holds; the Ħarsi start zipping past. Count-in.
   scene(BEAT0 + BEAT * 15, (t, lt) => {
@@ -1443,11 +1452,7 @@
     X.globalAlpha = 0.18;
     X.fillRect(0, 0, W, H);
     X.globalAlpha = 1;
-    const size = fitSize("MALTESE", W * 0.84, S * 0.17, { f: FT });
-    const b = pulse(t);
-    txt("A", W / 2, H * 0.2, size * 0.62, { f: FT, stroke: C.red, sw: size * 0.06, sc: 1 + b * 0.05 });
-    txt("MALTESE", W / 2, H * 0.33, size, { f: FT, stroke: C.red, sw: size * 0.06, sc: 1 + b * 0.05 });
-    txt("TALE", W / 2, H * 0.46, size * 0.62, { f: FT, stroke: C.red, sw: size * 0.06, sc: 1 + b * 0.05 });
+    titleCard(t, -10, pulse(t));
     // A parade of silhouettes, a new one on every beat.
     const n = beatIndex(t) - beatIndex(BEAT0 + BEAT * 15);
     for (let i = 0; i <= n; i++) {
@@ -2593,8 +2598,8 @@
       spr(id, x, H * (PORTRAIT ? 0.72 : 0.74) - bounce(t + i * 0.2) * S * 0.03, S * 0.24 * p, { flip: i === 2 });
     });
     const a = pop(t, 169.069 + 1.6, 0.3);
-    const size = fitSize("A MALTESE TALE", W * 0.86, S * 0.09, { f: FT });
-    txt("A MALTESE TALE", W / 2, H * (PORTRAIT ? 0.52 : 0.55), size, { f: FT, c: C.cream, stroke: C.blue, sw: size * 0.1, sc: a });
+    const size = fitSize("SPIRITS OF MALTA", W * 0.86, S * 0.09, { f: FT });
+    txt("SPIRITS OF MALTA", W / 2, H * (PORTRAIT ? 0.52 : 0.55), size, { f: FT, c: C.cream, stroke: C.blue, sw: size * 0.1, sc: a });
   });
 
   /** The giant ĦARSI! that lands on every shout, over whatever is playing. */
@@ -2745,7 +2750,7 @@
     loading: document.getElementById("loading"),
     bar: document.getElementById("bar"),
   };
-  if (!embedded) ui.beginLabel.textContent = "Play A Maltese Tale";
+  if (!embedded) ui.beginLabel.textContent = "Play Ħarsi";
   if (params.has("vol")) audio.volume = clamp(parseFloat(params.get("vol")) || 0);
   if (embedded) ui.skipStart.classList.remove("hidden");
 

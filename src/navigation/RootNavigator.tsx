@@ -27,7 +27,8 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export function RootNavigator() {
   return (
-    <NavigationContainer>
+    // The browser tab shows the game's name, not the name of whichever screen is open.
+    <NavigationContainer documentTitle={{ formatter: () => "Ħarsi: Spirits of Malta" }}>
       <Stack.Navigator screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.background } }}>
         <Stack.Screen name="Title" component={TitleScreen} />
         <Stack.Screen name="Intro" component={IntroScreen} options={{ animation: "fade" }} />

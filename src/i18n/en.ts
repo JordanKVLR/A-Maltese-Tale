@@ -27,7 +27,8 @@ export const en = {
   "common.levelPlus": "+1 level",
 
   // ------------------------------------------------------------------ title and new game
-  "title.name": "A Maltese Tale",
+  "title.name": "Ħarsi",
+  "title.subname": "Spirits of Malta",
   "title.tagline": "Catch what the islands left behind",
   "title.newGame": "New Game",
   "title.settings": "Settings",
@@ -387,7 +388,7 @@ export const en = {
 
   // ------------------------------------------------------------------ help
   "help.title": "Help",
-  "help.subtitle": "Everything you need to know about A Maltese Tale.",
+  "help.subtitle": "Everything you need to know about Ħarsi: Spirits of Malta.",
   "help.goal.title": "The goal",
   "help.goal.body":
     "Beat every trainer and every gym leader on Melita. Each gym leader's medal opens the next five stages. Wild Ħarsi live in the tall grass, rock, shallows and sand — the road itself is always clear, so you can walk straight to the next stage.",
@@ -437,7 +438,7 @@ export const en = {
   "musicRoom.musicOff": "Music is turned off above, so nothing will play.",
   "musicRoom.loop": "loops",
   "musicRoom.jingle": "short piece",
-  "musicRoom.track.title": "A Maltese Tale",
+  "musicRoom.track.title": "Spirits of Malta",
   "musicRoom.where.title": "The title screen",
   "musicRoom.track.overworld": "Island Roads",
   "musicRoom.where.overworld": "Stages on land",

@@ -28,7 +28,8 @@ export const mt: Record<StringKey, string> = {
   "common.levelPlus": "+1 livell",
 
   // ------------------------------------------------------------------ title and new game
-  "title.name": "A Maltese Tale",
+  "title.name": "Ħarsi",
+  "title.subname": "Spirti ta' Malta",
   "title.tagline": "Aqbad dak li ħallew warajhom il-gżejjer",
   "title.newGame": "Logħba Ġdida",
   "title.settings": "Issettjar",
@@ -388,7 +389,7 @@ export const mt: Record<StringKey, string> = {
 
   // ------------------------------------------------------------------ help
   "help.title": "Għajnuna",
-  "help.subtitle": "Kulma trid tkun taf dwar A Maltese Tale.",
+  "help.subtitle": "Kulma trid tkun taf dwar Ħarsi: Spirti ta' Malta.",
   "help.goal.title": "L-għan",
   "help.goal.body":
     "Egħleb lil kull trainer u lil kull mexxej tal-gym f'Melita. Il-midalja ta' kull mexxej tal-gym tiftaħ il-ħames stadji ta' wara. Il-Ħarsi selvaġġi jgħixu fil-ħaxix għoli, fil-blat, fl-ilma baxx u fir-ramel — it-triq innifisha dejjem tkun ħielsa, hekk tista' timxi dritt għall-istadju li jmiss.",
@@ -438,7 +439,7 @@ export const mt: Record<StringKey, string> = {
   "musicRoom.musicOff": "Il-mużika mitfija hawn fuq, allura ma jdoqq xejn.",
   "musicRoom.loop": "tirrepeti",
   "musicRoom.jingle": "biċċa qasira",
-  "musicRoom.track.title": "A Maltese Tale",
+  "musicRoom.track.title": "Spirti ta' Malta",
   "musicRoom.where.title": "L-iskrin tat-titlu",
   "musicRoom.track.overworld": "It-Toroq tal-Gżira",
   "musicRoom.where.overworld": "Stadji fuq l-art",

@@ -37,7 +37,7 @@ export function IntroScreen({ navigation }: Props) {
     <View style={styles.fill} testID="intro-screen">
       {createElement("iframe", {
         src,
-        title: "A Maltese Tale: opening",
+        title: "Ħarsi: Spirits of Malta, the opening",
         allow: "autoplay; fullscreen",
         style: { border: 0, width: "100%", height: "100%", display: "block", background: "#0b1a2e" },
       })}

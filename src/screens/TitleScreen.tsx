@@ -44,6 +44,7 @@ export function TitleScreen({ navigation }: Props) {
       </View>
       <View style={styles.titleBlock}>
         <Text accessibilityRole="header" style={styles.title}>{t("title.name")}</Text>
+        <Text style={styles.subname}>{t("title.subname")}</Text>
         <Text style={styles.subtitle}>{t("title.tagline")}</Text>
       </View>
 
@@ -105,9 +106,17 @@ const styles = StyleSheet.create({
   },
   title: {
     color: colors.text,
-    fontSize: 32,
-    fontWeight: "700",
-    letterSpacing: 0.5,
+    fontSize: 46,
+    fontWeight: "800",
+    letterSpacing: 2,
+  },
+  subname: {
+    color: colors.accentDeep,
+    fontSize: 15,
+    fontWeight: "800",
+    letterSpacing: 3,
+    textTransform: "uppercase",
+    marginTop: 2,
   },
   subtitle: {
     color: colors.textMuted,

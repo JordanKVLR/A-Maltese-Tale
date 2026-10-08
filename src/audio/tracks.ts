@@ -68,7 +68,7 @@ export type TrackId =
   | "blackout"
   | "heal";
 
-// ─── Title: "A Maltese Tale" ────────────────────────────────────────────────────────────────
+// ─── Title: "Spirits of Malta" ──────────────────────────────────────────────────────────────
 // D major, unhurried. A guitar picks under a flute tune like the sun coming up over Dingli.
 
 const TITLE_CHORDS = ["D", "Bm", "G", "A", "D", "Bm", "G", "A", "G", "A", "F#m", "Bm", "G", "A", "D", "D"];

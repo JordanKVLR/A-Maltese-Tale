@@ -1,6 +1,6 @@
 # Project Melita — Game Specification & Implementation Blueprint (v1.0)
 
-**Title:** *A Maltese Tale* (region: **Melita**)
+**Title:** *Ħarsi: Spirits of Malta* (region: **Melita**)
 **Genre:** Turn-based creature-collector / JRPG-lite, mobile-first
 **Platforms:** iOS / Android
 **Status:** Pre-production spec — engine scaffold implemented in `src/`
@@ -210,7 +210,7 @@ Everything else in this document is original and clear to ship.
 ### 4.1 Screen Flow
 
 ```
-Splash → Title ("A Maltese Tale") →
+Splash → Title ("Ħarsi: Spirits of Malta") →
   (New Game: Name Entry → Region Select → Starter Quiz → Starter Reveal) / (Continue: Load Save)
    └─▶ MAP (Exploring — the default/root screen)
          ├─▶ "Menu" button / M key → HOME (party HUD + quick links)
@@ -230,7 +230,7 @@ Splash → Title ("A Maltese Tale") →
 Name Entry, Region Select, Starter Quiz, Starter Select (reveal/confirm), Home, Map, Battle View,
 Party, Codex, Bag, Shop, Help, and a shared Creature Detail screen all exist and are navigable end to
 end.
-The title screen's headline is **"A Maltese Tale"** (Project Melita is the dev-facing project
+The title screen's headline is **"Ħarsi: Spirits of Malta"** (Project Melita is the dev-facing project
 name, shown as a small subtitle). Region Select is a single-region confirmation screen rather than a
 real choice — Melita's three islands (section 2) are one region, not several to pick between; a
 second region would slot in here later.

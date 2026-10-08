@@ -1,4 +1,4 @@
-# Sound — A Maltese Tale
+# Sound — Ħarsi: Spirits of Malta
 
 All music and sound effects are **synthesised live in the browser** with the Web Audio API.
 There are no audio files: nothing to license, nothing to download, and the score lives in the
@@ -31,7 +31,7 @@ Every instrument is level-matched (measured in the browser) and tuned to within 
 
 | Piece | Where | Character |
 |---|---|---|
-| A Maltese Tale | Title and new-game screens | D major, 84 bpm — guitar and flute, sunrise over Dingli |
+| Ħarsi: Spirits of Malta | Title and new-game screens | D major, 84 bpm — guitar and flute, sunrise over Dingli |
 | Island Roads | Land stages | G Mixolydian, 112 bpm, swung — accordion walking tune |
 | Luzzu | Stages that open on water | A major in 6/8 — a painted boat rocking on the swell |
 | Bastions | Gym stages | D minor march, brass over a żaqq drone |

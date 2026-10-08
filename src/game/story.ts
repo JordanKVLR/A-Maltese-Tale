@@ -3,7 +3,7 @@ import type { TrainerCreature } from "./trainers";
 import { getStage } from "./zoneProgression";
 
 /**
- * The story of A Maltese Tale.
+ * The story of Ħarsi: Spirits of Malta.
  *
  * Deep under Paola, in the Ħal Saflieni Hypogeum, the temple builders left something behind:
  * the Crux, the old power of the islands, sleeping in the stones. The four Keepers — the gym

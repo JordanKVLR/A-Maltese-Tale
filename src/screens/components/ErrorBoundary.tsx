@@ -15,7 +15,7 @@ export class ErrorBoundary extends Component<{ children: ReactNode }, { error: E
   }
 
   componentDidCatch(error: Error, info: ErrorInfo) {
-    console.error("A Maltese Tale crashed:", error, info.componentStack);
+    console.error("Ħarsi crashed:", error, info.componentStack);
   }
 
   private reload = () => {
