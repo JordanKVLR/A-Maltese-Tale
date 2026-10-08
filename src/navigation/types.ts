@@ -6,6 +6,7 @@ export type CreatureDetailParams =
 
 export type RootStackParamList = {
   Title: undefined;
+  Intro: undefined;
   NameEntry: undefined;
   RegionSelect: undefined;
   StarterQuiz: undefined;

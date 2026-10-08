@@ -2,6 +2,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import type { RootStackParamList } from "./types";
 import { TitleScreen } from "../screens/TitleScreen";
+import { IntroScreen } from "../screens/IntroScreen";
 import { NameEntryScreen } from "../screens/NameEntryScreen";
 import { RegionSelectScreen } from "../screens/RegionSelectScreen";
 import { StarterQuizScreen } from "../screens/StarterQuizScreen";
@@ -29,6 +30,7 @@ export function RootNavigator() {
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.background } }}>
         <Stack.Screen name="Title" component={TitleScreen} />
+        <Stack.Screen name="Intro" component={IntroScreen} options={{ animation: "fade" }} />
         <Stack.Screen name="NameEntry" component={NameEntryScreen} />
         <Stack.Screen name="RegionSelect" component={RegionSelectScreen} />
         <Stack.Screen name="StarterQuiz" component={StarterQuizScreen} />

@@ -28,7 +28,8 @@ export function TitleScreen({ navigation }: Props) {
 
   function handleNewGame() {
     if (hasSave) resetGame();
-    navigation.navigate("NameEntry");
+    // The opening song first; it hands over to name entry when it ends or is skipped.
+    navigation.navigate("Intro");
   }
 
   function handleContinue() {
