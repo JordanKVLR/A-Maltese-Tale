@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b1a2e" />
+    <title>It All Started With a Ħarsi</title>
+    <meta name="description" content="The opening of A Maltese Tale: a two-minute music video, drawn live to the theme song." />
+    <style>
+      @font-face { font-family: "Cinzel"; font-weight: 700; font-display: block; src: url("../fonts/cinzel-700.woff2") format("woff2"); }
+      @font-face { font-family: "Cinzel"; font-weight: 800 900; font-display: block; src: url("../fonts/cinzel-800.woff2") format("woff2"); }
+      @font-face { font-family: "Alegreya Sans"; font-weight: 500; font-display: block; src: url("../fonts/alegreya-sans-500.woff2") format("woff2"); }
+      @font-face { font-family: "Alegreya Sans"; font-weight: 700; font-display: block; src: url("../fonts/alegreya-sans-700.woff2") format("woff2"); }
+      @font-face { font-family: "Alegreya Sans"; font-weight: 800 900; font-display: block; src: url("../fonts/alegreya-sans-800.woff2") format("woff2"); }
+      :root {
+        --ink: #0b1a2e;
+        --gold: #ffc93c;
+        --red: #c8102e;
+        --cream: #fff6e3;
+      }
+      html, body {
+        margin: 0;
+        height: 100%;
+        background: var(--ink);
+        color: var(--cream);
+        overflow: hidden;
+        overscroll-behavior: none;
+        touch-action: manipulation;
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        font-family: "Alegreya Sans", system-ui, sans-serif;
+      }
+      canvas { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
+      .layer {
+        position: fixed; inset: 0;
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        gap: 18px; padding: 24px 16px; box-sizing: border-box; text-align: center;
+        transition: opacity 0.5s ease;
+      }
+      .hidden { opacity: 0; pointer-events: none; }
+      .kicker { font-weight: 800; letter-spacing: 0.32em; text-transform: uppercase; font-size: 13px; color: var(--gold); }
+      h1 {
+        margin: 0; font-family: "Cinzel", Georgia, serif; font-weight: 800;
+        font-size: clamp(34px, 9vw, 84px); line-height: 1.02; color: var(--cream);
+        text-shadow: 0 4px 0 var(--red), 0 10px 30px rgba(0,0,0,0.6);
+      }
+      .sub { font-size: clamp(15px, 3.6vw, 20px); max-width: 30em; opacity: 0.85; line-height: 1.4; }
+      button {
+        font: inherit; font-weight: 800; cursor: pointer; border: 0;
+        border-radius: 999px; padding: 16px 30px; font-size: 19px;
+        color: var(--ink); background: var(--gold);
+        box-shadow: 0 6px 0 #b8860b, 0 14px 30px rgba(0,0,0,0.45);
+        transition: transform 0.12s ease, box-shadow 0.12s ease;
+        display: inline-flex; align-items: center; gap: 10px;
+      }
+      button:active { transform: translateY(4px); box-shadow: 0 2px 0 #b8860b, 0 6px 16px rgba(0,0,0,0.45); }
+      button.ghost { background: rgba(255,255,255,0.12); color: var(--cream); box-shadow: none; border: 2px solid rgba(255,255,255,0.35); padding: 12px 24px; font-size: 16px; }
+      button:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+      .play-icon { width: 0; height: 0; border-left: 16px solid currentColor; border-top: 10px solid transparent; border-bottom: 10px solid transparent; }
+      .row { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+      #skip {
+        position: fixed; right: max(14px, env(safe-area-inset-right)); top: max(14px, env(safe-area-inset-top));
+        padding: 9px 18px; font-size: 14px; z-index: 5;
+      }
+      #bar { position: fixed; left: 0; bottom: 0; height: 4px; width: 0; background: linear-gradient(90deg, var(--red), var(--gold)); z-index: 5; }
+      #loading { font-size: 14px; opacity: 0.7; letter-spacing: 0.1em; }
+      .note { font-size: 12px; opacity: 0.55; max-width: 28em; }
+    </style>
+  </head>
+  <body>
+    <canvas id="stage" aria-label="Animated music video for the song It All Started With a Ħarsi"></canvas>
+
+    <div id="start" class="layer">
+      <div class="kicker">A Maltese Tale · The Opening</div>
+      <h1>It All Started<br />With a Ħarsi</h1>
+      <div class="sub">Two minutes of Malta at full speed. Sound on!</div>
+      <div id="loading">Loading…</div>
+      <div class="row">
+        <button id="play" class="hidden" type="button"><span class="play-icon"></span>Play</button>
+      </div>
+      <div class="row"><button id="skip-start" class="ghost hidden" type="button">Skip intro</button></div>
+      <div class="note">Contains bright flashes.</div>
+    </div>
+
+    <div id="end" class="layer hidden">
+      <div class="row">
+        <button id="begin" type="button"><span class="play-icon"></span><span id="begin-label">Begin your tale</span></button>
+      </div>
+      <div class="row"><button id="again" class="ghost" type="button">Watch again</button></div>
+    </div>
+
+    <button id="skip" class="ghost hidden" type="button">Skip ›</button>
+    <div id="bar"></div>
+
+    <audio id="song" src="harsi-theme.mp3" preload="auto"></audio>
+    <script src="harsi-art.js"></script>
+    <script src="intro.js"></script>
+  </body>
+</html>
