@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <radialGradient id="portrait-abela-bg" cx="0.38" cy="0.32" r="0.75">
+      <stop offset="0" stop-color="#f7e9c8"/>
+      <stop offset="1" stop-color="#e2c08a"/>
+    </radialGradient>
+    <linearGradient id="portrait-abela-skin" x1="0.2" y1="0.1" x2="0.8" y2="0.9">
+      <stop offset="0" stop-color="#f3cea8"/>
+      <stop offset="1" stop-color="#e3b48c"/>
+    </linearGradient>
+    <linearGradient id="portrait-abela-shirt" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#4290b0"/>
+      <stop offset="1" stop-color="#2e6f8f"/>
+    </linearGradient>
+    <linearGradient id="portrait-abela-hair" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#6a4430"/>
+      <stop offset="1" stop-color="#4a2e1e"/>
+    </linearGradient>
+    <radialGradient id="portrait-abela-iris" cx="0.5" cy="0.7" r="0.6">
+      <stop offset="0" stop-color="#ad9485"/>
+      <stop offset="0.6" stop-color="#6a3c22"/>
+      <stop offset="1" stop-color="#452716"/>
+    </radialGradient>
+    <clipPath id="portrait-abela-clip"><circle cx="100" cy="100" r="91"/></clipPath>
+    <clipPath id="portrait-abela-face"><path d="M74 66C69 80 69 96 73 106C77 118 86 130 97 133C108 135 120 126 125 113C129 102 130 86 128 74C124 60 82 56 74 66Z"/></clipPath>
+  </defs>
+  <circle cx="100" cy="100" r="96" fill="url(#portrait-abela-bg)"/>
+  <g fill="none" stroke="#c9744a" stroke-width="3" opacity="0.28" stroke-linecap="round">
+    <path d="M36 74C36 66 46 64 48 72C50 82 34 84 30 72C26 58 44 50 54 58C62 64 62 78 54 86"/>
+    <path d="M164 70C164 62 174 62 175 69C176 77 163 79 160 69C157 57 172 51 180 58"/>
+  </g>
+  <g clip-path="url(#portrait-abela-clip)" stroke-linecap="round" stroke-linejoin="round">
+    <g transform="translate(-12 -6) scale(1.12)">
+      <!-- hair back and bun -->
+      <circle cx="128" cy="48" r="15" fill="url(#portrait-abela-hair)" stroke="#24140c" stroke-width="4"/>
+      <path d="M121 40C127 36 135 38 138 44M125 52C129 54 134 53 137 50" fill="none" stroke="#24140c" stroke-width="2"/>
+      <path d="M113 34L146 56" stroke="#7a4f12" stroke-width="7"/>
+      <path d="M113 34L146 56" stroke="#e0a53a" stroke-width="4"/>
+      <path d="M113 34L116.6 36.4" stroke="#e98a8a" stroke-width="4"/>
+      <path d="M70 92C62 70 72 44 100 42C124 40 140 56 137 84C136 98 132 110 128 118L72 112Z" fill="#4a2e1e" stroke="#24140c" stroke-width="4"/>
+      <!-- body -->
+      <path d="M22 200C26 166 46 150 78 143L124 141C156 146 176 164 180 200Z" fill="url(#portrait-abela-shirt)" stroke="#143448" stroke-width="4"/>
+      <path d="M142 150C162 160 172 176 174 200L132 200C140 184 144 168 142 150Z" fill="#22536f"/>
+      <path d="M56 200C58 184 62 172 68 162" fill="none" stroke="#143448" stroke-width="2.5"/>
+      <!-- pocket and trowel -->
+      <path d="M137 152L142 144L147 146L142 155Z" fill="#9a6a3a" stroke="#4a2c14" stroke-width="2"/>
+      <path d="M141 145L145 133C146 130 150 131 150 134L147 147Z" fill="#d4d8de" stroke="#4a4f5a" stroke-width="2"/>
+      <path d="M128 154L157 154L155 176C148 179 137 179 130 176Z" fill="#2e6f8f" stroke="#143448" stroke-width="2.5"/>
+      <path d="M128 154L157 154L156 161L129 161Z" fill="#22536f" stroke="#143448" stroke-width="2"/>
+      <!-- satchel strap -->
+      <path d="M70 146L84 142L124 200L104 200Z" fill="#8a5a32" stroke="#4a2c14" stroke-width="2.5"/>
+      <path d="M76 146L112 200" fill="none" stroke="#b07a48" stroke-width="1.5" stroke-dasharray="3 3"/>
+      <rect x="86" y="168" width="11" height="9" rx="2" fill="none" stroke="#e0a53a" stroke-width="2.5" transform="rotate(-34 91 172)"/>
+      <!-- neck -->
+      <path d="M91 122L89 146C96 154 110 154 117 146L116 122Z" fill="#e3b48c" stroke="#6e3b2a" stroke-width="3"/>
+      <path d="M90 124C98 136 110 138 116 132L117 142C108 142 96 138 90 132Z" fill="#c58d6c"/>
+      <!-- collar and neckerchief -->
+      <path d="M78 144L91 140L99 160L82 162Z" fill="#4290b0" stroke="#143448" stroke-width="2.5"/>
+      <path d="M126 142L115 140L106 160L124 162Z" fill="#2e6f8f" stroke="#143448" stroke-width="2.5"/>
+      <path d="M88 140C96 148 110 148 118 140L120 147C110 155 96 155 86 147Z" fill="#e0a53a" stroke="#7a4f12" stroke-width="2.5"/>
+      <path d="M112 147L124 152L120 166L110 156Z" fill="#b97f22" stroke="#7a4f12" stroke-width="2.5"/>
+      <path d="M110 148L118 160L111 170L105 154Z" fill="#e0a53a" stroke="#7a4f12" stroke-width="2.5"/>
+      <ellipse cx="111" cy="150" rx="4.5" ry="3.8" fill="#f0bc5a" stroke="#7a4f12" stroke-width="2.5"/>
+      <!-- face -->
+      <path d="M74 66C69 80 69 96 73 106C77 118 86 130 97 133C108 135 120 126 125 113C129 102 130 86 128 74C124 60 82 56 74 66Z" fill="url(#portrait-abela-skin)"/>
+      <g clip-path="url(#portrait-abela-face)">
+        <path d="M119 70C117 82 122 92 118 102C114 112 110 122 97 131L96 138L136 138L136 70Z" fill="#c58d6c"/>
+        <path d="M96 84C102 86 112 86 118 84L118 88C110 90 102 90 96 88Z" fill="#d49c78" opacity="0.6"/>
+        <ellipse cx="111" cy="107" rx="8" ry="4.5" fill="#e88a6a" opacity="0.4"/>
+        <ellipse cx="80" cy="107" rx="5" ry="4" fill="#e88a6a" opacity="0.3"/>
+        <ellipse cx="84" cy="80" rx="9" ry="5" fill="#fbe2c4" opacity="0.8"/>
+      </g>
+      <path d="M74 66C69 80 69 96 73 106C77 118 86 130 97 133C108 135 120 126 125 113C129 102 130 86 128 74" fill="none" stroke="#6e3b2a" stroke-width="4"/>
+      <!-- ear -->
+      <path d="M125 92C133 87 137 100 132 108C130 112 126 113 124 110Z" fill="#e3b48c" stroke="#6e3b2a" stroke-width="3"/>
+      <path d="M127 96C130 97 131 102 128 105" fill="none" stroke="#a8705a" stroke-width="2"/>
+      <circle cx="128" cy="114" r="2.4" fill="#e0a53a" stroke="#7a4f12" stroke-width="1.5"/>
+      <!-- front hair -->
+      <path d="M70 86C64 62 82 44 104 44C124 44 138 58 134 80C133 86 130 90 126 92C126 80 120 64 108 58C100 68 88 72 78 74C76 78 74 82 70 86Z" fill="url(#portrait-abela-hair)" stroke="#24140c" stroke-width="4"/>
+      <path d="M80 56C90 49 106 47 118 51" fill="none" stroke="#8a5a40" stroke-width="3"/>
+      <path d="M100 60C96 66 90 70 84 72M116 62C124 68 128 76 128 86" fill="none" stroke="#24140c" stroke-width="2"/>
+      <path d="M74 76C68 88 72 100 66 110" fill="none" stroke="#4a2e1e" stroke-width="3.5"/>
+      <!-- brows -->
+      <path d="M98 83C104 79 112 78 118 81" fill="none" stroke="#3a2214" stroke-width="3.5"/>
+      <path d="M76 81C79 75 85 74 90 77" fill="none" stroke="#3a2214" stroke-width="3"/>
+      <!-- eyes -->
+      <path d="M99 94C102 89 112 88 117 93C112 98 103 99 99 94Z" fill="#fffaf2"/>
+      <circle cx="108" cy="93.6" r="4.3" fill="url(#portrait-abela-iris)"/>
+      <circle cx="108" cy="93.6" r="2.2" fill="#1b1622"/>
+      <circle cx="106.4" cy="92" r="1.5" fill="#fff"/>
+      <circle cx="109.6" cy="95.4" r="0.7" fill="#fff"/>
+      <path d="M98 94C102 88 112 87 118 92" fill="none" stroke="#2a1a14" stroke-width="2.6"/>
+      <path d="M101 97.5C105 99.5 111 99.5 115 96.5" fill="none" stroke="#c58d6c" stroke-width="1.5"/>
+      <path d="M77 94C79 90 86 89 89.5 93C86 97 80 98 77 94Z" fill="#fffaf2"/>
+      <circle cx="84" cy="93.5" r="3.7" fill="url(#portrait-abela-iris)"/>
+      <circle cx="84" cy="93.5" r="1.9" fill="#1b1622"/>
+      <circle cx="82.7" cy="92.1" r="1.3" fill="#fff"/>
+      <path d="M76 93.5C79 89 86 88 90 92" fill="none" stroke="#2a1a14" stroke-width="2.4"/>
+      <!-- glasses -->
+      <g fill="none" stroke="#5a3418" stroke-width="2.4">
+        <ellipse cx="108" cy="94" rx="10.5" ry="9.5"/>
+        <ellipse cx="83.5" cy="94" rx="8" ry="9"/>
+        <path d="M91.5 92C94 90 96 90 97.6 92"/>
+        <path d="M118.4 92L126 95"/>
+      </g>
+      <path d="M101 90L105 86M103 92L108 87" stroke="#fff" stroke-width="1.5" opacity="0.7"/>
+      <!-- nose and mouth -->
+      <path d="M90 99C89 103 87 106 85.5 108C87.5 110 90.5 110 92.5 108.5" fill="none" stroke="#a8705a" stroke-width="2.2"/>
+      <path d="M85 116.5C91 124 100 124 105.5 115C98 117.5 91 118 85 116.5Z" fill="#9a3e34" stroke="#6e3b2a" stroke-width="2.2"/>
+      <path d="M88 118.5C93 120 98 119.5 102 117.5" fill="none" stroke="#fff" stroke-width="1.5" opacity="0.85"/>
+      <path d="M105.5 113.5C107 115 107 117 106 118" fill="none" stroke="#a8705a" stroke-width="1.5"/>
+    </g>
+  </g>
+  <circle cx="100" cy="100" r="93" fill="none" stroke="#e0a53a" stroke-width="6"/>
+  <circle cx="100" cy="100" r="96.5" fill="none" stroke="#7a4f12" stroke-width="2.5"/>
+  <circle cx="100" cy="100" r="89.8" fill="none" stroke="#7a4f12" stroke-width="1.5" opacity="0.6"/>
+</svg>

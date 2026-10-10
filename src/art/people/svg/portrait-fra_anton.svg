@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <radialGradient id="portrait-fra_anton-bg" cx="0.4" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#f8edd4"/>
+      <stop offset="1" stop-color="#d6b47a"/>
+    </radialGradient>
+    <linearGradient id="portrait-fra_anton-skin" x1="0.2" y1="0.1" x2="0.8" y2="0.9">
+      <stop offset="0" stop-color="#f6d6b4"/>
+      <stop offset="1" stop-color="#e2bc98"/>
+    </linearGradient>
+    <linearGradient id="portrait-fra_anton-coat" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#d63a40"/>
+      <stop offset="1" stop-color="#b8202a"/>
+    </linearGradient>
+    <radialGradient id="portrait-fra_anton-iris" cx="0.5" cy="0.7" r="0.6">
+      <stop offset="0" stop-color="#9badbf"/>
+      <stop offset="0.6" stop-color="#4a6a8a"/>
+      <stop offset="1" stop-color="#30455a"/>
+    </radialGradient>
+    <clipPath id="portrait-fra_anton-clip"><circle cx="100" cy="100" r="91"/></clipPath>
+    <clipPath id="portrait-fra_anton-face"><path d="M74 66C70 80 70 96 72 108C74 120 82 130 96 134C110 136 122 128 126 114C129 102 130 86 128 72C124 58 80 56 74 66Z"/></clipPath>
+  </defs>
+  <circle cx="100" cy="100" r="96" fill="url(#portrait-fra_anton-bg)"/>
+  <g clip-path="url(#portrait-fra_anton-clip)" stroke-linecap="round" stroke-linejoin="round">
+    <g opacity="0.35" stroke="#8a6a3a" stroke-width="1.5">
+      <path d="M8 60L60 60M8 118L52 118M146 60L192 60M150 118L192 118" stroke-width="3"/>
+      <path d="M14 62L22 62L22 116L14 116ZM24 70L30 70L30 116L24 116ZM32 64L40 64L40 116L32 116ZM42 74L48 74L48 116L42 116ZM152 66L160 66L160 116L152 116ZM162 62L170 62L170 116L162 116ZM172 72L178 72L178 116L172 116ZM180 64L188 64L188 116L180 116Z" fill="#a8483a"/>
+    </g>
+    <g transform="translate(-12 -6) scale(1.12)">
+      <!-- surcoat over mail -->
+      <path d="M22 200C26 168 46 150 78 144L124 142C156 148 176 166 180 200Z" fill="#8a8f9a" stroke="#3a3e48" stroke-width="4"/>
+      <path d="M28 200C32 172 48 154 72 148L132 148C156 154 172 172 176 200Z" fill="url(#portrait-fra_anton-coat)" stroke="#5a0e14" stroke-width="3.5"/>
+      <path d="M146 156C162 166 168 182 170 200L136 200C142 186 146 172 146 156Z" fill="#921820"/>
+      <path d="M40 182C44 174 50 168 58 164M36 158C42 152 50 148 60 146M140 146C150 148 158 152 164 158" fill="none" stroke="#5a5e6a" stroke-width="2" stroke-dasharray="2 3"/>
+      <!-- the eight-pointed cross -->
+      <g transform="translate(98 161) scale(0.6 0.66)">
+        <path d="M0 0L-9 -24L0 -17L9 -24ZM0 0L-9 24L0 17L9 24ZM0 0L-24 -9L-17 0L-24 9ZM0 0L24 -9L17 0L24 9Z" fill="#fff" stroke="#5a0e14" stroke-width="3.5"/>
+      </g>
+      <!-- mail coif lowered round the neck -->
+      <path d="M78 144C76 134 84 128 92 128L114 128C124 128 130 134 128 144C118 150 88 150 78 144Z" fill="#9aa0ac" stroke="#3a3e48" stroke-width="3"/>
+      <path d="M82 140C94 145 112 145 124 140M82 134C94 139 112 139 124 134" fill="none" stroke="#5a5e6a" stroke-width="1.8" stroke-dasharray="2 2.5"/>
+      <path d="M84 134C88 132 92 131 96 131" fill="none" stroke="#e4e8ee" stroke-width="2"/>
+      <!-- neck -->
+      <path d="M92 124L92 138C98 142 108 142 114 138L114 122Z" fill="#c09682" stroke="#5e3428" stroke-width="2.5"/>
+      <!-- quill behind the ear -->
+      <path d="M124 108L150 58" stroke="#8a7a5a" stroke-width="2"/>
+      <path d="M150 58C142 62 134 76 130 94C134 90 140 84 142 78C144 86 146 74 150 58Z" fill="#fbf8f0" stroke="#7a7466" stroke-width="2"/>
+      <path d="M150 58C152 68 150 80 144 90" fill="#e6e0d2" stroke="#7a7466" stroke-width="2"/>
+      <!-- face -->
+      <path d="M74 66C70 80 70 96 72 108C74 120 82 130 96 134C110 136 122 128 126 114C129 102 130 86 128 72C124 58 80 56 74 66Z" fill="url(#portrait-fra_anton-skin)"/>
+      <g clip-path="url(#portrait-fra_anton-face)">
+        <path d="M119 70C117 84 122 94 118 104C114 114 108 124 96 136L132 136L132 70Z" fill="#c4987e"/>
+        <path d="M96 84C104 82 112 82 118 85L118 90C110 88 104 88 96 90Z" fill="#b8907e" opacity="0.6"/>
+        <path d="M86 68C94 66 102 66 110 68M84 74C92 72 100 72 108 74" fill="none" stroke="#c4987e" stroke-width="1.6"/>
+        <ellipse cx="84" cy="80" rx="7" ry="3.5" fill="#fff0de" opacity="0.7"/>
+      </g>
+      <path d="M74 66C70 80 70 96 72 108C74 120 82 130 96 134C110 136 122 128 126 114C129 102 130 86 128 72" fill="none" stroke="#5e3428" stroke-width="4"/>
+      <!-- ear -->
+      <path d="M124 90C132 85 136 98 131 106C129 110 125 110 123 108Z" fill="#e2bc98" stroke="#5e3428" stroke-width="3"/>
+      <path d="M126 94C129 95 130 100 127 103" fill="none" stroke="#a8806e" stroke-width="2"/>
+      <!-- short hair, greying at the temples -->
+      <path d="M72 82C68 62 80 44 100 44C120 44 134 56 132 82C130 76 128 70 125 66C122 58 114 54 108 58C104 54 98 54 94 57C88 53 80 58 78 66C76 70 74 76 72 82Z" fill="#5a4a3a" stroke="#2a2018" stroke-width="3.5"/>
+      <path d="M90 49C98 47 108 47 116 50" fill="none" stroke="#7a6a58" stroke-width="2.5"/>
+      <path d="M125 68C128 72 130 76 130.5 82M75 76C76 72 77 69 79 66" fill="none" stroke="#c8c4bc" stroke-width="2.5"/>
+      <!-- beard -->
+      <path d="M71 104C73 122 84 138 99 140C114 140 125 128 127 110C123 118 118 126 110 128C104 130 96 130 90 127C82 124 76 116 71 104Z" fill="#5a4a3a" stroke="#2a2018" stroke-width="3"/>
+      <path d="M95 134C98 136 102 136 105 134" fill="none" stroke="#b0a89e" stroke-width="2.2"/>
+      <path d="M86 117C92 112 98 113 100 115C104 112 112 112 116 116C110 120 104 119 100 118C96 120 90 120 86 117Z" fill="#6a5846" stroke="#2a2018" stroke-width="2.2"/>
+      <path d="M92 123C96 124 102 123.5 107 120.5C108.5 119.5 109 118.5 109 117.5" fill="none" stroke="#5e2a22" stroke-width="2.4"/><path d="M94 125C98 126.5 102 126.5 105 125" fill="none" stroke="#c07a68" stroke-width="2"/>
+      <!-- brows: one raised, keen -->
+      <path d="M97 88C103 85 111 84 119 86" fill="none" stroke="#3a2c20" stroke-width="4"/>
+      <path d="M77 83C80 78 86 77 91 81" fill="none" stroke="#3a2c20" stroke-width="3.6"/>
+      <!-- eyes -->
+      <path d="M99 95C102 91 111 90 116 93.5C112 98 103 99 99 95Z" fill="#fffaf2"/>
+      <circle cx="107" cy="94.6" r="3.9" fill="url(#portrait-fra_anton-iris)"/>
+      <circle cx="107" cy="94.6" r="1.9" fill="#1b1622"/>
+      <circle cx="105.6" cy="93.2" r="1.4" fill="#fff"/>
+      <circle cx="108.4" cy="96.2" r="0.6" fill="#fff"/>
+      <path d="M98 94.5C102 90.5 111 89.5 117 93" fill="none" stroke="#2a1a14" stroke-width="2.8"/>
+      <path d="M100 98.5C105 100.5 111 100 115 97" fill="none" stroke="#c4987e" stroke-width="1.5"/>
+      <path d="M78 94.5C80 91.5 86 91 89.5 94C86 97.5 80 98 78 94.5Z" fill="#fffaf2"/>
+      <circle cx="84" cy="94.4" r="3.3" fill="url(#portrait-fra_anton-iris)"/>
+      <circle cx="84" cy="94.4" r="1.6" fill="#1b1622"/>
+      <circle cx="82.9" cy="93.3" r="1.1" fill="#fff"/>
+      <path d="M77 94C80 91 86 90.5 90 93" fill="none" stroke="#2a1a14" stroke-width="2.6"/>
+      <!-- straight nose -->
+      <path d="M91 92C91 98 89 103 86 108C87 111 91 111 94 109.5" fill="none" stroke="#9a6a54" stroke-width="2.3"/>
+    </g>
+    <!-- a sealed scroll from the archive -->
+    <path d="M54 200C54 184 58 170 64 160L82 164C78 176 76 188 78 200Z" fill="#8a8f9a" stroke="#3a3e48" stroke-width="3.5"/>
+    <path d="M60 182C64 184 70 184 76 182M58 192C62 194 70 194 76 192" fill="none" stroke="#5a5e6a" stroke-width="1.8" stroke-dasharray="2 2.5"/>
+    <g transform="rotate(-30 64 150)">
+      <rect x="40" y="143" width="48" height="14" rx="4" fill="#f4e6c4" stroke="#6a4a24" stroke-width="3"/>
+      <path d="M44 147L84 147" stroke="#fffaf0" stroke-width="2"/>
+      <ellipse cx="40" cy="150" rx="3.5" ry="7" fill="#e6d2a4" stroke="#6a4a24" stroke-width="2.5"/>
+      <ellipse cx="88" cy="150" rx="3.5" ry="7" fill="#e6d2a4" stroke="#6a4a24" stroke-width="2.5"/>
+    </g>
+    <path d="M54 160C52 156 54 152 58 152L70 150C74 150 76 152 75 156C77 158 77 162 74 164L60 166C56 166 54 164 54 160Z" fill="#e2bc98" stroke="#5e3428" stroke-width="3"/>
+    <path d="M57 158L74 155M58 162L74 159" fill="none" stroke="#a8806e" stroke-width="1.6"/>
+    <path d="M78 140L80 152L76 150L74 156" fill="none" stroke="#b8202a" stroke-width="2.5"/>
+    <circle cx="77" cy="138" r="4.5" fill="#b8202a" stroke="#5a0e14" stroke-width="2"/>
+    <circle cx="76" cy="137" r="1.3" fill="#e86a6a"/>
+  </g>
+  <circle cx="100" cy="100" r="93" fill="none" stroke="#ffffff" stroke-width="6"/>
+  <circle cx="100" cy="100" r="96.5" fill="none" stroke="#7a1a20" stroke-width="2.5"/>
+  <circle cx="100" cy="100" r="89.8" fill="none" stroke="#7a1a20" stroke-width="1.5" opacity="0.6"/>
+</svg>

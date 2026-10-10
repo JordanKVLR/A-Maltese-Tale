@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <radialGradient id="portrait-sansuna-bg" cx="0.5" cy="0.35" r="0.75">
+      <stop offset="0" stop-color="#7a4e86"/>
+      <stop offset="1" stop-color="#22163a"/>
+    </radialGradient>
+    <radialGradient id="portrait-sansuna-sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fff4c4"/>
+      <stop offset="0.5" stop-color="#f6c45a" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#e0a53a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="portrait-sansuna-skin" x1="0.2" y1="0.1" x2="0.8" y2="0.9">
+      <stop offset="0" stop-color="#dca47c"/>
+      <stop offset="1" stop-color="#c8906a"/>
+    </linearGradient>
+    <linearGradient id="portrait-sansuna-veil" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#a866ac"/>
+      <stop offset="1" stop-color="#7a3c80"/>
+    </linearGradient>
+    <radialGradient id="portrait-sansuna-iris" cx="0.5" cy="0.7" r="0.6">
+      <stop offset="0" stop-color="#f6dcb0"/>
+      <stop offset="0.6" stop-color="#e8a83a"/>
+      <stop offset="1" stop-color="#976d26"/>
+    </radialGradient>
+    <clipPath id="portrait-sansuna-clip"><circle cx="100" cy="100" r="91"/></clipPath>
+    <clipPath id="portrait-sansuna-face"><path d="M76 66C71 80 71 96 74 108C78 120 86 130 98 134C110 136 120 128 124 116C128 104 128 86 126 72C122 58 82 56 76 66Z"/></clipPath>
+  </defs>
+  <circle cx="100" cy="100" r="96" fill="url(#portrait-sansuna-bg)"/>
+  <g clip-path="url(#portrait-sansuna-clip)" stroke-linecap="round" stroke-linejoin="round">
+    <!-- the temple doorway and the equinox sun -->
+    <path d="M28 200L28 40L172 40L172 200L144 200L144 64L56 64L56 200Z" fill="#6a4a5e" stroke="#3a2438" stroke-width="2.5" opacity="0.8"/>
+    <path d="M28 52L172 52M40 64L40 200M160 64L160 200" stroke="#3a2438" stroke-width="2" opacity="0.6"/>
+    <path d="M56 64L144 64L144 200L56 200Z" fill="#8a5a70" opacity="0.6"/><circle cx="100" cy="80" r="70" fill="url(#portrait-sansuna-sun)"/>
+    <g transform="translate(-12 -6) scale(1.12)">
+      <!-- robe -->
+      <path d="M26 200C30 170 48 154 78 148L124 146C154 152 172 170 176 200Z" fill="#5e2e64" stroke="#2a1030" stroke-width="4"/>
+      <!-- veil, falling to the shoulders -->
+      <path d="M48 200C42 160 48 112 58 82C64 56 82 40 104 40C126 40 142 54 148 78C156 112 158 160 154 200Z" fill="url(#portrait-sansuna-veil)" stroke="#3a1440" stroke-width="4"/>
+      <path d="M136 64C148 90 152 140 150 200L134 200C140 150 140 100 136 64Z" fill="#6a3070"/>
+      <path d="M62 84C66 64 80 48 98 44" fill="none" stroke="#c88ccc" stroke-width="2.5"/>
+      <!-- spiral hem -->
+      <path d="M52 186C64 176 80 172 86 182M150 186C138 176 122 172 116 182" fill="none" stroke="#e0a53a" stroke-width="3"/>
+      <g fill="none" stroke="#e0a53a" stroke-width="2">
+        <path d="M58 168C58 164 63 164 63 168C63 172 55 173 55 167C55 160 66 159 67 166"/>
+        <path d="M142 168C142 164 147 164 147 168C147 172 139 173 139 167C139 160 150 159 151 166"/>
+      </g>
+      <!-- opening of the veil -->
+      <path d="M70 128C62 102 66 72 84 60C96 52 114 54 124 62C138 76 138 106 130 130C118 142 82 142 70 128Z" fill="#3e1a46"/>
+      <path d="M72 124C64 100 68 72 84 62C96 54 114 56 124 64C136 78 136 104 130 126" fill="none" stroke="#e0a53a" stroke-width="2" stroke-dasharray="1 5"/>
+      <!-- long neck -->
+      <path d="M92 124L91 152L113 152L114 124Z" fill="#c8906a" stroke="#5a2e1e" stroke-width="3"/>
+      <path d="M91 128C99 138 108 140 114 134L114 146C106 146 98 142 91 136Z" fill="#a06a52"/>
+      <!-- spiral pendant -->
+      <path d="M88 146C94 156 108 156 116 146" fill="none" stroke="#5a2e1e" stroke-width="1.8"/>
+      <circle cx="102" cy="156" r="7" fill="#e0a53a" stroke="#7a4f12" stroke-width="2.2"/>
+      <path d="M102 156C102 154 105 154 105 156.5C105 159 100 160 99 157C98 153 103 151 106 153" fill="none" stroke="#7a4f12" stroke-width="1.5"/>
+      <!-- hair, centre-parted -->
+      <path d="M72 120C66 96 70 70 86 62C94 58 108 58 116 62C132 70 134 98 130 124L120 124L80 124Z" fill="#1d1d1d" stroke="#000" stroke-width="3"/>
+      <!-- face -->
+      <path d="M76 66C71 80 71 96 74 108C78 120 86 130 98 134C110 136 120 128 124 116C128 104 128 86 126 72C122 58 82 56 76 66Z" fill="url(#portrait-sansuna-skin)"/>
+      <g clip-path="url(#portrait-sansuna-face)">
+        <path d="M121 72C119 84 123 94 119 104C115 114 110 124 98 134L134 136L134 72Z" fill="#b07a5c"/>
+        <ellipse cx="86" cy="80" rx="8" ry="4" fill="#f0c098" opacity="0.6"/>
+      </g>
+      <path d="M76 66C71 80 71 96 74 108C78 120 86 130 98 134C110 136 120 128 124 116C128 104 128 86 126 72" fill="none" stroke="#5a2e1e" stroke-width="4"/>
+      <!-- front hair framing the face -->
+      <path d="M73 104C69 84 74 66 90 61C96 59 100 60 101 64C94 66 86 72 82 80C78 88 76 96 73 104ZM127 106C130 88 126 70 112 62C108 60 104 60 102 64C110 67 118 74 121 84C123 92 125 98 127 106Z" fill="#1d1d1d" stroke="#000" stroke-width="2.5"/><path d="M80 76C84 70 90 66 96 64M110 65C115 68 119 72 121 78" fill="none" stroke="#5a4a6a" stroke-width="2"/>
+      <!-- diadem with the temple spiral -->
+      <path d="M78 74C90 68 112 68 124 74L124 78C112 72 90 72 78 79Z" fill="#e0a53a" stroke="#7a4f12" stroke-width="2"/>
+      <circle cx="101" cy="69" r="6" fill="#f0bc5a" stroke="#7a4f12" stroke-width="2"/>
+      <path d="M101 69C101 67 103.5 67 103.5 69C103.5 71.5 99 72 98.5 69C98 66 102 64.5 104.5 66" fill="none" stroke="#7a4f12" stroke-width="1.4"/>
+      <!-- ochre paint -->
+      <g fill="#c8423a"><circle cx="106" cy="106" r="1.4"/><circle cx="110" cy="107" r="1.4"/><circle cx="114" cy="106" r="1.4"/><circle cx="82" cy="106" r="1.2"/><circle cx="85" cy="107" r="1.2"/></g>
+      <!-- calm brows -->
+      <path d="M98 85C104 83 111 83 117 85" fill="none" stroke="#1d1d1d" stroke-width="2.8"/>
+      <path d="M79 85C82 83 86 83 90 84" fill="none" stroke="#1d1d1d" stroke-width="2.5"/>
+      <!-- half-closed eyes, glowing gold -->
+      <path d="M99 96C102 93 111 92 116 94.5C112 98.5 103 99 99 96Z" fill="#fff4dc"/>
+      <circle cx="107.6" cy="96" r="3.8" fill="url(#portrait-sansuna-iris)"/>
+      <circle cx="107.6" cy="96" r="1.7" fill="#5a2a10"/>
+      <circle cx="106.4" cy="95" r="1.2" fill="#fff"/>
+      <path d="M97 95C101 89 111 89 118 92.5L118 86L97 86Z" fill="#cc9670"/>
+      <path d="M98 95.5C102 92.5 111 92 117.5 94.5C119 94 120 93 121 91.5" fill="none" stroke="#1a0e0e" stroke-width="2.8"/>
+      <path d="M100 92C104 90 111 90 115 91.5" fill="none" stroke="#7a4a8a" stroke-width="2" opacity="0.8"/>
+      <path d="M79 95.5C81 93 87 92.5 90 94.5C87 98 81 98.5 79 95.5Z" fill="#fff4dc"/>
+      <circle cx="85" cy="95.4" r="3.2" fill="url(#portrait-sansuna-iris)"/>
+      <circle cx="85" cy="95.4" r="1.4" fill="#5a2a10"/>
+      <circle cx="84" cy="94.6" r="1" fill="#fff"/>
+      <path d="M77 94C80 90 86 90 91 92.5L91 87L77 87Z" fill="#d29c74"/>
+      <path d="M90.5 94C87 92.5 81 93 78.5 95.5C77.5 95 76.5 94 76 92.5" fill="none" stroke="#1a0e0e" stroke-width="2.6"/>
+      <!-- nose and full lips -->
+      <path d="M91 100C90 104 88 107 87 109C89 111 92 111 94 109.5" fill="none" stroke="#8a5a40" stroke-width="2.2"/>
+      <path d="M88 118C92 116 96 116 98 117C100 116 104 116 107 118C103 120 93 120 88 118Z" fill="#8a3a3a" stroke="#5a2e1e" stroke-width="1.8"/>
+      <path d="M88 118C94 124 102 124 107 118C101 120 94 120 88 118Z" fill="#a8504a" stroke="#5a2e1e" stroke-width="1.8"/>
+      <path d="M94 121C97 122 100 122 102 121" fill="none" stroke="#e08a7a" stroke-width="1.4"/>
+    </g>
+  </g>
+  <circle cx="100" cy="100" r="93" fill="none" stroke="#e0a53a" stroke-width="6"/>
+  <circle cx="100" cy="100" r="96.5" fill="none" stroke="#6a4410" stroke-width="2.5"/>
+  <circle cx="100" cy="100" r="89.8" fill="none" stroke="#6a4410" stroke-width="1.5" opacity="0.6"/>
+</svg>

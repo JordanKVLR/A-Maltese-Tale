@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="portrait-xprunara-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6ead2"/>
+      <stop offset="0.55" stop-color="#b8cfe2"/>
+      <stop offset="1" stop-color="#6e94bc"/>
+    </linearGradient>
+    <linearGradient id="portrait-xprunara-skin" x1="0.2" y1="0.1" x2="0.8" y2="0.9">
+      <stop offset="0" stop-color="#f2caa4"/>
+      <stop offset="1" stop-color="#e3b48c"/>
+    </linearGradient>
+    <linearGradient id="portrait-xprunara-coat" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#2c5090"/>
+      <stop offset="1" stop-color="#1f3a6a"/>
+    </linearGradient>
+    <linearGradient id="portrait-xprunara-gold" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0" stop-color="#ffe48a"/>
+      <stop offset="1" stop-color="#d8a82a"/>
+    </linearGradient>
+    <radialGradient id="portrait-xprunara-iris" cx="0.5" cy="0.7" r="0.6">
+      <stop offset="0" stop-color="#93b5d8"/>
+      <stop offset="0.6" stop-color="#3a78b8"/>
+      <stop offset="1" stop-color="#264e78"/>
+    </radialGradient>
+    <clipPath id="portrait-xprunara-clip"><circle cx="100" cy="100" r="91"/></clipPath>
+    <clipPath id="portrait-xprunara-face"><path d="M76 66C71 80 71 96 74 108C78 120 86 130 97 134C108 136 120 128 124 116C128 104 128 86 126 72C122 58 82 56 76 66Z"/></clipPath>
+  </defs>
+  <circle cx="100" cy="100" r="96" fill="url(#portrait-xprunara-bg)"/>
+  <g clip-path="url(#portrait-xprunara-clip)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M0 134L22 134L22 122L34 122L34 112L52 112L52 124L62 128L62 140L0 140ZM138 140L138 126L150 120L150 108L156 100L162 108L162 120L176 120L176 128L200 128L200 140Z" fill="#9ab4cc" opacity="0.8"/>
+    <path d="M0 146C20 142 40 148 60 144M140 146C160 142 180 148 200 144" fill="none" stroke="#e8f0f6" stroke-width="2" opacity="0.6"/>
+    <g transform="translate(-6 -10) scale(1.06)">
+      <!-- low bun of white hair -->
+      <circle cx="132" cy="112" r="11" fill="#f4f4f4" stroke="#7a7a8a" stroke-width="3"/>
+      <path d="M126 108C130 105 136 106 138 110" fill="none" stroke="#c4c4d0" stroke-width="2"/>
+      <g transform="translate(0 -6)"><!-- coat -->
+      <path d="M22 200C26 168 46 150 78 144L124 142C156 148 176 166 180 200Z" fill="url(#portrait-xprunara-coat)" stroke="#0e1e3a" stroke-width="4"/>
+      <path d="M142 152C160 162 170 178 172 200L132 200C140 186 144 168 142 152Z" fill="#172c52"/>
+      <!-- gold-faced lapels -->
+      <path d="M80 148L94 150L92 200L64 200C68 180 72 162 80 148Z" fill="#2c5090" stroke="#0e1e3a" stroke-width="2.5"/>
+      <path d="M124 146L110 150L112 200L142 200C138 180 132 160 124 146Z" fill="#1f3a6a" stroke="#0e1e3a" stroke-width="2.5"/>
+      <path d="M82 154L92 156L90 200M122 152L112 156L114 200" fill="none" stroke="#f0c94a" stroke-width="3"/>
+      <g fill="url(#portrait-xprunara-gold)" stroke="#7a5a0c" stroke-width="1.5"><circle cx="80" cy="172" r="2.8"/><circle cx="78" cy="186" r="2.8"/></g>
+      <!-- medals -->
+      <path d="M116 166L136 164L136 170L116 172Z" fill="#c8423a" stroke="#4a1010" stroke-width="1.5"/>
+      <path d="M122 165L122 171M130 164.5L130 170.5" stroke="#fff" stroke-width="2.5"/>
+      <path d="M118 174L124 174L124 182L118 182ZM130 173L136 173L136 181L130 181Z" fill="#2e6fbf" stroke="#0e1e3a" stroke-width="1.5"/>
+      <path d="M121 182L121 186M133 181L133 185" stroke="#7a5a0c" stroke-width="1.5"/>
+      <path d="M121 186L123.5 191L121 196L118.5 191Z" fill="url(#portrait-xprunara-gold)" stroke="#7a5a0c" stroke-width="1.5"/>
+      <circle cx="133" cy="190" r="4.5" fill="url(#portrait-xprunara-gold)" stroke="#7a5a0c" stroke-width="1.5"/>
+      <!-- epaulettes -->
+      <path d="M136 148C148 142 166 146 172 156C166 162 150 162 138 158Z" fill="url(#portrait-xprunara-gold)" stroke="#7a5a0c" stroke-width="2.5"/>
+      <path d="M140 158L138 176M146 160L145 179M152 161L152 180M158 161L159 179M164 160L166 176M169 158L172 172" stroke="#d8a82a" stroke-width="3"/>
+      <path d="M140 158L138 176M146 160L145 179M152 161L152 180M158 161L159 179M164 160L166 176" stroke="#7a5a0c" stroke-width="0.8" opacity="0.6"/>
+      <path d="M144 149C152 147 160 148 166 151" fill="none" stroke="#fff4c0" stroke-width="1.8"/>
+      <path d="M68 152C60 148 48 152 44 160C50 164 60 162 70 158Z" fill="url(#portrait-xprunara-gold)" stroke="#7a5a0c" stroke-width="2.5"/>
+      <path d="M48 162L46 176M54 163L53 178M60 162L60 177M66 160L67 174" stroke="#d8a82a" stroke-width="3"/>
+      <!-- neck, white stock, high gold collar -->
+      <path d="M92 122L92 146C98 150 108 150 114 146L114 122Z" fill="#e3b48c" stroke="#6e3b2a" stroke-width="3"/>
+      <path d="M92 126C99 136 108 138 114 132L114 142C107 143 99 139 92 134Z" fill="#c08c70"/>
+      <path d="M92 142C98 148 108 148 114 142L116 152L90 152Z" fill="#f8f6f0" stroke="#6a6a78" stroke-width="2"/>
+      <path d="M84 150C82 140 86 134 92 132L92 152ZM122 148C124 138 120 132 114 130L114 152Z" fill="#1f3a6a" stroke="#0e1e3a" stroke-width="2.5"/>
+      <path d="M85 140C88 141 90 143 90 146M121 138C118 139 116 141 116 144" fill="none" stroke="#f0c94a" stroke-width="2.2"/>
+      </g><!-- ear and pearl -->
+      <path d="M123 92C131 87 135 100 130 108C128 112 124 112 122 110Z" fill="#e3b48c" stroke="#6e3b2a" stroke-width="3"/>
+      <circle cx="127" cy="114" r="2.6" fill="#fbf8f0" stroke="#8a8a96" stroke-width="1.4"/>
+      <!-- face -->
+      <path d="M76 66C71 80 71 96 74 108C78 120 86 130 97 134C108 136 120 128 124 116C128 104 128 86 126 72C122 58 82 56 76 66Z" fill="url(#portrait-xprunara-skin)"/>
+      <g clip-path="url(#portrait-xprunara-face)">
+        <path d="M119 70C117 82 122 92 118 102C114 112 110 122 98 134L134 136L134 70Z" fill="#c8967a"/>
+        
+        <ellipse cx="110" cy="105" rx="5.5" ry="3" fill="#e07a6a" opacity="0.2"/>
+      </g>
+      <path d="M76 66C71 80 71 96 74 108C78 120 86 130 97 134C108 136 120 128 124 116C128 104 128 86 126 72" fill="none" stroke="#6e3b2a" stroke-width="4"/>
+      <!-- age lines -->
+      <path d="M118 92L123 90M118 96L123 97M78 92L75 90" fill="none" stroke="#a8705a" stroke-width="1.5"/><path d="M103 110C106 112 108 114 109 117M88 111C87 113 87 115 88 117" fill="none" stroke="#b88068" stroke-width="1.4" opacity="0.8"/>
+      <!-- white hair swept back -->
+      <path d="M74 92C70 76 76 64 90 60C104 56 120 60 128 72C130 80 130 88 128 96C126 86 122 80 116 76C110 72 100 70 92 72C84 76 78 84 74 92Z" fill="#f4f4f4" stroke="#7a7a8a" stroke-width="3"/>
+      <path d="M84 70C94 66 108 66 118 72M112 74C118 78 122 84 124 90M80 78C84 74 90 72 96 72" fill="none" stroke="#c4c4d0" stroke-width="2"/><path d="M76 86C74 90 74 94 76 98" fill="none" stroke="#f4f4f4" stroke-width="3"/>
+      <!-- brows -->
+      <path d="M98 84C104 80 112 79 118 82" fill="none" stroke="#9a9aa8" stroke-width="3.2"/>
+      <path d="M78 84C81 82 86 82 90 84" fill="none" stroke="#9a9aa8" stroke-width="2.8"/>
+      <!-- sharp, knowing eyes -->
+      <path d="M99 94C102 90 111 89 116 92.5C112 97 103 97.5 99 94Z" fill="#fffaf2"/>
+      <circle cx="107.6" cy="93.4" r="3.8" fill="url(#portrait-xprunara-iris)"/>
+      <circle cx="107.6" cy="93.4" r="1.8" fill="#1b1622"/>
+      <circle cx="106.2" cy="92.1" r="1.3" fill="#fff"/>
+      <circle cx="109" cy="95" r="0.6" fill="#fff"/>
+      <path d="M97 93C101 89 109 88.5 117 91.5L117 86L97 86Z" fill="#eec29c"/>
+      <path d="M98 93.5C102 90 110 89.5 117 92C118.5 91.5 119.5 90.5 120.5 89" fill="none" stroke="#2a1a14" stroke-width="2.8"/>
+      <path d="M101 97C105 98.5 111 98 115 95.5" fill="none" stroke="#c8967a" stroke-width="1.5"/>
+      <path d="M79 94C81 91 87 90.5 90 93C87 96.5 81 97 79 94Z" fill="#fffaf2"/>
+      <circle cx="85" cy="93.6" r="3.2" fill="url(#portrait-xprunara-iris)"/>
+      <circle cx="85" cy="93.6" r="1.5" fill="#1b1622"/>
+      <circle cx="84" cy="92.6" r="1" fill="#fff"/>
+      <path d="M91 92.5C87 90 81 90.5 78.5 93.5C77.5 93 76.5 92 76 90.5" fill="none" stroke="#2a1a14" stroke-width="2.6"/>
+      <!-- nose and a knowing half-smile -->
+      <path d="M91 98C90 103 88 106 86.5 108C88 110.5 91.5 110.5 93.5 109" fill="none" stroke="#a8705a" stroke-width="2.2"/>
+      <path d="M89 118C95 123 102 121.5 106 115.5C101 118 95 119 89 118Z" fill="#b85a50"/><path d="M89 118C95 120 101 119 106 115.5" fill="none" stroke="#7a3a2e" stroke-width="2.5"/>
+      <path d="M106 115.5C107.5 114.5 108 113 108 111.5" fill="none" stroke="#a8705a" stroke-width="1.6"/>
+      
+      <!-- bicorne, worn athwart -->
+      <path d="M42 72C52 52 76 36 102 35C128 34 150 46 162 66C152 64 140 66 130 72C112 64 90 64 74 72C64 70 52 70 42 72Z" fill="#1a3160" stroke="#0a142a" stroke-width="4"/>
+      <path d="M128 40C146 46 158 56 162 66C152 64 140 66 130 72C136 60 136 50 128 40Z" fill="#132648"/>
+      <path d="M46 69C56 52 78 39 102 38C128 37 148 48 158 63" fill="none" stroke="#f0c94a" stroke-width="3.5"/>
+      <path d="M58 56C70 46 86 42 100 41" fill="none" stroke="#3e64a0" stroke-width="2"/>
+      <path d="M110 40L118 66" stroke="#f0c94a" stroke-width="5"/>
+      <path d="M110 40L118 66" stroke="#7a5a0c" stroke-width="1.2" stroke-dasharray="2 2"/>
+      <circle cx="117" cy="62" r="5" fill="url(#portrait-xprunara-gold)" stroke="#7a5a0c" stroke-width="2"/>
+      <path d="M74 72C90 64 112 64 130 72" fill="none" stroke="#0a142a" stroke-width="3"/>
+    </g>
+  </g>
+  <circle cx="100" cy="100" r="93" fill="none" stroke="#f0c94a" stroke-width="6"/>
+  <circle cx="100" cy="100" r="96.5" fill="none" stroke="#8a6a10" stroke-width="2.5"/>
+  <circle cx="100" cy="100" r="89.8" fill="none" stroke="#8a6a10" stroke-width="1.5" opacity="0.6"/>
+</svg>

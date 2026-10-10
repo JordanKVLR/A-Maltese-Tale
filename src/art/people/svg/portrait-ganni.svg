@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <radialGradient id="portrait-ganni-bg" cx="0.35" cy="0.25" r="0.85">
+      <stop offset="0" stop-color="#fdf3cc"/>
+      <stop offset="1" stop-color="#e9c46c"/>
+    </radialGradient>
+    <linearGradient id="portrait-ganni-skin" x1="0.2" y1="0.1" x2="0.8" y2="0.9">
+      <stop offset="0" stop-color="#e8b88a"/>
+      <stop offset="1" stop-color="#d49e70"/>
+    </linearGradient>
+    <linearGradient id="portrait-ganni-cap" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#7a6648"/>
+      <stop offset="1" stop-color="#55452e"/>
+    </linearGradient>
+    <clipPath id="portrait-ganni-clip"><circle cx="100" cy="100" r="91"/></clipPath>
+    <clipPath id="portrait-ganni-face"><path d="M70 70C64 84 64 100 68 112C72 124 82 134 98 136C114 136 126 128 130 114C134 100 134 84 130 70C124 58 76 58 70 70Z"/></clipPath>
+  </defs>
+  <circle cx="100" cy="100" r="96" fill="url(#portrait-ganni-bg)"/>
+  <g clip-path="url(#portrait-ganni-clip)">
+    <path d="M0 132L200 132L200 200L0 200Z" fill="#c9a258" opacity="0.6"/>
+    <g fill="#ecca82" stroke="#b88e48" stroke-width="1.5" stroke-linejoin="round">
+      <path d="M6 134L22 131L28 140L18 147L6 144ZM26 131L44 133L46 143L30 142ZM50 134L64 132L66 144L52 145ZM8 148L20 149L24 160L10 162ZM28 146L44 146L42 158L26 158ZM48 148L60 149L58 160L46 159Z"/>
+      <path d="M138 134L152 132L156 142L140 144ZM158 131L174 133L176 144L160 145ZM178 134L194 136L194 146L180 146ZM144 148L160 149L158 160L142 158ZM164 148L178 150L180 160L166 161ZM182 150L194 150L194 160L184 161Z"/>
+    </g>
+  </g>
+  <g clip-path="url(#portrait-ganni-clip)" stroke-linecap="round" stroke-linejoin="round">
+    <g transform="translate(-12 -8) scale(1.12)">
+      <!-- body: shirt and waistcoat -->
+      <path d="M18 200C20 168 42 152 76 146L126 146C160 152 182 168 184 200Z" fill="#e8d9b8" stroke="#6a5a3a" stroke-width="4"/>
+      <path d="M20 200C22 172 40 156 64 150L86 200ZM182 200C180 172 162 156 138 150L116 200Z" fill="#6b5a3a" stroke="#33281a" stroke-width="3.5"/>
+      <path d="M150 158C166 168 174 182 176 200L140 200C146 186 150 172 150 158Z" fill="#54462c"/>
+      <path d="M86 200L64 150M116 200L138 150" fill="none" stroke="#8a7650" stroke-width="2"/>
+      <circle cx="76" cy="176" r="2.6" fill="#c8b48a" stroke="#33281a" stroke-width="1.5"/>
+      <circle cx="82" cy="192" r="2.6" fill="#c8b48a" stroke="#33281a" stroke-width="1.5"/>
+      <!-- wheat in the waistcoat pocket -->
+      <path d="M144 170L152 140M148 170L160 144M140 170L142 142" fill="none" stroke="#a8862e" stroke-width="2"/>
+      <g fill="#f0cc5a" stroke="#a8862e" stroke-width="1.5">
+        <ellipse cx="152" cy="140" rx="2.6" ry="5" transform="rotate(15 152 140)"/>
+        <ellipse cx="160.5" cy="143" rx="2.6" ry="5" transform="rotate(28 160.5 143)"/>
+        <ellipse cx="142" cy="140" rx="2.4" ry="5"/>
+        <ellipse cx="150" cy="149" rx="2.4" ry="4.5" transform="rotate(15 150 149)"/>
+      </g>
+      <path d="M134 166L162 166L160 180L136 180Z" fill="#6b5a3a" stroke="#33281a" stroke-width="2.5"/>
+      <!-- neck and grandad collar -->
+      <path d="M90 126L89 148C96 154 110 154 116 148L116 126Z" fill="#d49e70" stroke="#6a3a22" stroke-width="3"/>
+      <path d="M89 130C97 140 110 142 116 136L116 146C108 146 96 142 89 138Z" fill="#b07a58"/>
+      <path d="M86 146C94 154 112 154 120 146L121 152C112 160 94 160 85 152Z" fill="#f4ead2" stroke="#6a5a3a" stroke-width="2.5"/>
+      <path d="M102 158L102 200" stroke="#6a5a3a" stroke-width="2"/>
+      <circle cx="102" cy="164" r="2" fill="#fff" stroke="#6a5a3a" stroke-width="1.2"/>
+      <circle cx="102" cy="178" r="2" fill="#fff" stroke="#6a5a3a" stroke-width="1.2"/>
+      <!-- big ear -->
+      <path d="M129 90C140 84 145 102 138 114C135 119 130 119 128 116Z" fill="#d49e70" stroke="#6a3a22" stroke-width="3"/>
+      <path d="M132 96C136 98 137 106 133 110" fill="none" stroke="#a06a4a" stroke-width="2"/>
+      <!-- face -->
+      <path d="M70 70C64 84 64 100 68 112C72 124 82 134 98 136C114 136 126 128 130 114C134 100 134 84 130 70C124 58 76 58 70 70Z" fill="url(#portrait-ganni-skin)"/>
+      <g clip-path="url(#portrait-ganni-face)">
+        <path d="M122 72C120 86 126 96 122 106C118 116 112 126 98 138L136 138L136 72Z" fill="#b8805c"/>
+        <ellipse cx="114" cy="108" rx="8" ry="5" fill="#e07a5a" opacity="0.4"/>
+        <ellipse cx="76" cy="108" rx="5" ry="4" fill="#e07a5a" opacity="0.35"/>
+        <path d="M70 80C80 76 90 76 98 80" fill="none" stroke="#f4cfa6" stroke-width="3" opacity="0.8"/>
+      </g>
+      <path d="M70 70C64 84 64 100 68 112C72 124 82 134 98 136C114 136 126 128 130 114C134 100 134 84 130 70" fill="none" stroke="#6a3a22" stroke-width="4"/>
+      <!-- white side hair -->
+      <path d="M124 74C132 74 136 80 134 90C132 86 130 86 128 90C127 84 126 80 122 78Z" fill="#f2f2f2" stroke="#8a7e74" stroke-width="2.5"/>
+      <!-- short white beard -->
+      <path d="M68 106C70 122 82 137 100 138C118 138 130 126 131 110C126 120 118 127 106 129C92 131 76 124 68 106Z" fill="#ebe6e0" stroke="#8a7e74" stroke-width="2.6"/><g fill="#b8aea4"><circle cx="80" cy="126" r="0.9"/><circle cx="86" cy="131" r="0.9"/><circle cx="94" cy="134" r="0.9"/><circle cx="104" cy="134.5" r="0.9"/><circle cx="114" cy="132" r="0.9"/><circle cx="121" cy="127" r="0.9"/><circle cx="76" cy="120" r="0.9"/><circle cx="126" cy="120" r="0.9"/></g>
+      <path d="M84 132C90 136 100 137 110 135" fill="none" stroke="#cfc6bc" stroke-width="2"/>
+      <!-- laughing mouth -->
+      <path d="M89 121C92 131 106 131 111 120C104 123 96 123 89 121Z" fill="#7a2a24" stroke="#6a3a22" stroke-width="2.2"/>
+      <path d="M95 126.5C99 125 103 125 106 126.5C103 129 98 129 95 126.5Z" fill="#d8625a"/><path d="M91 122.5L97 123.4L96.6 126L92.4 125.2ZM100.4 123.5L108.6 122L107.4 124.8L100.6 126Z" fill="#fffaf0"/>
+      <!-- walrus moustache -->
+      <path d="M78 117C84 109 94 110 99 114C105 109 116 110 122 117C118 123 109 123 101 120C93 124 83 123 78 117Z" fill="#f6f6f6" stroke="#8a7e74" stroke-width="2.6"/>
+      <path d="M90 116C94 117 97 117 99 116M104 116C108 117 112 117 115 116" fill="none" stroke="#cfc6bc" stroke-width="1.6"/>
+      <!-- big nose -->
+      <path d="M92 98C91 103 86 104 85 109C84 114 90 116 94 113C97 115 101 113 100 109" fill="#dca07a" stroke="#6a3a22" stroke-width="2.4"/>
+      <ellipse cx="89" cy="108" rx="2.6" ry="2" fill="#f2c4a0"/>
+      <!-- closed, laughing eyes with crow's feet -->
+      <path d="M100 99C103 93 112 92 117 98" fill="none" stroke="#3a1e14" stroke-width="3.2"/>
+      <path d="M79 99C81 94 87 94 90 98.5" fill="none" stroke="#3a1e14" stroke-width="3"/>
+      <path d="M119 96L124 94M119 100L124 101M76 97L72 95M76 101L72 102" fill="none" stroke="#9a6446" stroke-width="1.8"/>
+      <path d="M102 103C106 105 111 105 115 103M80 102.5C83 104 86 104 88.5 103" fill="none" stroke="#b07a58" stroke-width="1.6"/>
+      <!-- bushy white brows -->
+      <path d="M96 88C100 82 110 80 120 86C122 88 120 90 118 89C112 86 104 86 98 91C96 92 95 90 96 88Z" fill="#f6f6f6" stroke="#8a7e74" stroke-width="2.2"/>
+      <path d="M76 87C80 83 86 83 91 87C92 89 90 91 88 90C84 88 80 88 77 90C75 90 75 88 76 87Z" fill="#f6f6f6" stroke="#8a7e74" stroke-width="2"/>
+      <!-- flat cap -->
+      <path d="M64 76C60 58 82 46 106 46C128 46 144 56 140 74C130 78 118 78 106 78C92 78 76 82 64 76Z" fill="url(#portrait-ganni-cap)" stroke="#2e2416" stroke-width="4"/>
+      <path d="M61 79C66 73 82 71 98 74C94 81 76 84 61 79Z" fill="#4a3c28" stroke="#2e2416" stroke-width="3.5"/>
+      <path d="M76 56C90 50 112 48 128 54M70 66C88 60 114 58 136 64" fill="none" stroke="#8a7656" stroke-width="2" stroke-dasharray="3 3"/>
+      <path d="M96 48C110 52 122 60 128 70" fill="none" stroke="#2e2416" stroke-width="2"/>
+      <ellipse cx="86" cy="54" rx="10" ry="3.5" fill="#9a8664" opacity="0.7" transform="rotate(-8 86 54)"/>
+    </g>
+  </g>
+  <circle cx="100" cy="100" r="93" fill="none" stroke="#e8d9b8" stroke-width="6"/>
+  <circle cx="100" cy="100" r="96.5" fill="none" stroke="#7a6a48" stroke-width="2.5"/>
+  <circle cx="100" cy="100" r="89.8" fill="none" stroke="#7a6a48" stroke-width="1.5" opacity="0.6"/>
+</svg>

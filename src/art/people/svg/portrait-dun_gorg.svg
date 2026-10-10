@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <radialGradient id="portrait-dun_gorg-bg" cx="0.4" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#f8ece4"/>
+      <stop offset="1" stop-color="#c8a8b4"/>
+    </radialGradient>
+    <linearGradient id="portrait-dun_gorg-skin" x1="0.2" y1="0.1" x2="0.8" y2="0.9">
+      <stop offset="0" stop-color="#f6dcc0"/>
+      <stop offset="1" stop-color="#e2bc98"/>
+    </linearGradient>
+    <linearGradient id="portrait-dun_gorg-coat" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#3a3a46"/>
+      <stop offset="1" stop-color="#1d1d22"/>
+    </linearGradient>
+    <radialGradient id="portrait-dun_gorg-iris" cx="0.5" cy="0.7" r="0.6">
+      <stop offset="0" stop-color="#ad9b8a"/>
+      <stop offset="0.6" stop-color="#6a4a2a"/>
+      <stop offset="1" stop-color="#45301b"/>
+    </radialGradient>
+    <clipPath id="portrait-dun_gorg-clip"><circle cx="100" cy="100" r="91"/></clipPath>
+    <clipPath id="portrait-dun_gorg-face"><path d="M72 78C68 90 70 104 74 114C80 126 90 132 100 132C112 132 122 124 126 112C130 100 130 88 128 76C126 54 112 42 98 42C82 42 72 56 72 78Z"/></clipPath>
+  </defs>
+  <circle cx="100" cy="100" r="96" fill="url(#portrait-dun_gorg-bg)"/>
+  <g clip-path="url(#portrait-dun_gorg-clip)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 150L4 120L14 120L14 104L20 98L26 104L26 120L32 120C32 104 40 94 50 92C60 94 68 104 68 120L74 120L74 104L80 98L86 104L86 120L96 120L96 150Z" fill="#e6cdd0" stroke="#c4a4ae" stroke-width="2"/>
+    <path d="M50 92L50 84M47 87L53 87" stroke="#c4a4ae" stroke-width="2"/>
+    <g transform="translate(-12 -6) scale(1.12)">
+      <g transform="translate(0 -6)"><!-- cassock -->
+      <path d="M32 200C34 172 50 156 80 150L122 150C150 156 166 172 168 200Z" fill="url(#portrait-dun_gorg-coat)" stroke="#0a0a0e" stroke-width="4"/>
+      <path d="M140 158C156 168 162 182 163 200L130 200C136 188 140 174 140 158Z" fill="#141418"/>
+      <path d="M98 154L96 200" stroke="#0a0a0e" stroke-width="2"/>
+      <g fill="#3a3a46" stroke="#0a0a0e" stroke-width="1.2">
+        <circle cx="98" cy="162" r="1.8"/><circle cx="97.6" cy="170" r="1.8"/><circle cx="97.2" cy="178" r="1.8"/><circle cx="96.8" cy="186" r="1.8"/><circle cx="96.4" cy="194" r="1.8"/>
+      </g>
+      <path d="M50 178C54 168 62 160 72 156" fill="none" stroke="#4a4a58" stroke-width="2"/>
+      <!-- neck and roman collar -->
+      <path d="M90 124L90 148C96 152 108 152 114 148L114 124Z" fill="#e2bc98" stroke="#5e3428" stroke-width="3"/>
+      <path d="M90 128C98 138 108 140 114 134L114 144C106 144 96 140 90 134Z" fill="#c09682"/>
+      <path d="M84 146C92 154 112 154 120 146L121 154C112 160 92 160 83 154Z" fill="#1d1d22" stroke="#0a0a0e" stroke-width="2.5"/>
+      <path d="M96 151L104 151L104 158L96 158Z" fill="#fff" stroke="#8a8a96" stroke-width="1.5"/>
+      </g><!-- ear -->
+      <path d="M124 96C133 91 137 104 131 112C129 116 125 116 123 113Z" fill="#e2bc98" stroke="#5e3428" stroke-width="3"/>
+      <path d="M127 100C130 101 131 106 128 109" fill="none" stroke="#a8806e" stroke-width="2"/>
+      <!-- head: a bald dome -->
+      <path d="M72 78C68 90 70 104 74 114C80 126 90 132 100 132C112 132 122 124 126 112C130 100 130 88 128 76C126 54 112 42 98 42C82 42 72 56 72 78Z" fill="url(#portrait-dun_gorg-skin)"/>
+      <g clip-path="url(#portrait-dun_gorg-face)">
+        <path d="M118 52C126 66 126 84 122 98C118 112 110 124 98 134L134 134L134 52Z" fill="#c8a08a"/>
+        <ellipse cx="90" cy="54" rx="12" ry="6" fill="#fff6ea" opacity="0.9" transform="rotate(-14 90 54)"/>
+        <path d="M80 70C88 66 100 66 110 68M82 76C90 73 100 73 108 74" fill="none" stroke="#c8a08a" stroke-width="1.8"/>
+        <ellipse cx="113" cy="114" rx="7" ry="4" fill="#e88a7a" opacity="0.4"/>
+        <path d="M84 126C92 132 106 132 114 126" fill="none" stroke="#c8a08a" stroke-width="1.8"/>
+      </g>
+      <path d="M72 78C68 90 70 104 74 114C80 126 90 132 100 132C112 132 122 124 126 112C130 100 130 88 128 76C126 54 112 42 98 42C82 42 72 56 72 78Z" fill="none" stroke="#5e3428" stroke-width="4"/>
+      <!-- tufts of grey hair -->
+      <path d="M121 74C126 70 132 72 131 77C136 76 139 81 135 85C139 88 136 94 131 92C130 96 126 96 125 92C126 86 124 80 121 74Z" fill="#6a6a72" stroke="#24242a" stroke-width="2.4"/><path d="M127 78C129 80 130 84 129 88" fill="none" stroke="#9a9aa4" stroke-width="1.5"/>
+      <path d="M74 82C69 79 65 84 68 88C64 90 66 96 71 95C71 98 74 100 75 97C73 92 73 88 74 82Z" fill="#6a6a72" stroke="#24242a" stroke-width="2.4"/>
+      <!-- high, owlish brows -->
+      <path d="M98 79C103 72 112 71 119 76" fill="none" stroke="#3a3a3a" stroke-width="3.6"/>
+      <path d="M77 79C80 74 85 73 90 76" fill="none" stroke="#3a3a3a" stroke-width="3.2"/>
+      <!-- big round eyes -->
+      <circle cx="108" cy="96" r="6.4" fill="#fffaf2"/>
+      <circle cx="107.6" cy="96.2" r="4.4" fill="url(#portrait-dun_gorg-iris)"/>
+      <circle cx="107.6" cy="96.2" r="2.3" fill="#1b1622"/>
+      <circle cx="106" cy="94.6" r="1.6" fill="#fff"/>
+      <circle cx="109.4" cy="98" r="0.7" fill="#fff"/>
+      <path d="M101.5 94C103 90 112 89.5 114.5 94" fill="none" stroke="#2a1a14" stroke-width="2.4"/>
+      <ellipse cx="84" cy="96" rx="5" ry="5.6" fill="#fffaf2"/>
+      <circle cx="83.8" cy="96.2" r="3.7" fill="url(#portrait-dun_gorg-iris)"/>
+      <circle cx="83.8" cy="96.2" r="1.9" fill="#1b1622"/>
+      <circle cx="82.5" cy="94.9" r="1.3" fill="#fff"/>
+      <path d="M79 94C80.5 90.5 87 90 89 94" fill="none" stroke="#2a1a14" stroke-width="2.2"/>
+      <!-- thick round spectacles -->
+      <g fill="none" stroke="#24242a" stroke-width="3.6">
+        <circle cx="108" cy="96" r="11.5"/>
+        <ellipse cx="84" cy="96" rx="9" ry="11"/>
+        <path d="M93 94C95 92 97 92 96.5 94"/>
+        <path d="M119.5 93L126 98"/>
+      </g>
+      <path d="M100 90C102 87 105 86 108 86M77 91C78 89 80 88 82 88" fill="none" stroke="#fff" stroke-width="2" opacity="0.8"/>
+      <path d="M102 107C105 108.5 110 108.5 113 107M80 106.5C82 107.5 85 107.5 87 106.5M104 112C107 115 108 118 108 121M86 113C85 115 85 117 86 119" fill="none" stroke="#c09682" stroke-width="1.5"/>
+      <!-- little beak nose and kind smile -->
+      <path d="M93 101C92 105 89 108 87 110C89 112 93 112 95 110.5" fill="none" stroke="#9a6a54" stroke-width="2.3"/>
+      <path d="M90 119C95 122 102 122 107 118" fill="none" stroke="#8a4a3a" stroke-width="2.5"/>
+      <path d="M107 118C108.5 117 109 116 109 114.5M89 118.5C88.5 118 88 117.5 88 116.5" fill="none" stroke="#9a6a54" stroke-width="1.6"/>
+    </g>
+    <!-- the keys of the Silent City, held up -->
+    <path d="M124 200C126 180 132 162 140 150L162 156C158 170 156 186 156 200Z" fill="#26262e" stroke="#0a0a0e" stroke-width="3.5"/>
+    <path d="M140 160C136 172 134 186 134 200" fill="none" stroke="#4a4a58" stroke-width="2"/>
+    <g stroke-linecap="round" stroke-linejoin="round">
+      <g fill="none" stroke="#5a3e10" stroke-width="6.5">
+        <path d="M144 132L128 172M150 132L150 178M156 132L170 168"/>
+        <circle cx="128" cy="174" r="0.1"/>
+      </g>
+      <g fill="none" stroke="#e0b450" stroke-width="3">
+        <path d="M144 132L128 172M150 132L150 178M156 132L170 168"/>
+      </g>
+      <g fill="#e0b450" stroke="#5a3e10" stroke-width="2">
+        <path d="M130 166L124 164L121 170L127 172L125 176L129 177Z"/>
+        <path d="M150 172L144 172L144 178L150 178L150 182L154 182L154 172Z"/>
+        <path d="M168 162L174 160L177 166L171 168L173 172L169 173Z"/>
+        <circle cx="140" cy="130" r="5"/><circle cx="150" cy="128" r="5.5"/><circle cx="160" cy="130" r="5"/>
+      </g>
+      <g fill="#26262e"><circle cx="140" cy="130" r="2"/><circle cx="150" cy="128" r="2.2"/><circle cx="160" cy="130" r="2"/></g>
+      <path d="M131 160L137 146M149 160L149 146" stroke="#fff4c0" stroke-width="1.2"/>
+      <path d="M140 140C136 136 138 130 144 130L158 130C162 130 164 134 162 138C164 140 164 144 160 146L144 146C140 146 138 144 140 140Z" fill="#e2bc98" stroke="#5e3428" stroke-width="3"/>
+      <path d="M142 138L160 138M143 142L160 142" fill="none" stroke="#a8806e" stroke-width="1.6"/>
+      <path d="M144 132C148 131 153 131 157 132" fill="none" stroke="#fbe2c8" stroke-width="1.6"/>
+    </g>
+  </g>
+  <circle cx="100" cy="100" r="93" fill="none" stroke="#ffffff" stroke-width="6"/>
+  <circle cx="100" cy="100" r="96.5" fill="none" stroke="#3a3a44" stroke-width="2.5"/>
+  <circle cx="100" cy="100" r="89.8" fill="none" stroke="#3a3a44" stroke-width="1.5" opacity="0.6"/>
+</svg>

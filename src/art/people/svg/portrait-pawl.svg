@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <radialGradient id="portrait-pawl-bg" cx="0.4" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#f1f1f6"/>
+      <stop offset="1" stop-color="#aeb8d6"/>
+    </radialGradient>
+    <linearGradient id="portrait-pawl-skin" x1="0.2" y1="0.1" x2="0.8" y2="0.9">
+      <stop offset="0" stop-color="#fcd8b4"/>
+      <stop offset="1" stop-color="#f0c8a0"/>
+    </linearGradient>
+    <linearGradient id="portrait-pawl-hood" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e6dfd0"/>
+    </linearGradient>
+    <radialGradient id="portrait-pawl-iris" cx="0.5" cy="0.7" r="0.6">
+      <stop offset="0" stop-color="#a4b69b"/>
+      <stop offset="0.6" stop-color="#5a7a4a"/>
+      <stop offset="1" stop-color="#3a4f30"/>
+    </radialGradient>
+    <clipPath id="portrait-pawl-clip"><circle cx="100" cy="100" r="91"/></clipPath>
+    <clipPath id="portrait-pawl-face"><path d="M72 76C67 88 67 102 72 113C77 125 88 133 100 134C113 134 124 126 128 113C131 101 131 88 128 76C126 58 114 50 100 50C86 50 74 60 72 76Z"/></clipPath>
+  </defs>
+  <circle cx="100" cy="100" r="96" fill="url(#portrait-pawl-bg)"/>
+  <g clip-path="url(#portrait-pawl-clip)" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M46 200L46 84C46 50 72 26 100 26C128 26 154 50 154 84L154 200" fill="none" stroke="#e9dfc6" stroke-width="12" opacity="0.8"/>
+  <path d="M46 200L46 84C46 50 72 26 100 26C128 26 154 50 154 84L154 200" fill="none" stroke="#c9bc9c" stroke-width="2" opacity="0.6"/>
+    <g transform="translate(-12 -8) scale(1.12)">
+      <!-- white habit and black cappa -->
+      <path d="M24 200C28 170 46 152 76 146L126 146C156 152 174 170 178 200Z" fill="#f4f0e6" stroke="#6a6458" stroke-width="4"/>
+      <path d="M24 200C28 172 44 154 70 148L86 158L78 200Z" fill="#26262c" stroke="#0c0c10" stroke-width="3.5"/>
+      <path d="M178 200C174 172 158 154 132 148L118 158L126 200Z" fill="#1d1d22" stroke="#0c0c10" stroke-width="3.5"/>
+      <path d="M40 176C46 166 54 158 64 154" fill="none" stroke="#4a4a54" stroke-width="2"/>
+      <path d="M86 158L80 200M118 158L124 200" fill="none" stroke="#c8bfae" stroke-width="2"/>
+      <!-- inside of the lowered hood -->
+      <path d="M76 134C86 126 120 126 132 132L132 150L76 150Z" fill="#b8ac96" stroke="#6a6458" stroke-width="2.5"/>
+      <!-- neck -->
+      <path d="M90 122L89 146C96 152 110 152 117 146L117 122Z" fill="#f0c8a0" stroke="#7a4430" stroke-width="3"/>
+      <path d="M89 126C97 136 110 138 117 132L117 142C108 143 97 140 89 134Z" fill="#d8a888"/>
+      <!-- cowl, down around the shoulders -->
+      <path d="M60 160C50 148 58 132 76 132C86 142 96 146 104 146C116 146 126 140 132 130C148 132 156 148 146 160C128 170 80 170 60 160Z" fill="url(#portrait-pawl-hood)" stroke="#6a6458" stroke-width="3.5"/>
+      <path d="M130 136C142 140 148 150 142 157C134 162 124 163 116 162C128 156 132 146 130 136Z" fill="#d8cfbe"/>
+      <path d="M68 152C82 160 104 162 122 158M78 142C88 150 100 152 112 152" fill="none" stroke="#c8bfae" stroke-width="2"/>
+      <path d="M64 142C66 138 70 135 75 135" fill="none" stroke="#fff" stroke-width="2.5"/>
+      <!-- face -->
+      <path d="M72 76C67 88 67 102 72 113C77 125 88 133 100 134C113 134 124 126 128 113C131 101 131 88 128 76C126 58 114 50 100 50C86 50 74 60 72 76Z" fill="url(#portrait-pawl-skin)"/>
+      <g clip-path="url(#portrait-pawl-face)">
+        <path d="M120 72C118 86 124 96 120 106C116 116 110 124 98 134L134 134L134 72Z" fill="#dca888"/>
+        <ellipse cx="94" cy="59" rx="11" ry="5" fill="#fff4e4" opacity="0.85"/><path d="M86 128C94 133 106 133 114 127" fill="none" stroke="#dca888" stroke-width="2"/>
+        <ellipse cx="113" cy="109" rx="9" ry="6" fill="#f08a7a" opacity="0.5"/>
+        <ellipse cx="79" cy="109" rx="6" ry="5" fill="#f08a7a" opacity="0.45"/>
+      </g>
+      <path d="M72 76C67 88 67 102 72 113C77 125 88 133 100 134C113 134 124 126 128 113C131 101 131 88 128 76C126 58 114 50 100 50C86 50 74 60 72 76" fill="none" stroke="#7a4430" stroke-width="4"/>
+      <!-- ear -->
+      <path d="M124 94C133 89 137 103 131 111C129 115 125 115 123 112Z" fill="#f0c8a0" stroke="#7a4430" stroke-width="3"/>
+      <path d="M127 98C130 99 131 104 128 107" fill="none" stroke="#c08466" stroke-width="2"/>
+      <!-- tonsure: a ring of hair round a bare crown -->
+      <path d="M70 88C69 80 71 74 75 69C88 76 104 77 117 73C123 71 128 71 130 73C134 82 134 94 130 104C128 94 126 88 122 84C116 83 110 84 104 82C100 85 94 85 90 82C86 85 80 85 76 83C74 85 72 86 70 88Z" fill="#6b4a2a" stroke="#3a2614" stroke-width="3"/>
+      <path d="M77 74C90 80 104 80 116 76M122 77C126 80 128 86 129 92" fill="none" stroke="#8a6a46" stroke-width="2"/>
+      <!-- gentle, earnest brows -->
+      <path d="M97 85.5C103 83 110 84 116 88" fill="none" stroke="#5a3a20" stroke-width="3.2"/>
+      <path d="M78 88C81 85.5 86 84.5 91 85" fill="none" stroke="#5a3a20" stroke-width="2.8"/>
+      <!-- kind, smiling eyes -->
+      <path d="M99 97C101 91.5 112 90.5 116 95.5C112 100 103 101 99 97Z" fill="#fffaf2"/>
+      <circle cx="107.6" cy="96" r="4.1" fill="url(#portrait-pawl-iris)"/>
+      <circle cx="107.6" cy="96" r="2" fill="#1b1622"/>
+      <circle cx="106.1" cy="94.6" r="1.5" fill="#fff"/>
+      <circle cx="109" cy="97.6" r="0.6" fill="#fff"/>
+      
+      <path d="M98 96.5C101 91.5 111 90.5 117 95.5" fill="none" stroke="#3a2214" stroke-width="2.8"/>
+      <path d="M101 101.5C105 102.5 111 102 115 99.5" fill="none" stroke="#c88a6a" stroke-width="1.6"/>
+      <path d="M79 97C81 92.5 87 91.5 90 95.5C87 99.5 81 100 79 97Z" fill="#fffaf2"/>
+      <circle cx="84.6" cy="95.8" r="3.4" fill="url(#portrait-pawl-iris)"/>
+      <circle cx="84.6" cy="95.8" r="1.7" fill="#1b1622"/>
+      <circle cx="83.4" cy="94.7" r="1.2" fill="#fff"/>
+      
+      <path d="M78 96.5C81 92.5 87 91.5 91 95" fill="none" stroke="#3a2214" stroke-width="2.6"/>
+      <path d="M80.5 101C83.5 101.5 87 101 89.5 99" fill="none" stroke="#c88a6a" stroke-width="1.5"/>
+      <!-- button nose and warm open smile -->
+      <path d="M91 102C90 105 88 107.5 87.5 109.5C89 111.5 92.5 111.5 94.5 110" fill="none" stroke="#c08466" stroke-width="2.2"/>
+      <path d="M87 116C92 125 103 125 108 115C101 118 93 118 87 116Z" fill="#8a3a32" stroke="#7a4430" stroke-width="2.2"/>
+      <path d="M88.5 117C94 118.5 101 118.5 106.5 116.5L105.5 119C100 120.5 94 120.5 89.5 119Z" fill="#fff"/>
+      <path d="M94 122.5C97 121.5 100 121.5 102.5 122.5C100 124 96.5 124 94 122.5Z" fill="#e0706a"/>
+      <path d="M85.5 114.5C86 116 86.5 116.5 87.5 117M108 115C109.5 114 110 113 110 111.5" fill="none" stroke="#c08466" stroke-width="1.6"/>
+      <!-- rosary -->
+      <path d="M80 148C82 166 92 178 102 182C112 178 122 166 124 148" fill="none" stroke="#5a3a20" stroke-width="1.5"/>
+      <g fill="#8a5a32" stroke="#3a2210" stroke-width="1.2">
+        <circle cx="81" cy="156" r="2.4"/><circle cx="84" cy="164" r="2.4"/><circle cx="89" cy="171" r="2.4"/><circle cx="95" cy="177" r="2.4"/>
+        <circle cx="123" cy="156" r="2.4"/><circle cx="120" cy="164" r="2.4"/><circle cx="115" cy="171" r="2.4"/><circle cx="109" cy="177" r="2.4"/>
+        <circle cx="102" cy="183" r="2.6"/>
+      </g>
+      <path d="M102 186L102 200M96 191L108 191" stroke="#3a2210" stroke-width="5.5"/>
+      <path d="M102 186L102 200M96 191L108 191" stroke="#a87444" stroke-width="2.8"/>
+    </g>
+  </g>
+  <circle cx="100" cy="100" r="93" fill="none" stroke="#2a2a30" stroke-width="6"/>
+  <circle cx="100" cy="100" r="96.5" fill="none" stroke="#0c0c10" stroke-width="2.5"/>
+  <circle cx="100" cy="100" r="89.8" fill="none" stroke="#6a6a78" stroke-width="1.5" opacity="0.7"/>
+</svg>

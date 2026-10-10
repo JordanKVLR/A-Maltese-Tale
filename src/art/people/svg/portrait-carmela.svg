@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="portrait-carmela-bg" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0" stop-color="#f6d6aa"/>
+      <stop offset="0.55" stop-color="#8fbcbc"/>
+      <stop offset="1" stop-color="#3a6e7c"/>
+    </linearGradient>
+    <linearGradient id="portrait-carmela-skin" x1="0.2" y1="0.1" x2="0.8" y2="0.9">
+      <stop offset="0" stop-color="#e8bc92"/>
+      <stop offset="1" stop-color="#d9a67a"/>
+    </linearGradient>
+    <linearGradient id="portrait-carmela-coat" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#3e6484"/>
+      <stop offset="1" stop-color="#2f4f6a"/>
+    </linearGradient>
+    <linearGradient id="portrait-carmela-beret" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#e05a4c"/>
+      <stop offset="1" stop-color="#b8362e"/>
+    </linearGradient>
+    <radialGradient id="portrait-carmela-iris" cx="0.5" cy="0.7" r="0.6">
+      <stop offset="0" stop-color="#ad9381"/>
+      <stop offset="0.6" stop-color="#6a3a1a"/>
+      <stop offset="1" stop-color="#452611"/>
+    </radialGradient>
+    <clipPath id="portrait-carmela-clip"><circle cx="100" cy="100" r="91"/></clipPath>
+    <clipPath id="portrait-carmela-face"><path d="M76 66C70 78 70 92 73 102C77 114 86 126 96 132C99 134 101 134 103 133C112 128 120 120 124 108C128 96 128 82 125 72C120 58 82 56 76 66Z"/></clipPath>
+  </defs>
+  <circle cx="100" cy="100" r="96" fill="url(#portrait-carmela-bg)"/>
+  <g clip-path="url(#portrait-carmela-clip)" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M8 150C24 146 36 152 50 148C64 144 74 150 90 147M120 150C136 146 150 152 166 147C176 144 184 148 194 146" fill="none" stroke="#e4f2ee" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+    <g transform="translate(-12 -6) scale(1.12)">
+      <!-- back hair -->
+      <path d="M72 96C62 72 74 46 100 44C126 42 140 60 136 86C134 100 132 110 128 118L74 112Z" fill="#1d1d1d" stroke="#000" stroke-width="4"/>
+      <g transform="translate(0 -5)"><!-- coat -->
+      <path d="M24 200C28 170 46 154 78 148L124 146C156 152 174 168 178 200Z" fill="url(#portrait-carmela-coat)" stroke="#16283a" stroke-width="4"/>
+      <path d="M142 156C160 166 170 180 172 200L132 200C140 186 144 170 142 156Z" fill="#253f56"/>
+      <!-- big collar -->
+      <path d="M74 150L92 146L96 176L70 172C66 164 68 156 74 150Z" fill="#3e6484" stroke="#16283a" stroke-width="2.5"/>
+      <path d="M128 148L114 146L110 176L136 172C140 164 136 154 128 148Z" fill="#2f4f6a" stroke="#16283a" stroke-width="2.5"/>
+      <!-- shirt -->
+      <path d="M92 146L114 146L110 176L104 190L96 176Z" fill="#f4efe4" stroke="#5a5448" stroke-width="2.5"/>
+      <!-- neck -->
+      <path d="M92 124L92 148C97 156 108 156 113 148L114 124Z" fill="#d9a67a" stroke="#5e3020" stroke-width="3"/>
+      <path d="M92 128C99 138 108 140 114 134L114 144C107 145 99 141 92 136Z" fill="#b07a5e"/>
+      <path d="M95 150L102 162L110 150" fill="none" stroke="#5e3020" stroke-width="2"/>
+      <!-- red sash -->
+      <path d="M150 154C140 170 116 188 92 200L70 200C96 186 120 168 136 150Z" fill="#c8423a" stroke="#6a1814" stroke-width="2.5"/>
+      <path d="M140 158C128 172 112 184 92 196" fill="none" stroke="#e8705e" stroke-width="2"/>
+      <circle cx="58" cy="178" r="3" fill="#e0b450" stroke="#6a4a10" stroke-width="1.5"/>
+      <circle cx="62" cy="194" r="3" fill="#e0b450" stroke="#6a4a10" stroke-width="1.5"/>
+      </g><g transform="rotate(4 100 130)">
+        <!-- ear and hoop -->
+        <path d="M123 94C131 89 135 102 130 110C128 114 124 114 122 112Z" fill="#d9a67a" stroke="#5e3020" stroke-width="3"/>
+        <circle cx="127" cy="121" r="6" fill="none" stroke="#8a5a10" stroke-width="3.6"/>
+        <circle cx="127" cy="121" r="6" fill="none" stroke="#f0c94a" stroke-width="1.8"/>
+        <!-- face -->
+        <path d="M76 66C70 78 70 92 73 102C77 114 86 126 96 132C99 134 101 134 103 133C112 128 120 120 124 108C128 96 128 82 125 72C120 58 82 56 76 66Z" fill="url(#portrait-carmela-skin)"/>
+        <g clip-path="url(#portrait-carmela-face)">
+          <path d="M118 70C116 82 122 92 118 102C114 112 110 122 98 134L134 136L134 70Z" fill="#b8826a"/>
+          <path d="M76 104C80 110 84 112 88 112C85 116 84 120 86 124Z" fill="#c08a6c" opacity="0.7"/>
+          <ellipse cx="112" cy="107" rx="7" ry="4" fill="#d86a5a" opacity="0.3"/>
+        </g>
+        <path d="M76 66C70 78 70 92 73 102C77 114 86 126 96 132C99 134 101 134 103 133C112 128 120 120 124 108C128 96 128 82 125 72" fill="none" stroke="#5e3020" stroke-width="4"/>
+        <!-- scar -->
+        <path d="M112 98L118 112" fill="none" stroke="#f4d2b8" stroke-width="2.5"/>
+        <path d="M112.5 102L116 101M114 106L117.5 105M115.5 110L119 109" fill="none" stroke="#9a5a44" stroke-width="1.2"/>
+        <!-- front hair -->
+        <path d="M74 92C66 70 80 52 100 52C116 52 128 60 130 76C122 66 110 62 100 64C92 68 84 76 80 90Z" fill="#1d1d1d" stroke="#000" stroke-width="3.5"/>
+        <path d="M84 62C90 58 98 57 106 58" fill="none" stroke="#4a4a52" stroke-width="2.5"/>
+        <path d="M76 82C70 94 72 104 68 112" fill="none" stroke="#1d1d1d" stroke-width="3.5"/>
+        <!-- braid over the near shoulder -->
+        <g fill="#1d1d1d" stroke="#000" stroke-width="2.5">
+          <path d="M126 104C134 106 138 114 136 122C130 122 126 116 126 104Z"/>
+          <ellipse cx="135" cy="128" rx="6.5" ry="8" transform="rotate(-15 135 128)"/>
+          <ellipse cx="138" cy="141" rx="6.5" ry="8" transform="rotate(-15 138 141)"/>
+          <ellipse cx="140" cy="154" rx="6" ry="7.5" transform="rotate(-15 140 154)"/>
+        </g>
+        <path d="M132 124C134 126 137 127 139 126M135 137C137 139 140 140 142 139M137 150C139 152 142 153 144 152" fill="none" stroke="#4a4a52" stroke-width="1.5"/>
+        <path d="M136 162L146 160L148 168L140 172Z" fill="#c8423a" stroke="#6a1814" stroke-width="2"/>
+        <path d="M140 168L136 182M144 168L148 180" stroke="#1d1d1d" stroke-width="3"/>
+        <!-- beret, slouched to one side -->
+        <path d="M72 72C88 62 112 60 130 68L129 74C112 67 90 68 73 78Z" fill="#8e2620" stroke="#6a1814" stroke-width="2.5"/>
+        <ellipse cx="108" cy="54" rx="42" ry="14" transform="rotate(16 108 54)" fill="url(#portrait-carmela-beret)" stroke="#6a1814" stroke-width="4"/>
+        <path d="M76 52C96 54 124 62 146 74C150 70 150 66 148 62C130 56 104 48 76 52Z" fill="#9e2c24" opacity="0.8"/>
+        <ellipse cx="92" cy="45" rx="14" ry="4.5" fill="#f08a78" opacity="0.6" transform="rotate(14 92 45)"/>
+        <path d="M104 44C103 39 106 36 109 38" fill="none" stroke="#6a1814" stroke-width="3.5"/>
+        <!-- lantern pin -->
+        <path d="M78 50L84 50L85 53L85 59L77 59L77 53Z" fill="#26262e" stroke="#b88a2a" stroke-width="1.8"/><rect x="79.5" y="53.5" width="3" height="4" fill="#e0b450"/>
+        <!-- brows -->
+        <path d="M96 88C102 84 112 82 120 84" fill="none" stroke="#1d1d1d" stroke-width="3.6"/>
+        <path d="M76 85C79 79 86 77.5 92 81.5" fill="none" stroke="#1d1d1d" stroke-width="3.4"/>
+        <!-- eyes: cat-eye, half-lidded -->
+        <path d="M99 95C102 91 111 90 116 93C112 98 103 99 99 95Z" fill="#fffaf2"/>
+        <circle cx="107.5" cy="94.4" r="3.9" fill="url(#portrait-carmela-iris)"/>
+        <circle cx="107.5" cy="94.4" r="2" fill="#1b1622"/>
+        <circle cx="106" cy="93" r="1.4" fill="#fff"/>
+        <circle cx="109" cy="96" r="0.6" fill="#fff"/>
+        <path d="M96 95C100 90.5 110 90 117 92.5L118 84L96 84Z" fill="#e2b088"/><path d="M97 94.5C101 90.5 110 90 116.5 92.5C118.5 92 120.5 90.5 122 88" fill="none" stroke="#0e0a0a" stroke-width="3"/><path d="M99 90C103 88 110 87.5 114 88.5" fill="none" stroke="#a87060" stroke-width="1.5"/>
+        <path d="M79 94C81 90.5 87 90 90 93C87 96.5 81 97 79 94Z" fill="#fffaf2"/>
+        <circle cx="85" cy="93.6" r="3.3" fill="url(#portrait-carmela-iris)"/>
+        <circle cx="85" cy="93.6" r="1.7" fill="#1b1622"/>
+        <circle cx="83.8" cy="92.5" r="1.2" fill="#fff"/>
+        <path d="M78 93.5C80 90 86 90 91 92L91 86L78 86Z" fill="#e6b68c"/><path d="M90.5 92C87 90 81 90.5 78.5 93.5C77 93 76 91.5 75.5 90" fill="none" stroke="#0e0a0a" stroke-width="2.8"/>
+        <!-- nose and smirk -->
+        <path d="M91 99C90 103 88 106 87 108C89 110 92 110 94 108.5" fill="none" stroke="#9a6248" stroke-width="2.2"/>
+        <path d="M88 118C94 120 101 119 106 116C108 115 110 113 111 111" fill="none" stroke="#5e3020" stroke-width="2.4"/>
+        <path d="M89 118.5C95 123 101 122 106 117C101 119 94 120 89 118.5Z" fill="#a8463a"/>
+        <path d="M93 116.5C96 115.5 100 115.5 103 116" fill="none" stroke="#a8463a" stroke-width="2"/>
+      </g>
+    </g>
+  </g>
+  <circle cx="100" cy="100" r="93" fill="none" stroke="#c8423a" stroke-width="6"/>
+  <circle cx="100" cy="100" r="96.5" fill="none" stroke="#5e1612" stroke-width="2.5"/>
+  <circle cx="100" cy="100" r="89.8" fill="none" stroke="#5e1612" stroke-width="1.5" opacity="0.6"/>
+</svg>

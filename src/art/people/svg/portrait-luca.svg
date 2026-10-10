@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <radialGradient id="portrait-luca-bg" cx="0.35" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#e2f4fd"/>
+      <stop offset="1" stop-color="#86bfe6"/>
+    </radialGradient>
+    <linearGradient id="portrait-luca-skin" x1="0.2" y1="0.1" x2="0.8" y2="0.9">
+      <stop offset="0" stop-color="#fcdcb8"/>
+      <stop offset="1" stop-color="#f0c8a0"/>
+    </linearGradient>
+    <linearGradient id="portrait-luca-top" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#de5a4c"/>
+      <stop offset="1" stop-color="#c8423a"/>
+    </linearGradient>
+    <linearGradient id="portrait-luca-cap" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#ffe07a"/>
+      <stop offset="1" stop-color="#f0c94a"/>
+    </linearGradient>
+    <radialGradient id="portrait-luca-iris" cx="0.5" cy="0.7" r="0.6">
+      <stop offset="0" stop-color="#b69980"/>
+      <stop offset="0.6" stop-color="#7a4618"/>
+      <stop offset="1" stop-color="#4f2e10"/>
+    </radialGradient>
+    <clipPath id="portrait-luca-clip"><circle cx="100" cy="100" r="91"/></clipPath>
+    <clipPath id="portrait-luca-face"><path d="M72 70C66 84 67 100 72 110C78 122 88 130 98 131C110 132 121 124 126 112C130 100 130 84 127 72C122 60 80 58 72 70Z"/></clipPath>
+    <clipPath id="portrait-luca-capc"><path d="M66 84C62 56 80 40 102 40C124 40 140 54 138 84Z"/></clipPath>
+  </defs>
+  <circle cx="100" cy="100" r="96" fill="url(#portrait-luca-bg)"/>
+  <g fill="none" stroke="#fff6c8" stroke-width="2.5" stroke-linecap="round" opacity="0.8">
+    <path d="M40 52L40 42M40 62L40 72M30 57L20 57M50 57L60 57M33 50L27 44M47 64L53 70M47 50L53 44M33 64L27 70"/>
+    <path d="M160 46L160 39M160 53L160 60M153 49.5L146 49.5M167 49.5L174 49.5M155 44.5L151 40.5M165 54.5L169 58.5M165 44.5L169 40.5M155 54.5L151 58.5"/>
+  </g>
+  <circle cx="40" cy="57" r="3" fill="#ffe07a"/>
+  <circle cx="160" cy="49.5" r="2.5" fill="#ffe07a"/>
+  <circle cx="58" cy="90" r="1.8" fill="#fff"/><circle cx="150" cy="80" r="1.5" fill="#fff"/><circle cx="28" cy="98" r="1.5" fill="#ffe07a"/>
+  <g clip-path="url(#portrait-luca-clip)" stroke-linecap="round" stroke-linejoin="round">
+    <g transform="translate(-12 -4) scale(1.12)">
+      <g transform="translate(0 -6)"><!-- body: hoodie -->
+      <path d="M34 200C36 172 52 156 80 151L122 150C150 154 166 172 168 200Z" fill="url(#portrait-luca-top)" stroke="#6e1c1a" stroke-width="4"/>
+      <path d="M140 158C156 168 162 182 163 200L128 200C136 188 140 174 140 158Z" fill="#a6302c"/>
+      <path d="M46 172C52 162 62 156 74 153M158 176C152 164 144 158 134 155" fill="none" stroke="#f0c94a" stroke-width="5"/>
+      <path d="M46 172C52 162 62 156 74 153M158 176C152 164 144 158 134 155" fill="none" stroke="#8a6a10" stroke-width="1.2" opacity="0.6"/>
+      <!-- hood rolled behind neck -->
+      <path d="M78 150C80 138 96 136 104 140C114 134 128 138 132 150C124 160 110 162 104 158C94 164 82 160 78 150Z" fill="#b23830" stroke="#6e1c1a" stroke-width="3"/>
+      <!-- neck -->
+      <path d="M92 122L91 146C97 152 109 152 115 146L115 122Z" fill="#f0c8a0" stroke="#7a3e28" stroke-width="3"/>
+      <path d="M91 126C98 136 110 138 115 132L115 142C108 143 98 140 91 134Z" fill="#d49c7c"/>
+      <!-- tee collar and zip -->
+      <path d="M90 146C96 154 110 154 116 146L118 151C110 160 96 160 88 151Z" fill="#fbf6ee" stroke="#6e1c1a" stroke-width="2.5"/>
+      <path d="M86 152L100 200M112 152L106 200" fill="none" stroke="#6e1c1a" stroke-width="2.5"/>
+      <path d="M90 156L102 200L104 200L108 156" fill="#c8423a"/>
+      <path d="M97 160L104 196" fill="none" stroke="#f0c94a" stroke-width="3" stroke-dasharray="2.5 2"/>
+      <path d="M90 156L84 182M112 156L118 178" fill="none" stroke="#f0c94a" stroke-width="2.5"/>
+      <circle cx="84" cy="183" r="2.4" fill="#fff" stroke="#8a6a10" stroke-width="1.5"/>
+      <circle cx="118" cy="179" r="2.4" fill="#fff" stroke="#8a6a10" stroke-width="1.5"/>
+      </g><g transform="rotate(-6 100 130)">
+        <!-- ear -->
+        <path d="M125 96C134 90 139 104 133 112C131 116 127 117 124 114Z" fill="#f0c8a0" stroke="#7a3e28" stroke-width="3"/>
+        <path d="M128 100C131 101 132 106 129 109" fill="none" stroke="#c48a6a" stroke-width="2"/>
+        <!-- face -->
+        <path d="M72 70C66 84 67 100 72 110C78 122 88 130 98 131C110 132 121 124 126 112C130 100 130 84 127 72C122 60 80 58 72 70Z" fill="url(#portrait-luca-skin)"/>
+        <g clip-path="url(#portrait-luca-face)">
+          <path d="M120 76C118 88 124 98 120 106C116 116 110 124 96 130L96 136L134 136L134 76Z" fill="#dda482"/>
+          <ellipse cx="112" cy="110" rx="8" ry="4.5" fill="#f08a72" opacity="0.4"/>
+          <ellipse cx="79" cy="110" rx="5" ry="4" fill="#f08a72" opacity="0.35"/>
+        </g>
+        <path d="M72 70C66 84 67 100 72 110C78 122 88 130 98 131C110 132 121 124 126 112C130 100 130 84 127 72" fill="none" stroke="#7a3e28" stroke-width="4"/>
+        <!-- hair tufts -->
+        <path d="M71 94C66 92 64 88 66 86C62 84 61 80 64 78C61 74 64 70 68 71C68 68 72 67 76 74ZM124 94C130 94 134 91 133 88C137 86 138 82 134 80C136 76 133 73 129 74C128 71 125 72 123 78Z" fill="#2a1a10" stroke="#120a06" stroke-width="2.5"/><path d="M66 79C68 78 70 78 72 79M131 79C129 78 127 78 125 79" fill="none" stroke="#5a3a24" stroke-width="1.6"/>
+        <!-- cap (backwards) -->
+        <path d="M128 68C144 66 160 74 166 86C156 90 142 88 132 82Z" fill="#d9ac2c" stroke="#7a5a0c" stroke-width="3.5"/>
+        <path d="M66 84C62 56 80 40 102 40C124 40 140 54 138 84C116 78 88 78 66 84Z" fill="url(#portrait-luca-cap)"/>
+        <g clip-path="url(#portrait-luca-capc)">
+          <path d="M120 44C134 52 140 66 138 84L120 84C124 70 124 56 120 44Z" fill="#d9ac2c"/>
+          <path d="M102 41C96 54 94 68 96 80M102 41C112 54 116 68 116 80" fill="none" stroke="#b08a1c" stroke-width="2"/>
+          <ellipse cx="86" cy="54" rx="10" ry="6" fill="#fff4c0" opacity="0.7"/>
+        </g>
+        <path d="M66 84C62 56 80 40 102 40C124 40 140 54 138 84C116 78 88 78 66 84Z" fill="none" stroke="#7a5a0c" stroke-width="4"/>
+        <path d="M74 81C74 72 92 71 93 80" fill="#2a1a10" stroke="#7a5a0c" stroke-width="2.5"/>
+        <path d="M77 80C74 76 74 72 77 71C78 68 82 68 83 71C86 69 89 72 88 78" fill="#2a1a10" stroke="#120a06" stroke-width="2"/>
+        <path d="M72 81C82 78 90 78 96 79" fill="none" stroke="#c8423a" stroke-width="3"/>
+        <circle cx="102" cy="41" r="3.5" fill="#c8423a" stroke="#6e1c1a" stroke-width="2"/>
+        <!-- brows -->
+        <path d="M97 87C103 80 112 79 119 83" fill="none" stroke="#2a1a10" stroke-width="4"/>
+        <path d="M75 88C79 87 85 88 90 90" fill="none" stroke="#2a1a10" stroke-width="3.5"/>
+        <!-- eyes -->
+        <path d="M98 97C100 90 113 89 117 96C113 103 101 104 98 97Z" fill="#fffaf2"/>
+        <circle cx="108" cy="96.5" r="5" fill="url(#portrait-luca-iris)"/>
+        <circle cx="108" cy="96.5" r="2.6" fill="#1b1622"/>
+        <circle cx="106.2" cy="94.6" r="1.7" fill="#fff"/>
+        <circle cx="110" cy="98.6" r="0.8" fill="#fff"/>
+        <path d="M96 95C100 91 113 90 119 94L119 86L96 86Z" fill="#f6d2ac"/><path d="M97 96.5C101 91.5 113 90.5 118 94.5" fill="none" stroke="#2a1a10" stroke-width="3"/><path d="M99 92C104 89 112 89 116 91" fill="none" stroke="#d49c7c" stroke-width="1.5"/>
+        <path d="M77 97C79 92 86 91 89.5 96C86 100 80 101 77 97Z" fill="#fffaf2"/>
+        <circle cx="84" cy="96.5" r="4.2" fill="url(#portrait-luca-iris)"/>
+        <circle cx="84" cy="96.5" r="2.2" fill="#1b1622"/>
+        <circle cx="82.6" cy="95" r="1.4" fill="#fff"/>
+        <path d="M75 96C79 92 86 92 91 94L91 88L75 88Z" fill="#f8d8b2"/><path d="M76 96.5C79 92.5 86 92.5 90 94.5" fill="none" stroke="#2a1a10" stroke-width="2.8"/>
+        <path d="M78 99.5C81 101 86 101 89 99.5" fill="none" stroke="#d49c7c" stroke-width="1.5"/>
+        <!-- nose, freckles, plaster -->
+        <path d="M90 101C89 104 87 107 86 109C88 111 91 111 93 109.5" fill="none" stroke="#c48a6a" stroke-width="2.2"/>
+        <g fill="#c48a6a"><circle cx="80" cy="106" r="0.9"/><circle cx="84" cy="107" r="0.9"/><circle cx="96" cy="106" r="0.9"/><circle cx="100" cy="107.5" r="0.9"/><circle cx="104" cy="106" r="0.9"/></g>
+        <rect x="110" y="103" width="11" height="5.5" rx="2" fill="#f3e0c0" stroke="#a87a50" stroke-width="1.5" transform="rotate(-20 115.5 105.8)"/>
+        <!-- grin -->
+        <path d="M84 115C90 127 106 126 112 111C103 116 92 117 84 115Z" fill="#8a2a26" stroke="#7a3e28" stroke-width="2.4"/>
+        <path d="M86 116C94 118 104 116 110 113L108 117C101 120 93 121 87 119Z" fill="#fff"/>
+        <path d="M92 123C96 121 101 121 104 122C100 125 95 125 92 123Z" fill="#e0706a"/>
+        <path d="M112 109C114 111 114 114 112.5 115" fill="none" stroke="#c48a6a" stroke-width="1.8"/>
+      </g>
+    </g>
+    <!-- "who, me? the best?" thumb -->
+    <path d="M150 200C150 186 152 174 156 166L178 170C178 180 176 192 172 200Z" fill="#c8423a" stroke="#6e1c1a" stroke-width="3.5"/>
+    <path d="M152 180L174 184" stroke="#f0c94a" stroke-width="4"/>
+    <path d="M146 152C146 146 150 144 156 144L166 144C172 144 174 148 172 152C174 154 174 158 171 160C172 163 170 166 166 166L152 166C147 166 145 162 147 159C144 157 144 154 146 152Z" fill="#f0c8a0" stroke="#7a3e28" stroke-width="3"/>
+    <path d="M150 152L168 151M150 157L169 156M151 161L167 161" fill="none" stroke="#c48a6a" stroke-width="1.6"/>
+    <path d="M150 147C144 147 134 146 130 148C127 150 128 154 132 154C136 154 144 153 150 153" fill="#f0c8a0" stroke="#7a3e28" stroke-width="3"/>
+    <path d="M134 149C138 148.5 142 148.5 145 149" fill="none" stroke="#fde4c8" stroke-width="1.5"/>
+  </g>
+  <circle cx="100" cy="100" r="93" fill="none" stroke="#f0c94a" stroke-width="6"/>
+  <circle cx="100" cy="100" r="96.5" fill="none" stroke="#8a6a10" stroke-width="2.5"/>
+  <circle cx="100" cy="100" r="89.8" fill="none" stroke="#8a6a10" stroke-width="1.5" opacity="0.6"/>
+</svg>

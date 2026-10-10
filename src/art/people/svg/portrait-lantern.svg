@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <radialGradient id="portrait-lantern-bg" cx="0.4" cy="0.35" r="0.8">
+      <stop offset="0" stop-color="#3c4a66"/>
+      <stop offset="1" stop-color="#121826"/>
+    </radialGradient>
+    <radialGradient id="portrait-lantern-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffc85a" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#ffc85a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="portrait-lantern-flame" cx="0.5" cy="0.6" r="0.6">
+      <stop offset="0" stop-color="#fff2b0"/>
+      <stop offset="0.5" stop-color="#ffc24a"/>
+      <stop offset="1" stop-color="#d0701e"/>
+    </radialGradient>
+    <linearGradient id="portrait-lantern-hood" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#4a4a58"/>
+      <stop offset="1" stop-color="#26262e"/>
+    </linearGradient>
+    <linearGradient id="portrait-lantern-skin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7a604e"/>
+      <stop offset="1" stop-color="#d9b08a"/>
+    </linearGradient>
+    <linearGradient id="portrait-lantern-shade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0e0e14" stop-opacity="0.9"/>
+      <stop offset="0.6" stop-color="#0e0e14" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#0e0e14" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="portrait-lantern-iris" cx="0.5" cy="0.7" r="0.6">
+      <stop offset="0" stop-color="#adb6a4"/>
+      <stop offset="0.6" stop-color="#6a7a5a"/>
+      <stop offset="1" stop-color="#454f3a"/>
+    </radialGradient>
+    <clipPath id="portrait-lantern-clip"><circle cx="100" cy="100" r="91"/></clipPath>
+  </defs>
+  <circle cx="100" cy="100" r="96" fill="url(#portrait-lantern-bg)"/>
+  <g fill="#e8eef8" opacity="0.6"><circle cx="150" cy="44" r="1.5"/><circle cx="166" cy="70" r="1"/><circle cx="40" cy="60" r="1.2"/><circle cx="132" cy="28" r="1"/></g>
+  <g clip-path="url(#portrait-lantern-clip)" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="62" cy="142" r="56" fill="url(#portrait-lantern-glow)"/>
+    <g transform="translate(-12 -6) scale(1.12)">
+      <!-- cloak -->
+      <path d="M22 200C26 168 44 150 70 144L134 144C160 150 178 168 182 200Z" fill="#26262e" stroke="#0c0c12" stroke-width="4"/>
+      <path d="M144 152C162 162 172 178 176 200L134 200C142 186 146 168 144 152Z" fill="#1a1a22"/>
+      <path d="M60 200C62 184 66 170 72 160M120 200C122 186 126 172 132 162" fill="none" stroke="#0c0c12" stroke-width="2.5"/>
+      <!-- hood -->
+      <path d="M64 142C54 112 56 78 72 56C84 40 104 30 120 33C138 37 148 56 150 80C152 104 148 128 140 144Z" fill="url(#portrait-lantern-hood)" stroke="#0c0c12" stroke-width="4"/>
+      <path d="M126 36C142 46 148 66 148 90C148 112 146 130 140 144L128 144C138 120 140 84 126 36Z" fill="#1d1d24"/>
+      <path d="M72 64C80 50 94 40 110 37" fill="none" stroke="#6a6a7a" stroke-width="2.5"/>
+      <!-- hood opening -->
+      <path d="M74 132C66 108 70 82 80 68C90 56 112 54 122 64C132 76 134 104 130 130C118 140 88 142 74 132Z" fill="#0e0e14" stroke="#0c0c12" stroke-width="3"/>
+      <!-- face in shadow -->
+      <path d="M80 84C78 100 80 114 88 124C96 132 112 132 120 122C126 110 126 92 122 80C114 70 88 70 80 84Z" fill="url(#portrait-lantern-skin)"/>
+      <path d="M76 68L128 68L128 92C112 86 92 86 76 94Z" fill="url(#portrait-lantern-shade)"/>
+      <path d="M116 80C120 92 122 104 118 116L126 116L126 80Z" fill="#4a3a32" opacity="0.6"/>
+      <!-- brows and eyes: narrowed, glancing aside -->
+      <path d="M96 89C102 86 110 86 117 87" fill="none" stroke="#14100e" stroke-width="3.5"/>
+      <path d="M80 87C83 86 88 86 91 89" fill="none" stroke="#14100e" stroke-width="3"/>
+      <path d="M98 95C101 92 110 91 115 93.5C111 97 102 98 98 95Z" fill="#f4ead8"/>
+      <circle cx="102.5" cy="94.5" r="3.2" fill="url(#portrait-lantern-iris)"/>
+      <circle cx="102.3" cy="94.5" r="1.7" fill="#1b1622"/>
+      <circle cx="101.3" cy="93.4" r="1.1" fill="#fff"/>
+      <path d="M97 94.5C101 91 110 90.5 116 93" fill="none" stroke="#0e0a0a" stroke-width="2.8"/>
+      <path d="M80 94.5C82 92 87 91.5 90 93.5C87 96.5 82 97 80 94.5Z" fill="#f4ead8"/>
+      <circle cx="82.6" cy="94.4" r="2.7" fill="url(#portrait-lantern-iris)"/>
+      <circle cx="82.4" cy="94.4" r="1.4" fill="#1b1622"/>
+      <circle cx="81.6" cy="93.5" r="0.9" fill="#fff"/>
+      <path d="M79 94C82 91.5 87 91 91 93" fill="none" stroke="#0e0a0a" stroke-width="2.6"/>
+      <path d="M92 97C91 100 90 102 89 104" fill="none" stroke="#8a6a54" stroke-width="2"/>
+      <!-- scarf mask -->
+      <path d="M76 104C88 98 114 98 128 103C130 116 126 128 118 134C104 140 88 138 80 130C76 122 75 112 76 104Z" fill="#3a3a48" stroke="#0c0c12" stroke-width="3"/>
+      <path d="M84 104C82 108 84 106 89 104C90 100 92 100 96 102" fill="#4e4e5e"/>
+      <path d="M82 114C94 118 110 118 124 112M86 125C98 128 110 127 120 122" fill="none" stroke="#24242e" stroke-width="2"/>
+      <path d="M80 106C90 102 104 101 116 103" fill="none" stroke="#5a5a6c" stroke-width="2"/>
+      <!-- warm lantern light catching the left edge -->
+      <path d="M66 136C58 112 60 84 72 62" fill="none" stroke="#e8a848" stroke-width="2" opacity="0.7"/>
+      <path d="M78 108C78 118 80 126 84 132" fill="none" stroke="#e8a848" stroke-width="1.8" opacity="0.6"/>
+      <path d="M79 88C79 94 80 98 82 101" fill="none" stroke="#f0b86a" stroke-width="1.5" opacity="0.7"/>
+      <!-- lantern clasp -->
+      <path d="M78 146C90 152 112 152 126 146" fill="none" stroke="#0c0c12" stroke-width="2.5"/>
+      <circle cx="102" cy="152" r="9" fill="#b88a2a" stroke="#4a3410" stroke-width="2.5"/>
+      <path d="M99 146.5L105 146.5L106.5 149.5L106.5 157L97.5 157L97.5 149.5Z" fill="#1a1a20"/>
+      <rect x="100" y="150" width="4" height="5" fill="#ffd36a"/>
+      <circle cx="99" cy="149" r="1.4" fill="#f4dc8a"/>
+    </g>
+    <!-- the lantern, held up in a gloved hand -->
+    <path d="M60 200C60 170 64 136 68 112L84 116C84 144 84 172 88 200Z" fill="#2c2c36" stroke="#0c0c12" stroke-width="3.5"/><path d="M78 124C80 150 80 176 82 200" fill="none" stroke="#454554" stroke-width="2"/>
+    <path d="M58 119C58 112 70 112 70 119" fill="none" stroke="#1a1a20" stroke-width="3"/>
+    <path d="M52 122L56 118L72 118L76 122Z" fill="#b88a2a" stroke="#4a3410" stroke-width="2"/>
+    <path d="M50 124L78 124L76 158L52 158Z" fill="#1a1a20" stroke="#0a0a0e" stroke-width="3"/>
+    <path d="M55 128L73 128L72 154L56 154Z" fill="url(#portrait-lantern-flame)"/>
+    <path d="M64 128L64 154M55 141L73 141" stroke="#1a1a20" stroke-width="2"/>
+    <path d="M61 147C59 143 62 139 64 136C66 140 69 143 67 147C66 149 62 149 61 147Z" fill="#fff8d0"/>
+    <path d="M50 158L78 158L74 164L54 164Z" fill="#b88a2a" stroke="#4a3410" stroke-width="2"/>
+    <path d="M56 125L60 125" stroke="#f4dc8a" stroke-width="1.5"/>
+    <path d="M70 100C76 100 80 106 78 114C76 118 70 119 66 117Z" fill="#3a2e28" stroke="#14100c" stroke-width="3"/><path d="M55 104C55 99 59 98 62 99L70 99C73 99 74 102 72 104C74 106 74 109 72 111C73 113 72 116 69 116L58 116C55 116 54 113 56 111C54 109 54 106 55 104Z" fill="#3a2e28" stroke="#14100c" stroke-width="3"/><path d="M57 104L71 104M57 108L72 108M57 112L71 112" fill="none" stroke="#14100c" stroke-width="1.6"/><path d="M58 101C61 100 65 100 68 101" fill="none" stroke="#6a5a4e" stroke-width="1.5"/>
+  </g>
+  <circle cx="100" cy="100" r="93" fill="none" stroke="#b88a2a" stroke-width="6"/>
+  <circle cx="100" cy="100" r="96.5" fill="none" stroke="#4a3410" stroke-width="2.5"/>
+  <circle cx="100" cy="100" r="89.8" fill="none" stroke="#4a3410" stroke-width="1.5" opacity="0.6"/>
+</svg>

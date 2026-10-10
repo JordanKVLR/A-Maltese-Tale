@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="portrait-kaptan-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e6f2f6"/>
+      <stop offset="0.6" stop-color="#9ccbe0"/>
+      <stop offset="1" stop-color="#4a8aab"/>
+    </linearGradient>
+    <linearGradient id="portrait-kaptan-skin" x1="0.2" y1="0.1" x2="0.8" y2="0.9">
+      <stop offset="0" stop-color="#dcac84"/>
+      <stop offset="1" stop-color="#c89670"/>
+    </linearGradient>
+    <linearGradient id="portrait-kaptan-coat" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#2c5076"/>
+      <stop offset="1" stop-color="#1f3a5a"/>
+    </linearGradient>
+    <radialGradient id="portrait-kaptan-iris" cx="0.5" cy="0.7" r="0.6">
+      <stop offset="0" stop-color="#93adbf"/>
+      <stop offset="0.6" stop-color="#3a6a8a"/>
+      <stop offset="1" stop-color="#26455a"/>
+    </radialGradient>
+    <clipPath id="portrait-kaptan-clip"><circle cx="100" cy="100" r="91"/></clipPath>
+    <clipPath id="portrait-kaptan-face"><path d="M70 70C66 84 66 100 70 112C74 124 84 134 100 136C116 136 126 126 130 112C133 100 133 84 130 72C124 60 76 58 70 70Z"/></clipPath>
+  </defs>
+  <circle cx="100" cy="100" r="96" fill="url(#portrait-kaptan-bg)"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M150 50C153 46 157 46 159 49C161 46 165 46 168 50" stroke="#5a7a8a" stroke-width="2.2"/>
+  </g>
+  <g clip-path="url(#portrait-kaptan-clip)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 140C30 136 44 142 60 138M140 142C156 138 172 144 192 140" fill="none" stroke="#e4f2f6" stroke-width="2.5" opacity="0.7"/>
+    <g transform="translate(-12 -8) scale(1.12)">
+      <!-- peacoat -->
+      <path d="M20 200C24 168 44 150 76 144L126 144C158 150 178 168 182 200Z" fill="url(#portrait-kaptan-coat)" stroke="#0e1e30" stroke-width="4"/>
+      <path d="M148 154C164 164 172 180 174 200L138 200C144 186 148 170 148 154Z" fill="#172e48"/>
+      <!-- breton stripes -->
+      <path d="M86 144L118 144L112 172L92 172Z" fill="#f4f2ea" stroke="#0e1e30" stroke-width="2.5"/>
+      <path d="M87 151L117 151M89 158L115 158M90 165L114 165" stroke="#1f3a5a" stroke-width="3"/>
+      <!-- wide lapels -->
+      <path d="M72 146L90 146L96 176L84 200L56 200C58 178 62 158 72 146Z" fill="#2c5076" stroke="#0e1e30" stroke-width="3"/>
+      <path d="M132 146L114 146L108 176L120 200L148 200C146 178 142 158 132 146Z" fill="#1f3a5a" stroke="#0e1e30" stroke-width="3"/>
+      <path d="M74 150C70 160 68 170 66 182" fill="none" stroke="#4a6e96" stroke-width="2"/>
+      <g fill="#f0c94a" stroke="#7a5a0c" stroke-width="1.8">
+        <circle cx="76" cy="184" r="4"/><circle cx="128" cy="184" r="4"/>
+      </g>
+      <!-- beard (back mass) -->
+      <path d="M66 100C62 118 70 140 86 148C96 154 110 154 120 148C134 140 140 120 134 100C126 108 116 114 100 114C86 114 74 108 66 100Z" fill="#e6e6ea" stroke="#6a6a7a" stroke-width="3.5"/>
+      <!-- ear -->
+      <path d="M128 90C138 85 142 100 136 110C133 114 129 114 127 112Z" fill="#c89670" stroke="#5a3018" stroke-width="3"/>
+      <path d="M131 95C134 96 135 102 132 106" fill="none" stroke="#9a6a4a" stroke-width="2"/>
+      <!-- face -->
+      <path d="M70 70C66 84 66 100 70 112C74 124 84 134 100 136C116 136 126 126 130 112C133 100 133 84 130 72C124 60 76 58 70 70Z" fill="url(#portrait-kaptan-skin)"/>
+      <g clip-path="url(#portrait-kaptan-face)">
+        <path d="M122 72C120 86 126 96 122 106C118 116 112 126 98 138L136 138L136 72Z" fill="#a87a5a"/>
+        <ellipse cx="114" cy="104" rx="7" ry="4.5" fill="#d8645a" opacity="0.4"/>
+        <path d="M118 96L124 94M118 100L124 101M76 84C82 82 88 82 92 84" fill="none" stroke="#9a6a4a" stroke-width="1.6"/>
+      </g>
+      <path d="M70 70C66 84 66 100 70 112C74 124 84 134 100 136C116 136 126 126 130 112C133 100 133 84 130 72" fill="none" stroke="#5a3018" stroke-width="4"/>
+      <!-- beard front, scalloped -->
+      <path d="M68 104C70 114 74 118 78 120C78 128 84 134 90 134C92 140 100 142 106 138C112 140 120 134 120 128C126 126 130 118 130 108C124 116 114 118 104 116C96 118 84 116 76 110Z" fill="#f2f2f4" stroke="#6a6a7a" stroke-width="3"/>
+      <path d="M86 128C90 130 94 130 98 128M106 132C110 132 114 130 116 126M80 118C82 122 84 124 88 124M98 136C100 138 104 138 106 136M72 132C76 138 82 142 88 144M124 136C120 142 114 146 108 148" fill="none" stroke="#b8b8c4" stroke-width="2"/>
+      <!-- pipe from the far corner -->
+      <path d="M90 118L70 124" stroke="#2a1a10" stroke-width="5"/>
+      <path d="M90 118L70 124" stroke="#6a4024" stroke-width="2.5"/>
+      <path d="M58 112L72 112L72 124C72 130 58 130 58 124Z" fill="#7a4a2a" stroke="#2a1a10" stroke-width="3"/>
+      <ellipse cx="65" cy="112" rx="7" ry="2.5" fill="#2a1a10"/>
+      <path d="M60 116L61 124" stroke="#a87048" stroke-width="2"/>
+      <path d="M63 107C56 102 62 96 56 90C50 84 58 78 52 72" fill="none" stroke="#8aa8b8" stroke-width="6" opacity="0.5"/><path d="M63 107C56 102 62 96 56 90C50 84 58 78 52 72" fill="none" stroke="#fbfdfe" stroke-width="3.5"/><circle cx="50" cy="66" r="3.5" fill="#fbfdfe" stroke="#8aa8b8" stroke-width="1.5"/><circle cx="56" cy="58" r="2.2" fill="#fbfdfe" stroke="#8aa8b8" stroke-width="1.2"/>
+      <!-- bushy moustache -->
+      <path d="M78 114C82 106 94 106 100 111C106 106 118 106 122 114C118 120 110 120 101 117C92 121 82 120 78 114Z" fill="#fafafa" stroke="#6a6a7a" stroke-width="2.6"/>
+      <path d="M88 113C92 114 96 114 99 113M104 113C108 114 112 114 116 113" fill="none" stroke="#c4c4cc" stroke-width="1.6"/>
+      <!-- bulb nose -->
+      <path d="M92 94C91 100 85 101 84 106C83 111 89 113 93 110C96 112 101 110 100 106" fill="#d29a78" stroke="#5a3018" stroke-width="2.4"/>
+      <ellipse cx="88.5" cy="105" rx="2.4" ry="1.8" fill="#eabca0"/>
+      <!-- eyes: one squinting, one twinkling -->
+      <path d="M100 92C103 88 112 87 117 91C113 96 104 97 100 92Z" fill="#fffaf2"/>
+      <circle cx="108.5" cy="91.6" r="3.8" fill="url(#portrait-kaptan-iris)"/>
+      <circle cx="108.5" cy="91.6" r="1.9" fill="#1b1622"/>
+      <circle cx="107.1" cy="90.2" r="1.4" fill="#fff"/>
+      <circle cx="110" cy="93.2" r="0.6" fill="#fff"/>
+      <path d="M99 92C103 87 112 86 118 90" fill="none" stroke="#2a1a10" stroke-width="2.8"/>
+      <path d="M78 93C82 91 87 91 91 93" fill="none" stroke="#2a1a10" stroke-width="3.2"/>
+      <path d="M78 96C82 97 87 97 90 95.5M76 91L72 88M76 94L72 94M79 89C82 88 86 88 89 89.5" fill="none" stroke="#9a6a4a" stroke-width="1.6"/>
+      <!-- bushy brows -->
+      <path d="M97 84C101 78 112 76 121 82C122 85 119 86 117 84C111 81 104 81 99 86C97 87 96 86 97 84Z" fill="#f4f4f6" stroke="#6a6a7a" stroke-width="2.2"/>
+      <path d="M75 88C79 85 86 85 92 89C93 91 91 92 89 91C85 89 80 89 76 91C74 91 74 89 75 88Z" fill="#f4f4f6" stroke="#6a6a7a" stroke-width="2"/>
+      <!-- skipper cap -->
+      <path d="M66 74C62 62 66 50 76 46C92 40 118 40 132 46C140 50 142 62 136 74C120 70 84 70 66 74Z" fill="#1f3a5a" stroke="#0e1e30" stroke-width="4"/>
+      <path d="M120 46C134 50 138 62 134 72L122 71C126 62 126 52 120 46Z" fill="#172e48"/>
+      <path d="M76 48C90 43 110 42 126 45" fill="none" stroke="#3e6690" stroke-width="2.5"/>
+      <path d="M66 74C84 70 120 70 136 74L136 80C118 76 84 76 66 80Z" fill="#14263c" stroke="#0e1e30" stroke-width="2.5"/>
+      <path d="M58 84C64 74 84 72 102 76C96 84 76 88 58 84Z" fill="#14141c" stroke="#05050a" stroke-width="3"/>
+      <path d="M64 80C72 77 82 76 92 77" fill="none" stroke="#5a5a6a" stroke-width="2"/>
+      <path d="M68 73C88 68 116 68 134 72" fill="none" stroke="#f0c94a" stroke-width="2.4"/>
+      <!-- anchor badge -->
+      <circle cx="90" cy="60" r="7.5" fill="#f0c94a" stroke="#7a5a0c" stroke-width="2"/>
+      <path d="M90 55L90 65M87 57L93 57M86 62C87 65 93 65 94 62" fill="none" stroke="#7a5a0c" stroke-width="1.8"/>
+    </g>
+  </g>
+  <circle cx="100" cy="100" r="93" fill="none" stroke="#f0c94a" stroke-width="6"/>
+  <circle cx="100" cy="100" r="96.5" fill="none" stroke="#8a6a10" stroke-width="2.5"/>
+  <circle cx="100" cy="100" r="89.8" fill="none" stroke="#8a6a10" stroke-width="1.5" opacity="0.6"/>
+</svg>
