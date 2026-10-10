@@ -163,3 +163,213 @@ node scripts/harsi-preview.js /tmp/out.png --people portrait-abela player-down  
 Look at the PNG and judge it honestly. Ask: does it read at 40px, is the line weight consistent,
 is the anatomy believable, would a player want this on their team? Then iterate.
 `node scripts/harsi-art.js build` bundles everything into the game; whoever integrates runs it.
+
+## House recipe (from the starters)
+
+The nine starter files (`calfleaf`, `vinehorn`, `mosstaur`, `pharawoof`, `infernux`, `pyrollis`,
+`duckling`, `platyflow`, `marinedge`) are the reference implementation of this guide. Open one
+beside your own file and copy its structure. The anchor sheets that show them are rendered with
+`--lineup` and the normal row view of the same nine ids.
+
+### Layer order (every Ħarsi file)
+
+1. `<defs>`: gradients first, then clip paths (one per big form, one per eye).
+2. The ground shadow ellipse.
+3. **The backing group**: every shape that touches the silhouette, filled and stroked in its
+   outline colour at `stroke-width="7"`. It sits under everything, so only its outer 3.5px shows.
+4. The parts, back to front: far limbs, tail, body, near limbs, ears, head, the face, the eyes,
+   and last any ornament that sits on top (crests, flowers, jewellery).
+5. Each big form is drawn as a clip group (base, shadow, rim light, highlight), then its own
+   `2.5` outline on top. Overlap lines come out thin and the outer contour comes out bold, with
+   no extra work.
+
+```svg
+<g fill="#215530" stroke="#215530" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+  <path d="BODY"/><path d="HEAD"/><path d="LEGS"/>                <!-- same d as the parts -->
+  <path d="HORNS" fill="#6a4022" stroke="#6a4022"/>                <!-- other materials override -->
+  <path d="TAIL" fill="none" stroke-width="8"/>                    <!-- tails/stems are tubes -->
+</g>
+```
+
+### Outline colours
+
+Take the part's base colour and keep its hue, or nudge it 10–20° towards blue. Drop the
+lightness to about 15–25% and keep the saturation high. Never use black or grey. Use one outline
+colour per material, and darken it a little with each stage. The values the starters use:
+
+| Material | Base | Outline |
+| --- | --- | --- |
+| Green body (stage 1 / 2 / 3) | `#7cc453` / `#62b047` / `#4c923e` | `#215530` / `#1d4d2c` / `#173d24` |
+| Tan hound coat (1 / 2 / 3) | `#f09a4a` / `#ea8a42` / `#e2652e` | `#6a2a18` / `#5e2414` / `#5a1c12` |
+| Duck blue (1–2), steel (3) | `#5fb8e8`, `#4a9fd4`, `#97aabd` | `#1d4f86`, `#163f73`, `#24344c` |
+| Honey limestone, hooves | `#e8c98c`, `#f0cf86` | `#5e3d1e`, `#6a4022` |
+| Carob wood | `#a06a3c` | `#3a2212` |
+| Bills and webbed feet | `#ffd63f`, `#ffaa36` | `#9a521a` |
+| Gold and brass | `#f3c14a` | `#6a3a0e` |
+| Sulla magenta | `#d23f78` | `#6e1c40` |
+| Flame | gradient | `#a8341a` |
+| Tyrian purple cloth | `#8a3484` | `#3a1036` |
+| Pupils and lash lines | — | `#1b1622` |
+
+A boundary *inside* a form between two colour regions (cream muzzle on a green head, white belly)
+gets a 2.5 line in a mid-dark tone of the body, such as `#4f6a36` on green. It is never the full
+outline colour, and it is never a separate shape with its own heavy outline.
+
+### Stroke widths actually used
+
+- **Silhouette:** the backing at `7`, plus the part's own `2.5` line, gives a visible outer line
+  of about 4.75.
+- **Inner lines** (overlaps, region boundaries, plates): `2.5`.
+- **Muscle and haunch lines:** `2` to `2.5`, drawn as open paths.
+- **Small parts that are not in the backing** (leaves, florets, inner ears, rivets, beads):
+  `1.5` to `2`.
+- **Eyes:** sclera outline `2`, lash line `3.2`–`3.8`, brow `2.3`–`3`.
+- **Tubes** (tails, stems, twigs): a dark stroke of `8`–`10` in the backing, then a `3`–`4.5`
+  stroke in the fill colour on top.
+- **Caps and joins:** round everywhere. Use `stroke-linecap="butt"` only for dashed rubble walls.
+
+### Shadows and highlights (the cel recipe)
+
+The light comes from the top left. Each big form is one clip path plus a clip group.
+
+```svg
+<linearGradient id="calfleaf-g" gradientUnits="userSpaceOnUse" x1="50" y1="76" x2="130" y2="166">
+  <stop offset="0" stop-color="#a8de70"/><stop offset=".55" stop-color="#7cc453"/></linearGradient>
+<clipPath id="calfleaf-cb"><path d="BODY"/></clipPath>
+…
+<g clip-path="url(#calfleaf-cb)">
+  <rect x="84" y="100" width="84" height="66" fill="url(#calfleaf-g)"/>                    <!-- base -->
+  <path d="M84 142C108 156 148 152 168 118V170H84Z" fill="#55a25a"/>                       <!-- shadow -->
+  <path d="M100 120C110 126 112 142 104 160H86V120Z" fill="#4a955a"/>                      <!-- accent shadow -->
+  <path d="M98 157C120 160 146 156 160 140" fill="none" stroke="#86ca62" stroke-width="2"/> <!-- rim light -->
+  <path d="M114 111C126 107 140 107 152 111C140 110 126 112 116 116Z" fill="#d6f6a0"/>     <!-- highlight -->
+</g>
+<path d="BODY" fill="none" stroke="#215530" stroke-width="2.5"/>
+```
+
+- **Base:** a two-stop gradient. The light tint (about 15–20% lighter) sits at `0` and the base
+  colour at `.5`–`.55`.
+  - Use `gradientUnits="userSpaceOnUse"` for the main body gradient, and reuse it for every
+    clipped part (head, body, near legs).
+  - That way all the parts share one light direction, and a shoulder can blend into the body
+    with no seam.
+- **Shadow:** 22–28% darker, with the hue nudged towards blue. Only its upper edge matters, a
+  curve that follows the form along the belly, under the jaw and down the far side. The rest can
+  overshoot because the clip trims it.
+  - Pairs used: `#7cc453` → `#55a25a`, `#f09a4a` → `#c8703c`, `#ea8a42` → `#bf5e36`,
+    `#e8c98c` → `#c49a5e`.
+  - On blue-and-white bodies, the shadow is one overlay at `#2f74b8` with opacity `.4`–`.55`
+    (`#1d3a66` at `.35` on steel), so it shades both colour regions at once.
+- **Accent shadow:** about 35% darker, only where one form sits under another: the chest under
+  the head, the inside of a far leg.
+- **Rim light:** a 2px stroke one step lighter than the base, 3–4px inside the lower-right edge.
+- **Highlight:** a thin crescent near the top left of each big form, never a round blob.
+  - Tints: `#d6f6a0` on green, `#ffd89a` on tan, `#c4eafc` on blue, `#fff` on steel.
+  - Pure white speculars only on glossy parts: eyes, noses, bills, metal, flame cores.
+- **Small forms** (legs, ears, horns, hooves, stones, bills) take no clip. A hard-stop gradient
+  does the cel shadow in a single element. Far-side limbs use the same gradient one step darker,
+  so they sit back.
+
+```svg
+<linearGradient id="calfleaf-leg" x1="0" x2="1">
+  <stop offset=".58" stop-color="#7cc453"/><stop offset=".58" stop-color="#55a25a"/></linearGradient>
+```
+
+### Eyes
+
+```svg
+<radialGradient id="calfleaf-iris" cx=".5" cy=".78" r=".75">
+  <stop offset="0" stop-color="#e8b04e"/><stop offset=".5" stop-color="#94582a"/><stop offset="1" stop-color="#3b2010"/></radialGradient>
+<clipPath id="calfleaf-e1"><ellipse cx="88" cy="100" rx="9" ry="11.5"/></clipPath>
+…
+<ellipse cx="88" cy="100" rx="9" ry="11.5" fill="#fffdf4"/>                         <!-- sclera -->
+<g clip-path="url(#calfleaf-e1)">
+  <ellipse cx="86.5" cy="102" rx="7.5" ry="9.5" fill="url(#calfleaf-iris)"/>         <!-- iris, nudged forward -->
+  <ellipse cx="86" cy="103" rx="4.6" ry="6.2" fill="#1b1622"/>                       <!-- big pupil -->
+  <path d="M76 86H100V94C94 91 82 91 76 95Z" fill="#c9cfe0"/>                         <!-- lid shadow -->
+</g>
+<ellipse cx="88" cy="100" rx="9" ry="11.5" fill="none" stroke="#215530" stroke-width="2"/>
+<path d="M79.5 94C82 89.5 85.5 88.3 88.5 88.3C92 88.4 95 90.5 96.8 94" fill="none" stroke="#1b1622" stroke-width="3.5"/>
+<circle cx="82.8" cy="97" r="3.3" fill="#fff"/>                                       <!-- big highlight -->
+<circle cx="88" cy="101.5" r="1.5" fill="#fff"/>                                      <!-- small highlight -->
+```
+
+- **Stage 1 and 2:**
+  - An elliptical sclera, a little taller than wide. The near eye is about 18×23 and the far eye
+    about 75% as wide, foreshortened.
+  - The iris and pupil are nudged 1–1.5px towards the facing direction.
+  - A lid-shadow band sits across the top inside the clip.
+  - The lash line follows the top arc.
+  - The big highlight (r ≈ 3) sits at the upper left of the pupil, the small one (r ≈ 1.4)
+    just below and right of it.
+- **Final forms:**
+  - The clip is an almond `<path>` whose top edge slopes down towards the inner corner.
+  - The iris touches the lid, with no lid band.
+  - A brow shape presses on the lid: a moss tuft (Moss-taur), a steel visor (Marinedge).
+  - Highlights shrink to about 2.2 and 1.
+- **Iris gradient:** always radial `cx .5 cy .78 r .75`, running from a light bottom through a
+  mid tone to a dark rim.
+- **Iris colour per line:** brown on the calf line, then glowing amber on Moss-taur; amber on
+  the hound line; white-gold to red on Pyrollis; cyan to navy on the duck line.
+
+### Gradients and clip paths
+
+- **Id suffixes:**
+  - `-g`: main body gradient. `-cb`, `-ch`, `-cl`: body, head and near-legs clips.
+  - `-e1`, `-e2`: near and far eye. `-iris`.
+  - `-leg`, `-far`: hard-stop limb gradients. `-fl`: flame. `-au`: gold.
+- **Gradients:** two or three stops.
+  - Linear with userSpaceOnUse for the body.
+  - Hard-stop linear for limbs and props.
+  - Radial only for irises.
+  - Flames run vertically: a pale gold core at the bottom, orange, then magenta at the tips
+    (`x1="0" y1="1" x2="0" y2="0"`).
+- **Clip paths:** three to seven per file.
+  - Body, head, both eyes, and one *compound* path for both near legs.
+  - Any big prop (Marinedge's sail wing).
+  - Clip only fills, never the outline strokes.
+- **Path budget:** a big form's path appears three times (clip, backing, outline), and that is
+  the main byte cost. Keep those paths to 6–10 curve segments.
+- **Near limbs:** draw each one as a single shape with its shoulder or thigh, and clip and shade
+  it like the body. Outline it with an *open* path that fades into the body, with no line across
+  the top of the shoulder. This gives real anatomy instead of tubes stuck on.
+- **Transforms:** `rotate` and `translate` may wrap whole parts (Pharawoof's head tilt is
+  `rotate(6 86 128)` on both its backing and its drawing). Never `scale` a group that contains
+  outlines, because that changes the line weight. Scaling small fill-only motifs is fine.
+
+### File size
+
+Measured minified, the way the checker counts:
+- Stage 1: 7–9 KB.
+- Stage 2: 7–11 KB.
+- Finals: 9–12.3 KB.
+
+The finals pass the 10 KB soft target, which is fine up to the 16 KB limit. Use integers almost
+everywhere and one decimal only in the eyes. A starter has about 60–110 elements.
+
+### Everything else that defines the look
+
+- **The 3/4 view, facing left:**
+  - The face's centre line sits left of the head's centre, and the near eye is about 1.3× the
+    far eye.
+  - The far legs show to the *left* of the near legs, under the head and chest. They are shorter
+    (feet at y 179 against 182) and one step darker.
+- **Sizes the starters hit,** measured stroke-inclusive from the top of the art to the feet:
+  - Stage 1 is about 63%: a big head and short legs.
+  - Stage 2 is about 79–83%.
+  - Finals are 85–86%, and they fill the frame's width as well as its height.
+- **One signature motif per line, carried through every stage and growing each time:**
+  - Calf line: a sulla flower tail tuft, then clover leaves, then honey-limestone hooves.
+  - Hound line: blushing Pharaoh-hound ears, then ear flames, then an ember tail.
+  - Duck line: the canary bill, then the luzzu yellow-and-red sheer stripes.
+- **One nameable piece of Malta in each design:** the Ġgantija trilithon, a Tarxien double
+  spiral, the Tanit disc and crescent, Tyrian purple, the Eye of Osiris, the eight-pointed cross
+  (four V-notched arms, not a star), the luzzu stem post and sheer line.
+- **Rubble walls:** a `6.5` dark stroke, then the same path in honey at `3.5` with
+  `stroke-dasharray="6 1.6 4 1.6 5 1.6"` and `stroke-linecap="butt"`. Round caps fill the gaps
+  and turn the stones into sausages.
+- **Glows** (no filters): a pale shape behind the glowing thing at opacity `.25`–`.35`. Keep
+  them small, because a big one reads as a smudge on light backgrounds.
+- **Stage-1 blush:** an ellipse of about 11×6 on the near cheek, `#ff6a6a` to `#f2849e`, at
+  opacity `.5`–`.6`.
+- **Ground shadow:** `rx` is the footprint plus about 8.

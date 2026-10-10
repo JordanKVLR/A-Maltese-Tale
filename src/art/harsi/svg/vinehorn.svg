@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="vinehorn-g" gradientUnits="userSpaceOnUse" x1="40" y1="60" x2="130" y2="150"><stop offset="0" stop-color="#94d460"/><stop offset=".55" stop-color="#62b047"/></linearGradient>
+<linearGradient id="vinehorn-far" x1="0" x2="1"><stop offset=".5" stop-color="#4c9a4b"/><stop offset=".5" stop-color="#3a7a4b"/></linearGradient>
+<linearGradient id="vinehorn-hoof" x1="0" x2="1"><stop offset=".55" stop-color="#f0cf86"/><stop offset=".55" stop-color="#cc965c"/></linearGradient>
+<linearGradient id="vinehorn-wood" x1="0" y1="0" x2=".4" y2="1"><stop offset=".45" stop-color="#a86f3e"/><stop offset=".45" stop-color="#77482b"/></linearGradient>
+<radialGradient id="vinehorn-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#e8b04e"/><stop offset=".5" stop-color="#94582a"/><stop offset="1" stop-color="#3b2010"/></radialGradient>
+<clipPath id="vinehorn-cb"><path d="M58 118C58 96 84 70 108 70C124 70 134 78 148 80C162 82 172 92 172 106C172 122 164 136 148 140C134 144 122 150 106 151C94 152 84 152 76 151C64 150 58 138 58 118Z"/></clipPath>
+<clipPath id="vinehorn-cl"><path d="M140 100C154 96 170 100 174 114C177 126 172 140 166 150C162 156 160 162 160 170V174C160 179 156 182 151 182C146 182 142 179 142 174V168C142 160 140 152 137 144C133 132 130 110 140 100ZM84 96C96 94 104 106 102 122C100 134 96 146 95 158V174C95 179 91 182 86 182C81 182 77 179 77 174V160C77 148 72 134 72 120C72 106 76 98 84 96Z"/></clipPath>
+<clipPath id="vinehorn-ch"><path d="M54 70C68 70 78 80 78 94C78 106 74 116 64 122C56 127 44 130 34 128C24 126 18 118 20 110C21 104 24 100 28 97C28 84 40 70 54 70Z"/></clipPath>
+<clipPath id="vinehorn-e1"><ellipse cx="58" cy="94" rx="7.2" ry="8.6"/></clipPath>
+<clipPath id="vinehorn-e2"><ellipse cx="35" cy="96" rx="5.4" ry="7.6"/></clipPath>
+</defs>
+<ellipse cx="108" cy="184" rx="66" ry="7" fill="#1d2b33" opacity="0.22"/>
+<g fill="#1d4d2c" stroke="#1d4d2c" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M168 98C180 100 186 112 185 128" fill="none" stroke-width="8"/>
+<path d="M58 118C58 96 84 70 108 70C124 70 134 78 148 80C162 82 172 92 172 106C172 122 164 136 148 140C134 144 122 150 106 151C94 152 84 152 76 151C64 150 58 138 58 118Z"/>
+<path d="M140 100C154 96 170 100 174 114C177 126 172 140 166 150C162 156 160 162 160 170V174C160 179 156 182 151 182C146 182 142 179 142 174V168C142 160 140 152 137 144C133 132 130 110 140 100ZM84 96C96 94 104 106 102 122C100 134 96 146 95 158V174C95 179 91 182 86 182C81 182 77 179 77 174V160C77 148 72 134 72 120C72 106 76 98 84 96ZM56 136V171C56 176 59 179 63 179C67 179 70 176 70 171V136ZM120 136V171C120 176 123 179 127 179C131 179 134 176 134 171V136Z"/>
+<path d="M84 78C86 68 92 60 98 56C100 62 102 66 106 68C108 62 112 58 118 57C118 63 120 67 124 69C126 64 130 61 136 61C135 67 137 71 141 73C143 69 147 67 152 67C151 73 153 77 157 79C160 77 164 77 167 78C166 84 164 88 161 90C146 84 128 80 112 79C102 78 92 79 84 78Z"/>
+<path d="M54 70C68 70 78 80 78 94C78 106 74 116 64 122C56 127 44 130 34 128C24 126 18 118 20 110C21 104 24 100 28 97C28 84 40 70 54 70Z"/>
+<path d="M72 86C82 84 92 86 97 92C89 97 79 96 71 93ZM28 88C22 86 17 88 14 93C18 97 24 97 28 94Z"/>
+<path d="M58 76C58 68 66 64 76 64C86 64 92 58 92 48C92 42 90 38 86 34C94 36 100 44 99 52C98 64 90 72 80 74C74 75 71 76 70 78ZM46 76C46 70 40 66 32 66C24 66 18 60 18 50C18 46 20 42 23 39C16 42 13 50 14 58C15 68 21 74 28 75C32 76 35 77 36 79ZM97 60C104 60 110 58 114 54" stroke="#3f2414" fill="#3f2414"/>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M168 98C180 100 186 112 185 128" fill="none" stroke="#62b047" stroke-width="3"/>
+<path d="M56 136V171C56 176 59 179 63 179C67 179 70 176 70 171V136ZM120 136V171C120 176 123 179 127 179C131 179 134 176 134 171V136Z" fill="url(#vinehorn-far)" stroke="#1d4d2c" stroke-width="2.5"/>
+<path d="M56 169H70V171C70 176 67 179 63 179C59 179 56 176 56 171ZM120 169H134V171C134 176 131 179 127 179C123 179 120 176 120 171Z" fill="url(#vinehorn-hoof)" stroke="#6a4022" stroke-width="2.5"/>
+<g clip-path="url(#vinehorn-cb)">
+<rect x="54" y="66" width="124" height="90" fill="url(#vinehorn-g)"/>
+<path d="M98 118C118 108 146 106 174 112V130C150 124 122 126 98 136Z" fill="#55a344"/>
+<path d="M54 134C90 156 146 150 176 112V156H54Z" fill="#46904d"/>
+<path d="M54 118C70 122 78 136 76 156H54Z" fill="#3a7a4b"/>
+<path d="M98 118C118 108 146 106 174 112M98 136C122 126 150 124 174 130" fill="none" stroke="#6a4022" stroke-width="6.5"/>
+<path d="M98 118C118 108 146 106 174 112M98 136C122 126 150 124 174 130" fill="none" stroke="#ecc77e" stroke-width="3.5" stroke-dasharray="6 1.6 4 1.6 5 1.6" stroke-linecap="butt"/>
+<path d="M120 84C134 82 148 84 160 90C148 88 134 87 122 89Z" fill="#c6ef90"/>
+</g>
+<path d="M58 118C58 96 84 70 108 70C124 70 134 78 148 80C162 82 172 92 172 106C172 122 164 136 148 140C134 144 122 150 106 151C94 152 84 152 76 151C64 150 58 138 58 118Z" fill="none" stroke="#1d4d2c" stroke-width="2.5"/>
+<g clip-path="url(#vinehorn-cl)">
+<rect x="70" y="92" width="108" height="82" fill="url(#vinehorn-g)"/>
+<path d="M104 104C98 124 98 142 96 174H110V104ZM178 108C172 130 164 146 156 160L154 174H180V108Z" fill="#46904d"/>
+<path d="M174 140C167 150 162 158 160 166" fill="none" stroke="#76c158" stroke-width="2"/>
+<path d="M142 108C148 103 156 102 164 104C156 105 150 108 146 113Z" fill="#c6ef90"/>
+<rect x="76" y="172" width="20" height="11" fill="url(#vinehorn-hoof)"/>
+<rect x="141" y="172" width="20" height="11" fill="url(#vinehorn-hoof)"/>
+</g>
+<path d="M77 172H95M142 172H160" stroke="#6a4022" stroke-width="2.5"/>
+<path d="M86 175V181M151 175V181" stroke="#6a4022" stroke-width="1.5"/>
+<path d="M73 124C74 140 77 150 77 160V174C77 179 81 182 86 182C91 182 95 179 95 174V158C96 146 100 134 102 122C103 112 100 104 96 100M139 104C133 114 133 132 137 144C140 152 142 160 142 168V174C142 179 146 182 151 182C156 182 160 179 160 174V170C160 162 162 156 166 150C172 140 177 126 174 114C172 106 166 101 160 99" fill="none" stroke="#1d4d2c" stroke-width="2.5"/>
+<path d="M84 78C86 68 92 60 98 56C100 62 102 66 106 68C108 62 112 58 118 57C118 63 120 67 124 69C126 64 130 61 136 61C135 67 137 71 141 73C143 69 147 67 152 67C151 73 153 77 157 79C160 77 164 77 167 78C166 84 164 88 161 90C146 84 128 80 112 79C102 78 92 79 84 78Z" fill="#3f8a40" stroke="#1d4d2c" stroke-width="2.5"/>
+<path d="M97 61C98 66 100 69 104 71M116 61C116 66 118 69 122 72M134 64C133 69 135 72 139 75M150 70C149 74 151 77 155 80" fill="none" stroke="#86cc5c" stroke-width="2"/>
+<g stroke="#1d4d2c" stroke-width="2.5">
+<path d="M72 86C82 84 92 86 97 92C89 97 79 96 71 93Z" fill="#62b047"/>
+<path d="M28 88C22 86 17 88 14 93C18 97 24 97 28 94Z" fill="#7ac454"/>
+<path d="M75 88C82 87 88 89 92 92C86 94 80 93 75 91ZM26 90C22 89 19 90 17 93C20 95 24 94 26 92Z" fill="#f5b9b9" stroke-width="1.5"/>
+</g>
+<g clip-path="url(#vinehorn-ch)">
+<rect x="16" y="66" width="66" height="66" fill="url(#vinehorn-g)"/>
+<path d="M80 80C76 96 78 108 68 118C62 122 56 125 50 127L84 134V80Z" fill="#46904d"/>
+<path d="M16 104C28 100 42 100 52 103C62 106 68 114 70 122L70 134H16Z" fill="#f6efcf"/>
+<path d="M16 116C30 126 50 127 66 119L72 134H16Z" fill="#dccab2"/>
+<path d="M24 108C29 105 36 104 43 104" fill="none" stroke="#fff" stroke-width="2.5"/>
+<path d="M34 80C39 74 46 72 54 72C47 75 41 80 38 86Z" fill="#c6ef90"/>
+</g>
+<path d="M21 103C32 100 44 100 52 103C62 106 68 114 70 122" fill="none" stroke="#4f6a36" stroke-width="2.5"/>
+<path d="M54 70C68 70 78 80 78 94C78 106 74 116 64 122C56 127 44 130 34 128C24 126 18 118 20 110C21 104 24 100 28 97C28 84 40 70 54 70Z" fill="none" stroke="#1d4d2c" stroke-width="2.5"/>
+<g stroke="#3f2414" stroke-width="2.5">
+<path d="M97 60C104 60 110 58 114 54" fill="none" stroke-width="7"/>
+<path d="M97 60C104 60 110 58 114 54" fill="none" stroke="#a86f3e" stroke-width="2.5"/>
+<path d="M58 76C58 68 66 64 76 64C86 64 92 58 92 48C92 42 90 38 86 34C94 36 100 44 99 52C98 64 90 72 80 74C74 75 71 76 70 78Z" fill="url(#vinehorn-wood)"/>
+<path d="M46 76C46 70 40 66 32 66C24 66 18 60 18 50C18 46 20 42 23 39C16 42 13 50 14 58C15 68 21 74 28 75C32 76 35 77 36 79Z" fill="url(#vinehorn-wood)"/>
+<path d="M80 66C82 68 83 71 83 73M92 50C94 50 97 51 99 53M30 67C29 69 29 71 30 74M18 54C16 54 13 55 11 57" fill="none" stroke-width="1.5"/>
+<path d="M112 56C116 62 116 70 112 76C110 72 110 64 112 56Z" fill="#6b3a2a" stroke-width="2"/>
+</g>
+<g fill="#4daa4c" stroke="#1f5a30" stroke-width="2">
+<path transform="translate(114 54) rotate(60)" d="M0 0C-3-2-8-2-11-6C-9-8-7-8-6-9C-10-12-10-17-7-19C-5-16-3-15-2-15C-3-19-1-23 0-25C1-23 3-19 2-15C3-15 5-16 7-19C10-17 10-12 6-9C7-8 9-8 11-6C8-2 3-2 0 0Z"/>
+<path transform="translate(24 41) rotate(-20) scale(.7)" d="M0 0C-3-2-8-2-11-6C-9-8-7-8-6-9C-10-12-10-17-7-19C-5-16-3-15-2-15C-3-19-1-23 0-25C1-23 3-19 2-15C3-15 5-16 7-19C10-17 10-12 6-9C7-8 9-8 11-6C8-2 3-2 0 0Z"/>
+<path d="M115 54L132 46M122 50L128 54M122 50L124 44" fill="none" stroke="#1f5a30" stroke-width="1.5"/>
+</g>
+<ellipse cx="49" cy="115" rx="3.4" ry="2.5" fill="#5d3f33"/>
+<ellipse cx="27" cy="116" rx="2.3" ry="2.5" fill="#5d3f33"/>
+<path d="M32 123C38 126 44 126 49 124" fill="none" stroke="#4d4230" stroke-width="2"/>
+<ellipse cx="58" cy="94" rx="7.2" ry="8.6" fill="#fffdf4"/>
+<g clip-path="url(#vinehorn-e1)">
+<ellipse cx="56.6" cy="96" rx="6" ry="7.4" fill="url(#vinehorn-iris)"/>
+<ellipse cx="56.2" cy="97" rx="3.7" ry="4.9" fill="#1b1622"/>
+<path d="M48 82H68V90C62 87 54 87 48 91Z" fill="#c9cfe0"/>
+</g>
+<ellipse cx="58" cy="94" rx="7.2" ry="8.6" fill="none" stroke="#1d4d2c" stroke-width="2"/>
+<path d="M50.4 89.5C52.6 86.3 55.2 85.3 58 85.3C61 85.3 63.8 86.8 65.8 89.6" fill="none" stroke="#1b1622" stroke-width="3.5"/>
+<path d="M49 83.5C54 80.5 61 79.5 68 81.5" fill="none" stroke="#1d4d2c" stroke-width="3"/>
+<circle cx="53.8" cy="91.6" r="2.7" fill="#fff"/>
+<circle cx="58" cy="95.5" r="1.3" fill="#fff"/>
+<ellipse cx="35" cy="96" rx="5.4" ry="7.6" fill="#fffdf4"/>
+<g clip-path="url(#vinehorn-e2)">
+<ellipse cx="33.8" cy="98" rx="4.6" ry="6.6" fill="url(#vinehorn-iris)"/>
+<ellipse cx="33.4" cy="99" rx="2.9" ry="4.3" fill="#1b1622"/>
+<path d="M27 85H44V92C39 89 32 89 27 93Z" fill="#c9cfe0"/>
+</g>
+<ellipse cx="35" cy="96" rx="5.4" ry="7.6" fill="none" stroke="#1d4d2c" stroke-width="2"/>
+<path d="M29.8 92C31.6 89.2 33.4 88.4 35.2 88.4C37.1 88.4 38.9 89.3 40.4 91.8" fill="none" stroke="#1b1622" stroke-width="3.2"/>
+<path d="M28.6 86C32.6 84 37.6 84 41.6 85.5" fill="none" stroke="#1d4d2c" stroke-width="2.6"/>
+<circle cx="32" cy="93.8" r="2.2" fill="#fff"/>
+<circle cx="35" cy="97.4" r="1" fill="#fff"/>
+<g stroke="#6e1c40" stroke-width="2" fill="#d23f78" transform="translate(-2 0)">
+<path d="M185 126C191 130 192 140 188 146C185 151 181 153 179 153C177 148 176 137 182 129Z" stroke-width="2.5"/>
+<path d="M181 134C184 136 186 136 188 133M179 141C182 143 185 143 188 140M180 147C182 148 184 148 186 146" fill="none" stroke="#f590b8" stroke-width="1.5"/>
+</g>
+</g>
+</svg>

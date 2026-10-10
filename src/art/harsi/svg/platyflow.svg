@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="platyflow-g" gradientUnits="userSpaceOnUse" x1="40" y1="50" x2="130" y2="170"><stop offset="0" stop-color="#8fd0f2"/><stop offset=".5" stop-color="#4a9fd4"/></linearGradient>
+<linearGradient id="platyflow-bill" x1="0" y1="0" x2="0" y2="1"><stop offset=".55" stop-color="#ffd63f"/><stop offset=".55" stop-color="#eda624"/></linearGradient>
+<linearGradient id="platyflow-ft" x1="0" x2="1"><stop offset=".55" stop-color="#ffaa36"/><stop offset=".55" stop-color="#e2822a"/></linearGradient>
+<linearGradient id="platyflow-w" x1="0" y1="0" x2="0" y2="1"><stop offset=".5" stop-color="#3a88c8"/><stop offset=".5" stop-color="#2a6fb0"/></linearGradient>
+<radialGradient id="platyflow-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#7fe0ff"/><stop offset=".5" stop-color="#2a78c8"/><stop offset="1" stop-color="#142a5e"/></radialGradient>
+<clipPath id="platyflow-cb"><path d="M44 140C42 122 54 110 72 106C80 104 85 100 88 96C96 104 108 108 122 108C142 108 158 108 170 102C176 99 180 99 182 103C182 120 176 140 164 156C150 174 124 182 100 182C72 182 50 168 44 140Z"/></clipPath>
+<clipPath id="platyflow-ch"><path d="M62 52C78 52 88 64 88 78C88 92 78 102 64 104C50 106 38 98 36 86C34 72 44 52 62 52Z"/></clipPath>
+<clipPath id="platyflow-e1"><ellipse cx="70" cy="75" rx="7.2" ry="8.6"/></clipPath>
+<clipPath id="platyflow-e2"><ellipse cx="49" cy="77" rx="5.3" ry="7.6"/></clipPath>
+</defs>
+<ellipse cx="110" cy="184" rx="70" ry="7" fill="#1d2b33" opacity="0.22"/>
+<g fill="#163f73" stroke="#163f73" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M170 106C172 94 178 84 186 80C189 90 186 104 178 114Z"/>
+<path d="M44 140C42 122 54 110 72 106C80 104 85 100 88 96C96 104 108 108 122 108C142 108 158 108 170 102C176 99 180 99 182 103C182 120 176 140 164 156C150 174 124 182 100 182C72 182 50 168 44 140Z"/>
+<path d="M60 54C58 44 62 34 70 28C74 26 77 28 75 32C71 38 70 46 72 54Z"/>
+<path d="M62 52C78 52 88 64 88 78C88 92 78 102 64 104C50 106 38 98 36 86C34 72 44 52 62 52Z"/>
+<path d="M46 74C34 70 22 70 16 74C12 76 12 82 16 84C26 88 38 88 48 86ZM46 86C38 90 28 92 20 90C24 94 34 96 42 94C46 93 50 91 52 89Z" stroke="#9a521a" fill="#9a521a"/>
+<path d="M62 172C56 174 50 177 47 181C50 183 54 183 57 182C60 183 63 183 66 182C69 183 72 183 75 182Z" stroke="#9a521a" fill="#9a521a"/>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M170 106C172 94 178 84 186 80C189 90 186 104 178 114Z" fill="url(#platyflow-w)" stroke="#163f73" stroke-width="2.5"/>
+<path d="M174 100C177 94 180 90 184 87M176 106C179 101 182 96 186 94" fill="none" stroke="#ffd63f" stroke-width="2.5"/>
+<path d="M175 103C178 97 181 93 185 90.5" fill="none" stroke="#e2483a" stroke-width="2.5"/>
+<g clip-path="url(#platyflow-cb)">
+<rect x="40" y="92" width="146" height="94" fill="url(#platyflow-g)"/>
+<path d="M40 128C70 142 130 146 186 116V126C130 156 70 152 40 138Z" fill="#ffd63f"/>
+<path d="M40 138C70 152 130 156 186 126V131C130 161 70 157 40 143Z" fill="#e2483a"/>
+<path d="M40 143C70 157 130 161 186 131V186H40Z" fill="#eaf7ff"/>
+<path d="M40 162C80 186 150 184 186 136V186H40Z" fill="#2f74b8" opacity=".4"/>
+<path d="M98 112C120 112 144 112 162 108C146 114 120 116 100 116Z" fill="#c4eafc"/>
+<path d="M54 120C60 112 68 110 76 110C68 114 62 118 58 126Z" fill="#c4eafc"/>
+</g>
+<path d="M44 140C42 122 54 110 72 106C80 104 85 100 88 96C96 104 108 108 122 108C142 108 158 108 170 102C176 99 180 99 182 103C182 120 176 140 164 156C150 174 124 182 100 182C72 182 50 168 44 140Z" fill="none" stroke="#163f73" stroke-width="2.5"/>
+<path d="M44 128C70 142 130 146 182 118M46 142C70 156 130 160 178 132" fill="none" stroke="#163f73" stroke-width="1.5"/>
+<path d="M98 120C120 114 148 112 170 112C162 118 150 120 140 121C146 123 152 124 158 124C146 130 120 134 102 132C94 130 92 124 98 120Z" fill="url(#platyflow-w)" stroke="#163f73" stroke-width="2.5"/>
+<path d="M104 124C120 122 136 121 150 118" fill="none" stroke="#7cc4ee" stroke-width="2"/>
+<path d="M62 172C56 174 50 177 47 181C50 183 54 183 57 182C60 183 63 183 66 182C69 183 72 183 75 182Z" fill="url(#platyflow-ft)" stroke="#9a521a" stroke-width="2.5"/>
+<path d="M57 177L56.5 182M66 177L66 182" stroke="#9a521a" stroke-width="1.5"/>
+<path d="M60 54C58 44 62 34 70 28C74 26 77 28 75 32C71 38 70 46 72 54Z" fill="#3a88c8" stroke="#163f73" stroke-width="2.5"/>
+<path d="M64 50C63 42 66 36 71 31" fill="none" stroke="#ffd63f" stroke-width="2.5"/>
+<g clip-path="url(#platyflow-ch)">
+<rect x="32" y="48" width="58" height="60" fill="url(#platyflow-g)"/>
+<path d="M88 68C86 86 78 98 60 102L92 108V68Z" fill="#2f74b8" opacity=".5"/>
+<path d="M32 86C42 90 54 94 68 94C78 94 86 98 88 106H32Z" fill="#eaf7ff"/>
+<path d="M44 62C48 56 54 54 62 54C54 58 50 62 48 68Z" fill="#d6f4ff"/>
+</g>
+<path d="M62 52C78 52 88 64 88 78C88 92 78 102 64 104C50 106 38 98 36 86C34 72 44 52 62 52Z" fill="none" stroke="#163f73" stroke-width="2.5"/>
+<path d="M46 86C38 90 28 92 20 90C24 94 34 96 42 94C46 93 50 91 52 89Z" fill="#eda624" stroke="#9a521a" stroke-width="2.5"/>
+<path d="M46 74C34 70 22 70 16 74C12 76 12 82 16 84C26 88 38 88 48 86Z" fill="url(#platyflow-bill)" stroke="#9a521a" stroke-width="2.5"/>
+<path d="M22 74C28 72 34 72 40 73" fill="none" stroke="#fff6c0" stroke-width="2.2"/>
+<path d="M22 86C30 88 38 88 46 86" fill="none" stroke="#9a521a" stroke-width="1.8"/>
+<ellipse cx="23" cy="77" rx="1.8" ry="1.1" fill="#9a521a"/>
+<path d="M77 77C81 79 86 79 90 77" fill="none" stroke="#163f73" stroke-width="2.6"/>
+<ellipse cx="70" cy="75" rx="7.2" ry="8.6" fill="#fffdf4"/>
+<g clip-path="url(#platyflow-e1)">
+<ellipse cx="68.8" cy="76.6" rx="6" ry="7.2" fill="url(#platyflow-iris)"/>
+<ellipse cx="68.4" cy="77.4" rx="3.7" ry="4.9" fill="#1b1622"/>
+<path d="M61 63H79V70C74 68 66 68 61 71Z" fill="#c9d8ec"/>
+</g>
+<ellipse cx="70" cy="75" rx="7.2" ry="8.6" fill="none" stroke="#163f73" stroke-width="2"/>
+<path d="M62.8 70.8C65 67.8 67.5 66.6 70.2 66.6C73.2 66.7 75.7 68.2 77.3 71" fill="none" stroke="#1b1622" stroke-width="3.4"/>
+<path d="M62 64.8C66 63.2 71 62.8 76 63.8" fill="none" stroke="#163f73" stroke-width="2.6"/>
+<circle cx="65.8" cy="73" r="2.6" fill="#fff"/>
+<circle cx="69.8" cy="77" r="1.2" fill="#fff"/>
+<ellipse cx="49" cy="77" rx="5.3" ry="7.6" fill="#fffdf4"/>
+<g clip-path="url(#platyflow-e2)">
+<ellipse cx="48" cy="78.6" rx="4.5" ry="6.4" fill="url(#platyflow-iris)"/>
+<ellipse cx="47.7" cy="79.4" rx="2.8" ry="4.1" fill="#1b1622"/>
+<path d="M42 66H56V72C52 70 46 70 42 73Z" fill="#c9d8ec"/>
+</g>
+<ellipse cx="49" cy="77" rx="5.3" ry="7.6" fill="none" stroke="#163f73" stroke-width="2"/>
+<path d="M43.7 72.6C45 70 46.9 69.1 48.8 69.1C50.8 69.1 52.6 70.1 53.9 72.4" fill="none" stroke="#1b1622" stroke-width="3"/>
+<path d="M43 66.8C46 65.4 50 65.4 53.4 66.4" fill="none" stroke="#163f73" stroke-width="2.3"/>
+<circle cx="46" cy="75" r="2.1" fill="#fff"/>
+<circle cx="48.8" cy="78.4" r="1" fill="#fff"/>
+</g>
+</svg>

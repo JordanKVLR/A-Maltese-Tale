@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="infernux-g" gradientUnits="userSpaceOnUse" x1="40" y1="60" x2="130" y2="160"><stop offset="0" stop-color="#ffb469"/><stop offset=".5" stop-color="#ea8a42"/></linearGradient>
+<linearGradient id="infernux-fl" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ffe680"/><stop offset=".45" stop-color="#ff9a2e"/><stop offset="1" stop-color="#f0508a"/></linearGradient>
+<linearGradient id="infernux-far" x1="0" x2="1"><stop offset=".5" stop-color="#cf7440"/><stop offset=".5" stop-color="#ad5434"/></linearGradient>
+<radialGradient id="infernux-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#ffe680"/><stop offset=".5" stop-color="#f08a1e"/><stop offset="1" stop-color="#8a2a18"/></radialGradient>
+<clipPath id="infernux-cb"><path d="M66 92C74 86 84 88 90 96C96 104 104 108 116 107C130 105 146 102 158 106C170 110 176 120 172 130C168 140 158 142 148 139C140 136 132 130 124 130C114 131 106 150 94 152C82 154 74 144 72 130C70 120 66 106 66 92Z"/></clipPath>
+<clipPath id="infernux-cl"><path d="M142 110C158 104 174 110 174 124C174 134 168 140 162 146C158 150 160 156 164 162L168 172V182H153L155 168L150 156C144 148 136 138 136 128C136 120 136 112 142 110ZM80 118C92 114 102 124 100 136C98 144 92 148 86 152L76 158C72 161 66 161 64 157C62 153 64 150 68 148L76 142C74 134 74 124 80 118Z"/></clipPath>
+<clipPath id="infernux-ch"><path d="M62 52C76 52 86 62 86 76C86 88 80 96 70 100C62 103 52 104 42 102C34 100 26 96 22 92C19 89 20 85 24 84C30 82 38 80 42 74C44 60 50 52 62 52Z"/></clipPath>
+<clipPath id="infernux-e1"><ellipse cx="66" cy="76" rx="7" ry="7.8"/></clipPath>
+<clipPath id="infernux-e2"><ellipse cx="45" cy="78" rx="5.2" ry="7"/></clipPath>
+</defs>
+<ellipse cx="112" cy="184" rx="56" ry="7" fill="#1d2b33" opacity="0.22"/>
+<g fill="#5e2414" stroke="#5e2414" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M168 114C180 110 186 100 183 88" fill="none" stroke-width="9"/>
+<path d="M182 94C173 90 171 79 176 70C178 75 180 75 180 70C185 75 189 84 184 92Z" stroke="#a8341a" fill="#a8341a"/>
+<path d="M66 132C66 146 68 158 68 170C66 172 64 174 64 176C64 179 66 180 70 180H78C80 180 80 178 79 176C78 174 78 172 78 170V132ZM124 132C128 144 132 150 132 158V170C131 173 129 175 129 177C129 179 131 180 135 180H142C143 178 142 176 141 173L140 158C140 148 138 140 136 132Z"/>
+<path d="M66 92C74 86 84 88 90 96C96 104 104 108 116 107C130 105 146 102 158 106C170 110 176 120 172 130C168 140 158 142 148 139C140 136 132 130 124 130C114 131 106 150 94 152C82 154 74 144 72 130C70 120 66 106 66 92Z"/>
+<path d="M142 110C158 104 174 110 174 124C174 134 168 140 162 146C158 150 160 156 164 162L168 172C169 175 170 177 172 179C173 181 171 182 168 182H157C154 182 153 180 154 178C155 175 156 172 155 168L150 156C144 148 136 138 136 128C136 120 136 112 142 110ZM80 118C92 114 102 124 100 136C98 144 92 148 86 152L76 158C72 161 66 161 64 157C62 153 64 150 68 148L76 142C74 134 74 124 80 118Z"/>
+<path d="M66 60C68 46 76 32 90 22C94 38 92 52 84 68ZM46 62C40 48 40 36 44 24C54 34 60 48 60 62Z"/>
+<path d="M62 52C76 52 86 62 86 76C86 88 80 96 70 100C62 103 52 104 42 102C34 100 26 96 22 92C19 89 20 85 24 84C30 82 38 80 42 74C44 60 50 52 62 52Z"/>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M168 114C180 110 186 100 183 88" fill="none" stroke="#ea8a42" stroke-width="4"/>
+<path d="M182 94C173 90 171 79 176 70C178 75 180 75 180 70C185 75 189 84 184 92Z" fill="url(#infernux-fl)" stroke="#a8341a" stroke-width="2"/>
+<path d="M182 92C179 89 178 84 180 80C181 82 183 82 183 80C185 83 185 88 183 92Z" fill="#fff6c0"/>
+<path d="M66 132C66 146 68 158 68 170C66 172 64 174 64 176C64 179 66 180 70 180H78C80 180 80 178 79 176C78 174 78 172 78 170V132ZM124 132C128 144 132 150 132 158V170C131 173 129 175 129 177C129 179 131 180 135 180H142C143 178 142 176 141 173L140 158C140 148 138 140 136 132Z" fill="url(#infernux-far)" stroke="#5e2414" stroke-width="2.5"/>
+<path d="M64 176C64 173 66 171 70 171H79L80 180H70C66 180 64 179 64 176ZM129 176C129 173 131 171 135 171H141L142 180H135C131 180 129 179 129 176Z" fill="#ecd2bd" stroke="#5e2414" stroke-width="2"/>
+<g clip-path="url(#infernux-cb)">
+<rect x="60" y="84" width="120" height="66" fill="url(#infernux-g)"/>
+<path d="M60 126C90 148 140 146 176 118V152H60Z" fill="#bf5e36"/>
+<path d="M62 94C72 98 80 112 80 132L62 152Z" fill="#ffecd0"/>
+<path d="M104 108C122 106 142 104 156 108C140 108 122 110 106 112Z" fill="#ffd28e"/>
+</g>
+<path d="M66 92C74 86 84 88 90 96C96 104 104 108 116 107C130 105 146 102 158 106C170 110 176 120 172 130C168 140 158 142 148 139C140 136 132 130 124 130C114 131 106 150 94 152C82 154 74 144 72 130C70 120 66 106 66 92Z" fill="none" stroke="#5e2414" stroke-width="2.5"/>
+<g clip-path="url(#infernux-cl)">
+<rect x="60" y="104" width="118" height="80" fill="url(#infernux-g)"/>
+<path d="M102 128C98 142 90 150 80 158H104V128ZM178 116C172 134 164 146 158 152L168 184H180V116Z" fill="#bf5e36"/>
+<path d="M146 114C152 109 160 108 168 110C160 111 154 114 150 119Z" fill="#ffd28e"/>
+<path d="M60 150L70 146L74 162H60ZM148 172H174V184H148Z" fill="#ffecd0"/>
+</g>
+<path d="M76 140C74 132 75 124 80 119M86 152L76 158C72 161 66 161 64 157C62 153 64 150 68 148L76 142M100 134C99 142 94 148 86 152M138 112C135 118 135 124 136 130C138 140 144 148 150 156L155 168C156 172 155 175 154 178C153 180 154 182 157 182H168C171 182 173 181 172 179C170 177 169 175 168 172L164 162C160 156 158 150 162 146C168 140 174 134 174 124C174 116 168 110 162 108" fill="none" stroke="#5e2414" stroke-width="2.5"/>
+<path d="M70 146L74 152M154 172H169" stroke="#5e2414" stroke-width="2"/>
+<path d="M68 104C76 112 88 112 94 102" fill="none" stroke="#5e2414" stroke-width="7.5"/>
+<path d="M68 104C76 112 88 112 94 102" fill="none" stroke="#f3c14a" stroke-width="4"/>
+<circle cx="82" cy="116" r="4.2" fill="#f3c14a" stroke="#5e2414" stroke-width="2"/>
+<path d="M80.4 114.4A2.2 2.2 0 0 1 83 113.8" fill="none" stroke="#fff6c0" stroke-width="1.4"/>
+<path d="M83 34C82 28 85 22 90 17C90 22 92 24 95 22C96 28 93 32 89 36ZM45 31C42 26 43 22 46 18C47 21 49 22 51 21C52 25 50 29 48 32Z" fill="url(#infernux-fl)" stroke="#a8341a" stroke-width="2"/>
+<g stroke="#5e2414" stroke-width="2.5">
+<path d="M66 60C68 46 76 32 90 22C94 38 92 52 84 68Z" fill="#d97a3e"/>
+<path d="M46 62C40 48 40 36 44 24C54 34 60 48 60 62Z" fill="url(#infernux-g)"/>
+<path d="M70 62C70 54 72 50 74 46C75 49 76 50 77 48C77 42 80 36 85 29C86 33 87 34 88 32C90 40 89 48 86 56C85 54 84 54 83 56C83 60 81 64 79 66ZM48 60C46 54 45 49 45 44C46 46 47 47 48 46C47 40 46 34 46 28C50 34 54 41 56 48C55 47 54 47 54 49C56 53 56 57 55 60Z" fill="url(#infernux-fl)" stroke="#a8341a" stroke-width="1.5"/>
+<path d="M74 62C74 57 76 54 78 51C79 53 80 53 80 51C82 55 82 60 79 64ZM50 58C49 55 49 52 50 49C51 51 52 51 52 50C53 53 53 56 52 58Z" fill="#fff6c0" stroke="none"/>
+</g>
+<g clip-path="url(#infernux-ch)">
+<rect x="18" y="48" width="70" height="58" fill="url(#infernux-g)"/>
+<path d="M88 66C84 82 78 94 62 102L90 108V66Z" fill="#bf5e36"/>
+<path d="M18 88C30 86 42 86 52 88C62 90 68 96 70 106H18Z" fill="#ffecd0"/>
+<path d="M18 96C34 102 52 102 68 98V108H18Z" fill="#e6c4ae"/>
+<path d="M50 60C56 56 62 56 68 57C62 59 57 62 54 66Z" fill="#ffd8a0"/>
+</g>
+<path d="M62 52C76 52 86 62 86 76C86 88 80 96 70 100C62 103 52 104 42 102C34 100 26 96 22 92C19 89 20 85 24 84C30 82 38 80 42 74C44 60 50 52 62 52Z" fill="none" stroke="#5e2414" stroke-width="2.5"/>
+<path d="M21 87C20 84 23 82 26 82C29 82 31 84 30 87C29 89 22 90 21 87Z" fill="#b85a50" stroke="#5e2414" stroke-width="2"/>
+<path d="M23 83.5C24 82.8 25.5 82.7 26.6 83" fill="none" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<path d="M27 94C33 96 40 97 48 96" fill="none" stroke="#5e2414" stroke-width="2"/>
+<ellipse cx="56" cy="62.5" rx="9.5" ry="8.5" fill="#ff7ab0" opacity=".35"/>
+<circle cx="56" cy="59.4" r="2.9" fill="#ff4f8f" stroke="#fff" stroke-width="1"/>
+<path d="M49.5 63.2C51.5 68.8 60.5 68.8 62.5 63.2C59.5 66.4 52.5 66.4 49.5 63.2Z" fill="#ff4f8f" stroke="#ff4f8f" stroke-width="1.6"/>
+<ellipse cx="66" cy="76" rx="7" ry="7.8" fill="#fffdf4"/>
+<g clip-path="url(#infernux-e1)">
+<ellipse cx="64.8" cy="77.4" rx="5.8" ry="6.6" fill="url(#infernux-iris)"/>
+<ellipse cx="64.4" cy="78" rx="3.4" ry="4.5" fill="#1b1622"/>
+<path d="M56 66H76V73C70 71 62 71 56 74Z" fill="#e3cfc6"/>
+</g>
+<ellipse cx="66" cy="76" rx="7" ry="7.8" fill="none" stroke="#5e2414" stroke-width="2"/>
+<path d="M58.6 73.4C60.8 70 63.4 68.9 66.3 69C69.4 69.1 71.8 70.8 73.3 73.4" fill="none" stroke="#1b1622" stroke-width="3.5"/>
+<path d="M58 68.2C62 65.6 67 65.2 72 66.7" fill="none" stroke="#5e2414" stroke-width="2.6"/>
+<circle cx="62" cy="74.6" r="2.4" fill="#fff"/>
+<circle cx="65.6" cy="78" r="1.1" fill="#fff"/>
+<ellipse cx="45" cy="78" rx="5.2" ry="7" fill="#fffdf4"/>
+<g clip-path="url(#infernux-e2)">
+<ellipse cx="44" cy="79.4" rx="4.4" ry="5.9" fill="url(#infernux-iris)"/>
+<ellipse cx="43.7" cy="80" rx="2.7" ry="4" fill="#1b1622"/>
+<path d="M38 69H52V76C48 74 42 74 38 77Z" fill="#e3cfc6"/>
+</g>
+<ellipse cx="45" cy="78" rx="5.2" ry="7" fill="none" stroke="#5e2414" stroke-width="2"/>
+<path d="M39.6 75.2C41 72.6 43 71.7 45 71.7C47 71.7 48.9 72.7 50.2 75" fill="none" stroke="#1b1622" stroke-width="3.2"/>
+<path d="M39 70.4C42 68.5 46 68.3 49.5 69.3" fill="none" stroke="#5e2414" stroke-width="2.3"/>
+<circle cx="42.2" cy="77" r="1.9" fill="#fff"/>
+<circle cx="44.8" cy="80" r=".9" fill="#fff"/>
+</g>
+</svg>

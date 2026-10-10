@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="duckling-g" gradientUnits="userSpaceOnUse" x1="50" y1="70" x2="140" y2="170"><stop offset="0" stop-color="#a6e2fa"/><stop offset=".55" stop-color="#5fb8e8"/></linearGradient>
+<linearGradient id="duckling-bill" x1="0" y1="0" x2="0" y2="1"><stop offset=".55" stop-color="#ffd63f"/><stop offset=".55" stop-color="#eda624"/></linearGradient>
+<linearGradient id="duckling-ft" x1="0" x2="1"><stop offset=".55" stop-color="#ffaa36"/><stop offset=".55" stop-color="#e2822a"/></linearGradient>
+<radialGradient id="duckling-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#7fe0ff"/><stop offset=".5" stop-color="#2a78c8"/><stop offset="1" stop-color="#142a5e"/></radialGradient>
+<clipPath id="duckling-cb"><path d="M64 142C64 118 82 104 106 104C130 104 148 120 148 142C148 164 130 178 106 178C82 178 64 164 64 142Z"/></clipPath>
+<clipPath id="duckling-ch"><path d="M82 68C100 68 114 82 114 100C114 116 102 128 84 128C66 128 52 116 52 100C52 82 64 68 82 68Z"/></clipPath>
+<clipPath id="duckling-e1"><ellipse cx="89" cy="96" rx="8.6" ry="10.6"/></clipPath>
+<clipPath id="duckling-e2"><ellipse cx="65" cy="98" rx="6.4" ry="9.4"/></clipPath>
+</defs>
+<ellipse cx="100" cy="184" rx="46" ry="7" fill="#1d2b33" opacity="0.22"/>
+<g fill="#1d4f86" stroke="#1d4f86" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M144 130C152 122 162 116 172 116C170 122 168 126 162 130C168 130 172 132 174 137C166 141 154 143 146 143Z"/>
+<path d="M68 154C58 154 46 148 40 136C46 137 50 139 54 141C50 135 50 130 52 126C59 133 64 142 70 148Z"/>
+<path d="M64 142C64 118 82 104 106 104C130 104 148 120 148 142C148 164 130 178 106 178C82 178 64 164 64 142Z"/>
+<path d="M78 72C77 64 84 58 93 60C97 61 99 63 98 66C95 63 92 63 90 66C89 68 90 70 88 72Z"/>
+<path d="M82 68C100 68 114 82 114 100C114 116 102 128 84 128C66 128 52 116 52 100C52 82 64 68 82 68Z"/>
+<path d="M92 168V175C86 176 78 178 74 181C76 183 80 183 83 182C86 183 90 183 93 182C97 183 101 183 105 182C107 180 105 177 101 175V168ZM72 166V173C67 174 61 176 58 179C60 181 63 181 66 180C68 181 71 181 74 180C77 181 80 181 83 180C84 178 83 175 80 173V166Z" stroke="#9a521a" fill="#9a521a"/>
+<path d="M58 110C48 111 38 114 32 118C31 122 38 124 46 122C53 120 58 117 60 113ZM60 95C50 92 36 93 26 98C22 100 22 105 26 107C38 109 50 108 61 107Z" stroke="#9a521a" fill="#9a521a"/>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M144 130C152 122 162 116 172 116C170 122 168 126 162 130C168 130 172 132 174 137C166 141 154 143 146 143Z" fill="#5fb8e8" stroke="#1d4f86" stroke-width="2.5"/>
+<path d="M152 126C158 122 163 120 168 119M154 138C160 138 165 138 170 137" fill="none" stroke="#e2483a" stroke-width="2.5"/>
+<path d="M150 130C156 128 160 128 164 129" fill="none" stroke="#ffd63f" stroke-width="2.5"/>
+<path d="M72 166V173C67 174 61 176 58 179C60 181 63 181 66 180C68 181 71 181 74 180C77 181 80 181 83 180C84 178 83 175 80 173V166Z" fill="#e2822a" stroke="#9a521a" stroke-width="2.5"/>
+<path d="M68 154C58 154 46 148 40 136C46 137 50 139 54 141C50 135 50 130 52 126C59 133 64 142 70 148Z" fill="#4aa2da" stroke="#1d4f86" stroke-width="2.5"/>
+<g clip-path="url(#duckling-cb)">
+<rect x="60" y="100" width="92" height="82" fill="url(#duckling-g)"/>
+<path d="M70 142C76 128 92 122 108 126C120 130 126 142 124 156C122 168 112 178 96 180L66 178Z" fill="#f3fbff"/>
+<path d="M60 160C80 178 120 180 152 146V182H60Z" fill="#3f8fd2" opacity=".55"/>
+<path d="M120 112C130 116 140 124 142 134C136 128 128 122 118 118Z" fill="#d6f4ff"/>
+</g>
+<path d="M64 142C64 118 82 104 106 104C130 104 148 120 148 142C148 164 130 178 106 178C82 178 64 164 64 142Z" fill="none" stroke="#1d4f86" stroke-width="2.5"/>
+<path d="M118 128C130 124 142 130 144 142C145 150 140 158 132 160C136 152 134 146 128 144C122 142 118 136 118 128Z" fill="#4aa2da" stroke="#1d4f86" stroke-width="2.5"/>
+<path d="M124 134C130 134 136 138 138 144M126 140C130 141 132 143 133 146" fill="none" stroke="#1d4f86" stroke-width="1.5"/>
+<path d="M92 168V175C86 176 78 178 74 181C76 183 80 183 83 182C86 183 90 183 93 182C97 183 101 183 105 182C107 180 105 177 101 175V168Z" fill="url(#duckling-ft)" stroke="#9a521a" stroke-width="2.5"/>
+<path d="M84 178L83 182M94 177L93 182M101 177L104 181" stroke="#9a521a" stroke-width="1.5"/>
+<path d="M78 72C77 64 84 58 93 60C97 61 99 63 98 66C95 63 92 63 90 66C89 68 90 70 88 72Z" fill="#5fb8e8" stroke="#1d4f86" stroke-width="2.5"/>
+<g clip-path="url(#duckling-ch)">
+<rect x="50" y="66" width="66" height="64" fill="url(#duckling-g)"/>
+<path d="M114 86C112 106 102 120 84 124L120 132V86Z" fill="#3f8fd2" opacity=".55"/>
+<path d="M50 108C60 112 74 116 90 116C100 116 108 120 110 130H50Z" fill="#f3fbff"/>
+<path d="M60 80C66 74 74 72 82 72C74 76 68 80 64 86Z" fill="#e2f8ff"/>
+</g>
+<path d="M82 68C100 68 114 82 114 100C114 116 102 128 84 128C66 128 52 116 52 100C52 82 64 68 82 68Z" fill="none" stroke="#1d4f86" stroke-width="2.5"/>
+<path d="M58 110C48 111 38 114 32 118C31 122 38 124 46 122C53 120 58 117 60 113Z" fill="#eda624" stroke="#9a521a" stroke-width="2.5"/>
+<path d="M60 107C48 109 36 109 27 107C31 115 42 117 52 115C57 114 60 112 60 110Z" fill="#8a2a3a"/>
+<path d="M42 113C45 116 51 116 54 114C51 111 45 111 42 113Z" fill="#f07a86"/>
+<path d="M60 95C50 92 36 93 26 98C22 100 22 105 26 107C38 109 50 108 61 107Z" fill="url(#duckling-bill)" stroke="#9a521a" stroke-width="2.5"/>
+<path d="M33 98C38 96 45 95 52 95" fill="none" stroke="#fff6c0" stroke-width="2.2"/>
+<ellipse cx="40" cy="100.5" rx="1.8" ry="1.1" fill="#9a521a"/>
+<ellipse cx="100" cy="112" rx="5.5" ry="3.2" fill="#ff8aa0" opacity=".55"/>
+<ellipse cx="89" cy="96" rx="8.6" ry="10.6" fill="#fffdf4"/>
+<g clip-path="url(#duckling-e1)">
+<ellipse cx="87.6" cy="98" rx="7.2" ry="9" fill="url(#duckling-iris)"/>
+<ellipse cx="87.2" cy="99" rx="4.4" ry="6" fill="#1b1622"/>
+<path d="M78 82H100V90C94 87 84 87 78 91Z" fill="#c9d8ec"/>
+</g>
+<ellipse cx="89" cy="96" rx="8.6" ry="10.6" fill="none" stroke="#1d4f86" stroke-width="2"/>
+<path d="M80.8 90.5C83.2 87 86.2 85.6 89.2 85.6C92.6 85.7 95.5 87.5 97.3 90.8" fill="none" stroke="#1b1622" stroke-width="3.5"/>
+<path d="M80 84C84 83 90 82 97 79" fill="none" stroke="#1d4f86" stroke-width="3"/>
+<circle cx="83.8" cy="93.4" r="3.1" fill="#fff"/>
+<circle cx="88.8" cy="98" r="1.4" fill="#fff"/>
+<ellipse cx="65" cy="98" rx="6.4" ry="9.4" fill="#fffdf4"/>
+<g clip-path="url(#duckling-e2)">
+<ellipse cx="63.8" cy="100" rx="5.4" ry="7.8" fill="url(#duckling-iris)"/>
+<ellipse cx="63.4" cy="101" rx="3.3" ry="5" fill="#1b1622"/>
+<path d="M56 85H72V92C67 89 61 89 56 93Z" fill="#c9d8ec"/>
+</g>
+<ellipse cx="65" cy="98" rx="6.4" ry="9.4" fill="none" stroke="#1d4f86" stroke-width="2"/>
+<path d="M59 93C60.6 89.8 62.7 88.7 65 88.7C67.3 88.7 69.4 89.9 70.8 92.7" fill="none" stroke="#1b1622" stroke-width="3.2"/>
+<path d="M58 85C62 85 66 86 70 88" fill="none" stroke="#1d4f86" stroke-width="2.6"/>
+<circle cx="61.2" cy="95.6" r="2.5" fill="#fff"/>
+<circle cx="64.6" cy="99.6" r="1.1" fill="#fff"/>
+</g>
+</svg>
