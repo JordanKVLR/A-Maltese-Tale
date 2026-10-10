@@ -1,14 +1,18 @@
 import { useEffect, useRef, useState } from "react";
 import { Animated, Modal, Pressable, StyleSheet, Text, View } from "react-native";
 import Svg, { Circle, Ellipse, G, Path, Rect } from "react-native-svg";
-import { CHARACTERS, type Line, type PortraitLook } from "../../game/story";
+import { CHARACTERS, type CharacterId, type Line, type PortraitLook } from "../../game/story";
+import { PEOPLE_SVG } from "../../art/people/sprites.generated";
+import { HandDrawn } from "../../art/handDrawn";
 import { useI18n } from "../../i18n";
 import { MADUM, MadumFloor } from "../../art/madum";
 import { ui } from "../../audio/sfx";
 import { colors, malta } from "../theme";
 
-/** A head-and-shoulders drawing of a story character, from their look. */
-export function Portrait({ look, size = 72 }: { look: PortraitLook; size?: number }) {
+/** A head-and-shoulders drawing of a story character: hand-drawn, or composed from their look. */
+export function Portrait({ look, size = 72, who }: { look: PortraitLook; size?: number; who?: CharacterId }) {
+  const drawn = who ? PEOPLE_SVG[`portrait-${who}`] : undefined;
+  if (drawn) return <HandDrawn xml={drawn} size={size} />;
   return (
     <Svg width={size} height={size} viewBox="0 0 100 100">
       <Circle cx={50} cy={50} r={48} fill="#f4ecd8" stroke={look.accent} strokeWidth={3} />
@@ -86,7 +90,7 @@ export function DialogueModal({ lines, onDone, kicker }: { lines: Line[]; onDone
           {kicker && index === 0 ? <Text style={styles.kicker}>{kicker}</Text> : null}
           {!narration && (
             <View style={styles.speakerRow}>
-              <Portrait look={speaker.look} size={64} />
+              <Portrait look={speaker.look} who={line.who} size={64} />
               <View style={styles.speakerText}>
                 <Text accessibilityRole="header" style={styles.name}>
                   {lang === "mt" ? speaker.name.mt : speaker.name.en}

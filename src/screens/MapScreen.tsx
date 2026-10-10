@@ -739,7 +739,7 @@ export function MapScreen({ navigation, route }: Props) {
             testID={`story-${spot.battleId}`}
             style={[styles.entity, entitySize, { left: spot.col * tile, top: spot.row * tile }]}
           >
-            <Portrait look={CHARACTERS[getStoryBattle(spot.battleId)!.who].look} size={tile * 0.86} />
+            <Portrait look={CHARACTERS[getStoryBattle(spot.battleId)!.who].look} who={getStoryBattle(spot.battleId)!.who} size={tile * 0.86} />
             <View style={styles.storyMark}>
               <Text style={styles.storyMarkText}>!</Text>
             </View>

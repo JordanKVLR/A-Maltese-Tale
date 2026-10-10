@@ -52,7 +52,7 @@ export function CreditsScreen({ navigation }: Props) {
               const c = CHARACTERS[id];
               return (
                 <View key={id} style={styles.castMember}>
-                  <Portrait look={c.look} size={56} />
+                  <Portrait look={c.look} who={id} size={56} />
                   <Text style={styles.castName}>{lang === "mt" ? c.name.mt : c.name.en}</Text>
                   <Text style={styles.castRole}>{lang === "mt" ? c.role.mt : c.role.en}</Text>
                 </View>

@@ -381,7 +381,7 @@ export const BattleStage = forwardRef<BattleStageHandle, Props>(function BattleS
           },
         ]}
       >
-        <CreatureAvatar speciesId={player.speciesId} types={player.types} size={PLAYER_AVATAR_SIZE} />
+        <CreatureAvatar speciesId={player.speciesId} types={player.types} size={PLAYER_AVATAR_SIZE} mirrored />
       </Animated.View>
 
       <Animated.View

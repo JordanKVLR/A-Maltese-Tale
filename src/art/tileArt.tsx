@@ -1,4 +1,7 @@
+import { View } from "react-native";
 import Svg, { Circle, Ellipse, G, Path, Rect } from "react-native-svg";
+import { PEOPLE_SVG } from "./people/sprites.generated";
+import { HandDrawn } from "./handDrawn";
 import { world } from "../screens/theme";
 import type { TileType } from "../game/mapData";
 
@@ -225,6 +228,20 @@ export function TrainerSprite({
   isGymLeader?: boolean;
   defeated?: boolean;
 }) {
+  const drawn = PEOPLE_SVG[isGymLeader ? "trainer-leader" : "trainer"];
+  if (drawn) {
+    return (
+      <View style={{ width: size, height: size }}>
+        <HandDrawn xml={drawn} size={size} opacity={defeated ? 0.45 : 1} />
+        {isGymLeader && !defeated && (
+          <Svg width={size} height={size} viewBox="0 0 100 100" style={{ position: "absolute", left: 0, top: 0 }}>
+            <Circle cx={50} cy={11} r={9} fill="#f3c14a" stroke="#b98a16" strokeWidth={2} />
+            <Path d="M50 5 l2 4 h4 l-3 3 l1 4 l-4 -2 l-4 2 l1 -4 l-3 -3 h4 z" fill="#fff6d8" />
+          </Svg>
+        )}
+      </View>
+    );
+  }
   const coat = isGymLeader ? "#8d6bb5" : "#3f7b8a";
   const coatDark = isGymLeader ? "#6a4d90" : "#2d5d69";
   return (
@@ -260,6 +277,9 @@ export function TrainerSprite({
  * from four angles so movement reads directionally instead of as a sliding token.
  */
 export function PlayerSprite({ facing, size }: { facing: "up" | "down" | "left" | "right"; size: number }) {
+  const drawn = PEOPLE_SVG[facing === "up" ? "player-up" : facing === "down" ? "player-down" : "player-side"];
+  // The side view is drawn facing right; walking left mirrors it.
+  if (drawn) return <HandDrawn xml={drawn} size={size} mirrored={facing === "left"} />;
   const skin = "#f0c9a0";
   const shirt = "#e0574f";
   const hat = "#eddaa8";
@@ -324,6 +344,19 @@ const NPC_COLOURS: Record<NpcLook, { coat: string; dark: string; head: string }>
  * ready to hand one in, and nothing once you are done.
  */
 export function NpcSprite({ size, look, marker }: { size: number; look: NpcLook; marker: "!" | "?" | null }) {
+  const drawn = PEOPLE_SVG[`npc-${look}`];
+  if (drawn) {
+    return (
+      <View style={{ width: size, height: size }}>
+        <HandDrawn xml={drawn} size={size} />
+        {marker && (
+          <Svg width={size} height={size} viewBox="0 0 100 100" style={{ position: "absolute", left: 0, top: 0 }}>
+            <NpcMarker marker={marker} />
+          </Svg>
+        )}
+      </View>
+    );
+  }
   const { coat, dark, head } = NPC_COLOURS[look];
   return (
     <Svg width={size} height={size} viewBox="0 0 100 100">
@@ -337,20 +370,25 @@ export function NpcSprite({ size, look, marker }: { size: number; look: NpcLook;
       {look === "fisher" && <Path d="M32 32 h36 l-4 -8 h-28 z" fill={head} stroke="#b89a2a" strokeWidth={1.5} />}
       {look === "archivist" && <Path d="M35 36 q15 -18 30 0 q-6 -10 -15 -10 q-9 0 -15 10 z" fill={head} />}
       {look === "sacristan" && <Rect x={36} y={22} width={28} height={9} rx={4} fill={head} />}
-      {marker && (
-        <G>
-          <Circle cx={50} cy={10} r={9} fill={marker === "!" ? "#f3c14a" : "#7ddba0"} stroke="#6b5a1a" strokeWidth={1.8} />
-          <Path
-            d={marker === "!" ? "M50 4.5 v7" : "M46.8 7.2 q3.2 -4 6.4 0 q0 2.6 -3.2 3.6 v1.4"}
-            stroke="#3a2a0a"
-            strokeWidth={2.6}
-            fill="none"
-            strokeLinecap="round"
-          />
-          <Circle cx={50} cy={15} r={1.6} fill="#3a2a0a" />
-        </G>
-      )}
+      {marker && <NpcMarker marker={marker} />}
     </Svg>
+  );
+}
+
+/** The "!" or "?" over a quest-giver's head. */
+function NpcMarker({ marker }: { marker: "!" | "?" }) {
+  return (
+    <G>
+      <Circle cx={50} cy={10} r={9} fill={marker === "!" ? "#f3c14a" : "#7ddba0"} stroke="#6b5a1a" strokeWidth={1.8} />
+      <Path
+        d={marker === "!" ? "M50 4.5 v7" : "M46.8 7.2 q3.2 -4 6.4 0 q0 2.6 -3.2 3.6 v1.4"}
+        stroke="#3a2a0a"
+        strokeWidth={2.6}
+        fill="none"
+        strokeLinecap="round"
+      />
+      <Circle cx={50} cy={15} r={1.6} fill="#3a2a0a" />
+    </G>
   );
 }
 
