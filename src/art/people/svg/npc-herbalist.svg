@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="npc-herbalist-coat" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#88a84c"/><stop offset="1" stop-color="#6f8f3a"/></linearGradient>
+<linearGradient id="npc-herbalist-scarf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbf7ee"/><stop offset="1" stop-color="#e8e2d6"/></linearGradient>
+<linearGradient id="npc-herbalist-skin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6cfa6"/><stop offset="1" stop-color="#e8b285"/></linearGradient>
+<linearGradient id="npc-herbalist-cane" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6c27a"/><stop offset="1" stop-color="#c4944a"/></linearGradient>
+<clipPath id="npc-herbalist-coat-c"><path d="M79 120C79 114 87 110 95 110H105C113 110 121 114 121 120L134 163C134 169 120 172 100 172S66 169 66 163Z"/></clipPath>
+<clipPath id="npc-herbalist-head-c"><ellipse cx="100" cy="92" rx="29" ry="26"/></clipPath>
+<clipPath id="npc-herbalist-basket-c"><path d="M77 141H123L119 159C118 163 115 165 111 165H89C85 165 82 163 81 159Z"/></clipPath>
+</defs>
+<ellipse cx="100" cy="180" rx="40" ry="9" fill="#1d2b33" opacity="0.25"/>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M83 170C83 167 86 166 90 166H96C98 166 99 168 99 170V174C99 177 97 178 94 178H86C83 178 82 176 82 174Z" fill="#5a3a2a" stroke="#2c1a12" stroke-width="3.5"/>
+<path d="M117 170C117 167 114 166 110 166H104C102 166 101 168 101 170V174C101 177 103 178 106 178H114C117 178 118 176 118 174Z" fill="#4a3022" stroke="#2c1a12" stroke-width="3.5"/>
+<g clip-path="url(#npc-herbalist-coat-c)">
+<rect x="62" y="106" width="76" height="70" fill="url(#npc-herbalist-coat)"/>
+<path d="M112 112C124 128 128 150 124 174H140V106Z" fill="#55712a"/>
+<ellipse cx="100" cy="112" rx="24" ry="8" fill="#55712a"/>
+<path d="M68 162Q100 170 132 162" fill="none" stroke="#4a6322" stroke-width="2.5"/>
+<path d="M82 124Q84 118 90 116" fill="none" stroke="#b2cc78" stroke-width="3"/>
+</g>
+<path d="M79 120C79 114 87 110 95 110H105C113 110 121 114 121 120L134 163C134 169 120 172 100 172S66 169 66 163Z" fill="none" stroke="#3a4d18" stroke-width="4.5"/>
+<path d="M80 118C72 122 70 132 74 140C77 145 84 146 88 143" fill="none" stroke="#3a4d18" stroke-width="16"/>
+<path d="M80 118C72 122 70 132 74 140C77 145 84 146 88 143" fill="none" stroke="#7e9e46" stroke-width="9"/>
+<path d="M120 118C128 122 130 132 126 140C123 145 116 146 112 143" fill="none" stroke="#3a4d18" stroke-width="16"/>
+<path d="M120 118C128 122 130 132 126 140C123 145 116 146 112 143" fill="none" stroke="#5f7c30" stroke-width="9"/>
+<path d="M88 141C88 130 112 130 112 141" fill="none" stroke="#6e4a1e" stroke-width="7"/>
+<path d="M88 141C88 130 112 130 112 141" fill="none" stroke="#d9b066" stroke-width="3"/>
+<path d="M80 142C76 132 80 122 86 118C88 126 90 134 92 141M90 141C88 128 94 116 100 112C102 122 101 132 102 140M100 141C104 128 112 120 120 120C118 128 114 136 110 141M108 142C114 134 120 132 126 132C124 138 122 140 120 142" fill="#6fbf45" stroke="#2f6a1e" stroke-width="2.5"/>
+<path d="M86 124L89 138M99 118L99 136M114 126L107 138" fill="none" stroke="#a6e070" stroke-width="2"/>
+<circle cx="84" cy="122" r="3.2" fill="#c77ad8" stroke="#6a3a80" stroke-width="1.5"/>
+<circle cx="117" cy="124" r="3.2" fill="#c77ad8" stroke="#6a3a80" stroke-width="1.5"/>
+<circle cx="100" cy="114" r="3" fill="#ffe27a" stroke="#a88a2a" stroke-width="1.5"/>
+<g clip-path="url(#npc-herbalist-basket-c)">
+<rect x="76" y="140" width="48" height="26" fill="url(#npc-herbalist-cane)"/>
+<path d="M78 147H122M80 153H120M81 159H119" fill="none" stroke="#a87634" stroke-width="2"/>
+<path d="M88 141V166M96 141V166M104 141V166M112 141V166" fill="none" stroke="#d9b066" stroke-width="1.5" stroke-dasharray="3 3"/>
+<path d="M112 141L108 166H124V141Z" fill="#9a6a2c" opacity="0.5"/>
+</g>
+<path d="M77 141H123L119 159C118 163 115 165 111 165H89C85 165 82 163 81 159Z" fill="none" stroke="#6e4a1e" stroke-width="4"/>
+<rect x="75" y="138" width="50" height="6" rx="3" fill="#e6c27a" stroke="#6e4a1e" stroke-width="3"/>
+<ellipse cx="80" cy="141" rx="6" ry="5.5" fill="url(#npc-herbalist-skin)" stroke="#a0603e" stroke-width="3"/>
+<ellipse cx="120" cy="141" rx="6" ry="5.5" fill="#e8b285" stroke="#a0603e" stroke-width="3"/>
+<g clip-path="url(#npc-herbalist-head-c)">
+<rect x="68" y="64" width="64" height="56" fill="url(#npc-herbalist-skin)"/>
+<path d="M130 82C124 104 110 116 88 118H130Z" fill="#d99c72"/>
+<path d="M70 86C78 76 90 74 100 74S122 76 130 86L126 90C118 82 110 80 100 80S82 82 74 90Z" fill="#c7c4cc"/>
+</g>
+<path d="M66 98C62 74 78 60 100 60S138 74 134 98C133 108 128 116 120 121L104 119C114 112 122 102 122 92C118 82 110 78 100 78S82 82 78 92C78 102 86 112 96 119L80 121C72 116 67 108 66 98Z" fill="url(#npc-herbalist-scarf)" stroke="#857660" stroke-width="4.5"/>
+<path d="M78 92C82 82 90 79 100 79S118 82 122 92C122 104 112 118 100 118S78 104 78 92Z" fill="none" stroke="#a0603e" stroke-width="3"/>
+<path d="M134 98C133 108 128 116 120 121L104 119M66 98C67 108 72 116 80 121L96 119" fill="none" stroke="#857660" stroke-width="4"/>
+<path d="M128 74C134 84 135 98 130 108C128 113 125 116 121 119L112 118C120 110 124 100 123 90C121 84 118 80 114 78C120 76 125 75 128 74Z" fill="#d6cdbc"/>
+<path d="M83 87C88 82 94 81 100 81S112 82 117 87" fill="none" stroke="#c4c1cc" stroke-width="4"/>
+<path d="M81 90C84 82 92 78.5 100 78.5S116 82 119 90" fill="none" stroke="#fff" stroke-width="2.5" stroke-dasharray="0.1 4.5"/>
+<path d="M74 70Q84 62 96 62" fill="none" stroke="#fff" stroke-width="3"/>
+<path d="M112 66C122 70 128 78 130 90" fill="none" stroke="#cbc3b4" stroke-width="3"/>
+<path d="M94 118L100 123L106 118L108 126L100 124L92 126Z" fill="url(#npc-herbalist-scarf)" stroke="#857660" stroke-width="2.5"/>
+<ellipse cx="85" cy="104" rx="5" ry="3.2" fill="#ec7f6e" opacity="0.55"/>
+<ellipse cx="115" cy="104" rx="5" ry="3.2" fill="#ec7f6e" opacity="0.55"/>
+<path d="M84 97Q89 91 94 97M106 97Q111 91 116 97" fill="none" stroke="#2c1a18" stroke-width="3.2"/>
+<path d="M82 98.5L80 100M118 98.5L120 100" fill="none" stroke="#b07050" stroke-width="1.5"/>
+<path d="M92 89Q89 87 86 88.5M108 89Q111 87 114 88.5" fill="none" stroke="#9a9aa6" stroke-width="2"/>
+<path d="M94 106Q100 112 106 106" fill="#9c3f3a" stroke="#8a3a30" stroke-width="2.2"/>
+<path d="M99 100Q101 102 99 103" fill="none" stroke="#c07a58" stroke-width="1.5"/>
+</g>
+</svg>

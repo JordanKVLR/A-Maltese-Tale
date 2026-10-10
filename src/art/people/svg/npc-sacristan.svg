@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="npc-sacristan-cassock" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#46465c"/><stop offset="1" stop-color="#2b2b36"/></linearGradient>
+<linearGradient id="npc-sacristan-skin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbd8b4"/><stop offset="1" stop-color="#eeba8e"/></linearGradient>
+<linearGradient id="npc-sacristan-wax" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fffaf0"/><stop offset="1" stop-color="#e6d9b8"/></linearGradient>
+<radialGradient id="npc-sacristan-glow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffe680" stop-opacity="0.75"/><stop offset="1" stop-color="#ffe680" stop-opacity="0"/></radialGradient>
+<radialGradient id="npc-sacristan-eye" cx="0.5" cy="0.75" r="0.6"><stop offset="0" stop-color="#5a4a6a"/><stop offset="1" stop-color="#1b1622"/></radialGradient>
+<clipPath id="npc-sacristan-body-c"><path d="M80 121C80 114 87 110 95 110H105C113 110 120 114 120 121L130 169C130 175 116 176 100 176S70 175 70 169Z"/></clipPath>
+<clipPath id="npc-sacristan-head-c"><ellipse cx="100" cy="91" rx="29" ry="27"/></clipPath>
+</defs>
+<ellipse cx="100" cy="180" rx="40" ry="9" fill="#1d2b33" opacity="0.25"/>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M84 174C84 171 87 170 91 170H97L98 178H87C85 178 84 176 84 174ZM116 174C116 171 113 170 109 170H103L102 178H113C115 178 116 176 116 174Z" fill="#1a1a22" stroke="#0e0e14" stroke-width="3"/>
+<g clip-path="url(#npc-sacristan-body-c)">
+<rect x="66" y="106" width="68" height="72" fill="url(#npc-sacristan-cassock)"/>
+<path d="M110 112C122 128 126 152 122 178H134V106Z" fill="#1c1c26"/>
+<ellipse cx="100" cy="113" rx="24" ry="8" fill="#1c1c26"/>
+<path d="M84 126Q86 118 92 116M82 150L80 168" fill="none" stroke="#62627e" stroke-width="3"/>
+<path d="M76 140Q100 146 124 140" fill="none" stroke="#14141c" stroke-width="5"/>
+<path d="M100 124V172" fill="none" stroke="#8a8aa6" stroke-width="3" stroke-dasharray="0.1 5.5"/>
+<path d="M119 124L127.5 168Q118 172.5 104 173" fill="none" stroke="#5e5e80" stroke-width="2.5"/>
+</g>
+<path d="M80 121C80 114 87 110 95 110H105C113 110 120 114 120 121L130 169C130 175 116 176 100 176S70 175 70 169Z" fill="none" stroke="#0e0e14" stroke-width="4.5"/>
+<path d="M80 119C72 124 68 136 69 148" fill="none" stroke="#0e0e14" stroke-width="18"/>
+<path d="M80 119C72 124 68 136 69 148" fill="none" stroke="#3a3a4e" stroke-width="11"/>
+<path d="M62 147Q69 151 76 147" fill="none" stroke="#5a5a74" stroke-width="2"/>
+<circle cx="69" cy="160" r="6.5" fill="none" stroke="#6a4a14" stroke-width="5"/>
+<circle cx="69" cy="160" r="6.5" fill="none" stroke="#e6b84a" stroke-width="2.2"/>
+<path d="M65 165L62 176M62 176L66.5 177.2M62.8 172.8L66.5 173.8M73 165L76 176M76 176L71.5 177.2M75.2 172.8L71.5 173.8" fill="none" stroke="#6a4a14" stroke-width="4.5"/>
+<path d="M65 165L62 176M62 176L66.5 177.2M62.8 172.8L66.5 173.8M73 165L76 176M76 176L71.5 177.2M75.2 172.8L71.5 173.8" fill="none" stroke="#e6b84a" stroke-width="2.2"/>
+<circle cx="70" cy="152" r="6.5" fill="url(#npc-sacristan-skin)" stroke="#a0603e" stroke-width="3"/>
+<path d="M120 119C131 123 137 131 136 139L135 141" fill="none" stroke="#0e0e14" stroke-width="18"/>
+<path d="M120 119C131 123 137 131 136 139L135 141" fill="none" stroke="#2e2e40" stroke-width="11"/>
+<ellipse cx="71" cy="96" rx="5" ry="7" fill="#eeba8e" stroke="#a0603e" stroke-width="3"/>
+<ellipse cx="129" cy="96" rx="5" ry="7" fill="#e3ad80" stroke="#a0603e" stroke-width="3"/>
+<g clip-path="url(#npc-sacristan-head-c)">
+<rect x="68" y="62" width="64" height="58" fill="url(#npc-sacristan-skin)"/>
+<path d="M130 78C124 102 110 116 86 118H130Z" fill="#e0a47a"/>
+<path d="M78 70Q86 64 96 64" fill="none" stroke="#fff0dc" stroke-width="3"/>
+</g>
+<ellipse cx="100" cy="91" rx="29" ry="27" fill="none" stroke="#a0603e" stroke-width="4"/>
+<path d="M79 78C70 75 63 81 64 89C61 93 63 100 69 99C70 94 73 90 79 88ZM121 78C130 75 137 81 136 89C139 93 137 100 131 99C130 94 127 90 121 88Z" fill="#cfcdd9" stroke="#76748a" stroke-width="3"/>
+<path d="M68 90Q70 86 74 85M132 90Q130 86 126 85" fill="none" stroke="#f2f0f8" stroke-width="1.8"/>
+<path d="M82 72C84 64 92 60 100 60S116 64 118 72C112 69 106 68 100 68S88 69 82 72Z" fill="url(#npc-sacristan-cassock)" stroke="#0e0e14" stroke-width="3.5"/>
+<path d="M100 60V56" fill="none" stroke="#0e0e14" stroke-width="4"/>
+<path d="M88 66Q92 62 98 62" fill="none" stroke="#7a7a96" stroke-width="2"/>
+<path d="M83 90Q88 87.5 93 89.5M107 89.5Q112 87.5 117 90" fill="none" stroke="#9896a6" stroke-width="3"/>
+<ellipse cx="83" cy="106" rx="5" ry="3" fill="#e8786a" opacity="0.45"/>
+<ellipse cx="117" cy="106" rx="5" ry="3" fill="#e8786a" opacity="0.45"/>
+<ellipse cx="89" cy="98" rx="3.8" ry="5" fill="url(#npc-sacristan-eye)"/>
+<ellipse cx="111" cy="98" rx="3.8" ry="5" fill="url(#npc-sacristan-eye)"/>
+<circle cx="87.8" cy="96.2" r="1.6" fill="#fff"/>
+<circle cx="109.8" cy="96.2" r="1.6" fill="#fff"/>
+<circle cx="90.2" cy="99.8" r="0.7" fill="#fff"/>
+<circle cx="112.2" cy="99.8" r="0.7" fill="#fff"/>
+<path d="M99 102Q101.5 104 99 105.5" fill="none" stroke="#c07a58" stroke-width="1.5"/>
+<path d="M95 109.5Q100 113 105 109.5" fill="none" stroke="#8a3a30" stroke-width="2.2"/>
+<rect x="95" y="117" width="10" height="5" rx="1.5" fill="#f6f3ec" stroke="#8a8796" stroke-width="1.5"/>
+<circle cx="136" cy="99" r="19" fill="url(#npc-sacristan-glow)"/>
+<path d="M131.5 114C131.5 112 133 111 136 111S140.5 112 140.5 114V140H131.5Z" fill="url(#npc-sacristan-wax)" stroke="#8a7a5a" stroke-width="2.5"/>
+<path d="M133 113.5V121Q134 123 135 121V116" fill="none" stroke="#fffaf0" stroke-width="1.5"/>
+<path d="M136 111V107" fill="none" stroke="#3a2a1a" stroke-width="1.8"/>
+<path d="M136 87C141.5 94 143.5 100 136 108.5C128.5 100 130.5 94 136 87Z" fill="#ffb43a" stroke="#c4621a" stroke-width="2"/>
+<path d="M136 96C138.6 100 138.6 103.5 136 106.5C133.4 103.5 133.4 100 136 96Z" fill="#fff6c0"/>
+<ellipse cx="136" cy="138" rx="7" ry="6" fill="#eeba8e" stroke="#a0603e" stroke-width="3"/>
+</g>
+</svg>

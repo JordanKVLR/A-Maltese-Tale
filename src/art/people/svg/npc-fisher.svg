@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="npc-fisher-coat" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4a8ad0"/><stop offset="1" stop-color="#2f6fb5"/></linearGradient>
+<linearGradient id="npc-fisher-hat" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe98a"/><stop offset="1" stop-color="#f2c83a"/></linearGradient>
+<linearGradient id="npc-fisher-skin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f2be90"/><stop offset="1" stop-color="#df9f72"/></linearGradient>
+<linearGradient id="npc-fisher-cane" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ecd08a"/><stop offset="1" stop-color="#c99a4c"/></linearGradient>
+<clipPath id="npc-fisher-coat-c"><path d="M78 121C78 114 86 110 95 110H105C114 110 122 114 122 121L128 154C128 160 116 162 100 162S72 160 72 154Z"/></clipPath>
+<clipPath id="npc-fisher-head-c"><ellipse cx="100" cy="94" rx="29" ry="26"/></clipPath>
+<clipPath id="npc-fisher-nassa-c"><path d="M120 130C114 140 114 156 122 164C130 170 144 170 150 162C156 152 154 138 146 130C140 124 126 124 120 130Z"/></clipPath>
+</defs>
+<ellipse cx="100" cy="180" rx="40" ry="9" fill="#1d2b33" opacity="0.25"/>
+<g stroke-linejoin="round" stroke-linecap="round">
+<rect x="83" y="150" width="15" height="16" rx="3" fill="#4a4f57" stroke="#22262c" stroke-width="4"/>
+<rect x="102" y="150" width="15" height="16" rx="3" fill="#3a3e45" stroke="#22262c" stroke-width="4"/>
+<path d="M81 162H98V174C98 177 96 178 93 178H83C80 178 79 176 79 173Z" fill="#f2c83a" stroke="#7a5a10" stroke-width="4"/>
+<path d="M119 162H102V174C102 177 104 178 107 178H117C120 178 121 176 121 173Z" fill="#d9ad2a" stroke="#7a5a10" stroke-width="4"/>
+<path d="M84 166H95" fill="none" stroke="#fff3b0" stroke-width="2"/>
+<g clip-path="url(#npc-fisher-coat-c)">
+<rect x="68" y="106" width="64" height="60" fill="url(#npc-fisher-coat)"/>
+<path d="M112 112C122 126 124 144 120 164H132V106Z" fill="#22558f"/>
+<ellipse cx="100" cy="113" rx="24" ry="8" fill="#22558f"/>
+<path d="M100 120V160" fill="none" stroke="#1f4f86" stroke-width="2.5"/>
+<path d="M92 128H98M92 140H98M92 152H98" fill="none" stroke="#f2e6c8" stroke-width="3"/>
+<path d="M82 124Q84 118 90 116" fill="none" stroke="#8ec0f0" stroke-width="3"/>
+<path d="M72 152Q100 158 128 152" fill="none" stroke="#1f4f86" stroke-width="2.5"/>
+</g>
+<path d="M78 121C78 114 86 110 95 110H105C114 110 122 114 122 121L128 154C128 160 116 162 100 162S72 160 72 154Z" fill="none" stroke="#163a66" stroke-width="4.5"/>
+<path d="M79 118C70 122 66 132 66 142L67 148" fill="none" stroke="#163a66" stroke-width="17"/>
+<path d="M79 118C70 122 66 132 66 142L67 148" fill="none" stroke="#3f80c6" stroke-width="10"/>
+<path d="M61.5 143H72.5" fill="none" stroke="#163a66" stroke-width="2"/>
+<circle cx="67" cy="151" r="6.5" fill="url(#npc-fisher-skin)" stroke="#95583a" stroke-width="3"/>
+<g clip-path="url(#npc-fisher-nassa-c)">
+<rect x="112" y="122" width="46" height="50" fill="url(#npc-fisher-cane)"/>
+<path d="M148 128C152 140 152 156 144 168H160V122Z" fill="#a8783a"/>
+<path d="M114 136Q134 130 156 136M113 148Q134 142 157 148M115 160Q134 154 155 160" fill="none" stroke="#a8783a" stroke-width="2"/>
+<path d="M126 124Q120 146 128 172M136 124V172M146 124Q152 146 144 172" fill="none" stroke="#f6e2a8" stroke-width="1.5"/>
+</g>
+<path d="M120 130C114 140 114 156 122 164C130 170 144 170 150 162C156 152 154 138 146 130C140 124 126 124 120 130Z" fill="none" stroke="#6b4f22" stroke-width="4"/>
+<ellipse cx="135" cy="129" rx="11" ry="4.5" fill="#7a5626" stroke="#6b4f22" stroke-width="3"/>
+<ellipse cx="135" cy="128.5" rx="6" ry="2" fill="#3e2a12"/>
+<path d="M121 118C130 122 134 132 132 140L128 146" fill="none" stroke="#163a66" stroke-width="17"/>
+<path d="M121 118C130 122 134 132 132 140L128 146" fill="none" stroke="#2a62a2" stroke-width="10"/>
+<circle cx="126" cy="147" r="6.5" fill="#df9f72" stroke="#95583a" stroke-width="3"/>
+<g clip-path="url(#npc-fisher-head-c)">
+<rect x="68" y="66" width="64" height="56" fill="url(#npc-fisher-skin)"/>
+<path d="M130 84C124 106 110 118 88 120H130Z" fill="#cc8a60"/>
+<ellipse cx="100" cy="86" rx="40" ry="10" fill="#c98660"/>
+</g>
+<ellipse cx="100" cy="94" rx="29" ry="26" fill="none" stroke="#95583a" stroke-width="4"/>
+<path d="M75 102C76 116 88 124 100 124S124 116 125 102C120 108 112 110 100 109C88 110 80 108 75 102Z" fill="#f4f1ea" stroke="#8a8796" stroke-width="3"/>
+<path d="M112 116C118 114 122 110 124 104C124 112 118 120 110 122Z" fill="#cfcbd6"/>
+<ellipse cx="83" cy="103" rx="5" ry="3" fill="#e0685a" opacity="0.5"/>
+<ellipse cx="117" cy="103" rx="5" ry="3" fill="#e0685a" opacity="0.5"/>
+<path d="M85 98Q89.5 93 94 98M106 98Q110.5 93 115 98" fill="none" stroke="#2a1a18" stroke-width="3.2"/>
+<path d="M86 110C88 104 96 103 100 106C104 103 112 104 114 110C110 112 104 111 100 109C96 111 90 112 86 110Z" fill="#f4f1ea" stroke="#8a8796" stroke-width="2.5"/>
+<ellipse cx="100" cy="103" rx="4.5" ry="3.8" fill="#ec9a7a" stroke="#a8603e" stroke-width="2"/>
+<circle cx="98.6" cy="101.8" r="1.2" fill="#fff" opacity="0.8"/>
+<path d="M64 92C62 80 80 74 100 74S138 80 136 92C135 101 128 104 124 100C122 90 112 85 100 85S78 90 76 100C72 104 65 101 64 92Z" fill="url(#npc-fisher-hat)" stroke="#8a6a14" stroke-width="4.5"/>
+<path d="M76 79C74 66 84 56 100 56S126 66 124 79C116 76 108 75 100 75S84 76 76 79Z" fill="url(#npc-fisher-hat)" stroke="#8a6a14" stroke-width="4.5"/>
+<path d="M114 59C120 64 123 70 123 77L116 75.5C117 70 116 64 114 59Z" fill="#d4a82a"/>
+<path d="M126 84C132 86 134 90 133 94C131 98 128 99 126 97C125 92 124 88 120 86Z" fill="#d4a82a"/>
+<path d="M76 79C84 76 92 75 100 75S116 76 124 79" fill="none" stroke="#8a6a14" stroke-width="2.5"/>
+<path d="M84 66Q90 60 98 59M70 86Q76 80 86 79" fill="none" stroke="#fff8d0" stroke-width="3"/>
+<path d="M83 90.5Q88 87.5 94 90M106 90Q112 87.5 117 90.5" fill="none" stroke="#8a8796" stroke-width="6"/>
+<path d="M83 90.5Q88 87.5 94 90M106 90Q112 87.5 117 90.5" fill="none" stroke="#f4f1ea" stroke-width="3"/>
+</g>
+</svg>

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="trainer-leader-cape" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a888cf"/><stop offset="1" stop-color="#8d6bb5"/></linearGradient>
+<linearGradient id="trainer-leader-lining" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#553b7a"/><stop offset="1" stop-color="#6a4d90"/></linearGradient>
+<linearGradient id="trainer-leader-gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe38e"/><stop offset="1" stop-color="#e2a92e"/></linearGradient>
+<linearGradient id="trainer-leader-skin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbd9b4"/><stop offset="1" stop-color="#eebb8f"/></linearGradient>
+<linearGradient id="trainer-leader-hair" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5e3d48"/><stop offset="1" stop-color="#33202a"/></linearGradient>
+<radialGradient id="trainer-leader-eye" cx="0.5" cy="0.75" r="0.6"><stop offset="0" stop-color="#7a4fa8"/><stop offset="1" stop-color="#1b1622"/></radialGradient>
+<clipPath id="trainer-leader-head-c"><ellipse cx="100" cy="90" rx="30" ry="28"/></clipPath>
+<clipPath id="trainer-leader-mantle-c"><path d="M68 126C68 113 82 107 100 107S132 113 132 126C128 132 118 134 110 130L100 124L90 130C82 134 72 132 68 126Z"/></clipPath>
+</defs>
+<ellipse cx="100" cy="180" rx="40" ry="9" fill="#1d2b33" opacity="0.25"/>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M78 114C68 130 60 150 57 170Q90 178 120 174Q140 172 160 165C161 146 160 126 156 108Q140 108 124 114Z" fill="url(#trainer-leader-lining)"/>
+<path d="M78 114C68 130 60 150 57 170Q63 172 70 173C70 152 75 132 85 118Z" fill="url(#trainer-leader-cape)"/>
+<path d="M156 108C160 126 161 146 160 165Q150 168 142 170C146 152 146 132 144 114Z" fill="#7c5ca6"/>
+<path d="M61 168Q90 175 120 171Q140 169 156 163M157 114C159 130 160 146 158 162" fill="none" stroke="#f0c44a" stroke-width="3.5"/>
+<path d="M78 114C68 130 60 150 57 170Q90 178 120 174Q140 172 160 165C161 146 160 126 156 108" fill="none" stroke="#33204f" stroke-width="4.5"/>
+<path d="M80 120C66 112 56 96 54 75C64 77 74 85 82 96ZM120 120C134 112 144 96 146 75C136 77 126 85 118 96Z" fill="#8d6bb5" stroke="#33204f" stroke-width="4"/>
+<path d="M79 113C69 106 62 96 60 83C68 86 75 91 80 99ZM121 113C131 106 138 96 140 83C132 86 125 91 120 99Z" fill="url(#trainer-leader-gold)" stroke="#7a5a14" stroke-width="2"/>
+<path d="M84 160V168C84 174 86 178 90 178H96C98 178 99 176 99 173V160Z" fill="#2c2838" stroke="#16141e" stroke-width="4"/>
+<path d="M116 160V168C116 174 114 178 110 178H104C102 178 101 176 101 173V160Z" fill="#221f2c" stroke="#16141e" stroke-width="4"/>
+<rect x="83" y="138" width="16" height="24" rx="5" fill="#3f4366" stroke="#1c1e33" stroke-width="4"/>
+<rect x="101" y="138" width="16" height="24" rx="5" fill="#33365a" stroke="#1c1e33" stroke-width="4"/>
+<path d="M84 160H99M101 160H116" fill="none" stroke="#f0c44a" stroke-width="3.5"/>
+<path d="M88 168Q90 165 94 165" fill="none" stroke="#56506c" stroke-width="2"/>
+<path d="M80 124C80 117 87 114 95 114H105C113 114 120 117 120 124L122 146C122 150 116 152 100 152S78 150 78 146Z" fill="#454a72" stroke="#1c1e33" stroke-width="4"/>
+<path d="M110 116C118 124 120 136 118 150L121 146L120 124C120 120 116 117 110 116Z" fill="#2b2d4a"/>
+<path d="M78 136Q100 142 122 136L122 144Q100 150 78 144Z" fill="url(#trainer-leader-gold)" stroke="#7a5a14" stroke-width="2.5"/>
+<path d="M79 120L64 134L80 143" fill="none" stroke="#1c1e33" stroke-width="18"/>
+<path d="M79 120L64 134L80 143" fill="none" stroke="#4c5280" stroke-width="11"/>
+<path d="M75 141L80 135" fill="none" stroke="#f0c44a" stroke-width="5"/>
+<circle cx="81" cy="143" r="6.5" fill="url(#trainer-leader-skin)" stroke="#a8644a" stroke-width="3"/>
+<path d="M121 121L141 125L152 108" fill="none" stroke="#1c1e33" stroke-width="18"/>
+<path d="M121 121L141 125L152 108" fill="none" stroke="#565c8e" stroke-width="11"/>
+<path d="M145 115L152 120" fill="none" stroke="#f0c44a" stroke-width="5"/>
+<path d="M150 116Q145 138 148 160M156 116Q157 140 154 160" fill="none" stroke="#45306a" stroke-width="2.5"/>
+<circle cx="154" cy="106" r="6.5" fill="#eebb8f" stroke="#a8644a" stroke-width="3"/>
+<g clip-path="url(#trainer-leader-mantle-c)">
+<rect x="66" y="104" width="68" height="34" fill="url(#trainer-leader-cape)"/>
+<path d="M114 108C126 114 130 120 130 132H136V104Z" fill="#6a4d90"/>
+<path d="M66 126C72 133 82 134 90 130L100 124L110 130C118 134 128 133 134 126" fill="none" stroke="#f0c44a" stroke-width="7"/>
+<path d="M74 118Q80 112 90 110" fill="none" stroke="#cdb6ec" stroke-width="3"/>
+</g>
+<path d="M68 126C68 113 82 107 100 107S132 113 132 126C128 132 118 134 110 130L100 124L90 130C82 134 72 132 68 126Z" fill="none" stroke="#33204f" stroke-width="4"/>
+<ellipse cx="70" cy="95" rx="5" ry="7" fill="#eebb8f" stroke="#a8644a" stroke-width="3"/>
+<ellipse cx="130" cy="95" rx="5" ry="7" fill="#e5ae82" stroke="#a8644a" stroke-width="3"/>
+<g clip-path="url(#trainer-leader-head-c)">
+<rect x="66" y="60" width="68" height="60" fill="url(#trainer-leader-skin)"/>
+<path d="M134 76C128 100 112 114 86 118H134Z" fill="#e3a47c"/>
+<ellipse cx="102" cy="72" rx="34" ry="14" fill="#e8ac84"/>
+</g>
+<ellipse cx="100" cy="90" rx="30" ry="28" fill="none" stroke="#a8644a" stroke-width="4"/>
+<path d="M68 94C62 74 74 56 96 52C112 49 130 56 134 72C136 80 135 88 132 94C130 86 128 80 124 75C118 70 108 69 98 72C88 74 80 78 75 82C72 86 70 90 68 94Z" fill="url(#trainer-leader-hair)" stroke="#1e1218" stroke-width="4.5"/>
+<path d="M76 80C82 68 96 60 116 62M90 72C100 66 112 66 122 70" fill="none" stroke="#1e1218" stroke-width="2"/>
+<path d="M80 66Q88 58 100 57" fill="none" stroke="#9a7480" stroke-width="3"/>
+<path d="M81 87L95 89.5M119 87L105 89.5" fill="none" stroke="#33202a" stroke-width="3.5"/>
+<ellipse cx="81" cy="104" rx="5" ry="3" fill="#e0786a" opacity="0.4"/>
+<ellipse cx="119" cy="104" rx="5" ry="3" fill="#e0786a" opacity="0.4"/>
+<path d="M84.5 96.5C84.5 93 86.5 91.5 89 91.5S93.5 93 93.5 96.5S91.5 101.5 89 101.5S84.5 100 84.5 96.5Z" fill="url(#trainer-leader-eye)"/>
+<path d="M106.5 96.5C106.5 93 108.5 91.5 111 91.5S115.5 93 115.5 96.5S113.5 101.5 111 101.5S106.5 100 106.5 96.5Z" fill="url(#trainer-leader-eye)"/>
+<circle cx="87.6" cy="94.6" r="1.8" fill="#fff"/>
+<circle cx="109.6" cy="94.6" r="1.8" fill="#fff"/>
+<circle cx="90.6" cy="99" r="0.8" fill="#fff"/>
+<circle cx="112.6" cy="99" r="0.8" fill="#fff"/>
+<path d="M93 107Q100 112 107 107" fill="#fff" stroke="#8a3a30" stroke-width="2.5"/>
+<path d="M100 123L93 111L100 115L107 111ZM100 123L112 116L108 123L112 130ZM100 123L107 135L100 131L93 135ZM100 123L88 130L92 123L88 116Z" fill="url(#trainer-leader-gold)" stroke="#5e4310" stroke-width="2"/>
+<circle cx="96.5" cy="115" r="1.3" fill="#fff"/>
+</g>
+</svg>
