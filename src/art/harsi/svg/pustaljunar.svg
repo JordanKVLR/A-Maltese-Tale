@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="pustaljunar-g" gradientUnits="userSpaceOnUse" x1="50" y1="30" x2="130" y2="140"><stop offset="0" stop-color="#ff8070"/><stop offset=".5" stop-color="#d8343a"/></linearGradient>
+<linearGradient id="pustaljunar-ft" x1="0" x2="1"><stop offset=".55" stop-color="#6a5e74"/><stop offset=".55" stop-color="#463c52"/></linearGradient>
+<linearGradient id="pustaljunar-far" x1="0" x2="1"><stop offset=".55" stop-color="#52465e"/><stop offset=".55" stop-color="#382e44"/></linearGradient>
+<linearGradient id="pustaljunar-el" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fffbd6"/><stop offset=".6" stop-color="#ffd84a"/><stop offset="1" stop-color="#f5a623"/></linearGradient>
+<linearGradient id="pustaljunar-au" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0a0"/><stop offset=".5" stop-color="#f0c24e"/><stop offset="1" stop-color="#c8902a"/></linearGradient>
+<radialGradient id="pustaljunar-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#fff0a0"/><stop offset=".5" stop-color="#eea21e"/><stop offset="1" stop-color="#6a2a10"/></radialGradient>
+<clipPath id="pustaljunar-cb"><path d="M58 60H110L131 56C133 56 134 57 134 59V130C134 132 133 133 131 134L112 140H60C57 140 56 138 56 136V63C56 61 57 60 58 60Z"/></clipPath>
+<clipPath id="pustaljunar-ch"><path d="M53 62C53 51 63 43 74 42C80 36 90 33 100 33C110 33 118 37 121 43C129 44 136 49 137 56V60L112 65H55C53 65 53 64 53 62Z"/></clipPath>
+<clipPath id="pustaljunar-e1"><path d="M87 86C89 80 95 77 104 77C106 84 104 91 98 93.5C92.5 95 87.6 92 87 86Z"/></clipPath>
+<clipPath id="pustaljunar-e2"><path d="M64 87.5C65.6 83.1 69.6 80.9 75 80.5C76.4 85.9 74.8 91.1 70.6 92.7C67 93.5 64.2 91.3 64 87.5Z"/></clipPath>
+</defs>
+<ellipse cx="98" cy="184" rx="66" ry="7" fill="#1d2b33" opacity="0.22"/>
+<g fill="#4e0f22" stroke="#4e0f22" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M130 120C150 130 164 124 168 112C171 102 166 94 172 86" fill="none" stroke="#221a28" stroke-width="10"/>
+<path d="M64 132H90L74 154L72 166H76C80 166 82 170 81 179H46C42 179 41 175 44 172L52 166L52 154Z" fill="#221a28" stroke="#221a28"/>
+<path d="M96 134H120L138 152L140 168H146C152 168 156 174 155 182H124C122 178 122 172 124 170L118 158Z" fill="#221a28" stroke="#221a28"/>
+<g transform="rotate(-6 95 140)">
+<path d="M60 102C50 102 42 98 38 90L28 98C36 110 48 116 60 116Z"/>
+<circle cx="32" cy="92" r="9"/>
+<path d="M58 60H110L131 56C133 56 134 57 134 59V130C134 132 133 133 131 134L112 140H60C57 140 56 138 56 136V63C56 61 57 60 58 60Z"/>
+<path d="M53 62C53 51 63 43 74 42C80 36 90 33 100 33C110 33 118 37 121 43C129 44 136 49 137 56V60L112 65H55C53 65 53 64 53 62Z"/>
+<path d="M126 100C138 102 146 112 148 124L136 130C134 120 130 114 124 114Z"/>
+<circle cx="143" cy="131" r="9"/>
+</g>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M130 120C150 130 164 124 168 112C171 102 166 94 172 86" fill="none" stroke="#5e5266" stroke-width="5"/>
+<path d="M130 120C150 130 164 124 168 112C171 102 166 94 172 86" fill="none" stroke="#9a90a6" stroke-width="5" stroke-dasharray="1.6 2.4" stroke-linecap="butt"/>
+<g fill="url(#pustaljunar-el)" stroke="#8a4a0e" stroke-width="1.8">
+<path d="M170 88L178 70L186 74L180 80L188 82L172 100L176 90Z"/>
+</g>
+<path d="M64 132H90L74 154L72 166H76C80 166 82 170 81 179H46C42 179 41 175 44 172L52 166L52 154Z" fill="url(#pustaljunar-far)" stroke="#221a28" stroke-width="2.5"/>
+<path d="M46 175H76" stroke="#8a7e92" stroke-width="2"/>
+<path d="M96 134H120L138 152L140 168H146C152 168 156 174 155 182H124C122 178 122 172 124 170L118 158Z" fill="url(#pustaljunar-ft)" stroke="#221a28" stroke-width="2.5"/>
+<path d="M128 178H150M114 140L130 156" stroke="#8a7e92" stroke-width="2" fill="none"/>
+<circle cx="129" cy="158" r="2.6" fill="url(#pustaljunar-au)" stroke="#6a3a0e" stroke-width="1.2"/>
+<circle cx="60" cy="158" r="2.4" fill="url(#pustaljunar-au)" stroke="#6a3a0e" stroke-width="1.2"/>
+<g transform="rotate(-6 95 140)">
+<path d="M60 102C50 102 42 98 38 90L28 98C36 110 48 116 60 116Z" fill="#a3223e" stroke="#4e0f22" stroke-width="2.5"/>
+<circle cx="32" cy="92" r="9" fill="#b82a3c" stroke="#4e0f22" stroke-width="2.5"/>
+<path d="M28 89C29 87 31 86 33 86" fill="none" stroke="#e8606a" stroke-width="1.6"/>
+<g clip-path="url(#pustaljunar-cb)">
+<rect x="50" y="50" width="90" height="94" fill="url(#pustaljunar-g)"/>
+<path d="M110 50L140 46V144H110Z" fill="#a3223e"/>
+<path d="M50 56H140V70C120 73 80 73 50 70Z" fill="#7c1636"/>
+<path d="M50 126C70 134 96 134 110 126V144H50Z" fill="#b82a3c"/>
+<path d="M130 66V128" stroke="#c84048" stroke-width="2"/>
+<path d="M60 80C59 98 59 116 60 132" fill="none" stroke="#ffc2b0" stroke-width="2"/>
+</g>
+<path d="M58 60H110L131 56C133 56 134 57 134 59V130C134 132 133 133 131 134L112 140H60C57 140 56 138 56 136V63C56 61 57 60 58 60Z" fill="none" stroke="#4e0f22" stroke-width="2.5"/>
+<path d="M110 61V139" stroke="#4e0f22" stroke-width="2.5"/>
+<path d="M62 110H104V136H62Z" fill="url(#pustaljunar-el)" stroke="#4e0f22" stroke-width="2"/>
+<path d="M72 110V136M94 110V136M62 118.7H104M62 127.3H104" stroke="#c22c3a" stroke-width="3"/>
+<path d="M66 132L78 112M84 132L92 118" stroke="#fff" stroke-width="1.6" opacity=".8"/>
+<path d="M114 110L130 107V128L114 132Z" fill="#f0a830" stroke="#4e0f22" stroke-width="2"/>
+<path d="M122 108.5V130M114 117L130 114M114 124.5L130 121" stroke="#a3223e" stroke-width="2.6"/>
+<path d="M105 114V124" stroke="#6a3a0e" stroke-width="4"/>
+<path d="M105 114V124" stroke="#f0c24e" stroke-width="2"/>
+<g clip-path="url(#pustaljunar-ch)">
+<rect x="50" y="26" width="90" height="42" fill="url(#pustaljunar-g)"/>
+<path d="M114 36C121 43 126 52 124 66H140V26Z" fill="#a3223e"/>
+<path d="M50 54C70 58 96 58 112 54V68H50Z" fill="#c22c3a"/>
+<path d="M78 41C86 37 94 36 102 37C94 38 88 40 82 44Z" fill="#ffc2b0"/>
+</g>
+<path d="M53 62C53 51 63 43 74 42C80 36 90 33 100 33C110 33 118 37 121 43C129 44 136 49 137 56V60L112 65H55C53 65 53 64 53 62Z" fill="none" stroke="#4e0f22" stroke-width="2.5"/>
+<path d="M55 60C57 50 68 44 83 44C97 44 108 50 111 60M113 60C116 52 121 48 126 48C131 49 135 52 136 57" fill="none" stroke="#4e0f22" stroke-width="2"/>
+<path d="M76 57L75 48L79.5 51L83 45.5L86.5 51L91 48L90 57Z" fill="url(#pustaljunar-au)" stroke="#6a3a0e" stroke-width="1.5"/>
+<path d="M60 66H106V75H60ZM114 65L130 62V70L114 73Z" fill="#fff4b8" stroke="#4e0f22" stroke-width="1.8"/>
+<path d="M64 70.5H102" stroke="#c0602a" stroke-width="1.8" stroke-dasharray="2.6 1.6" stroke-linecap="butt"/>
+<path d="M66 98C76 101 92 101 102 95C101 104 94 109 85 109C76 109 69 105 66 98Z" fill="#3a0a1c" stroke="#4e0f22" stroke-width="2"/>
+<path d="M86 104C90 103 94 104 96 106C92 108 88 109 84 108Z" fill="#e4567a"/>
+<path d="M63 95C74 100 92 100 104 92L104 96C92 104 74 104 64 100Z" fill="url(#pustaljunar-g)" stroke="#4e0f22" stroke-width="2.5"/>
+<path d="M87 86C89 80 95 77 104 77C106 84 104 91 98 93.5C92.5 95 87.6 92 87 86Z" fill="#fffdf4"/>
+<g clip-path="url(#pustaljunar-e1)">
+<ellipse cx="96" cy="86.4" rx="6.4" ry="7.2" fill="url(#pustaljunar-iris)"/>
+<ellipse cx="95.7" cy="86.8" rx="3.6" ry="5" fill="#1b1622"/>
+</g>
+<path d="M87 86C89 80 95 77 104 77C106 84 104 91 98 93.5C92.5 95 87.6 92 87 86Z" fill="none" stroke="#4e0f22" stroke-width="2"/>
+<path d="M86.4 86.6C89 80 95 76.6 105.4 76.4" fill="none" stroke="#1b1622" stroke-width="3.4"/>
+<circle cx="92.8" cy="84.2" r="2.4" fill="#fff"/>
+<circle cx="96.6" cy="88" r="1.1" fill="#fff"/>
+<path d="M64 87.5C65.6 83.1 69.6 80.9 75 80.5C76.4 85.9 74.8 91.1 70.6 92.7C67 93.5 64.2 91.3 64 87.5Z" fill="#fffdf4"/>
+<g clip-path="url(#pustaljunar-e2)">
+<ellipse cx="70" cy="88.4" rx="4.6" ry="5.6" fill="url(#pustaljunar-iris)"/>
+<ellipse cx="69.8" cy="88.8" rx="2.6" ry="3.8" fill="#1b1622"/>
+</g>
+<path d="M64 87.5C65.6 83.1 69.6 80.9 75 80.5C76.4 85.9 74.8 91.1 70.6 92.7C67 93.5 64.2 91.3 64 87.5Z" fill="none" stroke="#4e0f22" stroke-width="2"/>
+<path d="M63.6 88.1C65.6 83.1 69.6 80.5 76.6 80.1" fill="none" stroke="#1b1622" stroke-width="3"/>
+<circle cx="67.8" cy="86.4" r="1.8" fill="#fff"/>
+<circle cx="70.6" cy="89.4" r=".8" fill="#fff"/>
+<path d="M126 100C138 102 146 112 148 124L136 130C134 120 130 114 124 114Z" fill="url(#pustaljunar-g)" stroke="#4e0f22" stroke-width="2.5"/>
+<path d="M130 106C138 110 142 116 144 122" fill="none" stroke="#ffc2b0" stroke-width="1.8"/>
+<path d="M136 130L148 124" stroke="#a3223e" stroke-width="3"/>
+<circle cx="143" cy="131" r="9" fill="url(#pustaljunar-g)" stroke="#4e0f22" stroke-width="2.5"/>
+<path d="M138 127C139 125 141 124 143 124" fill="none" stroke="#ffc2b0" stroke-width="1.6"/>
+</g>
+<g fill="url(#pustaljunar-el)" stroke="#8a4a0e" stroke-width="1.5">
+<path d="M0-8L7-9L3-2L8-2L-3 10L0 1L-5 1Z" transform="translate(30 150) rotate(-60)"/>
+<path d="M0-8L7-9L3-2L8-2L-3 10L0 1L-5 1Z" transform="translate(160 150) rotate(50)"/>
+<path d="M0-8L7-9L3-2L8-2L-3 10L0 1L-5 1Z" transform="translate(22 66) rotate(-20)"/>
+</g>
+</g>
+</svg>

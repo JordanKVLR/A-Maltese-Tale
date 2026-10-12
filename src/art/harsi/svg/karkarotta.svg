@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="karkarotta-g" gradientUnits="userSpaceOnUse" x1="30" y1="40" x2="130" y2="150"><stop offset="0" stop-color="#f0c4b8"/><stop offset=".55" stop-color="#d68e8a"/></linearGradient>
+<linearGradient id="karkarotta-far" x1="0" x2="1"><stop offset=".5" stop-color="#be7a82"/><stop offset=".5" stop-color="#9a5c74"/></linearGradient>
+<linearGradient id="karkarotta-iv" x1="0" y1="0" x2="1" y2=".3"><stop offset=".45" stop-color="#fdf5e2"/><stop offset=".45" stop-color="#e2c99c"/></linearGradient>
+<linearGradient id="karkarotta-st" x1="0" y1="0" x2="0" y2="1"><stop offset=".45" stop-color="#e6aca4"/><stop offset=".45" stop-color="#bf7c86"/></linearGradient>
+<radialGradient id="karkarotta-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#c4fff2"/><stop offset=".5" stop-color="#1fb3a4"/><stop offset="1" stop-color="#0b4a52"/></radialGradient>
+<clipPath id="karkarotta-cb"><path d="M86 62C100 44 128 34 152 36C172 38 184 56 184 82C184 108 176 128 158 140C140 148 112 150 96 144C82 138 76 120 78 98C79 84 80 72 86 62Z"/></clipPath>
+<clipPath id="karkarotta-ch"><path d="M64 26C84 24 100 38 102 58C104 78 100 98 92 112C86 122 76 128 64 130C56 131 50 126 44 120C36 114 28 110 24 102C19 92 19 78 24 64C30 44 46 28 64 26Z"/></clipPath>
+<clipPath id="karkarotta-cl"><path d="M84 94C98 90 110 100 110 116V174C110 179 107 182 102 182H84C79 182 76 179 76 174V120C76 108 78 98 84 94ZM152 92C166 90 178 100 178 116V174C178 179 175 182 170 182H152C147 182 144 179 144 174V134C142 114 144 98 152 92Z"/></clipPath>
+<clipPath id="karkarotta-ce"><path d="M88 42L134 30L140 35L146 29C151 31 154 36 154 42L150 108C149 118 142 124 134 124L104 122C94 120 88 112 88 102Z"/></clipPath>
+<clipPath id="karkarotta-e1"><path d="M44 84C46 79 53 76 62 76C64 82 62 90 56 92C50 93 45 90 44 84Z"/></clipPath>
+<clipPath id="karkarotta-e2"><path d="M25 86C26.3 82.1 30.8 79.8 36.5 79.8C37.8 84.4 36.5 90.7 32.7 92.2C28.8 93 25.6 90.7 25 86Z"/></clipPath>
+</defs>
+<ellipse cx="100" cy="184" rx="88" ry="7" fill="#1d2b33" opacity="0.22"/>
+<g fill="#4a1a2e" stroke="#4a1a2e" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M56 128H78V173C78 177 76 179 72 179H62C58 179 56 177 56 173ZM120 132H144V173C144 177 142 179 138 179H126C122 179 120 177 120 173Z"/>
+<path d="M182 96C188 104 190 116 188 128" fill="none" stroke-width="8"/>
+<path d="M86 62C100 44 128 34 152 36C172 38 184 56 184 82C184 108 176 128 158 140C140 148 112 150 96 144C82 138 76 120 78 98C79 84 80 72 86 62Z"/><path d="M84 94C98 90 110 100 110 116V174C110 179 107 182 102 182H84C79 182 76 179 76 174V120C76 108 78 98 84 94ZM152 92C166 90 178 100 178 116V174C178 179 175 182 170 182H152C147 182 144 179 144 174V134C142 114 144 98 152 92Z"/><path d="M88 42L134 30L140 35L146 29C151 31 154 36 154 42L150 108C149 118 142 124 134 124L104 122C94 120 88 112 88 102Z"/><path d="M64 26C84 24 100 38 102 58C104 78 100 98 92 112C86 122 76 128 64 130C56 131 50 126 44 120C36 114 28 110 24 102C19 92 19 78 24 64C30 44 46 28 64 26Z"/><path d="M28 96C38 94 52 96 60 104C61 124 57 142 48 152C44 158 36 160 30 157C25 154 25 148 29 146C32 145 35 147 37 149C41 147 43 138 42 126C41 114 36 104 28 96Z"/>
+<path d="M40 122C40 140 31 158 12 171C22 157 30 141 32 123Z" fill="#5e3e22" stroke="#5e3e22"/><path d="M70 120C73 141 61 164 30 181C47 165 57 146 58 125Z" fill="#5e3e22" stroke="#5e3e22"/>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M56 128H78V173C78 177 76 179 72 179H62C58 179 56 177 56 173ZM120 132H144V173C144 177 142 179 138 179H126C122 179 120 177 120 173Z" fill="url(#karkarotta-far)" stroke="#4a1a2e" stroke-width="2.5"/>
+<g fill="url(#karkarotta-iv)" stroke="#5e3e22" stroke-width="1.8"><path d="M58 179C58 174 60 172 63 172C66 172 68 174 68 179ZM68 179C68 174 70 172 73 172C76 172 78 174 78 179ZM122 179C122 174 124 172 127 172C130 172 132 174 132 179ZM132 179C132 174 134 172 137 172C140 172 142 174 142 179Z"/></g>
+<path d="M182 96C188 104 190 116 188 128" fill="none" stroke="#be7a82" stroke-width="3"/>
+<path d="M186 124C192 126 194 134 190 140C186 138 184 132 186 124Z" fill="#8c4e6c" stroke="#4a1a2e" stroke-width="2"/>
+<g clip-path="url(#karkarotta-cb)">
+<rect x="74" y="30" width="114" height="122" fill="url(#karkarotta-g)"/>
+<path d="M74 128C110 152 160 140 188 92V152H74Z" fill="#ac6a7c"/>
+<path d="M74 104C92 110 104 126 104 152H74Z" fill="#8c4e6c"/>
+<path d="M132 142C152 138 168 126 176 108" fill="none" stroke="#e0a49e" stroke-width="2"/>
+<path d="M150 42C164 42 174 50 178 62C170 52 160 46 150 44Z" fill="#ffe0d6"/>
+<path d="M164 70L170 78L166 84L172 92" fill="none" stroke="#8c4e6c" stroke-width="2"/>
+<path d="M156 40C160 60 160 84 154 104M154 104C140 110 120 112 104 110M154 104C164 112 172 116 182 116" fill="none" stroke="#9a5c74" stroke-width="2.2"/>
+<path d="M158 42C162 62 162 84 157 102" fill="none" stroke="#f0c4b8" stroke-width="1.2" transform="translate(2 0)"/>
+<g fill="#ac6a7c"><circle cx="160" cy="58" r="1.6"/><circle cx="172" cy="100" r="1.4"/><circle cx="150" cy="120" r="1.6"/><circle cx="118" cy="132" r="1.3"/><circle cx="176" cy="74" r="1.2"/></g>
+</g>
+<path d="M86 62C100 44 128 34 152 36C172 38 184 56 184 82C184 108 176 128 158 140C140 148 112 150 96 144C82 138 76 120 78 98C79 84 80 72 86 62Z" fill="none" stroke="#4a1a2e" stroke-width="2.5"/>
+<g clip-path="url(#karkarotta-cl)">
+<rect x="74" y="88" width="106" height="96" fill="url(#karkarotta-g)"/>
+<path d="M100 98C104 126 104 156 100 184H112V98ZM176 104C176 134 172 160 166 184H180V104Z" fill="#ac6a7c"/>
+<path d="M150 100C156 95 164 94 172 97C164 98 158 101 154 106Z" fill="#ffe0d6"/>
+</g>
+<path d="M76 120V174C76 179 79 182 84 182H102C107 182 110 179 110 174V116C110 108 106 101 100 97M144 134V174C144 179 147 182 152 182H170C175 182 178 179 178 174V116C178 106 172 98 164 93" fill="none" stroke="#4a1a2e" stroke-width="2.5"/>
+<path d="M84 138C90 141 98 141 104 138M152 138C158 141 166 141 172 138" fill="none" stroke="#8c4e6c" stroke-width="2"/>
+<g fill="url(#karkarotta-iv)" stroke="#5e3e22" stroke-width="1.8"><path d="M78 182C78 176 80 174 84 174C88 174 90 176 90 182ZM90 182C90 176 92 174 96 174C100 174 102 176 102 182ZM146 182C146 176 148 174 152 174C156 174 158 176 158 182ZM158 182C158 176 160 174 164 174C168 174 170 176 170 182Z"/></g>
+<g clip-path="url(#karkarotta-ce)">
+<rect x="84" y="26" width="74" height="100" fill="url(#karkarotta-g)"/>
+<path d="M146 28C150 70 146 100 132 126H160V28Z" fill="#ac6a7c"/>
+<path d="M84 100C100 104 114 114 118 126H84Z" fill="#8c4e6c"/>
+<path d="M84 38H95V100C95 108 100 114 108 118L106 126H84Z" fill="#f0c4b8"/>
+<path d="M95 44V100C95 108 100 114 108 117" fill="none" stroke="#8c4e6c" stroke-width="2"/>
+<path d="M100 50C108 70 112 92 108 116M108 48C116 68 120 90 116 116M112 70C122 66 134 64 148 66M114 78C124 74 136 72 148 74M124 72C130 86 132 102 128 120M132 72C138 86 140 102 136 120" fill="none" stroke="#8c4e6c" stroke-width="3"/>
+<path d="M100 50C108 70 112 92 108 116M108 48C116 68 120 90 116 116M112 70C122 66 134 64 148 66M114 78C124 74 136 72 148 74M124 72C130 86 132 102 128 120M132 72C138 86 140 102 136 120" fill="none" stroke="#f6d2c8" stroke-width="1" transform="translate(1.6 .6)"/>
+<path d="M100 50C108 70 112 92 108 116M108 48C116 68 120 90 116 116M112 70C122 66 134 64 148 66M114 78C124 74 136 72 148 74M124 72C130 86 132 102 128 120M132 72C138 86 140 102 136 120" fill="none" stroke="#7ff0de" stroke-width="1.1"/>
+<g fill="#c4fff2" stroke="#1a7f7a" stroke-width="1"><circle cx="110" cy="74" r="2"/><circle cx="128" cy="70" r="2"/><circle cx="134" cy="102" r="1.6"/></g>
+</g>
+<path d="M88 42L134 30L140 35L146 29C151 31 154 36 154 42L150 108C149 118 142 124 134 124L104 122C94 120 88 112 88 102Z" fill="none" stroke="#4a1a2e" stroke-width="2.5"/>
+<g fill="#cfdc6a" stroke="#4e5e18" stroke-width="1.2"><circle cx="146" cy="44" r="2.6"/><circle cx="150" cy="49" r="1.8"/><circle cx="142" cy="50" r="1.5"/><circle cx="130" cy="40" r="1.4"/><circle cx="170" cy="56" r="2"/><circle cx="174" cy="60" r="1.4"/></g>
+<path d="M40 122C40 140 31 158 12 171C22 157 30 141 32 123Z" fill="url(#karkarotta-iv)" stroke="#5e3e22" stroke-width="2.5"/>
+<g clip-path="url(#karkarotta-ch)">
+<rect x="18" y="28" width="88" height="108" fill="url(#karkarotta-g)"/>
+<path d="M104 70C100 100 88 118 66 128L52 134H106Z" fill="#ac6a7c"/>
+<path d="M30 62C36 46 48 36 62 32C52 40 44 50 38 64Z" fill="#ffe0d6"/>
+<path d="M86 30C96 40 100 54 98 70L106 70V24Z" fill="#c98088"/>
+<g fill="#ac6a7c"><circle cx="70" cy="46" r="1.6"/><circle cx="84" cy="58" r="1.3"/><circle cx="50" cy="52" r="1.2"/><circle cx="86" cy="100" r="1.5"/><circle cx="76" cy="110" r="1.2"/></g>
+<path d="M80 30L76 38L80 42L76 50" fill="none" stroke="#8c4e6c" stroke-width="1.8"/>
+</g>
+<path d="M64 26C84 24 100 38 102 58C104 78 100 98 92 112C86 122 76 128 64 130C56 131 50 126 44 120C36 114 28 110 24 102C19 92 19 78 24 64C30 44 46 28 64 26Z" fill="none" stroke="#4a1a2e" stroke-width="2.5"/>
+<path d="M28 96C38 94 52 96 60 104C61 124 57 142 48 152C44 158 36 160 30 157C25 154 25 148 29 146C32 145 35 147 37 149C41 147 43 138 42 126C41 114 36 104 28 96Z" fill="url(#karkarotta-g)"/>
+<path d="M58 108C58 128 52 146 42 156L56 154C59 140 61 124 60 106Z" fill="#ac6a7c"/>
+<path d="M60 104C61 124 57 142 48 152C44 158 36 160 30 157C25 154 25 148 29 146C32 145 35 147 37 149C41 147 43 138 42 126C41 116 38 108 33 101" fill="none" stroke="#4a1a2e" stroke-width="2.5"/>
+<path d="M45 112C49 113 53 113 57 112M45 122C48 123 52 123 56 122M44 132C47 133 50 133 53 132M43 141C46 142 48 142 50 141" fill="none" stroke="#8c4e6c" stroke-width="1.6"/>
+<path d="M38 106C41 116 42 128 41 140" fill="none" stroke="#ffe0d6" stroke-width="2"/>
+<ellipse cx="29.5" cy="151" rx="1.6" ry="2" fill="#4a1a2e"/>
+<path d="M70 120C73 141 61 164 30 181C47 165 57 146 58 125Z" fill="url(#karkarotta-iv)" stroke="#5e3e22" stroke-width="2.5"/>
+<path d="M62 132C60 146 52 160 38 172" fill="none" stroke="#fff" stroke-width="1.8"/>
+<path d="M58 124C62 120 68 118 72 120C72 124 68 128 62 128Z" fill="#d68e8a" stroke="#4a1a2e" stroke-width="2"/>
+<path d="M32 124C35 121 40 121 42 122C42 125 39 127 35 127Z" fill="#be7a82" stroke="#4a1a2e" stroke-width="2"/>
+<g fill="#e6d2b0" stroke="#5e3e22" stroke-width="1.2"><circle cx="22" cy="181" r="2"/><circle cx="16" cy="178" r="1.4"/><circle cx="40" cy="183" r="1.6"/></g>
+<path d="M44 84C46 79 53 76 62 76C64 82 62 90 56 92C50 93 45 90 44 84Z" fill="#fffdf4"/>
+<g clip-path="url(#karkarotta-e1)">
+<ellipse cx="54" cy="85.5" rx="6.2" ry="7.2" fill="url(#karkarotta-iris)"/>
+<ellipse cx="53.6" cy="86" rx="3.7" ry="5" fill="#1b1622"/>
+</g>
+<path d="M44 84C46 79 53 76 62 76C64 82 62 90 56 92C50 93 45 90 44 84Z" fill="none" stroke="#4a1a2e" stroke-width="2"/>
+<path d="M43.5 85C46 79 53 76 63 75.5" fill="none" stroke="#1b1622" stroke-width="3.8"/>
+<circle cx="50.8" cy="82.6" r="2.4" fill="#fff"/>
+<circle cx="54.8" cy="86.8" r="1.1" fill="#fff"/>
+<path d="M25 86C26.3 82.1 30.8 79.8 36.5 79.8C37.8 84.4 36.5 90.7 32.7 92.2C28.8 93 25.6 90.7 25 86Z" fill="#fffdf4"/>
+<g clip-path="url(#karkarotta-e2)">
+<ellipse cx="31.4" cy="87.2" rx="4" ry="5.6" fill="url(#karkarotta-iris)"/>
+<ellipse cx="31.1" cy="87.6" rx="2.4" ry="3.9" fill="#1b1622"/>
+</g>
+<path d="M25 86C26.3 82.1 30.8 79.8 36.5 79.8C37.8 84.4 36.5 90.7 32.7 92.2C28.8 93 25.6 90.7 25 86Z" fill="none" stroke="#4a1a2e" stroke-width="2"/>
+<path d="M24.7 86.8C26.3 82.1 30.8 79.8 37.2 79.4" fill="none" stroke="#1b1622" stroke-width="3.4"/>
+<circle cx="29.4" cy="84.9" r="1.7" fill="#fff"/>
+<circle cx="31.9" cy="88.2" r="0.8" fill="#fff"/>
+<g fill="url(#karkarotta-st)" stroke="#4a1a2e" stroke-width="2.2"><path d="M40 84C46 74 60 68 76 68C76 72 72 75 66 76C56 77 48 80 42 88Z"/><path d="M22 84C25 79 31 76 38 76C37 79 34 80 31 81C27 82 24 84 23 87Z"/></g>
+</g>
+</svg>

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="zavorra-g" gradientUnits="userSpaceOnUse" x1="20" y1="80" x2="100" y2="170"><stop offset="0" stop-color="#ffbc90"/><stop offset=".55" stop-color="#f07a52"/></linearGradient>
+<linearGradient id="zavorra-st" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d8dae8"/><stop offset=".42" stop-color="#9599b4"/><stop offset=".66" stop-color="#9599b4"/><stop offset=".66" stop-color="#6c7094"/></linearGradient>
+<linearGradient id="zavorra-lv" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a49aae"/><stop offset=".42" stop-color="#6e6680"/><stop offset=".66" stop-color="#6e6680"/><stop offset=".66" stop-color="#504862"/></linearGradient>
+<linearGradient id="zavorra-leg" x1="0" x2="1"><stop offset=".55" stop-color="#f07a52"/><stop offset=".55" stop-color="#c4524a"/></linearGradient>
+<linearGradient id="zavorra-far" x1="0" x2="1"><stop offset=".55" stop-color="#d8664c"/><stop offset=".55" stop-color="#ac4442"/></linearGradient>
+<linearGradient id="zavorra-sg" x1="0" x2="1"><stop offset=".5" stop-color="#6cd0a8"/><stop offset=".5" stop-color="#3ea48a"/></linearGradient>
+<radialGradient id="zavorra-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#9ff0ff"/><stop offset=".5" stop-color="#2a8ad8"/><stop offset="1" stop-color="#142a5e"/></radialGradient>
+
+<clipPath id="zavorra-cb"><path d="M38 132C38 114 52 104 70 104C88 104 100 116 100 134C100 150 88 162 70 162C52 162 38 150 38 132Z"/></clipPath>
+<clipPath id="zavorra-e1"><ellipse cx="78" cy="84" rx="9.4" ry="11.4"/></clipPath>
+<clipPath id="zavorra-e2"><ellipse cx="52" cy="88" rx="7" ry="10"/></clipPath>
+</defs>
+<ellipse cx="104" cy="184" rx="78" ry="7" fill="#1d2b33" opacity="0.22"/>
+<g fill="#6a2018" stroke="#6a2018" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M48 156L42 170L46 180M60 160L58 172L64 180M92 154L102 168L104 180" fill="none" stroke-width="9"/>
+<path d="M44 126C34 120 28 110 26 98" fill="none" stroke-width="10"/>
+<path d="M28 98C18 96 14 86 18 78C22 72 30 72 34 78L30 84L38 88C38 94 34 98 28 98Z"/>
+<path d="M58 110L54 94M74 108L78 92" fill="none" stroke-width="9"/>
+<g fill="#2e2f4a" stroke="#2e2f4a"><path d="M148 103C146 108 137 113 131 114C124 115 113 114 108 111C104 107 103 98 105 93C107 88 115 81 121 80C127 79 137 83 141 87C146 91 150 99 148 103Z"/><path d="M177 114C177 119 173 127 168 129C163 131 154 129 149 126C145 124 139 118 139 114C139 110 144 103 149 101C154 99 163 97 168 100C173 102 177 109 177 114Z"/><path d="M147 149C144 155 131 159 123 160C114 160 100 156 96 150C92 145 94 134 99 128C103 122 113 114 121 114C129 113 141 121 146 127C150 132 151 144 147 149Z"/><path d="M181 156C180 161 172 167 166 169C160 170 151 170 146 166C141 163 137 153 138 148C140 143 148 138 154 136C160 134 169 134 174 138C178 141 183 151 181 156Z"/><path d="M111 156C111 160 108 167 104 169C100 171 93 170 89 167C85 165 81 160 81 156C81 152 85 146 89 144C93 142 100 141 104 143C108 145 111 152 111 156Z"/></g>
+<path d="M116 84C110 76 116 68 110 58C120 62 120 72 122 82ZM124 82C126 72 138 66 148 70C154 72 156 80 154 88C150 80 144 77 138 79C133 80 130 82 128 85Z" fill="#1b4f45" stroke="#1b4f45"/>
+<path d="M38 132C38 114 52 104 70 104C88 104 100 116 100 134C100 150 88 162 70 162C52 162 38 150 38 132Z"/>
+<path d="M60 152C52 148 40 148 32 154C24 160 24 172 32 178C42 184 58 180 64 170C66 166 64 162 60 160Z"/>
+<circle cx="78" cy="84" r="11.4"/><circle cx="52" cy="88" r="10"/>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M48 156L42 170L46 180M60 160L58 172L64 180M92 154L102 168L104 180" fill="none" stroke="#d8664c" stroke-width="4"/>
+<path d="M44 126C34 120 28 110 26 98" fill="none" stroke="#e46e4e" stroke-width="5"/>
+<path d="M28 98C18 96 14 86 18 78C22 72 30 72 34 78L30 84L38 88C38 94 34 98 28 98Z" fill="url(#zavorra-far)" stroke="#6a2018" stroke-width="2.5"/>
+<path d="M20 82C21 78 24 76 27 76" fill="none" stroke="#ffc8a8" stroke-width="1.8"/>
+<path d="M116 84C110 76 116 68 110 58C120 62 120 72 122 82ZM124 82C126 72 138 66 148 70C154 72 156 80 154 88C150 80 144 77 138 79C133 80 130 82 128 85Z" fill="url(#zavorra-sg)" stroke="#1b4f45" stroke-width="2.5"/>
+<path d="M148 103C146 108 137 113 131 114C124 115 113 114 108 111C104 107 103 98 105 93C107 88 115 81 121 80C127 79 137 83 141 87C146 91 150 99 148 103Z" fill="url(#zavorra-st)" stroke="#2e2f4a" stroke-width="2.5"/>
+<path d="M110 92C112 86 118 82 124 82C118 86 114 90 113 96Z" fill="#eceef8" opacity=".75"/>
+<path d="M177 114C177 119 173 127 168 129C163 131 154 129 149 126C145 124 139 118 139 114C139 110 144 103 149 101C154 99 163 97 168 100C173 102 177 109 177 114Z" fill="url(#zavorra-lv)" stroke="#2e2f4a" stroke-width="2.5"/>
+<path d="M146 108C148 104 152 101 156 101C152 104 150 107 149 111Z" fill="#eceef8" opacity=".75"/>
+<path d="M147 149C144 155 131 159 123 160C114 160 100 156 96 150C92 145 94 134 99 128C103 122 113 114 121 114C129 113 141 121 146 127C150 132 151 144 147 149Z" fill="url(#zavorra-st)" stroke="#2e2f4a" stroke-width="2.5"/>
+<path d="M100 130C102 122 108 117 116 116C109 120 105 126 104 134Z" fill="#eceef8" opacity=".75"/>
+<path d="M181 156C180 161 172 167 166 169C160 170 151 170 146 166C141 163 137 153 138 148C140 143 148 138 154 136C160 134 169 134 174 138C178 141 183 151 181 156Z" fill="url(#zavorra-st)" stroke="#2e2f4a" stroke-width="2.5"/>
+<path d="M146 146C148 141 152 138 157 138C153 141 151 145 150 150Z" fill="#eceef8" opacity=".75"/>
+<path d="M111 156C111 160 108 167 104 169C100 171 93 170 89 167C85 165 81 160 81 156C81 152 85 146 89 144C93 142 100 141 104 143C108 145 111 152 111 156Z" fill="url(#zavorra-st)" stroke="#2e2f4a" stroke-width="2.5"/>
+<path d="M86 152C87 148 90 145 94 145C91 148 89 151 89 155Z" fill="#eceef8" opacity=".75"/>
+<g fill="#5c6086"><circle cx="132" cy="148" r="1.6"/><circle cx="114" cy="152" r="1.2"/><circle cx="138" cy="104" r="1.4"/><circle cx="170" cy="160" r="1.4"/><circle cx="104" cy="122" r="1.1"/></g>
+<g fill="#f6efe0" stroke="#5e5a6a" stroke-width="1.5"><path d="M134 140L138 132H144L148 140Z"/><path d="M160 156L163 150H168L171 156Z"/><path d="M106 136L109 130H114L117 136Z"/></g>
+<g fill="#5e5a6a"><ellipse cx="141" cy="132.5" rx="2" ry=".9"/><ellipse cx="165.5" cy="150.5" rx="1.6" ry=".7"/></g>
+<g fill="#ff8f86" stroke="#6a2018" stroke-width="1.5"><path d="M156 118L158 110L161 118L169 118L163 123L165 131L158 126L151 130L153 123L147 118Z"/></g>
+<g clip-path="url(#zavorra-cb)">
+<rect x="34" y="100" width="70" height="66" fill="url(#zavorra-g)"/>
+<path d="M34 146C50 158 74 160 90 150C98 144 102 134 102 122V166H34Z" fill="#c04e4a"/>
+<path d="M48 116C54 110 62 108 70 108C62 112 56 116 52 122Z" fill="#ffe0c8"/>
+<path d="M60 108C66 112 74 112 80 108" fill="none" stroke="#c04e4a" stroke-width="2"/>
+</g>
+<path d="M38 132C38 114 52 104 70 104C88 104 100 116 100 134C100 150 88 162 70 162C52 162 38 150 38 132Z" fill="none" stroke="#6a2018" stroke-width="2.5"/>
+<path d="M58 110L54 94M74 108L78 92" fill="none" stroke="#e46e4e" stroke-width="4"/>
+<ellipse cx="80" cy="140" rx="6" ry="3.4" fill="#ff4a5a" opacity=".5"/>
+<path d="M50 138C54 143 62 144 68 139C67 145 62 148 57 147C53 146 51 142 50 138Z" fill="#7a2438" stroke="#6a2018" stroke-width="2"/>
+<path d="M55 145C58 143 61 143 64 144C62 146 58 147 55 145Z" fill="#f27a8a"/>
+<path d="M60 152C52 148 40 148 32 154C24 160 24 172 32 178C42 184 58 180 64 170C66 166 64 162 60 160Z" fill="url(#zavorra-leg)" stroke="#6a2018" stroke-width="2.5"/>
+<path d="M28 166C34 166 42 164 48 160" fill="none" stroke="#6a2018" stroke-width="2.2"/>
+<path d="M32 158C36 154 42 152 48 152" fill="none" stroke="#ffd4b8" stroke-width="2"/>
+<g fill="#c8ecff" stroke="#1d4f86" stroke-width="1.5"><circle cx="34" cy="132" r="3.4"/><circle cx="26" cy="122" r="2.2"/></g>
+<circle cx="33" cy="131" r="1" fill="#fff"/>
+<ellipse cx="78" cy="84" rx="9.4" ry="11.4" fill="#fffdf4"/>
+<g clip-path="url(#zavorra-e1)">
+<ellipse cx="76.6" cy="86" rx="7.6" ry="9.4" fill="url(#zavorra-iris)"/>
+<ellipse cx="76.2" cy="87" rx="4.6" ry="6.2" fill="#1b1622"/>
+<path d="M66 70H90V78C84 75 72 75 66 79Z" fill="#e8cfc4"/>
+</g>
+<ellipse cx="78" cy="84" rx="9.4" ry="11.4" fill="none" stroke="#6a2018" stroke-width="2"/>
+<path d="M69.4 78C72 73.5 75.5 72.3 78.5 72.3C82 72.4 85 74.5 86.8 78" fill="none" stroke="#1b1622" stroke-width="3.5"/>
+<circle cx="72.8" cy="81" r="3.2" fill="#fff"/>
+<circle cx="78" cy="85.5" r="1.5" fill="#fff"/>
+<ellipse cx="52" cy="88" rx="7" ry="10" fill="#fffdf4"/>
+<g clip-path="url(#zavorra-e2)">
+<ellipse cx="51" cy="90" rx="6" ry="8.4" fill="url(#zavorra-iris)"/>
+<ellipse cx="50.6" cy="91" rx="3.6" ry="5.4" fill="#1b1622"/>
+<path d="M44 76H60V83C55 80 49 80 44 84Z" fill="#e8cfc4"/>
+</g>
+<ellipse cx="52" cy="88" rx="7" ry="10" fill="none" stroke="#6a2018" stroke-width="2"/>
+<path d="M45.6 82.6C47.2 79.4 49.4 78.4 51.6 78.4C54 78.4 56.2 79.6 57.7 82.4" fill="none" stroke="#1b1622" stroke-width="3.2"/>
+<circle cx="48" cy="85.4" r="2.5" fill="#fff"/>
+<circle cx="51.6" cy="89.6" r="1.1" fill="#fff"/>
+</g>
+</svg>

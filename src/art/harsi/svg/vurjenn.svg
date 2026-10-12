@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="vurjenn-g" gradientUnits="userSpaceOnUse" x1="50" y1="66" x2="140" y2="170"><stop offset="0" stop-color="#9cc0ec"/><stop offset=".55" stop-color="#5577a8"/></linearGradient>
+<linearGradient id="vurjenn-w" gradientUnits="userSpaceOnUse" x1="120" y1="70" x2="170" y2="130"><stop offset="0" stop-color="#7d9fd0"/><stop offset=".6" stop-color="#40639a"/></linearGradient>
+<linearGradient id="vurjenn-bill" x1="0" y1="0" x2="0" y2="1"><stop offset=".55" stop-color="#fbe48c"/><stop offset=".55" stop-color="#e2bc56"/></linearGradient>
+<radialGradient id="vurjenn-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#e0a65a"/><stop offset=".5" stop-color="#7a4220"/><stop offset="1" stop-color="#2e160c"/></radialGradient>
+<clipPath id="vurjenn-cb"><path d="M66 148C66 128 84 116 108 116C134 116 154 130 154 150C154 156 153 160 150 164L70 164C67 159 66 154 66 148Z"/></clipPath>
+<clipPath id="vurjenn-ch"><path d="M82 70C101 70 114 84 114 101C114 118 101 130 83 130C65 130 52 118 52 100C52 83 64 70 82 70Z"/></clipPath>
+<clipPath id="vurjenn-cw"><path d="M116 128C124 112 134 98 146 88C158 78 170 66 184 56C184 62 182 66 180 70L176 72C176 76 175 80 173 84L169 86C168 90 166 94 164 98L160 100C158 106 156 110 152 116C146 126 138 134 128 138C122 139 118 134 116 128Z"/></clipPath>
+<clipPath id="vurjenn-cf"><path d="M62 163C61 159 65 157 69 159C71 156 76 155 79 158C82 155 88 155 91 158C94 155 100 155 103 158C106 155 112 155 115 158C118 155 124 155 127 158C130 155 136 156 138 159C141 156 147 157 148 160C152 158 157 161 156 164C150 168 132 170 108 170C86 170 68 168 62 164Z"/></clipPath>
+<clipPath id="vurjenn-e1"><ellipse cx="90" cy="98" rx="8.6" ry="10.6"/></clipPath>
+<clipPath id="vurjenn-e2"><ellipse cx="66" cy="100" rx="6.4" ry="9.4"/></clipPath>
+</defs>
+<ellipse cx="106" cy="184" rx="56" ry="6" fill="#1d2b33" opacity="0.22"/>
+<path d="M40 166C42 160 70 156 86 156M134 156C150 156 174 160 176 166" fill="none" stroke="#1f7f98" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M70 160C72 172 90 179 110 179C130 179 148 172 150 160Z" fill="#3a9ab4" opacity=".45"/>
+<path d="M78 170C88 175 128 175 142 170" fill="none" stroke="#2a7f9a" stroke-width="2" opacity=".6" stroke-linecap="round"/>
+<g fill="#182c50" stroke="#182c50" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M116 128C124 112 134 98 146 88C158 78 170 66 184 56C184 62 182 66 180 70L176 72C176 76 175 80 173 84L169 86C168 90 166 94 164 98L160 100C158 106 156 110 152 116C146 126 138 134 128 138C122 139 118 134 116 128Z"/><path d="M148 146C158 140 172 140 178 146C172 154 160 158 150 158Z"/><path d="M66 148C66 128 84 116 108 116C134 116 154 130 154 150C154 156 153 160 150 164L70 164C67 159 66 154 66 148Z"/><path d="M82 70C101 70 114 84 114 101C114 118 101 130 83 130C65 130 52 118 52 100C52 83 64 70 82 70Z"/>
+<path d="M60 95C52 94 44 96 38 100C33 103 30 107 29 111C29 114 31 115 33 113C35 110 38 109 44 109C50 109 56 108 61 107ZM61 107C54 109 46 110 40 110C42 114 49 115 56 114C59 113 61 111 61 109ZM60 94C55 92 49 93 45 96C44 98 46 100 50 100C54 100 58 99 61 99Z" fill="#7a5216" stroke="#7a5216"/>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M148 146C158 140 172 140 178 146C172 154 160 158 150 158Z" fill="#40639a" stroke="#182c50" stroke-width="2.5"/>
+<path d="M156 148C162 146 168 146 172 147" fill="none" stroke="#182c50" stroke-width="1.5"/>
+<g clip-path="url(#vurjenn-cb)">
+<rect x="62" y="112" width="96" height="56" fill="url(#vurjenn-g)"/>
+<path d="M64 156C70 136 86 128 104 130C118 134 124 148 122 168L64 168Z" fill="#f4f9fd"/>
+<path d="M60 150C84 166 126 166 158 136V170H60Z" fill="#23406e" opacity=".45"/>
+<path d="M104 132C112 134 118 140 120 148" fill="none" stroke="#c9d8ec" stroke-width="2"/>
+</g>
+<path d="M66 148C66 128 84 116 108 116C134 116 154 130 154 150C154 156 153 160 150 164L70 164C67 159 66 154 66 148Z" fill="none" stroke="#182c50" stroke-width="2.5"/>
+<g clip-path="url(#vurjenn-cw)">
+<rect x="110" y="50" width="80" height="96" fill="url(#vurjenn-w)"/>
+<path d="M144 86C150 96 156 106 160 116L196 104V48Z" fill="#2c4c80"/>
+<path d="M126 142C142 132 154 118 162 104V146H126Z" fill="#1d3866" opacity=".4"/>
+<path d="M121 124C129 110 139 98 150 89C162 79 172 70 181 62" fill="none" stroke="#cfe2f8" stroke-width="2.5"/>
+</g>
+<path d="M116 128C124 112 134 98 146 88C158 78 170 66 184 56C184 62 182 66 180 70L176 72C176 76 175 80 173 84L169 86C168 90 166 94 164 98L160 100C158 106 156 110 152 116C146 126 138 134 128 138C122 139 118 134 116 128Z" fill="none" stroke="#182c50" stroke-width="2.5"/>
+<path d="M163 85L177 70M157 97L170 84M151 110L162 99" fill="none" stroke="#182c50" stroke-width="1.8"/>
+<path d="M130 132C131 127 135 125 139 127C139 121 143 118 147 120C146 114 150 110 154 111" fill="none" stroke="#f4f9fd" stroke-width="2.5"/>
+<path d="M144 88C148 96 152 104 155 112" fill="none" stroke="#182c50" stroke-width="2"/>
+<g clip-path="url(#vurjenn-ch)">
+<rect x="48" y="66" width="70" height="68" fill="url(#vurjenn-g)"/>
+<path d="M48 108C58 112 72 116 88 116C100 116 110 120 112 134H48Z" fill="#f4f9fd"/>
+<path d="M114 86C113 106 103 122 84 126L118 134V86Z" fill="#23406e" opacity=".45"/>
+<path d="M60 82C66 76 74 73 82 73C74 77 68 81 64 87Z" fill="#dcecfc"/>
+</g>
+<path d="M82 70C101 70 114 84 114 101C114 118 101 130 83 130C65 130 52 118 52 100C52 83 64 70 82 70Z" fill="none" stroke="#182c50" stroke-width="2.5"/>
+<path d="M61 107C54 109 46 110 40 110C42 114 49 115 56 114C59 113 61 111 61 109Z" fill="#e2bc56" stroke="#7a5216" stroke-width="2.5"/>
+<path d="M60 95C52 94 44 96 38 100C33 103 30 107 29 111C29 114 31 115 33 113C35 110 38 109 44 109C50 109 56 108 61 107Z" fill="url(#vurjenn-bill)" stroke="#7a5216" stroke-width="2.5"/>
+<path d="M38 100C33 103 30 107 29 111C29 114 31 115 33 113C35 110 37 109 41 109C41 106 40 102 38 100Z" fill="#4a5670"/>
+<path d="M60 95C52 94 44 96 38 100C33 103 30 107 29 111C29 114 31 115 33 113C35 110 38 109 44 109C50 109 56 108 61 107Z" fill="none" stroke="#7a5216" stroke-width="2.5"/>
+<path d="M60 94C55 92 49 93 45 96C44 98 46 100 50 100C54 100 58 99 61 99Z" fill="#fbe48c" stroke="#7a5216" stroke-width="2"/>
+<ellipse cx="47.6" cy="97.4" rx="1.6" ry="1.2" fill="#7a5216"/>
+<path d="M44 103C48 102 53 102 57 102" fill="none" stroke="#fff8d2" stroke-width="2"/>
+<g clip-path="url(#vurjenn-cf)">
+<rect x="56" y="150" width="104" height="24" fill="#f4fffd"/>
+<path d="M56 163C76 167 136 167 160 161V174H56Z" fill="#bfeef0"/>
+</g>
+<path d="M62 163C61 159 65 157 69 159C71 156 76 155 79 158C82 155 88 155 91 158C94 155 100 155 103 158C106 155 112 155 115 158C118 155 124 155 127 158C130 155 136 156 138 159C141 156 147 157 148 160C152 158 157 161 156 164" fill="none" stroke="#1f7f98" stroke-width="2.5"/>
+<path d="M66 166C80 169 136 169 152 166" fill="none" stroke="#7fd0da" stroke-width="2"/>
+<path d="M48 166C50 172 62 176 76 178M140 178C154 176 166 172 168 166" fill="none" stroke="#1f7f98" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M26 168C28 176 50 182 84 183M128 183C164 182 188 176 190 168" fill="none" stroke="#5cc4cc" stroke-width="2.2" stroke-linecap="round"/>
+<g fill="#d6f6f6" stroke="#1f7f98" stroke-width="1.5"><path d="M190 68C192 72 193 74 193 76C193 78 192 79 190 79C188 79 187 78 187 76C187 74 188 72 190 68Z"/><path d="M178 44C179 47 180 48 180 50C180 51 179 52 178 52C177 52 176 51 176 50C176 48 177 47 178 44Z"/></g>
+<ellipse cx="102" cy="114" rx="5.5" ry="3.2" fill="#ff8aa0" opacity=".55"/>
+<ellipse cx="90" cy="98" rx="8.6" ry="10.6" fill="#fffdf4"/>
+<g clip-path="url(#vurjenn-e1)">
+<ellipse cx="88.6" cy="100" rx="7.2" ry="9" fill="url(#vurjenn-iris)"/>
+<ellipse cx="88.2" cy="101" rx="4.4" ry="6" fill="#1b1622"/>
+<path d="M79 84H101V92C95 89 85 89 79 93Z" fill="#c6d2e6"/>
+</g>
+<ellipse cx="90" cy="98" rx="8.6" ry="10.6" fill="none" stroke="#182c50" stroke-width="2"/>
+<path d="M81.8 92.5C84.2 89 87.2 87.6 90.2 87.6C93.6 87.7 96.5 89.5 98.3 92.8" fill="none" stroke="#1b1622" stroke-width="3.5"/>
+<path d="M80 85C85 84 91 83 98 80" fill="none" stroke="#182c50" stroke-width="3"/>
+<circle cx="84.8" cy="95.4" r="3.1" fill="#fff"/>
+<circle cx="89.8" cy="100" r="1.4" fill="#fff"/>
+<ellipse cx="66" cy="100" rx="6.4" ry="9.4" fill="#fffdf4"/>
+<g clip-path="url(#vurjenn-e2)">
+<ellipse cx="64.8" cy="101.8" rx="5.4" ry="8" fill="url(#vurjenn-iris)"/>
+<ellipse cx="64.5" cy="102.7" rx="3.3" ry="5.4" fill="#1b1622"/>
+<path d="M57.8 87.6H74.2V94.7C69.7 92 62.3 92 57.8 95.6Z" fill="#c6d2e6"/>
+</g>
+<ellipse cx="66" cy="100" rx="6.4" ry="9.4" fill="none" stroke="#182c50" stroke-width="2"/>
+<path d="M59.9 95.1C61.7 92 63.9 90.8 66.1 90.8C68.7 90.9 70.8 92.5 72.2 95.4" fill="none" stroke="#1b1622" stroke-width="3.2"/>
+<path d="M59 87C63 87 67 88 71 90" fill="none" stroke="#182c50" stroke-width="2.6"/>
+<circle cx="62.1" cy="97.7" r="2.3" fill="#fff"/>
+<circle cx="65.9" cy="101.8" r="1.1" fill="#fff"/>
+</g>
+</svg>

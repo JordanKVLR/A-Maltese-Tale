@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="dorminarja-g" gradientUnits="userSpaceOnUse" x1="40" y1="56" x2="130" y2="150"><stop offset="0" stop-color="#dccaf2"/><stop offset=".55" stop-color="#b896dc"/></linearGradient>
+<linearGradient id="dorminarja-w" gradientUnits="userSpaceOnUse" x1="112" y1="100" x2="172" y2="16"><stop offset="0" stop-color="#fff2fa"/><stop offset=".55" stop-color="#f7b6dc"/><stop offset="1" stop-color="#ec86c2"/></linearGradient>
+<linearGradient id="dorminarja-wf" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#e8b0d8"/><stop offset="1" stop-color="#c86aa8"/></linearGradient>
+<linearGradient id="dorminarja-st" x1="0" y1="0" x2="0" y2="1"><stop offset=".2" stop-color="#f6e2b4"/><stop offset=".2" stop-color="#e8c98c"/><stop offset=".78" stop-color="#e8c98c"/><stop offset=".78" stop-color="#c49a5e"/></linearGradient>
+<linearGradient id="dorminarja-leg" x1="0" x2="1"><stop offset=".55" stop-color="#e8c98c"/><stop offset=".55" stop-color="#c49a5e"/></linearGradient>
+<radialGradient id="dorminarja-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#fff0c0"/><stop offset=".45" stop-color="#f070b0"/><stop offset="1" stop-color="#4a1a5e"/></radialGradient>
+<clipPath id="dorminarja-cw"><path d="M108 100C110 70 126 38 158 16C170 10 182 16 180 28C178 48 168 72 150 92C138 102 120 104 108 100Z"/></clipPath>
+<clipPath id="dorminarja-cb"><path d="M70 138C68 118 80 102 98 100C112 98 124 92 140 92C158 92 170 106 170 124C170 138 164 146 152 148H80C74 148 70 144 70 138Z"/></clipPath>
+<clipPath id="dorminarja-ct"><path d="M156 124C166 121 176 127 179 137C182 146 183 155 179 163C176 169 169 173 162 171C156 169 154 162 158 158C161 155 165 156 166 159C169 152 169 144 165 138C162 134 158 132 154 133Z"/></clipPath>
+<clipPath id="dorminarja-ch"><path d="M30 82C36 66 50 60 62 61C80 62 92 74 91 92C90 108 79 120 62 121C50 122 40 118 34 112C28 110 23 106 24 100C25 96 28 93 29 89C29 86 29 84 30 82Z"/></clipPath>
+<clipPath id="dorminarja-e1"><path d="M58 88.5C58.5 84 62.5 81 68.5 81C74.5 81 78.5 84 78.5 88.5C78.5 93 74 96 68 96C62.5 96 58 93 58 88.5Z"/></clipPath>
+<clipPath id="dorminarja-e2"><path d="M37.6 89.5C37.8 86 40.4 83.6 44 83.6C47.6 83.6 50.2 86 50.2 89.5C50.2 93 47.6 95.6 44 95.6C40.4 95.6 37.6 93 37.6 89.5Z"/></clipPath>
+</defs>
+<ellipse cx="100" cy="184" rx="50" ry="6" fill="#1d2b33" opacity="0.18"/>
+<g fill="#321c54" stroke="#321c54" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M100 98C86 76 80 50 86 30C90 18 102 14 110 22C120 36 120 70 112 98ZM108 100C110 70 126 38 158 16C170 10 182 16 180 28C178 48 168 72 150 92C138 102 120 104 108 100ZM118 104C134 94 158 88 176 96C186 102 184 112 174 116C158 122 136 116 118 104Z" fill="#6e1c50" stroke="#6e1c50"/>
+<path d="M70 138C68 118 80 102 98 100C112 98 124 92 140 92C158 92 170 106 170 124C170 138 164 146 152 148H80C74 148 70 144 70 138Z"/>
+<path d="M28 158V132C28 123 34 117 42 119C48 121 50 127 48 133L46 143H166C170 143 172 145 172 148V158C172 161 170 163 166 163H34C30 163 28 161 28 158ZM40 161L43 172H57L60 161ZM140 161L143 172H157L160 161Z" fill="#5e3d1e" stroke="#5e3d1e"/>
+<path d="M156 124C166 121 176 127 179 137C182 146 183 155 179 163C176 169 169 173 162 171C156 169 154 162 158 158C161 155 165 156 166 159C169 152 169 144 165 138C162 134 158 132 154 133Z"/>
+<path d="M40 70C32 60 32 46 42 42C52 40 58 50 58 62ZM70 64C70 50 80 40 92 42C104 46 104 60 98 70C94 74 84 76 76 74Z"/>
+<path d="M30 82C36 66 50 60 62 61C80 62 92 74 91 92C90 108 79 120 62 121C50 122 40 118 34 112C28 110 23 106 24 100C25 96 28 93 29 89C29 86 29 84 30 82Z"/>
+<path d="M44 142C40 136 42 129 48 125L56 116C56 110 62 106 68 108C73 110 74 116 70 120C68 122 66 124 63 125L58 140C54 146 46 146 44 142Z"/>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M100 98C86 76 80 50 86 30C90 18 102 14 110 22C120 36 120 70 112 98Z" fill="url(#dorminarja-wf)" stroke="#6e1c50" stroke-width="2.5"/>
+<path d="M100 46C100 45.9 99.7 45.5 99.9 45.4C100.1 45.2 100.7 44.9 101 45.2C101.3 45.4 101.9 46.1 101.8 46.7C101.7 47.2 101.2 48.3 100.5 48.6C99.7 48.8 98.2 48.7 97.5 48.1C96.8 47.4 96.1 45.8 96.3 44.7C96.6 43.6 97.9 41.9 99.2 41.5C100.5 41.2 102.9 41.6 104 42.7C105 43.7 106 46.4 105.5 48C105 49.6 101.9 51.7 101.1 52.4" fill="none" stroke="#a83a2c" stroke-width="2"/>
+<path d="M104 92C96 72 94 48 98 28M108 94C106 76 108 54 112 34" fill="none" stroke="#b0508e" stroke-width="1.5"/>
+<path d="M118 104C134 94 158 88 176 96C186 102 184 112 174 116C158 122 136 116 118 104Z" fill="url(#dorminarja-w)" stroke="#6e1c50" stroke-width="2.5"/>
+<path d="M122 104C140 100 160 98 176 100M124 106C142 108 158 112 170 114" fill="none" stroke="#e48cc0" stroke-width="1.5"/>
+<path d="M162 104C161.9 103.9 161.6 103.7 161.7 103.5C161.8 103.3 162.2 102.9 162.6 103C162.9 103 163.7 103.5 163.8 104C163.9 104.5 163.8 105.6 163.2 106.1C162.6 106.5 161.3 106.9 160.5 106.6C159.7 106.3 158.5 105 158.4 104C158.3 103 158.9 101.1 159.9 100.4C160.9 99.7 163.2 99.2 164.4 99.8C165.7 100.4 167.3 102.4 167.4 104C167.5 105.6 165.4 108.3 165 109.2" fill="none" stroke="#c0563c" stroke-width="2"/>
+<g clip-path="url(#dorminarja-cw)">
+<rect x="104" y="10" width="80" height="96" fill="url(#dorminarja-w)"/>
+<path d="M150 4C168 4 186 18 184 34C180 60 168 80 150 96L160 100C184 78 194 50 190 20Z" fill="#d86aaa"/>
+<path d="M114 98C118 74 132 46 156 22C140 46 126 72 120 100Z" fill="#fff8fc"/>
+</g>
+<path d="M108 100C110 70 126 38 158 16C170 10 182 16 180 28C178 48 168 72 150 92C138 102 120 104 108 100Z" fill="none" stroke="#6e1c50" stroke-width="2.5"/>
+<path d="M112 98C128 80 144 58 160 26M114 100C136 92 156 76 172 50" fill="none" stroke="#e48cc0" stroke-width="1.5"/>
+<circle cx="146" cy="52" r="13.5" fill="#fff4fa" opacity=".7"/>
+<path d="M146 52C146 51.8 145.6 51.3 145.8 51.1C146.1 50.9 146.9 50.5 147.4 50.8C147.9 51.1 148.7 52.1 148.6 52.9C148.5 53.7 147.7 55.3 146.6 55.6C145.6 55.9 143.5 55.9 142.5 54.9C141.5 54 140.4 51.7 140.8 50.1C141.2 48.6 143.1 46.2 144.9 45.7C146.7 45.2 150.1 45.8 151.6 47.3C153.1 48.8 154.4 52.5 153.8 54.8C153.1 57.1 150.2 60.4 147.6 61C145 61.6 140.3 60.6 138.3 58.5C136.3 56.3 136.1 49.9 135.7 48.2" fill="none" stroke="#c0563c" stroke-width="2.4"/>
+<path d="M156 16C168 12 176 18 175 30C173 50 164 70 148 88" fill="none" stroke="#fff4fa" stroke-width="2.4" stroke-dasharray=".1 5.2"/>
+<g clip-path="url(#dorminarja-cb)">
+<rect x="64" y="88" width="110" height="64" fill="url(#dorminarja-g)"/>
+<path d="M124 88C116 110 116 132 120 152H174V88Z" fill="#f8eef4"/>
+<path d="M124 88C116 110 116 132 120 152H136Q132 146 136 140Q132 134 137 128Q133 122 138 116Q134 110 139 104Q135 98 140 92Z" fill="#f6c0dc"/>
+<g fill="none" stroke="#c0563c" stroke-linecap="butt">
+<path d="M140 92Q135 98 139 104Q134 110 138 116Q133 122 137 128Q132 134 136 140Q132 146 136 152M156 94Q151 100 155 106Q150 112 154 118Q149 124 153 130Q148 136 152 142Q149 148 152 152" stroke-width="2.2"/>
+<path d="M134 94C129 112 128 132 131 150M150 96C145 112 145 132 147 150M164 104C161 118 161 134 163 146" stroke-width="2.6" stroke-dasharray="1.4 3.2"/>
+</g>
+<path d="M66 132C92 156 146 154 174 118V156H66Z" fill="#4a2c86" opacity=".35"/>
+<path d="M82 112C88 106 96 103 104 102C96 106 90 110 86 116Z" fill="#f2e8fc"/>
+</g>
+<path d="M124 96C117 112 117 132 121 148" fill="none" stroke="#6e4a9e" stroke-width="5.5"/>
+<path d="M124 96C117 112 117 132 121 148" fill="none" stroke="#c0563c" stroke-width="3"/>
+<path d="M70 138C68 118 80 102 98 100C112 98 124 92 140 92C158 92 170 106 170 124C170 138 164 146 152 148H80C74 148 70 144 70 138Z" fill="none" stroke="#321c54" stroke-width="2.5"/>
+<path d="M108 118C110 112 118 111 123 115C126 119 123 125 117 126C111 127 107 123 108 118Z" fill="#cdb6ec" stroke="#321c54" stroke-width="2.5"/>
+<path d="M113 125L114 121M118 125L119 121" fill="none" stroke="#6e4a9e" stroke-width="1.5"/>
+<g stroke="#5e3d1e" stroke-width="2.5">
+<path d="M40 161L43 172H57L60 161ZM140 161L143 172H157L160 161Z" fill="url(#dorminarja-leg)"/>
+<path d="M28 158V132C28 123 34 117 42 119C48 121 50 127 48 133L46 143H166C170 143 172 145 172 148V158C172 161 170 163 166 163H34C30 163 28 161 28 158Z" fill="url(#dorminarja-st)"/>
+<path d="M32 132C32 126 36 122 41 123" fill="none" stroke="#f6e2b4" stroke-width="2"/>
+</g>
+<g fill="none" stroke="#c0563c" stroke-width="2"><path d="M93 153C91 151 93 149 95 150C97.5 151.5 96.5 156 93 156.5C89 157 87 153 88.5 150C90 147 95 146.5 98 149C99 150 99.5 151.5 100 153"/><path d="M93 153C91 151 93 149 95 150C97.5 151.5 96.5 156 93 156.5C89 157 87 153 88.5 150C90 147 95 146.5 98 149C99 150 99.5 151.5 100 153" transform="rotate(180 100 153)"/></g>
+<g fill="#c49a5e"><circle cx="60" cy="152" r="1.6"/><circle cx="67" cy="152" r="1.6"/><circle cx="133" cy="152" r="1.6"/><circle cx="140" cy="152" r="1.6"/><circle cx="147" cy="152" r="1.6"/></g>
+<path d="M66 172C84 176 116 176 134 172M80 178C92 180 108 180 120 178" fill="none" stroke="#ff7fa8" stroke-width="2"/>
+<g clip-path="url(#dorminarja-ct)">
+<rect x="150" y="118" width="40" height="58" fill="url(#dorminarja-g)"/>
+<path d="M186 134C186 156 178 170 162 176H190Z" fill="#8e6cc0"/>
+<path d="M152 154C156 152 162 152 166 156L170 164C166 170 160 176 152 176Z" fill="#f3e8fb"/>
+<path d="M160 125C168 125 174 130 176 136" fill="none" stroke="#f2e8fc" stroke-width="2.5"/>
+</g>
+<path d="M156 124C166 121 176 127 179 137C182 146 183 155 179 163C176 169 169 173 162 171C156 169 154 162 158 158C161 155 165 156 166 159C169 152 169 144 165 138C162 134 158 132 154 133Z" fill="none" stroke="#321c54" stroke-width="2.5"/>
+<path d="M171 142C174 148 174 155 172 160M163 127C167 127 170 129 172 132M158 159C160 163 163 165 167 165" fill="none" stroke="#6e4a9e" stroke-width="1.8"/>
+<g stroke="#321c54" stroke-width="2.5">
+<path d="M40 70C32 60 32 46 42 42C52 40 58 50 58 62Z" fill="#9c7cc8"/>
+<path d="M70 64C70 50 80 40 92 42C104 46 104 60 98 70C94 74 84 76 76 74Z" fill="url(#dorminarja-g)"/>
+</g>
+<path d="M42 64C38 58 39 50 43 48C48 47 52 53 52 60ZM76 68C76 56 82 48 90 49C97 51 98 60 94 66C90 70 82 71 78 70Z" fill="#f5a8c8"/>
+<g clip-path="url(#dorminarja-ch)">
+<rect x="20" y="58" width="74" height="66" fill="url(#dorminarja-g)"/>
+<path d="M93 82C91 104 80 118 60 118C50 118 42 116 36 112V126H96V82Z" fill="#8e6cc0"/>
+<path d="M20 96C28 92 38 94 44 100C48 106 46 114 40 118H20Z" fill="#fbf2ff"/>
+<path d="M40 76C46 69 54 66 62 66C54 70 48 74 45 80Z" fill="#f2e8fc"/>
+</g>
+<path d="M25 94C32 92 40 95 44 101C47 107 45 113 41 117" fill="none" stroke="#6e4a9e" stroke-width="2.5"/>
+<path d="M30 82C36 66 50 60 62 61C80 62 92 74 91 92C90 108 79 120 62 121C50 122 40 118 34 112C28 110 23 106 24 100C25 96 28 93 29 89C29 86 29 84 30 82Z" fill="none" stroke="#321c54" stroke-width="2.5"/>
+<path d="M44 142C40 136 42 129 48 125L56 116C56 110 62 106 68 108C73 110 74 116 70 120C68 122 66 124 63 125L58 140C54 146 46 146 44 142Z" fill="#cdb6ec" stroke="#321c54" stroke-width="2.5"/>
+<path d="M61 109.4L63.4 113M66 108.4L67.6 112.4M57 128C59 126 61 125 63 125" fill="none" stroke="#6e4a9e" stroke-width="1.5"/>
+<path d="M23.5 97.5C23 95.5 25 94.5 27 94.8C29 95.2 29.6 97 28.4 98.4C27 99.6 24 99.4 23.5 97.5Z" fill="#e86a96" stroke="#321c54" stroke-width="1.5"/>
+<path d="M29 106C32 109 37 109 40 106" fill="none" stroke="#321c54" stroke-width="2"/>
+<path d="M21 102L13 101M22 105L14 107" fill="none" stroke="#6e4a9e" stroke-width="1.5"/>
+<ellipse cx="78" cy="102" rx="5" ry="3" fill="#f2849e" opacity=".45"/>
+<path d="M58 88.5C58.5 84 62.5 81 68.5 81C74.5 81 78.5 84 78.5 88.5C78.5 93 74 96 68 96C62.5 96 58 93 58 88.5Z" fill="#fffdf4"/>
+<g clip-path="url(#dorminarja-e1)">
+<ellipse cx="67.4" cy="91" rx="7" ry="7.6" fill="url(#dorminarja-iris)"/>
+<ellipse cx="67" cy="91.6" rx="3.4" ry="4.8" fill="#1b1622"/>
+<path d="M56 76H80V87C75 93 62 93 57 87Z" fill="#cdb6ec"/>
+</g>
+<path d="M58 88.5C58.5 84 62.5 81 68.5 81C74.5 81 78.5 84 78.5 88.5C78.5 93 74 96 68 96C62.5 96 58 93 58 88.5Z" fill="none" stroke="#321c54" stroke-width="2"/>
+<path d="M58.2 87.6C62.6 93 74 93 78.4 87.4" fill="none" stroke="#1b1622" stroke-width="3.4"/>
+<path d="M78.4 87.4L81.6 89.8M75.6 90.8L77.4 93.6" fill="none" stroke="#1b1622" stroke-width="2"/>
+<circle cx="64.4" cy="93" r="1.9" fill="#fff"/>
+<circle cx="68.6" cy="94.4" r=".9" fill="#fff"/>
+<path d="M37.6 89.5C37.8 86 40.4 83.6 44 83.6C47.6 83.6 50.2 86 50.2 89.5C50.2 93 47.6 95.6 44 95.6C40.4 95.6 37.6 93 37.6 89.5Z" fill="#fffdf4"/>
+<g clip-path="url(#dorminarja-e2)">
+<ellipse cx="44" cy="90.5" rx="4.8" ry="5.6" fill="url(#dorminarja-iris)"/>
+<ellipse cx="43.7" cy="91" rx="2.2" ry="3.5" fill="#1b1622"/>
+<path d="M36 80H52V88.6C49 93 40.4 93 37.6 88.6Z" fill="#cdb6ec"/>
+</g>
+<path d="M37.6 89.5C37.8 86 40.4 83.6 44 83.6C47.6 83.6 50.2 86 50.2 89.5C50.2 93 47.6 95.6 44 95.6C40.4 95.6 37.6 93 37.6 89.5Z" fill="none" stroke="#321c54" stroke-width="2"/>
+<path d="M37.8 88.8C40.6 93.2 47.4 93.2 50.2 88.6" fill="none" stroke="#1b1622" stroke-width="2.8"/>
+<circle cx="42" cy="92.2" r="1.5" fill="#fff"/>
+<circle cx="44.8" cy="93.6" r=".7" fill="#fff"/>
+<path d="M38 60C32 56 30 49 34 45C38 41 45 42 46 47C47 51 42 53 40 50C39 48 41 46 43 47" fill="none" stroke="#f06e98" stroke-width="2.6"/>
+<path d="M22 44C20 41 22 37 26 37C29 37 31 40 29 42C28 44 25 43 26 41" fill="none" stroke="#f06e98" stroke-width="2"/>
+<g fill="#ff8fb0" stroke="#a8304e" stroke-width="1.1"><path d="M14 58L15.6 55L17.2 58L15.6 61Z"/><path d="M56 34L57.3 31.6L58.6 34L57.3 36.4Z"/></g>
+</g>
+</svg>

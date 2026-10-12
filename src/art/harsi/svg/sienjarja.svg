@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="sienjarja-g" gradientUnits="userSpaceOnUse" x1="20" y1="50" x2="110" y2="180"><stop offset="0" stop-color="#8ee0cf"/><stop offset=".55" stop-color="#2fa596"/></linearGradient>
+<linearGradient id="sienjarja-fe" gradientUnits="userSpaceOnUse" x1="76" y1="48" x2="172" y2="144"><stop offset="0" stop-color="#d4e0e8"/><stop offset=".5" stop-color="#7a8ea0"/></linearGradient>
+<linearGradient id="sienjarja-cu" x1="0" x2="1"><stop offset=".5" stop-color="#ec9a58"/><stop offset=".5" stop-color="#c06a3a"/></linearGradient>
+<linearGradient id="sienjarja-au" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0a0"/><stop offset=".5" stop-color="#f0c24e"/><stop offset="1" stop-color="#c8902a"/></linearGradient>
+<linearGradient id="sienjarja-aq" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e0f8ff"/><stop offset="1" stop-color="#4cacec"/></linearGradient>
+<radialGradient id="sienjarja-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#b4fff2"/><stop offset=".5" stop-color="#22a0a0"/><stop offset="1" stop-color="#0c3444"/></radialGradient>
+<clipPath id="sienjarja-cb"><path d="M28 168C24 148 26 126 32 112C38 102 50 98 62 102C76 108 86 122 94 134C106 148 124 152 146 154C164 156 178 160 188 168C194 174 190 182 180 182H38C32 182 28 176 28 168Z"/></clipPath>
+<clipPath id="sienjarja-cw"><circle cx="124" cy="96" r="48"/></clipPath>
+<clipPath id="sienjarja-ch"><path d="M54 54C74 54 88 68 88 86C88 104 74 118 54 118C34 118 20 104 20 86C20 68 34 54 54 54Z"/></clipPath>
+<clipPath id="sienjarja-e1"><path d="M50 91C53 84 61 81 71 82C73 90 71 98 63 100C56 101 51 97 50 91Z"/></clipPath>
+<clipPath id="sienjarja-e2"><path d="M27 93C29 88 34 85 41 85C42 91 41 97 37 99C32 100 28 98 27 93Z"/></clipPath>
+</defs>
+<ellipse cx="106" cy="184" rx="86" ry="7" fill="#1d2b33" opacity="0.22"/>
+<g fill="#0e3d42" stroke="#0e3d42" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M44 60C40 50 38 40 40 30" fill="none" stroke-width="9"/>
+<circle cx="40" cy="28" r="5.4"/>
+<path d="M28 168C24 148 26 126 32 112C38 102 50 98 62 102C76 108 86 122 94 134C106 148 124 152 146 154C164 156 178 160 188 168C194 174 190 182 180 182H38C32 182 28 176 28 168Z"/>
+<g fill="#5a2414" stroke="#5a2414">
+<path d="M115 32H133L131 49C127 51 121 51 117 49Z"/>
+<path d="M115 32H133L131 49C127 51 121 51 117 49Z" transform="rotate(55 124 96)"/>
+<path d="M115 32H133L131 49C127 51 121 51 117 49Z" transform="rotate(110 124 96)"/>
+<path d="M115 32H133L131 49C127 51 121 51 117 49Z" transform="rotate(-62 124 96)"/>
+</g>
+<circle cx="124" cy="96" r="48" fill="#1f2c3a" stroke="#1f2c3a"/>
+<path d="M54 54C74 54 88 68 88 86C88 104 74 118 54 118C34 118 20 104 20 86C20 68 34 54 54 54Z"/>
+<path d="M68 58C72 46 76 36 82 28" fill="none" stroke-width="9"/>
+<circle cx="83" cy="26" r="6"/>
+<path d="M170 60C178 52 190 58 190 74C190 82 188 88 186 92C185 84 182 74 174 66Z" fill="#1d4f86" stroke="#1d4f86"/>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M44 60C40 50 38 40 40 30" fill="none" stroke="#24877c" stroke-width="4"/>
+<circle cx="40" cy="28" r="5.4" fill="#24877c" stroke="#0e3d42" stroke-width="2.5"/>
+<path d="M36 34H44" stroke="url(#sienjarja-au)" stroke-width="3"/>
+<g clip-path="url(#sienjarja-cb)">
+<rect x="24" y="96" width="170" height="90" fill="url(#sienjarja-g)"/>
+<path d="M24 166C70 172 140 172 194 164V186H24Z" fill="#7a8ea0"/>
+<path d="M30 169C70 175 140 175 186 167" fill="none" stroke="#d4e0e8" stroke-width="2"/>
+<path d="M24 176C90 186 150 184 194 160V186H24Z" fill="#1d3a66" opacity=".35"/>
+<path d="M30 132C31 124 34 118 38 116C35 122 34 130 34 138Z" fill="#c4f8ea"/>
+</g>
+<path d="M28 168C24 148 26 126 32 112C38 102 50 98 62 102C76 108 86 122 94 134C106 148 124 152 146 154C164 156 178 160 188 168C194 174 190 182 180 182H38C32 182 28 176 28 168Z" fill="none" stroke="#0e3d42" stroke-width="2.5"/>
+<path d="M30 166C70 172 140 172 190 164" fill="none" stroke="#1f2c3a" stroke-width="2.5"/>
+<g fill="url(#sienjarja-au)" stroke="#6a3a0e" stroke-width="1"><circle cx="48" cy="174" r="1.8"/><circle cx="82" cy="176" r="1.8"/><circle cx="116" cy="176" r="1.8"/><circle cx="150" cy="174" r="1.8"/></g>
+<g fill="url(#sienjarja-cu)" stroke="#5a2414" stroke-width="2.5">
+<path d="M115 32H133L131 49C127 51 121 51 117 49Z" transform="rotate(-62 124 96)"/>
+<path d="M115 32H133L131 49C127 51 121 51 117 49Z"/>
+<path d="M115 32H133L131 49C127 51 121 51 117 49Z" transform="rotate(55 124 96)"/>
+<path d="M115 32H133L131 49C127 51 121 51 117 49Z" transform="rotate(110 124 96)"/>
+</g>
+<g fill="none" stroke="#3a4656" stroke-width="2.4"><path d="M116 38H132M117 44H131"/><path d="M116 38H132M117 44H131" transform="rotate(55 124 96)"/><path d="M116 38H132M117 44H131" transform="rotate(110 124 96)"/><path d="M116 38H132M117 44H131" transform="rotate(-62 124 96)"/></g>
+<g fill="#3a1408"><ellipse cx="124" cy="32" rx="8" ry="2.2"/><ellipse cx="124" cy="32" rx="8" ry="2.2" transform="rotate(-62 124 96)"/></g>
+<path d="M170 60C178 52 190 58 190 74C190 82 188 88 186 92C185 84 182 74 174 66Z" fill="url(#sienjarja-aq)" stroke="#1d4f86" stroke-width="2.5"/>
+<path d="M176 58C182 59 186 63 187 70" fill="none" stroke="#fff" stroke-width="1.6"/>
+<g fill="url(#sienjarja-aq)" stroke="#1d4f86" stroke-width="2"><path d="M186 100C188 104 189 107 187 109C185 110 183 109 183 107C183 105 184 103 186 100Z"/><path d="M178 112C180 116 181 118 179 120C177 121 175 120 175 118C175 116 176 115 178 112Z"/></g>
+<g clip-path="url(#sienjarja-cw)">
+<rect x="74" y="46" width="100" height="100" fill="url(#sienjarja-fe)"/>
+<path d="M74 128C104 154 156 146 174 92V146H74Z" fill="#4a5a6c"/>
+<circle cx="124" cy="96" r="38" fill="#2a3a4c"/>
+<path d="M124 96L124 58M124 96L157 77M124 96L157 115M124 96L124 134M124 96L91 115M124 96L91 77" stroke="#1f2c3a" stroke-width="8"/>
+<path d="M124 96L124 58M124 96L157 77M124 96L157 115M124 96L124 134M124 96L91 115M124 96L91 77" stroke="#8a9eb0" stroke-width="4"/>
+<path d="M90 70C98 60 110 54 124 52C110 58 100 66 94 76Z" fill="#fff"/>
+</g>
+<circle cx="124" cy="96" r="48" fill="none" stroke="#1f2c3a" stroke-width="2.5"/>
+<circle cx="124" cy="96" r="38" fill="none" stroke="#1f2c3a" stroke-width="2.5"/>
+<g fill="url(#sienjarja-au)" stroke="#6a3a0e" stroke-width="1"><circle cx="124" cy="52" r="1.8"/><circle cx="162" cy="74" r="1.8"/><circle cx="162" cy="118" r="1.8"/><circle cx="124" cy="140" r="1.8"/><circle cx="86" cy="118" r="1.8"/><circle cx="86" cy="74" r="1.8"/></g>
+<circle cx="123" cy="96" r="13" fill="#4a5a6c" stroke="#1f2c3a" stroke-width="2.5"/>
+<circle cx="117" cy="102" r="13" fill="url(#sienjarja-au)" stroke="#6a3a0e" stroke-width="2.5"/>
+<g fill="#ffe28a" stroke="#6a3a0e" stroke-width="1.5"><rect x="111" y="96" width="12" height="12"/><rect x="111" y="96" width="12" height="12" transform="rotate(45 117 102)"/></g>
+<circle cx="117" cy="102" r="2.6" fill="#6a3a0e"/>
+<path d="M108 96C110 92 113 90 117 90" fill="none" stroke="#fff" stroke-width="2"/>
+<g clip-path="url(#sienjarja-ch)">
+<rect x="16" y="50" width="76" height="72" fill="url(#sienjarja-g)"/>
+<path d="M16 102C30 114 46 118 62 114C76 110 86 100 92 86V122H16Z" fill="#1f6a8a" opacity=".42"/>
+<path d="M30 70C36 62 44 58 52 58C44 62 38 68 34 76Z" fill="#c4f8ea"/>
+</g>
+<path d="M54 54C74 54 88 68 88 86C88 104 74 118 54 118C34 118 20 104 20 86C20 68 34 54 54 54Z" fill="none" stroke="#0e3d42" stroke-width="2.5"/>
+<path d="M68 58C72 46 76 36 82 28" fill="none" stroke="#2fa596" stroke-width="4"/>
+<circle cx="83" cy="26" r="6" fill="url(#sienjarja-g)" stroke="#0e3d42" stroke-width="2.5"/>
+<path d="M66 50H76" stroke="url(#sienjarja-au)" stroke-width="3"/>
+<circle cx="81" cy="24" r="1.8" fill="#fff"/>
+<path d="M21 80C28 66 42 59 56 59C70 59 82 65 88 77L88 84C79 79 68 76 56 76C44 76 32 80 23 88Z" fill="url(#sienjarja-fe)" stroke="#1f2c3a" stroke-width="2.5"/>
+<path d="M29 73C35 67 43 64 51 63" fill="none" stroke="#fff" stroke-width="1.8"/>
+<g fill="url(#sienjarja-au)" stroke="#6a3a0e" stroke-width="1"><circle cx="34" cy="78" r="1.8"/><circle cx="56" cy="70" r="1.8"/><circle cx="78" cy="74" r="1.8"/></g>
+<path d="M31 106C38 113 50 115 60 109" fill="none" stroke="#0e3d42" stroke-width="2.6"/>
+<path d="M60 109C61 107 62 106 64 106" fill="none" stroke="#0e3d42" stroke-width="2.2"/>
+<path d="M50 91C53 84 61 81 71 82C73 90 71 98 63 100C56 101 51 97 50 91Z" fill="#fffdf4"/>
+<g clip-path="url(#sienjarja-e1)">
+<ellipse cx="60.6" cy="91.6" rx="7.4" ry="8.6" fill="url(#sienjarja-iris)"/>
+<ellipse cx="60.2" cy="92.4" rx="4.2" ry="5.8" fill="#1b1622"/>
+</g>
+<path d="M50 91C53 84 61 81 71 82C73 90 71 98 63 100C56 101 51 97 50 91Z" fill="none" stroke="#0e3d42" stroke-width="2"/>
+<path d="M49.4 91.6C52 84.6 60 81 72.4 81.4" fill="none" stroke="#1b1622" stroke-width="3.4"/>
+<circle cx="56.6" cy="88.8" r="2.5" fill="#fff"/>
+<circle cx="61" cy="94" r="1.1" fill="#fff"/>
+<path d="M27 93C29 88 34 85 41 85C42 91 41 97 37 99C32 100 28 98 27 93Z" fill="#fffdf4"/>
+<g clip-path="url(#sienjarja-e2)">
+<ellipse cx="35.6" cy="92.6" rx="5.2" ry="6.6" fill="url(#sienjarja-iris)"/>
+<ellipse cx="35.3" cy="93.2" rx="3" ry="4.4" fill="#1b1622"/>
+</g>
+<path d="M27 93C29 88 34 85 41 85C42 91 41 97 37 99C32 100 28 98 27 93Z" fill="none" stroke="#0e3d42" stroke-width="2"/>
+<path d="M26.6 93.6C29 88 34 84.6 42.4 84.6" fill="none" stroke="#1b1622" stroke-width="3"/>
+<circle cx="32.8" cy="90.6" r="1.9" fill="#fff"/>
+<circle cx="36" cy="94.4" r=".9" fill="#fff"/>
+</g>
+</svg>

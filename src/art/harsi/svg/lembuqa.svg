@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="lembuqa-g" gradientUnits="userSpaceOnUse" x1="28" y1="92" x2="100" y2="176"><stop offset="0" stop-color="#9ee4f2"/><stop offset=".55" stop-color="#4fb3d9"/></linearGradient>
+<linearGradient id="lembuqa-w" gradientUnits="userSpaceOnUse" x1="80" y1="96" x2="160" y2="176"><stop offset="0" stop-color="#de9f60"/><stop offset=".5" stop-color="#b5713d"/></linearGradient>
+<linearGradient id="lembuqa-am" x1="0" x2="1"><stop offset=".55" stop-color="#ec9a5c"/><stop offset=".55" stop-color="#c76c42"/></linearGradient>
+<linearGradient id="lembuqa-am2" x1="0" x2="1"><stop offset=".55" stop-color="#d4834e"/><stop offset=".55" stop-color="#b05a38"/></linearGradient>
+<linearGradient id="lembuqa-far" x1="0" y1="0" x2="0" y2="1"><stop offset=".45" stop-color="#3f9ccb"/><stop offset=".45" stop-color="#2f7fb2"/></linearGradient>
+<radialGradient id="lembuqa-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#ffd98a"/><stop offset=".5" stop-color="#c07a2a"/><stop offset="1" stop-color="#4a2410"/></radialGradient>
+<clipPath id="lembuqa-cb"><path d="M76 106C98 110 134 110 160 102C164 100 167 97 169 93C178 108 178 128 170 146C160 164 138 174 116 174C96 174 80 164 74 148C70 136 71 118 76 106Z"/></clipPath>
+<clipPath id="lembuqa-ch"><path d="M58 91C78 91 94 103 96 121C98 139 86 152 66 153C48 154 32 147 27 133C23 120 28 104 38 97C44 93 51 91 58 91Z"/></clipPath>
+<clipPath id="lembuqa-cl"><path d="M84 144C98 146 104 160 96 170C86 178 68 182 54 182C48 182 46 178 51 175C62 168 70 156 74 148ZM146 160C158 160 168 166 174 174C177 179 174 182 168 182C156 182 146 178 138 170Z"/></clipPath>
+<clipPath id="lembuqa-e1"><ellipse cx="68" cy="114" rx="9" ry="11"/></clipPath>
+<clipPath id="lembuqa-e2"><ellipse cx="45" cy="116" rx="6.5" ry="9.4"/></clipPath>
+</defs>
+<ellipse cx="101" cy="184" rx="82" ry="7" fill="#1d2b33" opacity="0.22"/>
+<g fill="#124a6e" stroke="#124a6e" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M52 148C46 158 38 166 30 171C25 175 27 179 33 179C44 178 56 170 64 160Z"/>
+<path d="M84 144C98 146 104 160 96 170C86 178 68 182 54 182C48 182 46 178 51 175C62 168 70 156 74 148ZM146 160C158 160 168 166 174 174C177 179 174 182 168 182C156 182 146 178 138 170Z"/>
+<g fill="#6a2a18" stroke="#6a2a18"><path d="M130 76H138V80L137 84C143 87 145 92 144 99C143 107 139 113 134 118C129 113 125 107 124 99C123 92 125 87 131 84L130 80Z"/><path d="M105 70H115V74L114 79C121 82 123 88 122 96C121 106 117 114 110 120C103 114 99 106 98 96C97 88 99 82 106 79L105 74Z"/></g>
+<g fill="#3a2212" stroke="#3a2212"><path d="M164 100C174 92 180 80 176 70C173 63 165 64 164 70" fill="none" stroke-width="10"/><path d="M76 106C98 110 134 110 160 102C164 100 167 97 169 93C178 108 178 128 170 146C160 164 138 174 116 174C96 174 80 164 74 148C70 136 71 118 76 106Z"/></g>
+<path d="M58 91C78 91 94 103 96 121C98 139 86 152 66 153C48 154 32 147 27 133C23 120 28 104 38 97C44 93 51 91 58 91Z"/>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M52 148C46 158 38 166 30 171C25 175 27 179 33 179C44 178 56 170 64 160Z" fill="url(#lembuqa-far)" stroke="#124a6e" stroke-width="2.5"/>
+<path d="M164 100C174 92 180 80 176 70C173 63 165 64 164 70" fill="none" stroke="#c47e44" stroke-width="4.5"/>
+<path d="M169 88C174 82 176 76 174 71" fill="none" stroke="#f2c088" stroke-width="1.6"/>
+<path d="M130 76H138V80L137 84C143 87 145 92 144 99C143 107 139 113 134 118C129 113 125 107 124 99C123 92 125 87 131 84L130 80Z" fill="url(#lembuqa-am2)" stroke="#6a2a18" stroke-width="2.5"/>
+<path d="M131 83C126 82 125 88 127 91M137 83C142 82 143 88 141 91" fill="none" stroke="#6a2a18" stroke-width="2"/>
+<path d="M105 70H115V74L114 79C121 82 123 88 122 96C121 106 117 114 110 120C103 114 99 106 98 96C97 88 99 82 106 79L105 74Z" fill="url(#lembuqa-am)" stroke="#6a2a18" stroke-width="2.5"/>
+<path d="M106 78C100 77 99 84 102 88M114 78C120 77 121 84 118 88" fill="none" stroke="#6a2a18" stroke-width="2"/>
+<path d="M105 74H115" stroke="#6a2a18" stroke-width="2"/>
+<path d="M101.5 94C101.5 88 103.5 84.5 107.5 83C105.5 86 105 90 105 96Z" fill="#ffd2a0"/>
+<g clip-path="url(#lembuqa-cl)">
+<rect x="44" y="140" width="136" height="44" fill="url(#lembuqa-g)"/>
+<path d="M44 176C70 178 92 172 104 160L180 170V186H44Z" fill="#3484bd"/>
+<path d="M58 172C64 170 70 170 74 173C70 176 63 176 58 172ZM78 166C82 163 87 163 90 166C86 169 81 169 78 166ZM150 168C154 166 158 167 160 170C156 172 152 171 150 168Z" fill="#2f7fb2"/>
+</g>
+<path d="M84 144C98 146 104 160 96 170C86 178 68 182 54 182C48 182 46 178 51 175C62 168 70 156 74 148ZM146 160C158 160 168 166 174 174C177 179 174 182 168 182C156 182 146 178 138 170Z" fill="none" stroke="#124a6e" stroke-width="2.5"/>
+<g clip-path="url(#lembuqa-cb)">
+<rect x="68" y="88" width="112" height="90" fill="url(#lembuqa-w)"/>
+<path d="M70 102C98 108 134 108 172 92V104C134 118 98 118 70 114Z" fill="#8a3484"/>
+<path d="M70 108C98 113 134 113 172 98" fill="none" stroke="#f3dfb0" stroke-width="2"/>
+<path d="M74 132C100 140 140 140 177 122M78 152C104 160 142 158 170 142" fill="none" stroke="#7a4426" stroke-width="2"/>
+<path d="M70 158C110 172 150 160 178 116V180H70Z" fill="#8a5236"/>
+<path d="M68 112C86 116 94 140 88 176H68Z" fill="#6e3c24"/>
+<path d="M100 168C126 170 152 160 168 140" fill="none" stroke="#cc8a50" stroke-width="2"/>
+<path d="M92 122C104 121 116 123 126 127C114 126 102 126 94 128Z" fill="#f2c088"/>
+</g>
+<path d="M76 106C98 110 134 110 160 102C164 100 167 97 169 93C178 108 178 128 170 146C160 164 138 174 116 174C96 174 80 164 74 148C70 136 71 118 76 106Z" fill="none" stroke="#3a2212" stroke-width="2.5"/>
+<path d="M76 114C98 118 134 118 172 102" fill="none" stroke="#3a1036" stroke-width="2"/>
+<g fill="#f3c14a" stroke="#6a3a0e" stroke-width="1"><circle cx="100" cy="113" r="1.6"/><circle cx="126" cy="113" r="1.6"/><circle cx="152" cy="107" r="1.6"/></g>
+<path d="M97 99C108 104 126 104 147 99" fill="none" stroke="#3a2212" stroke-width="4.5"/>
+<path d="M97 99C108 104 126 104 147 99" fill="none" stroke="#ecd9a6" stroke-width="2.4"/>
+<path d="M97 99C108 104 126 104 147 99" fill="none" stroke="#a88a5a" stroke-width="1.2" stroke-dasharray="1.5 2.5"/>
+<g clip-path="url(#lembuqa-ch)">
+<rect x="20" y="86" width="82" height="72" fill="url(#lembuqa-g)"/>
+<path d="M20 134C30 141 44 144 56 142C68 141 78 145 84 158H20Z" fill="#f4ecd0"/>
+<path d="M20 144C42 154 66 152 80 144C92 136 98 124 98 110L104 112V160H20Z" fill="#1f5f9a" opacity=".42"/>
+<path d="M70 98C75 97 79 99 81 103C77 104 72 103 70 98ZM86 108C90 108 92 111 92 114C88 114 86 112 86 108Z" fill="#3d9acb"/>
+<path d="M38 106C42 98 50 95 58 95C50 99 45 103 42 110Z" fill="#c9f3fb"/>
+</g>
+<path d="M58 91C78 91 94 103 96 121C98 139 86 152 66 153C48 154 32 147 27 133C23 120 28 104 38 97C44 93 51 91 58 91Z" fill="none" stroke="#124a6e" stroke-width="2.5"/>
+<path d="M60 142C70 141 78 145 82 151" fill="none" stroke="#2b7fae" stroke-width="2"/>
+<path d="M36 135C41 141 50 143 57 139C56 145 50 148 44 146C40 144 37 140 36 135Z" fill="#7a2438"/>
+<path d="M42 145C45 142 50 142 54 143C52 146 46 148 42 145Z" fill="#f27a8a"/>
+<path d="M29 129C34 136 46 141 57 139C60 138 62 136 62 133" fill="none" stroke="#124a6e" stroke-width="2.5"/>
+<ellipse cx="32" cy="119" rx="1.6" ry="1.1" fill="#124a6e"/>
+<ellipse cx="79" cy="131" rx="6" ry="3.4" fill="#ff6a6a" opacity=".55"/>
+<ellipse cx="68" cy="114" rx="9" ry="11" fill="#fffdf4"/>
+<g clip-path="url(#lembuqa-e1)">
+<ellipse cx="66.5" cy="116" rx="7.5" ry="9.5" fill="url(#lembuqa-iris)"/>
+<ellipse cx="66" cy="117" rx="4.6" ry="6.2" fill="#1b1622"/>
+<path d="M56 100H80V108C74 105 62 105 56 109Z" fill="#c9d8ec"/>
+</g>
+<ellipse cx="68" cy="114" rx="9" ry="11" fill="none" stroke="#124a6e" stroke-width="2"/>
+<path d="M59.5 108C62 103.5 65.5 102.3 68.5 102.3C72 102.4 75 104.5 76.8 108" fill="none" stroke="#1b1622" stroke-width="3.5"/>
+<path d="M58.5 99.6C63.5 97.6 69.5 97.4 75.5 98.8" fill="none" stroke="#124a6e" stroke-width="2.6"/>
+<circle cx="62.8" cy="111" r="3.2" fill="#fff"/>
+<circle cx="68" cy="115.5" r="1.5" fill="#fff"/>
+<ellipse cx="45" cy="116" rx="6.5" ry="9.4" fill="#fffdf4"/>
+<g clip-path="url(#lembuqa-e2)">
+<ellipse cx="44" cy="118" rx="5.6" ry="7.8" fill="url(#lembuqa-iris)"/>
+<ellipse cx="43.6" cy="119" rx="3.4" ry="5" fill="#1b1622"/>
+<path d="M37 104H53V111C48 108 42 108 37 112Z" fill="#c9d8ec"/>
+</g>
+<ellipse cx="45" cy="116" rx="6.5" ry="9.4" fill="none" stroke="#124a6e" stroke-width="2"/>
+<path d="M38.8 110.8C40.4 107.6 42.6 106.6 44.8 106.6C47.2 106.6 49.4 107.8 50.9 110.6" fill="none" stroke="#1b1622" stroke-width="3.2"/>
+<path d="M38.4 103.4C41.4 102 45 101.8 48.6 102.6" fill="none" stroke="#124a6e" stroke-width="2.3"/>
+<circle cx="41" cy="113.5" r="2.5" fill="#fff"/>
+<circle cx="44.6" cy="117.6" r="1.1" fill="#fff"/>
+</g>
+</svg>

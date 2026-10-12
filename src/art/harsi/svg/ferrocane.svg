@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="ferrocane-g" gradientUnits="userSpaceOnUse" x1="40" y1="60" x2="130" y2="160"><stop offset="0" stop-color="#ffe08a"/><stop offset=".5" stop-color="#f2bc3e"/></linearGradient>
+<linearGradient id="ferrocane-far" x1="0" x2="1"><stop offset=".5" stop-color="#d89a36"/><stop offset=".5" stop-color="#b8782c"/></linearGradient>
+<linearGradient id="ferrocane-dk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9890b0"/><stop offset=".45" stop-color="#635a7a"/><stop offset=".45" stop-color="#4c4462"/></linearGradient>
+<linearGradient id="ferrocane-fe" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e2e8f0"/><stop offset=".45" stop-color="#8e9aae"/><stop offset=".45" stop-color="#6a7488"/></linearGradient>
+<linearGradient id="ferrocane-el" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#fff6c0"/><stop offset=".6" stop-color="#ffe04a"/><stop offset="1" stop-color="#9ae8ff"/></linearGradient>
+<radialGradient id="ferrocane-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#c8f6ff"/><stop offset=".5" stop-color="#2e9ae6"/><stop offset="1" stop-color="#142a64"/></radialGradient>
+<clipPath id="ferrocane-cb"><path d="M80 110C92 102 110 100 128 102C146 104 160 110 164 122C168 134 164 148 154 154C142 160 120 160 104 158C90 156 80 148 78 136Z"/></clipPath>
+<clipPath id="ferrocane-ch"><path d="M44 78C52 68 70 64 86 68C100 72 108 84 106 100C104 114 96 124 84 128C76 131 66 133 58 133C52 136 44 137 38 134C30 132 24 126 23 118C21 110 23 103 27 99C32 94 38 92 41 89C40 85 41 81 44 78Z"/></clipPath>
+<clipPath id="ferrocane-cl"><path d="M84 136C96 132 105 140 104 150V169C108 171 110 175 108 179C106 182 100 183 92 183C83 183 79 181 80 177C81 173 84 171 86 169L84 150ZM136 128C150 120 168 128 166 146C164 156 158 162 158 168C162 170 165 174 163 179C161 182 154 182 146 182C138 182 135 180 136 176C137 172 140 170 142 168C140 160 132 150 132 140C132 134 133 130 136 128Z"/></clipPath>
+<clipPath id="ferrocane-e1"><ellipse cx="78" cy="94" rx="8.5" ry="10.5"/></clipPath>
+<clipPath id="ferrocane-e2"><ellipse cx="53" cy="95" rx="6.2" ry="9.2"/></clipPath>
+</defs>
+<ellipse cx="104" cy="184" rx="68" ry="7" fill="#1d2b33" opacity="0.22"/>
+<g fill="#5c2e0e" stroke="#5c2e0e" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M158 122L170 106L165 105L180 84L178 99L185 99L164 126Z" fill="#8a4a0e" stroke="#8a4a0e"/>
+<path d="M64 130H80V169C82 171 84 175 82 178C80 180 74 180 66 180C60 180 58 178 59 175C60 172 62 171 64 169ZM122 148H136V169C138 171 139 175 137 178C135 180 130 180 125 180C119 180 117 178 118 175C119 172 121 171 122 169Z"/>
+<path d="M80 110C92 102 110 100 128 102C146 104 160 110 164 122C168 134 164 148 154 154C142 160 120 160 104 158C90 156 80 148 78 136Z"/>
+<path d="M84 136C96 132 105 140 104 150V169C108 171 110 175 108 179C106 182 100 183 92 183C83 183 79 181 80 177C81 173 84 171 86 169L84 150ZM136 128C150 120 168 128 166 146C164 156 158 162 158 168C162 170 165 174 163 179C161 182 154 182 146 182C138 182 135 180 136 176C137 172 140 170 142 168C140 160 132 150 132 140C132 134 133 130 136 128Z"/>
+<path d="M44 80C36 76 28 80 26 88C30 90 36 88 40 92ZM90 70C100 66 110 70 112 80C112 88 108 94 104 96C102 88 98 80 90 76Z" fill="#1e1828" stroke="#1e1828"/>
+<path d="M44 78C52 68 70 64 86 68C100 72 108 84 106 100C104 114 96 124 84 128C76 131 66 133 58 133C52 136 44 137 38 134C30 132 24 126 23 118C21 110 23 103 27 99C32 94 38 92 41 89C40 85 41 81 44 78Z"/>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M164 112L182 82M170 120L188 102" stroke="#9ae8ff" stroke-width="6" opacity=".3"/>
+<path d="M158 122L170 106L165 105L180 84L178 99L185 99L164 126Z" fill="url(#ferrocane-el)" stroke="#8a4a0e" stroke-width="2.2"/>
+<path d="M164 118L172 108" stroke="#fff" stroke-width="1.6"/>
+<path d="M64 130H80V169C82 171 84 175 82 178C80 180 74 180 66 180C60 180 58 178 59 175C60 172 62 171 64 169ZM122 148H136V169C138 171 139 175 137 178C135 180 130 180 125 180C119 180 117 178 118 175C119 172 121 171 122 169Z" fill="url(#ferrocane-far)" stroke="#5c2e0e" stroke-width="2.5"/>
+<path d="M66 175V179M72 175V179M124 175V179M130 175V179" stroke="#5c2e0e" stroke-width="1.6"/>
+<g clip-path="url(#ferrocane-cb)">
+<rect x="74" y="98" width="96" height="64" fill="url(#ferrocane-g)"/>
+<path d="M76 140C96 156 140 156 168 130V164H76Z" fill="#c98636"/>
+<path d="M76 116C88 122 96 136 94 160H76Z" fill="#a8641e"/>
+<path d="M110 100L114 110L108 111L113 120L104 110L109 108L106 100ZM128 101L131 112L125 113L130 124L121 113L126 111L123 101ZM146 105L148 115L143 116L146 125L139 116L143 114L141 105Z" fill="#d18a2a"/>
+<path d="M100 106C116 104 134 104 150 110C134 108 118 108 104 110Z" fill="#fff0b4"/>
+<path d="M98 154C120 158 142 156 158 146" fill="none" stroke="#e8a440" stroke-width="2"/>
+</g>
+<path d="M80 110C92 102 110 100 128 102C146 104 160 110 164 122C168 134 164 148 154 154C142 160 120 160 104 158C90 156 80 148 78 136Z" fill="none" stroke="#5c2e0e" stroke-width="2.5"/>
+<g clip-path="url(#ferrocane-cl)">
+<rect x="78" y="118" width="92" height="66" fill="url(#ferrocane-g)"/>
+<path d="M98 136C104 146 104 160 100 184H110V136ZM166 128C164 146 160 158 156 170L166 184H170V128Z" fill="#c98636"/>
+<path d="M78 168H112V184H78ZM132 166H166V184H132Z" fill="#fff0c8"/>
+<path d="M142 132C150 128 158 130 162 136C156 134 150 134 146 138Z" fill="#fff0b4"/>
+</g>
+<path d="M86 169C84 160 84 150 84 144M104 150V169C108 171 110 175 108 179C106 182 100 183 92 183C83 183 79 181 80 177C81 173 84 171 86 169M134 142C134 150 140 160 142 168C140 170 137 172 136 176C135 180 138 182 146 182C154 182 161 182 163 179C165 174 162 170 158 168C158 162 164 156 166 146C167 138 164 132 158 128" fill="none" stroke="#5c2e0e" stroke-width="2.5"/>
+<path d="M88 177V182M96 177V182M142 176V181M150 176V181" stroke="#5c2e0e" stroke-width="1.6"/>
+<path d="M134 142C136 134 140 130 146 128" fill="none" stroke="#5c2e0e" stroke-width="2"/>
+<path d="M60 126C78 136 98 132 112 116L118 124C104 142 78 146 58 134Z" fill="url(#ferrocane-fe)" stroke="#24304a" stroke-width="2.5"/>
+<g fill="#f3c14a" stroke="#6a3a0e" stroke-width="1.2"><circle cx="96" cy="132" r="2"/><circle cx="106" cy="126" r="2"/><circle cx="113" cy="119" r="1.8"/></g>
+<path d="M44 80C36 76 28 80 26 88C30 90 36 88 40 92ZM90 70C100 66 110 70 112 80C112 88 108 94 104 96C102 88 98 80 90 76Z" fill="url(#ferrocane-dk)" stroke="#1e1828" stroke-width="2.5"/>
+<path d="M31 86C34 84 38 85 41 89M98 73C105 75 108 82 106 90" fill="none" stroke="#1e1828" stroke-width="1.8"/>
+<g clip-path="url(#ferrocane-ch)">
+<rect x="18" y="62" width="92" height="76" fill="url(#ferrocane-g)"/>
+<path d="M106 86C104 108 94 124 74 130L110 136V86Z" fill="#c98636"/>
+<path d="M20 102C24 94 34 90 44 92C54 94 62 102 63 112C64 122 60 130 52 134L20 136Z" fill="url(#ferrocane-dk)"/>
+<path d="M18 124C30 130 46 130 62 124V140H18Z" fill="#2a2438" opacity=".45"/>
+<path d="M56 74C64 68 74 67 84 69C76 70 68 72 62 77Z" fill="#fff0b4"/>
+</g>
+<path d="M44 78C52 68 70 64 86 68C100 72 108 84 106 100C104 114 96 124 84 128C76 131 66 133 58 133C52 136 44 137 38 134C30 132 24 126 23 118C21 110 23 103 27 99C32 94 38 92 41 89C40 85 41 81 44 78Z" fill="none" stroke="#5c2e0e" stroke-width="2.5"/>
+<path d="M27 99C32 94 38 92 44 92C54 94 61 101 63 110C64 120 60 128 54 133" fill="none" stroke="#2e2440" stroke-width="2.2"/>
+<path d="M60 80C64 78 68 78 72 80M61 85C64 83.5 67 83.5 70 85" fill="none" stroke="#a8641e" stroke-width="2"/>
+<path d="M19 102C19 97 23 95 28 95C34 95 37 98 37 102C36 107 31 109 26 109C21 109 19 106 19 102Z" fill="#1b1622" stroke="#1b1622" stroke-width="1.5"/>
+<path d="M23 99C25 97.6 29 97.4 32 98.6" fill="none" stroke="#fff" stroke-width="1.8"/>
+<path d="M28 109V114C32 120 40 122 46 118C50 122 56 122 60 116" fill="none" stroke="#1b1622" stroke-width="2.4"/>
+<path d="M40 104C46 102 52 104 56 108" fill="none" stroke="#9890b0" stroke-width="1.6"/>
+<path d="M36 119C38 124 44 125 46 119C42 120 39 120 36 119Z" fill="#f2849e" stroke="#1e1828" stroke-width="1.4"/>
+<ellipse cx="88" cy="110" rx="6" ry="3.4" fill="#ff6a6a" opacity=".5"/>
+<ellipse cx="78" cy="94" rx="8.5" ry="10.5" fill="#fffdf4"/>
+<g clip-path="url(#ferrocane-e1)">
+<ellipse cx="76.6" cy="96" rx="7.2" ry="8.8" fill="url(#ferrocane-iris)"/>
+<ellipse cx="76.2" cy="97" rx="4.4" ry="5.8" fill="#1b1622"/>
+<path d="M68 82H90V89C84 86 74 86 68 90Z" fill="#e8d6c4"/>
+</g>
+<ellipse cx="78" cy="94" rx="8.5" ry="10.5" fill="none" stroke="#5c2e0e" stroke-width="2"/>
+<path d="M69.8 89C72.2 84.6 75.2 83.5 78.2 83.5C81.6 83.6 84.4 85.6 86.2 89" fill="none" stroke="#1b1622" stroke-width="3.4"/>
+<path d="M70 80.6C74 78.4 80 78.2 86 80" fill="none" stroke="#5c2e0e" stroke-width="2.6"/>
+<circle cx="73" cy="91.6" r="3.1" fill="#fff"/>
+<circle cx="78" cy="98.6" r="1.4" fill="#fff"/>
+<ellipse cx="53" cy="95" rx="6.2" ry="9.2" fill="#fffdf4"/>
+<g clip-path="url(#ferrocane-e2)">
+<ellipse cx="51.9" cy="96.8" rx="5.3" ry="7.6" fill="url(#ferrocane-iris)"/>
+<ellipse cx="51.6" cy="97.6" rx="3.2" ry="5" fill="#1b1622"/>
+<path d="M44 84H62V90.5C58 88 50 88 44 91Z" fill="#e8d6c4"/>
+</g>
+<ellipse cx="53" cy="95" rx="6.2" ry="9.2" fill="none" stroke="#5c2e0e" stroke-width="2"/>
+<path d="M47 90.6C48.8 86.6 50.8 85.8 53 85.8C55.4 85.9 57.4 87.2 58.8 90" fill="none" stroke="#1b1622" stroke-width="3"/>
+<path d="M46.4 83C49.4 81.4 53.4 81.2 57.6 82.4" fill="none" stroke="#5c2e0e" stroke-width="2.3"/>
+<circle cx="49.6" cy="93" r="2.3" fill="#fff"/>
+<circle cx="52.6" cy="99" r="1" fill="#fff"/>
+<circle cx="74" cy="142" r="8" fill="#c0303a" stroke="#6a3a0e" stroke-width="2.4"/>
+<g fill="#fff" stroke="#7a1a22" stroke-width=".8" transform="translate(74 142)"><path d="M0 0L-2.6-5.6L0-4.4L2.6-5.6ZM0 0L5.6-2.6L4.4 0L5.6 2.6ZM0 0L2.6 5.6L0 4.4L-2.6 5.6ZM0 0L-5.6 2.6L-4.4 0L-5.6-2.6Z"/></g>
+<path d="M68 134C70 132 74 131 76 132" fill="none" stroke="#24304a" stroke-width="2.2"/>
+<path fill="url(#ferrocane-el)" stroke="#8a4a0e" stroke-width="1.3" d="M0-6L5-7L2-1.5L6-1.5L-2 8L0 1L-4 1Z" transform="translate(178 118) rotate(30)"/>
+</g>
+</svg>

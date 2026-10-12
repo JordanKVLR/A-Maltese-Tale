@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="marsupp-g" gradientUnits="userSpaceOnUse" x1="60" y1="64" x2="140" y2="150"><stop offset="0" stop-color="#ffc2a2"/><stop offset=".55" stop-color="#f4846a"/></linearGradient>
+<linearGradient id="marsupp-arm" gradientUnits="userSpaceOnUse" x1="0" y1="120" x2="0" y2="184"><stop offset=".72" stop-color="#f4846a"/><stop offset=".72" stop-color="#d9666a"/></linearGradient>
+<linearGradient id="marsupp-far" gradientUnits="userSpaceOnUse" x1="0" y1="120" x2="0" y2="184"><stop offset=".6" stop-color="#d9666a"/><stop offset=".6" stop-color="#bc5266"/></linearGradient>
+<radialGradient id="marsupp-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#ffe98a"/><stop offset=".5" stop-color="#e0902a"/><stop offset="1" stop-color="#5e2a10"/></radialGradient>
+<clipPath id="marsupp-ch"><path d="M56 122C48 98 62 72 96 66C132 60 156 82 152 108C150 130 134 144 106 146C80 148 60 140 56 122Z"/></clipPath>
+<clipPath id="marsupp-e1"><ellipse cx="88" cy="112" rx="10.4" ry="12.8"/></clipPath>
+<clipPath id="marsupp-e2"><ellipse cx="65" cy="114" rx="7.6" ry="10.8"/></clipPath>
+</defs>
+<ellipse cx="102" cy="184" rx="78" ry="7" fill="#1d2b33" opacity="0.22"/>
+<g fill="#6c1e30" stroke="#6c1e30" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M65 128C61 128 56 136 52 140C47 144 43 148 39 151C36 153 33 155 30 155C28 156 26 154 25 153C25 151 25 149 26 148C27 147 30 149 31 148C32 147 32 145 31 144C30 143 24 142 22 144C20 146 17 152 19 155C20 159 25 164 30 165C34 166 40 163 45 161C50 159 55 155 60 152C66 148 74 144 75 140C76 136 69 128 65 128Z"/><path d="M131 138C132 142 142 146 148 150C153 153 159 158 164 159C170 160 177 158 180 155C184 153 185 146 184 142C183 139 178 137 176 136C175 136 173 138 174 140C174 141 178 142 178 144C178 145 177 148 176 149C174 149 171 150 168 149C164 147 161 142 156 138C152 134 145 126 141 126C137 126 130 134 131 138Z"/>
+<path d="M32 118C42 130 46 150 52 166C56 176 70 182 94 180" fill="none" stroke="#5e3d1e" stroke-width="13"/>
+<path d="M56 122C48 98 62 72 96 66C132 60 156 82 152 108C150 130 134 144 106 146C80 148 60 140 56 122Z"/><path d="M90 143C86 145 87 154 88 161C89 167 91 175 96 180C100 184 110 187 116 186C121 186 129 183 131 179C134 176 132 169 131 166C130 164 124 163 123 164C121 164 121 167 121 168C122 169 124 169 125 170C126 171 126 172 125 173C123 173 119 174 116 174C114 173 110 171 108 168C107 166 107 163 108 159C108 156 113 148 110 145C107 143 93 140 90 143Z"/><path d="M116 147C116 151 125 155 129 160C133 164 138 170 143 174C148 177 154 182 159 182C164 182 173 178 175 175C178 172 176 165 175 162C174 160 168 159 167 160C165 160 165 163 165 164C166 165 168 165 169 166C170 166 170 168 169 169C167 170 164 171 161 170C158 169 156 166 153 162C150 159 147 153 143 148C139 143 136 134 132 133C127 133 117 142 116 147Z"/><path d="M75 132C71 131 65 140 62 142C58 144 56 143 53 142C51 141 48 138 47 136C46 135 46 132 47 130C48 129 52 130 53 128C53 127 53 124 51 124C49 123 43 123 41 126C39 128 36 135 37 140C38 144 42 151 47 154C52 157 60 159 66 158C73 157 84 152 85 148C87 144 79 133 75 132Z"/>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M65 128C61 128 56 136 52 140C47 144 43 148 39 151C36 153 33 155 30 155C28 156 26 154 25 153C25 151 25 149 26 148C27 147 30 149 31 148C32 147 32 145 31 144C30 143 24 142 22 144C20 146 17 152 19 155C20 159 25 164 30 165C34 166 40 163 45 161C50 159 55 155 60 152C66 148 74 144 75 140C76 136 69 128 65 128Z" fill="url(#marsupp-far)" stroke="#6c1e30" stroke-width="2.5"/>
+<path d="M131 138C132 142 142 146 148 150C153 153 159 158 164 159C170 160 177 158 180 155C184 153 185 146 184 142C183 139 178 137 176 136C175 136 173 138 174 140C174 141 178 142 178 144C178 145 177 148 176 149C174 149 171 150 168 149C164 147 161 142 156 138C152 134 145 126 141 126C137 126 130 134 131 138Z" fill="url(#marsupp-far)" stroke="#6c1e30" stroke-width="2.5"/>
+<g fill="#f3d2c2" stroke="#a04656" stroke-width="1.2"><circle cx="33.1" cy="157.6" r="2.1"/><circle cx="30.2" cy="158.1" r="1.9"/><circle cx="27.5" cy="157.2" r="1.8"/><circle cx="25" cy="155.4" r="1.6"/><circle cx="23.4" cy="153.5" r="1.5"/><circle cx="23.1" cy="151.3" r="1.5"/><circle cx="23.7" cy="148.6" r="1.5"/><circle cx="24.7" cy="146.9" r="1.5"/><circle cx="26.3" cy="146.4" r="1.5"/><circle cx="170.4" cy="152.5" r="2"/><circle cx="174.2" cy="151.9" r="1.8"/><circle cx="176.9" cy="150.7" r="1.7"/><circle cx="178.6" cy="148.7" r="1.5"/><circle cx="179.7" cy="145.8" r="1.5"/><circle cx="179.8" cy="143.4" r="1.5"/><circle cx="178.7" cy="141.6" r="1.5"/></g>
+<path d="M32 118C42 130 46 150 52 166C56 176 70 182 94 180" fill="none" stroke="#5e3d1e" stroke-width="10"/>
+<path d="M32 118C42 130 46 150 52 166C56 176 70 182 94 180" fill="none" stroke="#d9a65c" stroke-width="5.5"/>
+<path d="M32 118C42 130 46 150 52 166C56 176 70 182 94 180" fill="none" stroke="#a87434" stroke-width="5.5" stroke-dasharray="2 3.5" stroke-linecap="butt"/>
+<path d="M31 117L24 112M33 116L29 108M35 118L35 110M30 119L23 119" fill="none" stroke="#c8944c" stroke-width="2"/>
+<g clip-path="url(#marsupp-ch)">
+<rect x="46" y="58" width="110" height="92" fill="url(#marsupp-g)"/>
+<path d="M150 82C156 108 144 134 112 140C92 144 72 140 56 130V150H156V82Z" fill="#cf5e6a"/>
+<path d="M76 140C88 144 104 144 116 140L118 150H74Z" fill="#a8465e"/>
+<path d="M144 116C138 130 124 138 106 141" fill="none" stroke="#ff9c86" stroke-width="2"/>
+<g fill="#e06a62"><circle cx="118" cy="80" r="4.4"/><circle cx="132" cy="92" r="3.2"/><circle cx="108" cy="72" r="2.6"/><circle cx="138" cy="106" r="2.4"/><circle cx="124" cy="104" r="2"/></g>
+<path d="M72 80C80 70 92 66 106 66C94 70 84 76 78 86Z" fill="#ffe0cc"/>
+</g>
+<path d="M56 122C48 98 62 72 96 66C132 60 156 82 152 108C150 130 134 144 106 146C80 148 60 140 56 122Z" fill="none" stroke="#6c1e30" stroke-width="2.5"/>
+<path d="M90 143C86 145 87 154 88 161C89 167 91 175 96 180C100 184 110 187 116 186C121 186 129 183 131 179C134 176 132 169 131 166C130 164 124 163 123 164C121 164 121 167 121 168C122 169 124 169 125 170C126 171 126 172 125 173C123 173 119 174 116 174C114 173 110 171 108 168C107 166 107 163 108 159C108 156 113 148 110 145C107 143 93 140 90 143Z" fill="url(#marsupp-arm)" stroke="#6c1e30" stroke-width="2.5"/>
+<path d="M116 147C116 151 125 155 129 160C133 164 138 170 143 174C148 177 154 182 159 182C164 182 173 178 175 175C178 172 176 165 175 162C174 160 168 159 167 160C165 160 165 163 165 164C166 165 168 165 169 166C170 166 170 168 169 169C167 170 164 171 161 170C158 169 156 166 153 162C150 159 147 153 143 148C139 143 136 134 132 133C127 133 117 142 116 147Z" fill="url(#marsupp-arm)" stroke="#6c1e30" stroke-width="2.5"/>
+<path d="M75 132C71 131 65 140 62 142C58 144 56 143 53 142C51 141 48 138 47 136C46 135 46 132 47 130C48 129 52 130 53 128C53 127 53 124 51 124C49 123 43 123 41 126C39 128 36 135 37 140C38 144 42 151 47 154C52 157 60 159 66 158C73 157 84 152 85 148C87 144 79 133 75 132Z" fill="url(#marsupp-arm)" stroke="#6c1e30" stroke-width="2.5"/>
+<path d="M93 143L92 160L98 177L116 183M119 144L132 158L145 171L160 178M83 145L65 155L48 151" fill="none" stroke="#ffb8a0" stroke-width="2"/>
+<g fill="#ffe7d6" stroke="#a04656" stroke-width="1.2"><circle cx="120.1" cy="177.2" r="2.4"/><circle cx="124" cy="176.1" r="2.1"/><circle cx="126.6" cy="174.7" r="1.9"/><circle cx="127.4" cy="173.1" r="1.7"/><circle cx="127.4" cy="170.7" r="1.6"/><circle cx="126.9" cy="168.8" r="1.5"/><circle cx="125.7" cy="168" r="1.5"/><circle cx="160.4" cy="173.6" r="2.4"/><circle cx="164" cy="173.5" r="2.2"/><circle cx="168" cy="172.3" r="2"/><circle cx="170.7" cy="170.8" r="1.8"/><circle cx="171.5" cy="169.1" r="1.7"/><circle cx="171.4" cy="166.7" r="1.5"/><circle cx="170.9" cy="164.8" r="1.5"/><circle cx="169.8" cy="164" r="1.5"/><circle cx="44.7" cy="147.1" r="2.6"/><circle cx="41.7" cy="142.9" r="2.3"/><circle cx="40" cy="138.6" r="2.1"/><circle cx="39.8" cy="134.2" r="1.9"/><circle cx="40.9" cy="130.2" r="1.7"/><circle cx="42.9" cy="126.9" r="1.5"/><circle cx="46.1" cy="125.4" r="1.5"/></g>
+<path d="M70 131C74 134 80 134 85 130C85 136 81 140 77 140C73 140 70 136 70 131Z" fill="#7a1e34" stroke="#6c1e30" stroke-width="2"/>
+<path d="M73 137C75 135 79 135 81 137C79 139 75 139 73 137Z" fill="#ff8a9a"/>
+<path d="M76 132.5L78 136L80 132Z" fill="#fff6e0"/>
+<ellipse cx="102" cy="128" rx="6" ry="3.4" fill="#ff4f7a" opacity=".45"/>
+<ellipse cx="88" cy="112" rx="10.4" ry="12.8" fill="#fffdf4"/>
+<g clip-path="url(#marsupp-e1)">
+<ellipse cx="85.7" cy="114.4" rx="8.7" ry="10.9" fill="url(#marsupp-iris)"/>
+<ellipse cx="85.2" cy="115.6" rx="5.3" ry="7.3" fill="#1b1622"/>
+<path d="M74.7 95.1H101.3V104.8C94 101.1 82 101.1 74.7 106Z" fill="#f2c8c0"/>
+</g>
+<ellipse cx="88" cy="112" rx="10.4" ry="12.8" fill="none" stroke="#6c1e30" stroke-width="2"/>
+<path d="M78.1 105.4C81 101.1 84.6 99.4 88.2 99.4C92.4 99.6 95.9 101.7 98 105.7" fill="none" stroke="#1b1622" stroke-width="3.5"/>
+<path d="M78.3 96.3C83.2 92.1 91.6 91.5 97.7 94.5" fill="none" stroke="#6c1e30" stroke-width="2.6"/>
+<circle cx="81.1" cy="108.9" r="3.7" fill="#fff"/>
+<circle cx="87.2" cy="114.4" r="1.7" fill="#fff"/>
+<ellipse cx="65" cy="114" rx="7.6" ry="10.8" fill="#fffdf4"/>
+<g clip-path="url(#marsupp-e2)">
+<ellipse cx="63.8" cy="116" rx="6.4" ry="9.2" fill="url(#marsupp-iris)"/>
+<ellipse cx="63.4" cy="117.1" rx="3.9" ry="6.2" fill="#1b1622"/>
+<path d="M55.3 99.7H74.7V107.9C69.4 104.8 60.6 104.8 55.3 108.9Z" fill="#f2c8c0"/>
+</g>
+<ellipse cx="65" cy="114" rx="7.6" ry="10.8" fill="none" stroke="#6c1e30" stroke-width="2"/>
+<path d="M57.8 108.4C59.9 104.8 62.5 103.4 65.2 103.4C68.2 103.5 70.7 105.3 72.3 108.7" fill="none" stroke="#1b1622" stroke-width="3.1"/>
+<path d="M57.9 100.8C61.5 97.2 67.7 96.7 72.1 99.2" fill="none" stroke="#6c1e30" stroke-width="2.3"/>
+<circle cx="60.4" cy="111.4" r="2.3" fill="#fff"/>
+<circle cx="64.8" cy="116" r="1.1" fill="#fff"/>
+</g>
+</svg>

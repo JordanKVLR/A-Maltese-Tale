@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="konvojarma-g" gradientUnits="userSpaceOnUse" x1="16" y1="64" x2="120" y2="182"><stop offset="0" stop-color="#d4e0ea"/><stop offset=".55" stop-color="#8299ad"/></linearGradient>
+<linearGradient id="konvojarma-far" x1="0" y1="0" x2="0" y2="1"><stop offset=".45" stop-color="#6c849a"/><stop offset=".45" stop-color="#536b84"/></linearGradient>
+<linearGradient id="konvojarma-fn" x1="0" x2="1"><stop offset=".5" stop-color="#b8c8d6"/><stop offset=".5" stop-color="#8299ad"/></linearGradient>
+<linearGradient id="konvojarma-au" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0a0"/><stop offset=".5" stop-color="#f0c24e"/><stop offset="1" stop-color="#c8902a"/></linearGradient>
+<radialGradient id="konvojarma-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#ffe890"/><stop offset=".5" stop-color="#e0901e"/><stop offset="1" stop-color="#4a2410"/></radialGradient>
+<clipPath id="konvojarma-cb"><path d="M20 96C20 80 34 70 56 70C86 70 114 78 136 92C152 102 162 116 168 132C174 148 170 162 160 170C148 178 124 182 96 182C70 182 46 180 32 172C20 164 14 150 14 132C14 120 18 108 20 96Z"/></clipPath>
+<clipPath id="konvojarma-ct"><path d="M146 154C162 142 170 124 172 104C164 94 158 84 154 70C166 70 174 78 179 86C181 76 186 70 191 66C192 82 188 96 180 104C178 126 170 148 156 164Z"/></clipPath>
+<clipPath id="konvojarma-e1"><path d="M42 108C45 102 51 99 60 100C62 107 60 114 53 116C47 117 43 113 42 108Z"/></clipPath>
+<clipPath id="konvojarma-e2"><path d="M22 110C24 106 28 104 33 104C34 109 33 114 29 115C25 116 22 114 22 110Z"/></clipPath>
+</defs>
+<ellipse cx="100" cy="184" rx="88" ry="7" fill="#1d2b33" opacity="0.22"/>
+<g fill="#1c2a3a" stroke="#1c2a3a" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M30 164C24 170 18 174 12 176C8 178 10 182 15 182C24 182 32 178 40 170Z"/>
+<path d="M146 154C162 142 170 124 172 104C164 94 158 84 154 70C166 70 174 78 179 86C181 76 186 70 191 66C192 82 188 96 180 104C178 126 170 148 156 164Z"/>
+<path d="M20 96C20 80 34 70 56 70C86 70 114 78 136 92C152 102 162 116 168 132C174 148 170 162 160 170C148 178 124 182 96 182C70 182 46 180 32 172C20 164 14 150 14 132C14 120 18 108 20 96Z"/>
+<path d="M90 162C88 170 82 176 74 180C70 182 72 186 78 185C90 184 100 176 104 166Z"/>
+<path d="M86 84V66C86 62 89 60 93 60H119C123 60 126 62 126 66V96Z"/>
+<path d="M40 76L42 46H62L64 78Z"/>
+<path d="M41 38A8 8 0 1 1 57 38A8 8 0 1 1 41 38ZM47 27A9 9 0 1 1 65 27A9 9 0 1 1 47 27ZM62 21A7 7 0 1 1 76 21A7 7 0 1 1 62 21Z" fill="#4a5a6a" stroke="#4a5a6a"/>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M30 164C24 170 18 174 12 176C8 178 10 182 15 182C24 182 32 178 40 170Z" fill="url(#konvojarma-far)" stroke="#1c2a3a" stroke-width="2.5"/>
+<g clip-path="url(#konvojarma-ct)">
+<rect x="142" y="62" width="54" height="106" fill="url(#konvojarma-g)"/>
+<path d="M154 70C162 86 172 96 180 104C178 126 170 148 156 164H196V62Z" fill="#536b84"/>
+<path d="M120 120L180 92V104L132 140Z" fill="#3e5068"/>
+<path d="M158 76C164 76 170 80 174 86" fill="none" stroke="#fff" stroke-width="2"/>
+</g>
+<path d="M146 154C162 142 170 124 172 104C164 94 158 84 154 70C166 70 174 78 179 86C181 76 186 70 191 66C192 82 188 96 180 104C178 126 170 148 156 164Z" fill="none" stroke="#1c2a3a" stroke-width="2.5"/>
+<path d="M172 104C175 96 177 90 179 86" fill="none" stroke="#1c2a3a" stroke-width="2"/>
+<g clip-path="url(#konvojarma-cb)">
+<rect x="10" y="66" width="164" height="120" fill="url(#konvojarma-g)"/>
+<path d="M98 76L124 82L96 140L74 136ZM134 90L154 104L132 156L114 150Z" fill="#3e5068"/>
+<path d="M10 156C60 164 120 162 174 138V186H10Z" fill="#d4503e"/>
+<path d="M10 156C60 164 120 162 174 138" fill="none" stroke="#f4f8fb" stroke-width="3.5"/>
+<path d="M10 170C80 186 140 176 174 124V186H10Z" fill="#1d3a66" opacity=".35"/>
+<path d="M140 116C150 126 156 140 156 154" fill="none" stroke="#b0c2d0" stroke-width="2"/>
+<path d="M26 88C34 80 46 76 58 76C46 80 36 86 30 94Z" fill="#fff"/>
+<path d="M70 72C72 96 72 124 66 150" fill="none" stroke="#1c2a3a" stroke-width="2.2"/>
+</g>
+<path d="M20 96C20 80 34 70 56 70C86 70 114 78 136 92C152 102 162 116 168 132C174 148 170 162 160 170C148 178 124 182 96 182C70 182 46 180 32 172C20 164 14 150 14 132C14 120 18 108 20 96Z" fill="none" stroke="#1c2a3a" stroke-width="2.5"/>
+<path d="M14 154C60 162 120 160 166 140" fill="none" stroke="#1c2a3a" stroke-width="2"/>
+<g fill="url(#konvojarma-au)" stroke="#6a3a0e" stroke-width="1"><circle cx="75" cy="82" r="1.7"/><circle cx="76" cy="98" r="1.7"/><circle cx="76" cy="114" r="1.7"/><circle cx="74" cy="130" r="1.7"/></g>
+<path d="M92 118L114 114L118 136L96 140Z" fill="url(#konvojarma-fn)" stroke="#1c2a3a" stroke-width="2.2"/>
+<g fill="url(#konvojarma-au)" stroke="#6a3a0e" stroke-width="1"><circle cx="96" cy="121" r="1.5"/><circle cx="110" cy="118" r="1.5"/><circle cx="113" cy="133" r="1.5"/><circle cx="99" cy="136" r="1.5"/></g>
+<path d="M148 150L160 146L162 156L150 160Z" fill="url(#konvojarma-fn)" stroke="#1c2a3a" stroke-width="2"/>
+<circle cx="136" cy="128" r="12" fill="none" stroke="#1c2a3a" stroke-width="10.5"/>
+<circle cx="136" cy="128" r="12" fill="none" stroke="#f4f8fb" stroke-width="6.5"/>
+<circle cx="136" cy="128" r="12" fill="none" stroke="#d4503e" stroke-width="6.5" stroke-dasharray="9.4 9.4" stroke-linecap="butt" transform="rotate(-20 136 128)"/>
+<path d="M125 122C127 118 131 116 135 116" fill="none" stroke="#fff" stroke-width="1.6"/>
+<path d="M90 162C88 170 82 176 74 180C70 182 72 186 78 185C90 184 100 176 104 166Z" fill="url(#konvojarma-g)" stroke="#1c2a3a" stroke-width="2.5"/>
+<path d="M92 172C88 177 82 180 76 182" fill="none" stroke="#536b84" stroke-width="2"/>
+<path d="M86 84V66C86 62 89 60 93 60H119C123 60 126 62 126 66V96Z" fill="#eef3f6" stroke="#1c2a3a" stroke-width="2.5"/>
+<path d="M86 80C100 82 114 88 126 94V96L86 84Z" fill="#b8c8d6"/>
+<path d="M110 60H126V96L118 92Z" fill="#c4d2de"/>
+<g fill="#24344c" stroke="#1c2a3a" stroke-width="1.2"><rect x="90" y="65" width="6" height="5" rx="1"/><rect x="99" y="65" width="6" height="5" rx="1"/><rect x="108" y="65" width="6" height="5" rx="1"/><rect x="117" y="65" width="5" height="5" rx="1"/></g>
+<path d="M90 64H122" stroke="#d4503e" stroke-width="1.6"/>
+<g fill="url(#konvojarma-au)" stroke="#6a3a0e" stroke-width="1.5"><circle cx="96" cy="77" r="2.6"/><circle cx="108" cy="80" r="2.6"/></g>
+<path d="M40 76L42 46H62L64 78Z" fill="url(#konvojarma-fn)" stroke="#1c2a3a" stroke-width="2.5"/>
+<path d="M41.6 52H62.4L62.6 58H41.2Z" fill="#24344c"/>
+<path d="M41 62H63V67H40.7Z" fill="#d4503e"/>
+<ellipse cx="52" cy="46" rx="10" ry="3" fill="#24344c" stroke="#1c2a3a" stroke-width="2"/>
+<path d="M45 70L46 54" stroke="#fff" stroke-width="1.6"/>
+<g fill="#eef3f6" stroke="#4a5a6a" stroke-width="2.5"><circle cx="69" cy="21" r="7"/><circle cx="56" cy="27" r="9"/><circle cx="49" cy="38" r="8"/></g>
+<path d="M50 24C51 21 54 20 56 20M44 36C44 34 46 32 48 32M66 19C67 17 69 16 71 17" fill="none" stroke="#fff" stroke-width="1.8"/>
+<path d="M57 40C56 42 54 44 51 45M64 30C62 33 60 35 57 36" fill="none" stroke="#b0bcc8" stroke-width="2"/>
+<path d="M16 140C24 145 40 148 56 145C57 148 56 151 52 152C40 154 26 152 17 147Z" fill="#f4f8fb" stroke="#1c2a3a" stroke-width="2.4"/>
+<path d="M17 143.6C26 148 40 150 56 148.4M25 145V151M33 147V152.6M41 147.6V153M49 147V152.6" fill="none" stroke="#8299ad" stroke-width="1.5"/>
+<path d="M56 146C58 145 60 143 61 141" fill="none" stroke="#1c2a3a" stroke-width="2.2"/>
+<path d="M42 108C45 102 51 99 60 100C62 107 60 114 53 116C47 117 43 113 42 108Z" fill="#fffdf4"/>
+<g clip-path="url(#konvojarma-e1)">
+<ellipse cx="51" cy="108.4" rx="6.6" ry="7.4" fill="url(#konvojarma-iris)"/>
+<ellipse cx="50.6" cy="109" rx="3.6" ry="5" fill="#1b1622"/>
+</g>
+<path d="M42 108C45 102 51 99 60 100C62 107 60 114 53 116C47 117 43 113 42 108Z" fill="none" stroke="#1c2a3a" stroke-width="2"/>
+<circle cx="47.4" cy="106.2" r="2.2" fill="#fff"/>
+<circle cx="51.4" cy="110.4" r="1" fill="#fff"/>
+<path d="M22 110C24 106 28 104 33 104C34 109 33 114 29 115C25 116 22 114 22 110Z" fill="#fffdf4"/>
+<g clip-path="url(#konvojarma-e2)">
+<ellipse cx="28" cy="110.4" rx="4.6" ry="5.6" fill="url(#konvojarma-iris)"/>
+<ellipse cx="27.7" cy="110.8" rx="2.6" ry="3.8" fill="#1b1622"/>
+</g>
+<path d="M22 110C24 106 28 104 33 104C34 109 33 114 29 115C25 116 22 114 22 110Z" fill="none" stroke="#1c2a3a" stroke-width="2"/>
+<circle cx="26" cy="108.6" r="1.7" fill="#fff"/>
+<circle cx="28.6" cy="111.6" r=".8" fill="#fff"/>
+<g fill="url(#konvojarma-fn)" stroke="#1c2a3a" stroke-width="2.2">
+<path d="M38 104C44 94 54 92 66 96L64 102C56 99 48 101 42 108Z"/>
+<path d="M19 108C21 102 26 99 34 99L34 104C29 104 24 106 21 111Z"/>
+</g>
+<path d="M44 99C50 95 56 95 62 96" fill="none" stroke="#fff" stroke-width="1.6"/>
+</g>
+</svg>

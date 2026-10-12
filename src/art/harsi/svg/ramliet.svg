@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="ramliet-g" gradientUnits="userSpaceOnUse" x1="40" y1="60" x2="130" y2="160"><stop offset="0" stop-color="#f9a872"/><stop offset=".55" stop-color="#e5784a"/></linearGradient>
+<linearGradient id="ramliet-leg" x1="0" x2="1"><stop offset=".58" stop-color="#e5784a"/><stop offset=".58" stop-color="#b9533e"/></linearGradient>
+<linearGradient id="ramliet-far" x1="0" x2="1"><stop offset=".5" stop-color="#c8603e"/><stop offset=".5" stop-color="#a2483a"/></linearGradient>
+<radialGradient id="ramliet-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#a6eaff"/><stop offset=".5" stop-color="#2a86d0"/><stop offset="1" stop-color="#0f2e66"/></radialGradient>
+<clipPath id="ramliet-cb"><path d="M78 104C94 96 122 98 142 108C162 118 174 134 172 152C170 166 156 172 136 172C114 172 94 170 84 160C72 148 68 116 78 104Z"/></clipPath>
+<clipPath id="ramliet-ch"><path d="M62 58C80 58 94 70 94 88C94 104 84 114 70 118C58 121 42 121 30 117C18 113 12 105 14 95C16 85 24 79 34 76C40 64 50 58 62 58Z"/></clipPath>
+<clipPath id="ramliet-ct"><path d="M160 166C178 168 192 156 192 136C192 112 180 88 158 86C142 86 132 98 136 110C139 118 150 120 154 113C156 108 152 104 148 105C158 100 172 110 174 128C176 144 168 152 158 150Z"/></clipPath>
+<clipPath id="ramliet-e1"><ellipse cx="68" cy="84" rx="9.5" ry="12"/></clipPath>
+<clipPath id="ramliet-e2"><ellipse cx="40" cy="86" rx="7" ry="10.6"/></clipPath>
+</defs>
+<ellipse cx="104" cy="184" rx="64" ry="7" fill="#1d2b33" opacity="0.22"/>
+<g fill="#5c2214" stroke="#5c2214" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M60 116H80V140C80 148 74 152 70 160C69 162 70 165 72 166L76 169C79 171 80 175 77 177C75 178 72 178 70 176C68 178 64 178 62 176C60 177 56 177 56 175C55 171 59 168 62 166C62 158 64 152 64 146C60 140 60 128 60 116Z"/>
+<path d="M160 166C178 168 192 156 192 136C192 112 180 88 158 86C142 86 132 98 136 110C139 118 150 120 154 113C156 108 152 104 148 105C158 100 172 110 174 128C176 144 168 152 158 150Z"/>
+<path d="M78 104C94 96 122 98 142 108C162 118 174 134 172 152C170 166 156 172 136 172C114 172 94 170 84 160C72 148 68 116 78 104Z"/>
+<path d="M94 124C106 122 114 132 112 144C111 152 106 158 100 164C99 166 99 168 101 169C106 171 110 174 108 178C106 181 103 181 101 179C100 182 96 183 93 181C91 183 87 183 85 180C82 181 78 180 78 177C78 173 83 170 88 168C90 162 95 156 98 150C93 146 89 140 89 132C89 128 91 126 94 124Z"/>
+<path d="M138 132C152 126 166 132 168 146C168 154 162 160 156 166C155 168 157 170 159 171C164 173 166 177 163 179C161 181 158 181 156 179C155 182 151 183 148 181C146 183 142 183 140 180C137 181 133 180 133 177C133 173 138 170 142 169C146 166 150 162 152 158C142 156 134 144 138 132Z"/>
+<path d="M62 58C80 58 94 70 94 88C94 104 84 114 70 118C58 121 42 121 30 117C18 113 12 105 14 95C16 85 24 79 34 76C40 64 50 58 62 58Z"/>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M60 116H80V140C80 148 74 152 70 160C69 162 70 165 72 166L76 169C79 171 80 175 77 177C75 178 72 178 70 176C68 178 64 178 62 176C60 177 56 177 56 175C55 171 59 168 62 166C62 158 64 152 64 146C60 140 60 128 60 116Z" fill="url(#ramliet-far)" stroke="#5c2214" stroke-width="2.5"/>
+<path d="M66 170V177M72 170L73 176" stroke="#5c2214" stroke-width="1.5"/>
+<g clip-path="url(#ramliet-ct)">
+<rect x="130" y="80" width="66" height="92" fill="url(#ramliet-g)"/>
+<path d="M150 150C172 160 188 150 194 120V172H150Z" fill="#b9533e"/>
+<path d="M170 100C164 94 156 92 148 94L140 100L150 112L160 104C166 104 172 110 176 120C182 136 178 148 170 152H196V96Z" fill="#c4603e" opacity=".55"/>
+<path d="M148 92C158 88 170 92 178 100C170 96 160 94 152 96Z" fill="#ffd0a0"/>
+<path d="M160 120C166 124 170 132 170 140M182 110C186 118 188 128 186 140M166 98C174 102 180 108 184 116" fill="none" stroke="#f9a872" stroke-width="2"/>
+</g>
+<path d="M160 166C178 168 192 156 192 136C192 112 180 88 158 86C142 86 132 98 136 110C139 118 150 120 154 113C156 108 152 104 148 105C158 100 172 110 174 128C176 144 168 152 158 150Z" fill="none" stroke="#5c2214" stroke-width="2.5"/>
+<circle cx="184" cy="132" r="3" fill="#6e2618"/><circle cx="183.6" cy="131.6" r="1.2" fill="#fff1d6"/><circle cx="182" cy="148" r="2.6" fill="#6e2618"/><circle cx="181.6" cy="147.6" r="1.0" fill="#fff1d6"/><circle cx="176" cy="104" r="2.4" fill="#6e2618"/><circle cx="175.6" cy="103.6" r="1.0" fill="#fff1d6"/>
+<g clip-path="url(#ramliet-cb)">
+<rect x="68" y="92" width="108" height="84" fill="url(#ramliet-g)"/>
+<path d="M68 148C100 166 146 166 176 132V176H68Z" fill="#fbe3c0"/>
+<path d="M68 160C104 176 146 174 176 146V176H68Z" fill="#e8bf98"/>
+<path d="M126 104C146 108 162 120 168 136C158 124 142 116 126 114Z" fill="#c4603e" opacity=".6"/>
+<path d="M74 116C86 124 92 138 90 160H68V116Z" fill="#9a3f3a"/>
+<path d="M98 106C110 101 124 101 136 105C124 105 110 107 100 112Z" fill="#ffd0a0"/>
+</g>
+<path d="M74 144C100 164 146 162 170 132" fill="none" stroke="#9a4a2e" stroke-width="2.5"/>
+<path d="M78 104C94 96 122 98 142 108C162 118 174 134 172 152C170 166 156 172 136 172C114 172 94 170 84 160C72 148 68 116 78 104Z" fill="none" stroke="#5c2214" stroke-width="2.5"/>
+<circle cx="110" cy="124" r="3.6" fill="#6e2618"/><circle cx="109.5" cy="123.5" r="1.4" fill="#fff1d6"/><circle cx="130" cy="118" r="3.4" fill="#6e2618"/><circle cx="129.5" cy="117.5" r="1.4" fill="#fff1d6"/><circle cx="150" cy="126" r="3.2" fill="#6e2618"/><circle cx="149.5" cy="125.5" r="1.3" fill="#fff1d6"/><circle cx="122" cy="138" r="3" fill="#6e2618"/><circle cx="121.5" cy="137.6" r="1.2" fill="#fff1d6"/><circle cx="144" cy="142" r="2.8" fill="#6e2618"/><circle cx="143.6" cy="141.6" r="1.1" fill="#fff1d6"/><circle cx="160" cy="140" r="2.4" fill="#6e2618"/><circle cx="159.6" cy="139.6" r="1.0" fill="#fff1d6"/><circle cx="100" cy="140" r="2.6" fill="#6e2618"/><circle cx="99.6" cy="139.6" r="1.0" fill="#fff1d6"/>
+<path d="M138 132C152 126 166 132 168 146C168 154 162 160 156 166C155 168 157 170 159 171C164 173 166 177 163 179C161 181 158 181 156 179C155 182 151 183 148 181C146 183 142 183 140 180C137 181 133 180 133 177C133 173 138 170 142 169C146 166 150 162 152 158C142 156 134 144 138 132Z" fill="url(#ramliet-leg)" stroke="#5c2214" stroke-width="2.5"/>
+<path d="M94 124C106 122 114 132 112 144C111 152 106 158 100 164C99 166 99 168 101 169C106 171 110 174 108 178C106 181 103 181 101 179C100 182 96 183 93 181C91 183 87 183 85 180C82 181 78 180 78 177C78 173 83 170 88 168C90 162 95 156 98 150C93 146 89 140 89 132C89 128 91 126 94 124Z" fill="url(#ramliet-leg)" stroke="#5c2214" stroke-width="2.5"/>
+<path d="M93 173V181M100 173L102 179M86 173L85 180M148 173V181M155 173L157 179M141 173L140 180" stroke="#5c2214" stroke-width="1.5"/>
+<path d="M93 129C98 127 103 129 106 133M140 136C146 132 154 132 159 136" fill="none" stroke="#ffd0a0" stroke-width="2"/>
+<g clip-path="url(#ramliet-ch)">
+<rect x="10" y="54" width="88" height="70" fill="url(#ramliet-g)"/>
+<path d="M96 70C92 92 86 106 72 114C64 118 54 120 46 121L98 126V70Z" fill="#b9533e"/>
+<path d="M10 102C28 106 52 108 72 104C82 102 88 108 88 116V126H10Z" fill="#fbe3c0"/>
+<path d="M10 112C32 120 60 120 82 112L88 126H10Z" fill="#e8bf98"/>
+<path d="M42 68C50 62 60 60 70 62C60 64 52 68 46 74Z" fill="#ffd0a0"/>
+<path d="M20 88C24 84 28 82 34 81" fill="none" stroke="#ffd0a0" stroke-width="2.5"/>
+<path d="M50 66C54 63 58 62 62 62" fill="none" stroke="#fff" stroke-width="2"/>
+</g>
+<path d="M16 101C32 106 54 107 72 104C80 102 86 106 88 112" fill="none" stroke="#9a4a2e" stroke-width="2.5"/>
+<path d="M62 58C80 58 94 70 94 88C94 104 84 114 70 118C58 121 42 121 30 117C18 113 12 105 14 95C16 85 24 79 34 76C40 64 50 58 62 58Z" fill="none" stroke="#5c2214" stroke-width="2.5"/>
+<circle cx="84" cy="70" r="2.4" fill="#6e2618"/><circle cx="83.6" cy="69.6" r="1.0" fill="#fff1d6"/><circle cx="56" cy="64" r="2" fill="#6e2618"/><circle cx="55.7" cy="63.7" r="0.8" fill="#fff1d6"/>
+<ellipse cx="20" cy="93" rx="2.2" ry="1.6" fill="#5c2214"/>
+<path d="M24 104C32 109 44 110 52 106C54 105 55 103 55 101" fill="none" stroke="#5c2214" stroke-width="2.2"/>
+<ellipse cx="78" cy="100" rx="6" ry="3.5" fill="#ff6a6a" opacity=".5"/>
+<ellipse cx="68" cy="84" rx="9.5" ry="12" fill="#fffdf4"/>
+<g clip-path="url(#ramliet-e1)">
+<ellipse cx="66.4" cy="86.1" rx="7.9" ry="10" fill="url(#ramliet-iris)"/>
+<ellipse cx="65.9" cy="87.1" rx="4.8" ry="6.5" fill="#1b1622"/>
+<path d="M55.3 69.4H80.7V77.7C74.3 74.6 61.7 74.6 55.3 78.8Z" fill="#e6c4c4"/>
+</g>
+<ellipse cx="68" cy="84" rx="9.5" ry="12" fill="none" stroke="#5c2214" stroke-width="2"/>
+<path d="M59 77.7C61.7 73 65.4 71.8 68.5 71.8C72.2 71.9 75.4 74.1 77.3 77.7" fill="none" stroke="#1b1622" stroke-width="3.5"/>
+<circle cx="62.5" cy="80.9" r="3.2" fill="#fff"/>
+<circle cx="68" cy="85.6" r="1.4" fill="#fff"/>
+<ellipse cx="40" cy="86" rx="7" ry="10.6" fill="#fffdf4"/>
+<g clip-path="url(#ramliet-e2)">
+<ellipse cx="38.8" cy="87.8" rx="5.8" ry="8.8" fill="url(#ramliet-iris)"/>
+<ellipse cx="38.4" cy="88.8" rx="3.6" ry="5.7" fill="#1b1622"/>
+<path d="M30.7 73.1H49.3V80.5C44.7 77.7 35.3 77.7 30.7 81.4Z" fill="#e6c4c4"/>
+</g>
+<ellipse cx="40" cy="86" rx="7" ry="10.6" fill="none" stroke="#5c2214" stroke-width="2"/>
+<path d="M33.4 80.5C35.3 76.3 38.1 75.2 40.4 75.2C43.1 75.3 45.4 77.2 46.8 80.5" fill="none" stroke="#1b1622" stroke-width="3.2"/>
+<circle cx="36" cy="83.2" r="2.6" fill="#fff"/>
+<circle cx="40" cy="87.4" r="1.2" fill="#fff"/>
+<g fill="#e5784a" stroke="#5c2214" stroke-width="1.2"><circle cx="138" cy="92" r="2.2"/><circle cx="131" cy="86" r="1.7"/><circle cx="124" cy="82" r="1.2"/><circle cx="142" cy="82" r="1.4"/><circle cx="134" cy="76" r="1"/></g>
+</g>
+</svg>

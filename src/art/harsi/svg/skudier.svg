@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="skudier-g" gradientUnits="userSpaceOnUse" x1="70" y1="112" x2="140" y2="176"><stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#d9e2ee"/></linearGradient>
+<linearGradient id="skudier-sk" gradientUnits="userSpaceOnUse" x1="44" y1="76" x2="116" y2="132"><stop offset="0" stop-color="#fff7ec"/><stop offset=".5" stop-color="#f6e2cc"/></linearGradient>
+<linearGradient id="skudier-st" gradientUnits="userSpaceOnUse" x1="40" y1="52" x2="128" y2="96"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#b3c1d3"/></linearGradient>
+<linearGradient id="skudier-rd" gradientUnits="userSpaceOnUse" x1="76" y1="118" x2="122" y2="172"><stop offset="0" stop-color="#ee6058"/><stop offset=".5" stop-color="#d23a3e"/></linearGradient>
+<linearGradient id="skudier-leg" x1="0" x2="1"><stop offset=".56" stop-color="#f4dfc8"/><stop offset=".56" stop-color="#d6b2a2"/></linearGradient>
+<linearGradient id="skudier-far" x1="0" x2="1"><stop offset=".5" stop-color="#dcc0ae"/><stop offset=".5" stop-color="#bf9c92"/></linearGradient>
+<linearGradient id="skudier-hf" x1="0" x2="1"><stop offset=".55" stop-color="#b3c1d3"/><stop offset=".55" stop-color="#7c8ca6"/></linearGradient>
+<radialGradient id="skudier-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#f2c86a"/><stop offset=".5" stop-color="#9a6030"/><stop offset="1" stop-color="#3a1e12"/></radialGradient>
+<clipPath id="skudier-cb"><path d="M80 124C88 117 100 115 110 116Q118 111 125 118Q134 118 135 127Q143 132 140 141Q146 149 140 157Q142 167 132 168Q126 177 116 173Q108 178 100 173L84 170C76 164 72 154 72 144C72 136 75 129 80 124Z"/></clipPath>
+<clipPath id="skudier-ch"><path d="M86 74C104 74 120 86 120 102C120 117 110 127 95 130C84 132 70 132 60 130C48 128 42 121 42 113C42 106 46 101 52 99C53 85 68 74 86 74Z"/></clipPath>
+<clipPath id="skudier-hm"><path d="M58 86C58 70 70 62 88 62C106 62 118 70 118 86Z"/></clipPath>
+<clipPath id="skudier-e1"><ellipse cx="90" cy="103" rx="9" ry="11.5"/></clipPath>
+<clipPath id="skudier-e2"><ellipse cx="63" cy="104" rx="7" ry="10.5"/></clipPath>
+</defs>
+<ellipse cx="104" cy="184" rx="44" ry="7" fill="#1d2b33" opacity="0.22"/>
+<g fill="#2b3954" stroke="#2b3954" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M136 146Q140 137 147 141Q156 143 151 152Q149 161 140 157Z"/>
+<path d="M80 124C88 117 100 115 110 116Q118 111 125 118Q134 118 135 127Q143 132 140 141Q146 149 140 157Q142 167 132 168Q126 177 116 173Q108 178 100 173L84 170C76 164 72 154 72 144C72 136 75 129 80 124Z"/>
+<path d="M84 160V174C84 177 86 179 89 179H97C100 179 101 177 100 174L99 160ZM104 162V176C104 180 107 182 111 182H120C124 182 125 179 124 176L122 162Z" fill="#5a3436" stroke="#5a3436"/>
+<path d="M78 120L114 118C116 134 118 150 120 166C106 173 90 173 76 168C76 152 76 136 78 120Z" fill="#4c1220" stroke="#4c1220"/>
+<path d="M54 92C46 87 34 89 27 97C35 102 46 101 53 98ZM114 94C123 94 135 100 140 110C132 114 120 110 114 104Z" fill="#5a3436" stroke="#5a3436"/>
+<path d="M86 74C104 74 120 86 120 102C120 117 110 127 95 130C84 132 70 132 60 130C48 128 42 121 42 113C42 106 46 101 52 99C53 85 68 74 86 74Z" fill="#5a3436" stroke="#5a3436"/>
+<path d="M58 86C58 70 70 62 88 62C106 62 118 70 118 86ZM38 74C46 84 64 92 88 93C110 94 126 88 136 76C128 84 110 87 88 87C66 87 50 82 38 74ZM66 70C70 61 79 55 90 55C101 55 108 59 112 67L108 69C103 64 96 62 88 62C79 63 72 66 69 72Z" fill="#24344c" stroke="#24344c"/>
+<path d="M122 136C134 132 145 124 151 113C154 106 151 100 145 99L131 86C127 90 123 92 120 92L137 109C133 115 127 119 120 122Z"/>
+<path d="M115 90C111 84 113 77 120 75C127 73 133 78 133 84C133 89 129 93 124 93Z" fill="#24344c" stroke="#24344c"/>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M136 146Q140 137 147 141Q156 143 151 152Q149 161 140 157Z" fill="#c4cedc" stroke="#2b3954" stroke-width="2.5"/>
+<path d="M141 147C144 145 147 146 148 149" fill="none" stroke="#ffffff" stroke-width="2"/>
+<g stroke="#5a3436" stroke-width="2.5">
+<path d="M84 160V174C84 177 86 179 89 179H97C100 179 101 177 100 174L99 160Z" fill="url(#skudier-far)"/>
+<path d="M104 162V176C104 180 107 182 111 182H120C124 182 125 179 124 176L122 162Z" fill="url(#skudier-leg)"/>
+</g>
+<g stroke="#24344c" stroke-width="2.5" fill="url(#skudier-hf)">
+<path d="M84 170H100V174C101 177 100 179 97 179H89C86 179 84 177 84 174Z"/>
+<path d="M104 172H124V176C125 179 124 182 120 182H111C107 182 104 180 104 176Z"/>
+<path d="M92 173V178.5M113.5 175V181.5" fill="none" stroke-width="1.5"/>
+</g>
+<g clip-path="url(#skudier-cb)">
+<rect x="70" y="110" width="80" height="70" fill="url(#skudier-g)"/>
+<path d="M70 150C92 172 128 172 146 134V180H70Z" fill="#a6b2c8"/>
+<path d="M118 120C128 124 134 134 134 144" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+<path d="M126 132C130 134 132 138 131 141M130 150C133 152 134 156 132 159M120 162C123 163 125 166 124 168" fill="none" stroke="#8d9ab4" stroke-width="2"/>
+</g>
+<path d="M80 124C88 117 100 115 110 116Q118 111 125 118Q134 118 135 127Q143 132 140 141Q146 149 140 157Q142 167 132 168Q126 177 116 173Q108 178 100 173L84 170C76 164 72 154 72 144C72 136 75 129 80 124Z" fill="none" stroke="#2b3954" stroke-width="2.5"/>
+<path d="M78 120L114 118C116 134 118 150 120 166C106 173 90 173 76 168C76 152 76 136 78 120Z" fill="url(#skudier-rd)" stroke="#4c1220" stroke-width="2.5"/>
+<path d="M108 122C110 136 112 152 113 166C116 166 118 166 120 166C118 150 116 134 114 118Z" fill="#a2283a"/>
+<path d="M77 162C90 167 106 167 120 161" fill="none" stroke="#f6d36a" stroke-width="2.5"/>
+<g fill="#fbf7ee" stroke="#4c1220" stroke-width="1.4">
+<path d="M97 144L91 132L97 135L103 132Z"/><path d="M97 144L91 156L97 153L103 156Z"/><path d="M97 144L86 138L89 144L86 150Z"/><path d="M97 144L108 138L105 144L108 150Z"/>
+</g>
+<path d="M54 92C46 87 34 89 27 97C35 102 46 101 53 98Z" fill="#e4c8b2" stroke="#5a3436" stroke-width="2.5"/>
+<path d="M49 93C43 92 37 93 33 96C38 98 44 98 49 96Z" fill="#f2a6a6"/>
+<g clip-path="url(#skudier-ch)">
+<rect x="40" y="72" width="82" height="62" fill="url(#skudier-sk)"/>
+<path d="M120 90C118 108 110 122 94 126C84 128 72 130 60 130L60 136H124V90Z" fill="#dcb5a6"/>
+<path d="M40 118C52 124 72 124 84 120L80 136H40Z" fill="#ecd0bc"/>
+<path d="M58 92C62 84 70 80 78 79C70 83 64 88 61 96Z" fill="#ffffff"/>
+</g>
+<path d="M86 74C104 74 120 86 120 102C120 117 110 127 95 130C84 132 70 132 60 130C48 128 42 121 42 113C42 106 46 101 52 99C53 85 68 74 86 74Z" fill="none" stroke="#5a3436" stroke-width="2.5"/>
+<path d="M114 94C123 94 135 100 140 110C132 114 120 110 114 104Z" fill="url(#skudier-leg)" stroke="#5a3436" stroke-width="2.5"/>
+<path d="M118 98C125 99 131 103 135 108C129 109 123 107 119 103Z" fill="#f2a6a6"/>
+<path d="M62 88Q60 82 66 82Q68 76 74 80Q78 75 84 80Q89 76 93 81Q98 78 101 83Q106 81 108 86Q112 85 113 90Q100 92 88 91Q74 91 62 88Z" fill="#e6ecf4" stroke="#2b3954" stroke-width="2"/>
+<g clip-path="url(#skudier-hm)">
+<rect x="56" y="58" width="64" height="30" fill="url(#skudier-st)"/>
+<path d="M108 62C116 70 118 78 118 88H98C106 82 110 72 108 62Z" fill="#7c8ca6"/>
+<path d="M66 80C66 72 72 67 80 65C74 70 72 75 72 81Z" fill="#ffffff"/>
+</g>
+<path d="M58 86C58 70 70 62 88 62C106 62 118 70 118 86Z" fill="none" stroke="#24344c" stroke-width="2.5"/>
+<path d="M66 70C70 61 79 55 90 55C101 55 108 59 112 67L108 69C103 64 96 62 88 62C79 63 72 66 69 72Z" fill="url(#skudier-st)" stroke="#24344c" stroke-width="2.5"/>
+<path d="M38 74C46 84 64 92 88 93C110 94 126 88 136 76C128 84 110 87 88 87C66 87 50 82 38 74Z" fill="url(#skudier-hf)" stroke="#24344c" stroke-width="2.5"/>
+<path d="M48 80C60 85 74 87 88 87" fill="none" stroke="#ffffff" stroke-width="1.6"/>
+<g fill="#f3c14a" stroke="#6a3a0e" stroke-width="1"><circle cx="66" cy="83" r="1.8"/><circle cx="88" cy="84.5" r="1.8"/><circle cx="110" cy="83" r="1.8"/></g>
+<path d="M76 66L76 60M73 63H79" stroke="#ffffff" stroke-width="1.8"/>
+<path d="M45 109C47 107 52 107 54 109C53 112 51 113 49.5 113C48 113 46 112 45 109Z" fill="#9c5a5e" stroke="#5a3436" stroke-width="1.2"/>
+<path d="M52 117C54 124 62 125 66 118C61 119.5 56 119.5 52 117Z" fill="#7a2e3a" stroke="#5a3436" stroke-width="1.6"/>
+<path d="M49.5 113C49.5 115 50.5 116.5 52 117" fill="none" stroke="#5a3436" stroke-width="1.6"/>
+<ellipse cx="102" cy="118" rx="6" ry="3.5" fill="#f2849e" opacity=".6"/>
+<ellipse cx="90" cy="103" rx="9" ry="11.5" fill="#fffdf4"/>
+<g clip-path="url(#skudier-e1)">
+<ellipse cx="88.5" cy="105" rx="7.5" ry="9.5" fill="url(#skudier-iris)"/>
+<ellipse cx="88" cy="106" rx="4.6" ry="6.2" fill="#1b1622"/>
+<path d="M78 89H102V97C96 94 84 94 78 98Z" fill="#c9cfe0"/>
+</g>
+<ellipse cx="90" cy="103" rx="9" ry="11.5" fill="none" stroke="#5a3436" stroke-width="2"/>
+<path d="M81.5 97C84 92.5 87.5 91.3 90.5 91.3C94 91.4 97 93.5 98.8 97" fill="none" stroke="#1b1622" stroke-width="3.5"/>
+<circle cx="84.8" cy="100" r="3.3" fill="#fff"/>
+<circle cx="90" cy="104.5" r="1.5" fill="#fff"/>
+<ellipse cx="63" cy="104" rx="7" ry="10.5" fill="#fffdf4"/>
+<g clip-path="url(#skudier-e2)">
+<ellipse cx="61.5" cy="106" rx="6" ry="8.5" fill="url(#skudier-iris)"/>
+<ellipse cx="61" cy="107" rx="3.7" ry="5.5" fill="#1b1622"/>
+<path d="M53 92H73V99C67 96 59 96 53 100Z" fill="#c9cfe0"/>
+</g>
+<ellipse cx="63" cy="104" rx="7" ry="10.5" fill="none" stroke="#5a3436" stroke-width="2"/>
+<path d="M56.4 98.5C58 94.5 60.5 93.5 63 93.5C65.5 93.5 68 95 69.4 98" fill="none" stroke="#1b1622" stroke-width="3.2"/>
+<circle cx="58.6" cy="101.5" r="2.7" fill="#fff"/>
+<circle cx="62.6" cy="105.5" r="1.2" fill="#fff"/>
+<path d="M122 136C134 132 145 124 151 113C154 106 151 100 145 99L131 86C127 90 123 92 120 92L137 109C133 115 127 119 120 122Z" fill="url(#skudier-g)" stroke="#2b3954" stroke-width="2.5"/>
+<path d="M126 128C134 124 141 118 145 110" fill="none" stroke="#a6b2c8" stroke-width="3"/>
+<path d="M115 90C111 84 113 77 120 75C127 73 133 78 133 84C133 89 129 93 124 93Z" fill="url(#skudier-hf)" stroke="#24344c" stroke-width="2.5"/>
+<path d="M118 80C120 78 123 77 126 78" fill="none" stroke="#ffffff" stroke-width="1.6"/>
+</g>
+</svg>

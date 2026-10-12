@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="aegilord-g" gradientUnits="userSpaceOnUse" x1="40" y1="20" x2="150" y2="170"><stop offset="0" stop-color="#eef3f8"/><stop offset=".5" stop-color="#9aa7b5"/></linearGradient>
+<linearGradient id="aegilord-far" x1="0" x2="1"><stop offset=".5" stop-color="#8796a8"/><stop offset=".5" stop-color="#65768d"/></linearGradient>
+<linearGradient id="aegilord-rd" gradientUnits="userSpaceOnUse" x1="50" y1="80" x2="170" y2="180"><stop offset="0" stop-color="#e2554c"/><stop offset=".5" stop-color="#c22f3a"/></linearGradient>
+<linearGradient id="aegilord-au" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0a0"/><stop offset=".5" stop-color="#f3c14a"/><stop offset="1" stop-color="#c88a26"/></linearGradient>
+<linearGradient id="aegilord-bl" x1="0" x2="1"><stop offset=".5" stop-color="#e8eef4"/><stop offset=".5" stop-color="#a6b4c3"/></linearGradient>
+<radialGradient id="aegilord-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#fffce8"/><stop offset=".45" stop-color="#ffd447"/><stop offset="1" stop-color="#e0761a"/></radialGradient>
+<clipPath id="aegilord-cc"><path d="M62 76C50 104 40 140 32 170C44 176 52 172 60 178C84 182 116 181 134 179C144 174 153 174 161 180C170 173 181 170 192 164C182 136 170 104 150 76Z"/></clipPath>
+<clipPath id="aegilord-cp"><path d="M88 28C88 18 99 12 114 12C133 12 151 21 165 37C168 42 163 47 157 43C153 37 146 33 139 33C146 40 147 49 140 53C136 45 128 39 118 39C122 45 120 51 114 54C109 46 100 40 91 38Z"/></clipPath>
+<clipPath id="aegilord-cl"><path d="M101 140L129 140L125 172L105 172Z"/></clipPath>
+<clipPath id="aegilord-cf"><path d="M80 117L122 115C124 120 125 125 124 130L78 132C77 127 77 122 80 117Z"/></clipPath>
+<clipPath id="aegilord-cb"><path d="M56 84C59 74 78 69 100 69C123 69 138 75 141 88C144 102 134 114 122 122L80 124C68 114 54 98 56 84Z"/></clipPath>
+<clipPath id="aegilord-cn"><path d="M110 76C114 62 138 54 158 61C171 66 176 82 172 96C162 92 144 92 132 96C120 92 111 86 110 76Z"/></clipPath>
+<clipPath id="aegilord-cg"><path d="M64 63L97 61L100 75C89 79 76 79 65 77Z"/></clipPath>
+<clipPath id="aegilord-ch"><path d="M80 22C93 22 102 32 102 46C102 56 99 63 93 67L66 69C59 68 53 64 47 58C51 54 54 48 56 40C59 29 68 22 80 22Z"/></clipPath>
+<clipPath id="aegilord-cs"><path d="M112 96C128 89 152 89 170 96C173 125 164 150 141 170C119 155 108 128 112 96Z"/></clipPath>
+</defs>
+<ellipse cx="110" cy="184" rx="84" ry="7" fill="#1d2b33" opacity="0.22"/>
+<g fill="#1f2c44" stroke="#1f2c44" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M62 76C50 104 40 140 32 170C44 176 52 172 60 178C84 182 116 181 134 179C144 174 153 174 161 180C170 173 181 170 192 164C182 136 170 104 150 76Z" fill="#4a0f1c" stroke="#4a0f1c"/>
+<path d="M88 28C88 18 99 12 114 12C133 12 151 21 165 37C168 42 163 47 157 43C153 37 146 33 139 33C146 40 147 49 140 53C136 45 128 39 118 39C122 45 120 51 114 54C109 46 100 40 91 38Z" fill="#4a0f1c" stroke="#4a0f1c"/>
+<path d="M26.5 111L38.5 111L37.5 168L32.5 182L27.5 168Z"/>
+<path d="M44 82C44 74 52 70 60 70C67 70 72 74 72 80C72 88 66 94 58 94C50 94 44 89 44 82Z"/>
+<path d="M48 86L60 92L44 106L34 98Z"/>
+<path d="M25 94C27 89 38 89 42 93L43 103C39 107 29 107 26 103Z"/>
+<path d="M67 140L92 140L87 170L66 170Z"/>
+<path d="M101 140L129 140L125 172L105 172Z"/>
+<path d="M50 179C47 175 52 171 60 170L86 168C88 172 89 176 88 179Z"/>
+<path d="M92 182C89 178 94 174 102 173L126 171C128 175 129 179 128 182Z"/>
+<path d="M73 127L97 129L95 144C87 147 79 146 73 142Z"/>
+<path d="M99 129L126 126L130 141C122 146 111 147 101 144Z"/>
+<path d="M80 117L122 115C124 120 125 125 124 130L78 132C77 127 77 122 80 117Z"/>
+<path d="M56 84C59 74 78 69 100 69C123 69 138 75 141 88C144 102 134 114 122 122L80 124C68 114 54 98 56 84Z"/>
+<path d="M64 63L97 61L100 75C89 79 76 79 65 77Z"/>
+<path d="M80 22C93 22 102 32 102 46C102 56 99 63 93 67L66 69C59 68 53 64 47 58C51 54 54 48 56 40C59 29 68 22 80 22Z"/>
+<path d="M59 35C61 24 70 15 82 15C92 15 99 20 101 29L95 31C92 26 87 23 80 23C72 23 65 27 63 37Z"/>
+<path d="M110 76C114 62 138 54 158 61C171 66 176 82 172 96C162 92 144 92 132 96C120 92 111 86 110 76Z"/>
+<path d="M112 96C128 89 152 89 170 96C173 125 164 150 141 170C119 155 108 128 112 96Z"/>
+<path d="M13 108C20 104 45 104 52 108L51 112C44 109 21 109 14 112Z" fill="#6a3a0e" stroke="#6a3a0e"/>
+<path d="M32.5 81.5a5 5 0 1 0 .1 0Z" fill="#6a3a0e" stroke="#6a3a0e"/>
+<path d="M79 143a7.5 7.5 0 1 0 .1 0ZM115 142a8.5 8.5 0 1 0 .1 0Z"/>
+<path d="M62 76C50 104 40 140 32 170C44 176 52 172 60 178C84 182 116 181 134 179C144 174 153 174 161 180C170 173 181 170 192 164C182 136 170 104 150 76Z"/>
+<path d="M88 28C88 18 99 12 114 12C133 12 151 21 165 37C168 42 163 47 157 43C153 37 146 33 139 33C146 40 147 49 140 53C136 45 128 39 118 39C122 45 120 51 114 54C109 46 100 40 91 38Z"/>
+<path d="M101 140L129 140L125 172L105 172Z"/>
+<path d="M80 117L122 115C124 120 125 125 124 130L78 132C77 127 77 122 80 117Z"/>
+<path d="M56 84C59 74 78 69 100 69C123 69 138 75 141 88C144 102 134 114 122 122L80 124C68 114 54 98 56 84Z"/>
+<path d="M110 76C114 62 138 54 158 61C171 66 176 82 172 96C162 92 144 92 132 96C120 92 111 86 110 76Z"/>
+<path d="M64 63L97 61L100 75C89 79 76 79 65 77Z"/>
+<path d="M80 22C93 22 102 32 102 46C102 56 99 63 93 67L66 69C59 68 53 64 47 58C51 54 54 48 56 40C59 29 68 22 80 22Z"/>
+<path d="M112 96C128 89 152 89 170 96C173 125 164 150 141 170C119 155 108 128 112 96Z"/>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<g clip-path="url(#aegilord-cc)"><rect x="34" y="72" width="160" height="112" fill="url(#aegilord-rd)"/>
+<path d="M150 76C162 110 170 146 174 184H194V72Z" fill="#8c1f38"/>
+<path d="M58 112C53 134 50 156 48 177M68 146C66 158 66 168 67 180M150 148C154 158 156 168 158 178" fill="none" stroke="#8c1f38" stroke-width="2.5"/>
+<path d="M157 84C171 112 182 140 191 166L181 171C175 144 164 116 152 92Z" fill="#f6eedc"/>
+<path d="M168 126C173 140 177 152 181 168" fill="none" stroke="#d6c8ae" stroke-width="2"/>
+<path d="M58 92C54 104 51 116 49 130" fill="none" stroke="#f08478" stroke-width="2"/></g>
+<path d="M62 76C50 104 40 140 32 170C44 176 52 172 60 178C84 182 116 181 134 179C144 174 153 174 161 180C170 173 181 170 192 164C182 136 170 104 150 76Z" fill="none" stroke="#4a0f1c" stroke-width="2.5"/>
+<g clip-path="url(#aegilord-cp)"><rect x="84" y="8" width="88" height="50" fill="#d63a3e"/>
+<path d="M90 36C104 32 122 31 138 33C150 35 160 40 170 48V60H84Z" fill="#8c1f38"/>
+<path d="M100 24C114 19 133 21 148 31M106 31C117 29 128 29 137 33" fill="none" stroke="#8c1f38" stroke-width="1.6"/>
+<path d="M93 26C97 18 106 14 118 15C109 18 103 22 98 30Z" fill="#ffb6a4"/></g>
+<path d="M88 28C88 18 99 12 114 12C133 12 151 21 165 37C168 42 163 47 157 43C153 37 146 33 139 33C146 40 147 49 140 53C136 45 128 39 118 39C122 45 120 51 114 54C109 46 100 40 91 38Z" fill="none" stroke="#4a0f1c" stroke-width="2.5"/>
+<path d="M26.5 111L38.5 111L37.5 168L32.5 182L27.5 168Z" fill="url(#aegilord-bl)" stroke="#1f2c44" stroke-width="2.5"/>
+<path d="M32.5 114V164" stroke="#7a8ea4" stroke-width="1.5"/>
+<path d="M13 108C20 104 45 104 52 108L51 112C44 109 21 109 14 112Z" fill="url(#aegilord-au)" stroke="#6a3a0e" stroke-width="2.5"/>
+<g stroke="#1f2c44" stroke-width="2.5" fill="url(#aegilord-far)"><path d="M48 86L60 92L44 106L34 98Z"/><path d="M44 82C44 74 52 70 60 70C67 70 72 74 72 80C72 88 66 94 58 94C50 94 44 89 44 82Z"/></g>
+<path d="M47 87C53 91 61 92 69 89" fill="none" stroke="#f3c14a" stroke-width="2"/>
+<path d="M25 94C27 89 38 89 42 93L43 103C39 107 29 107 26 103Z" fill="url(#aegilord-far)" stroke="#1f2c44" stroke-width="2.5"/>
+<path d="M28 96H41M28 100H41" stroke="#1f2c44" stroke-width="1.5"/>
+<circle cx="32.5" cy="86.5" r="5" fill="url(#aegilord-au)" stroke="#6a3a0e" stroke-width="2.5"/>
+<circle cx="31" cy="84.9" r="1.4" fill="#fff"/>
+<g stroke="#1f2c44" stroke-width="2.5" fill="url(#aegilord-far)"><path d="M67 140L92 140L87 170L66 170Z"/><path d="M50 179C47 175 52 171 60 170L86 168C88 172 89 176 88 179Z"/></g>
+<path d="M58 175C66 174 76 173 86 173" fill="none" stroke="#1f2c44" stroke-width="1.6"/>
+<circle cx="79" cy="150.5" r="7.5" fill="url(#aegilord-far)" stroke="#1f2c44" stroke-width="2.5"/>
+<g clip-path="url(#aegilord-cl)"><rect x="100" y="144" width="30" height="30" fill="url(#aegilord-g)"/>
+<path d="M118 148C120 158 118 166 120 174H130V146Z" fill="#1d3a66" opacity=".38"/>
+<path d="M110 158V167" stroke="#fff" stroke-width="2"/></g>
+<path d="M101 140L129 140L125 172L105 172Z" fill="none" stroke="#1f2c44" stroke-width="2.5"/>
+<path d="M92 182C89 178 94 174 102 173L126 171C128 175 129 179 128 182Z" fill="url(#aegilord-g)" stroke="#1f2c44" stroke-width="2.5"/>
+<path d="M110 172C116 174 122 178 128 182H122C118 178 114 176 110 175Z" fill="#1d3a66" opacity=".38"/>
+<path d="M98 177C106 176 116 175 126 175" fill="none" stroke="#1f2c44" stroke-width="1.6"/>
+<circle cx="115" cy="150.5" r="8.5" fill="url(#aegilord-g)" stroke="#1f2c44" stroke-width="2.5"/>
+<path d="M117 155.5C121 154.5 123 150.5 122 146.5" fill="none" stroke="#1d3a66" stroke-width="2.5" opacity=".38"/>
+<circle cx="115" cy="150.5" r="2.3" fill="url(#aegilord-au)" stroke="#6a3a0e" stroke-width="1.2"/>
+<path d="M73 127L97 129L95 144C87 147 79 146 73 142Z" fill="url(#aegilord-far)" stroke="#1f2c44" stroke-width="2.5"/>
+<path d="M99 129L126 126L130 141C122 146 111 147 101 144Z" fill="url(#aegilord-g)" stroke="#1f2c44" stroke-width="2.5"/>
+<path d="M102 137C112 138 122 137 129 134M74 136C81 137 88 138 96 138" fill="none" stroke="#1f2c44" stroke-width="1.8"/>
+<g clip-path="url(#aegilord-cf)"><rect x="70" y="112" width="60" height="28" fill="url(#aegilord-g)"/>
+<path d="M79 124C94 126 110 125 124 122" fill="none" stroke="#1f2c44" stroke-width="1.8"/>
+<path d="M112 115C118 121 120 127 118 133H132V113Z" fill="#1d3a66" opacity=".38"/></g>
+<path d="M80 117L122 115C124 120 125 125 124 130L78 132C77 127 77 122 80 117Z" fill="none" stroke="#1f2c44" stroke-width="2.5"/>
+<g clip-path="url(#aegilord-cb)"><rect x="52" y="66" width="94" height="62" fill="url(#aegilord-g)"/>
+<path d="M141 86C142 104 130 118 104 124L148 128V86Z" fill="#1d3a66" opacity=".38"/>
+<path d="M54 78C76 86 100 86 114 80L114 66H54Z" fill="#1d3a66" opacity=".45"/>
+<path d="M78 118C92 122 108 121 122 116" fill="none" stroke="#6a3a0e" stroke-width="5"/>
+<path d="M78 118C92 122 108 121 122 116" fill="none" stroke="#f3c14a" stroke-width="2.6"/>
+<path d="M104 82C103 94 104 106 106 118" fill="none" stroke="#fff" stroke-width="2"/>
+<path d="M66 90C68 81 74 77 82 76C77 81 73 87 72 98Z" fill="#fff"/></g>
+<path d="M56 84C59 74 78 69 100 69C123 69 138 75 141 88C144 102 134 114 122 122L80 124C68 114 54 98 56 84Z" fill="none" stroke="#1f2c44" stroke-width="2.5"/>
+<path d="M90 97L85.5 87L90 90.6L94.5 87ZM90 97L99 92L95.8 97L99 102ZM90 97L94.5 107L90 103.4L85.5 107ZM90 97L81 102L84.2 97L81 92Z" fill="url(#aegilord-au)" stroke="#6a3a0e" stroke-width="1.4"/>
+<g clip-path="url(#aegilord-cn)"><rect x="106" y="52" width="72" height="48" fill="url(#aegilord-g)"/>
+<path d="M172 72C174 86 166 92 140 96L178 100V70Z" fill="#1d3a66" opacity=".38"/>
+<path d="M114 84C126 89 148 89 171 86" fill="none" stroke="#6a3a0e" stroke-width="5"/>
+<path d="M114 84C126 89 148 89 171 86" fill="none" stroke="#f3c14a" stroke-width="2.6"/>
+<path d="M118 70C125 62 137 59 148 60C140 62 130 66 124 75Z" fill="#fff"/></g>
+<path d="M110 76C114 62 138 54 158 61C171 66 176 82 172 96C162 92 144 92 132 96C120 92 111 86 110 76Z" fill="none" stroke="#1f2c44" stroke-width="2.5"/>
+<g clip-path="url(#aegilord-cg)"><rect x="60" y="58" width="44" height="24" fill="url(#aegilord-g)"/>
+<path d="M64 70C77 73 90 72 99 69" fill="none" stroke="#1f2c44" stroke-width="1.8"/>
+<path d="M86 61C91 67 93 73 93 81H104V59Z" fill="#1d3a66" opacity=".38"/></g>
+<path d="M64 63L97 61L100 75C89 79 76 79 65 77Z" fill="none" stroke="#1f2c44" stroke-width="2.5"/>
+<g clip-path="url(#aegilord-ch)"><rect x="40" y="18" width="66" height="54" fill="url(#aegilord-g)"/>
+<path d="M57 38C55 47 51 54 47 58L30 62V28Z" fill="#1d3a66" opacity=".22"/>
+<path d="M102 40C103 56 95 68 78 72L106 78V40Z" fill="#1d3a66" opacity=".38"/>
+<path d="M47 59C60 61 80 59 99 56" fill="none" stroke="#1f2c44" stroke-width="2"/>
+<path d="M60 64L64 63.4M68 65L72 64.4M76 65.2L80 64.6" stroke="#1f2c44" stroke-width="2"/>
+<path d="M48 47C58 43 72 41 82 41C88 41 93 41.6 97 43L97.6 50C91 50.6 83 51.4 75 52.4C65 53.6 57 55.4 49 58Z" fill="#1a2030"/>
+<path d="M47 45C58 39 75 36.4 98 38.6" fill="none" stroke="#6a3a0e" stroke-width="5"/>
+<path d="M47 45C58 39 75 36.4 98 38.6" fill="none" stroke="#f3c14a" stroke-width="2.6"/>
+<path d="M61 36C67 29 75 27 84 27C76 30 71 34 67 41Z" fill="#fff"/>
+<path d="M57 42C56 49 53 54 48 58" fill="none" stroke="#fff" stroke-width="1.8"/></g>
+<path d="M80 22C93 22 102 32 102 46C102 56 99 63 93 67L66 69C59 68 53 64 47 58C51 54 54 48 56 40C59 29 68 22 80 22Z" fill="none" stroke="#1f2c44" stroke-width="2.5"/>
+<path d="M59 35C61 24 70 15 82 15C92 15 99 20 101 29L95 31C92 26 87 23 80 23C72 23 65 27 63 37Z" fill="url(#aegilord-g)" stroke="#1f2c44" stroke-width="2.5"/>
+<path d="M62 32C65 23 73 18 82 18C90 18 96 21 99 27" fill="none" stroke="#6a3a0e" stroke-width="4.4"/>
+<path d="M62 32C65 23 73 18 82 18C90 18 96 21 99 27" fill="none" stroke="#f3c14a" stroke-width="2.2"/>
+<circle cx="97" cy="53" r="3" fill="url(#aegilord-au)" stroke="#6a3a0e" stroke-width="1.5"/>
+<ellipse cx="74.5" cy="47.6" rx="11" ry="4.6" fill="#ffd85a" opacity=".3"/>
+<ellipse cx="55.9" cy="50.6" rx="7" ry="3.6" fill="#ffd85a" opacity=".3"/>
+<path d="M66.5 48.5C69.5 45 74.5 43.6 82 44C82.5 48.6 79.5 51.6 74.9 51.6C70.9 51.6 67.7 50.6 66.5 48.5Z" fill="url(#aegilord-iris)"/>
+<ellipse cx="73.9" cy="48" rx="1.7" ry="3" fill="#5a1e08"/>
+<path d="M51.5 51.6C53.1 48.8 55.5 47.6 59.5 47.6C60.1 50.8 58.5 53.2 55.9 53.4C53.5 53.6 52.1 53 51.5 51.6Z" fill="url(#aegilord-iris)"/>
+<ellipse cx="55.5" cy="50.8" rx="1.2" ry="2.1" fill="#5a1e08"/>
+<circle cx="71.1" cy="46.6" r="1.6" fill="#fff"/><circle cx="76.1" cy="49.4" r=".8" fill="#fff"/><circle cx="54.1" cy="49.8" r="1.1" fill="#fff"/>
+<g clip-path="url(#aegilord-cs)"><rect x="104" y="84" width="74" height="90" fill="url(#aegilord-g)"/>
+<path d="M118 101C131 95 151 95 164 101C166 124 158 145 141 161C125 148 115 125 118 101Z" fill="url(#aegilord-rd)" stroke="#f3c14a" stroke-width="2.5"/>
+<path d="M141 123L131.8 103L141 110.2L150.2 103ZM141 123L159.4 113L152.8 123L159.4 133ZM141 123L150.2 143L141 135.8L131.8 143ZM141 123L122.6 133L129.2 123L122.6 113Z" fill="#fbf7ee" stroke="#4a0f1c" stroke-width="1.5"/>
+<path d="M166 98C168 128 158 152 141 166L178 176V98Z" fill="#1d3a66" opacity=".38"/>
+<path d="M116 99C128 94 141 93 152 93C141 95 130 98 121 104Z" fill="#fff"/></g>
+<path d="M112 96C128 89 152 89 170 96C173 125 164 150 141 170C119 155 108 128 112 96Z" fill="none" stroke="#1f2c44" stroke-width="2.5"/>
+</g>
+</svg>

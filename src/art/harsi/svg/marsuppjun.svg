@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="marsuppjun-g" gradientUnits="userSpaceOnUse" x1="70" y1="20" x2="150" y2="130"><stop offset="0" stop-color="#f58fae"/><stop offset=".55" stop-color="#c8466e"/></linearGradient>
+<linearGradient id="marsuppjun-arm" gradientUnits="userSpaceOnUse" x1="0" y1="40" x2="0" y2="184"><stop offset=".8" stop-color="#c8466e"/><stop offset=".8" stop-color="#9a3470"/></linearGradient>
+<linearGradient id="marsuppjun-far" gradientUnits="userSpaceOnUse" x1="0" y1="40" x2="0" y2="184"><stop offset=".8" stop-color="#a23a6c"/><stop offset=".8" stop-color="#7e2c66"/></linearGradient>
+<linearGradient id="marsuppjun-sl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a3a72"/><stop offset="1" stop-color="#2c2450"/></linearGradient>
+<radialGradient id="marsuppjun-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#fff27a"/><stop offset=".5" stop-color="#e0a020"/><stop offset="1" stop-color="#5a2410"/></radialGradient>
+<clipPath id="marsuppjun-ch"><path d="M60 108C50 74 72 28 114 18C152 10 176 38 172 76C168 106 148 126 118 130C88 134 66 126 60 108Z"/></clipPath>
+<clipPath id="marsuppjun-e1"><path d="M87 103.8C89.4 96.6 96.8 92.4 107.8 91.2C110.2 99 107.8 107.2 100.4 110.9C93.7 113.3 87.7 110.5 87 103.8Z"/></clipPath>
+<clipPath id="marsuppjun-e2"><path d="M64.5 104.5C66.2 98.8 71.2 96 78.7 96C80.3 102.6 78.7 109.2 73.7 111.5C69.1 113 65 110.1 64.5 104.5Z"/></clipPath>
+</defs>
+<ellipse cx="100" cy="184" rx="86" ry="7" fill="#1d2b33" opacity="0.22"/>
+<g fill="#4a0f2c" stroke="#4a0f2c" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M14 181C10 176 22 172 40 173C56 170 72 174 88 172C110 170 136 173 156 171C174 170 192 175 186 182C182 188 160 186 140 188C110 190 80 187 54 189C34 190 18 186 14 181Z" fill="#221536" stroke="#221536"/>
+<path d="M75 104C73 101 64 105 60 103C55 102 50 98 47 94C43 90 39 85 37 80C36 75 36 69 36 66C37 62 39 60 40 59C42 58 45 58 46 58C47 59 48 63 48 64C47 65 43 64 43 65C42 66 43 71 45 71C47 71 53 70 54 66C56 63 55 54 52 52C49 49 40 47 36 49C31 51 26 56 24 62C22 68 21 77 23 84C24 91 28 100 33 106C38 112 46 118 52 121C59 124 69 127 73 124C77 121 77 108 75 104Z"/><path d="M143 127C145 132 157 134 164 133C171 133 179 129 184 124C188 120 192 111 193 105C194 99 191 91 187 88C184 85 174 84 171 86C167 88 166 97 166 100C167 103 172 105 174 105C176 106 178 102 178 101C178 99 174 99 174 98C173 97 174 95 175 94C176 94 178 95 179 96C179 97 180 100 179 103C178 105 175 110 172 112C170 114 168 115 164 115C160 114 153 106 149 109C146 111 140 123 143 127Z"/>
+<path d="M60 108C50 74 72 28 114 18C152 10 176 38 172 76C168 106 148 126 118 130C88 134 66 126 60 108Z"/><path d="M77 122C71 122 65 133 60 138C54 144 48 149 43 153C39 157 34 160 31 161C28 163 25 161 24 160C22 159 22 157 23 156C23 155 28 154 28 153C29 151 28 147 26 147C23 147 17 149 15 152C14 156 13 164 16 168C19 171 27 175 33 175C39 174 46 170 53 167C59 163 66 158 72 154C79 149 91 144 91 138C92 133 82 122 77 122Z"/><path d="M117 136C115 140 121 148 124 154C127 160 130 166 135 170C140 175 148 180 154 181C160 182 168 180 172 176C175 173 175 164 174 160C173 157 166 155 163 155C161 155 160 159 161 161C161 162 165 163 166 164C167 165 166 167 164 168C163 168 161 169 158 167C156 165 151 161 149 158C146 154 145 151 144 146C142 141 143 130 139 128C134 127 120 131 117 136Z"/><path d="M95 130C90 132 91 142 90 148C88 154 84 159 85 165C85 171 88 181 93 184C98 188 109 188 114 186C119 184 122 176 122 172C122 168 116 165 114 164C112 163 110 167 110 168C110 169 114 171 114 172C114 173 112 174 110 174C109 174 104 173 103 172C102 170 102 169 103 167C105 164 108 161 110 156C113 151 120 142 117 138C115 134 99 128 95 130Z"/>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M14 181C10 176 22 172 40 173C56 170 72 174 88 172C110 170 136 173 156 171C174 170 192 175 186 182C182 188 160 186 140 188C110 190 80 187 54 189C34 190 18 186 14 181Z" fill="url(#marsuppjun-sl)" stroke="#221536" stroke-width="2.5"/>
+<path d="M24 179C40 176 56 176 70 178M124 177C140 175 156 175 172 178" fill="none" stroke="#7ce0c4" stroke-width="2"/>
+<path d="M30 183C46 181 60 181 76 183M120 182C138 180 156 180 176 182" fill="none" stroke="#c690f0" stroke-width="2"/>
+<path d="M75 104C73 101 64 105 60 103C55 102 50 98 47 94C43 90 39 85 37 80C36 75 36 69 36 66C37 62 39 60 40 59C42 58 45 58 46 58C47 59 48 63 48 64C47 65 43 64 43 65C42 66 43 71 45 71C47 71 53 70 54 66C56 63 55 54 52 52C49 49 40 47 36 49C31 51 26 56 24 62C22 68 21 77 23 84C24 91 28 100 33 106C38 112 46 118 52 121C59 124 69 127 73 124C77 121 77 108 75 104Z" fill="url(#marsuppjun-far)" stroke="#4a0f2c" stroke-width="2.5"/>
+<path d="M143 127C145 132 157 134 164 133C171 133 179 129 184 124C188 120 192 111 193 105C194 99 191 91 187 88C184 85 174 84 171 86C167 88 166 97 166 100C167 103 172 105 174 105C176 106 178 102 178 101C178 99 174 99 174 98C173 97 174 95 175 94C176 94 178 95 179 96C179 97 180 100 179 103C178 105 175 110 172 112C170 114 168 115 164 115C160 114 153 106 149 109C146 111 140 123 143 127Z" fill="url(#marsuppjun-far)" stroke="#4a0f2c" stroke-width="2.5"/>
+<g fill="#f2c4d4" stroke="#7a2450" stroke-width="1.2"><circle cx="27.6" cy="63.3" r="2.4"/><circle cx="31.5" cy="56.3" r="2.2"/><circle cx="37.1" cy="52" r="2.1"/><circle cx="44.1" cy="51.3" r="1.9"/><circle cx="50.2" cy="53.7" r="1.7"/><circle cx="52.7" cy="59.6" r="1.6"/><circle cx="52.3" cy="65.6" r="1.5"/><circle cx="188.1" cy="96.6" r="2.5"/><circle cx="184.7" cy="90.3" r="2.3"/><circle cx="178.4" cy="87.6" r="2"/><circle cx="172" cy="88.3" r="1.9"/><circle cx="168.8" cy="93.6" r="1.7"/><circle cx="168.5" cy="99.5" r="1.5"/></g>
+<g clip-path="url(#marsuppjun-ch)">
+<rect x="48" y="10" width="130" height="124" fill="url(#marsuppjun-g)"/>
+<path d="M172 56C178 100 156 126 116 130C92 132 72 128 58 118V136H180V56Z" fill="#8a3070"/>
+<path d="M74 124C92 130 112 130 132 124L134 136H72Z" fill="#6a2460"/>
+<path d="M166 92C160 110 146 122 124 126" fill="none" stroke="#e46a92" stroke-width="2"/>
+<g fill="#6a2460" stroke="#b6e84a" stroke-width="2.6"><circle cx="124" cy="38" r="7"/><circle cx="146" cy="52" r="5.5"/><circle cx="108" cy="30" r="4.5"/><circle cx="154" cy="76" r="5"/><circle cx="132" cy="64" r="4"/><circle cx="158" cy="98" r="4"/></g>
+<g fill="#a83a68"><circle cx="96" cy="46" r="2.4"/><circle cx="88" cy="62" r="2"/><circle cx="114" cy="56" r="1.8"/><circle cx="140" cy="88" r="2.2"/><circle cx="104" cy="74" r="1.6"/></g>
+<path d="M74 60C80 40 96 26 116 22C100 30 88 42 82 60Z" fill="#ffc8d8"/>
+</g>
+<path d="M60 108C50 74 72 28 114 18C152 10 176 38 172 76C168 106 148 126 118 130C88 134 66 126 60 108Z" fill="none" stroke="#4a0f2c" stroke-width="2.5"/>
+<g fill="#d8f68a" stroke="#3a5a12" stroke-width="1.6"><circle cx="16" cy="134" r="3.4"/><circle cx="12" cy="122" r="2.2"/><circle cx="184" cy="160" r="3"/><circle cx="178" cy="148" r="1.8"/></g>
+<path d="M77 122C71 122 65 133 60 138C54 144 48 149 43 153C39 157 34 160 31 161C28 163 25 161 24 160C22 159 22 157 23 156C23 155 28 154 28 153C29 151 28 147 26 147C23 147 17 149 15 152C14 156 13 164 16 168C19 171 27 175 33 175C39 174 46 170 53 167C59 163 66 158 72 154C79 149 91 144 91 138C92 133 82 122 77 122Z" fill="url(#marsuppjun-arm)" stroke="#4a0f2c" stroke-width="2.5"/>
+<path d="M117 136C115 140 121 148 124 154C127 160 130 166 135 170C140 175 148 180 154 181C160 182 168 180 172 176C175 173 175 164 174 160C173 157 166 155 163 155C161 155 160 159 161 161C161 162 165 163 166 164C167 165 166 167 164 168C163 168 161 169 158 167C156 165 151 161 149 158C146 154 145 151 144 146C142 141 143 130 139 128C134 127 120 131 117 136Z" fill="url(#marsuppjun-arm)" stroke="#4a0f2c" stroke-width="2.5"/>
+<path d="M95 130C90 132 91 142 90 148C88 154 84 159 85 165C85 171 88 181 93 184C98 188 109 188 114 186C119 184 122 176 122 172C122 168 116 165 114 164C112 163 110 167 110 168C110 169 114 171 114 172C114 173 112 174 110 174C109 174 104 173 103 172C102 170 102 169 103 167C105 164 108 161 110 156C113 151 120 142 117 138C115 134 99 128 95 130Z" fill="url(#marsuppjun-arm)" stroke="#4a0f2c" stroke-width="2.5"/>
+<path d="M79 125L62 141L46 156M98 131L93 150L89 166M121 134L128 153L138 168" fill="none" stroke="#ec7c9c" stroke-width="2"/>
+<g fill="#ffdbe4" stroke="#7a2450" stroke-width="1.2"><circle cx="31.6" cy="165.4" r="2.5"/><circle cx="25.8" cy="164.9" r="2.2"/><circle cx="21.6" cy="162.6" r="2"/><circle cx="20.1" cy="158.8" r="1.8"/><circle cx="20.4" cy="154.9" r="1.6"/><circle cx="23.6" cy="152.6" r="1.5"/><circle cx="105.3" cy="177.5" r="2.7"/><circle cx="111.3" cy="177.7" r="2.3"/><circle cx="114.6" cy="175.3" r="2"/><circle cx="116.3" cy="172.2" r="1.7"/><circle cx="114.3" cy="169.5" r="1.5"/><circle cx="162.3" cy="171.7" r="2.5"/><circle cx="166.4" cy="170.3" r="2.2"/><circle cx="168.3" cy="166.7" r="1.9"/><circle cx="168.5" cy="162.8" r="1.6"/><circle cx="165.5" cy="160.7" r="1.5"/></g>
+<g fill="#4a1238" stroke="#b6e84a" stroke-width="2"><circle cx="68" cy="146" r="2.6"/><circle cx="101" cy="150" r="2.8"/><circle cx="136" cy="152" r="2.6"/></g>
+<path d="M82 120C86 124 92 124 96 121" fill="none" stroke="#4a0f2c" stroke-width="2.4"/>
+<path d="M88 122.5L90 127L92 122.5Z" fill="#fff6e0" stroke="#4a0f2c" stroke-width="1"/>
+<path d="M87 103.8C89.4 96.6 96.8 92.4 107.8 91.2C110.2 99 107.8 107.2 100.4 110.9C93.7 113.3 87.7 110.5 87 103.8Z" fill="#fffdf4"/>
+<g clip-path="url(#marsuppjun-e1)">
+<ellipse cx="97.2" cy="103" rx="7.8" ry="8.5" fill="url(#marsuppjun-iris)"/>
+<ellipse cx="96.8" cy="103.5" rx="4.4" ry="5.7" fill="#1b1622"/>
+</g>
+<path d="M87 103.8C89.4 96.6 96.8 92.4 107.8 91.2C110.2 99 107.8 107.2 100.4 110.9C93.7 113.3 87.7 110.5 87 103.8Z" fill="none" stroke="#4a0f2c" stroke-width="2"/>
+<path d="M86.3 104.5C89.4 96.6 96.8 92 109.5 90.3" fill="none" stroke="#1b1622" stroke-width="3.4"/>
+<circle cx="93.3" cy="100.5" r="2.9" fill="#fff"/>
+<circle cx="97.9" cy="104.9" r="1.3" fill="#fff"/>
+<path d="M64.5 104.5C66.2 98.8 71.2 96 78.7 96C80.3 102.6 78.7 109.2 73.7 111.5C69.1 113 65 110.1 64.5 104.5Z" fill="#fffdf4"/>
+<g clip-path="url(#marsuppjun-e2)">
+<ellipse cx="71.4" cy="104.8" rx="5.3" ry="7" fill="url(#marsuppjun-iris)"/>
+<ellipse cx="71.2" cy="105.2" rx="3" ry="4.7" fill="#1b1622"/>
+</g>
+<path d="M64.5 104.5C66.2 98.8 71.2 96 78.7 96C80.3 102.6 78.7 109.2 73.7 111.5C69.1 113 65 110.1 64.5 104.5Z" fill="none" stroke="#4a0f2c" stroke-width="2"/>
+<path d="M64 105C66.2 98.8 71.2 95.6 79.8 95.4" fill="none" stroke="#1b1622" stroke-width="3"/>
+<circle cx="68.7" cy="102.8" r="1.6" fill="#fff"/>
+<circle cx="71.9" cy="106.4" r="0.7" fill="#fff"/>
+
+<path d="M84 99C90 88 102 82 114 84C116 87 114 91 110 91C102 90 94 93 88 100Z" fill="#a83a68" stroke="#4a0f2c" stroke-width="2.2"/>
+<path d="M60 92C64 88 70 88 75 90C79 92 81 96 80 99C76 96 70 95 64 97C61 97 59 95 60 92Z" fill="#a83a68" stroke="#4a0f2c" stroke-width="2"/>
+</g>
+</svg>

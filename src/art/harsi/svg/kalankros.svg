@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="kalankros-g" gradientUnits="userSpaceOnUse" x1="30" y1="90" x2="120" y2="180"><stop offset="0" stop-color="#7cd0cc"/><stop offset=".55" stop-color="#2f8c96"/></linearGradient>
+<linearGradient id="kalankros-st" gradientUnits="userSpaceOnUse" x1="80" y1="16" x2="170" y2="130"><stop offset="0" stop-color="#f8e4b0"/><stop offset=".55" stop-color="#e2be7c"/></linearGradient>
+<linearGradient id="kalankros-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfe8f8"/><stop offset=".62" stop-color="#e8f8fc"/><stop offset=".62" stop-color="#3cb8d0"/></linearGradient>
+<linearGradient id="kalankros-leg" gradientUnits="userSpaceOnUse" x1="0" y1="136" x2="0" y2="182"><stop offset=".45" stop-color="#2f8c96"/><stop offset=".45" stop-color="#226c80"/></linearGradient>
+<linearGradient id="kalankros-far" x1="0" y1="0" x2="1" y2="1"><stop offset=".5" stop-color="#257682"/><stop offset=".5" stop-color="#1d5e72"/></linearGradient>
+<radialGradient id="kalankros-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#f2ff8c"/><stop offset=".5" stop-color="#6ab43a"/><stop offset="1" stop-color="#173a1c"/></radialGradient>
+<clipPath id="kalankros-cb"><path d="M30 130C30 110 54 100 84 100C120 98 160 106 178 122C186 134 176 148 160 152C130 160 70 162 48 154C36 150 30 142 30 130Z"/></clipPath>
+<clipPath id="kalankros-cr"><path d="M76 120C72 100 76 80 80 64C82 46 90 30 104 22C122 14 150 14 168 22C180 28 184 42 182 56C178 70 178 90 182 108C184 118 180 126 172 128C140 132 100 132 84 128C78 126 76 124 76 120Z"/></clipPath>
+<clipPath id="kalankros-cw"><path d="M112 104C110 88 112 68 120 58C128 50 142 48 150 56C158 66 158 86 156 104Z"/></clipPath>
+<clipPath id="kalankros-cc"><path d="M80 140C84 158 74 176 54 178C40 180 24 176 14 164C24 164 32 162 38 158C30 154 22 146 18 134C28 130 40 130 50 134C58 128 74 128 80 140Z"/></clipPath>
+<clipPath id="kalankros-e1"><path d="M65 77.5C67 71.4 73 67.9 82 66.9C84 73.4 82 80.5 76 83.5C70.5 85.6 65.6 83.2 65 77.5Z"/></clipPath>
+<clipPath id="kalankros-e2"><path d="M45.5 80.4C46.9 75.4 51.3 73 57.8 73C59.2 78.8 57.8 84.6 53.4 86.6C49.5 87.9 45.9 85.4 45.5 80.4Z"/></clipPath>
+</defs>
+<ellipse cx="102" cy="184" rx="84" ry="7" fill="#1d2b33" opacity="0.22"/>
+<g fill="#0d3440" stroke="#0d3440" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M65 152C62 153 59 160 58 164C56 168 57 172 58 175C60 178 63 181 64 182C66 183 68 181 68 180C68 179 66 175 66 173C65 171 65 170 66 168C68 166 75 162 75 160C74 157 68 152 65 152Z"/><path d="M117 157C119 160 131 158 135 159C138 160 138 160 137 163C137 167 132 178 132 181C132 184 133 186 136 183C138 180 146 170 147 165C148 159 146 152 141 149C137 145 124 141 119 143C115 144 114 155 117 157ZM139 153C142 156 153 152 157 154C161 155 160 156 161 161C162 165 163 178 164 181C165 184 167 185 168 181C169 177 172 166 171 159C170 153 168 146 163 142C158 139 145 137 141 139C137 140 137 151 139 153ZM158 146C161 148 173 143 178 144C182 145 182 147 183 151C185 156 187 169 188 172C189 176 191 176 192 172C193 168 194 155 193 149C191 142 188 135 182 132C177 129 162 128 158 131C154 133 155 143 158 146Z"/>
+<path d="M50 108C52 120 46 128 36 128C28 128 22 122 18 114C24 116 28 114 30 112C24 108 22 102 22 96C28 96 34 98 38 102C44 100 48 104 50 108Z"/>
+<path d="M30 130C30 110 54 100 84 100C120 98 160 106 178 122C186 134 176 148 160 152C130 160 70 162 48 154C36 150 30 142 30 130Z"/>
+<path d="M134 22L130 10L124 6M130 12L138 6M152 22L156 12L164 8M156 14L164 16M118 22L114 14" fill="none" stroke="#7a1e2e" stroke-width="13"/>
+<path d="M76 120C72 100 76 80 80 64C82 46 90 30 104 22C122 14 150 14 168 22C180 28 184 42 182 56C178 70 178 90 182 108C184 118 180 126 172 128C140 132 100 132 84 128C78 126 76 124 76 120Z" fill="#55361a" stroke="#55361a"/>
+<path d="M76 106V84M54 110V90" fill="none" stroke-width="15"/>
+<path d="M92 150L70 150" fill="none" stroke-width="20"/>
+<path d="M80 140C84 158 74 176 54 178C40 180 24 176 14 164C24 164 32 162 38 158C30 154 22 146 18 134C28 130 40 130 50 134C58 128 74 128 80 140Z"/>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M65 152C62 153 59 160 58 164C56 168 57 172 58 175C60 178 63 181 64 182C66 183 68 181 68 180C68 179 66 175 66 173C65 171 65 170 66 168C68 166 75 162 75 160C74 157 68 152 65 152Z" fill="#1d5e72" stroke="#0d3440" stroke-width="2.5"/>
+<path d="M117 157C119 160 131 158 135 159C138 160 138 160 137 163C137 167 132 178 132 181C132 184 133 186 136 183C138 180 146 170 147 165C148 159 146 152 141 149C137 145 124 141 119 143C115 144 114 155 117 157ZM139 153C142 156 153 152 157 154C161 155 160 156 161 161C162 165 163 178 164 181C165 184 167 185 168 181C169 177 172 166 171 159C170 153 168 146 163 142C158 139 145 137 141 139C137 140 137 151 139 153ZM158 146C161 148 173 143 178 144C182 145 182 147 183 151C185 156 187 169 188 172C189 176 191 176 192 172C193 168 194 155 193 149C191 142 188 135 182 132C177 129 162 128 158 131C154 133 155 143 158 146Z" fill="url(#kalankros-leg)" stroke="#0d3440" stroke-width="2.5"/>
+<path d="M126 148L138 152M146 144L160 146M164 136L178 136" fill="none" stroke="#7cd0cc" stroke-width="2"/>
+<path d="M138 166L146 164M164 162L172 162M186 154L192 156" fill="none" stroke="#0d3440" stroke-width="2"/>
+<path d="M50 108C52 120 46 128 36 128C28 128 22 122 18 114C24 116 28 114 30 112C24 108 22 102 22 96C28 96 34 98 38 102C44 100 48 104 50 108Z" fill="url(#kalankros-far)" stroke="#0d3440" stroke-width="2.5"/>
+<path d="M30 112C34 110 38 110 42 112" fill="none" stroke="#0d3440" stroke-width="2"/>
+<g clip-path="url(#kalankros-cb)">
+<rect x="26" y="96" width="160" height="70" fill="url(#kalankros-g)"/>
+<path d="M26 148C70 162 140 160 186 124V166H26Z" fill="#1f5a70"/>
+<path d="M40 116C50 106 64 102 80 102C66 106 54 112 46 120Z" fill="#b4ece4"/>
+</g>
+<path d="M30 130C30 110 54 100 84 100C120 98 160 106 178 122C186 134 176 148 160 152C130 160 70 162 48 154C36 150 30 142 30 130Z" fill="none" stroke="#0d3440" stroke-width="2.5"/>
+<path d="M134 22L130 10L124 6M130 12L138 6M152 22L156 12L164 8M156 14L164 16M118 22L114 14" fill="none" stroke="#f27a86" stroke-width="6"/>
+<path d="M129 14L125 9M155 16L160 11" fill="none" stroke="#ffc4cc" stroke-width="1.8"/>
+<g clip-path="url(#kalankros-cr)">
+<rect x="70" y="10" width="118" height="124" fill="url(#kalankros-st)"/>
+<path d="M184 30C176 50 174 80 180 110C170 124 140 128 104 128L84 134H190V30Z" fill="#c09258"/>
+<path d="M76 126C110 132 150 130 184 118V136H76Z" fill="#9c7040"/>
+<path d="M82 92C96 90 104 92 110 94M80 70C92 68 104 70 116 66M158 70C166 72 174 70 182 66M158 92C166 94 174 92 182 90M92 46C110 42 128 38 150 40C162 40 172 42 180 46M84 112H108M158 112C166 114 174 114 182 112" fill="none" stroke="#b08048" stroke-width="2"/>
+<path d="M90 40C96 30 106 24 118 22C108 28 100 34 96 44Z" fill="#fff4d6"/>
+<g fill="#a87a42"><ellipse cx="94" cy="58" rx="3" ry="2.2"/><ellipse cx="100" cy="80" rx="2.4" ry="1.8"/><ellipse cx="88" cy="102" rx="2.6" ry="2"/><ellipse cx="168" cy="82" rx="2.4" ry="1.8"/><ellipse cx="140" cy="30" rx="2.2" ry="1.6"/><ellipse cx="170" cy="100" rx="2" ry="1.5"/></g>
+<g fill="#f27a86" stroke="#7a1e2e" stroke-width="1.5"><circle cx="98" cy="122" r="3.4"/><circle cx="106" cy="125" r="2.4"/><circle cx="170" cy="120" r="3"/><circle cx="162" cy="124" r="2.2"/></g>
+</g>
+<path d="M76 120C72 100 76 80 80 64C82 46 90 30 104 22C122 14 150 14 168 22C180 28 184 42 182 56C178 70 178 90 182 108C184 118 180 126 172 128C140 132 100 132 84 128C78 126 76 124 76 120Z" fill="none" stroke="#55361a" stroke-width="2.5"/>
+<path d="M112 104C110 88 112 68 120 58C128 50 142 48 150 56C158 66 158 86 156 104Z" fill="#9c7040" stroke="#55361a" stroke-width="3.5"/>
+<g clip-path="url(#kalankros-cw)">
+<rect x="108" y="46" width="52" height="60" fill="url(#kalankros-sky)"/>
+<path d="M108 88C118 86 128 88 138 86C146 85 152 86 160 88" fill="none" stroke="#e8f8fc" stroke-width="2"/>
+<path d="M150 50C156 60 158 80 156 106H162V46Z" fill="#c09258"/>
+<path d="M108 60C116 54 128 52 140 52L146 46H108Z" fill="#9c7040"/>
+</g>
+<path d="M112 104C110 88 112 68 120 58C128 50 142 48 150 56C158 66 158 86 156 104Z" fill="none" stroke="#55361a" stroke-width="3.5"/>
+<path d="M76 106V84M54 110V90" fill="none" stroke="#2f8c96" stroke-width="8"/>
+<path d="M73 104V88M51 108V94" fill="none" stroke="#7cd0cc" stroke-width="2"/>
+<path d="M92 150L70 150" fill="none" stroke="#226c80" stroke-width="13"/>
+<g clip-path="url(#kalankros-cc)">
+<rect x="10" y="126" width="74" height="56" fill="url(#kalankros-g)"/>
+<path d="M10 170C40 182 70 176 84 146V184H10Z" fill="#1f5a70"/>
+<path d="M28 140C36 134 48 132 60 134C50 136 40 140 34 146Z" fill="#b4ece4"/>
+<g fill="#226c80"><circle cx="66" cy="146" r="2.4"/><circle cx="60" cy="158" r="2"/><circle cx="70" cy="160" r="1.8"/></g>
+</g>
+<path d="M80 140C84 158 74 176 54 178C40 180 24 176 14 164C24 164 32 162 38 158C30 154 22 146 18 134C28 130 40 130 50 134C58 128 74 128 80 140Z" fill="none" stroke="#0d3440" stroke-width="2.5"/>
+<path d="M38 158C46 154 56 154 64 158" fill="none" stroke="#0d3440" stroke-width="2.2"/>
+<g fill="#fff0de" stroke="#0d3440" stroke-width="1.2"><circle cx="16" cy="163" r="2.2"/><circle cx="20" cy="135" r="2.2"/><circle cx="20" cy="113" r="1.6"/><circle cx="23" cy="97" r="1.6"/></g>
+<path d="M40 128C46 133 54 133 60 128" fill="none" stroke="#0d3440" stroke-width="2.5"/>
+<path d="M44 130L46 134L48 131M52 131L54 134L56 130" fill="#fff6e0" stroke="#0d3440" stroke-width="1.2"/>
+<path d="M65 77.5C67 71.4 73 67.9 82 66.9C84 73.4 82 80.5 76 83.5C70.5 85.6 65.6 83.2 65 77.5Z" fill="#fffdf4"/>
+<g clip-path="url(#kalankros-e1)">
+<ellipse cx="73.2" cy="76.9" rx="6.4" ry="7.2" fill="url(#kalankros-iris)"/>
+<ellipse cx="72.9" cy="77.3" rx="3.6" ry="4.9" fill="#1b1622"/>
+</g>
+<path d="M65 77.5C67 71.4 73 67.9 82 66.9C84 73.4 82 80.5 76 83.5C70.5 85.6 65.6 83.2 65 77.5Z" fill="none" stroke="#0d3440" stroke-width="2"/>
+<path d="M64.4 78.1C67 71.4 73 67.5 83.4 66.1" fill="none" stroke="#1b1622" stroke-width="3.4"/>
+<circle cx="70" cy="74.7" r="2.4" fill="#fff"/>
+<circle cx="73.8" cy="78.4" r="1.1" fill="#fff"/>
+<path d="M45.5 80.4C46.9 75.4 51.3 73 57.8 73C59.2 78.8 57.8 84.6 53.4 86.6C49.5 87.9 45.9 85.4 45.5 80.4Z" fill="#fffdf4"/>
+<g clip-path="url(#kalankros-e2)">
+<ellipse cx="51.4" cy="80.7" rx="4.6" ry="6.1" fill="url(#kalankros-iris)"/>
+<ellipse cx="51.2" cy="81.1" rx="2.6" ry="4.1" fill="#1b1622"/>
+</g>
+<path d="M45.5 80.4C46.9 75.4 51.3 73 57.8 73C59.2 78.8 57.8 84.6 53.4 86.6C49.5 87.9 45.9 85.4 45.5 80.4Z" fill="none" stroke="#0d3440" stroke-width="2"/>
+<path d="M45.1 80.9C46.9 75.4 51.3 72.6 58.8 72.5" fill="none" stroke="#1b1622" stroke-width="3"/>
+<circle cx="49.1" cy="78.9" r="1.4" fill="#fff"/>
+<circle cx="51.8" cy="82.1" r="0.6" fill="#fff"/>
+
+<g fill="url(#kalankros-st)" stroke="#55361a" stroke-width="2.2">
+<path d="M62 74C64 64 74 60 86 62C88 64 87 68 84 68C76 67 70 70 66 76Z"/>
+<path d="M43 76C45 70 50 68 58 69C59 71 58 73 56 73C52 73 48 75 46 79Z"/>
+</g>
+</g>
+</svg>

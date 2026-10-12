@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="fossary-g" gradientUnits="userSpaceOnUse" x1="40" y1="80" x2="140" y2="170"><stop offset="0" stop-color="#b8d266"/><stop offset=".55" stop-color="#8aa83f"/></linearGradient>
+<linearGradient id="fossary-st" x1="0" x2="1"><stop offset=".62" stop-color="#ecce90"/><stop offset=".62" stop-color="#c49a5e"/></linearGradient>
+<linearGradient id="fossary-leg" x1="0" x2="1"><stop offset=".5" stop-color="#86a43c"/><stop offset=".5" stop-color="#617f3e"/></linearGradient>
+<linearGradient id="fossary-far" x1="0" x2="1"><stop offset=".5" stop-color="#617f3c"/><stop offset=".5" stop-color="#4a683e"/></linearGradient>
+<radialGradient id="fossary-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#f4cf62"/><stop offset=".5" stop-color="#a0681e"/><stop offset="1" stop-color="#3e2410"/></radialGradient>
+<clipPath id="fossary-cb"><path d="M88 152C84 122 102 98 132 96C162 94 182 116 180 142C179 156 172 162 160 162H100C92 162 89 158 88 152Z"/></clipPath>
+<clipPath id="fossary-cp"><path d="M84 134C82 114 94 102 110 102C120 102 126 110 126 122C126 138 118 150 102 152C92 153 85 146 84 134Z"/></clipPath>
+<clipPath id="fossary-ch"><path d="M60 86C80 86 96 100 96 119C96 138 84 150 64 151C44 152 26 142 26 122C26 102 40 86 60 86Z"/></clipPath>
+<clipPath id="fossary-e1"><ellipse cx="70" cy="115" rx="9" ry="11.5"/></clipPath>
+<clipPath id="fossary-e2"><ellipse cx="44" cy="117" rx="7" ry="10.5"/></clipPath>
+</defs>
+<ellipse cx="108" cy="184" rx="70" ry="7" fill="#1d2b33" opacity="0.22"/>
+<g fill="#2a4016" stroke="#2a4016" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M71 92C74 80 80 71 88 66M48 93C44 83 38 76 30 72" fill="none" stroke-width="8"/>
+<path d="M58 146L53 164C49 166 46 170 46 174C46 177 48 179 52 179H61C64 179 64 177 63 174L62 165L68 148ZM108 156L110 166C108 168 106 171 106 174C106 177 108 179 112 179H121C124 179 124 177 122 174L120 165L120 156Z"/>
+<path d="M90 148L84 166C80 168 77 172 77 176C77 180 80 182 85 182H94C97 182 97 179 96 176L95 168L101 151ZM128 158L127 168C124 170 122 173 122 177C122 180 125 182 130 182H139C142 182 142 179 141 176L140 168L141 158ZM158 156L166 168C163 170 162 173 162 177C162 180 165 182 170 182H180C183 182 183 179 181 176L179 168L172 152Z"/>
+<path d="M88 152C84 122 102 98 132 96C162 94 182 116 180 142C179 156 172 162 160 162H100C92 162 89 158 88 152Z"/>
+<path d="M84 134C82 114 94 102 110 102C120 102 126 110 126 122C126 138 118 150 102 152C92 153 85 146 84 134Z"/>
+<path d="M60 86C80 86 96 100 96 119C96 138 84 150 64 151C44 152 26 142 26 122C26 102 40 86 60 86Z"/>
+<path d="M54 90C53 84 54 78 57 74C62 76 67 82 67 90Z"/>
+<g stroke="#5e3d1e" fill="#5e3d1e"><path d="M113 104L112 85C112 82 113 81 116 81L121 82L125 81C128 81 129 83 129 86L129 102ZM134 101L133 72C133 69 134 68 137 68L142 69L148 67C151 67 153 69 153 72L154 101ZM159 106L162 85C162 82 164 82 167 83L171 85L174 84C176 85 177 87 176 90L172 110Z"/></g>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M71 92C74 80 80 71 88 66M48 93C44 83 38 76 30 72" fill="none" stroke="#86a43c" stroke-width="3.5"/>
+<g stroke="#2a4016" stroke-width="2.5">
+<path d="M58 146L53 164C49 166 46 170 46 174C46 177 48 179 52 179H61C64 179 64 177 63 174L62 165L68 148ZM108 156L110 166C108 168 106 171 106 174C106 177 108 179 112 179H121C124 179 124 177 122 174L120 165L120 156Z" fill="url(#fossary-far)"/>
+<path d="M90 148L84 166C80 168 77 172 77 176C77 180 80 182 85 182H94C97 182 97 179 96 176L95 168L101 151ZM128 158L127 168C124 170 122 173 122 177C122 180 125 182 130 182H139C142 182 142 179 141 176L140 168L141 158ZM158 156L166 168C163 170 162 173 162 177C162 180 165 182 170 182H180C183 182 183 179 181 176L179 168L172 152Z" fill="url(#fossary-leg)"/>
+<path d="M84 167H95M127 168H140M166 168H179M53 165H62M110 166H120" fill="none" stroke-width="2"/>
+</g>
+<path d="M80 177C82 175 85 175 87 176M125 178C127 176 130 176 132 177M165 178C167 176 170 176 172 177" fill="none" stroke="#b8d266" stroke-width="1.5"/>
+<g clip-path="url(#fossary-cb)">
+<rect x="82" y="92" width="102" height="72" fill="url(#fossary-g)"/>
+<path d="M112 100C140 96 166 106 182 136V92H112Z" fill="#a2c057"/>
+<path d="M82 144C112 158 154 156 184 124V166H82Z" fill="#648a44"/>
+<path d="M98 156C120 160 152 158 170 144" fill="none" stroke="#9cba4c" stroke-width="2"/>
+<path d="M120 120C136 112 156 114 168 124C154 119 138 119 124 124Z" fill="#e2f0a0"/>
+<circle cx="117" cy="125" r="2.4" fill="#fff"/>
+<g fill="#6a8a3a"><circle cx="142" cy="136" r="2.2"/><circle cx="160" cy="132" r="1.8"/><circle cx="166" cy="146" r="2"/><circle cx="150" cy="147" r="1.6"/><circle cx="128" cy="143" r="1.8"/><circle cx="174" cy="134" r="1.5"/></g>
+</g>
+<path d="M88 152C84 122 102 98 132 96C162 94 182 116 180 142C179 156 172 162 160 162H100C92 162 89 158 88 152Z" fill="none" stroke="#2a4016" stroke-width="2.5"/>
+<path d="M114 102C136 98 162 104 178 130" fill="none" stroke="#2a4016" stroke-width="2.5"/>
+<g fill="none" stroke="#4a6a28" stroke-width="1.8"><path d="M156 104C156 96 155 89 152 82M157 103C160 96 162 92 165 88M155 96C152 94 150 92 149 89"/></g>
+<g fill="#93ad62"><ellipse cx="153" cy="92" rx="1.6" ry="3" transform="rotate(-30 153 92)"/><ellipse cx="160" cy="96" rx="1.6" ry="3" transform="rotate(35 160 96)"/><ellipse cx="157" cy="88" rx="1.4" ry="2.6"/></g>
+<g stroke="#5e3d1e" stroke-width="2.5" fill="url(#fossary-st)">
+<path d="M113 104L112 85C112 82 113 81 116 81L121 82L125 81C128 81 129 83 129 86L129 102Z"/>
+<path d="M134 101L133 72C133 69 134 68 137 68L142 69L148 67C151 67 153 69 153 72L154 101Z"/>
+<path d="M159 106L162 85C162 82 164 82 167 83L171 85L174 84C176 85 177 87 176 90L172 110Z"/>
+</g>
+<g fill="#b98e55"><ellipse cx="117" cy="95" rx="1.6" ry="1.1"/><ellipse cx="139" cy="83" rx="2" ry="1.3"/><ellipse cx="143" cy="93" rx="1.3" ry="1"/><ellipse cx="166" cy="99" rx="1.4" ry="1"/></g><path d="M136 88L140 89L141 92M114 97L118 99" fill="none" stroke="#a5784a" stroke-width="1.3"/>
+<path d="M115 85L120 86M136 72L141 73M165 87L169 88" fill="none" stroke="#fff4d2" stroke-width="1.5"/>
+<g fill="#d27fcb" stroke="#5a2160" stroke-width="1.2"><circle cx="150" cy="81" r="2.6"/><circle cx="154.5" cy="80" r="2.4"/><circle cx="152" cy="76.5" r="2.3"/><circle cx="164" cy="87" r="2.3"/><circle cx="167.5" cy="84.5" r="2.1"/></g>
+<g clip-path="url(#fossary-cp)">
+<rect x="80" y="98" width="50" height="58" fill="url(#fossary-g)"/>
+<path d="M126 112C124 132 116 148 98 154H130Z" fill="#5b7e40"/>
+<path d="M92 112C98 106 106 104 114 105C106 108 100 112 96 118Z" fill="#e2f0a0"/>
+</g>
+<path d="M84 134C82 114 94 102 110 102C120 102 126 110 126 122C126 138 118 150 102 152C92 153 85 146 84 134Z" fill="none" stroke="#2a4016" stroke-width="2.5"/>
+<path d="M54 90C53 84 54 78 57 74C62 76 67 82 67 90Z" fill="url(#fossary-leg)" stroke="#2a4016" stroke-width="2.5"/>
+<g clip-path="url(#fossary-ch)">
+<rect x="24" y="84" width="74" height="70" fill="url(#fossary-g)"/>
+<path d="M96 98C94 116 90 134 72 148L98 158V98Z" fill="#648a44"/>
+<path d="M24 126C36 122 52 122 64 126C76 130 84 138 86 150L86 158H24Z" fill="#f2f0c8"/>
+<path d="M24 138C40 146 62 148 84 140L86 158H24Z" fill="#d6dca2"/>
+<path d="M32 130C38 126 46 125 54 126" fill="none" stroke="#fff" stroke-width="2.5"/>
+<path d="M38 100C44 92 54 89 66 89C56 92 48 96 42 104Z" fill="#e2f0a0"/>
+</g>
+<path d="M29 129C40 124 54 124 64 126C76 130 84 138 86 148" fill="none" stroke="#5c7230" stroke-width="2.5"/>
+<path d="M60 86C80 86 96 100 96 119C96 138 84 150 64 151C44 152 26 142 26 122C26 102 40 86 60 86Z" fill="none" stroke="#2a4016" stroke-width="2.5"/>
+<path d="M57 86C57 82 57 79 58 77" fill="none" stroke="#e2f0a0" stroke-width="1.8"/>
+<circle cx="89" cy="65" r="5" fill="#86a43c" stroke="#2a4016" stroke-width="2.5"/>
+<circle cx="30" cy="71" r="4.2" fill="#617f3c" stroke="#2a4016" stroke-width="2.5"/>
+<circle cx="87.5" cy="63.5" r="1.6" fill="#e2f0a0"/>
+<path d="M44 138C50 143 58 143 64 138" fill="none" stroke="#3c4a1e" stroke-width="2"/>
+<ellipse cx="82" cy="132" rx="5.5" ry="3.2" fill="#ff6a6a" opacity=".5"/>
+<ellipse cx="70" cy="115" rx="9" ry="11.5" fill="#fffdf4"/>
+<g clip-path="url(#fossary-e1)">
+<ellipse cx="68.5" cy="117" rx="7.5" ry="9.5" fill="url(#fossary-iris)"/>
+<ellipse cx="68" cy="118" rx="4.6" ry="6.2" fill="#1b1622"/>
+<path d="M58 101H82V109C76 106 64 106 58 110Z" fill="#cfd6c0"/>
+</g>
+<ellipse cx="70" cy="115" rx="9" ry="11.5" fill="none" stroke="#2a4016" stroke-width="2"/>
+<path d="M61.5 109C64 104.5 67.5 103.3 70.5 103.3C74 103.4 77 105.5 78.8 109" fill="none" stroke="#1b1622" stroke-width="3.5"/>
+<circle cx="64.8" cy="112" r="3.3" fill="#fff"/>
+<circle cx="70" cy="116.5" r="1.5" fill="#fff"/>
+<ellipse cx="44" cy="117" rx="7" ry="10.5" fill="#fffdf4"/>
+<g clip-path="url(#fossary-e2)">
+<ellipse cx="42.5" cy="119" rx="6" ry="8.5" fill="url(#fossary-iris)"/>
+<ellipse cx="42" cy="120" rx="3.7" ry="5.5" fill="#1b1622"/>
+<path d="M34 105H54V112C48 109 40 109 34 113Z" fill="#cfd6c0"/>
+</g>
+<ellipse cx="44" cy="117" rx="7" ry="10.5" fill="none" stroke="#2a4016" stroke-width="2"/>
+<path d="M37.4 111.5C39 107.5 41.5 106.5 44 106.5C46.5 106.5 49 108 50.4 111" fill="none" stroke="#1b1622" stroke-width="3.2"/>
+<circle cx="39.6" cy="114.5" r="2.7" fill="#fff"/>
+<circle cx="43.6" cy="118.5" r="1.2" fill="#fff"/>
+</g>
+</svg>

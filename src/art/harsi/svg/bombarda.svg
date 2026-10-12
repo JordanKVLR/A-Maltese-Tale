@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="bombarda-g" gradientUnits="userSpaceOnUse" x1="44" y1="66" x2="150" y2="170"><stop offset="0" stop-color="#ffd896"/><stop offset=".55" stop-color="#d4913f"/></linearGradient>
+<linearGradient id="bombarda-leg" x1="0" x2="1"><stop offset=".55" stop-color="#d4913f"/><stop offset=".55" stop-color="#a8602e"/></linearGradient>
+<linearGradient id="bombarda-far" x1="0" x2="1"><stop offset=".5" stop-color="#b06c34"/><stop offset=".5" stop-color="#8a4c28"/></linearGradient>
+<linearGradient id="bombarda-st" x1="0" y1="0" x2="1" y2="1"><stop offset=".5" stop-color="#ecd39c"/><stop offset=".5" stop-color="#c49a5e"/></linearGradient>
+<linearGradient id="bombarda-fl" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#fff2a8"/><stop offset=".45" stop-color="#ff9a2e"/><stop offset="1" stop-color="#e83a5a"/></linearGradient>
+<radialGradient id="bombarda-bore" cx=".55" cy=".55" r=".6"><stop offset="0" stop-color="#ffe27a"/><stop offset=".45" stop-color="#ff7a2a"/><stop offset="1" stop-color="#3a1410"/></radialGradient>
+<radialGradient id="bombarda-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#a8f4e2"/><stop offset=".5" stop-color="#2a9c8c"/><stop offset="1" stop-color="#103c3a"/></radialGradient>
+<clipPath id="bombarda-cb"><path d="M86 110C104 98 136 98 152 110C164 120 166 140 158 154C150 166 132 170 112 168C96 166 84 160 80 148C76 136 76 120 86 110Z"/></clipPath>
+<clipPath id="bombarda-ch"><path d="M76 70C98 70 114 84 114 104C114 122 102 134 84 136C68 138 52 132 46 120C40 108 44 92 52 82C58 74 66 70 76 70Z"/></clipPath>
+<clipPath id="bombarda-e1"><path d="M77 101C77 94 81.5 90 87 90C92.5 90 97 94 97 101C97 108 92.5 113 87 113C81.5 113 77 108 77 101Z"/></clipPath>
+<clipPath id="bombarda-e2"><path d="M55 103C55 96.5 58 93 62 93C66 93 69 96.5 69 103C69 109.5 66 113 62 113C58 113 55 109.5 55 103Z"/></clipPath>
+</defs>
+<ellipse cx="98" cy="184" rx="78" ry="7" fill="#1d2b33" opacity="0.22"/>
+<g fill="#4e2410" stroke="#4e2410" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M164 132H172" stroke-width="12"/><circle cx="176" cy="132" r="7"/>
+<path d="M64 136L64 170C60 171 58 174 58 176C58 179 61 179 64 179H76C79 179 80 177 80 174L80 138ZM120 156L120 172C118 174 118 176 119 178C120 179 122 179 124 179H134C136 179 137 177 136 174L134 156ZM86 150L86 172C82 173 80 176 80 178C80 181 83 182 86 182H100C103 182 104 180 104 177L102 152ZM136 154L136 174C133 175 132 177 132 179C132 181 134 182 137 182H151C154 182 155 180 155 177L152 156Z"/>
+<path d="M86 110C104 98 136 98 152 110C164 120 166 140 158 154C150 166 132 170 112 168C96 166 84 160 80 148C76 136 76 120 86 110Z"/>
+<path d="M52 86C48 76 52 66 60 66C67 66 70 72 68 80M94 78C94 66 102 60 110 62C116 64 117 72 110 84" fill="none" stroke-width="11"/>
+<path d="M76 70C98 70 114 84 114 104C114 122 102 134 84 136C68 138 52 132 46 120C40 108 44 92 52 82C58 74 66 70 76 70Z"/>
+<path d="M62 112C52 110 42 111 36 114C30 120 30 138 36 144C42 147 52 147 62 144Z"/>
+<ellipse cx="37" cy="129" rx="8" ry="16"/>
+<circle cx="32" cy="167" r="14" fill="#5e3d1e" stroke="#5e3d1e"/>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M164 132H172" stroke="#c07a38" stroke-width="5"/>
+<circle cx="176" cy="132" r="7" fill="url(#bombarda-leg)" stroke="#4e2410" stroke-width="2.5"/>
+<path d="M173 128C174 127 176 127 177 127" stroke="#fff2c8" stroke-width="1.8"/>
+<g stroke="#4e2410" stroke-width="2.5">
+<path d="M64 136L64 170C60 171 58 174 58 176C58 179 61 179 64 179H76C79 179 80 177 80 174L80 138Z" fill="url(#bombarda-far)"/><path d="M120 156L120 172C118 174 118 176 119 178C120 179 122 179 124 179H134C136 179 137 177 136 174L134 156Z" fill="url(#bombarda-far)"/>
+<path d="M86 150L86 172C82 173 80 176 80 178C80 181 83 182 86 182H100C103 182 104 180 104 177L102 152Z" fill="url(#bombarda-leg)"/><path d="M136 154L136 174C133 175 132 177 132 179C132 181 134 182 137 182H151C154 182 155 180 155 177L152 156Z" fill="url(#bombarda-leg)"/>
+</g>
+<path d="M68 176V179M74 176V179M90 177V182M96 177V182M141 177V182M147 177V182" stroke="#4e2410" stroke-width="1.6"/>
+<g clip-path="url(#bombarda-cb)">
+<rect x="74" y="96" width="94" height="76" fill="url(#bombarda-g)"/>
+<path d="M76 144C100 164 140 162 168 126V172H76Z" fill="#a8602e"/>
+<path d="M76 122C84 132 98 136 112 134V172H76Z" fill="#7e3e26" opacity=".5"/>
+<path d="M104 100C98 118 98 146 106 170" fill="none" stroke="#4e2410" stroke-width="7"/>
+<path d="M104 100C98 118 98 146 106 170" fill="none" stroke="#f0b860" stroke-width="3"/>
+<path d="M144 102C152 118 152 146 144 166" fill="none" stroke="#4e2410" stroke-width="7"/>
+<path d="M144 102C152 118 152 146 144 166" fill="none" stroke="#e8a250" stroke-width="3"/>
+<path d="M100 158C118 162 138 160 152 150" fill="none" stroke="#d68a46" stroke-width="2"/>
+<path d="M112 106C122 102 134 102 142 105C134 105 124 106 116 110Z" fill="#fff0c4"/>
+<path d="M90 114C94 110 98 108 101 107" fill="none" stroke="#fff" stroke-width="2"/>
+</g>
+<path d="M86 110C104 98 136 98 152 110C164 120 166 140 158 154C150 166 132 170 112 168C96 166 84 160 80 148C76 136 76 120 86 110Z" fill="none" stroke="#4e2410" stroke-width="2.5"/>
+<circle cx="126" cy="136" r="7" fill="url(#bombarda-leg)" stroke="#4e2410" stroke-width="2.5"/>
+<circle cx="124" cy="134" r="2" fill="#fff"/>
+<path d="M128 102C128 99 132 98 134 100" fill="none" stroke="#4e2410" stroke-width="2.5"/>
+<path d="M131 100C126 96 125 90 128 84C129 87 131 88 132 88C132 84 134 81 137 79C136 83 138 86 139 90C140 95 136 100 131 100Z" fill="url(#bombarda-fl)" stroke="#a8341a" stroke-width="1.8"/>
+<path d="M52 86C48 76 52 66 60 66C67 66 70 72 68 80M94 78C94 66 102 60 110 62C116 64 117 72 110 84" fill="none" stroke="#d4913f" stroke-width="5"/>
+<path d="M52 78C52 72 56 68 61 68M96 72C98 66 102 64 107 64" fill="none" stroke="#fff0c4" stroke-width="1.8"/>
+<g clip-path="url(#bombarda-ch)">
+<rect x="40" y="66" width="78" height="74" fill="url(#bombarda-g)"/>
+<path d="M114 94C114 118 102 132 80 136L116 142V94Z" fill="#a8602e"/>
+<path d="M58 80C64 75 72 73 80 73C72 76 66 80 62 86Z" fill="#fff0c4"/>
+<circle cx="57" cy="85" r="1.8" fill="#fff"/>
+</g>
+<path d="M76 70C98 70 114 84 114 104C114 122 102 134 84 136C68 138 52 132 46 120C40 108 44 92 52 82C58 74 66 70 76 70Z" fill="none" stroke="#4e2410" stroke-width="2.5"/>
+<path d="M62 112C52 110 42 111 36 114C30 120 30 138 36 144C42 147 52 147 62 144Z" fill="url(#bombarda-g)" stroke="#4e2410" stroke-width="2.5"/>
+<path d="M36 138C42 142 52 143 62 140V146H36Z" fill="#a8602e"/>
+<path d="M57 113C54 122 54 136 57 145" fill="none" stroke="#4e2410" stroke-width="6"/>
+<path d="M57 113C54 122 54 136 57 145" fill="none" stroke="#f0b860" stroke-width="2.6"/>
+<path d="M42 116C46 114 50 114 53 114" fill="none" stroke="#fff0c4" stroke-width="2"/>
+<ellipse cx="37" cy="129" rx="8" ry="16" fill="#e8a250" stroke="#4e2410" stroke-width="2.5"/>
+<ellipse cx="36" cy="129" rx="4.6" ry="10.5" fill="url(#bombarda-bore)" stroke="#4e2410" stroke-width="1.6"/>
+<path d="M33 116C32 118 31 121 31 124" fill="none" stroke="#fff" stroke-width="1.6"/>
+<path d="M17 106C12 106 11 100 15 98C14 93 20 91 23 94C25 90 31 91 31 96C35 97 34 103 30 104C28 107 21 108 17 106Z" fill="#f4f0f8" stroke="#7a7090" stroke-width="1.8"/>
+<path d="M17 100C18 97 21 96 23 97" fill="none" stroke="#fff" stroke-width="1.6"/>
+<circle cx="32" cy="167" r="14" fill="url(#bombarda-st)" stroke="#5e3d1e" stroke-width="2.5"/>
+<path d="M24 162C26 160 28 160 30 161M36 172C38 174 41 173 42 170M38 159L40 160" fill="none" stroke="#9a7444" stroke-width="1.8"/>
+<path d="M24 158C27 155 30 154 33 154" fill="none" stroke="#fff6dc" stroke-width="2"/>
+<ellipse cx="98" cy="120" rx="7" ry="4" fill="#f2849e" opacity=".55"/>
+<path d="M77 101C77 94 81.5 90 87 90C92.5 90 97 94 97 101C97 108 92.5 113 87 113C81.5 113 77 108 77 101Z" fill="#fffdf4"/>
+<g clip-path="url(#bombarda-e1)">
+<ellipse cx="85.8" cy="102" rx="7.6" ry="9.6" fill="url(#bombarda-iris)"/>
+<ellipse cx="85.4" cy="103" rx="4.6" ry="6.2" fill="#1b1622"/>
+<path d="M76 88H98V96C92 93 82 93 76 97Z" fill="#c9cfe0"/>
+</g>
+<path d="M77 101C77 94 81.5 90 87 90C92.5 90 97 94 97 101C97 108 92.5 113 87 113C81.5 113 77 108 77 101Z" fill="none" stroke="#4e2410" stroke-width="2"/>
+<path d="M78.4 96C81 91.6 84 90 87 90C91 90 94 92 96 96" fill="none" stroke="#1b1622" stroke-width="3.5"/>
+<circle cx="82" cy="98.6" r="3.2" fill="#fff"/>
+<circle cx="87.4" cy="103.6" r="1.5" fill="#fff"/>
+<path d="M55 103C55 96.5 58 93 62 93C66 93 69 96.5 69 103C69 109.5 66 113 62 113C58 113 55 109.5 55 103Z" fill="#fffdf4"/>
+<g clip-path="url(#bombarda-e2)">
+<ellipse cx="61.2" cy="103.6" rx="5.6" ry="8" fill="url(#bombarda-iris)"/>
+<ellipse cx="60.8" cy="104.4" rx="3.4" ry="5.2" fill="#1b1622"/>
+<path d="M54 90H70V97C65 94.6 59 94.6 54 98Z" fill="#c9cfe0"/>
+</g>
+<path d="M55 103C55 96.5 58 93 62 93C66 93 69 96.5 69 103C69 109.5 66 113 62 113C58 113 55 109.5 55 103Z" fill="none" stroke="#4e2410" stroke-width="2"/>
+<path d="M55.6 98C57.4 94.4 59.6 93 62 93C64.4 93 66.6 94.4 68.4 97.6" fill="none" stroke="#1b1622" stroke-width="3.2"/>
+<circle cx="58.4" cy="100" r="2.6" fill="#fff"/>
+<circle cx="62" cy="104.6" r="1.2" fill="#fff"/>
+<path d="M80 86C84 84 90 84 94 86M56 88C59 86.6 63 86.6 66 88" fill="none" stroke="#4e2410" stroke-width="2.5"/>
+</g>
+</svg>

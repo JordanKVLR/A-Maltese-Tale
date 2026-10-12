@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="granmastru-st" gradientUnits="userSpaceOnUse" x1="30" y1="20" x2="150" y2="170"><stop offset="0" stop-color="#f4f8fb"/><stop offset=".55" stop-color="#8d99ae"/></linearGradient>
+<linearGradient id="granmastru-rd" gradientUnits="userSpaceOnUse" x1="60" y1="94" x2="144" y2="166"><stop offset="0" stop-color="#ee5c56"/><stop offset=".55" stop-color="#c22e3a"/></linearGradient>
+<linearGradient id="granmastru-mn" gradientUnits="userSpaceOnUse" x1="80" y1="90" x2="180" y2="184"><stop offset="0" stop-color="#5a5e92"/><stop offset=".5" stop-color="#34365c"/></linearGradient>
+<linearGradient id="granmastru-sk" gradientUnits="userSpaceOnUse" x1="26" y1="42" x2="94" y2="98"><stop offset="0" stop-color="#fff6ea"/><stop offset=".5" stop-color="#f0d8bc"/></linearGradient>
+<linearGradient id="granmastru-hn" gradientUnits="userSpaceOnUse" x1="86" y1="38" x2="136" y2="102"><stop offset="0" stop-color="#fdeccc"/><stop offset=".6" stop-color="#d4a670"/></linearGradient>
+<linearGradient id="granmastru-au" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0a0"/><stop offset=".5" stop-color="#f3c14a"/><stop offset="1" stop-color="#c88a26"/></linearGradient>
+<linearGradient id="granmastru-leg" x1="0" x2="1"><stop offset=".5" stop-color="#c4cfdb"/><stop offset=".5" stop-color="#76839a"/></linearGradient>
+<linearGradient id="granmastru-far" x1="0" x2="1"><stop offset=".5" stop-color="#8794aa"/><stop offset=".5" stop-color="#5f6b84"/></linearGradient>
+<radialGradient id="granmastru-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#fff6c8"/><stop offset=".5" stop-color="#ff6f9a"/><stop offset="1" stop-color="#7a1a48"/></radialGradient>
+<clipPath id="granmastru-cb"><path d="M60 102C78 92 120 92 138 102C144 116 142 128 136 136C140 144 142 150 144 158C122 166 84 166 60 158C62 150 64 144 68 136C62 126 56 114 60 102Z"/></clipPath>
+<clipPath id="granmastru-ch"><path d="M66 41C85 41 98 54 98 71C98 85 88 95 76 97C63 98 48 98 37 97C26 95 17 89 17 82C17 74 22 69 28 63C33 51 48 41 66 41Z"/></clipPath>
+<clipPath id="granmastru-cm"><path d="M80 96C114 86 150 94 166 116C178 134 183 156 186 177C164 181 136 181 116 177ZM62 104C50 126 44 152 46 176L66 174L68 132Z"/></clipPath>
+<clipPath id="granmastru-e1"><path d="M61 74C63 68 68 65 77 66C79 72 77 77 72 79C66 80 62 78 61 74Z"/></clipPath>
+<clipPath id="granmastru-e2"><path d="M37 74C38 71 42 69 47 69C48 73 47 77 43 78C40 79 37 78 37 74Z"/></clipPath>
+</defs>
+<ellipse cx="104" cy="184" rx="80" ry="7" fill="#1d2b33" opacity="0.22"/>
+<circle cx="66" cy="57" r="46" fill="#ff9cc4" opacity=".25"/>
+<circle cx="66" cy="57" r="46" fill="none" stroke="#c88a26" stroke-width="5"/>
+<circle cx="66" cy="57" r="46" fill="none" stroke="#ffd65a" stroke-width="2.5"/>
+<g fill="#1a2438" stroke="#1a2438" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M80 96C114 86 150 94 166 116C178 134 183 156 186 177C164 181 136 181 116 177ZM62 104C50 126 44 152 46 176L66 174L68 132Z" fill="#141428" stroke="#141428"/>
+<path d="M88 39C87 28 98 15 114 14C125 13 134 18 136 28C127 22 118 24 112 29C105 35 98 39 94 45ZM94 39C100 28 112 23 125 25C134 27 140 32 142 41C133 36 123 36 116 39C109 43 101 45 96 45Z" fill="#420e1c" stroke="#420e1c"/>
+<path d="M55 49C42 39 20 41 13 56C8 69 15 82 28 80C35 78 37 71 33 67C30 71 22 71 22 63C22 54 33 51 44 54Z" fill="#553218" stroke="#553218"/>
+<path d="M74 152H96L94 170C94 175 91 179 86 179H67C63 179 63 175 66 173L75 170ZM106 152H130L128 172C128 177 126 182 120 182H101C96 182 96 177 100 175L107 172Z"/>
+<path d="M60 102C78 92 120 92 138 102C144 116 142 128 136 136C140 144 142 150 144 158C122 166 84 166 60 158C62 150 64 144 68 136C62 126 56 114 60 102Z" fill="#420e1c" stroke="#420e1c"/>
+<path d="M74 108C64 110 56 118 52 128L40 122C36 120 32 124 34 128L46 142C50 146 56 144 60 140L78 122Z"/><path d="M28 126C26 120 30 116 36 116C42 116 46 120 46 126C46 132 42 136 36 136C31 136 29 132 28 126Z"/><path d="M130 114C142 112 152 116 152 126L150 142C150 148 144 150 140 148C136 146 134 140 136 134L130 124Z"/><path d="M116 104C126 92 150 96 154 112C148 120 134 122 122 118Z"/>
+<path d="M16 115L48 140" stroke-width="12"/>
+<path d="M66 41C85 41 98 54 98 71C98 85 88 95 76 97C63 98 48 98 37 97C26 95 17 89 17 82C17 74 22 69 28 63C33 51 48 41 66 41Z" fill="#4a2a2a" stroke="#4a2a2a"/>
+<path d="M30 91Q22 98 31 104Q30 112 41 112Q46 120 55 115Q63 121 70 114Q79 117 82 108Q91 108 91 100Q98 97 92 91Z" fill="#26324c" stroke="#26324c"/>
+<path d="M87 52C101 38 127 38 138 56C147 73 140 95 122 100C107 104 96 93 98 80C100 71 109 65 116 71C109 73 105 78 109 85C112 93 123 93 129 84C134 73 129 58 116 54C107 51 98 56 92 62Z" fill="#553218" stroke="#553218"/>
+<path d="M54 45C54 28 63 17 76 17C88 17 98 28 96 43C88 36 81 32 72 32C65 32 57 38 54 45Z" fill="#6a3a0e" stroke="#6a3a0e"/><path d="M48 52C48 38 59 30 72 30C85 30 96 38 96 52Z"/><path d="M30 41C42 54 59 58 74 58C88 58 101 52 112 41C105 58 88 63 72 63C55 63 39 58 30 41Z"/>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<g clip-path="url(#granmastru-cm)">
+<rect x="42" y="84" width="148" height="104" fill="url(#granmastru-mn)"/>
+<path d="M152 104C168 128 172 156 172 186H192V100Z" fill="#24254a"/>
+<path d="M116 175C140 172 164 174 188 175V188H116Z" fill="#c22e3a"/>
+<path d="M50 166C56 168 62 168 68 166" fill="none" stroke="#c22e3a" stroke-width="6"/>
+</g>
+<path d="M80 96C114 86 150 94 166 116C178 134 183 156 186 177C164 181 136 181 116 177ZM62 104C50 126 44 152 46 176L66 174L68 132Z" fill="none" stroke="#141428" stroke-width="2.5"/>
+<g fill="#fbf7ee" stroke="#141428" stroke-width="1.2" transform="translate(162 148) scale(1.15)"><path d="M0 0L-6-14L0-10L6-14Z"/><path d="M0 0L-6 14L0 10L6 14Z"/><path d="M0 0L-14-6L-10 0L-14 6Z"/><path d="M0 0L14-6L10 0L14 6Z"/></g>
+<path d="M120 98C136 98 150 104 158 114" fill="none" stroke="#8488be" stroke-width="2"/>
+<path d="M88 39C87 28 98 15 114 14C125 13 134 18 136 28C127 22 118 24 112 29C105 35 98 39 94 45Z" fill="#fbf7ee" stroke="#420e1c" stroke-width="2.5"/>
+<path d="M94 39C100 28 112 23 125 25C134 27 140 32 142 41C133 36 123 36 116 39C109 43 101 45 96 45Z" fill="#e2414a" stroke="#420e1c" stroke-width="2.5"/>
+<path d="M96 37C98 28 105 21 114 18M101 40C109 32 120 28 131 30" fill="none" stroke="#d8dce8" stroke-width="2"/>
+<path d="M55 49C42 39 20 41 13 56C8 69 15 82 28 80C35 78 37 71 33 67C30 71 22 71 22 63C22 54 33 51 44 54Z" fill="#c79a64" stroke="#553218" stroke-width="2.5"/>
+<path d="M26 45L28 52M15 54L22 58M13 69L22 67" stroke="#8a6038" stroke-width="2"/>
+<g stroke="#1a2438" stroke-width="2.5">
+<path d="M74 152H96L94 170C94 175 91 179 86 179H67C63 179 63 175 66 173L75 170Z" fill="url(#granmastru-far)"/>
+<path d="M106 152H130L128 172C128 177 126 182 120 182H101C96 182 96 177 100 175L107 172Z" fill="url(#granmastru-leg)"/>
+<path d="M75 168C81 166 88 166 94 168M107 170C114 168 121 168 128 170" fill="none" stroke-width="2"/>
+<ellipse cx="85" cy="160" rx="10" ry="6.5" fill="url(#granmastru-far)"/>
+<ellipse cx="118" cy="161" rx="11" ry="7" fill="url(#granmastru-leg)"/>
+</g>
+<path d="M76 160H94M108 161H128" stroke="#f3c14a" stroke-width="2"/>
+<g clip-path="url(#granmastru-cb)">
+<rect x="54" y="90" width="92" height="78" fill="url(#granmastru-rd)"/>
+<path d="M126 100C138 116 136 128 130 136C136 142 140 150 140 166H148V96Z" fill="#962036"/>
+<path d="M54 146C82 162 116 162 148 144V168H54Z" fill="#962036"/>
+<path d="M62 152C86 162 118 162 142 152" fill="none" stroke="#f3c14a" stroke-width="3.5"/>
+<path d="M62 134C86 140 116 140 140 134" fill="none" stroke="#6a3a0e" stroke-width="8"/>
+<path d="M62 134C86 140 116 140 140 134" fill="none" stroke="#f3c14a" stroke-width="3.5"/>
+<path d="M66 106C70 100 78 97 86 96" fill="none" stroke="#ff8a7a" stroke-width="2.5"/>
+</g>
+<path d="M60 102C78 92 120 92 138 102C144 116 142 128 136 136C140 144 142 150 144 158C122 166 84 166 60 158C62 150 64 144 68 136C62 126 56 114 60 102Z" fill="none" stroke="#420e1c" stroke-width="2.5"/>
+<g fill="#fbf7ee" stroke="#420e1c" stroke-width="1.3" transform="translate(106 116) scale(1.05)"><path d="M0 0L-6-14L0-10L6-14Z"/><path d="M0 0L-6 14L0 10L6 14Z"/><path d="M0 0L-14-6L-10 0L-14 6Z"/><path d="M0 0L14-6L10 0L14 6Z"/></g>
+<circle cx="102" cy="138" r="5.5" fill="url(#granmastru-au)" stroke="#6a3a0e" stroke-width="2"/>
+<path d="M74 108C64 110 56 118 52 128L40 122C36 120 32 124 34 128L46 142C50 146 56 144 60 140L78 122Z" fill="url(#granmastru-far)" stroke="#1a2438" stroke-width="2.5"/>
+<path d="M56 130C62 124 68 120 74 116" fill="none" stroke="#f3c14a" stroke-width="2"/>
+<path d="M16 115L48 140" stroke="#6a3a0e" stroke-width="7"/>
+<path d="M16 115L48 140" stroke="url(#granmastru-au)" stroke-width="4"/>
+<circle cx="16" cy="115" r="4.5" fill="url(#granmastru-au)" stroke="#6a3a0e" stroke-width="2"/>
+<path d="M28 126C26 120 30 116 36 116C42 116 46 120 46 126C46 132 42 136 36 136C31 136 29 132 28 126Z" fill="url(#granmastru-st)" stroke="#1a2438" stroke-width="2.5"/>
+<path d="M34 120C36 124 36 130 34 134M40 119C42 124 42 130 40 134" fill="none" stroke="#1a2438" stroke-width="1.6"/>
+<path d="M130 114C142 112 152 116 152 126L150 142C150 148 144 150 140 148C136 146 134 140 136 134L130 124Z" fill="url(#granmastru-st)" stroke="#1a2438" stroke-width="2.5"/>
+<path d="M140 128C144 130 148 130 151 128" fill="none" stroke="#1a2438" stroke-width="2"/>
+<path d="M116 104C126 92 150 96 154 112C148 120 134 122 122 118Z" fill="url(#granmastru-st)" stroke="#1a2438" stroke-width="2.5"/>
+<path d="M122 112C132 114 144 114 153 108" fill="none" stroke="#f3c14a" stroke-width="2.5"/>
+<path d="M122 104C128 100 136 98 144 99" fill="none" stroke="#fff" stroke-width="2"/>
+<g clip-path="url(#granmastru-ch)">
+<rect x="14.9" y="39.5" width="84.6" height="60.7" fill="url(#granmastru-sk)"/>
+<path d="M97.7 63.4C95.8 83.6 86.6 94.7 71.9 96.5L99.5 100.2V63.4Z" fill="#d4a894"/>
+<path d="M22.2 65.2C24.1 61.6 27.8 57.9 31.4 56C28.7 59.7 26.8 63.4 25.9 68Z" fill="#fff"/>
+<path d="M28.7 59.7C25.9 65.2 25 72.6 25.9 78.1" fill="none" stroke="#d4a894" stroke-width="2"/>
+</g>
+<path d="M66 41C85 41 98 54 98 71C98 85 88 95 76 97C63 98 48 98 37 97C26 95 17 89 17 82C17 74 22 69 28 63C33 51 48 41 66 41Z" fill="none" stroke="#4a2a2a" stroke-width="2.5"/>
+<path d="M30 91Q22 98 31 104Q30 112 41 112Q46 120 55 115Q63 121 70 114Q79 117 82 108Q91 108 91 100Q98 97 92 91Z" fill="#f6f7fb" stroke="#26324c" stroke-width="2.5"/>
+<path d="M39 106Q46 109 52 106M59 110Q66 114 72 108M77 102Q83 104 87 100" fill="none" stroke="#b0b8cc" stroke-width="2"/>
+<path d="M18 79C19 76 22 75 24 77C26 79 25 82 22 84C19 84 18 82 18 79Z" fill="#9c5a5e" stroke="#4a2a2a" stroke-width="1.4"/>
+<path d="M23 86C28 89 37 89 44 85C42 93 37 97 31 97C26 96 23 92 23 86Z" fill="#7a2e3a" stroke="#4a2a2a" stroke-width="2"/>
+<path d="M28 93C31 91 35 91 38 94" fill="none" stroke="#e8707a" stroke-width="2"/>
+<path d="M87 52C101 38 127 38 138 56C147 73 140 95 122 100C107 104 96 93 98 80C100 71 109 65 116 71C109 73 105 78 109 85C112 93 123 93 129 84C134 73 129 58 116 54C107 51 98 56 92 62Z" fill="url(#granmastru-hn)" stroke="#553218" stroke-width="2.5"/>
+<path d="M98 49L101 56M111 42L110 51M123 43L120 51M134 52L127 58M140 69L132 69M136 85L129 82M123 97L122 89M107 95L111 89" stroke="#a07040" stroke-width="2"/>
+<path d="M61 74C63 68 68 65 77 66C79 72 77 77 72 79C66 80 62 78 61 74Z" fill="#fffdf4"/>
+<g clip-path="url(#granmastru-e1)">
+<ellipse cx="68.8" cy="73" rx="5.9" ry="6.6" fill="url(#granmastru-iris)"/>
+<ellipse cx="68.4" cy="73.3" rx="3.1" ry="4.4" fill="#1b1622"/>
+</g>
+<path d="M61 74C63 68 68 65 77 66C79 72 77 77 72 79C66 80 62 78 61 74Z" fill="none" stroke="#4a2a2a" stroke-width="2"/>
+<path d="M60.3 74.1C62.7 68 68.2 64.9 78.7 65.2" fill="none" stroke="#1b1622" stroke-width="3.4"/>
+<circle cx="66.4" cy="71.1" r="2.2" fill="#fff"/>
+<circle cx="69.7" cy="74.4" r="1" fill="#fff"/>
+<path d="M37 74C38 71 42 69 47 69C48 73 47 77 43 78C40 79 37 78 37 74Z" fill="#fffdf4"/>
+<g clip-path="url(#granmastru-e2)">
+<ellipse cx="42.5" cy="74.4" rx="4.2" ry="5.2" fill="url(#granmastru-iris)"/>
+<ellipse cx="42.3" cy="74.8" rx="2.3" ry="3.5" fill="#1b1622"/>
+</g>
+<path d="M37 74C38 71 42 69 47 69C48 73 47 77 43 78C40 79 37 78 37 74Z" fill="none" stroke="#4a2a2a" stroke-width="2"/>
+<path d="M36.6 75C38.4 70.8 41.6 68.6 47.6 68.6" fill="none" stroke="#1b1622" stroke-width="3"/>
+<circle cx="40.6" cy="73" r="1.7" fill="#fff"/>
+<circle cx="43" cy="75.5" r="0.8" fill="#fff"/>
+<g fill="#f6f7fb" stroke="#26324c" stroke-width="2">
+<path d="M57.2 65.2C62.7 59.7 71.9 57.9 83 59.7C81.1 63.4 75.6 63.4 70.1 63.4C64.6 64.3 60.9 66.2 58.1 68.9Z"/>
+<path d="M35.1 68.9C37 65.2 42.5 63.4 48 63.4C46.2 66.2 43.4 66.2 40.6 67.1C38.8 67.1 37 68.9 36 70.8Z"/>
+</g>
+<path d="M54 45C54 28 63 17 76 17C88 17 98 28 96 43C88 36 81 32 72 32C65 32 57 38 54 45Z" fill="url(#granmastru-au)" stroke="#6a3a0e" stroke-width="2.5"/>
+<path d="M61 32C65 25 70 21 77 21" fill="none" stroke="#fff" stroke-width="2"/>
+<path d="M48 52C48 38 59 30 72 30C85 30 96 38 96 52Z" fill="url(#granmastru-st)" stroke="#1a2438" stroke-width="2.5"/>
+<path d="M30 41C42 54 59 58 74 58C88 58 101 52 112 41C105 58 88 63 72 63C55 63 39 58 30 41Z" fill="url(#granmastru-st)" stroke="#1a2438" stroke-width="2.5"/>
+<path d="M33.3 45C44.3 56 59 59.7 73.8 59.7C88.5 59.7 99.5 54.2 108.7 46.8" fill="none" stroke="#f3c14a" stroke-width="2.5"/>
+<g fill="url(#granmastru-au)" stroke="#6a3a0e" stroke-width="1"><circle cx="55.4" cy="46.8" r="2"/><circle cx="71.9" cy="48.7" r="2"/><circle cx="88.5" cy="46.8" r="2"/></g>
+</g>
+</svg>

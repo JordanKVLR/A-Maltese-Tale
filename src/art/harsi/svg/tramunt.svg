@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="tramunt-g" gradientUnits="userSpaceOnUse" x1="50" y1="64" x2="140" y2="150"><stop offset="0" stop-color="#f4fbff"/><stop offset=".55" stop-color="#b6dcf2"/></linearGradient>
+<linearGradient id="tramunt-r" gradientUnits="userSpaceOnUse" x1="70" y1="142" x2="140" y2="184"><stop offset="0" stop-color="#f6dca6"/><stop offset=".55" stop-color="#e8c98c"/></linearGradient>
+<radialGradient id="tramunt-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#c4f6ff"/><stop offset=".5" stop-color="#3a9ad8"/><stop offset="1" stop-color="#143a6a"/></radialGradient>
+<clipPath id="tramunt-cb"><path d="M58 128C44 126 38 116 40 106C42 98 48 94 54 94C54 80 68 72 82 76C88 66 106 64 114 74C124 68 140 74 140 86C150 86 158 94 156 104C164 108 164 120 156 124C150 134 136 140 120 140C104 142 92 140 82 138C72 138 64 134 58 128Z"/></clipPath>
+<clipPath id="tramunt-cr"><path d="M62 160L74 146L146 144L158 156L156 176L146 183L72 183L62 176Z"/></clipPath>
+<clipPath id="tramunt-e1"><ellipse cx="92" cy="96" rx="8.6" ry="10.4"/></clipPath>
+<clipPath id="tramunt-e2"><ellipse cx="68" cy="94" rx="6.2" ry="9.2"/></clipPath>
+</defs>
+<ellipse cx="110" cy="184" rx="50" ry="7" fill="#1d2b33" opacity="0.22"/>
+<g fill="#1d4a72" stroke="#1d4a72" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M62 160L74 146L146 144L158 156L156 176L146 183L72 183L62 176Z" fill="#5e3d1e" stroke="#5e3d1e"/>
+<path d="M85 72L97 44L111 68ZM107 74L125 52L128 80ZM74 82L63 58L91 72Z" stroke-width="5"/>
+<path d="M58 128C44 126 38 116 40 106C42 98 48 94 54 94C54 80 68 72 82 76C88 66 106 64 114 74C124 68 140 74 140 86C150 86 158 94 156 104C164 108 164 120 156 124C150 134 136 140 120 140C104 142 92 140 82 138C72 138 64 134 58 128Z"/><path d="M39 109C35 109 33 112 33 115.5C33 119 35 122 39 122C42 122 44 119 44 115.5C44 112 42 109 39 109Z"/>
+<path d="M30 116C22 118 14 115 12 109C10 103 14 99 20 99C24 99 26 103 24 105M156 112C168 112 178 108 184 100M152 128C164 130 174 130 182 126" fill="none" stroke-width="8"/>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<g clip-path="url(#tramunt-cr)">
+<rect x="60" y="140" width="100" height="46" fill="url(#tramunt-r)"/>
+<path d="M146 162L160 154V186H140Z" fill="#c49a5e"/>
+<path d="M62 160L74 146L146 144L158 156L146 162L72 163Z" fill="#f6e2b6"/>
+<path d="M64 158L74 148L120 146C104 150 86 154 70 162Z" fill="#f4fbff"/>
+<path d="M72 176C96 180 124 180 146 176V186H72Z" fill="#c49a5e" opacity=".7"/>
+<g fill="#c49a5e"><circle cx="82" cy="170" r="1.8"/><circle cx="130" cy="168" r="1.6"/><circle cx="94" cy="176" r="1.3"/><circle cx="152" cy="170" r="1.3"/><circle cx="122" cy="174" r="1.2"/></g>
+</g>
+<path d="M62 160L74 146L146 144L158 156L156 176L146 183L72 183L62 176Z" fill="none" stroke="#5e3d1e" stroke-width="2.5"/>
+<path d="M72 163L146 162L158 156M146 162L146 183" fill="none" stroke="#5e3d1e" stroke-width="2"/>
+<path d="M112 162L106 170L113 175L109 183" fill="none" stroke="#5e3d1e" stroke-width="5"/>
+<path d="M112 162L106 170L113 175L109 183" fill="none" stroke="#8fe2f4" stroke-width="2.2"/>
+<path d="M85 72L97 44L111 68ZM107 74L125 52L128 80ZM74 82L63 58L91 72Z" fill="#e6fbff"/>
+<path d="M97 44L111 68L98 71ZM125 52L128 80L117 77ZM63 58L91 72L76 80Z" fill="#94d4ee"/>
+<path d="M85 72L97 44L111 68ZM107 74L125 52L128 80ZM74 82L63 58L91 72Z" fill="none" stroke="#1d4a72" stroke-width="2"/>
+<path d="M95 52L91 64M121 59L115 68M68 63L75 70" fill="none" stroke="#fff" stroke-width="1.8"/>
+<path d="M30 116C22 118 14 115 12 109C10 103 14 99 20 99C24 99 26 103 24 105M156 112C168 112 178 108 184 100M152 128C164 130 174 130 182 126" fill="none" stroke="#e6f6ff" stroke-width="4"/>
+<g fill="#f4fbff" stroke="#6fa0cc" stroke-width="1.8">
+<path d="M166 84C166 80 170 78 173 80C175 76 181 77 181 81C184 81 185 85 182 87H168C166 87 165 86 166 84Z"/>
+<path d="M170 140C170 137 173 136 175 137C176 134 181 135 181 138C183 138 184 141 182 142H172C170 142 169 141 170 140Z"/>
+<path d="M14 128C14 125 17 124 19 125C20 122 25 123 25 126C27 126 28 129 26 130H16C14 130 13 129 14 128Z"/>
+</g>
+<g fill="#cfe8fa"><circle cx="186" cy="94" r="1.6"/><circle cx="30" cy="96" r="1.4"/><circle cx="160" cy="76" r="1.2"/></g>
+<g clip-path="url(#tramunt-cb)">
+<rect x="40" y="62" width="126" height="82" fill="url(#tramunt-g)"/>
+<path d="M164 104C156 124 128 136 96 136C80 136 66 132 56 124V146H166Z" fill="#86b6dc"/>
+<path d="M120 140C136 138 150 130 158 120V146H120Z" fill="#6f9ccc"/>
+<path d="M58 92C62 84 70 79 78 79C72 82 66 87 62 94Z" fill="#fff"/>
+<path d="M44 108C46 102 50 99 54 98C50 102 48 106 47 110Z" fill="#fff"/>
+<path d="M120 76C128 74 136 78 138 84C132 80 126 79 122 80Z" fill="#fff"/>
+<path d="M56 124C68 132 84 136 100 136" fill="none" stroke="#d6ecfa" stroke-width="2"/>
+</g>
+<path d="M58 128C44 126 38 116 40 106C42 98 48 94 54 94C54 80 68 72 82 76C88 66 106 64 114 74C124 68 140 74 140 86C150 86 158 94 156 104C164 108 164 120 156 124C150 134 136 140 120 140C104 142 92 140 82 138C72 138 64 134 58 128Z" fill="none" stroke="#1d4a72" stroke-width="2.5"/>
+<path d="M82 76C84 80 86 82 86 86M114 74C113 77 112 80 112 83M140 86C138 88 137 90 137 93M156 104C153 106 152 108 152 111" fill="none" stroke="#86b6dc" stroke-width="2"/>
+<g fill="#f4fbff" stroke="#1d4a72" stroke-width="1.8">
+<path d="M70 137L72 146L75 137ZM88 139L91 150L94 139ZM124 139L126 147L129 139ZM142 134L144 142L147 133Z"/>
+</g>
+<path d="M39 109C35 109 33 112 33 115.5C33 119 35 122 39 122C42 122 44 119 44 115.5C44 112 42 109 39 109Z" fill="#ee8a98" stroke="#1d4a72" stroke-width="2.2"/>
+<ellipse cx="37.8" cy="115.6" rx="2" ry="3" fill="#5a2038"/>
+<path d="M37 111.4C39.4 111 41 112 41.6 113.6" fill="none" stroke="#fff" stroke-width="1.4"/>
+<path d="M44 112C46 113 47 115 46 118" fill="none" stroke="#86b6dc" stroke-width="1.6"/>
+<ellipse cx="54" cy="114" rx="6.5" ry="4.2" fill="#ff8aa0" opacity=".5"/>
+<ellipse cx="102" cy="112" rx="5.5" ry="3.2" fill="#ff8aa0" opacity=".5"/>
+<ellipse cx="92" cy="96" rx="8.6" ry="10.4" fill="#fffdf4"/>
+<g clip-path="url(#tramunt-e1)">
+<ellipse cx="90.6" cy="98" rx="7.2" ry="8.8" fill="url(#tramunt-iris)"/>
+<ellipse cx="90.2" cy="98.9" rx="4.4" ry="5.9" fill="#1b1622"/>
+<path d="M81 82.3H103V90.1C97 87.2 87 87.2 81 91.1Z" fill="#cfe0f0"/>
+</g>
+<ellipse cx="92" cy="96" rx="8.6" ry="10.4" fill="none" stroke="#1d4a72" stroke-width="2"/>
+<path d="M83.8 90.6C86.2 87.2 89.2 85.8 92.2 85.8C95.6 85.9 98.5 87.7 100.3 90.9" fill="none" stroke="#1b1622" stroke-width="3.5"/>
+<circle cx="86.8" cy="93.4" r="3.1" fill="#fff"/>
+<circle cx="91.8" cy="98" r="1.4" fill="#fff"/>
+<ellipse cx="68" cy="94" rx="6.2" ry="9.2" fill="#fffdf4"/>
+<g clip-path="url(#tramunt-e2)">
+<ellipse cx="66.8" cy="95.7" rx="5.2" ry="7.8" fill="url(#tramunt-iris)"/>
+<ellipse cx="66.5" cy="96.6" rx="3.2" ry="5.2" fill="#1b1622"/>
+<path d="M60.1 81.8H75.9V88.8C71.6 86.2 64.4 86.2 60.1 89.7Z" fill="#cfe0f0"/>
+</g>
+<ellipse cx="68" cy="94" rx="6.2" ry="9.2" fill="none" stroke="#1d4a72" stroke-width="2"/>
+<path d="M62.1 89.2C63.8 86.2 66 85 68.1 85C70.6 85.1 72.7 86.6 74 89.5" fill="none" stroke="#1b1622" stroke-width="3.2"/>
+<circle cx="64.3" cy="91.7" r="2.2" fill="#fff"/>
+<circle cx="67.9" cy="95.7" r="1.1" fill="#fff"/>
+</g>
+</svg>

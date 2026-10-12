@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="santwarjun-g" gradientUnits="userSpaceOnUse" x1="40" y1="40" x2="140" y2="170"><stop offset="0" stop-color="#f4e0ae"/><stop offset=".55" stop-color="#d9bc86"/></linearGradient>
+<linearGradient id="santwarjun-far" x1="0" x2="1"><stop offset=".5" stop-color="#c4a272"/><stop offset=".5" stop-color="#9c7a56"/></linearGradient>
+<linearGradient id="santwarjun-leg" x1="0" x2="1"><stop offset=".6" stop-color="#d9bc86"/><stop offset=".6" stop-color="#b08a60"/></linearGradient>
+<linearGradient id="santwarjun-st" x1="0" y1="0" x2="0" y2="1"><stop offset=".35" stop-color="#f6e6bc"/><stop offset=".35" stop-color="#d9bc86"/></linearGradient>
+<linearGradient id="santwarjun-dr" x1="0" x2="1"><stop offset=".55" stop-color="#ecd6a6"/><stop offset=".55" stop-color="#b8946a"/></linearGradient>
+<linearGradient id="santwarjun-lt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff8d8"/><stop offset=".45" stop-color="#ffcf5e"/><stop offset="1" stop-color="#f0587f"/></linearGradient>
+<radialGradient id="santwarjun-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#fffbe0"/><stop offset=".45" stop-color="#ffc44a"/><stop offset="1" stop-color="#d8406e"/></radialGradient>
+<clipPath id="santwarjun-cb"><path d="M56 72C64 64 80 62 100 62C122 62 142 64 154 72C162 78 164 90 160 104C156 120 152 134 148 148C144 158 132 162 106 162C84 162 72 160 68 150C62 134 56 118 52 100C50 88 50 78 56 72Z"/></clipPath>
+<clipPath id="santwarjun-cl"><path d="M144 76C158 72 172 80 176 96C178 108 176 120 176 132C184 138 188 150 184 160C180 170 166 174 156 170C146 166 144 156 148 146C146 136 146 120 144 110C142 98 140 84 144 76Z"/></clipPath>
+<clipPath id="santwarjun-ch"><path d="M60 50C70 40 94 38 108 43C118 48 121 60 119 72C117 86 106 95 90 95C74 95 62 89 58 77C55 67 55 57 60 50Z"/></clipPath>
+<clipPath id="santwarjun-e1"><path d="M84 73C86 68 92 66 104 66.5C105.5 72.5 103.5 79.5 97.5 81C91 82 85 79 84 73Z"/></clipPath>
+<clipPath id="santwarjun-e2"><path d="M61 74.5C62.5 70.5 66 69 72 69C73.5 73.5 72.5 79 69 80.6C65 81.4 61.4 79 61 74.5Z"/></clipPath>
+</defs>
+<ellipse cx="106" cy="184" rx="74" ry="7" fill="#1d2b33" opacity="0.22"/>
+<ellipse cx="91" cy="34" rx="40" ry="7" fill="#ff8fb0" opacity=".3"/>
+<g fill="#4e321c" stroke="#4e321c" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M60 84C46 84 38 96 36 110C34 122 34 132 30 140C26 150 30 160 40 162C50 164 58 156 58 146C58 134 62 120 64 104Z"/>
+<path d="M44 86C40 74 41 60 48 54C53 50 60 51 63 56L66 86Z"/>
+<path d="M72 148V172C72 176 74 179 78 179H96C100 179 102 176 102 172V148ZM112 150V176C112 180 114 182 118 182H142C146 182 148 180 148 176V150Z"/>
+<path d="M56 72C64 64 80 62 100 62C122 62 142 64 154 72C162 78 164 90 160 104C156 120 152 134 148 148C144 158 132 162 106 162C84 162 72 160 68 150C62 134 56 118 52 100C50 88 50 78 56 72Z"/>
+<path d="M144 76C158 72 172 80 176 96C178 108 176 120 176 132C184 138 188 150 184 160C180 170 166 174 156 170C146 166 144 156 148 146C146 136 146 120 144 110C142 98 140 84 144 76Z"/>
+<path d="M138 60C142 48 156 44 166 50C174 56 176 72 174 88C172 98 164 104 154 102C144 100 138 92 136 80C135 72 136 66 138 60Z"/>
+<path d="M60 50C70 40 94 38 108 43C118 48 121 60 119 72C117 86 106 95 90 95C74 95 62 89 58 77C55 67 55 57 60 50Z"/>
+<path d="M48 16L132 11C135 11 137 13 137 15V22C137 25 135 27 132 27L50 31C47 31 45 29 45 26V19C45 17 46 16 48 16Z"/>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<g stroke="#4e321c" stroke-width="2.5">
+<path d="M60 84C46 84 38 96 36 110C34 122 34 132 30 140C26 150 30 160 40 162C50 164 58 156 58 146C58 134 62 120 64 104Z" fill="url(#santwarjun-far)"/>
+<path d="M33 140C40 144 50 144 58 140M40 162L42 152M49 162L50 151" fill="none" stroke-width="2"/>
+<path d="M44 86C40 74 41 60 48 54C53 50 60 51 63 56L66 86Z" fill="url(#santwarjun-far)"/>
+<path d="M72 148V172C72 176 74 179 78 179H96C100 179 102 176 102 172V148Z" fill="url(#santwarjun-far)"/>
+<path d="M112 150V176C112 180 114 182 118 182H142C146 182 148 180 148 176V150Z" fill="url(#santwarjun-leg)"/>
+<path d="M72 168H102M112 170H148" fill="none" stroke-width="2"/>
+</g>
+<g fill="#a07a58"><circle cx="119" cy="160" r="1.6"/><circle cx="126" cy="160" r="1.6"/><circle cx="133" cy="160" r="1.6"/><circle cx="122" cy="164.5" r="1.6"/><circle cx="129" cy="164.5" r="1.6"/><circle cx="80" cy="158" r="1.5"/><circle cx="87" cy="158" r="1.5"/><circle cx="83.5" cy="162.5" r="1.5"/></g>
+<g clip-path="url(#santwarjun-cb)">
+<rect x="48" y="60" width="118" height="104" fill="url(#santwarjun-g)"/>
+<path d="M48 136C80 160 136 156 166 96V166H48Z" fill="#b08a60"/>
+<path d="M56 70C70 96 100 104 124 92L124 60H56Z" fill="#a8825c"/>
+<path d="M128 100C126 124 134 146 150 160H168V96Z" fill="#8e6a4c"/>
+<path d="M74 154C94 160 122 158 138 150" fill="none" stroke="#e6cc98" stroke-width="2"/>
+<path d="M56 98C56 90 58 84 62 80C60 88 60 96 62 106Z" fill="#fff2cc"/>
+</g>
+<path d="M56 72C64 64 80 62 100 62C122 62 142 64 154 72C162 78 164 90 160 104C156 120 152 134 148 148C144 158 132 162 106 162C84 162 72 160 68 150C62 134 56 118 52 100C50 88 50 78 56 72Z" fill="none" stroke="#4e321c" stroke-width="2.5"/>
+<g fill="#b0906a"><circle cx="64" cy="112" r="1.7"/><circle cx="71" cy="114" r="1.7"/><circle cx="66" cy="120" r="1.7"/><circle cx="73" cy="122" r="1.7"/><circle cx="68" cy="128" r="1.7"/><circle cx="75" cy="130" r="1.7"/><circle cx="71" cy="136" r="1.7"/><circle cx="78" cy="138" r="1.7"/></g>
+<path d="M126 104C130 110 129 116 133 122M128 134L134 140" fill="none" stroke="#8e6a4c" stroke-width="1.8"/>
+<ellipse cx="101" cy="132" rx="28" ry="30" fill="#ffd46a" opacity=".3"/>
+<path d="M90 112H112V154H90Z" fill="url(#santwarjun-lt)"/>
+<path d="M98 116C102 120 104 128 104 138C104 146 102 151 101 154H96C98 144 98 132 98 116Z" fill="#fffbe8" opacity=".8"/>
+<path d="M90 112H112V119C104 116 98 116 90 119Z" fill="#a8304e" opacity=".45"/>
+<path d="M80 110H90V154H80ZM112 110H122V154H112Z" fill="url(#santwarjun-dr)" stroke="#4e321c" stroke-width="2.5"/>
+<path d="M76 102C76 100 77 99 79 99H123C125 99 126 100 126 102V110C126 112 125 113 123 113H79C77 113 76 112 76 110Z" fill="url(#santwarjun-st)" stroke="#4e321c" stroke-width="2.5"/>
+<path d="M119 99.5H123C125 99.5 126 100 126 102V110C126 112 125 113 123 113H119Z" fill="#b08a60"/>
+<path d="M76 102C76 100 77 99 79 99H123C125 99 126 100 126 102V110C126 112 125 113 123 113H79C77 113 76 112 76 110Z" fill="none" stroke="#4e321c" stroke-width="2.5"/>
+<path d="M90 154H112" stroke="#4e321c" stroke-width="2.5"/>
+<g clip-path="url(#santwarjun-cl)">
+<rect x="138" y="70" width="52" height="106" fill="url(#santwarjun-g)"/>
+<path d="M168 82C178 102 174 122 176 136C186 146 186 162 176 172H192V82Z" fill="#b08a60"/>
+<path d="M144 126C156 132 168 132 180 128V136C168 140 156 140 146 136Z" fill="#a8825c"/>
+<path d="M150 150C152 144 156 141 161 140C157 144 155 148 154 154Z" fill="#fff2cc"/>
+</g>
+<path d="M144 76C158 72 172 80 176 96C178 108 176 120 176 132C184 138 188 150 184 160C180 170 166 174 156 170C146 166 144 156 148 146C146 136 146 120 144 110C142 98 140 84 144 76Z" fill="none" stroke="#4e321c" stroke-width="2.5"/>
+<path d="M146 130C156 135 168 135 177 131M156 170C156 164 158 160 162 158M168 172C168 166 170 162 174 160" fill="none" stroke="#4e321c" stroke-width="2"/>
+<g fill="#a07a58"><circle cx="158" cy="112" r="1.6"/><circle cx="165" cy="114" r="1.6"/><circle cx="160" cy="119" r="1.6"/><circle cx="167" cy="121" r="1.6"/></g>
+<path d="M138 60C142 48 156 44 166 50C174 56 176 72 174 88C172 98 164 104 154 102C144 100 138 92 136 80C135 72 136 66 138 60Z" fill="url(#santwarjun-leg)" stroke="#4e321c" stroke-width="2.5"/>
+<path d="M142 58C146 52 152 49 158 49C152 52 148 56 146 62Z" fill="#fff2cc"/>
+<g fill="none" stroke="#b5452f" stroke-width="2.2">
+<path d="M155 62C153 60 155 57 158 58C161 60 160 65 156 66C151 67 148 62 150 58C152 53 160 52 163 57C166 62 164 70 155 74"/>
+<path d="M155 62C153 60 155 57 158 58C161 60 160 65 156 66C151 67 148 62 150 58C152 53 160 52 163 57C166 62 164 70 155 74" transform="rotate(180 155 74)"/>
+</g>
+<g clip-path="url(#santwarjun-ch)">
+<rect x="52" y="36" width="72" height="62" fill="url(#santwarjun-g)"/>
+<path d="M122 56C118 76 108 88 90 90C76 90 66 86 58 80V98H124Z" fill="#b08a60"/>
+<path d="M66 54C72 46 82 42 92 42C84 45 76 50 72 56Z" fill="#fff2cc"/>
+</g>
+<path d="M60 50C70 40 94 38 108 43C118 48 121 60 119 72C117 86 106 95 90 95C74 95 62 89 58 77C55 67 55 57 60 50Z" fill="none" stroke="#4e321c" stroke-width="2.5"/>
+<path d="M75 89C79 88 83 88 87 88.8" fill="none" stroke="#4e321c" stroke-width="2.2"/>
+<path d="M84 73C86 68 92 66 104 66.5C105.5 72.5 103.5 79.5 97.5 81C91 82 85 79 84 73Z" fill="#fffdf4"/>
+<g clip-path="url(#santwarjun-e1)">
+<ellipse cx="95" cy="74.6" rx="7.6" ry="8.2" fill="url(#santwarjun-iris)"/>
+<ellipse cx="94.6" cy="75" rx="3.3" ry="5.2" fill="#1b1622"/>
+</g>
+<path d="M84 73C86 68 92 66 104 66.5C105.5 72.5 103.5 79.5 97.5 81C91 82 85 79 84 73Z" fill="none" stroke="#4e321c" stroke-width="2"/>
+<path d="M83.6 73.4C86 68 92 65.8 105 66.2" fill="none" stroke="#1b1622" stroke-width="3.6"/>
+<circle cx="91.6" cy="72.2" r="2.4" fill="#fff"/>
+<circle cx="96.4" cy="75.8" r="1.1" fill="#fff"/>
+<path d="M61 74.5C62.5 70.5 66 69 72 69C73.5 73.5 72.5 79 69 80.6C65 81.4 61.4 79 61 74.5Z" fill="#fffdf4"/>
+<g clip-path="url(#santwarjun-e2)">
+<ellipse cx="67.4" cy="75.2" rx="5.4" ry="6.2" fill="url(#santwarjun-iris)"/>
+<ellipse cx="67.1" cy="75.5" rx="2.4" ry="3.9" fill="#1b1622"/>
+</g>
+<path d="M61 74.5C62.5 70.5 66 69 72 69C73.5 73.5 72.5 79 69 80.6C65 81.4 61.4 79 61 74.5Z" fill="none" stroke="#4e321c" stroke-width="2"/>
+<path d="M60.6 75C62.4 70.4 66 68.6 73 68.6" fill="none" stroke="#1b1622" stroke-width="3"/>
+<circle cx="65.6" cy="73.4" r="1.7" fill="#fff"/>
+<circle cx="68.4" cy="76.6" r=".8" fill="#fff"/>
+<path d="M52 60L118 52C121 52 123 54 123 56V61C123 63 122 64 119 64L56 71C53 71 51 70 51 68V63C51 61 51 60 52 60Z" fill="url(#santwarjun-st)" stroke="#4e321c" stroke-width="2.5"/>
+<path d="M116 52.4L118 52C121 52 123 54 123 56V61C123 63 122 64 119 64L116 64.4Z" fill="#b08a60"/>
+<path d="M52 60L118 52C121 52 123 54 123 56V61C123 63 122 64 119 64L56 71C53 71 51 70 51 68V63C51 61 51 60 52 60Z" fill="none" stroke="#4e321c" stroke-width="2.5"/>
+<path d="M62 38C76 34 104 33 122 35M72 44C84 41 100 40 112 41" fill="none" stroke="#ff7fa8" stroke-width="2"/>
+<path d="M48 16L132 11C135 11 137 13 137 15V22C137 25 135 27 132 27L50 31C47 31 45 29 45 26V19C45 17 46 16 48 16Z" fill="url(#santwarjun-st)"/>
+<path d="M128 11.5L132 11C135 11 137 13 137 15V22C137 25 135 27 132 27L128 27.5Z" fill="#b08a60"/>
+<path d="M48 16L132 11C135 11 137 13 137 15V22C137 25 135 27 132 27L50 31C47 31 45 29 45 26V19C45 17 46 16 48 16Z" fill="none" stroke="#4e321c" stroke-width="2.5"/>
+<g fill="#b0906a"><circle cx="56" cy="25" r="1.5"/><circle cx="66" cy="24.5" r="1.5"/><circle cx="76" cy="24" r="1.5"/><circle cx="86" cy="23.4" r="1.5"/><circle cx="96" cy="22.8" r="1.5"/><circle cx="106" cy="22.2" r="1.5"/><circle cx="116" cy="21.6" r="1.5"/></g>
+<g fill="#ff8fb0" stroke="#a8304e" stroke-width="1.2"><path d="M34 34L36 30L38 34L36 38Z"/><path d="M146 30L148 26L150 30L148 34Z"/><path d="M28 50L29.5 47L31 50L29.5 53Z"/></g>
+</g>
+</svg>

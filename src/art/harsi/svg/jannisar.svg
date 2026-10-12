@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="jannisar-g" gradientUnits="userSpaceOnUse" x1="50" y1="80" x2="118" y2="150"><stop offset="0" stop-color="#f6c68c"/><stop offset=".55" stop-color="#dc9a5c"/></linearGradient>
+<linearGradient id="jannisar-bl" gradientUnits="userSpaceOnUse" x1="68" y1="122" x2="122" y2="168"><stop offset="0" stop-color="#5c96dc"/><stop offset=".55" stop-color="#2f68b8"/></linearGradient>
+<linearGradient id="jannisar-wh" gradientUnits="userSpaceOnUse" x1="64" y1="46" x2="124" y2="120"><stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#ebe3d2"/></linearGradient>
+<linearGradient id="jannisar-leg" x1="0" x2="1"><stop offset=".55" stop-color="#d4463e"/><stop offset=".55" stop-color="#a62c34"/></linearGradient>
+<linearGradient id="jannisar-far" x1="0" x2="1"><stop offset=".5" stop-color="#b03440"/><stop offset=".5" stop-color="#8a2232"/></linearGradient>
+<linearGradient id="jannisar-arm" x1="0" x2="1"><stop offset=".55" stop-color="#3a74c4"/><stop offset=".55" stop-color="#1f4a8c"/></linearGradient>
+<linearGradient id="jannisar-au" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0a0"/><stop offset=".5" stop-color="#f3c14a"/><stop offset="1" stop-color="#c88a26"/></linearGradient>
+<radialGradient id="jannisar-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#e2f28a"/><stop offset=".5" stop-color="#6e9a34"/><stop offset="1" stop-color="#1e3816"/></radialGradient>
+<clipPath id="jannisar-cb"><path d="M72 128C82 122 104 122 113 128C121 138 122 152 118 161C110 167 84 167 75 161C69 151 67 138 72 128Z"/></clipPath>
+<clipPath id="jannisar-ch"><path d="M84 80C102 80 116 92 116 108C116 122 106 132 90 133C76 134 62 132 55 126C49 120 49 111 53 105C56 90 68 80 84 80Z"/></clipPath>
+<clipPath id="jannisar-ct"><path d="M67 92C65 78 67 62 71 52C80 47 92 46 99 50C101 62 101 78 100 90C90 95 78 95 67 92Z"/></clipPath>
+<clipPath id="jannisar-e1"><path d="M80 106C80 99 84 95 89 95C94 95 98 99 98 106C98 113 94 117 89 117C84 117 80 113 80 106Z"/></clipPath>
+<clipPath id="jannisar-e2"><path d="M59 108C59 101.6 61.6 98.6 65 98.6C68.4 98.6 71 101.6 71 108C71 114 68.4 117 65 117C61.6 117 59 114 59 108Z"/></clipPath>
+</defs>
+<ellipse cx="96" cy="184" rx="40" ry="7" fill="#1d2b33" opacity="0.22"/>
+<g fill="#5e2e16" stroke="#5e2e16" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M116 160C126 162 136 158 140 148" fill="none" stroke-width="12"/>
+<path d="M96 50C110 56 120 72 123 90C125 102 125 112 121 120C115 116 111 108 110 98C108 84 104 70 96 60Z" fill="#4e3a2c" stroke="#4e3a2c"/>
+<path d="M82 152C74 154 66 158 64 164L62 168C58 168 54 170 54 173C54 176 57 176 60 176H72C74 174 74 170 72 168L86 160Z" fill="#4a1020" stroke="#4a1020"/>
+<path d="M76 132C68 134 60 138 56 144C54 148 56 152 60 152C64 152 68 148 72 144L80 140Z" fill="#142c5c" stroke="#142c5c"/>
+<path d="M98 160H113L113 172C113 172 116 176 116 178C116 181 114 182 111 182H94C89 182 88 179 91 177L98 174Z" fill="#4a1020" stroke="#4a1020"/>
+<path d="M72 128C82 122 104 122 113 128C121 138 122 152 118 161C110 167 84 167 75 161C69 151 67 138 72 128Z" fill="#142c5c" stroke="#142c5c"/>
+<path d="M108 130C116 132 124 138 128 146C130 150 128 154 124 154C120 154 117 151 115 147L106 140Z" fill="#142c5c" stroke="#142c5c"/>
+<path d="M57 99C52 86 52 74 56 64C64 70 70 80 73 90Z"/><path d="M99 88C101 76 106 66 113 58C118 70 118 84 115 96Z"/>
+<path d="M84 80C102 80 116 92 116 108C116 122 106 132 90 133C76 134 62 132 55 126C49 120 49 111 53 105C56 90 68 80 84 80Z"/>
+<path d="M67 92C65 78 67 62 71 52C80 47 92 46 99 50C101 62 101 78 100 90C90 95 78 95 67 92Z" fill="#4e3a2c" stroke="#4e3a2c"/>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M116 160C126 162 136 158 140 148" fill="none" stroke="#dc9a5c" stroke-width="6"/>
+<path d="M138 153C139 151 140 150 140 148" stroke="#2a1a1e" stroke-width="7"/>
+<path d="M96 50C110 56 120 72 123 90C125 102 125 112 121 120C115 116 111 108 110 98C108 84 104 70 96 60Z" fill="#d8cfbc" stroke="#4e3a2c" stroke-width="2.5"/>
+<path d="M104 64C110 76 114 92 116 108" fill="none" stroke="#c4bba8" stroke-width="2.5"/>
+<path d="M82 152C74 154 66 158 64 164L62 168C58 168 54 170 54 173C54 176 57 176 60 176H72C74 174 74 170 72 168L86 160Z" fill="url(#jannisar-far)" stroke="#4a1020" stroke-width="2.5"/>
+<path d="M60 168C56 168 54 170 54 173C54 176 57 176 60 176H72C74 174 74 170 72 168Z" fill="#e0a832" stroke="#6a3a0e" stroke-width="2"/>
+<path d="M54 173C52 172 51 170 52 168" fill="none" stroke="#6a3a0e" stroke-width="2"/>
+<path d="M76 132C68 134 60 138 56 144C54 148 56 152 60 152C64 152 68 148 72 144L80 140Z" fill="url(#jannisar-arm)" stroke="#142c5c" stroke-width="2.5"/>
+<circle cx="58" cy="148" r="6" fill="#c48650" stroke="#5e2e16" stroke-width="2.5"/>
+<path d="M98 160H113L113 172C113 172 116 176 116 178C116 181 114 182 111 182H94C89 182 88 179 91 177L98 174Z" fill="url(#jannisar-leg)" stroke="#4a1020" stroke-width="2.5"/>
+<path d="M98 172H113C113 172 116 176 116 178C116 181 114 182 111 182H94C89 182 88 179 91 177L98 174Z" fill="url(#jannisar-au)" stroke="#6a3a0e" stroke-width="2"/>
+<path d="M91 177C88 176 87 174 88 171" fill="none" stroke="#6a3a0e" stroke-width="2"/>
+<g clip-path="url(#jannisar-cb)">
+<rect x="64" y="120" width="60" height="50" fill="url(#jannisar-bl)"/>
+<path d="M66 150C82 164 106 164 124 144V170H66Z" fill="#1f4a8c"/>
+<path d="M82 122L92 140L102 122Z" fill="#fbf4e4"/>
+<path d="M66 142C84 148 104 148 124 140V152C104 158 84 158 66 152Z" fill="#d4463e"/>
+<path d="M66 150C84 156 104 156 124 148" fill="none" stroke="#a62c34" stroke-width="2"/>
+<path d="M93 152L90 168" fill="none" stroke="#142c5c" stroke-width="2"/>
+<path d="M108 130C114 136 116 146 114 158" fill="none" stroke="#5c96dc" stroke-width="2"/>
+</g>
+<path d="M72 128C82 122 104 122 113 128C121 138 122 152 118 161C110 167 84 167 75 161C69 151 67 138 72 128Z" fill="none" stroke="#142c5c" stroke-width="2.5"/>
+<g fill="url(#jannisar-au)" stroke="#6a3a0e" stroke-width="1"><circle cx="97" cy="131" r="1.8"/><circle cx="96" cy="137" r="1.8"/></g>
+<path d="M80 148L70 137" stroke="#6a3a0e" stroke-width="6.5"/>
+<path d="M80 148L70 137" stroke="#f4ead6" stroke-width="3.5"/>
+<path d="M71 138C67 137 64 134 65 131M71 138C69 141 66 142 63 141" fill="none" stroke="#6a3a0e" stroke-width="5"/>
+<path d="M71 138C67 137 64 134 65 131M71 138C69 141 66 142 63 141" fill="none" stroke="#f4ead6" stroke-width="2.4"/>
+<path d="M78 149L83 144" stroke="#6a3a0e" stroke-width="5"/>
+<path d="M78 149L83 144" stroke="#f3c14a" stroke-width="2.4"/>
+<path d="M108 130C116 132 124 138 128 146C130 150 128 154 124 154C120 154 117 151 115 147L106 140Z" fill="url(#jannisar-arm)" stroke="#142c5c" stroke-width="2.5"/>
+<circle cx="124" cy="150" r="6.5" fill="url(#jannisar-g)" stroke="#5e2e16" stroke-width="2.5"/>
+<path d="M57 99C52 86 52 74 56 64C64 70 70 80 73 90Z" fill="#c48650" stroke="#5e2e16" stroke-width="2.5"/>
+<path d="M60 92C58 84 58 76 60 70C64 76 67 82 68 88Z" fill="#f4dcc8"/>
+<path d="M99 88C101 76 106 66 113 58C118 70 118 84 115 96Z" fill="url(#jannisar-g)" stroke="#5e2e16" stroke-width="2.5"/>
+<path d="M103 88C105 78 108 72 112 66C114 74 114 84 112 92Z" fill="#f4dcc8"/>
+<path d="M55 66C51 60 47 53 45 45C49 49 52 53 54 56C53 51 53 47 54 43C57 50 59 57 59 63ZM110 61C109 54 110 47 114 40C115 45 115 49 114 53C116 48 119 45 123 42C121 49 118 56 116 61Z" fill="#2a1a1e" stroke="#2a1a1e" stroke-width="2.4"/>
+<g clip-path="url(#jannisar-ch)">
+<rect x="46" y="78" width="72" height="58" fill="url(#jannisar-g)"/>
+<path d="M116 98C116 118 106 130 86 132L118 140V98Z" fill="#b87444"/>
+<path d="M46 114C54 112 62 114 68 118C74 122 78 128 78 134H46Z" fill="#fdf3e4"/>
+<path d="M60 92C64 88 70 86 76 86C70 89 66 92 63 97Z" fill="#ffe2b6"/>
+</g>
+<path d="M84 80C102 80 116 92 116 108C116 122 106 132 90 133C76 134 62 132 55 126C49 120 49 111 53 105C56 90 68 80 84 80Z" fill="none" stroke="#5e2e16" stroke-width="2.5"/>
+<g clip-path="url(#jannisar-ct)">
+<rect x="62" y="44" width="42" height="54" fill="url(#jannisar-wh)"/>
+<path d="M92 50C96 62 96 80 92 94H104V48Z" fill="#c4bba8"/>
+<path d="M66 84C78 88 90 88 102 84V96H66Z" fill="#f3c14a"/>
+<path d="M66 84C78 88 90 88 102 84" fill="none" stroke="#c88a26" stroke-width="2"/>
+<path d="M74 54C72 62 72 70 73 78" fill="none" stroke="#fff" stroke-width="2.5"/>
+</g>
+<path d="M67 92C65 78 67 62 71 52C80 47 92 46 99 50C101 62 101 78 100 90C90 95 78 95 67 92Z" fill="none" stroke="#4e3a2c" stroke-width="2.5"/>
+<path d="M76 84L75 66C75 61 82 61 82 66L82 85Z" fill="url(#jannisar-au)" stroke="#6a3a0e" stroke-width="2"/>
+<circle cx="78.5" cy="72" r="2" fill="#d4463e" stroke="#6a3a0e" stroke-width="1"/>
+<ellipse cx="96" cy="122" rx="6" ry="3.6" fill="#f2849e" opacity=".55"/>
+<path d="M51 113C52 110 56 110 58 112C58 115 56 117 54 117C52 117 51 115 51 113Z" fill="#7a3a3a" stroke="#5e2e16" stroke-width="1.4"/>
+<path d="M54 117C54 120 56 122 59 122C62 122 64 120 65 118M54 117C53 120 50 122 48 121" fill="none" stroke="#5e2e16" stroke-width="2"/>
+<path d="M61 117C64 118 69 118 72 116M62 121C66 123 71 124 74 122" fill="none" stroke="#2a1a1e" stroke-width="1.6"/>
+<path d="M76 108C74 112 70 114 66 116" fill="none" stroke="#2a1a1e" stroke-width="2.4"/>
+<path d="M80 106C80 99 84 95 89 95C94 95 98 99 98 106C98 113 94 117 89 117C84 117 80 113 80 106Z" fill="#fffdf4"/>
+<g clip-path="url(#jannisar-e1)">
+<ellipse cx="88" cy="107" rx="7.4" ry="9.4" fill="url(#jannisar-iris)"/>
+<ellipse cx="87.4" cy="108" rx="4.4" ry="6.2" fill="#1b1622"/>
+<path d="M78 92H100V100C94 97 84 97 78 101Z" fill="#c9cfe0"/>
+</g>
+<path d="M80 106C80 99 84 95 89 95C94 95 98 99 98 106C98 113 94 117 89 117C84 117 80 113 80 106Z" fill="none" stroke="#5e2e16" stroke-width="2"/>
+<path d="M79.6 101C82 96.6 85.5 95 89 95C93 95 96 97 98.4 101" fill="none" stroke="#1b1622" stroke-width="3.5"/>
+<circle cx="84" cy="103.4" r="3.2" fill="#fff"/>
+<circle cx="89.4" cy="108.4" r="1.5" fill="#fff"/>
+<path d="M59 108C59 101.6 61.6 98.6 65 98.6C68.4 98.6 71 101.6 71 108C71 114 68.4 117 65 117C61.6 117 59 114 59 108Z" fill="#fffdf4"/>
+<g clip-path="url(#jannisar-e2)">
+<ellipse cx="64.2" cy="109" rx="5.6" ry="8" fill="url(#jannisar-iris)"/>
+<ellipse cx="63.8" cy="110" rx="3.4" ry="5.2" fill="#1b1622"/>
+<path d="M57 95H73V102C68 99.6 62 99.6 57 103Z" fill="#c9cfe0"/>
+</g>
+<path d="M59 108C59 101.6 61.6 98.6 65 98.6C68.4 98.6 71 101.6 71 108C71 114 68.4 117 65 117C61.6 117 59 114 59 108Z" fill="none" stroke="#5e2e16" stroke-width="2"/>
+<path d="M58.8 103C60.6 99.6 62.6 98.6 65 98.6C67.4 98.6 69.6 99.8 71.2 102.8" fill="none" stroke="#1b1622" stroke-width="3.2"/>
+<circle cx="61.4" cy="105" r="2.6" fill="#fff"/>
+<circle cx="65" cy="109.4" r="1.2" fill="#fff"/>
+<path d="M82 92C86 90 92 90 96 92M60 95C63 93.6 67 93.6 70 95" fill="none" stroke="#2a1a1e" stroke-width="2.5"/>
+</g>
+</svg>

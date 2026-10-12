@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="ghasel-g" gradientUnits="userSpaceOnUse" x1="30" y1="66" x2="110" y2="150"><stop offset="0" stop-color="#ffd970"/><stop offset=".55" stop-color="#f2b632"/></linearGradient>
+<linearGradient id="ghasel-br" gradientUnits="userSpaceOnUse" x1="60" y1="60" x2="160" y2="160"><stop offset="0" stop-color="#8f6048"/><stop offset=".5" stop-color="#5a3a2e"/></linearGradient>
+<linearGradient id="ghasel-w" x1="0" y1="0" x2="1" y2="1"><stop offset=".3" stop-color="#ffffff"/><stop offset="1" stop-color="#cfe6f6"/></linearGradient>
+<linearGradient id="ghasel-au" x1="0" x2="1"><stop offset=".55" stop-color="#f6c94e"/><stop offset=".55" stop-color="#d9962a"/></linearGradient>
+<radialGradient id="ghasel-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#ffd25a"/><stop offset=".5" stop-color="#b8661a"/><stop offset="1" stop-color="#4a2010"/></radialGradient>
+<clipPath id="ghasel-cb"><path d="M112 116C122 102 146 98 164 108C180 118 182 140 172 152C162 164 140 166 124 158C108 150 102 130 112 116Z"/></clipPath>
+<clipPath id="ghasel-ct"><path d="M94 106C94 96 102 90 110 90C116 86 126 88 128 96C134 100 136 108 134 116C136 124 132 132 126 134C122 140 112 142 106 138C98 136 94 126 94 116Z"/></clipPath>
+<clipPath id="ghasel-ch"><path d="M66 66C88 66 104 82 104 104C104 126 88 142 66 142C44 142 28 126 28 104C28 82 44 66 66 66Z"/></clipPath>
+<clipPath id="ghasel-e1"><ellipse cx="79" cy="104" rx="9.5" ry="12"/></clipPath>
+<clipPath id="ghasel-e2"><ellipse cx="50" cy="106" rx="7.4" ry="11"/></clipPath>
+</defs>
+<ellipse cx="108" cy="184" rx="38" ry="6" fill="#1d2b33" opacity="0.22"/>
+<g fill="#2a1712" stroke="#2a1712" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M108 98C108 78 120 58 142 48C156 42 166 50 160 62C152 78 132 92 108 98Z" fill="#2c4468" stroke="#2c4468"/>
+<path d="M114 100C128 84 152 74 172 76C186 78 186 92 174 98C158 106 134 106 114 100Z" fill="#2c4468" stroke="#2c4468"/>
+<path d="M112 136L110 152M124 136L128 152" fill="none" stroke-width="9"/>
+<path d="M112 116C122 102 146 98 164 108C180 118 182 140 172 152C162 164 140 166 124 158C108 150 102 130 112 116Z"/>
+<path d="M170 148L184 160L166 157Z"/>
+<path d="M94 106C94 96 102 90 110 90C116 86 126 88 128 96C134 100 136 108 134 116C136 124 132 132 126 134C122 140 112 142 106 138C98 136 94 126 94 116Z"/>
+<path d="M80 70L84 56L94 50M50 72L44 58L34 54" fill="none" stroke-width="8"/>
+<path d="M66 66C88 66 104 82 104 104C104 126 88 142 66 142C44 142 28 126 28 104C28 82 44 66 66 66Z"/>
+<path d="M56 70C54 62 58 58 63 59C64 53 72 52 74 57C79 55 83 60 80 67Z"/>
+<path d="M62 138L50 146M76 138L66 150" fill="none" stroke-width="9"/>
+<path d="M30 144L36 138L44 140L46 148L40 154L32 152ZM44 150L50 144L58 146L60 154L54 160L46 158Z" fill="#6a3a0e" stroke="#6a3a0e"/>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M108 98C108 78 120 58 142 48C156 42 166 50 160 62C152 78 132 92 108 98Z" fill="url(#ghasel-w)" stroke="#2c4468" stroke-width="2.5"/>
+<path d="M114 90C126 74 140 62 154 56M126 84C136 80 146 74 154 66" fill="none" stroke="#9cc0dc" stroke-width="1.5"/>
+<path d="M112 136L110 152" fill="none" stroke="#4a2e24" stroke-width="3.5"/>
+<g clip-path="url(#ghasel-cb)">
+<rect x="104" y="96" width="82" height="72" fill="url(#ghasel-g)"/>
+<path d="M126 100C116 120 118 148 132 166M150 100C140 122 142 150 156 168M176 106C166 124 166 148 178 164" fill="none" stroke="#5a3a2e" stroke-width="11"/>
+<path d="M104 140C126 160 160 162 186 136V170H104Z" fill="#3e2620" opacity=".45"/>
+<path d="M134 108C144 104 156 106 162 110C152 108 144 110 138 112Z" fill="#fff0b8"/>
+</g>
+<path d="M112 116C122 102 146 98 164 108C180 118 182 140 172 152C162 164 140 166 124 158C108 150 102 130 112 116Z" fill="none" stroke="#2a1712" stroke-width="2.5"/>
+<path d="M170 148L184 160L166 157Z" fill="#3e2620" stroke="#2a1712" stroke-width="2"/>
+<g clip-path="url(#ghasel-ct)">
+<rect x="90" y="84" width="48" height="60" fill="url(#ghasel-br)"/>
+<path d="M134 108C132 124 122 136 104 140H138Z" fill="#3a2422"/>
+<path d="M104 96C110 92 118 92 124 94C118 95 112 97 108 100Z" fill="#b48464"/>
+</g>
+<path d="M94 106C94 96 102 90 110 90C116 86 126 88 128 96C134 100 136 108 134 116C136 124 132 132 126 134C122 140 112 142 106 138C98 136 94 126 94 116Z" fill="none" stroke="#2a1712" stroke-width="2.5"/>
+<path d="M122 138L128 154" fill="none" stroke="#2a1712" stroke-width="9"/><path d="M122 138L128 154" fill="none" stroke="#5a3a2e" stroke-width="3.5"/><ellipse cx="129" cy="152" rx="5.5" ry="6.5" fill="#ffb02e" stroke="#7a3a0c" stroke-width="2"/><circle cx="127.4" cy="149.6" r="1.7" fill="#ffe7a0"/>
+<path d="M114 100C128 84 152 74 172 76C186 78 186 92 174 98C158 106 134 106 114 100Z" fill="url(#ghasel-w)" opacity=".88"/>
+<path d="M114 100C128 84 152 74 172 76C186 78 186 92 174 98C158 106 134 106 114 100Z" fill="none" stroke="#2c4468" stroke-width="2.5"/>
+<path d="M122 96C138 88 156 84 172 84M134 100C146 96 160 94 170 92" fill="none" stroke="#9cc0dc" stroke-width="1.5"/>
+<path d="M128 86C140 80 152 78 162 79" fill="none" stroke="#fff" stroke-width="2"/>
+<path d="M80 70L84 56L94 50M50 72L44 58L34 54" fill="none" stroke="#6b4636" stroke-width="3.5"/>
+<g clip-path="url(#ghasel-ch)">
+<rect x="26" y="62" width="80" height="82" fill="url(#ghasel-g)"/>
+<path d="M104 92C102 118 90 136 66 142L108 146V92Z" fill="#d08a2c"/>
+<path d="M24 90C30 88 33 85 38 85C42 81 47 83 51 81C55 77 60 79 64 77C69 75 73 78 77 77C82 76 85 80 90 80C95 80 99 84 106 88V60H24Z" fill="url(#ghasel-br)"/>
+<path d="M44 74C52 69 62 67 72 68C64 70 56 72 50 77Z" fill="#b48464"/>
+<path d="M40 122C46 116 56 114 66 116C76 118 82 124 82 132C76 138 50 140 40 132Z" fill="#ffe7a0"/>
+<path d="M32 98C34 94 37 91 41 89" fill="none" stroke="#fff0b8" stroke-width="2.5"/>
+</g>
+<path d="M24 91C30 88 33 85 38 85C42 81 47 83 51 81C55 77 60 79 64 77C69 75 73 78 77 77C82 76 85 80 90 80C95 80 99 84 103 88" fill="none" stroke="#8a5420" stroke-width="2"/>
+<path d="M66 66C88 66 104 82 104 104C104 126 88 142 66 142C44 142 28 126 28 104C28 82 44 66 66 66Z" fill="none" stroke="#2a1712" stroke-width="2.5"/>
+<path d="M56 70C54 62 58 58 63 59C64 53 72 52 74 57C79 55 83 60 80 67Z" fill="#5a3a2e" stroke="#2a1712" stroke-width="2.5"/>
+<path d="M62 62C64 60 67 59 69 60" fill="none" stroke="#b48464" stroke-width="1.5"/>
+<circle cx="94.5" cy="49.5" r="3.6" fill="#6b4636" stroke="#2a1712" stroke-width="2"/>
+<circle cx="33.5" cy="53.5" r="3" fill="#4a2e24" stroke="#2a1712" stroke-width="2"/>
+<ellipse cx="92" cy="122" rx="6" ry="3.4" fill="#ff6a6a" opacity=".5"/>
+<path d="M58 129C61 125.5 66 125.5 69 129" fill="none" stroke="#4a2410" stroke-width="2.2"/>
+<ellipse cx="79" cy="104" rx="9.5" ry="12" fill="#fffdf4"/>
+<g clip-path="url(#ghasel-e1)">
+<ellipse cx="77.5" cy="106" rx="7.8" ry="9.8" fill="url(#ghasel-iris)"/>
+<ellipse cx="77" cy="107" rx="4.8" ry="6.4" fill="#1b1622"/>
+<path d="M66 88H92V95C84 93 74 96 66 101Z" fill="#d9c6b0"/>
+</g>
+<ellipse cx="79" cy="104" rx="9.5" ry="12" fill="none" stroke="#2a1712" stroke-width="2"/>
+<path d="M69.5 100C72 95.5 78 93 88.5 95" fill="none" stroke="#1b1622" stroke-width="3.5"/>
+<circle cx="73.4" cy="102.4" r="3.3" fill="#fff"/>
+<circle cx="78.8" cy="107.6" r="1.5" fill="#fff"/>
+<ellipse cx="50" cy="106" rx="7.4" ry="11" fill="#fffdf4"/>
+<g clip-path="url(#ghasel-e2)">
+<ellipse cx="48.6" cy="108" rx="6.2" ry="8.8" fill="url(#ghasel-iris)"/>
+<ellipse cx="48.2" cy="109" rx="3.8" ry="5.7" fill="#1b1622"/>
+<path d="M40 92H60V101C54 97 46 95 40 97Z" fill="#d9c6b0"/>
+</g>
+<ellipse cx="50" cy="106" rx="7.4" ry="11" fill="none" stroke="#2a1712" stroke-width="2"/>
+<path d="M43 98C46 96 51 96 57.5 99.5" fill="none" stroke="#1b1622" stroke-width="3.2"/>
+<circle cx="45.4" cy="104" r="2.7" fill="#fff"/>
+<circle cx="49.4" cy="108.4" r="1.2" fill="#fff"/>
+<path d="M68 92C74 86 84 84 92 86M42 89C46 87 52 87 59 92" fill="none" stroke="#3a2018" stroke-width="4.5"/>
+<path d="M62 138L50 146M76 138L66 150" fill="none" stroke="#4a2e24" stroke-width="3.5"/>
+<g stroke="#6a3a0e" stroke-width="2" fill="url(#ghasel-au)">
+<path d="M30 144L36 138L44 140L46 148L40 154L32 152Z"/>
+<path d="M44 150L50 144L58 146L60 154L54 160L46 158Z"/>
+</g>
+<path d="M35 142L41 143L42 149L38 151L34 149ZM49 148L55 149L56 155L52 157L48 155Z" fill="#c97f1c"/>
+<path d="M38 154C38 158 40 161 42 161C44 161 45 158 43 154Z" fill="#f6c94e" stroke="#6a3a0e" stroke-width="1.5"/>
+<circle cx="35" cy="143" r="1.3" fill="#fff"/>
+<circle cx="49" cy="146" r="2.8" fill="#4a2e24" stroke="#2a1712" stroke-width="1.5"/>
+<circle cx="64" cy="149" r="2.8" fill="#4a2e24" stroke="#2a1712" stroke-width="1.5"/>
+</g>
+</svg>

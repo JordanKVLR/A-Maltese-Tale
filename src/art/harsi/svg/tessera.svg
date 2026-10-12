@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="tessera-g" gradientUnits="userSpaceOnUse" x1="44" y1="74" x2="120" y2="164"><stop offset="0" stop-color="#fffaf0"/><stop offset=".55" stop-color="#efe2c4"/></linearGradient>
+<linearGradient id="tessera-leg" x1="0" x2="1"><stop offset=".58" stop-color="#efe2c4"/><stop offset=".58" stop-color="#c9b48e"/></linearGradient>
+<linearGradient id="tessera-far" x1="0" x2="1"><stop offset=".5" stop-color="#d4c09a"/><stop offset=".5" stop-color="#b09c78"/></linearGradient>
+<radialGradient id="tessera-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#a8f4ea"/><stop offset=".5" stop-color="#2a8a96"/><stop offset="1" stop-color="#123a4a"/></radialGradient>
+<clipPath id="tessera-cb"><path d="M45 85C45 82 47 80 50 79.5L84 70.5C86 70 88 70 90 70.2L151 76.5C154 76.8 156 78.5 156 81.5L154.5 138C154.4 141 153 142.8 150.5 144L117.5 158.8C115.5 159.7 113.5 160 111.5 159.8L50 151.6C47 151.2 45.6 149.4 45.6 146.4Z"/></clipPath>
+<clipPath id="tessera-e1"><ellipse cx="92" cy="116" rx="9" ry="11.5"/></clipPath>
+<clipPath id="tessera-e2"><ellipse cx="64" cy="112.5" rx="6.8" ry="10.2"/></clipPath>
+</defs>
+<ellipse cx="102" cy="184" rx="58" ry="7" fill="#1d2b33" opacity="0.22"/>
+<g fill="#4f3a26" stroke="#4f3a26" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M52 146V174C52 177 54 179 57 179H66C69 179 70 177 70 174V148ZM138 140V172C138 175 140 177 143 177H149C152 177 153 175 153 172V136ZM100 156V178C100 181 102 182 105 182H117C120 182 122 181 122 178V154Z"/>
+<path d="M48 118C40 116 34 110 32 102C30 96 34 92 38 92C42 92 44 96 45 100C46 104 48 106 50 108ZM150 106C158 104 166 110 167 118C168 125 163 129 158 127C154 126 152 122 152 118Z"/>
+<path d="M45 85C45 82 47 80 50 79.5L84 70.5C86 70 88 70 90 70.2L151 76.5C154 76.8 156 78.5 156 81.5L154.5 138C154.4 141 153 142.8 150.5 144L117.5 158.8C115.5 159.7 113.5 160 111.5 159.8L50 151.6C47 151.2 45.6 149.4 45.6 146.4Z"/>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<ellipse cx="28" cy="181" rx="6" ry="2" fill="#1d2b33" opacity=".18"/>
+<ellipse cx="170" cy="182" rx="6" ry="2" fill="#1d2b33" opacity=".18"/>
+<g stroke="#4f3a26" stroke-width="2.5">
+<path d="M52 146V174C52 177 54 179 57 179H66C69 179 70 177 70 174V148ZM138 140V172C138 175 140 177 143 177H149C152 177 153 175 153 172V136Z" fill="url(#tessera-far)"/>
+<path d="M48 118C40 116 34 110 32 102C30 96 34 92 38 92C42 92 44 96 45 100C46 104 48 106 50 108Z" fill="url(#tessera-far)"/>
+<path d="M100 156V178C100 181 102 182 105 182H117C120 182 122 181 122 178V154Z" fill="url(#tessera-leg)"/>
+<path d="M52 170H70M138 168H153M100 172H122" fill="none" stroke-width="2"/>
+</g>
+<g clip-path="url(#tessera-cb)">
+<rect x="40" y="66" width="120" height="98" fill="url(#tessera-g)"/>
+<path d="M114 92L160 76V150L114 164Z" fill="#cdb894"/>
+<path d="M117.6 94.1L126.7 91L126.7 100.1L117.6 103.2ZM142.3 85.7L151.4 82.6L151.4 91.7L142.3 94.8ZM117.6 143.7L126.7 140.6L126.7 149.7L117.6 152.8ZM142.3 135.3L151.4 132.2L151.4 141.3L142.3 144.4Z" fill="#c4b294"/><path d="M129.9 89.9L139.1 86.8L139.1 95.9L129.9 99ZM117.6 106.5L126.7 103.4L126.7 112.5L117.6 115.6ZM142.3 98.1L151.4 95L151.4 104.1L142.3 107.2ZM117.6 131.3L126.7 128.2L126.7 137.3L117.6 140.4ZM142.3 122.9L151.4 119.8L151.4 128.9L142.3 132ZM129.9 139.5L139.1 136.4L139.1 145.5L129.9 148.6Z" fill="#9a4a34"/><path d="M129.9 102.3L139.1 99.2L139.1 108.3L129.9 111.4ZM117.6 118.9L126.7 115.8L126.7 124.9L117.6 128ZM142.3 110.5L151.4 107.4L151.4 116.5L142.3 119.6ZM129.9 127.1L139.1 124L139.1 133.1L129.9 136.2Z" fill="#b08436"/><path d="M129.9 114.7L139.1 111.6L139.1 120.7L129.9 123.8Z" fill="#3e4a5c"/>
+<path d="M40 74L88 66L160 76L114 92Z" fill="#fdf8ea"/>
+<path d="M40 138C70 148 96 152 114 150V166H40Z" fill="#dccaa4"/>
+<path d="M54 96C62 94 70 95 76 97C68 97.5 60 99 56 102Z" fill="#fff"/>
+<path d="M118 158L152 143" stroke="#e2d2ae" stroke-width="2"/>
+</g>
+<path d="M52 92L108 100.4V151L52 143.6Z" fill="none" stroke="#3e4a5c" stroke-width="4" stroke-dasharray="3.6 1.6" stroke-linecap="butt" stroke-linejoin="miter"/>
+<g transform="translate(100 80) rotate(-3) scale(1 .4)"><path d="M0-14C6-14 8-6 0-2C-8-6-6-14 0-14ZM0 14C6 14 8 6 0 2C-8 6-6 14 0 14ZM-14 0C-14-6-6-8-2 0C-6 8-14 6-14 0ZM14 0C14-6 6-8 2 0C6 8 14 6 14 0Z" fill="#c0643e"/><circle r="3.6" fill="#2a8a96"/></g>
+<path d="M47 81.6L114 92L155 78M114 92V159" fill="none" stroke="#4f3a26" stroke-width="2.5"/>
+<path d="M45 85C45 82 47 80 50 79.5L84 70.5C86 70 88 70 90 70.2L151 76.5C154 76.8 156 78.5 156 81.5L154.5 138C154.4 141 153 142.8 150.5 144L117.5 158.8C115.5 159.7 113.5 160 111.5 159.8L50 151.6C47 151.2 45.6 149.4 45.6 146.4Z" fill="none" stroke="#4f3a26" stroke-width="2.5"/>
+<path d="M150 106C158 104 166 110 167 118C168 125 163 129 158 127C154 126 152 122 152 118Z" fill="url(#tessera-leg)" stroke="#4f3a26" stroke-width="2.5"/>
+<path d="M72 130C75 136.5 83 136.5 86 130.5C81 132 76 132 72 130Z" fill="#8a3a2c" stroke="#4f3a26" stroke-width="2"/>
+<ellipse cx="104" cy="129" rx="5.5" ry="3.2" fill="#f2849e" opacity=".5"/>
+<ellipse cx="92" cy="116" rx="9" ry="11.5" fill="#fffdf4"/>
+<g clip-path="url(#tessera-e1)">
+<ellipse cx="90.5" cy="118" rx="7.5" ry="9.5" fill="url(#tessera-iris)"/>
+<ellipse cx="90" cy="119" rx="4.6" ry="6.2" fill="#1b1622"/>
+<path d="M80 102H104V110C98 107 86 107 80 111Z" fill="#cfd8dc"/>
+</g>
+<ellipse cx="92" cy="116" rx="9" ry="11.5" fill="none" stroke="#4f3a26" stroke-width="2"/>
+<path d="M83.5 110C86 105.5 89.5 104.3 92.5 104.3C96 104.4 99 106.5 100.8 110" fill="none" stroke="#1b1622" stroke-width="3.5"/>
+<circle cx="86.8" cy="113" r="3.3" fill="#fff"/>
+<circle cx="92" cy="117.5" r="1.5" fill="#fff"/>
+<ellipse cx="64" cy="112.5" rx="6.8" ry="10.2" fill="#fffdf4"/>
+<g clip-path="url(#tessera-e2)">
+<ellipse cx="62.6" cy="114.5" rx="5.8" ry="8.3" fill="url(#tessera-iris)"/>
+<ellipse cx="62.2" cy="115.5" rx="3.6" ry="5.4" fill="#1b1622"/>
+<path d="M55 100H73V106.5C68 103.5 60 103.5 55 107.5Z" fill="#cfd8dc"/>
+</g>
+<ellipse cx="64" cy="112.5" rx="6.8" ry="10.2" fill="none" stroke="#4f3a26" stroke-width="2"/>
+<path d="M57.6 107C59.2 103 61.6 102.1 64 102.1C66.4 102.1 68.8 103.5 70.2 106.5" fill="none" stroke="#1b1622" stroke-width="3.2"/>
+<circle cx="59.8" cy="110" r="2.7" fill="#fff"/>
+<circle cx="63.6" cy="114" r="1.2" fill="#fff"/>
+<path d="M25 80L32 76.8L39 80L32 83.2Z" fill="#e88a5e"/><path d="M25 80L32 83.2V90.2L25 87Z" fill="#c0643e"/><path d="M32 83.2L39 80V87L32 90.2Z" fill="#93452c"/><path d="M25 80L32 76.8L39 80V87L32 90.2L25 87Z" fill="none" stroke="#5a2414" stroke-width="2"/><path d="M25 80L32 83.2L39 80M32 83.2V90.2" fill="none" stroke="#5a2414" stroke-width="1.4"/><path d="M23 170L28 167.8L33 170L28 172.2Z" fill="#6a7a90"/><path d="M23 170L28 172.2V177.2L23 175Z" fill="#3e4a5c"/><path d="M28 172.2L33 170V175L28 177.2Z" fill="#2a3444"/><path d="M23 170L28 167.8L33 170V175L28 177.2L23 175Z" fill="none" stroke="#1c2430" stroke-width="2"/><path d="M23 170L28 172.2L33 170M28 172.2V177.2" fill="none" stroke="#1c2430" stroke-width="1.4"/><path d="M165 172L170 169.8L175 172L170 174.2Z" fill="#f4d27a"/><path d="M165 172L170 174.2V179.2L165 177Z" fill="#d8a64a"/><path d="M170 174.2L175 172V177L170 179.2Z" fill="#a87a2c"/><path d="M165 172L170 169.8L175 172V177L170 179.2L165 177Z" fill="none" stroke="#5e3d10" stroke-width="2"/><path d="M165 172L170 174.2L175 172M170 174.2V179.2" fill="none" stroke="#5e3d10" stroke-width="1.4"/>
+</g>
+</svg>
