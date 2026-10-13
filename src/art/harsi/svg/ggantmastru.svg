@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="ggantmastru-g" gradientUnits="userSpaceOnUse" x1="40" y1="34" x2="124" y2="180"><stop offset="0" stop-color="#b0c6e6"/><stop offset=".55" stop-color="#7c9ac6"/></linearGradient>
+<linearGradient id="ggantmastru-far" x1="0" x2="1"><stop offset=".5" stop-color="#6a84b2"/><stop offset=".5" stop-color="#52669a"/></linearGradient>
+<linearGradient id="ggantmastru-st" gradientUnits="userSpaceOnUse" x1="118" y1="24" x2="176" y2="156"><stop offset="0" stop-color="#f6e0b0"/><stop offset=".55" stop-color="#e8c98c"/></linearGradient>
+<linearGradient id="ggantmastru-cl" x1="0" y1="0" x2="0" y2="1"><stop offset=".5" stop-color="#f6ebd0"/><stop offset=".5" stop-color="#d8c49c"/></linearGradient>
+<linearGradient id="ggantmastru-hr" x1="0" y1="0" x2=".5" y2="1"><stop offset=".45" stop-color="#4a4676"/><stop offset=".45" stop-color="#2a2648"/></linearGradient>
+<radialGradient id="ggantmastru-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#ffe07a"/><stop offset=".5" stop-color="#d88a26"/><stop offset="1" stop-color="#6a3010"/></radialGradient>
+<clipPath id="ggantmastru-cs"><path d="M116 40C114 30 122 24 132 22L143 21L149 28L158 21C164 23 166 29 168 38L182 136C184 148 178 156 168 157L146 160C138 161 132 156 130 148Z"/></clipPath>
+<clipPath id="ggantmastru-cb"><path d="M50 100C52 92 64 88 78 90C92 88 108 90 116 98C122 106 120 124 112 136C108 144 112 148 112 150L58 150C58 144 62 140 60 132C56 124 48 112 50 100Z"/></clipPath>
+<clipPath id="ggantmastru-ch"><path d="M76 34C94 34 106 46 106 62C106 78 96 88 80 91C64 93 51 86 47 74C43 62 47 50 55 42C61 37 68 34 76 34Z"/></clipPath>
+<clipPath id="ggantmastru-ca"><path d="M100 94C114 89 127 97 127 112C127 122 126 131 122 137C118 143 110 143 105 139L88 128C84 125 85 120 90 118L99 120C102 120 104 121 106 123L108 113C107 105 103 100 100 94Z"/></clipPath>
+<clipPath id="ggantmastru-e1"><path d="M74 64C76 59 83 56 92 56C94 62 92 70 86 72C80 73 75 70 74 64Z"/></clipPath>
+<clipPath id="ggantmastru-e2"><path d="M66 66C64.6 62.4 59.5 60.2 53 60.2C51.6 64.6 53 70.3 57.4 71.8C61.7 72.5 65.3 70.3 66 66Z"/></clipPath>
+</defs>
+<ellipse cx="100" cy="184" rx="66" ry="7" fill="#1d2b33" opacity="0.22"/>
+<g fill="#18224a" stroke="#18224a" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M116 40C114 30 122 24 132 22L143 21L149 28L158 21C164 23 166 29 168 38L182 136C184 148 178 156 168 157L146 160C138 161 132 156 130 148Z" fill="#5e3d1e" stroke="#5e3d1e"/>
+<path d="M106 44C118 48 126 62 122 78C120 88 118 96 114 104" fill="none" stroke="#15122a" stroke-width="12"/>
+<path d="M96 160H122L124 174C124 178 122 181 118 181H92C88 181 86 179 88 176C90 173 94 172 96 170Z"/><path d="M50 98C42 100 36 108 35 118C34 125 38 129 43 127C48 125 50 119 52 112Z"/><path d="M24 126C24 119 31 115 38 117C44 119 46 127 42 132C37 136 28 134 25 130Z"/><path d="M50 100C52 92 64 88 78 90C92 88 108 90 116 98C122 106 120 124 112 136C108 144 112 148 112 150L58 150C58 144 62 140 60 132C56 124 48 112 50 100Z"/>
+<path d="M54 140C70 147 100 147 114 140L126 164C106 172 68 172 46 164Z" fill="#5e4a2a" stroke="#5e4a2a"/>
+<path d="M54 160H84L82 174C82 179 80 182 76 182H44C40 182 38 180 40 177C43 174 48 174 54 171Z"/><path d="M100 94C114 89 127 97 127 112C127 122 126 131 122 137C118 143 110 143 105 139L88 128C84 125 85 120 90 118L99 120C102 120 104 121 106 123L108 113C107 105 103 100 100 94Z"/><path d="M72 116C72 108 80 103 88 105C96 107 99 115 95 122C91 128 81 128 76 123C73 121 72 118 72 116Z"/>
+<path d="M48 58C41 53 33 53 27 56C30 64 38 69 47 69Z"/><path d="M103 58C109 52 119 50 128 51C124 60 116 67 105 69Z"/><path d="M76 34C94 34 106 46 106 62C106 78 96 88 80 91C64 93 51 86 47 74C43 62 47 50 55 42C61 37 68 34 76 34Z"/>
+<path d="M46 66C44 48 58 34 76 33C96 33 108 46 107 62C102 54 94 51 86 53C76 49 62 51 54 58C50 62 48 64 46 66Z" fill="#15122a" stroke="#15122a"/><path d="M80 36C74 24 82 13 95 14C108 15 113 26 107 37Z" fill="#15122a" stroke="#15122a"/>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<g clip-path="url(#ggantmastru-cs)">
+<rect x="112" y="20" width="72" height="142" fill="url(#ggantmastru-st)"/>
+<path d="M150 22C158 64 170 108 172 160H186V22Z" fill="#c49a5e"/>
+<path d="M124 38C126 30 132 27 140 27C134 31 130 37 130 46Z" fill="#fff4d6"/>
+<path d="M156 88L152 98L158 104L154 116" fill="none" stroke="#a07040" stroke-width="2"/>
+</g>
+<path d="M116 40C114 30 122 24 132 22L143 21L149 28L158 21C164 23 166 29 168 38L182 136C184 148 178 156 168 157L146 160C138 161 132 156 130 148Z" fill="none" stroke="#5e3d1e" stroke-width="2.5"/>
+<path d="M138 44h.1M150 62h.1M166 112h.1M168 132h.1M142 128h.1M158 76h.1M136 100h.1" stroke="#a07040" stroke-width="3"/>
+<path transform="translate(148 120) scale(1.5)" d="M0 0C3 -3 7 0 5 4C2 8 -5 6 -5 0C-5 -7 3 -10 9 -6" fill="none" stroke="#a07040" stroke-width="2.2"/>
+<path d="M126 60L150 54" fill="none" stroke="#5e3d1e" stroke-width="5.5"/><path d="M126 60L150 54" fill="none" stroke="#c4553a" stroke-width="2.6" stroke-dasharray="3 2"/>
+<path d="M132 134L176 126" fill="none" stroke="#5e3d1e" stroke-width="5.5"/><path d="M132 134L176 126" fill="none" stroke="#c4553a" stroke-width="2.6" stroke-dasharray="3 2"/>
+<path d="M106 44C118 48 126 62 122 78C120 88 118 96 114 104" fill="none" stroke="#15122a" stroke-width="3.2"/>
+<path d="M106 44C118 48 126 62 122 78C120 88 118 96 114 104" fill="none" stroke="#4a4676" stroke-width="7.5"/>
+<path d="M106 44C118 48 126 62 122 78C120 88 118 96 114 104" fill="none" stroke="#2a2648" stroke-width="1.6" stroke-dasharray="4 4"/>
+<path d="M116 70L124 72" stroke="#c4553a" stroke-width="4"/>
+<path d="M96 160H122L124 174C124 178 122 181 118 181H92C88 181 86 179 88 176C90 173 94 172 96 170Z" fill="url(#ggantmastru-far)" stroke="#18224a" stroke-width="2.5"/>
+<path d="M96 176C96 173 98 171 100 171M102 177C102 174 104 172 106 172" fill="none" stroke="#18224a" stroke-width="1.6"/>
+<path d="M50 98C42 100 36 108 35 118C34 125 38 129 43 127C48 125 50 119 52 112Z" fill="url(#ggantmastru-far)" stroke="#18224a" stroke-width="2.5"/>
+<path d="M24 126C24 119 31 115 38 117C44 119 46 127 42 132C37 136 28 134 25 130Z" fill="url(#ggantmastru-far)" stroke="#18224a" stroke-width="2.5"/>
+<path d="M28 126C32 124 36 124 39 126M28 131C32 129 36 129 40 131" fill="none" stroke="#4a5c8c" stroke-width="1.8"/>
+<g clip-path="url(#ggantmastru-cb)">
+<rect x="46" y="86" width="82" height="68" fill="url(#ggantmastru-g)"/>
+<path d="M116 98C122 112 116 132 100 142L60 152H124V98Z" fill="#5f78a8"/>
+<path d="M50 104C62 108 74 116 80 126C70 120 58 118 50 120Z" fill="#4a5c8c"/>
+<path d="M60 94C68 91 78 91 86 93C78 94 70 97 64 102Z" fill="#dbe8f8"/>
+<path d="M62 112C70 116 76 120 78 126M96 108C100 114 100 122 98 128" fill="none" stroke="#5f78a8" stroke-width="2"/>
+</g>
+<path d="M50 100C52 92 64 88 78 90C92 88 108 90 116 98C122 106 120 124 112 136C108 144 112 148 112 150L58 150C58 144 62 140 60 132C56 124 48 112 50 100Z" fill="none" stroke="#18224a" stroke-width="2.5"/>
+<path d="M112 92C106 108 96 122 88 134" fill="none" stroke="#5e3d1e" stroke-width="6"/><path d="M112 92C106 108 96 122 88 134" fill="none" stroke="#f0d898" stroke-width="3" stroke-dasharray="3 2"/>
+<path transform="translate(62 108) scale(1.1)" d="M0 0C3 -3 7 0 5 4C2 8 -5 6 -5 0C-5 -7 3 -10 9 -6" fill="none" stroke="#c4553a" stroke-width="2.4"/>
+<path d="M54 140C70 147 100 147 114 140L126 164C106 172 68 172 46 164Z" fill="url(#ggantmastru-cl)" stroke="#5e4a2a" stroke-width="2.5"/>
+<path d="M58 150L55 166M68 152L66 169M80 153L79 170M92 153L92 170M104 152L105 168M114 149L117 165" fill="none" stroke="#b8a074" stroke-width="2"/>
+<path d="M54 140C70 147 100 147 114 140" fill="none" stroke="#c4553a" stroke-width="4"/>
+<path d="M84 146C86 150 88 150 90 146" fill="#f6e0b0" stroke="#5e4a2a" stroke-width="1.5"/>
+<path d="M54 160H84L82 174C82 179 80 182 76 182H44C40 182 38 180 40 177C43 174 48 174 54 171Z" fill="url(#ggantmastru-g)" stroke="#18224a" stroke-width="2.5"/>
+<path d="M70 166C72 170 72 175 70 179" fill="none" stroke="#5f78a8" stroke-width="3"/>
+<path d="M44 182C44 179 46 177 48 177M50 182C50 179 52 177 54 177" fill="none" stroke="#18224a" stroke-width="1.6"/>
+<path d="M56 163H82" stroke="#f6ebd0" stroke-width="5"/><path d="M56 163H82" stroke="#c4553a" stroke-width="2"/>
+<g clip-path="url(#ggantmastru-ca)">
+<rect x="82" y="86" width="48" height="62" fill="url(#ggantmastru-g)"/>
+<path d="M118 100C128 112 126 132 118 142H132V100Z" fill="#5f78a8"/>
+<path d="M98 96C108 92 118 94 122 102C114 98 106 98 100 102Z" fill="#dbe8f8"/>
+</g>
+<path d="M100 94C114 89 127 97 127 112C127 122 126 131 122 137C118 143 110 143 105 139L88 128C84 125 85 120 90 118L99 120C102 120 104 121 106 123L108 113C107 105 103 100 100 94Z" fill="none" stroke="#18224a" stroke-width="2.5"/>
+<path transform="translate(113 112) scale(1.2)" d="M0 0C3 -3 7 0 5 4C2 8 -5 6 -5 0C-5 -7 3 -10 9 -6" fill="none" stroke="#c4553a" stroke-width="2.4"/>
+<path d="M92 118L108 126" fill="none" stroke="#f6ebd0" stroke-width="6"/><path d="M92 118L108 126" fill="none" stroke="#5e4a2a" stroke-width="1.6" stroke-dasharray="2 3"/>
+<path d="M72 116C72 108 80 103 88 105C96 107 99 115 95 122C91 128 81 128 76 123C73 121 72 118 72 116Z" fill="url(#ggantmastru-g)" stroke="#18224a" stroke-width="2.5"/>
+<path d="M76 114C79 112 82 112 85 114M74 119C77 117 80 117 83 119" fill="none" stroke="#4a5c8c" stroke-width="1.8"/>
+<path d="M90 106C93 109 94 114 92 118" fill="none" stroke="#dbe8f8" stroke-width="1.6"/>
+<path d="M48 58C41 53 33 53 27 56C30 64 38 69 47 69Z" fill="url(#ggantmastru-far)" stroke="#18224a" stroke-width="2.5"/>
+<path d="M103 58C109 52 119 50 128 51C124 60 116 67 105 69Z" fill="url(#ggantmastru-g)" stroke="#18224a" stroke-width="2.5"/>
+<path d="M107 60C112 56 118 54 122 54C119 60 114 64 108 66Z" fill="#c48aa0"/>
+<g clip-path="url(#ggantmastru-ch)">
+<rect x="42" y="30" width="68" height="66" fill="url(#ggantmastru-g)"/>
+<path d="M104 58C104 80 94 90 70 94L110 98V58Z" fill="#5f78a8"/>
+<path d="M50 70C52 62 58 56 66 54C60 58 56 64 54 72Z" fill="#dbe8f8"/>
+</g>
+<path d="M76 34C94 34 106 46 106 62C106 78 96 88 80 91C64 93 51 86 47 74C43 62 47 50 55 42C61 37 68 34 76 34Z" fill="none" stroke="#18224a" stroke-width="2.5"/>
+<path d="M46 66C44 48 58 34 76 33C96 33 108 46 107 62C102 54 94 51 86 53C76 49 62 51 54 58C50 62 48 64 46 66Z" fill="url(#ggantmastru-hr)" stroke="#15122a" stroke-width="2.5"/>
+<path d="M80 36C74 24 82 13 95 14C108 15 113 26 107 37Z" fill="url(#ggantmastru-hr)" stroke="#15122a" stroke-width="2.5"/>
+<path d="M56 46C62 40 70 38 76 38M88 20C92 17 98 17 101 19" fill="none" stroke="#7a76a8" stroke-width="2"/>
+<path d="M80 36C88 34 98 35 107 37" fill="none" stroke="#c4553a" stroke-width="4"/>
+<path d="M49 70C52 72 55 73 58 72" fill="none" stroke="#c4553a" stroke-width="2.4"/>
+<path transform="translate(95 78) scale(0.9)" d="M0 0C3 -3 7 0 5 4C2 8 -5 6 -5 0C-5 -7 3 -10 9 -6" fill="none" stroke="#c4553a" stroke-width="2.2"/>
+<path d="M62 76C60 72 62 68 66 68M64 80L58 80" fill="none" stroke="#18224a" stroke-width="0"/>
+<ellipse cx="55" cy="76" rx="6.5" ry="5" fill="#7d96c0" stroke="#18224a" stroke-width="2"/><path d="M51 74C53 72 56 72 58 73" fill="none" stroke="#dbe8f8" stroke-width="1.6"/>
+<path d="M50 83C58 90 72 89 83 82" fill="#3a1a2a" stroke="#18224a" stroke-width="2.2"/>
+<path d="M56 86L57 82L60 87ZM74 87L76 83L78 86Z" fill="#fffdf4" stroke="#18224a" stroke-width="1.2"/>
+<ellipse cx="94" cy="80" rx="6" ry="3.4" fill="#f2849e" opacity=".4"/>
+<path d="M74 64C76 59 83 56 92 56C94 62 92 70 86 72C80 73 75 70 74 64Z" fill="#fffdf4"/>
+<g clip-path="url(#ggantmastru-e1)">
+<ellipse cx="84" cy="65.5" rx="6.2" ry="7.2" fill="url(#ggantmastru-iris)"/>
+<ellipse cx="83.6" cy="66" rx="3.7" ry="5" fill="#1b1622"/>
+</g>
+<path d="M74 64C76 59 83 56 92 56C94 62 92 70 86 72C80 73 75 70 74 64Z" fill="none" stroke="#18224a" stroke-width="2"/>
+<path d="M73.5 65C76 59 83 56 93 55.5" fill="none" stroke="#1b1622" stroke-width="3.8"/>
+<circle cx="80.8" cy="62.6" r="2.4" fill="#fff"/>
+<circle cx="84.8" cy="66.8" r="1.1" fill="#fff"/>
+<path d="M66 66C64.6 62.4 59.5 60.2 53 60.2C51.6 64.6 53 70.3 57.4 71.8C61.7 72.5 65.3 70.3 66 66Z" fill="#fffdf4"/>
+<g clip-path="url(#ggantmastru-e2)">
+<ellipse cx="58.8" cy="67.1" rx="4.5" ry="5.2" fill="url(#ggantmastru-iris)"/>
+<ellipse cx="59.1" cy="67.4" rx="2.7" ry="3.6" fill="#1b1622"/>
+</g>
+<path d="M66 66C64.6 62.4 59.5 60.2 53 60.2C51.6 64.6 53 70.3 57.4 71.8C61.7 72.5 65.3 70.3 66 66Z" fill="none" stroke="#18224a" stroke-width="2"/>
+<path d="M66.4 66.7C64.6 62.4 59.5 60.2 52.3 59.9" fill="none" stroke="#1b1622" stroke-width="3.4"/>
+<circle cx="61.1" cy="65" r="1.9" fill="#fff"/>
+<circle cx="58.2" cy="68" r="0.9" fill="#fff"/>
+<path d="M70 58C78 54 88 54 98 58M44 62C48 58 54 57 60 60" fill="none" stroke="#15122a" stroke-width="3.4"/>
+</g>
+</svg>

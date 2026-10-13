@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="bornadur-g" gradientUnits="userSpaceOnUse" x1="40" y1="106" x2="150" y2="180"><stop offset="0" stop-color="#c47ab4"/><stop offset=".55" stop-color="#9a548c"/></linearGradient>
+<linearGradient id="bornadur-q" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#5c2a5c"/><stop offset=".35" stop-color="#9a5090"/><stop offset=".56" stop-color="#9a5090"/><stop offset=".56" stop-color="#f4e4be"/><stop offset="1" stop-color="#e6cc9e"/></linearGradient>
+<linearGradient id="bornadur-sp" gradientUnits="userSpaceOnUse" x1="70" y1="60" x2="150" y2="150"><stop offset="0" stop-color="#8e4886"/><stop offset=".6" stop-color="#65305e"/></linearGradient>
+<linearGradient id="bornadur-far" x1="0" x2="1"><stop offset=".5" stop-color="#7c4482"/><stop offset=".5" stop-color="#5e3068"/></linearGradient>
+<linearGradient id="bornadur-br" x1="0" y1="0" x2="1" y2="1"><stop offset=".55" stop-color="#f0a040"/><stop offset=".55" stop-color="#c06a28"/></linearGradient>
+<radialGradient id="bornadur-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#ffe07a"/><stop offset=".5" stop-color="#d88a26"/><stop offset="1" stop-color="#6a3010"/></radialGradient>
+<clipPath id="bornadur-cb"><path d="M64 142C62 118 82 104 108 104C136 104 156 122 154 146C152 164 134 176 108 176C84 176 66 166 64 142Z"/></clipPath>
+<clipPath id="bornadur-ch"><path d="M94 132C92 116 78 110 64 112C52 114 45 123 43 131L29 142C24 147 27 152 33 153L45 156C53 164 66 166 78 162C90 158 96 146 94 132Z"/></clipPath>
+<clipPath id="bornadur-e1"><ellipse cx="63" cy="131" rx="10" ry="12.5"/></clipPath>
+<clipPath id="bornadur-e2"><ellipse cx="45" cy="133" rx="7" ry="10"/></clipPath>
+</defs>
+<ellipse cx="96" cy="184" rx="66" ry="7" fill="#1d2b33" opacity="0.22"/>
+<g fill="#3a1840" stroke="#3a1840" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M98 168H112C116 168 116 172 116 175V179C116 181 114 182 110 182H100C96 182 95 179 96 176C97 172 96 170 98 168Z"/><path d="M126 168H148C154 168 160 173 160 178C160 181 158 182 154 182H128C124 182 122 180 123 177C124 174 124 170 126 168Z"/><path d="M64 142C62 118 82 104 108 104C136 104 156 122 154 146C152 164 134 176 108 176C84 176 66 166 64 142Z"/>
+<path d="M72 118C80 96 104 90 126 96C150 104 160 126 154 150C140 158 124 150 112 148C98 146 84 136 72 118Z" fill="#2a0f2c" stroke="#2a0f2c"/>
+<path d="M64 164H90C94 164 96 168 96 172V178C96 181 94 182 90 182H66C62 182 60 179 62 176C64 172 62 168 64 164Z"/><path d="M94 132C92 116 78 110 64 112C52 114 45 123 43 131L29 142C24 147 27 152 33 153L45 156C53 164 66 166 78 162C90 158 96 146 94 132Z"/><path d="M76 118C73 109 79 102 87 104C94 107 94 115 90 121Z"/>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M98 168H112C116 168 116 172 116 175V179C116 181 114 182 110 182H100C96 182 95 179 96 176C97 172 96 170 98 168Z" fill="url(#bornadur-far)" stroke="#3a1840" stroke-width="2.5"/>
+<path d="M126 168H148C154 168 160 173 160 178C160 181 158 182 154 182H128C124 182 122 180 123 177C124 174 124 170 126 168Z" fill="url(#bornadur-far)" stroke="#3a1840" stroke-width="2.5"/>
+<path d="M132 178C132 175 134 173 136 173M140 178C140 175 142 173 144 173" fill="none" stroke="#3a1840" stroke-width="1.6"/>
+<g clip-path="url(#bornadur-cb)">
+<rect x="58" y="100" width="100" height="80" fill="url(#bornadur-g)"/>
+<path d="M156 118C158 150 136 174 100 178L60 178H160Z" fill="#6e3a7a"/>
+<path d="M60 150C80 162 110 164 130 160C112 170 84 172 64 164Z" fill="#5a2c68"/>
+<path d="M76 118C88 110 104 106 118 108C104 110 90 114 80 124Z" fill="#e8b4da"/>
+</g>
+<path d="M64 142C62 118 82 104 108 104C136 104 156 122 154 146C152 164 134 176 108 176C84 176 66 166 64 142Z" fill="none" stroke="#3a1840" stroke-width="2.5"/>
+<path d="M72 118C80 96 104 90 126 96C150 104 160 126 154 150C140 158 124 150 112 148C98 146 84 136 72 118Z" fill="#4e2250" stroke="#2a0f2c" stroke-width="2"/>
+<g fill="url(#bornadur-q)" stroke="#2a0f2c" stroke-width="2" stroke-linejoin="round"><path transform="translate(72.9 118.9) rotate(304) scale(1.1)" d="M-7 0C-8 -8 -4 -17 0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(77.5 105.7) rotate(322) scale(1.1)" d="M-7 0C-8 -8 -4 -17 0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(85.7 94.9) rotate(341) scale(1.1)" d="M-7 0C-8 -8 -4 -17 0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(96.5 87.4) rotate(359) scale(1.1)" d="M-7 0C-8 -8 -4 -17 0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(108.9 84.1) rotate(378) scale(1.1)" d="M-7 0C-8 -8 -4 -17 0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(121.7 85.3) rotate(396) scale(1.1)" d="M-7 0C-8 -8 -4 -17 0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(133.4 90.8) rotate(414) scale(1.1)" d="M-7 0C-8 -8 -4 -17 0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(143 100.2) rotate(433) scale(1.1)" d="M-7 0C-8 -8 -4 -17 0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(149.4 112.4) rotate(451) scale(1.1)" d="M-7 0C-8 -8 -4 -17 0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(152 126.2) rotate(470) scale(1.1)" d="M-7 0C-8 -8 -4 -17 0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(150.5 140.1) rotate(488) scale(1.1)" d="M-7 0C-8 -8 -4 -17 0 -24C4 -17 8 -8 7 0Z"/></g><g fill="#2a0f2c" opacity=".24"><path transform="translate(72.9 118.9) rotate(304) scale(1.1)" d="M0 0L0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(77.5 105.7) rotate(322) scale(1.1)" d="M0 0L0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(85.7 94.9) rotate(341) scale(1.1)" d="M0 0L0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(96.5 87.4) rotate(359) scale(1.1)" d="M0 0L0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(108.9 84.1) rotate(378) scale(1.1)" d="M0 0L0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(121.7 85.3) rotate(396) scale(1.1)" d="M0 0L0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(133.4 90.8) rotate(414) scale(1.1)" d="M0 0L0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(143 100.2) rotate(433) scale(1.1)" d="M0 0L0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(149.4 112.4) rotate(451) scale(1.1)" d="M0 0L0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(152 126.2) rotate(470) scale(1.1)" d="M0 0L0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(150.5 140.1) rotate(488) scale(1.1)" d="M0 0L0 -24C4 -17 8 -8 7 0Z"/></g>
+<g transform="translate(92 80) rotate(-44) scale(0.85)"><path d="M0 0V-34" stroke="#7a4a14" stroke-width="5" stroke-linecap="round"/><path d="M0 0V-34" stroke="#d8a840" stroke-width="2"/><ellipse cx="-3.6" cy="-30" rx="2.8" ry="5" transform="rotate(-24 -3.6 -30)" fill="#f4cf60" stroke="#7a4a14" stroke-width="1.5"/><ellipse cx="3.6" cy="-28" rx="2.8" ry="5" transform="rotate(24 3.6 -28)" fill="#f4cf60" stroke="#7a4a14" stroke-width="1.5"/><ellipse cx="-3.6" cy="-22" rx="2.8" ry="5" transform="rotate(-24 -3.6 -22)" fill="#f4cf60" stroke="#7a4a14" stroke-width="1.5"/><ellipse cx="3.6" cy="-20" rx="2.8" ry="5" transform="rotate(24 3.6 -20)" fill="#f4cf60" stroke="#7a4a14" stroke-width="1.5"/><ellipse cx="-3.6" cy="-14" rx="2.8" ry="5" transform="rotate(-24 -3.6 -14)" fill="#f4cf60" stroke="#7a4a14" stroke-width="1.5"/><ellipse cx="3.6" cy="-12" rx="2.8" ry="5" transform="rotate(24 3.6 -12)" fill="#f4cf60" stroke="#7a4a14" stroke-width="1.5"/><ellipse cx="-3.6" cy="-6" rx="2.8" ry="5" transform="rotate(-24 -3.6 -6)" fill="#f4cf60" stroke="#7a4a14" stroke-width="1.5"/><ellipse cx="3.6" cy="-4" rx="2.8" ry="5" transform="rotate(24 3.6 -4)" fill="#f4cf60" stroke="#7a4a14" stroke-width="1.5"/><ellipse cx="0" cy="-38" rx="2.8" ry="5" fill="#f4cf60" stroke="#7a4a14" stroke-width="1.5"/><path d="M-5 -28L-2 -33M-5 -20L-2 -25" stroke="#fff0b0" stroke-width="1.2"/></g>
+<g fill="url(#bornadur-q)" stroke="#2a0f2c" stroke-width="2.2" stroke-linejoin="round"><path transform="translate(84.8 114.1) rotate(311) scale(1)" d="M-7 0C-8 -8 -4 -17 0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(91.3 104.1) rotate(332) scale(1)" d="M-7 0C-8 -8 -4 -17 0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(100.7 97.4) rotate(354) scale(1)" d="M-7 0C-8 -8 -4 -17 0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(111.6 95) rotate(375) scale(1)" d="M-7 0C-8 -8 -4 -17 0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(122.6 97.1) rotate(397) scale(1)" d="M-7 0C-8 -8 -4 -17 0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(132.1 103.5) rotate(418) scale(1)" d="M-7 0C-8 -8 -4 -17 0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(138.9 113.3) rotate(440) scale(1)" d="M-7 0C-8 -8 -4 -17 0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(141.9 125.1) rotate(461) scale(1)" d="M-7 0C-8 -8 -4 -17 0 -24C4 -17 8 -8 7 0Z"/></g><g fill="#2a0f2c" opacity=".24"><path transform="translate(84.8 114.1) rotate(311) scale(1)" d="M0 0L0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(91.3 104.1) rotate(332) scale(1)" d="M0 0L0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(100.7 97.4) rotate(354) scale(1)" d="M0 0L0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(111.6 95) rotate(375) scale(1)" d="M0 0L0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(122.6 97.1) rotate(397) scale(1)" d="M0 0L0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(132.1 103.5) rotate(418) scale(1)" d="M0 0L0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(138.9 113.3) rotate(440) scale(1)" d="M0 0L0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(141.9 125.1) rotate(461) scale(1)" d="M0 0L0 -24C4 -17 8 -8 7 0Z"/></g><g fill="url(#bornadur-q)" stroke="#2a0f2c" stroke-width="2.4" stroke-linejoin="round"><path transform="translate(94 116.2) rotate(315) scale(0.9)" d="M-7 0C-8 -8 -4 -17 0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(101.3 109) rotate(341) scale(0.9)" d="M-7 0C-8 -8 -4 -17 0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(110.8 106) rotate(367) scale(0.9)" d="M-7 0C-8 -8 -4 -17 0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(120.6 107.9) rotate(393) scale(0.9)" d="M-7 0C-8 -8 -4 -17 0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(128.6 114.3) rotate(419) scale(0.9)" d="M-7 0C-8 -8 -4 -17 0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(133.3 123.8) rotate(445) scale(0.9)" d="M-7 0C-8 -8 -4 -17 0 -24C4 -17 8 -8 7 0Z"/></g><g fill="url(#bornadur-q)" stroke="#2a0f2c" stroke-width="2.2" stroke-linejoin="round"><path transform="translate(107.5 121.5) rotate(323) scale(1)" d="M-7 0C-8 -8 -4 -17 0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(114.3 118.1) rotate(360) scale(1)" d="M-7 0C-8 -8 -4 -17 0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(121.7 119.4) rotate(396) scale(1)" d="M-7 0C-8 -8 -4 -17 0 -24C4 -17 8 -8 7 0Z"/><path transform="translate(126.9 124.9) rotate(433) scale(1)" d="M-7 0C-8 -8 -4 -17 0 -24C4 -17 8 -8 7 0Z"/></g>
+<g transform="translate(134 92) rotate(28)"><path d="M-16 -8L-11 -8C-9 -4 9 -4 11 -8L16 -8L16 -3C13 -1 13 1 16 3L16 8L11 8C9 4 -9 4 -11 8L-16 8L-16 3C-13 1 -13 -1 -16 -3Z" fill="url(#bornadur-br)" stroke="#6a3a0e" stroke-width="2.5"/><path d="M-9 -4C-3 -2 3 -2 9 -4" fill="none" stroke="#ffd98a" stroke-width="1.8"/><ellipse cx="0" cy="0" rx="3.2" ry="2.2" fill="#6a3a0e"/></g>
+<path d="M64 164H90C94 164 96 168 96 172V178C96 181 94 182 90 182H66C62 182 60 179 62 176C64 172 62 168 64 164Z" fill="url(#bornadur-g)" stroke="#3a1840" stroke-width="2.5"/>
+<path d="M66 178C68 175 70 173 72 173M74 178C76 175 78 173 80 173M82 178C84 175 86 173 88 173" fill="none" stroke="#3a1840" stroke-width="1.6"/>
+<path d="M62 170C66 168 70 168 72 170" fill="none" stroke="#e8b4da" stroke-width="1.6"/>
+<path d="M76 118C73 109 79 102 87 104C94 107 94 115 90 121Z" fill="url(#bornadur-g)" stroke="#3a1840" stroke-width="2.5"/>
+<path d="M80 117C79 112 82 108 86 108C89 110 90 114 88 118Z" fill="#f0a8c0"/>
+<g clip-path="url(#bornadur-ch)">
+<rect x="22" y="104" width="78" height="64" fill="url(#bornadur-g)"/>
+<path d="M96 126C96 150 88 162 70 164L100 168V126Z" fill="#6e3a7a"/>
+<path d="M52 118C58 114 66 112 74 113C66 115 60 119 56 124Z" fill="#e8b4da"/>
+</g>
+<path d="M94 132C92 116 78 110 64 112C52 114 45 123 43 131L29 142C24 147 27 152 33 153L45 156C53 164 66 166 78 162C90 158 96 146 94 132Z" fill="none" stroke="#3a1840" stroke-width="2.5"/>
+<path d="M42 130C46 118 62 114 84 120C86 132 78 142 62 142C50 143 41 138 42 130Z" fill="#4a2050" stroke="#3a1840" stroke-width="1.5"/>
+<path d="M29 143C36 140 48 141 56 147C58 154 52 159 45 157L33 153C27 151 26 146 29 143Z" fill="#f2dcd0" stroke="#7a4478" stroke-width="2"/>
+<path d="M30 146C34 143 40 143 44 145C42 150 34 151 30 148Z" fill="#c8a0b0"/>
+<ellipse cx="30" cy="145" rx="4.8" ry="4" fill="#2a1030" stroke="#3a1840" stroke-width="1.5"/><circle cx="28.6" cy="143.6" r="1.4" fill="#fff"/>
+<path d="M34 153C40 158 50 158 56 152" fill="none" stroke="#3a1840" stroke-width="2.2"/>
+<ellipse cx="74" cy="148" rx="6" ry="3.6" fill="#f2849e" opacity=".5"/>
+<ellipse cx="56" cy="158" rx="3" ry="4.5" transform="rotate(-24 56 158)" fill="#f4cf60" stroke="#7a4a14" stroke-width="1.5"/>
+<ellipse cx="45" cy="133" rx="7" ry="10" fill="#fffdf4"/>
+<g clip-path="url(#bornadur-e2)">
+<ellipse cx="43.8" cy="134.7" rx="5.8" ry="8.3" fill="url(#bornadur-iris)"/>
+<ellipse cx="43.4" cy="135.6" rx="3.6" ry="5.4" fill="#1b1622"/>
+<path d="M35.7 120.8H54.3V127.8C49.7 125.2 40.3 125.2 35.7 128.7Z" fill="#d8c4e6"/>
+</g>
+<ellipse cx="45" cy="133" rx="7" ry="10" fill="none" stroke="#3a1840" stroke-width="2"/>
+<path d="M38.4 127.8C40.3 123.9 43.1 122.8 45.4 122.8C48.1 122.9 50.4 124.7 51.8 127.8" fill="none" stroke="#1b1622" stroke-width="3.2"/>
+<circle cx="41" cy="130.4" r="2.6" fill="#fff"/>
+<circle cx="45" cy="134.3" r="1.2" fill="#fff"/>
+<ellipse cx="63" cy="131" rx="10" ry="12.5" fill="#fffdf4"/>
+<g clip-path="url(#bornadur-e1)">
+<ellipse cx="61.3" cy="133.2" rx="8.3" ry="10.4" fill="url(#bornadur-iris)"/>
+<ellipse cx="60.8" cy="134.3" rx="5.1" ry="6.8" fill="#1b1622"/>
+<path d="M49.7 115.8H76.3V124.5C69.7 121.2 56.3 121.2 49.7 125.6Z" fill="#d8c4e6"/>
+</g>
+<ellipse cx="63" cy="131" rx="10" ry="12.5" fill="none" stroke="#3a1840" stroke-width="2"/>
+<path d="M53.6 124.5C56.3 119.6 60.2 118.3 63.6 118.3C67.4 118.4 70.8 120.7 72.8 124.5" fill="none" stroke="#1b1622" stroke-width="3.5"/>
+<circle cx="57.2" cy="127.7" r="3.2" fill="#fff"/>
+<circle cx="63" cy="132.6" r="1.4" fill="#fff"/>
+<path d="M54 118C58 116 62 116 66 118M40 124C42 122 44 122 46 123" fill="none" stroke="#2a1030" stroke-width="3"/>
+</g>
+</svg>
