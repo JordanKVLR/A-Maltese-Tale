@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="kartruttan-g" gradientUnits="userSpaceOnUse" x1="76" y1="66" x2="166" y2="160"><stop offset="0" stop-color="#f2c35e"/><stop offset=".55" stop-color="#d48f2c"/></linearGradient>
+<linearGradient id="kartruttan-sk" gradientUnits="userSpaceOnUse" x1="10" y1="56" x2="110" y2="180"><stop offset="0" stop-color="#cdd08c"/><stop offset=".5" stop-color="#9fa760"/></linearGradient>
+<linearGradient id="kartruttan-hd" gradientUnits="userSpaceOnUse" x1="96" y1="16" x2="160" y2="86"><stop offset="0" stop-color="#e8805a"/><stop offset=".55" stop-color="#c4553a"/></linearGradient>
+<linearGradient id="kartruttan-far" x1="0" x2="1"><stop offset=".5" stop-color="#868e50"/><stop offset=".5" stop-color="#6c7444"/></linearGradient>
+<linearGradient id="kartruttan-st" x1="0" y1="0" x2=".6" y2="1"><stop offset=".5" stop-color="#f6e8c4"/><stop offset=".5" stop-color="#d2b682"/></linearGradient>
+<linearGradient id="kartruttan-ru" x1="0" y1="0" x2="0" y2="1"><stop offset=".45" stop-color="#f4e4bc"/><stop offset=".45" stop-color="#d2b682"/></linearGradient>
+<radialGradient id="kartruttan-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#bfe8ff"/><stop offset=".5" stop-color="#2f78d0"/><stop offset="1" stop-color="#0f2a66"/></radialGradient>
+<clipPath id="kartruttan-cb"><path d="M74 132C70 104 90 76 126 72C162 68 186 96 186 128C186 144 180 152 168 154L88 156C78 156 72 148 74 132Z"/></clipPath>
+<clipPath id="kartruttan-ch"><path d="M46 58C64 56 78 68 78 84C78 98 70 108 58 112C46 116 30 116 20 110C12 106 8 99 9 92C10 84 15 78 21 75C25 64 34 59 46 58Z"/></clipPath>
+<clipPath id="kartruttan-cl"><path d="M88 136C100 130 114 134 116 146L112 176C111 180 108 182 103 182H82C78 182 76 180 76 176L80 148C81 142 84 138 88 136ZM142 140C154 134 168 138 170 150V176C170 180 167 182 163 182H144C140 182 138 180 138 176V148C138 144 139 141 142 140Z"/></clipPath>
+<clipPath id="kartruttan-cp"><path d="M98 82C90 70 92 54 102 46C110 38 122 36 130 40C138 34 154 34 164 40L181 50C183 60 181 70 175 80C156 88 118 90 98 82Z"/></clipPath>
+<clipPath id="kartruttan-e1"><path d="M40 84C42 79 49 76 58 76C60 82 58 90 52 92C46 93 41 90 40 84Z"/></clipPath>
+<clipPath id="kartruttan-e2"><path d="M15 86C16.3 82 20.8 79.6 26.5 79.6C27.8 84.4 26.5 90.8 22.7 92.4C18.8 93.2 15.6 90.8 15 86Z"/></clipPath>
+</defs>
+<ellipse cx="102" cy="184" rx="88" ry="7" fill="#1d2b33" opacity="0.22"/>
+<path d="M176 182.5H192M174 177.5H192" fill="none" stroke="#a88a5a" stroke-width="3.5" stroke-linecap="round"/>
+<path d="M177 184.5H192M175 179.5H192" fill="none" stroke="#fff6e0" stroke-width="1.4" stroke-linecap="round"/>
+<g fill="#2c3216" stroke="#2c3216" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M60 140H80L78 174C78 177 76 179 73 179H64C61 179 59 177 59 174ZM118 150H136V174C136 177 134 179 131 179H121C118 179 118 177 118 174Z"/>
+<path d="M98 146C126 150 156 150 170 152C178 156 184 164 186 172C186 175 185 176 183 176H172C164 170 140 166 106 164C98 164 94 156 98 146Z" fill="#5e4020" stroke="#5e4020"/>
+<path d="M44 100C54 90 74 90 86 98C94 104 100 118 102 140L78 146C72 132 62 118 48 110Z"/>
+<path d="M92 152C120 156 152 156 170 158C180 162 188 172 191 180C191 182 190 183 188 183H174C164 176 138 172 100 170C92 170 88 162 92 152Z" fill="#5e4020" stroke="#5e4020"/>
+<path d="M88 136C100 130 114 134 116 146L112 176C111 180 108 182 103 182H82C78 182 76 180 76 176L80 148C81 142 84 138 88 136ZM142 140C154 134 168 138 170 150V176C170 180 167 182 163 182H144C140 182 138 180 138 176V148C138 144 139 141 142 140Z"/>
+<path d="M74 132C70 104 90 76 126 72C162 68 186 96 186 128C186 144 180 152 168 154L88 156C78 156 72 148 74 132Z" fill="#401e0c" stroke="#401e0c"/>
+<path d="M98 82C90 70 92 54 102 46C110 38 122 36 130 40C138 34 154 34 164 40L181 50C183 60 181 70 175 80C156 88 118 90 98 82Z" fill="#4e1612" stroke="#4e1612"/><path d="M126 44C122 36 114 30 108 28C116 24 126 27 133 33C137 25 144 20 152 20C148 26 144 34 141 42Z" fill="#4e1612" stroke="#4e1612"/>
+<path d="M58 64C60 52 68 42 80 36C84 34 88 34 90 36C84 40 79 46 77 54C75 60 73 66 71 70ZM30 66C28 54 30 44 36 38C36 46 38 56 42 62Z" fill="#5e4020" stroke="#5e4020"/>
+<path d="M46 58C64 56 78 68 78 84C78 98 70 108 58 112C46 116 30 116 20 110C12 106 8 99 9 92C10 84 15 78 21 75C25 64 34 59 46 58Z"/>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M60 140H80L78 174C78 177 76 179 73 179H64C61 179 59 177 59 174ZM118 150H136V174C136 177 134 179 131 179H121C118 179 118 177 118 174Z" fill="url(#kartruttan-far)" stroke="#2c3216" stroke-width="2.5"/>
+<path d="M62 174h.1M69 176h.1M121 174h.1M128 176h.1" stroke="#ece2b8" stroke-width="3.5"/>
+<path d="M98 146C126 150 156 150 170 152C178 156 184 164 186 172C186 175 185 176 183 176H172C164 170 140 166 106 164C98 164 94 156 98 146Z" fill="#c9ad7c" stroke="#5e4020" stroke-width="2.5"/>
+<path d="M44 100C54 90 74 90 86 98C94 104 100 118 102 140L78 146C72 132 62 118 48 110Z" fill="url(#kartruttan-sk)" stroke="#2c3216" stroke-width="2.5"/>
+<path d="M50 112C60 112 70 118 76 128M60 104C70 104 80 110 86 120" fill="none" stroke="#6c7444" stroke-width="2"/>
+<path d="M46 108C54 112 62 122 68 134C71 140 74 144 78 146L72 148C64 138 56 124 46 114Z" fill="#7a8248"/>
+<path d="M92 152C120 156 152 156 170 158C180 162 188 172 191 180C191 182 190 183 188 183H174C164 176 138 172 100 170C92 170 88 162 92 152Z" fill="url(#kartruttan-ru)" stroke="#5e4020" stroke-width="2.5"/>
+<path d="M112 160C136 161 158 162 172 166" fill="none" stroke="#fffaea" stroke-width="2"/>
+<g clip-path="url(#kartruttan-cl)">
+<rect x="74" y="128" width="100" height="56" fill="url(#kartruttan-sk)"/>
+<path d="M112 138C110 156 108 170 104 184H120V138ZM164 140C166 158 164 172 160 184H174V140Z" fill="#7a8248"/>
+<path d="M86 152C90 150 95 150 99 152M84 162C88 160 93 160 97 162M83 172C87 170 92 170 96 172M146 152C150 150 155 150 159 152M146 162C150 160 155 160 159 162M146 172C150 170 155 170 159 172" fill="none" stroke="#6c7444" stroke-width="2"/>
+</g>
+<path d="M88 136C100 130 114 134 116 146L112 176C111 180 108 182 103 182H82C78 182 76 180 76 176L80 148C81 142 84 138 88 136ZM142 140C154 134 168 138 170 150V176C170 180 167 182 163 182H144C140 182 138 180 138 176V148C138 144 139 141 142 140Z" fill="none" stroke="#2c3216" stroke-width="2.5"/>
+<g fill="#f2ead2" stroke="#2c3216" stroke-width="1.6"><path d="M79 182C79 177 81 175 84 175C87 175 89 177 89 182ZM89 182C89 177 91 175 94 175C97 175 99 177 99 182ZM99 182C99 177 101 175 104 175C107 175 109 177 108 182ZM140 182C140 177 142 175 145 175C148 175 150 177 150 182ZM150 182C150 177 152 175 155 175C158 175 160 177 160 182Z"/></g>
+<g clip-path="url(#kartruttan-cb)">
+<rect x="68" y="66" width="122" height="94" fill="url(#kartruttan-g)"/>
+<path d="M100 104C108 96 118 94 128 96V101C120 100 110 102 104 108ZM140 94C152 92 162 96 168 102L165 106C159 101 150 99 142 99Z" fill="#f8d47e"/>
+<path d="M68 130C106 150 158 144 192 104V160H68Z" fill="#a8652a"/>
+<path d="M68 118C82 120 92 134 94 160H68Z" fill="#7f4422"/>
+<path d="M78 114C98 100 156 96 184 110M106 78L102 104M144 72L146 100M172 84L176 106M92 106L88 136M124 100V144M156 100L160 140" fill="none" stroke="#6e3510" stroke-width="2.5"/>
+<path d="M68 134C100 148 156 146 192 120V160H68Z" fill="#ecd8a8"/>
+<path d="M68 148C106 160 156 158 192 134V160H68Z" fill="#cdb07a"/>
+<path d="M74 134C100 146 156 145 186 124" fill="none" stroke="#7a4418" stroke-width="2.5"/>
+<path d="M92 144L90 155M108 146L107 156M126 146V157M142 145L143 155M160 141L162 152M176 132L179 143" fill="none" stroke="#8a6a3a" stroke-width="2"/>
+<path d="M84 104C90 90 102 80 116 76C106 84 98 94 94 106Z" fill="#ffe7a6"/>
+<path d="M150 144C164 140 174 132 180 122" fill="none" stroke="#e8a848" stroke-width="2"/>
+</g>
+<path d="M74 132C70 104 90 76 126 72C162 68 186 96 186 128C186 144 180 152 168 154L88 156C78 156 72 148 74 132Z" fill="none" stroke="#401e0c" stroke-width="2.5"/>
+<g fill="none" stroke-linecap="round"><path d="M128 154V172M176 152L178 170" stroke="#5e4020" stroke-width="5.5"/><path d="M128 154V172M176 152L178 170" stroke="#f0d898" stroke-width="2.6" stroke-dasharray="2.5 2"/></g>
+<g clip-path="url(#kartruttan-cp)">
+<rect x="88" y="30" width="96" height="62" fill="url(#kartruttan-hd)"/>
+<path d="M88 70C116 82 156 78 184 58V92H88Z" fill="#963a30"/>
+<path d="M164 40L181 50C178 62 172 72 162 78C168 66 168 52 164 40Z" fill="#a8463a"/>
+<path d="M116 44C126 54 128 70 124 86M150 40C156 52 156 66 150 80" fill="none" stroke="#a8463a" stroke-width="2.2"/>
+<path d="M104 56C108 48 116 43 124 42C117 47 112 52 109 60Z" fill="#f6a882"/>
+</g>
+<path d="M98 82C90 70 92 54 102 46C110 38 122 36 130 40C138 34 154 34 164 40L181 50C183 60 181 70 175 80C156 88 118 90 98 82Z" fill="none" stroke="#4e1612" stroke-width="2.5"/>
+<path d="M126 44C122 36 114 30 108 28C116 24 126 27 133 33C137 25 144 20 152 20C148 26 144 34 141 42Z" fill="url(#kartruttan-hd)" stroke="#4e1612" stroke-width="2.5"/>
+<path d="M116 29C121 31 126 34 130 39M148 25C145 30 142 35 140 40" fill="none" stroke="#a8463a" stroke-width="2"/>
+<path d="M170 52C174 50 178 52 179 56C176 60 172 60 170 52Z" fill="#1d1420" stroke="#4e1612" stroke-width="2"/>
+<path d="M172 54.5C174 54 176 55 177 56.5" fill="none" stroke="#7ff0c8" stroke-width="1.6"/>
+<g fill="none" stroke-linecap="round">
+<path d="M126 42C130 44 138 44 141 42M95 66C118 75 156 73 181 62" stroke="#5e4020" stroke-width="5.5"/>
+<path d="M126 42C130 44 138 44 141 42M95 66C118 75 156 73 181 62" stroke="#f0d898" stroke-width="2.6" stroke-dasharray="3 2"/>
+<path d="M104 84C100 100 96 118 94 136M158 82C166 98 172 112 176 126" stroke="#5e4020" stroke-width="5.5"/>
+<path d="M104 84C100 100 96 118 94 136M158 82C166 98 172 112 176 126" stroke="#f0d898" stroke-width="2.6" stroke-dasharray="3 2"/>
+</g>
+<g fill="#f6eedc" stroke="#5e4020" stroke-width="1.5"><path d="M99.5 167C99.5 162 101.5 160 104 160C106.5 160 108.5 162 108.5 167ZM177.5 173C177.5 168 179.5 166 182 166C184.5 166 186.5 168 186.5 173ZM93.5 153C93.5 148 95.5 146 98 146C100.5 146 102.5 148 102.5 153ZM147.5 155C147.5 150 149.5 148 152 148C154.5 148 156.5 150 156.5 155ZM109.5 83C109.5 78 111.5 76 114 76C116.5 76 118.5 78 118.5 83ZM163.5 81C163.5 76 165.5 74 168 74C170.5 74 172.5 76 172.5 81Z"/></g>
+<g fill="#4a3020"><ellipse cx="104" cy="161" rx="1.8" ry="1"/><ellipse cx="182" cy="167" rx="1.8" ry="1"/><ellipse cx="98" cy="147" rx="1.8" ry="1"/><ellipse cx="152" cy="149" rx="1.8" ry="1"/><ellipse cx="114" cy="77" rx="1.8" ry="1"/><ellipse cx="168" cy="75" rx="1.8" ry="1"/></g>
+<path d="M108 82C104 90 110 96 105 104C102 109 106 113 103 118C108 114 108 110 110 106C114 98 108 92 113 84ZM172 152C176 158 172 164 176 170C178 174 176 178 178 181C181 176 180 172 179 168C178 162 182 158 178 152Z" fill="#3fa07e" stroke="#164a3a" stroke-width="2"/>
+<g fill="#e6d3a6" stroke="#5e4020" stroke-width="1.2"><circle cx="190" cy="172" r="2"/><circle cx="185" cy="167" r="1.4"/><circle cx="182" cy="185" r="1.3"/></g>
+<g stroke="#5e4020" stroke-width="2.5" fill="url(#kartruttan-st)"><path d="M58 64C60 52 68 42 80 36C84 34 88 34 90 36C84 40 79 46 77 54C75 60 73 66 71 70ZM30 66C28 54 30 44 36 38C36 46 38 56 42 62Z"/></g>
+<path d="M64 60C66 52 72 44 80 40" fill="none" stroke="#fffaea" stroke-width="1.8"/>
+<path d="M70 52C74 54 76 56 77 59M64 60C68 61 71 63 73 66" fill="none" stroke="#b89a68" stroke-width="1.6"/>
+<g clip-path="url(#kartruttan-ch)">
+<rect x="4" y="54" width="80" height="66" fill="url(#kartruttan-sk)"/>
+<path d="M78 76C80 96 70 108 46 116L86 120V76Z" fill="#7a8248"/>
+<path d="M4 96C16 96 30 100 38 106C42 109 44 113 44 120H4Z" fill="#e6e0ae"/>
+<path d="M4 108C18 116 32 118 46 114V122H4Z" fill="#c4bc84"/>
+<path d="M22 74C28 66 38 62 48 62C39 65 32 70 28 78Z" fill="#e2e6ae"/>
+</g>
+<path d="M7 96C18 97 30 100 38 106C42 109 44 112 45 116" fill="none" stroke="#6c7444" stroke-width="2.5"/>
+<path d="M46 58C64 56 78 68 78 84C78 98 70 108 58 112C46 116 30 116 20 110C12 106 8 99 9 92C10 84 15 78 21 75C25 64 34 59 46 58Z" fill="none" stroke="#2c3216" stroke-width="2.5"/>
+<path d="M9 90C7 94 7 98 10 101" fill="none" stroke="#2c3216" stroke-width="2.5"/>
+<ellipse cx="13" cy="88" rx="1.5" ry="1.9" fill="#2c3216"/>
+<path d="M11 101C19 105 30 106 40 104C43 103 46 101 48 98" fill="none" stroke="#3e3c1c" stroke-width="2.2"/>
+<path d="M40 84C42 79 49 76 58 76C60 82 58 90 52 92C46 93 41 90 40 84Z" fill="#fffdf4"/>
+<g clip-path="url(#kartruttan-e1)">
+<ellipse cx="50" cy="85.5" rx="6.2" ry="7.2" fill="url(#kartruttan-iris)"/>
+<ellipse cx="49.6" cy="86" rx="3.7" ry="5" fill="#1b1622"/>
+</g>
+<path d="M40 84C42 79 49 76 58 76C60 82 58 90 52 92C46 93 41 90 40 84Z" fill="none" stroke="#2c3216" stroke-width="2"/>
+<path d="M39.5 85C42 79 49 76 59 75.5" fill="none" stroke="#1b1622" stroke-width="3.8"/>
+<circle cx="46.8" cy="82.6" r="2.4" fill="#fff"/>
+<circle cx="50.8" cy="86.8" r="1.1" fill="#fff"/>
+<path d="M15 86C16.3 82 20.8 79.6 26.5 79.6C27.8 84.4 26.5 90.8 22.7 92.4C18.8 93.2 15.6 90.8 15 86Z" fill="#fffdf4"/>
+<g clip-path="url(#kartruttan-e2)">
+<ellipse cx="21.4" cy="87.2" rx="4" ry="5.8" fill="url(#kartruttan-iris)"/>
+<ellipse cx="21.1" cy="87.6" rx="2.4" ry="4" fill="#1b1622"/>
+</g>
+<path d="M15 86C16.3 82 20.8 79.6 26.5 79.6C27.8 84.4 26.5 90.8 22.7 92.4C18.8 93.2 15.6 90.8 15 86Z" fill="none" stroke="#2c3216" stroke-width="2"/>
+<path d="M14.7 86.8C16.3 82 20.8 79.6 27.2 79.2" fill="none" stroke="#1b1622" stroke-width="3.4"/>
+<circle cx="19.4" cy="84.9" r="1.7" fill="#fff"/>
+<circle cx="21.9" cy="88.2" r="0.8" fill="#fff"/>
+<g fill="#b4ba72" stroke="#2c3216" stroke-width="2.2"><path d="M36 80C42 71 54 67 66 68C66 72 62 74 56 75C50 76 44 78 38 84Z"/><path d="M13 83C15 78 21 75 28 75C27 78 24 79 21 79C18 80 16 82 14 85Z"/></g>
+</g>
+</svg>

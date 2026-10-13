@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="murexil-g" gradientUnits="userSpaceOnUse" x1="30" y1="100" x2="110" y2="180"><stop offset="0" stop-color="#d4aef0"/><stop offset=".55" stop-color="#9a68c4"/></linearGradient>
+<linearGradient id="murexil-sh" gradientUnits="userSpaceOnUse" x1="92" y1="70" x2="160" y2="160"><stop offset="0" stop-color="#fff8e8"/><stop offset=".55" stop-color="#f0dcc0"/></linearGradient>
+<linearGradient id="murexil-sp" x1="0" y1="0" x2="1" y2="1"><stop offset=".5" stop-color="#c79ae8"/><stop offset=".5" stop-color="#8e58bc"/></linearGradient>
+<linearGradient id="murexil-far" x1="0" y1="0" x2="1" y2="1"><stop offset=".5" stop-color="#8a5cb4"/><stop offset=".5" stop-color="#6e449a"/></linearGradient>
+<linearGradient id="murexil-tn" x1="0" y1="0" x2="1" y2="1"><stop offset=".5" stop-color="#b98ade"/><stop offset=".5" stop-color="#9064bc"/></linearGradient>
+<radialGradient id="murexil-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#ffe68a"/><stop offset=".5" stop-color="#e0962a"/><stop offset="1" stop-color="#5a2208"/></radialGradient>
+<clipPath id="murexil-cs"><path d="M97 67C98 67 101 69 103 70C105 70 106 71 107 72C109 72 110 72 112 73C113 73 115 74 118 75C121 76 126 76 129 77C133 78 137 79 141 81C144 84 148 87 150 92C153 96 154 103 154 108C154 114 151 120 150 125C148 129 145 131 146 136C146 141 150 148 152 153C154 158 157 163 158 166C159 169 158 171 157 171C156 172 154 172 152 169C150 167 147 162 144 158C140 154 136 147 132 144C128 141 125 143 120 142C116 140 109 140 104 137C99 135 94 130 92 126C89 122 87 116 87 112C87 108 89 104 90 100C91 97 92 92 93 89C94 86 94 84 94 83C95 81 96 80 96 78C96 77 96 75 96 74C96 72 96 68 97 67Z"/></clipPath>
+<clipPath id="murexil-cf"><path d="M24 178C22 170 30 164 44 162C70 158 112 156 142 160C158 162 168 170 168 177C168 181 164 182 158 182H32C26 182 24 181 24 178Z"/></clipPath>
+<clipPath id="murexil-ch"><path d="M33 166C27 150 29 124 41 112C49 104 59 100 69 100C85 100 97 112 99 126C101 140 99 152 103 164C87 172 49 173 33 166Z"/></clipPath>
+<clipPath id="murexil-e1"><ellipse cx="72" cy="129" rx="10.4" ry="12.8"/></clipPath>
+<clipPath id="murexil-e2"><ellipse cx="47" cy="131" rx="7.4" ry="10.6"/></clipPath>
+</defs>
+<ellipse cx="98" cy="184" rx="74" ry="7" fill="#1d2b33" opacity="0.22"/>
+<path d="M150 181C164 176 178 176 190 180C186 186 160 187 150 181Z" fill="#8a3484" stroke="#3a1036" stroke-width="2"/>
+<path d="M164 179C170 178 176 178 182 179" fill="none" stroke="#d27ac8" stroke-width="1.5"/>
+<g fill="#3a1752" stroke="#3a1752" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M49 108C48 105 43 100 40 97C37 93 34 90 31 89C28 88 24 88 22 89C21 89 21 89 22 89C23 90 27 89 29 91C32 93 34 96 36 99C38 103 41 111 43 112C45 113 49 111 49 108Z"/><path d="M24 178C22 170 30 164 44 162C70 158 112 156 142 160C158 162 168 170 168 177C168 181 164 182 158 182H32C26 182 24 181 24 178Z"/>
+<path d="M126 80Q125 65 120 52Q117 62 113 78ZM143 86Q148 72 146 58Q140 66 130 79ZM152 98Q160 87 160 76Q154 81 143 89ZM153 115Q162 108 164 100Q158 101 148 105ZM146 149Q154 144 155 138Q151 139 143 142ZM96 95Q84 88 74 84Q80 92 90 104Z" fill="#4a2238" stroke="#4a2238"/><path d="M97 67C98 67 101 69 103 70C105 70 106 71 107 72C109 72 110 72 112 73C113 73 115 74 118 75C121 76 126 76 129 77C133 78 137 79 141 81C144 84 148 87 150 92C153 96 154 103 154 108C154 114 151 120 150 125C148 129 145 131 146 136C146 141 150 148 152 153C154 158 157 163 158 166C159 169 158 171 157 171C156 172 154 172 152 169C150 167 147 162 144 158C140 154 136 147 132 144C128 141 125 143 120 142C116 140 109 140 104 137C99 135 94 130 92 126C89 122 87 116 87 112C87 108 89 104 90 100C91 97 92 92 93 89C94 86 94 84 94 83C95 81 96 80 96 78C96 77 96 75 96 74C96 72 96 68 97 67Z" fill="#4a2238" stroke="#4a2238"/>
+<path d="M33 166C27 150 29 124 41 112C49 104 59 100 69 100C85 100 97 112 99 126C101 140 99 152 103 164C87 172 49 173 33 166Z"/><path d="M70 105C71 103 69 95 67 91C65 87 62 82 60 79C57 76 53 74 50 73C48 72 45 74 44 74C43 75 43 75 44 76C45 76 48 74 50 75C52 76 54 78 56 81C58 84 60 89 61 93C62 97 60 105 62 107C63 109 70 108 70 105Z"/>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M49 108C48 105 43 100 40 97C37 93 34 90 31 89C28 88 24 88 22 89C21 89 21 89 22 89C23 90 27 89 29 91C32 93 34 96 36 99C38 103 41 111 43 112C45 113 49 111 49 108Z" fill="url(#murexil-far)" stroke="#3a1752" stroke-width="2.5"/>
+<g clip-path="url(#murexil-cf)">
+<rect x="20" y="150" width="152" height="34" fill="url(#murexil-g)"/>
+<path d="M20 174C60 176 120 176 172 170V184H20Z" fill="#6c3c98"/>
+<path d="M20 178C60 180 120 180 172 175" fill="none" stroke="#e7c8f6" stroke-width="2.5"/>
+<g fill="#7a4aa6"><ellipse cx="146" cy="166" rx="4" ry="2.4"/><ellipse cx="128" cy="164" rx="3" ry="2"/><ellipse cx="156" cy="172" rx="2.6" ry="1.8"/></g>
+</g>
+<path d="M24 178C22 170 30 164 44 162C70 158 112 156 142 160C158 162 168 170 168 177C168 181 164 182 158 182H32C26 182 24 181 24 178Z" fill="none" stroke="#3a1752" stroke-width="2.5"/>
+<path d="M126 80Q125 65 120 52Q117 62 113 78ZM143 86Q148 72 146 58Q140 66 130 79ZM152 98Q160 87 160 76Q154 81 143 89ZM153 115Q162 108 164 100Q158 101 148 105ZM146 149Q154 144 155 138Q151 139 143 142ZM96 95Q84 88 74 84Q80 92 90 104Z" fill="url(#murexil-sp)" stroke="#4a2238" stroke-width="2.5"/>
+<g clip-path="url(#murexil-cs)">
+<rect x="80" y="60" width="96" height="124" fill="url(#murexil-sh)"/>
+<path d="M85 114Q119 104 143 80L146 85Q122 110 88 119ZM92 130Q128 120 154 94L157 99Q131 125 95 135ZM103 145Q137 136 161 111L164 115Q139 140 105 149Z" fill="#c99ccc"/>
+<path d="M144 68C145 98 155 119 146 148L190 168L161 58Z" fill="#6a3a7a" opacity=".36"/>
+<path d="M96 78Q103 77 107 72M93 89Q107 85 118 75" fill="none" stroke="#9a6688" stroke-width="2.2"/>
+<circle cx="105" cy="109" r="2.6" fill="#fff"/>
+<path d="M92 107Q100 92 115 86" fill="none" stroke="#fff" stroke-width="3"/>
+</g>
+<path d="M97 67C98 67 101 69 103 70C105 70 106 71 107 72C109 72 110 72 112 73C113 73 115 74 118 75C121 76 126 76 129 77C133 78 137 79 141 81C144 84 148 87 150 92C153 96 154 103 154 108C154 114 151 120 150 125C148 129 145 131 146 136C146 141 150 148 152 153C154 158 157 163 158 166C159 169 158 171 157 171C156 172 154 172 152 169C150 167 147 162 144 158C140 154 136 147 132 144C128 141 125 143 120 142C116 140 109 140 104 137C99 135 94 130 92 126C89 122 87 116 87 112C87 108 89 104 90 100C91 97 92 92 93 89C94 86 94 84 94 83C95 81 96 80 96 78C96 77 96 75 96 74C96 72 96 68 97 67Z" fill="none" stroke="#4a2238" stroke-width="2.5"/>
+<path d="M115 123C116 126 116 131 117 135C118 139 120 142 121 146C121 149 119 151 118 154C117 156 117 160 116 161C115 162 112 161 110 162C108 162 106 163 104 162C101 161 100 157 97 155C95 152 91 151 89 148C87 145 87 140 85 136C84 132 80 129 79 125C78 122 80 118 80 115C80 111 78 108 78 105C79 103 82 102 83 100C84 99 86 97 87 97C89 97 91 99 94 100C96 101 100 101 102 104C104 106 105 110 107 114C109 117 113 119 115 123Z" fill="#ffb4a0" stroke="#8e3456" stroke-width="2.5"/>
+<path d="M96 104C108 114 112 136 106 158C102 162 96 162 94 158C98 140 98 122 90 108Z" fill="#c43e6c"/>
+<path d="M104 100C110 106 114 114 116 122" fill="none" stroke="#ffe4d8" stroke-width="2"/>
+<g clip-path="url(#murexil-ch)">
+<rect x="24" y="96" width="82" height="80" fill="url(#murexil-g)"/>
+<path d="M24 150C40 162 70 164 90 154C98 148 102 138 102 126V176H24Z" fill="#7a4cae"/>
+<path d="M94 122C98 136 96 150 86 158" fill="none" stroke="#c49ae6" stroke-width="2"/>
+<g fill="#8458b4"><ellipse cx="84" cy="110" rx="3.2" ry="2.2"/><ellipse cx="92" cy="118" rx="2.4" ry="1.8"/><ellipse cx="78" cy="104" rx="2" ry="1.4"/></g>
+<path d="M44 112C50 106 58 103 66 103C58 106 52 110 48 116Z" fill="#f0dcfc"/>
+</g>
+<path d="M33 166C27 150 29 124 41 112C49 104 59 100 69 100C85 100 97 112 99 126C101 140 99 152 103 164" fill="none" stroke="#3a1752" stroke-width="2.5"/>
+<path d="M70 105C71 103 69 95 67 91C65 87 62 82 60 79C57 76 53 74 50 73C48 72 45 74 44 74C43 75 43 75 44 76C45 76 48 74 50 75C52 76 54 78 56 81C58 84 60 89 61 93C62 97 60 105 62 107C63 109 70 108 70 105Z" fill="url(#murexil-tn)" stroke="#3a1752" stroke-width="2.5"/>
+<path d="M62 100C58 92 54 86 48 80" fill="none" stroke="#e4c8f8" stroke-width="2"/>
+<path d="M44 145C49 149 56 150 62 146C61 152 57 156 52 156C47.5 156 44.5 151 44 145Z" fill="#4a1640" stroke="#3a1752" stroke-width="2.2"/>
+<path d="M47 152.5C50 150.5 55 150.5 58 153C55.5 155.5 49.5 155.5 47 152.5Z" fill="#ff8aa6"/>
+<ellipse cx="84" cy="144" rx="6" ry="3.4" fill="#ff6a8a" opacity=".5"/>
+<ellipse cx="72" cy="129" rx="10.4" ry="12.8" fill="#fffdf4"/>
+<g clip-path="url(#murexil-e1)">
+<ellipse cx="69.5" cy="131.4" rx="8.7" ry="10.9" fill="url(#murexil-iris)"/>
+<ellipse cx="69" cy="132.6" rx="5.3" ry="7.3" fill="#1b1622"/>
+<path d="M58.7 112.1H85.3V121.8C78 118.1 66 118.1 58.7 123Z" fill="#e2cdee"/>
+</g>
+<ellipse cx="72" cy="129" rx="10.4" ry="12.8" fill="none" stroke="#3a1752" stroke-width="2"/>
+<path d="M62.1 122.4C65 118.1 68.6 116.4 72.2 116.4C76.4 116.6 79.9 118.7 82 122.7" fill="none" stroke="#1b1622" stroke-width="3.5"/>
+<circle cx="64.9" cy="125.9" r="3.7" fill="#fff"/>
+<circle cx="71" cy="131.4" r="1.7" fill="#fff"/>
+<ellipse cx="47" cy="131" rx="7.4" ry="10.6" fill="#fffdf4"/>
+<g clip-path="url(#murexil-e2)">
+<ellipse cx="45.2" cy="133" rx="6.2" ry="9" fill="url(#murexil-iris)"/>
+<ellipse cx="44.9" cy="134" rx="3.8" ry="6" fill="#1b1622"/>
+<path d="M37.5 117H56.5V125C51.3 122 42.7 122 37.5 126Z" fill="#e2cdee"/>
+</g>
+<ellipse cx="47" cy="131" rx="7.4" ry="10.6" fill="none" stroke="#3a1752" stroke-width="2"/>
+<path d="M39.9 125.5C42 122 44.6 120.6 47.2 120.6C50.1 120.7 52.6 122.5 54.1 125.8" fill="none" stroke="#1b1622" stroke-width="3.1"/>
+<circle cx="41.9" cy="128.4" r="2.3" fill="#fff"/>
+<circle cx="46.2" cy="133" r="1" fill="#fff"/>
+
+<path d="M100 156C103 162 104 166 104 169C104 172.5 99.5 172.5 99.5 169C99.5 166 100 162 100 156Z" fill="#8a3484" stroke="#3a1036" stroke-width="1.5"/>
+<circle cx="101" cy="168.5" r="1" fill="#f0b0e8"/>
+</g>
+</svg>

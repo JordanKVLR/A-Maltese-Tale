@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="hilalux-g" gradientUnits="userSpaceOnUse" x1="56" y1="70" x2="130" y2="150"><stop offset="0" stop-color="#6670c4"/><stop offset=".55" stop-color="#2c3378"/></linearGradient>
+<linearGradient id="hilalux-s" gradientUnits="userSpaceOnUse" x1="60" y1="50" x2="120" y2="150"><stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#cdd4ee"/></linearGradient>
+<linearGradient id="hilalux-pn" x1="0" y1="0" x2="0" y2="1"><stop offset=".45" stop-color="#d8343a"/><stop offset=".45" stop-color="#a8222e"/></linearGradient>
+<linearGradient id="hilalux-far" x1="0" y1="0" x2="0" y2="1"><stop offset=".5" stop-color="#3a4386"/><stop offset=".5" stop-color="#2a3170"/></linearGradient>
+<radialGradient id="hilalux-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#fff4b8"/><stop offset=".5" stop-color="#f0b83a"/><stop offset="1" stop-color="#4a2a6a"/></radialGradient>
+<clipPath id="hilalux-cb"><path d="M92 72C116 72 134 90 134 112C134 134 116 150 92 150C68 150 52 134 52 112C52 90 68 72 92 72Z"/></clipPath>
+<clipPath id="hilalux-cw"><path d="M120 118C132 104 150 92 172 86C164 96 160 108 158 120C150 124 140 128 128 130Z"/></clipPath>
+<clipPath id="hilalux-e1"><ellipse cx="89" cy="104" rx="10" ry="12.4"/></clipPath>
+<clipPath id="hilalux-e2"><ellipse cx="65" cy="106" rx="7.2" ry="11"/></clipPath>
+</defs>
+<ellipse cx="96" cy="184" rx="30" ry="6" fill="#1d2b33" opacity="0.18"/>
+<g fill="#151a3e" stroke="#151a3e" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M126 130C140 126 152 132 164 130C170 129 176 127 184 128L172 140L186 150C172 152 158 152 144 148C136 146 130 144 124 142Z" fill="#5a1020" stroke="#5a1020"/>
+<path d="M114 90C124 76 140 64 160 58C154 68 150 78 148 90C140 94 130 96 120 98Z"/><path d="M92 72C116 72 134 90 134 112C134 134 116 150 92 150C68 150 52 134 52 112C52 90 68 72 92 72Z"/><path d="M120 118C132 104 150 92 172 86C164 96 160 108 158 120C150 124 140 128 128 130Z"/><path d="M100 66C105 66 108 69 108 73C108 76 105 78 100 78C95 78 92 76 92 73C92 69 95 66 100 66Z"/><path d="M80 44C80 58 89 67 100 67C111 67 120 58 120 44C116 53 109 58 100 58C91 58 84 53 80 44Z" transform="rotate(14 100 60)"/><path d="M56 110C50 111 45 114 42 118C47 120 53 120 58 118Z"/>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M126 130C140 126 152 132 164 130C170 129 176 127 184 128L172 140L186 150C172 152 158 152 144 148C136 146 130 144 124 142Z" fill="url(#hilalux-pn)" stroke="#5a1020" stroke-width="2.5"/>
+<path d="M134 132C146 130 156 134 168 132" fill="none" stroke="#ff8a86" stroke-width="2"/>
+<path d="M146 148C154 149 162 149 170 148" fill="none" stroke="#7a1420" stroke-width="2"/>
+<path d="M156 133C152 135 151 140 153 143C155 146 160 147 163 145C159 145 156 142 156 139C156 137 157 135 159 134C158 133 157 133 156 133Z" fill="#fff0e6"/>
+<path d="M114 90C124 76 140 64 160 58C154 68 150 78 148 90C140 94 130 96 120 98Z" fill="url(#hilalux-far)" stroke="#151a3e" stroke-width="2.5"/>
+<path d="M118 92C130 78 144 68 158 62" fill="none" stroke="#c8cff0" stroke-width="3"/>
+<g clip-path="url(#hilalux-cb)">
+<rect x="48" y="68" width="90" height="86" fill="url(#hilalux-g)"/>
+<path d="M48 104C56 124 74 136 96 138C110 138 120 134 130 124V156H48Z" fill="url(#hilalux-s)"/>
+<path d="M48 104C56 124 74 136 96 138C110 138 120 134 130 124" fill="none" stroke="#3a4170" stroke-width="2.5"/>
+<path d="M58 132C76 156 118 158 138 116V156H58Z" fill="#10144a" opacity=".38"/>
+<path d="M64 92C68 84 76 78 86 76C78 82 72 88 68 96Z" fill="#c8d0ff"/>
+<path d="M66 132C76 140 88 144 100 144" fill="none" stroke="#fff" stroke-width="2"/>
+</g>
+<path d="M92 72C116 72 134 90 134 112C134 134 116 150 92 150C68 150 52 134 52 112C52 90 68 72 92 72Z" fill="none" stroke="#151a3e" stroke-width="2.5"/>
+<path d="M126 128L130 142" stroke="#6a3a0e" stroke-width="7"/>
+<path d="M126 128L130 142" stroke="#f0c24e" stroke-width="4"/>
+<path d="M126.6 131L127.6 135" stroke="#fff6c0" stroke-width="1.5"/>
+<g clip-path="url(#hilalux-cw)">
+<rect x="116" y="82" width="60" height="50" fill="url(#hilalux-g)"/>
+<path d="M128 132C138 118 154 104 172 96L176 132Z" fill="#2a3170"/>
+<path d="M140 126L156 108M134 128L146 114" fill="none" stroke="#151a3e" stroke-width="1.8"/>
+</g>
+<path d="M120 118C132 104 150 92 172 86C164 96 160 108 158 120C150 124 140 128 128 130Z" fill="none" stroke="#151a3e" stroke-width="2.5"/>
+<path d="M124 116C136 104 152 94 168 88" fill="none" stroke="#e8ecfa" stroke-width="3"/>
+<path d="M100 66C105 66 108 69 108 73C108 76 105 78 100 78C95 78 92 76 92 73C92 69 95 66 100 66Z" fill="url(#hilalux-s)" stroke="#151a3e" stroke-width="2.2"/>
+<path d="M96 69C97 68 99 67 101 67" fill="none" stroke="#fff" stroke-width="1.5"/>
+<g transform="rotate(14 100 60)">
+<path d="M80 44C80 58 89 67 100 67C111 67 120 58 120 44C116 53 109 58 100 58C91 58 84 53 80 44Z" fill="url(#hilalux-s)" stroke="#151a3e" stroke-width="2.5"/>
+<path d="M88 58C92 62 96 63 100 63C106 63 110 61 114 57" fill="none" stroke="#9aa2c8" stroke-width="2"/>
+<path d="M83 49C84 53 86 56 89 58" fill="none" stroke="#fff" stroke-width="1.8"/>
+</g>
+<path d="M56 110C50 111 45 114 42 118C47 120 53 120 58 118Z" fill="#cdd4ee" stroke="#151a3e" stroke-width="2.2"/>
+<path d="M57 117C61 120 66 120 69 116" fill="none" stroke="#151a3e" stroke-width="2.2"/>
+<ellipse cx="102" cy="122" rx="6" ry="3.4" fill="#f27a9a" opacity=".45"/>
+<ellipse cx="89" cy="104" rx="10" ry="12.4" fill="#fffdf4"/>
+<g clip-path="url(#hilalux-e1)">
+<ellipse cx="87.4" cy="106.3" rx="8.4" ry="10.5" fill="url(#hilalux-iris)"/>
+<ellipse cx="86.9" cy="107.5" rx="5.1" ry="7.1" fill="#1b1622"/>
+<path d="M76.2 87.6H101.8V97C94.8 93.5 83.2 93.5 76.2 98.2Z" fill="#9aa2d8"/>
+</g>
+<ellipse cx="89" cy="104" rx="10" ry="12.4" fill="none" stroke="#151a3e" stroke-width="2"/>
+<path d="M79.5 97.6C82.3 93.5 85.7 91.8 89.2 91.8C93.2 92 96.6 94.1 98.7 97.9" fill="none" stroke="#1b1622" stroke-width="3.5"/>
+<circle cx="83" cy="101" r="3.3" fill="#fff"/>
+<circle cx="88.8" cy="106.3" r="1.4" fill="#fff"/>
+<ellipse cx="65" cy="106" rx="7.2" ry="11" fill="#fffdf4"/>
+<g clip-path="url(#hilalux-e2)">
+<ellipse cx="63.7" cy="108.1" rx="6" ry="9.4" fill="url(#hilalux-iris)"/>
+<ellipse cx="63.4" cy="109.1" rx="3.7" ry="6.3" fill="#1b1622"/>
+<path d="M55.8 91.5H74.2V99.8C69.2 96.7 60.8 96.7 55.8 100.8Z" fill="#9aa2d8"/>
+</g>
+<ellipse cx="65" cy="106" rx="7.2" ry="11" fill="none" stroke="#151a3e" stroke-width="2"/>
+<path d="M58.1 100.3C60.1 96.7 62.7 95.2 65.2 95.2C68 95.3 70.4 97.2 71.9 100.6" fill="none" stroke="#1b1622" stroke-width="3.2"/>
+<circle cx="60.6" cy="103.3" r="2.4" fill="#fff"/>
+<circle cx="64.8" cy="108.1" r="1.1" fill="#fff"/>
+<path d="M38 82L40 86L44 88L40 90L38 94L36 90L32 88L36 86Z" fill="#e8ecfa" stroke="#3a4170" stroke-width="1.2"/>
+<path d="M150 66L151 69L154 70L151 71L150 74L149 71L146 70L149 69Z" fill="#e8ecfa"/>
+</g>
+</svg>

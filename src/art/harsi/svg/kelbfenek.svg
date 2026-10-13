@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="kelbfenek-g" gradientUnits="userSpaceOnUse" x1="40" y1="64" x2="140" y2="170"><stop offset="0" stop-color="#f6dcac"/><stop offset=".55" stop-color="#dcae74"/></linearGradient>
+<linearGradient id="kelbfenek-far" x1="0" x2="1"><stop offset=".5" stop-color="#c49464"/><stop offset=".5" stop-color="#a87a60"/></linearGradient>
+<linearGradient id="kelbfenek-ear" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f0a08a"/><stop offset="1" stop-color="#f8d4b8"/></linearGradient>
+<linearGradient id="kelbfenek-au" x1="0" x2="1"><stop offset=".5" stop-color="#f3c14a"/><stop offset=".5" stop-color="#c98a2a"/></linearGradient>
+<radialGradient id="kelbfenek-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#ffe48a"/><stop offset=".5" stop-color="#cf8e2a"/><stop offset="1" stop-color="#5a3010"/></radialGradient>
+<clipPath id="kelbfenek-cb"><path d="M84 118C92 108 106 104 124 104C140 104 156 102 164 110C170 118 168 132 160 140C152 146 140 142 130 144C120 146 110 154 98 154C88 154 80 146 80 134C80 128 81 122 84 118Z"/></clipPath>
+<clipPath id="kelbfenek-cl"><path d="M144 106C160 104 172 112 173 126C174 138 170 148 167 156C168 162 168 170 168 176C169 180 167 182 163 182H150C146 182 145 178 149 176L156 172C156 166 156 162 152 159C144 156 138 150 136 142C134 130 136 114 144 106Z"/></clipPath>
+<clipPath id="kelbfenek-ch"><path d="M84 90C99 90 108 101 108 114C108 126 100 133 90 136C78 139 64 140 50 138C40 137 32 133 31 127C30 122 34 119 39 118C46 116 52 113 58 107C64 96 72 90 84 90Z"/></clipPath>
+<clipPath id="kelbfenek-e1"><ellipse cx="88" cy="111" rx="8.8" ry="10.6"/></clipPath>
+<clipPath id="kelbfenek-e2"><ellipse cx="66" cy="112" rx="6.4" ry="9.2"/></clipPath>
+</defs>
+<ellipse cx="118" cy="184" rx="58" ry="7" fill="#1d2b33" opacity="0.22"/>
+<g fill="#50301a" stroke="#50301a" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M166 112C176 104 182 92 180 80C179 74 176 70 173 67" fill="none" stroke-width="10"/>
+<path d="M134 140C132 152 132 164 134 172C131 174 129 176 129 178C129 180 131 180 135 180H145C147 180 147 177 145 175C143 172 143 166 145 156ZM90 146C90 158 88 168 86 172C83 174 81 176 81 178C81 180 83 180 86 180H98C100 180 101 178 100 176C98 174 98 172 98 170C100 162 102 154 104 148Z"/>
+<path d="M84 118C92 108 106 104 124 104C140 104 156 102 164 110C170 118 168 132 160 140C152 146 140 142 130 144C120 146 110 154 98 154C88 154 80 146 80 134C80 128 81 122 84 118Z"/>
+<path d="M144 106C160 104 172 112 173 126C174 138 170 148 167 156C168 162 168 170 168 176C169 180 167 182 163 182H150C146 182 145 178 149 176L156 172C156 166 156 162 152 159C144 156 138 150 136 142C134 130 136 114 144 106Z"/>
+<path d="M94 134C102 140 106 148 102 155C98 159 90 157 84 156C82 160 80 164 77 167C73 169 68 167 68 163C68 158 71 153 74 150C80 144 86 140 94 134Z"/>
+<g transform="translate(-8 -4) rotate(-10 104 126)">
+<path d="M88 98C90 82 96 66 108 54C114 68 113 86 106 104ZM64 100C58 86 58 70 62 58C72 66 78 80 78 96Z"/>
+<path d="M84 90C99 90 108 101 108 114C108 126 100 133 90 136C78 139 64 140 50 138C40 137 32 133 31 127C30 122 34 119 39 118C46 116 52 113 58 107C64 96 72 90 84 90Z"/>
+</g>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M166 112C176 104 182 92 180 80C179 74 176 70 173 67" fill="none" stroke="#dcae74" stroke-width="4.5"/>
+<path d="M181 84C180 76 177 71 173 67" fill="none" stroke="#fff6e4" stroke-width="4.5"/>
+<path d="M134 140C132 152 132 164 134 172C131 174 129 176 129 178C129 180 131 180 135 180H145C147 180 147 177 145 175C143 172 143 166 145 156Z" fill="url(#kelbfenek-far)" stroke="#50301a" stroke-width="2.5"/>
+<path d="M129 178C129 174 132 172 136 172H145C147 174 147 177 145 180H135C131 180 129 180 129 178Z" fill="#f2e2cc" stroke="#50301a" stroke-width="2"/>
+<path d="M90 146C90 158 88 168 86 172C83 174 81 176 81 178C81 180 83 180 86 180H98C100 180 101 178 100 176C98 174 98 172 98 170C100 162 102 154 104 148Z" fill="url(#kelbfenek-far)" stroke="#50301a" stroke-width="2.5"/>
+<path d="M81 178C81 175 84 173 88 173H98C100 174 101 178 98 180H86C83 180 81 180 81 178Z" fill="#f2e2cc" stroke="#50301a" stroke-width="2"/>
+<g clip-path="url(#kelbfenek-cb)">
+<rect x="78" y="98" width="92" height="58" fill="url(#kelbfenek-g)"/>
+<path d="M168 116C164 134 150 142 130 146C116 150 104 156 92 158H170Z" fill="#b8866a"/>
+<path d="M80 124C90 128 98 140 100 156H78Z" fill="#fff6e4"/>
+<path d="M114 110C128 104 142 104 154 104C142 108 128 110 116 116Z" fill="#ffe2b0"/>
+</g>
+<path d="M84 118C92 108 106 104 124 104C140 104 156 102 164 110C170 118 168 132 160 140C152 146 140 142 130 144C120 146 110 154 98 154C88 154 80 146 80 134C80 128 81 122 84 118Z" fill="none" stroke="#50301a" stroke-width="2.5"/>
+<g clip-path="url(#kelbfenek-cl)">
+<rect x="130" y="100" width="46" height="84" fill="url(#kelbfenek-g)"/>
+<path d="M173 122C173 140 166 150 160 156L160 184H176V122Z" fill="#b8866a"/>
+<path d="M142 116C150 110 160 110 166 116" fill="none" stroke="#ffe2b0" stroke-width="2.5"/>
+<path d="M146 175H172V184H146Z" fill="#fff6e4"/>
+</g>
+<path d="M144 106C160 104 172 112 173 126C174 138 170 148 167 156C168 162 168 170 168 176C169 180 167 182 163 182H150C146 182 145 178 149 176L156 172C156 166 156 162 152 159C144 156 138 150 136 142C134 130 136 114 144 106Z" fill="none" stroke="#50301a" stroke-width="2.5"/>
+<path d="M152 159C156 152 156 144 152 136" fill="none" stroke="#9c6a58" stroke-width="2"/>
+<path d="M150 175H168M156 177V181M162 177V181" stroke="#50301a" stroke-width="1.5"/>
+<path d="M94 134C102 140 106 148 102 155C98 159 90 157 84 156C82 160 80 164 77 167C73 169 68 167 68 163C68 158 71 153 74 150C80 144 86 140 94 134Z" fill="url(#kelbfenek-g)" stroke="#50301a" stroke-width="2.5"/>
+<path d="M98 150C98 154 96 156 92 157" fill="none" stroke="#b8866a" stroke-width="3"/>
+<path d="M82 158C80 162 79 165 77 167C73 169 68 167 68 163C68 159 70 156 72 154C76 155 80 156 82 158Z" fill="#fff6e4" stroke="#50301a" stroke-width="2"/>
+<path d="M98 102C104 112 106 124 102 136" fill="none" stroke="#50301a" stroke-width="10"/>
+<path d="M98 102C104 112 106 124 102 136" fill="none" stroke="#7a4426" stroke-width="5"/>
+<circle cx="101.6" cy="112" r="1.4" fill="#f3c14a"/><circle cx="103.6" cy="123" r="1.4" fill="#f3c14a"/>
+<path d="M102 136V141" stroke="#6a3a0e" stroke-width="2.5"/>
+<path d="M92 154C92 145 96 140 102 140C108 140 112 145 112 154L115 157H89Z" fill="url(#kelbfenek-au)" stroke="#6a3a0e" stroke-width="2.2"/>
+<path d="M92 151H112" stroke="#c98a2a" stroke-width="1.5"/>
+<circle cx="102" cy="159" r="2.6" fill="#6a3a0e"/>
+<path d="M97 144C96 146 95.6 148 95.6 150" fill="none" stroke="#fff6c8" stroke-width="1.8"/>
+<g transform="translate(-8 -4) rotate(-10 104 126)">
+<g stroke="#50301a" stroke-width="2.5">
+<path d="M88 98C90 82 96 66 108 54C114 68 113 86 106 104Z" fill="#d6a46c"/>
+<path d="M64 100C58 86 58 70 62 58C72 66 78 80 78 96Z" fill="url(#kelbfenek-g)"/>
+<path d="M93 94C96 82 101 72 107 64C109 75 108 86 103 98ZM67 94C64 84 64 74 65 66C71 72 74 81 74 91Z" fill="url(#kelbfenek-ear)" stroke-width="1.5"/>
+</g>
+<g clip-path="url(#kelbfenek-ch)">
+<rect x="28" y="86" width="84" height="56" fill="url(#kelbfenek-g)"/>
+<path d="M110 102C106 120 98 132 80 138L114 144V102Z" fill="#b8866a"/>
+<path d="M28 124C40 122 54 122 64 124C72 126 76 132 76 142H28Z" fill="#fff6e4"/>
+<path d="M28 134C42 141 58 141 76 136V146H28Z" fill="#e6d4c2"/>
+<path d="M60 98C66 92 74 91 82 92C74 95 68 99 64 104Z" fill="#ffe8bc"/>
+</g>
+<path d="M84 90C99 90 108 101 108 114C108 126 100 133 90 136C78 139 64 140 50 138C40 137 32 133 31 127C30 122 34 119 39 118C46 116 52 113 58 107C64 96 72 90 84 90Z" fill="none" stroke="#50301a" stroke-width="2.5"/>
+<path d="M32 120C31 116 34 114 38 114C42 114 44 117 42 120C40 123 33 123 32 120Z" fill="#a8604a" stroke="#50301a" stroke-width="2"/>
+<path d="M34 116.5C35 115.5 37 115.4 38.5 116" fill="none" stroke="#fff" stroke-width="1.5" opacity=".8"/>
+<path d="M38 126C45 130 52 130 60 127" fill="none" stroke="#50301a" stroke-width="2"/>
+<ellipse cx="98" cy="126" rx="5.5" ry="3.2" fill="#ff6a6a" opacity=".45"/>
+<ellipse cx="88" cy="111" rx="8.8" ry="10.6" fill="#fffdf4"/>
+<g clip-path="url(#kelbfenek-e1)">
+<ellipse cx="86.4" cy="113" rx="7.4" ry="9" fill="url(#kelbfenek-iris)"/>
+<ellipse cx="85.8" cy="114" rx="4.5" ry="6" fill="#1b1622"/>
+<path d="M76 97H100V104C94 101 82 101 76 105Z" fill="#e3d2c4"/>
+</g>
+<ellipse cx="88" cy="111" rx="8.8" ry="10.6" fill="none" stroke="#50301a" stroke-width="2"/>
+<path d="M79.8 105.5C82.2 101.8 85.2 100.4 88.3 100.4C91.7 100.5 94.7 102.4 96.5 105.8" fill="none" stroke="#1b1622" stroke-width="3.5"/>
+<path d="M80 97.5C85 95 91 94.6 97 96" fill="none" stroke="#7a4426" stroke-width="2.5"/>
+<circle cx="82.8" cy="108.5" r="3.2" fill="#fff"/>
+<circle cx="88" cy="113.4" r="1.4" fill="#fff"/>
+<ellipse cx="66" cy="112" rx="6.4" ry="9.2" fill="#fffdf4"/>
+<g clip-path="url(#kelbfenek-e2)">
+<ellipse cx="64.8" cy="114" rx="5.4" ry="7.6" fill="url(#kelbfenek-iris)"/>
+<ellipse cx="64.4" cy="115" rx="3.3" ry="4.9" fill="#1b1622"/>
+<path d="M58 99H74V106C69 103 63 103 58 107Z" fill="#e3d2c4"/>
+</g>
+<ellipse cx="66" cy="112" rx="6.4" ry="9.2" fill="none" stroke="#50301a" stroke-width="2"/>
+<path d="M59.8 106.8C61.4 103.6 63.6 102.6 65.8 102.6C68.2 102.6 70.4 103.8 71.9 106.6" fill="none" stroke="#1b1622" stroke-width="3.2"/>
+<path d="M59 100.5C63 99 67 99 71 100" fill="none" stroke="#7a4426" stroke-width="2.2"/>
+<circle cx="62" cy="109.5" r="2.4" fill="#fff"/>
+<circle cx="65.6" cy="113.6" r="1.1" fill="#fff"/>
+</g>
+</g>
+</svg>

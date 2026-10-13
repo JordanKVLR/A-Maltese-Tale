@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="qattusepp-g" gradientUnits="userSpaceOnUse" x1="56" y1="68" x2="140" y2="164"><stop offset="0" stop-color="#e8dec9"/><stop offset=".55" stop-color="#c4b49c"/></linearGradient>
+<linearGradient id="qattusepp-far" x1="0" x2="1"><stop offset=".55" stop-color="#ad9d88"/><stop offset=".55" stop-color="#8e7e7c"/></linearGradient>
+<linearGradient id="qattusepp-st" x1="0" y1="0" x2="0" y2="1"><stop offset=".26" stop-color="#f6e0aa"/><stop offset=".26" stop-color="#e8c98c"/><stop offset=".8" stop-color="#e8c98c"/><stop offset=".8" stop-color="#c49a5e"/></linearGradient>
+<linearGradient id="qattusepp-ear" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f08a94"/><stop offset="1" stop-color="#f8c4bc"/></linearGradient>
+<radialGradient id="qattusepp-iris" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#eef59a"/><stop offset=".5" stop-color="#98b83a"/><stop offset="1" stop-color="#2f4a14"/></radialGradient>
+<clipPath id="qattusepp-cb"><path d="M76 112C70 126 68 144 70 162H150C154 144 150 128 138 118C126 108 102 104 88 108Z"/></clipPath>
+<clipPath id="qattusepp-ch"><path d="M88 70C106 70 120 80 122 94C123 102 121 108 118 112L123 117L114 118C108 124 98 126 88 126C78 126 68 124 62 118L53 117L58 111C55 106 54 100 55 94C57 80 70 70 88 70Z"/></clipPath>
+<clipPath id="qattusepp-cl"><path d="M110 128C126 120 148 128 151 146C153 158 146 164 132 164H110C104 164 102 154 104 144C105 136 106 131 110 128Z"/></clipPath>
+<clipPath id="qattusepp-e1"><ellipse cx="98" cy="96" rx="9.2" ry="11.8"/></clipPath>
+<clipPath id="qattusepp-e2"><ellipse cx="72" cy="97" rx="7" ry="10.6"/></clipPath>
+</defs>
+<ellipse cx="100" cy="184" rx="64" ry="7" fill="#1d2b33" opacity="0.22"/>
+<path d="M40 166C40 163 41 161 44 160L48 158H154C158 158 160 160 160 164V168L158 172L160 175V178C160 181 158 182 154 182H46C42 182 40 181 40 178Z" fill="url(#qattusepp-st)" stroke="#5e3d1e" stroke-width="4.5" stroke-linejoin="round"/>
+<path d="M42 164H158" stroke="#b08a52" stroke-width="2"/>
+<path d="M44 160L48 164M66 179C76 177 88 178 100 180" fill="none" stroke="#c49a5e" stroke-width="2" stroke-linecap="round"/>
+<path d="M150 166L146 172L148 176" fill="none" stroke="#b08a52" stroke-width="1.5" stroke-linecap="round"/>
+<g fill="#c49a5e"><ellipse cx="56" cy="171" rx="2.6" ry="1.5"/><ellipse cx="64" cy="175" rx="1.4" ry="1"/><ellipse cx="124" cy="173" rx="2.2" ry="1.3"/><ellipse cx="136" cy="169" rx="1.5" ry="1"/><ellipse cx="94" cy="174" rx="1.8" ry="1.1"/><ellipse cx="110" cy="168.5" rx="1.3" ry=".9"/></g>
+<g fill="#4b3a36" stroke="#4b3a36" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M146 156C162 154 172 142 170 126C169 116 162 110 154 111" fill="none" stroke-width="12"/>
+<path d="M76 112C70 126 68 144 70 162H150C154 144 150 128 138 118C126 108 102 104 88 108Z"/>
+<path d="M110 128C126 120 148 128 151 146C153 158 146 164 132 164H110C104 164 102 154 104 144C105 136 106 131 110 128Z"/>
+<path d="M71 122C69 138 70 150 70 157C67 158 65 160 65 162C65 164 67 165 70 165H84V122ZM87 120C85 134 87 148 87 157C85 158 83 160 83 162C83 164 85 165 89 165H100C103 165 104 163 103 161C102 159 100 158 100 157C101 145 103 133 104 122Z"/>
+<path d="M62 90C58 78 58 66 62 55C70 61 77 68 81 75ZM100 75C105 68 110 62 114 57H123C125 70 125 81 120 91Z"/>
+<path d="M88 70C106 70 120 80 122 94C123 102 121 108 118 112L123 117L114 118C108 124 98 126 88 126C78 126 68 124 62 118L53 117L58 111C55 106 54 100 55 94C57 80 70 70 88 70Z"/>
+</g>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M146 156C162 154 172 142 170 126C169 116 162 110 154 111" fill="none" stroke="#c4b49c" stroke-width="5"/>
+<path d="M163 150L159 152M169 138L165 139M169 125L165 126" stroke="#8a7666" stroke-width="5"/>
+<path d="M162 112C159 111 156 110.6 154 111" fill="none" stroke="#5e4c44" stroke-width="5"/>
+<path d="M71 122C69 138 70 150 70 157C67 158 65 160 65 162C65 164 67 165 70 165H84V122Z" fill="url(#qattusepp-far)" stroke="#4b3a36" stroke-width="2.5"/>
+<g clip-path="url(#qattusepp-cb)">
+<rect x="66" y="102" width="88" height="62" fill="url(#qattusepp-g)"/>
+<path d="M136 114C148 128 150 148 146 166H124C134 148 136 130 132 116Z" fill="#9d8c88"/>
+<path d="M70 112C78 118 98 120 108 114C106 128 100 142 96 152C92 144 86 142 82 146C80 136 74 130 70 124Z" fill="#fbf4e6"/>
+<path d="M122 112C128 115 133 119 136 124M113 111C118 113 123 117 126 121" fill="none" stroke="#9a8674" stroke-width="3.5"/>
+</g>
+<path d="M76 112C70 126 68 144 70 162H150C154 144 150 128 138 118C126 108 102 104 88 108Z" fill="none" stroke="#4b3a36" stroke-width="2.5"/>
+<g clip-path="url(#qattusepp-cl)">
+<rect x="100" y="118" width="54" height="48" fill="url(#qattusepp-g)"/>
+<path d="M150 138C148 154 138 162 120 166H156Z" fill="#9d8c88"/>
+<path d="M131 145C130 141 134 139 137 141C141 144 139 150 134 151C127 152 123 146 124 140C125 133 133 129 140 132C147 135 150 143 148 151" fill="none" stroke="#8f7a68" stroke-width="3.5"/>
+<path d="M112 134C118 128 126 126 134 127C126 130 118 134 114 140Z" fill="#f2ead8"/>
+</g>
+<path d="M110 128C126 120 148 128 151 146C153 158 146 164 132 164H110C104 164 102 154 104 144C105 136 106 131 110 128Z" fill="none" stroke="#4b3a36" stroke-width="2.5"/>
+<path d="M104 157C104 152 109 150 116 150C123 150 127 153 127 158C127 163 123 164 116 164H108C105 164 104 162 104 157Z" fill="#fbf4e6" stroke="#4b3a36" stroke-width="2.5"/>
+<path d="M87 120C85 134 87 148 87 157C85 158 83 160 83 162C83 164 85 165 89 165H100C103 165 104 163 103 161C102 159 100 158 100 157C101 145 103 133 104 122Z" fill="url(#qattusepp-g)" stroke="#4b3a36" stroke-width="2.5"/>
+<path d="M83 160C83 156 87 154 92 154C98 154 103 156 103 160C103 164 100 165 96 165H88C85 165 83 164 83 160ZM65 160C65 156 68 155 72 155C78 155 84 156 84 160C84 164 81 165 77 165H70C67 165 65 164 65 160Z" fill="#fbf4e6" stroke="#4b3a36" stroke-width="2.5"/>
+<path d="M90 160V164M96 160V164M71 160V164M77 160V164M112 158V163M118 158V163" stroke="#4b3a36" stroke-width="1.5"/>
+<g stroke="#4b3a36" stroke-width="2.5">
+<path d="M62 90C58 78 58 66 62 55C70 61 77 68 81 75Z" fill="url(#qattusepp-far)"/>
+<path d="M100 75C105 68 110 62 114 57H123C125 70 125 81 120 91Z" fill="#e8a868"/>
+<path d="M64 84C62 76 62 68 64 62C69 66 73 71 76 76ZM105 76C109 71 112 67 115 63H120C121 72 120 80 117 86Z" fill="url(#qattusepp-ear)" stroke-width="1.5"/>
+</g>
+<g clip-path="url(#qattusepp-ch)">
+<rect x="50" y="68" width="76" height="60" fill="url(#qattusepp-g)"/>
+<path d="M100 70C110 72 122 80 124 92C116 92 108 86 100 70Z" fill="#e8a868"/>
+<path d="M122 88C120 108 108 122 84 128H126Z" fill="#9d8c88"/>
+<path d="M66 112C74 104 96 104 104 112C106 120 96 126 85 126C74 126 64 120 66 112Z" fill="#fbf4e6"/>
+<path d="M66 120C76 126 96 126 106 120V130H66Z" fill="#e2d4c4"/>
+<path d="M82 72V80M89 71V80M96 73L94 81M58 100L65 102M57 106L64 107M119 98L113 100M120 104L114 105" fill="none" stroke="#9a8674" stroke-width="3"/>
+<path d="M62 86C66 79 74 75 82 74C75 78 69 82 65 89Z" fill="#fbf6ea"/>
+</g>
+<path d="M88 70C106 70 120 80 122 94C123 102 121 108 118 112L123 117L114 118C108 124 98 126 88 126C78 126 68 124 62 118L53 117L58 111C55 106 54 100 55 94C57 80 70 70 88 70Z" fill="none" stroke="#4b3a36" stroke-width="2.5"/>
+<ellipse cx="108" cy="111" rx="5.5" ry="3.2" fill="#ff6a6a" opacity=".5"/>
+<path d="M79 107C80 104.5 87 104.5 88 107C87 110 85 111 83.5 111C82 111 80 110 79 107Z" fill="#e8848c" stroke="#4b3a36" stroke-width="1.8"/>
+<path d="M81.5 106.3C82.5 105.8 84 105.7 85 106" fill="none" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<path d="M83.5 111V113.5C82 116.5 78.5 116.5 77 114M83.5 113.5C85 116.5 88.5 116.5 90 114" fill="none" stroke="#4b3a36" stroke-width="2"/>
+<path d="M68 111L44 107M68 115L46 117" fill="none" stroke="#4b3a36" stroke-width="1.3" opacity=".7"/>
+<ellipse cx="98" cy="96" rx="9.2" ry="11.8" fill="#fffdf4"/>
+<g clip-path="url(#qattusepp-e1)">
+<ellipse cx="96.6" cy="98" rx="7.8" ry="9.8" fill="url(#qattusepp-iris)"/>
+<ellipse cx="96" cy="99" rx="4.3" ry="6.8" fill="#1b1622"/>
+<path d="M86 82H110V89C104 86 92 86 86 90Z" fill="#d6d2c8"/>
+</g>
+<ellipse cx="98" cy="96" rx="9.2" ry="11.8" fill="none" stroke="#4b3a36" stroke-width="2"/>
+<path d="M89 90.5C91.4 86.5 94.6 84.4 98.2 84.4C101.8 84.5 105 86.6 107 90.6" fill="none" stroke="#1b1622" stroke-width="3.5"/>
+<circle cx="93" cy="93" r="3.2" fill="#fff"/>
+<circle cx="98" cy="99.5" r="1.4" fill="#fff"/>
+<ellipse cx="72" cy="97" rx="7" ry="10.6" fill="#fffdf4"/>
+<g clip-path="url(#qattusepp-e2)">
+<ellipse cx="70.8" cy="99" rx="6" ry="8.6" fill="url(#qattusepp-iris)"/>
+<ellipse cx="70.4" cy="100" rx="3.3" ry="5.8" fill="#1b1622"/>
+<path d="M63 84H81V91C76 88 69 88 63 92Z" fill="#d6d2c8"/>
+</g>
+<ellipse cx="72" cy="97" rx="7" ry="10.6" fill="none" stroke="#4b3a36" stroke-width="2"/>
+<path d="M65.6 91.6C67.4 88 69.8 86.8 72.2 86.8C74.8 86.8 77.2 88.2 78.6 91.4" fill="none" stroke="#1b1622" stroke-width="3.2"/>
+<circle cx="68" cy="94.5" r="2.5" fill="#fff"/>
+<circle cx="71.6" cy="99.6" r="1.1" fill="#fff"/>
+</g>
+</svg>
